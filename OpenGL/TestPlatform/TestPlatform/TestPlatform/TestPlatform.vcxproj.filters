@@ -57,6 +57,9 @@
     <ClCompile Include="Source\Test\TestClearColor.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Test\TesterFSM.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Render\VertexBuffer.h">
@@ -104,10 +107,13 @@
     <ClInclude Include="Source\ThirdPart\imgui\stb_truetype.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Test\BaseTest.h">
+    <ClInclude Include="Source\Test\TestClearColor.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Test\TestClearColor.h">
+    <ClInclude Include="Source\Test\Looper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Test\TesterFSM.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

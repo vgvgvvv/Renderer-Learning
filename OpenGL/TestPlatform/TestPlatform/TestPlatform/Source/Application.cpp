@@ -55,15 +55,14 @@ int main()
 
 			test.OnRender();
 
-			ImGui_ImplGlfwGL3_NewFrame();
-
-			test.OnImGui();
-			
-			ImGui::Render();
-			ImGui_ImplGlfwGL3_RenderDrawData(ImGui::GetDrawData());
+			{	//ImGUI
+				ImGui_ImplGlfwGL3_NewFrame();
+				test.OnImGui();
+				ImGui::Render();
+				ImGui_ImplGlfwGL3_RenderDrawData(ImGui::GetDrawData());
+			}
 			
 			glfwSwapBuffers(window);
-
 			glfwPollEvents();
 		}
 

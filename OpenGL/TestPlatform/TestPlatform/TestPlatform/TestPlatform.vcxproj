@@ -172,6 +172,7 @@
     <ClCompile Include="Source\Render\VertexBuffer.cpp" />
     <ClCompile Include="Source\Render\VertexBufferLayout.cpp" />
     <ClCompile Include="Source\Test\TestClearColor.cpp" />
+    <ClCompile Include="Source\Test\TesterFSM.cpp" />
     <ClCompile Include="Source\ThirdPart\imgui\imgui.cpp" />
     <ClCompile Include="Source\ThirdPart\imgui\imgui_demo.cpp" />
     <ClCompile Include="Source\ThirdPart\imgui\imgui_draw.cpp" />
@@ -186,8 +187,9 @@
     <ClInclude Include="Source\Render\VertexArrayObject.h" />
     <ClInclude Include="Source\Render\VertexBuffer.h" />
     <ClInclude Include="Source\Render\VertexBufferLayout.h" />
-    <ClInclude Include="Source\Test\BaseTest.h" />
+    <ClInclude Include="Source\Test\Looper.h" />
     <ClInclude Include="Source\Test\TestClearColor.h" />
+    <ClInclude Include="Source\Test\TesterFSM.h" />
     <ClInclude Include="Source\ThirdPart\imgui\imconfig.h" />
     <ClInclude Include="Source\ThirdPart\imgui\imgui.h" />
     <ClInclude Include="Source\ThirdPart\imgui\imgui_impl_glfw_gl3.h" />

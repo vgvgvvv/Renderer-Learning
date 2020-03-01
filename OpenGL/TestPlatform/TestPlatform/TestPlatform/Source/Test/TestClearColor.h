@@ -1,9 +1,9 @@
 ﻿#pragma once
-#include "BaseTest.h"
+#include "Looper.h"
 
 namespace test
 {
-	class TestClearColor : public BaseTest
+	class TestClearColor : public Looper
 	{
 	public:
 		TestClearColor();

@@ -2,11 +2,11 @@
 
 namespace test
 {
-	class BaseTest
+	class Looper
 	{
 	public:
-		BaseTest(){};
-		virtual ~BaseTest(){};
+		Looper(){};
+		virtual ~Looper(){};
 
 		virtual void OnUpdate(){};
 		virtual void OnRender(){};
