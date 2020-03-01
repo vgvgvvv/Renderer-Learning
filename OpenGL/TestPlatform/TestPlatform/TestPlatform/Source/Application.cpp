@@ -8,18 +8,10 @@
 #include "Render/Texture.h"
 #include "Render/VertexArrayObject.h"
 
+#include "imgui/imgui.h"
+#include "imgui/imgui_impl_glfw_gl3.h"
 
-float positions[] = {
-	-0.5, -0.5, 0.0f, 0.0f,
-	 0.5, -0.5, 1.0f, 0.0f,
-	 0.5,  0.5, 1.0f, 1.0f,
-	-0.5,  0.5, 0.0f, 1.0f,
-};
-
-uint32_t indices[] = {
-	0,1,2,
-	0,2,3
-};
+#include "Test/TestClearColor.h"
 
 int main()
 {
@@ -45,45 +37,41 @@ int main()
 
 	{
 
-		VertexArrayObject vao;
-		VertexBuffer vb(positions, 4 * 4 * sizeof(float));
+		test::TestClearColor test;
 		
-		VertexBufferLayout layout;
-		layout.Push<float>(2);
-		layout.Push<float>(2);
-		vao.AddBuffer(vb, layout);
-
-		IndexBuffer ib(indices, 6);
-
-		Texture texture("Resources/Textures/test.jpg");
-		texture.Bind();
-		
-		Shader shader("Resources/Shaders/Texture.shader");
-
-		shader.Bind();
-		shader.SetUniform4f("u_Color", 0.8f, 0.3f, 0.8f, 1.0f);
-		shader.SetUniform1i("u_Texture", 0);
-
-		vao.Unbind();
-		vb.Unbind();
-		ib.Unbind();
-		shader.Unbind();
-
 		Renderer renderer;
+
+		ImGui::CreateContext();
+		ImGui_ImplGlfwGL3_Init(window, true);
+		ImGui::StyleColorsDark();
+
+		
 		
 		while (!glfwWindowShouldClose(window))
 		{
 			renderer.Clear();
-			
-			shader.Bind();
-			shader.SetUniform4f("u_Color", 0.8f, 0.3f, 0.8f, 1.0f);
 
-			renderer.Draw(vao, ib, shader);
+			test.OnUpdate();
+
+			test.OnRender();
+
+			ImGui_ImplGlfwGL3_NewFrame();
+
+			test.OnImGui();
 			
-			glfwPollEvents();
+			ImGui::Render();
+			ImGui_ImplGlfwGL3_RenderDrawData(ImGui::GetDrawData());
+			
 			glfwSwapBuffers(window);
+
+			glfwPollEvents();
 		}
+
+		ImGui_ImplGlfwGL3_Shutdown();
+		ImGui::DestroyContext();
 	}
+
+	glfwTerminate();
 
 	return 0;
 }

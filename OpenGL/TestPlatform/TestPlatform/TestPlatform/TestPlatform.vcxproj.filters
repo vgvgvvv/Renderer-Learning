@@ -42,6 +42,21 @@
     <ClCompile Include="Source\ThirdPart\stb_image\stb_image.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ThirdPart\imgui\imgui.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ThirdPart\imgui\imgui_demo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ThirdPart\imgui\imgui_draw.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ThirdPart\imgui\imgui_impl_glfw_gl3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Test\TestClearColor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Render\VertexBuffer.h">
@@ -66,6 +81,33 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Source\ThirdPart\stb_image\stb_image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ThirdPart\imgui\imconfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ThirdPart\imgui\imgui.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ThirdPart\imgui\imgui_impl_glfw_gl3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ThirdPart\imgui\imgui_internal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ThirdPart\imgui\stb_rect_pack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ThirdPart\imgui\stb_textedit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ThirdPart\imgui\stb_truetype.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Test\BaseTest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Test\TestClearColor.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
