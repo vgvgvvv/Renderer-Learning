@@ -1,4 +1,6 @@
 ﻿#include "VertexBuffer.h"
+
+
 #include "Renderer.h"
 
 VertexBuffer::VertexBuffer(const void* data, uint32_t size) : render_id_(0)

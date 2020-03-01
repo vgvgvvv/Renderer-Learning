@@ -5,8 +5,6 @@
 #include <sstream>
 #include <iostream>
 
-
-#include "GL/glew.h"
 #include "Renderer.h"
 
 Shader::Shader(const std::string& fileName)
@@ -29,6 +27,24 @@ void Shader::Bind() const
 void Shader::Unbind() const
 {
 	GLCall(glUseProgram(0))
+}
+
+void Shader::SetUniform1i(const std::string& name, uint32_t i)
+{
+	int32_t location = GetUniformLocation(name);
+	if (location != -1)
+	{
+		GLCall(glUniform1i(location, i));
+	}
+}
+
+void Shader::SetUniform1f(const std::string& name, float v0)
+{
+	int32_t location = GetUniformLocation(name);
+	if (location != -1)
+	{
+		GLCall(glUniform1f(location, v0));
+	}
 }
 
 void Shader::SetUniform4f(const std::string& name, float v0, float v1, float v2, float v3)
@@ -113,7 +129,7 @@ uint32_t Shader::CreateShader(const std::string& vertexShader, const std::string
 	return program;
 }
 
-uint32_t Shader::GetUniformLocation(const std::string& name)
+int32_t Shader::GetUniformLocation(const std::string& name)
 {
 	if(location_cache_.find(name) != location_cache_.end())
 	{

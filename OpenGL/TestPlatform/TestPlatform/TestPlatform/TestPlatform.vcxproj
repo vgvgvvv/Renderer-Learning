@@ -72,22 +72,22 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>F:\Documents\Work\render\OpenGL\ThirdPart\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\..\ThirdPart\include;$(ProjectDir)Source\ThirdPart;$(IncludePath)</IncludePath>
     <LibraryPath>F:\Documents\Work\render\OpenGL\ThirdPart\libs\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>F:\Documents\Work\render\OpenGL\ThirdPart\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\..\ThirdPart\include;$(ProjectDir)Source\ThirdPart;$(IncludePath)</IncludePath>
     <LibraryPath>F:\Documents\Work\render\OpenGL\ThirdPart\libs\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>F:\Documents\Work\render\OpenGL\ThirdPart\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\..\ThirdPart\include;$(ProjectDir)Source\ThirdPart;$(IncludePath)</IncludePath>
     <LibraryPath>F:\Documents\Work\render\OpenGL\ThirdPart\libs\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>F:\Documents\Work\render\OpenGL\ThirdPart\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\..\ThirdPart\include;$(ProjectDir)Source\ThirdPart;$(IncludePath)</IncludePath>
     <LibraryPath>F:\Documents\Work\render\OpenGL\ThirdPart\libs\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -171,6 +171,7 @@
     <ClCompile Include="Source\Render\VertexArrayObject.cpp" />
     <ClCompile Include="Source\Render\VertexBuffer.cpp" />
     <ClCompile Include="Source\Render\VertexBufferLayout.cpp" />
+    <ClCompile Include="Source\ThirdPart\stb_image\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Render\IndexBuffer.h" />
@@ -180,9 +181,14 @@
     <ClInclude Include="Source\Render\VertexArrayObject.h" />
     <ClInclude Include="Source\Render\VertexBuffer.h" />
     <ClInclude Include="Source\Render\VertexBufferLayout.h" />
+    <ClInclude Include="Source\ThirdPart\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shaders\Basic.shader" />
+    <None Include="Resources\Shaders\Texture.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Textures\test.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

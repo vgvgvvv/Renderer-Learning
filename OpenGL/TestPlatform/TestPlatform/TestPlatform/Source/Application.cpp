@@ -2,19 +2,18 @@
 //
 #include "GL/glew.h"
 #include "GLFW/glfw3.h"
-
-#include "Render/Shader.h"
-#include "Render/VertexBuffer.h"
 #include "Render/IndexBuffer.h"
 #include "Render/Renderer.h"
+#include "Render/Shader.h"
+#include "Render/Texture.h"
 #include "Render/VertexArrayObject.h"
-#include "Render/VertexBufferLayout.h"
+
 
 float positions[] = {
-	-0.5, -0.5,
-	 0.5, -0.5,
-	 0.5,  0.5,
-	-0.5,  0.5,
+	-0.5, -0.5, 0.0f, 0.0f,
+	 0.5, -0.5, 1.0f, 0.0f,
+	 0.5,  0.5, 1.0f, 1.0f,
+	-0.5,  0.5, 0.0f, 1.0f,
 };
 
 uint32_t indices[] = {
@@ -47,35 +46,39 @@ int main()
 	{
 
 		VertexArrayObject vao;
-		VertexBuffer vb(positions, 4 * 2 * sizeof(float));
+		VertexBuffer vb(positions, 4 * 4 * sizeof(float));
 		
 		VertexBufferLayout layout;
+		layout.Push<float>(2);
 		layout.Push<float>(2);
 		vao.AddBuffer(vb, layout);
 
 		IndexBuffer ib(indices, 6);
 
-		Shader shader("Resources/Shaders/Basic.shader");
+		Texture texture("Resources/Textures/test.jpg");
+		texture.Bind();
+		
+		Shader shader("Resources/Shaders/Texture.shader");
 
 		shader.Bind();
 		shader.SetUniform4f("u_Color", 0.8f, 0.3f, 0.8f, 1.0f);
+		shader.SetUniform1i("u_Texture", 0);
 
 		vao.Unbind();
 		vb.Unbind();
 		ib.Unbind();
 		shader.Unbind();
+
+		Renderer renderer;
 		
 		while (!glfwWindowShouldClose(window))
 		{
-			glClearColor(1, 0, 0, 1);
-
+			renderer.Clear();
+			
 			shader.Bind();
 			shader.SetUniform4f("u_Color", 0.8f, 0.3f, 0.8f, 1.0f);
 
-			vao.Bind();
-			ib.Bind();
-
-			GLCall(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
+			renderer.Draw(vao, ib, shader);
 			
 			glfwPollEvents();
 			glfwSwapBuffers(window);
