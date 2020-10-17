@@ -4,10 +4,10 @@ using AnotherBuildSystem.Project;
 
 namespace GenerateInfo
 {
-    public class RuntimeModule : ModuleInfo
+    public class OpenGLModule : ModuleInfo
     {
 
-        public RuntimeModule(Project rootProject, string name, string projectPath) : base(rootProject, name, projectPath)
+        public OpenGLModule(Project rootProject, string name, string projectPath) : base(rootProject, name, projectPath)
         {
         }
 
