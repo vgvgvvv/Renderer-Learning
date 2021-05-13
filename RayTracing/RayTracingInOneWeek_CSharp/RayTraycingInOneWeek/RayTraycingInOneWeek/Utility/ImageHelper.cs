@@ -9,16 +9,17 @@ namespace RayTraycingInOneWeek.Utility
     {
         public static Bitmap GetDataPicture(int w, int h, Color[] data)
         {
-            Bitmap pic = new Bitmap(w, h, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            Bitmap pic = new Bitmap(w, h, System.Drawing.Imaging.PixelFormat.Format32bppRgb);
 
-            for (int x = 0; x < w; x++)
+            for (int y = 1; y <= h; y++)
             {
-                for (int y = 0; y < h; y++)
+                for (int x = 0; x < w; x++)
                 {
                     int arrayIndex = y * w + x;
-                    pic.SetPixel(x, y, data[arrayIndex]);
+                    pic.SetPixel(x, h-y, data[arrayIndex]);
                 }
             }
+            
 
             return pic;
         } 

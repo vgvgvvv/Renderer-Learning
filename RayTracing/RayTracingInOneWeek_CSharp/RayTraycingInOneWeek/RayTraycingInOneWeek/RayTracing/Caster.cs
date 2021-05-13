@@ -2,19 +2,25 @@
 using System;
 using System.Drawing;
 using System.Numerics;
+using RayTraycingInOneWeek.Utility;
 
 namespace RayTraycingInOneWeek.RayTracing
 {
     public class World
     {
-        private Sphere sphere = new Sphere(new Vector3(0, 0, -1), 0.5f);
+        public HittableList AllHittable = new HittableList();
+        // public Sphere sphere = new Sphere(new Vector3(0, 0, -1), 0.5f);
         
+        /// <summary>
+        /// 投射获取颜色函数
+        /// </summary>
+        /// <param name="ray"></param>
+        /// <returns></returns>
         public Color CastColor(Ray ray)
         {
-            HitRecord hitRecord;
-            if (sphere.Hit(ray, 0, 0, out hitRecord))
+            if (AllHittable.Hit(ray, 0, float.MaxValue, out var rec))
             {
-                return Color.Red;
+                return (0.5f * (rec.Normal + Vector3.One) * 255f).ToColor();
             }
             return BaseColor(ray);
         }
@@ -29,9 +35,9 @@ namespace RayTraycingInOneWeek.RayTracing
             var unitDir = Vector3.Normalize(ray.Direction);
             var t = 0.5f * (unitDir.Y + 1);
             var colorVec = Vector3.Lerp( 
-                new Vector3(Color.Aquamarine.R, Color.Aquamarine.G, Color.Aquamarine.B), 
-                new Vector3(Color.White.R, Color.White.G, Color.White.B), t);
-            return Color.FromArgb(255, (int)colorVec.X, (int)colorVec.Y, (int)colorVec.Z);
+                Color.Aquamarine.ToVector(), 
+                Color.Aquamarine.ToVector(), t);
+            return colorVec.ToColor();
         }
     }
 }

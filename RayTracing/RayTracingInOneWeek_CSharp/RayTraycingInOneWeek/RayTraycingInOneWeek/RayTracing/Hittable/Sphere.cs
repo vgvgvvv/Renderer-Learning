@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System;
+using System.Numerics;
 
 namespace RayTraycingInOneWeek.RayTracing
 {
@@ -17,13 +18,38 @@ namespace RayTraycingInOneWeek.RayTracing
         {
             Vector3 oc = ray.Origin - Center;
             var a = Vector3.Dot(ray.Direction, ray.Direction);
-            var b = 2.0f * Vector3.Dot(oc, ray.Direction);
+            var half_b = Vector3.Dot(oc, ray.Direction);
             var c = Vector3.Dot(oc, oc) - Radius * Radius;
-            var discriminant = b * b - 4 * a * c;
+            var discriminant = half_b * half_b - a * c;
 
             rec = new HitRecord();
-            
-            return discriminant > 0;
+
+            if (discriminant > 0)
+            {
+                var root = Math.Sqrt(discriminant);
+                var t = (-half_b - root) / a;
+                if (t < maxT && t > minT)
+                {
+                    rec.t = (float)t;
+                    rec.HitPoint = ray.At((float)t);
+                    var outwardNormal = (rec.HitPoint - Center) / Radius;
+                    rec.SetNormal(ray, outwardNormal);
+                    return true;
+                }
+
+                t = (-half_b + root) / a;
+                if (t < maxT && t > minT)
+                {
+                    rec.t = (float)t;
+                    rec.HitPoint = ray.At((float)t);
+                    // 交点-中心=法线
+                    var outwardNormal = (rec.HitPoint - Center) / Radius;
+                    rec.SetNormal(ray, outwardNormal);
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
