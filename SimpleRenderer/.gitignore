@@ -1,3 +1,4 @@
 /Binary/
 /Temp/
 *.pdb
+/cmake-build-debug/
