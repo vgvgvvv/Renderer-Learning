@@ -8,13 +8,14 @@ namespace RayTraycingInOneWeek.RayTracing
         public Vector3 Center;
         public float Radius;
 
-        public Sphere(Vector3 center, float radius)
+        public Sphere(Vector3 center, float radius, Material material)
         {
             Center = center;
             Radius = radius;
+            Material = material;
         }
         
-        public bool Hit(Ray ray, float minT, float maxT, out HitRecord rec)
+        public override bool Hit(Ray ray, float minT, float maxT, out HitRecord rec)
         {
             Vector3 oc = ray.Origin - Center;
             var a = Vector3.Dot(ray.Direction, ray.Direction);
@@ -34,6 +35,7 @@ namespace RayTraycingInOneWeek.RayTracing
                     rec.HitPoint = ray.At((float)t);
                     var outwardNormal = (rec.HitPoint - Center) / Radius;
                     rec.SetNormal(ray, outwardNormal);
+                    rec.HitMaterial = Material;
                     return true;
                 }
 
@@ -45,6 +47,7 @@ namespace RayTraycingInOneWeek.RayTracing
                     // 交点-中心=法线
                     var outwardNormal = (rec.HitPoint - Center) / Radius;
                     rec.SetNormal(ray, outwardNormal);
+                    rec.HitMaterial = Material;
                     return true;
                 }
             }

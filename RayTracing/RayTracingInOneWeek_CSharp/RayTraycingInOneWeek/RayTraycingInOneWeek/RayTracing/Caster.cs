@@ -8,19 +8,45 @@ namespace RayTraycingInOneWeek.RayTracing
 {
     public class World
     {
-        public HittableList AllHittable = new HittableList();
-        // public Sphere sphere = new Sphere(new Vector3(0, 0, -1), 0.5f);
-        
         /// <summary>
         /// 投射获取颜色函数
         /// </summary>
         /// <param name="ray"></param>
+        /// <param name="world"></param>
+        /// <param name="boundTimes"></param>
+        /// <param name="falloff"></param>
         /// <returns></returns>
-        public Color CastColor(Ray ray)
+        public Color CastColor(Ray ray, Hittable world, int boundTimes)
         {
-            if (AllHittable.Hit(ray, 0, float.MaxValue, out var rec))
+            if (boundTimes <= 0)
             {
-                return (0.5f * (rec.Normal + Vector3.One) * 255f).ToColor();
+                return Color.Black;
+            }
+            
+            //这里的0.001是为了防止自相交问题导致的光照偏暗
+            if (world.Hit(ray, 0.001f, float.MaxValue, out var rec))
+            {
+                Ray scattered;
+                Color attenuation;
+                if (rec.HitMaterial.Scatter(ray, rec, out attenuation, out scattered))
+                {
+                    Vector3 Color = (attenuation.ToVector() / 255f) *
+                                    (CastColor(scattered, world, boundTimes - 1).ToVector() / 255f) * 255f;
+                    return Color.ToColor();
+                }
+                
+                return Color.Black;
+
+                // 圆形区域
+                // float falloff = 0.5f;
+                // Vector3 target = rec.HitPoint + rec.Normal + VectorEx.RandomUnitVector();
+                // Vector3 colorVec = falloff *
+                //                    CastColor(new Ray(rec.HitPoint, target-rec.HitPoint), world, boundTimes - 1)
+                //                        .ToVector();
+                // return colorVec.ToColor();
+                
+                // 法线颜色
+                //return (0.5f * (rec.Normal + Vector3.One) * 255f).ToColor();
             }
             return BaseColor(ray);
         }
@@ -35,8 +61,8 @@ namespace RayTraycingInOneWeek.RayTracing
             var unitDir = Vector3.Normalize(ray.Direction);
             var t = 0.5f * (unitDir.Y + 1);
             var colorVec = Vector3.Lerp( 
-                Color.Aquamarine.ToVector(), 
-                Color.Aquamarine.ToVector(), t);
+                Color.White.ToVector(), 
+                Color.White.ToVector(), t);
             return colorVec.ToColor();
         }
     }

@@ -16,7 +16,7 @@ namespace RayTraycingInOneWeek.Utility
                 for (int x = 0; x < w; x++)
                 {
                     int arrayIndex = y * w + x;
-                    pic.SetPixel(x, h-y, data[arrayIndex]);
+                    pic.SetPixel(x, h-y, data[arrayIndex].ToGammarColor());
                 }
             }
             

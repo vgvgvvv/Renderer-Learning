@@ -6,7 +6,7 @@ namespace RayTraycingInOneWeek.RayTracing
     {
         public List<Hittable> Hittables { get; } = new List<Hittable>();
         
-        public bool Hit(Ray ray, float minT, float maxT, out HitRecord rec)
+        public override bool Hit(Ray ray, float minT, float maxT, out HitRecord rec)
         {
             rec = new HitRecord();
 

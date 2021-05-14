@@ -8,6 +8,7 @@ namespace RayTraycingInOneWeek.RayTracing
         public Vector3 Normal;
         public float t;
         public bool FrontFace;
+        public Material HitMaterial;
 
         public void SetNormal(Ray ray, Vector3 outwardNormal)
         {
@@ -16,8 +17,9 @@ namespace RayTraycingInOneWeek.RayTracing
         }
     }
     
-    public interface Hittable
+    public abstract class Hittable
     {
-        bool Hit(Ray ray, float minT, float maxT, out HitRecord rec);
+        public Material Material { protected set; get; }
+        public abstract bool Hit(Ray ray, float minT, float maxT, out HitRecord rec);
     }
 }
