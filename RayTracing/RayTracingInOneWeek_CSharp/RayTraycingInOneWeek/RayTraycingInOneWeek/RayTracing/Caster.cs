@@ -37,16 +37,6 @@ namespace RayTraycingInOneWeek.RayTracing
                 
                 return Color.Black;
 
-                // 圆形区域
-                // float falloff = 0.5f;
-                // Vector3 target = rec.HitPoint + rec.Normal + VectorEx.RandomUnitVector();
-                // Vector3 colorVec = falloff *
-                //                    CastColor(new Ray(rec.HitPoint, target-rec.HitPoint), world, boundTimes - 1)
-                //                        .ToVector();
-                // return colorVec.ToColor();
-                
-                // 法线颜色
-                //return (0.5f * (rec.Normal + Vector3.One) * 255f).ToColor();
             }
             return BaseColor(ray);
         }

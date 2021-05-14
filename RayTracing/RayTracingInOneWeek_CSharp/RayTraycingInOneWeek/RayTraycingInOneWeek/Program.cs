@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Numerics;
+using System.Threading.Tasks;
 using RayTraycingInOneWeek.RayTracing;
+using RayTraycingInOneWeek.Scene;
 using RayTraycingInOneWeek.Utility;
 
 namespace RayTraycingInOneWeek
@@ -10,77 +12,57 @@ namespace RayTraycingInOneWeek
     {
         static void Main(string[] args)
         {
-            World world = new World();
-
-            float fov = 90;
             int width = 200;
             int height = 100;
-            float aspect = (float)width / 100;
-            Camera camera = new Camera(new Vector3(-1, 1, 1), new Vector3(0, 0, -1), Vector3.UnitY, fov, aspect);
+            
+            World caster = new World();
 
-            int boundTimes = 5;
-            HittableList AllHittable = new HittableList();
+            Vector3 lookFrom = new Vector3(0, 0, 1);
+            Vector3 lookAt = new Vector3(0, 0, -1);
+            float fov = 45;
+            Vector3 up = new Vector3(0, 1, 0);
+            
+            float aspect = (float)width / height;
+            Camera camera = new Camera(lookFrom, lookAt, up, fov, aspect);
 
-            var Color1 = Color.FromArgb((int) (255 * 0.7f), (int) (255 * 0.3f), (int) (255 * 0.3f));
-            var Color2 = Color.FromArgb((int)(255 * 0.8f), (int)(255 * 0.8f), (int)(255 * 0.8f));
-            var Color3 = Color.FromArgb((int)(255 * 0.8f), (int)(255 * 0.6f), (int)(255 * 0.2f));
-            var Color4 = Color.FromArgb((int)(255 * 0.8f), (int)(255 * 0.8f), (int)(255 * 0f));
-            
-            AllHittable.Hittables.AddRange(new []
-            {
-                new Sphere(new Vector3(0, 0, -1), 0.5f, new Lambertian(Color1)),
-                // new Sphere(new Vector3(-1, 0, -1f), -0.49f, new DielectricMaterial(1.5f)),
-                new Sphere(new Vector3(-1, 0, -1f), 0.5f, new DielectricMaterial(1.5f)),
-                new Sphere(new Vector3(1, 0, -1f), 0.5f, new MetalMaterial(Color3, 0.1f)),
-                
-                new Sphere(new Vector3(0, -100.5f, -1), 100f, new Lambertian(Color4)),
-            });
-            
-            
-            
-
+            int boundTimes = 3;
             bool antiAliasing = true;
             int sampleCount = 100;
             Random random = new Random();
             
+            Hittable world = RandomScene.GetTestScene();
+
+            
             Color[] data = new Color[width * height * 4];
            
-            for (int w = 0; w < width; w++)
+            //Parallel.For(0, height * width, now =>
+            
+            for(int w = 0; w < width; w++)
+            for(int h = 0; h < height; h++)
             {
-                for (int h = 0; h < height; h++)
-                {
-                    //抗锯齿随机采样 Anti-aliasing
-                    if(antiAliasing)
-                    {
-                        Vector3 colorVec = Vector3.Zero;
-                        for (int i = 0; i < sampleCount; i++)
-                        {
-                            float u = (float)(w + random.NextDouble()) / width;
-                            float v = (float) (h + random.NextDouble()) / height;
-                            var ray = camera.GetRay(u, v);
-                            Color color = world.CastColor(ray, AllHittable, boundTimes);
-                            colorVec += color.ToVector();
-                        }
-
-                        data[w + h * width] = (colorVec / sampleCount).ToColor();
-                    }
-                    else
-                        // 无抗锯齿
-                    {
-                        var ray = camera.GetRay(w / (float)width, h / (float)height);
-                        Color color = world.CastColor(ray, AllHittable, boundTimes);
-                        data[w + h * width] = color;
-                    }
+                // var w = now % width;
+                // var h = now / width;
                     
-                    // Show UV Color
-                    // var r = w / (float)width;
-                    // var g = h / (float)height;
-                    // var b = 0.2;
-                    // data[w + h * width] = Color.FromArgb((int)(r * 255), (int)(g * 255), (int)(b * 255));
-                    //
-                }
-            }
+                if (antiAliasing)
+                {
+                    Vector3 colorVec = Vector3.Zero;
+                    // 抗锯齿多次发射
+                    for (int i = 0; i < sampleCount; i++)
+                    {
+                        float u = (float) (w + random.NextDouble()) / width;
+                        float v = (float) (h + random.NextDouble()) / height;
+                        var ray = camera.GetRay(u, v);
+                        Color color = caster.CastColor(ray, world, boundTimes);
+                        colorVec += color.ToVector();
+                    }
 
+                    Color currentColor = (colorVec / sampleCount).ToColor();
+                    Console.WriteLine($"x:{w} y:{h} color:{currentColor}");
+
+                    data[w + h * width] = currentColor;
+                }
+            };
+            
             var img = ImageHelper.GetDataPicture(width, height, data);
             img.Save("D:/test.jpg");
         }

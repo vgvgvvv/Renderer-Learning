@@ -18,7 +18,7 @@ namespace RayTraycingInOneWeek.RayTracing
                 if (hittable.Hit(ray, minT, closestDistance, out var result))
                 {
                     hitAnything = true;
-                    closestDistance = rec.t;
+                    closestDistance = result.t;
                     rec = result;
                 }
             }
