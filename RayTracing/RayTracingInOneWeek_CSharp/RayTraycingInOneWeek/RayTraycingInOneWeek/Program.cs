@@ -12,8 +12,8 @@ namespace RayTraycingInOneWeek
     {
         static void Main(string[] args)
         {
-            int width = 200;
-            int height = 100;
+            int width = 512;
+            int height = 256;
             
             World caster = new World();
 
@@ -35,14 +35,10 @@ namespace RayTraycingInOneWeek
             
             Color[] data = new Color[width * height * 4];
            
-            //Parallel.For(0, height * width, now =>
             
             for(int w = 0; w < width; w++)
-            for(int h = 0; h < height; h++)
+            for (int h = 0; h < height; h++)
             {
-                // var w = now % width;
-                // var h = now / width;
-                    
                 if (antiAliasing)
                 {
                     Vector3 colorVec = Vector3.Zero;
@@ -61,7 +57,8 @@ namespace RayTraycingInOneWeek
 
                     data[w + h * width] = currentColor;
                 }
-            };
+            }
+           
             
             var img = ImageHelper.GetDataPicture(width, height, data);
             img.Save("D:/test.jpg");
