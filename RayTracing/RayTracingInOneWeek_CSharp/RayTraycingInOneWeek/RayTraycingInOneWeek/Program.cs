@@ -17,20 +17,20 @@ namespace RayTraycingInOneWeek
             
             World caster = new World();
 
-            Vector3 lookFrom = new Vector3(0, 0, 1);
+            Vector3 lookFrom = new Vector3(5, 2, 2);
             Vector3 lookAt = new Vector3(0, 0, -1);
-            float fov = 45;
+            float fov = 20;
             Vector3 up = new Vector3(0, 1, 0);
             
             float aspect = (float)width / height;
             Camera camera = new Camera(lookFrom, lookAt, up, fov, aspect);
 
-            int boundTimes = 3;
+            int boundTimes = 10;
             bool antiAliasing = true;
             int sampleCount = 100;
             Random random = new Random();
             
-            Hittable world = RandomScene.GetTestScene();
+            Hittable world = RandomScene.GetRandomScene();
 
             
             Color[] data = new Color[width * height * 4];
