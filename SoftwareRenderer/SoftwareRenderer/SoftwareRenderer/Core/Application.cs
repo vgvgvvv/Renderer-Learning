@@ -5,7 +5,7 @@ namespace SoftwareRenderer.Core
 {
     public class Application
     {
-        public static Application Instance;
+        private static Application Instance;
 
         public static Application GetInstance()
         {
@@ -26,7 +26,7 @@ namespace SoftwareRenderer.Core
 
 
         public InputSystem inputSystem;
-        public SDLRenderer sdlRenderer;
+        public IRenderer renderSystem;
         public World world;
 
         private bool shouldQuit = false;
@@ -65,14 +65,14 @@ namespace SoftwareRenderer.Core
                     shouldQuit = true;
                 }
             };
-            sdlRenderer = new SDLRenderer(Renderer, WINDOW_WIDTH, WINDOW_HEIGHT);
+            renderSystem = new SDLRenderer(Renderer, WINDOW_WIDTH, WINDOW_HEIGHT);
 
         }
 
         private void Update()
         {
             world.Update();
-            sdlRenderer.Update();
+            renderSystem.Update();
             inputSystem.Update();
         }
         

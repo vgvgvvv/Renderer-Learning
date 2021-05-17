@@ -5,13 +5,15 @@ using SoftwareRenderer.Render;
 
 namespace SoftwareRenderer.Core
 {
-    public class SDLRenderer
+    public class SDLRenderer : IRenderer
     {
         public IntPtr Renderer { get; }
         public int Width { get; }
         public int Height { get; }
 
         private SoftwareRenderDevice device;
+
+        public SoftwareRenderDevice Device => device;
 
         public SDLRenderer(IntPtr renderer, int width, int height)
         {

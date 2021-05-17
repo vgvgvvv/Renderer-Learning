@@ -4,9 +4,14 @@ using System.Text;
 
 namespace SoftwareRenderer.Render
 {
-    public class MeshRenderer : WorldObject
+    public class MeshRenderer : Renderer
     {
         public Mesh RawMesh { get; set; }
 
+
+        public override void Update()
+        {
+            base.Update();
+        }
     }
 }

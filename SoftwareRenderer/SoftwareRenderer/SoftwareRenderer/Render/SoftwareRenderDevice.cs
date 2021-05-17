@@ -12,6 +12,8 @@ namespace SoftwareRenderer.Render
 
         public Color ClearColor { get; set; } = Color.Black;
 
+        public Transform ViewTransform { get; set; }
+
 
         public SoftwareRenderDevice(int width, int height)
         {
@@ -108,7 +110,13 @@ namespace SoftwareRenderer.Render
                 }
             }
         }
-
+        
+        /// <summary>
+        /// 绘制project之前的三角形
+        /// </summary>
+        /// <param name="p1"></param>
+        /// <param name="p2"></param>
+        /// <param name="p3"></param>
         public void DrawTriangle(Vector3 p1, Vector3 p2, Vector3 p3)
         {
 
