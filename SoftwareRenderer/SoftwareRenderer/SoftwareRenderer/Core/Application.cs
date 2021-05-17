@@ -25,8 +25,9 @@ namespace SoftwareRenderer.Core
         public IntPtr Renderer;
 
 
-        public InputSystem InputSystem { get; }= new InputSystem();
-        public RenderDevice RenderDevice { get; }= new RenderDevice();
+        public InputSystem inputSystem;
+        public SDLRenderer sdlRenderer;
+        public World world;
 
         private bool shouldQuit = false;
 
@@ -56,20 +57,23 @@ namespace SoftwareRenderer.Core
                 Console.WriteLine("cannot create window, Error : {0}", SDL.SDL_GetError());
             }
 
-            InputSystem.OnInputEvent += inputEvent =>
+            inputSystem = new InputSystem();
+            inputSystem.OnInputEvent += inputEvent =>
             {
                 if (inputEvent.type == SDL.SDL_EventType.SDL_QUIT)
                 {
                     shouldQuit = true;
                 }
             };
+            sdlRenderer = new SDLRenderer(Renderer, WINDOW_WIDTH, WINDOW_HEIGHT);
 
         }
 
         private void Update()
         {
-            RenderDevice.Update();
-            InputSystem.Update();
+            world.Update();
+            sdlRenderer.Update();
+            inputSystem.Update();
         }
         
         private void Uninit()
