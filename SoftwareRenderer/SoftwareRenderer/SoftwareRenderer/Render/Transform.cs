@@ -9,6 +9,6 @@ namespace SoftwareRenderer.Render
     {
         public Vector3 position = Vector3.Zero;
         public Vector3 scale = Vector3.One;
-        public Quaternion rotation = Quaternion.Identity;
+        public Vector3 eulerAngle = Vector3.Zero;
     }
 }

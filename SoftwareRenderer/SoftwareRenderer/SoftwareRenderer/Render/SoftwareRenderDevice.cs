@@ -12,7 +12,8 @@ namespace SoftwareRenderer.Render
 
         public Color ClearColor { get; set; } = Color.Black;
 
-        public Transform ViewTransform { get; set; }
+        public Matrix4x4 ViewMat { get; set; }
+        public Matrix4x4 ProjectorMat { get; set; }
 
 
         public SoftwareRenderDevice(int width, int height)
@@ -117,7 +118,7 @@ namespace SoftwareRenderer.Render
         /// <param name="p1"></param>
         /// <param name="p2"></param>
         /// <param name="p3"></param>
-        public void DrawTriangle(Vector3 p1, Vector3 p2, Vector3 p3)
+        public void DrawTriangle(Vector3 p1, Vector3 p2, Vector3 p3, Matrix4x4 m, Matrix4x4 v, Matrix4x4 p)
         {
 
         }
@@ -137,6 +138,26 @@ namespace SoftwareRenderer.Render
 
         #endregion
 
+        #region Transform
+
+        public Vector3 TransformModel(Transform transform, Vector3 pos)
+        {
+            Matrix4x4 tranMat = Matrix4x4.Identity;
+            
+           
+        }
+
+        public Vector3 TransformView(Transform transform, Vector3 pos)
+        {
+
+        }
+
+        public Vector3 TransformProjector(Vector3 pos)
+        {
+
+        }
+
+        #endregion
 
         public void FrameClear()
         {

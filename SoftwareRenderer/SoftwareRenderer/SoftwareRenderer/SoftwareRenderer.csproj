@@ -12,6 +12,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="NUnit" Version="3.5.0" />
+    </ItemGroup>
+
+    <ItemGroup>
       <None Update="SDL2.dll">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
