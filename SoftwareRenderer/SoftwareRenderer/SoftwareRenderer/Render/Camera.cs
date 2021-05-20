@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Numerics;
-using System.Text;
-using SoftwareRenderer.Core;
+﻿using System.Collections.Generic;
+using SoftwareRenderer.Utility;
 
 namespace SoftwareRenderer.Render
 {
@@ -25,7 +21,7 @@ namespace SoftwareRenderer.Render
 
         public int FOV = 60;
         public float Aspect = 16.0f/9;
-        public Vector3 Forward =>  * -Vector3.UnitZ;
+        public Vector3 Forward =>  Vector3.forward;
 
         public override void Update()
         {

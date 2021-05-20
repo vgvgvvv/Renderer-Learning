@@ -12,7 +12,7 @@ namespace SoftwareRenderer.Test
         [Test]
         public void TestRotate()
         {
-            Vector3 forward = -Vector3.UnitZ;
+            
         }
     }
 }

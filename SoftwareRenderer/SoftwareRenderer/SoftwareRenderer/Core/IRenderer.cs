@@ -8,5 +8,7 @@ namespace SoftwareRenderer.Core
     public interface IRenderer
     {
         public SoftwareRenderDevice Device { get; }
+
+        public void Update();
     }
 }

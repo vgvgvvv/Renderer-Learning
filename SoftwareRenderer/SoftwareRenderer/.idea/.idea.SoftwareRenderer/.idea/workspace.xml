@@ -5,8 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="764c39d4-cb4a-42de-9740-db8dbb2fce06" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../RayTracing/RayTracingInOneWeek_CSharp/RayTraycingInOneWeek/.idea/.idea.RayTraycingInOneWeek/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../RayTracing/RayTracingInOneWeek_CSharp/RayTraycingInOneWeek/.idea/.idea.RayTraycingInOneWeek/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../RayTracing/RayTracingInOneWeek_CSharp/RayTraycingInOneWeek/RayTraycingInOneWeek/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../RayTracing/RayTracingInOneWeek_CSharp/RayTraycingInOneWeek/RayTraycingInOneWeek/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Utility/Plane.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Utility/Quaternion.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Utility/Ray.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Utility/Time.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Utility/Vector2.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Utility/Vector4.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/riderModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Core/IRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Core/IRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Camera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Camera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Test/TestMath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Test/TestMath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Utility/Math.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Utility/Math.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Utility/MathUtil.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Utility/Matrix4x4.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Utility/Matrix4x4.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Utility/Vector3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Utility/Vector3.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,12 +33,24 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DFD37AD3-B68D-45FD-AFB9-2846DE708318/12/4cc7da4e/SDL.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AC613005-B340-44DC-ADAE-EE3E87D91FCA/6/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/SoftwareRenderer/SoftwareRenderer.csproj" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Program.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Math.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Time.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Vector2.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Vector3.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Vector4.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Camera.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/IRenderer.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Test/TestMath.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Quaternion.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Plane.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Ray.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Matrix4x4.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sa05uNJXNvYYKd8QNmqDoEf78f" />
@@ -75,13 +103,14 @@
       <option name="presentableId" value="Default" />
       <updated>1621095212604</updated>
       <workItem from="1621095233277" duration="2580000" />
+      <workItem from="1621502591836" duration="2224000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -93,6 +122,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
