@@ -1,4 +1,4 @@
-namespace SoftwareRenderer.Utility
+namespace MathLib
 {
     public class Time
     {

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SoftwareRenderer.Utility
+namespace MathLib
 {
-    public static class Mathf
+    public partial struct Mathf
     {
         public partial struct MathfInternal
         {
@@ -426,5 +426,44 @@ namespace SoftwareRenderer.Utility
             r.NextBytes(buffer);
             return (long)(System.BitConverter.ToUInt64(buffer, 0) & System.Int64.MaxValue);
         }
+    }
+    
+    public partial struct Mathf
+    {
+        extern public static int  ClosestPowerOfTwo(int value);
+
+        public static bool IsPowerOfTwo(int value)
+        {
+            if (value == 0)
+                return false;
+ 
+            return (int)(Math.Ceiling((Math.Log(value) /
+                                       Math.Log(2)))) ==
+                   (int)(Math.Floor(((Math.Log(value) /
+                                      Math.Log(2)))));
+        }
+
+        public static int NextPowerOfTwo(int value)
+        {
+            int v = value;
+            v--;
+            v |= v >> 1;
+            v |= v >> 2;
+            v |= v >> 4;
+            v |= v >> 8;
+            v |= v >> 16;
+            v++;
+            return v;
+        }
+
+        
+        extern public static float GammaToLinearSpace(float value);
+        extern public static float LinearToGammaSpace(float value);
+        extern public static Color CorrelatedColorTemperatureToRGB(float kelvin);
+
+        extern public static ushort FloatToHalf(float val);
+        extern public static float HalfToFloat(ushort val);
+
+        extern public static float PerlinNoise(float x, float y);
     }
 }

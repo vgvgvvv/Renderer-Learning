@@ -1,9 +1,9 @@
 using System;
 using System.Globalization;
 
-namespace SoftwareRenderer.Utility
+namespace MathLib
 {
-    public struct Quaternion : IEquatable<Quaternion>, IFormattable
+    public partial struct Quaternion : IEquatable<Quaternion>, IFormattable
     {
         // X component of the Quaternion. Don't modify this directly unless you know quaternions inside out.
         public float x;
@@ -245,33 +245,126 @@ namespace SoftwareRenderer.Utility
             return String.Format("({0}, {1}, {2}, {3})", x.ToString(format, formatProvider), y.ToString(format, formatProvider), z.ToString(format, formatProvider), w.ToString(format, formatProvider));
         }
 
-        [System.Obsolete("Use Quaternion.Euler instead. This function was deprecated because it uses radians instead of degrees.")]
-        static public Quaternion EulerRotation(float x, float y, float z) { return Internal_FromEulerRad(new Vector3(x, y, z)); }
-        [System.Obsolete("Use Quaternion.Euler instead. This function was deprecated because it uses radians instead of degrees.")]
-        public static Quaternion EulerRotation(Vector3 euler) { return Internal_FromEulerRad(euler); }
-        [System.Obsolete("Use Quaternion.Euler instead. This function was deprecated because it uses radians instead of degrees.")]
-        public void SetEulerRotation(float x, float y, float z) { this = Internal_FromEulerRad(new Vector3(x, y, z)); }
-        [System.Obsolete("Use Quaternion.Euler instead. This function was deprecated because it uses radians instead of degrees.")]
-        public void SetEulerRotation(Vector3 euler) { this = Internal_FromEulerRad(euler); }
-        [System.Obsolete("Use Quaternion.eulerAngles instead. This function was deprecated because it uses radians instead of degrees.")]
-        public Vector3 ToEuler() { return Internal_ToEulerRad(this); }
-        [System.Obsolete("Use Quaternion.Euler instead. This function was deprecated because it uses radians instead of degrees.")]
-        static public Quaternion EulerAngles(float x, float y, float z) { return Internal_FromEulerRad(new Vector3(x, y, z)); }
-        [System.Obsolete("Use Quaternion.Euler instead. This function was deprecated because it uses radians instead of degrees.")]
-        public static Quaternion EulerAngles(Vector3 euler) {  return Internal_FromEulerRad(euler); }
-        [System.Obsolete("Use Quaternion.ToAngleAxis instead. This function was deprecated because it uses radians instead of degrees.")]
-        public void ToAxisAngle(out Vector3 axis, out float angle) { Internal_ToAxisAngleRad(this, out axis, out angle);  }
-        [System.Obsolete("Use Quaternion.Euler instead. This function was deprecated because it uses radians instead of degrees.")]
-        public void SetEulerAngles(float x, float y, float z) { SetEulerRotation(new Vector3(x, y, z)); }
-        [System.Obsolete("Use Quaternion.Euler instead. This function was deprecated because it uses radians instead of degrees.")]
-        public void SetEulerAngles(Vector3 euler) { this = EulerRotation(euler); }
-        [System.Obsolete("Use Quaternion.eulerAngles instead. This function was deprecated because it uses radians instead of degrees.")]
-        public static Vector3 ToEulerAngles(Quaternion rotation) { return Quaternion.Internal_ToEulerRad(rotation); }
-        [System.Obsolete("Use Quaternion.eulerAngles instead. This function was deprecated because it uses radians instead of degrees.")]
-        public Vector3 ToEulerAngles() { return Quaternion.Internal_ToEulerRad(this); }
-        [System.Obsolete("Use Quaternion.AngleAxis instead. This function was deprecated because it uses radians instead of degrees.")]
-        public void SetAxisAngle(Vector3 axis, float angle) { this = AxisAngle(axis, angle); }
-        [System.Obsolete("Use Quaternion.AngleAxis instead. This function was deprecated because it uses radians instead of degrees")]
-        public static Quaternion AxisAngle(Vector3 axis, float angle) { return AngleAxis(Mathf.Rad2Deg * angle, axis); }
     }
+    
+    public partial struct Quaternion
+    {
+        extern public static Quaternion FromToRotation(Vector3 fromDirection, Vector3 toDirection);
+        extern public static Quaternion Inverse(Quaternion rotation);
+
+        extern public static Quaternion Slerp(Quaternion a, Quaternion b, float t);
+        extern public static Quaternion SlerpUnclamped(Quaternion a, Quaternion b, float t);
+        extern public static Quaternion Lerp(Quaternion a, Quaternion b, float t);
+        extern public static Quaternion LerpUnclamped(Quaternion a, Quaternion b, float t);
+
+        private static Quaternion Internal_FromEulerRad(Vector3 euler)
+        {
+            float cX  = Mathf.Cos (euler.x / 2.0f);
+            float sX  = Mathf.Sin (euler.x / 2.0f);
+
+            float cY =  Mathf.Cos (euler.y / 2.0f);
+            float sY = Mathf.Sin (euler.y / 2.0f);
+
+            float cZ = Mathf.Cos (euler.z / 2.0f);
+            float sZ = Mathf.Sin (euler.z / 2.0f);
+	
+            Quaternion qX = new Quaternion(sX, 0.0F, 0.0F, cX);
+            Quaternion qY = new Quaternion(0.0F, sY, 0.0F, cY);
+            Quaternion qZ = new Quaternion(0.0F, 0.0F, sZ, cZ);
+	
+            Quaternion q = (qY * qX) * qZ;
+            // AssertIf (!CompareApproximately (SqrMagnitude (q), 1.0F));
+            return q;    
+        }
+
+        private static Vector3 Internal_ToEulerRad(Quaternion rotation)
+        {
+            Matrix3x3 m;
+            Vector3 rot;
+            m = ToMatrix3x3(rotation);
+            m.ToEuler (out rot);
+            return rot;
+        }
+
+        public static Matrix3x3 ToMatrix3x3(Quaternion rotation)
+        {
+            var q = rotation;
+            float x = q.x * 2.0F;
+            float y = q.y * 2.0F;
+            float z = q.z * 2.0F;
+            float xx = q.x * x;
+            float yy = q.y * y;
+            float zz = q.z * z;
+            float xy = q.x * y;
+            float xz = q.x * z;
+            float yz = q.y * z;
+            float wx = q.w * x;
+            float wy = q.w * y;
+            float wz = q.w * z;
+
+            Matrix3x3 m = new Matrix3x3();
+            // Calculate 3x3 matrix from orthonormal basis
+            m[0] = 1.0f - (yy + zz);
+            m[1] = xy + wz;
+            m[2] = xz - wy;
+
+            m[3] = xy - wz;
+            m[4] = 1.0f - (xx + zz);
+            m[5] = yz + wx;
+	
+            m[6]  = xz + wy;
+            m[7]  = yz - wx;
+            m[8] = 1.0f - (xx + yy);
+
+            return m;
+        }
+
+        public static Matrix4x4 ToMatrix4x4(Quaternion rotation)
+        {
+            var q = rotation;
+            float x = q.x * 2.0F;
+            float y = q.y * 2.0F;
+            float z = q.z * 2.0F;
+            float xx = q.x * x;
+            float yy = q.y * y;
+            float zz = q.z * z;
+            float xy = q.x * y;
+            float xz = q.x * z;
+            float yz = q.y * z;
+            float wx = q.w * x;
+            float wy = q.w * y;
+            float wz = q.w * z;
+
+            Matrix4x4 m = new Matrix4x4();
+            // Calculate 3x3 matrix from orthonormal basis
+            m[0] = 1.0f - (yy + zz);
+            m[1] = xy + wz;
+            m[2] = xz - wy;
+            m[3] = 0.0F;
+
+            m[4] = xy - wz;
+            m[5] = 1.0f - (xx + zz);
+            m[6] = yz + wx;
+            m[7] = 0.0F;
+
+            m[8]  = xz + wy;
+            m[9]  = yz - wx;
+            m[10] = 1.0f - (xx + yy);
+            m[11] = 0.0F;
+
+            m[12] = 0.0F;
+            m[13] = 0.0F;
+            m[14] = 0.0F;
+            m[15] = 1.0F;
+            
+            return m;
+        }
+        
+        extern private static void Internal_ToAxisAngleRad(Quaternion q, out Vector3 axis, out float angle);
+        extern public static Quaternion AngleAxis(float angle, Vector3 axis);
+
+        extern public static Quaternion LookRotation(Vector3 forward, Vector3 upwards);
+        public static Quaternion LookRotation(Vector3 forward) { return LookRotation(forward, Vector3.up); }
+    }
+    
 }

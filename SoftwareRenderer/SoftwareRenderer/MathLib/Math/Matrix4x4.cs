@@ -4,9 +4,20 @@ using System.Globalization;
 using System.Numerics;
 using System.Text;
 
-namespace SoftwareRenderer.Utility
+namespace MathLib
 {
-    public struct Matrix4x4 : IEquatable<Matrix4x4>, IFormattable
+    public partial struct FrustumPlanes
+    {
+        public float left;
+        public float right;
+        public float bottom;
+        public float top;
+        public float zNear;
+        public float zFar;
+    }
+
+    
+    public partial struct Matrix4x4 : IEquatable<Matrix4x4>, IFormattable
     {// memory layout:
         //
         //                row no (=vertical)
@@ -394,4 +405,39 @@ namespace SoftwareRenderer.Utility
                 m30.ToString(format, formatProvider), m31.ToString(format, formatProvider), m32.ToString(format, formatProvider), m33.ToString(format, formatProvider));
         }
     }
+    
+    public partial struct Matrix4x4
+    {
+        extern private Quaternion    GetRotation();
+        extern private Vector3       GetLossyScale();
+        extern private bool          IsIdentity();
+        extern private float         GetDeterminant();
+        extern private FrustumPlanes DecomposeProjection();
+
+
+        public Quaternion rotation               { get { return GetRotation(); } }
+        public Vector3 lossyScale                { get { return GetLossyScale(); } }
+        public bool isIdentity                   { get { return IsIdentity(); } }
+        public float determinant                 { get { return GetDeterminant(); } }
+        public FrustumPlanes decomposeProjection { get { return DecomposeProjection(); } }
+
+        public static float Determinant(Matrix4x4 m) { return m.determinant; }
+
+        extern public static Matrix4x4 TRS(Vector3 pos, Quaternion q, Vector3 s);
+        public void SetTRS(Vector3 pos, Quaternion q, Vector3 s) { this = Matrix4x4.TRS(pos, q, s); }
+
+        extern public static Matrix4x4 Inverse(Matrix4x4 m);
+        public Matrix4x4 inverse { get { return Matrix4x4.Inverse(this); } }
+
+        extern public static Matrix4x4 Transpose(Matrix4x4 m);
+        public Matrix4x4 transpose { get { return Matrix4x4.Transpose(this); } }
+
+        extern public static Matrix4x4 Ortho(float left, float right, float bottom, float top, float zNear, float zFar);
+        extern public static Matrix4x4 Perspective(float fov, float aspect, float zNear, float zFar);
+        extern public static Matrix4x4 LookAt(Vector3 from, Vector3 to, Vector3 up);
+
+        extern public static Matrix4x4 Frustum(float left, float right, float bottom, float top, float zNear, float zFar);
+        public static Matrix4x4 Frustum(FrustumPlanes fp) { return Frustum(fp.left, fp.right, fp.bottom, fp.top, fp.zNear, fp.zFar); }
+    }
+    
 }

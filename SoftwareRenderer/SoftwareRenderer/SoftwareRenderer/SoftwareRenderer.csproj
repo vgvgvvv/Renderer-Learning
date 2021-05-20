@@ -9,16 +9,17 @@
     <ItemGroup>
       <Folder Include="Scene\" />
       <Folder Include="SDL" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="NUnit" Version="3.5.0" />
+      <Folder Include="Utility" />
     </ItemGroup>
 
     <ItemGroup>
       <None Update="SDL2.dll">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MathLib\MathLib.csproj" />
     </ItemGroup>
 
 </Project>

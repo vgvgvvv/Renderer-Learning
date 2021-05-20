@@ -4,9 +4,9 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace SoftwareRenderer.Utility
+namespace MathLib
 {
-    public struct Vector3 : IEquatable<Vector3>, IFormattable
+    public partial struct Vector3 : IEquatable<Vector3>, IFormattable
     {
         // *Undocumented*
         public const float kEpsilon = 0.00001F;
@@ -440,5 +440,34 @@ namespace SoftwareRenderer.Utility
         public static float AngleBetween(Vector3 from, Vector3 to) { return (float)Math.Acos(Mathf.Clamp(Vector3.Dot(from.normalized, to.normalized), -1F, 1F)); }
         [System.Obsolete("Use Vector3.ProjectOnPlane instead.")]
         public static Vector3 Exclude(Vector3 excludeThis, Vector3 fromThat) { return ProjectOnPlane(fromThat, excludeThis); }
+    }
+    
+    public partial struct Vector3
+    {
+        public static Vector3 Slerp(Vector3 lhs, Vector3 rhs, float t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static Vector3 SlerpUnclamped(Vector3 a, Vector3 b, float t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void OrthoNormalize(ref Vector3 normal, ref Vector3 tangent)
+        {
+            throw new NotImplementedException();
+        }
+        
+        public static void OrthoNormalize(ref Vector3 normal, ref Vector3 tangent, ref Vector3 binormal)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static Vector3 RotateTowards(Vector3 current, Vector3 target, float maxRadiansDelta,
+            float maxMagnitudeDelta)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

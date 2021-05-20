@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using SoftwareRenderer.Utility;
+using MathLib;
 
 namespace SoftwareRenderer.Render
 {

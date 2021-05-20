@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 
-namespace SoftwareRenderer.Utility
+namespace MathLib
 {
     public struct Vector2 : IEquatable<Vector2>, IFormattable
     {

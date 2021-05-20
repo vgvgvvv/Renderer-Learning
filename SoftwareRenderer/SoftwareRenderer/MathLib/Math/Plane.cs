@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
 
-namespace SoftwareRenderer.Utility
+namespace MathLib
 {
     public struct Plane : IFormattable
     {

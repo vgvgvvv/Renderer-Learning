@@ -140,22 +140,22 @@ namespace SoftwareRenderer.Render
 
         #region Transform
 
-        public Vector3 TransformModel(Transform transform, Vector3 pos)
-        {
-            Matrix4x4 tranMat = Matrix4x4.Identity;
-            
-           
-        }
-
-        public Vector3 TransformView(Transform transform, Vector3 pos)
-        {
-
-        }
-
-        public Vector3 TransformProjector(Vector3 pos)
-        {
-
-        }
+        // public Vector3 TransformModel(Transform transform, Vector3 pos)
+        // {
+        //     Matrix4x4 tranMat = Matrix4x4.Identity;
+        //     
+        //    
+        // }
+        //
+        // public Vector3 TransformView(Transform transform, Vector3 pos)
+        // {
+        //
+        // }
+        //
+        // public Vector3 TransformProjector(Vector3 pos)
+        // {
+        //
+        // }
 
         #endregion
 
