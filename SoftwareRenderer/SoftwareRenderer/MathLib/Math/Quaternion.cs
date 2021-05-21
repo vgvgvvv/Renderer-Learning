@@ -249,13 +249,111 @@ namespace MathLib
     
     public partial struct Quaternion
     {
-        extern public static Quaternion FromToRotation(Vector3 fromDirection, Vector3 toDirection);
-        extern public static Quaternion Inverse(Quaternion rotation);
+        public static Quaternion FromToRotation(Vector3 fromDirection, Vector3 toDirection)
+        {
+            var lhs = fromDirection;
+            var rhs = toDirection;
+            float lhsMag = Vector3.Magnitude (lhs);
+            float rhsMag = Vector3.Magnitude (rhs);
+            if (lhsMag < Vector3.kEpsilon || rhsMag < Vector3.kEpsilon)
+            {
+                return Quaternion.identity;
+            }
+            else
+            {
+                var from = lhs / lhsMag;
+                var to = rhs / rhsMag;
+                var m = Matrix3x3.FromToRotation(from, to);
+                var q = FromMatrix3x3(m) ;
+                return q;
+            }
+        }
 
-        extern public static Quaternion Slerp(Quaternion a, Quaternion b, float t);
-        extern public static Quaternion SlerpUnclamped(Quaternion a, Quaternion b, float t);
-        extern public static Quaternion Lerp(Quaternion a, Quaternion b, float t);
-        extern public static Quaternion LerpUnclamped(Quaternion a, Quaternion b, float t);
+        public static Quaternion Inverse(Quaternion rotation)
+        {
+            return rotation.Conjugate();
+        }
+
+        public Quaternion Conjugate()
+        {
+            return new Quaternion (-x, -y, -z, w);
+        }
+
+        public static Quaternion Slerp(Quaternion q1, Quaternion q2, float t)
+        {
+            //	Quaternionf q3 = new Quaternionf();
+            float dot = Dot( q1, q2 );
+
+            // dot = cos(theta)
+            // if (dot < 0), q1 and q2 are more than 90 degrees apart,
+            // so we can invert one to reduce spinning
+            Quaternion tmpQuat = new Quaternion();
+            if (dot < 0.0f )
+            {
+                dot = -dot;
+                tmpQuat.Set( -q2.x,
+                    -q2.y,
+                    -q2.z,
+                    -q2.w );
+            }
+            else
+                tmpQuat = q2;
+
+	
+            if (dot < 0.95f )
+            {
+                float angle = Mathf.Acos(dot);
+                float sinadiv, sinat, sinaomt;
+                sinadiv = 1.0f / Mathf.Sin(angle);
+                sinat   = Mathf.Sin(angle*t);
+                sinaomt = Mathf.Sin(angle*(1.0f-t));
+                tmpQuat.Set( (q1.x*sinaomt+tmpQuat.x*sinat)*sinadiv,
+                    (q1.y*sinaomt+tmpQuat.y*sinat)*sinadiv,
+                    (q1.z*sinaomt+tmpQuat.z*sinat)*sinadiv, 
+                    (q1.w*sinaomt+tmpQuat.w*sinat)*sinadiv  );
+                // AssertIf (!CompareApproximately (SqrMagnitude (tmpQuat), 1.0F));
+                return tmpQuat;
+
+            }
+            // if the angle is small, use linear interpolation
+            else
+            {
+                return Lerp(q1,tmpQuat,t);
+            }
+        }
+
+        public static Quaternion SlerpUnclamped(Quaternion a, Quaternion b, float t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static Quaternion Lerp(Quaternion q1, Quaternion q2, float t)
+        {
+            Quaternion tmpQuat = new Quaternion();
+            // if (dot < 0), q1 and q2 are more than 360 deg apart.
+            // The problem is that quaternions are 720deg of freedom.
+            // so we - all components when lerping
+            if (Dot (q1, q2) < 0.0F)
+            {
+                tmpQuat.Set(q1.x + t * (-q2.x - q1.x),
+                    q1.y + t * (-q2.y - q1.y),
+                    q1.z + t * (-q2.z - q1.z),
+                    q1.w + t * (-q2.w - q1.w));
+            }
+            else
+            {
+                tmpQuat.Set(q1.x + t * (q2.x - q1.x),
+                    q1.y + t * (q2.y - q1.y),
+                    q1.z + t * (q2.z - q1.z),
+                    q1.w + t * (q2.w - q1.w));
+            }
+            return Normalize (tmpQuat);
+        }
+
+        public static Quaternion LerpUnclamped(Quaternion a, Quaternion b, float t)
+        {
+            throw new NotImplementedException();
+        }
 
         private static Quaternion Internal_FromEulerRad(Vector3 euler)
         {
@@ -286,6 +384,48 @@ namespace MathLib
             return rot;
         }
 
+        public static Quaternion FromMatrix3x3(Matrix3x3 m)
+        {
+            var kRot = m;
+            var q = new Quaternion();
+            float fTrace = kRot.m00 + kRot.m11 + kRot.m22;
+            float fRoot;
+
+            if ( fTrace > 0.0f )
+            {
+                // |w| > 1/2, may as well choose w > 1/2
+                fRoot = Mathf.Sqrt (fTrace + 1.0f);  // 2w
+                q.w = 0.5f*fRoot;
+                fRoot = 0.5f/fRoot;  // 1/(4w)
+                q.x = (kRot.m21 - kRot.m12)*fRoot;
+                q.y = (kRot.m02 - kRot.m20)*fRoot;
+                q.z = (kRot.m10 - kRot.m01)*fRoot;
+            }
+            else
+            {
+                // |w| <= 1/2
+                int[] s_iNext = { 1, 2, 0 };
+                int i = 0;
+                if ( kRot.m11 > kRot.m00 )
+                    i = 1;
+                if ( kRot.m22 > kRot[i, i] )
+                    i = 2;
+                int j = s_iNext[i];
+                int k = s_iNext[j];
+
+                fRoot = Mathf.Sqrt (kRot[i, i] - kRot[j, j] - kRot[k, k] + 1.0f);
+                float[] apkQuat = { q.x, q.y, q.z };
+                // AssertIf (fRoot < Vector3.kEpsilon);
+                apkQuat[i] = 0.5f*fRoot;
+                fRoot = 0.5f / fRoot;
+                q.w = (kRot[k, j] - kRot[j, k]) * fRoot;
+                apkQuat[j] = (kRot[j, i] + kRot[i, j]) * fRoot;
+                apkQuat[k] = (kRot[k, i] + kRot[i, k]) * fRoot;
+            }
+            q = Normalize (q);
+            return q;
+        }
+        
         public static Matrix3x3 ToMatrix3x3(Quaternion rotation)
         {
             var q = rotation;
@@ -319,6 +459,15 @@ namespace MathLib
             return m;
         }
 
+        public static Quaternion FromMatrix4x4(Matrix4x4 m)
+        {
+            var m3 = new Matrix3x3(
+                m.m00, m.m01, m.m02,
+                m.m00, m.m01, m.m02,
+                m.m00, m.m01, m.m02);
+            return FromMatrix3x3(m3);
+        }
+        
         public static Matrix4x4 ToMatrix4x4(Quaternion rotation)
         {
             var q = rotation;
@@ -359,11 +508,53 @@ namespace MathLib
             
             return m;
         }
-        
-        extern private static void Internal_ToAxisAngleRad(Quaternion q, out Vector3 axis, out float angle);
-        extern public static Quaternion AngleAxis(float angle, Vector3 axis);
 
-        extern public static Quaternion LookRotation(Vector3 forward, Vector3 upwards);
+        public static void Internal_ToAxisAngleRad(Quaternion q, out Vector3 axis, out float targetAngle)
+        {
+            q = q.normalized;
+            //AssertIf (! CompareApproximately(SqrMagnitude (q), 1.0F));
+            targetAngle = 2.0f * Mathf.Acos(q.w);
+            if (Mathf.Approximately (targetAngle, 0.0F))
+            {
+                axis = Vector3.right;
+                return;
+            }
+		
+            float div = 1.0f / Mathf.Sqrt(1.0f - q.w * q.w);
+            axis = new Vector3(q.x*div, q.y*div, q.z*div);
+        }
+
+        public static Quaternion AngleAxis(float angle, Vector3 axis)
+        {
+            var rad = angle * Mathf.Deg2Rad;
+            Quaternion q = new Quaternion();
+            float mag = axis.magnitude;
+            if (mag > 0.000001F)
+            {
+                float halfAngle = angle * 0.5F;
+		
+                q.w = Mathf.Cos (halfAngle);
+
+                float s = Mathf.Sin (halfAngle) / mag;
+                q.x = s * axis.x;
+                q.y = s * axis.y;
+                q.z = s * axis.z;
+                return q;
+            }
+            else
+            {
+                return Quaternion.identity;
+            }
+
+        }
+
+        public static Quaternion LookRotation(Vector3 forward, Vector3 upwards)
+        {
+            Matrix3x3 m;
+            if (!Matrix3x3.LookRotationToMatrix (forward, upwards, out m))
+                return Quaternion.identity;
+            return FromMatrix3x3(m);
+        }
         public static Quaternion LookRotation(Vector3 forward) { return LookRotation(forward, Vector3.up); }
     }
     

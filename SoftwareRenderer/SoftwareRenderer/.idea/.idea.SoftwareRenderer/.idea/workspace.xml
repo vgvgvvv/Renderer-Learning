@@ -5,24 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="764c39d4-cb4a-42de-9740-db8dbb2fce06" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MathLib/Math/Bound.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MathLib/Math/Color.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MathLib/Math/Matrix3x3.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathLib/Math/PerlinNoise.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathLib/Math/Utility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/riderModule.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer.sln" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Camera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Camera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathLib/Math/Math.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathLib/Math/Math.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathLib/Math/Matrix3x3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathLib/Math/Matrix3x3.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathLib/Math/Matrix4x4.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathLib/Math/Matrix4x4.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathLib/Math/Quaternion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathLib/Math/Quaternion.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftwareRenderer/SoftwareRenderer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/SoftwareRenderer.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Test/TestMath.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Utility/Math.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathLib/Math/Math.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Utility/Matrix4x4.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathLib/Math/Matrix4x4.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Utility/Plane.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathLib/Math/Plane.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Utility/Quaternion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathLib/Math/Quaternion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Utility/Ray.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathLib/Math/Ray.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Utility/Time.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathLib/Math/Time.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Utility/Vector2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathLib/Math/Vector2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Utility/Vector3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathLib/Math/Vector3.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Utility/Vector4.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathLib/Math/Vector4.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +24,17 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AC613005-B340-44DC-ADAE-EE3E87D91FCA/6/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -59,6 +63,10 @@
       <option value="$PROJECT_DIR$/MathLib/Math/Bound.cs" />
       <option value="$PROJECT_DIR$/MathLib/Math/Matrix3x3.cs" />
       <option value="$PROJECT_DIR$/MathLib/Math/Quaternion.cs" />
+      <option value="$PROJECT_DIR$/MathLib/Math/PerlinNoise.cs" />
+      <option value="$PROJECT_DIR$/MathLib/Math/Math.cs" />
+      <option value="$PROJECT_DIR$/MathLib/Math/Utility.cs" />
+      <option value="$PROJECT_DIR$/MathLib/Math/Matrix4x4.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sa05uNJXNvYYKd8QNmqDoEf78f" />
@@ -82,7 +90,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.SoftwareRenderer">
+  <component name="RunManager">
     <configuration name="SoftwareRenderer" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -113,6 +121,7 @@
       <workItem from="1621095233277" duration="2580000" />
       <workItem from="1621502591836" duration="2224000" />
       <workItem from="1621516677864" duration="6976000" />
+      <workItem from="1621580552425" duration="8111000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MathLib
 {
@@ -262,7 +260,7 @@ namespace MathLib
         }
 
         // Compares two floating point values if they are similar.
-        public static bool Approximately(float a, float b)
+        public static bool Approximately(float a, float b, float? threshold = null)
         {
             // If a or b is zero, compare that the other is less or equal to epsilon.
             // If neither a or b are 0, then find an epsilon that is good for
@@ -271,7 +269,7 @@ namespace MathLib
             // 1.000001f can be represented while 1.0000001f is rounded to zero,
             // thus we could use an epsilon of 0.000001f for comparing values close to 1.
             // We multiply this epsilon by the biggest magnitude of a and b.
-            return Abs(b - a) < Max(0.000001f * Max(Abs(a), Abs(b)), Epsilon * 8);
+            return Abs(b - a) < Max(0.000001f * Max(Abs(a), Abs(b)), threshold ?? Epsilon * 8);
         }
 
         public static float SmoothDamp(float current, float target, ref float currentVelocity, float smoothTime, float maxSpeed)
@@ -430,7 +428,15 @@ namespace MathLib
     
     public partial struct Mathf
     {
-        extern public static int  ClosestPowerOfTwo(int value);
+        public static uint ClosestPowerOfTwo(uint v)
+        {
+            uint nextPower = NextPowerOfTwo (v);
+            uint prevPower = nextPower >> 1;
+            if (v - prevPower < nextPower - v)
+                return prevPower;
+            else
+                return nextPower;
+        }
 
         public static bool IsPowerOfTwo(int value)
         {
@@ -443,9 +449,9 @@ namespace MathLib
                                       Math.Log(2)))));
         }
 
-        public static int NextPowerOfTwo(int value)
+        public static uint NextPowerOfTwo(uint value)
         {
-            int v = value;
+            uint v = value;
             v--;
             v |= v >> 1;
             v |= v >> 2;
@@ -456,14 +462,57 @@ namespace MathLib
             return v;
         }
 
+        // http://www.opengl.org/registry/specs/EXT/framebuffer_sRGB.txt
+        // http://www.opengl.org/registry/specs/EXT/texture_sRGB_decode.txt
+        // {  cs / 12.92,                 cs <= 0.04045 }
+        // {  ((cs + 0.055)/1.055)^2.4,   cs >  0.04045 }
+        public static float GammaToLinearSpace(float value)
+        {
+            if (value <= 0.04045F)
+                return value / 12.92F;
+            else if (value < 1.0F)
+                return Pow((value + 0.055F)/1.055F, 2.4F);
+            else
+                return Pow(value, 2.4F);    
+        }
+
         
-        extern public static float GammaToLinearSpace(float value);
-        extern public static float LinearToGammaSpace(float value);
-        extern public static Color CorrelatedColorTemperatureToRGB(float kelvin);
+        // http://www.opengl.org/registry/specs/EXT/framebuffer_sRGB.txt
+        // http://www.opengl.org/registry/specs/EXT/texture_sRGB_decode.txt
+        // {  0.0,                          0         <= cl
+        // {  12.92 * c,                    0         <  cl < 0.0031308
+        // {  1.055 * cl^0.41666 - 0.055,   0.0031308 <= cl < 1
+        // {  1.0,                                       cl >= 1  <- This has been adjusted since we want to maintain HDR colors
+        public static float LinearToGammaSpace(float value)
+        {
+            if (value <= 0.0F)
+                return 0.0F;
+            else if (value <= 0.0031308F)
+                return 12.92F * value;
+            else if (value <= 1.0F)
+                return 1.055F * Pow(value, 0.41666F) - 0.055F;
+            else
+                return Pow(value, 0.41666F);
+        }
 
-        extern public static ushort FloatToHalf(float val);
-        extern public static float HalfToFloat(ushort val);
+        public static Color CorrelatedColorTemperatureToRGB(float kelvin)
+        {
+            throw new NotImplementedException();
+        }
 
-        extern public static float PerlinNoise(float x, float y);
+        public static ushort FloatToHalf(float val)
+        {
+            return Convert.ToUInt16(val);
+        }
+
+        public static float HalfToFloat(ushort val)
+        {
+            return Convert.ToSingle(val);
+        }
+
+        public static float PerlinNoise(float x, float y)
+        {
+            return MathLib.PerlinNoise.NoiseNormalized(x, y);
+        }
     }
 }

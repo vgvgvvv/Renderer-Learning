@@ -34,6 +34,16 @@ namespace MathLib
             this.m20 = column0.z; this.m21 = column1.z; this.m22 = column2.z; 
         }
 
+        public Matrix3x3(
+            float m00, float m01, float m02,
+            float m10, float m11, float m12,
+            float m20, float m21, float m22)
+        {
+            this.m00 = m00; this.m01 = m01; this.m02 = m02; 
+            this.m10 = m10; this.m11 = m11; this.m12 = m12; 
+            this.m20 = m20; this.m21 = m21; this.m22 = m22; 
+        }
+
         // Access element at [row, column].
         public float this[int row, int column]
         {
@@ -306,8 +316,152 @@ namespace MathLib
             else if (euler.z > positiveFlip)
                 euler.z -= 2.0f * Mathf.PI;
         }
+
+        public static Matrix3x3 FromToRotation(Vector3 from, Vector3 to)
+        {
+            var mtx = new Matrix3x3();
+            Vector3 v;
+	        float e,h;
+            v = Vector3.Cross(from, to);
+	        e=Vector3.Dot(from,to);
+	        if(e > 1.0 - Mathf.Epsilon)     /* "from" almost or equal to "to"-vector? */
+	        {
+		        /* return identity */
+		        mtx[0,0]=1.0f; mtx[0,1]=0.0f; mtx[0,2]=0.0f;
+		        mtx[1,0]=0.0f; mtx[1,1]=1.0f; mtx[1,2]=0.0f;
+		        mtx[2,0]=0.0f; mtx[2,1]=0.0f; mtx[2,2]=1.0f;
+	        }
+	        else if(e < -1.0 + Mathf.Epsilon) /* "from" almost or equal to negated "to"? */
+            {
+                Vector3 up = new Vector3();
+                Vector3 left = new Vector3();
+		        float invlen;
+		        float fxx,fyy,fzz,fxy,fxz,fyz;
+		        float uxx,uyy,uzz,uxy,uxz,uyz;
+		        float lxx,lyy,lzz,lxy,lxz,lyz;
+		        /* left=CROSS(from, (1,0,0)) */
+		        left[0]=0.0f; left[1]=from[2]; left[2]=-from[1];
+		        if(Vector3.Dot(left,left) < Mathf.Epsilon) /* was left=CROSS(from,(1,0,0)) a good choice? */
+		        {
+			        /* here we now that left = CROSS(from, (1,0,0)) will be a good choice */
+			        left[0]=-from[2]; left[1]=0.0f; left[2]=from[0];
+		        }
+		        /* normalize "left" */
+		        invlen=1.0f / Mathf.Sqrt(Vector3.Dot(left,left));
+		        left[0]*=invlen;
+		        left[1]*=invlen;
+		        left[2]*=invlen;
+		        up = Vector3.Cross(left,from);
+		        /* now we have a coordinate system, i.e., a basis;    */
+		        /* M=(from, up, left), and we want to rotate to:      */
+		        /* N=(-from, up, -left). This is done with the matrix:*/
+		        /* N*M^T where M^T is the transpose of M              */
+		        fxx=-from[0]*from[0]; fyy=-from[1]*from[1]; fzz=-from[2]*from[2];
+		        fxy=-from[0]*from[1]; fxz=-from[0]*from[2]; fyz=-from[1]*from[2];
+
+		        uxx=up[0]*up[0]; uyy=up[1]*up[1]; uzz=up[2]*up[2];
+		        uxy=up[0]*up[1]; uxz=up[0]*up[2]; uyz=up[1]*up[2];
+
+		        lxx=-left[0]*left[0]; lyy=-left[1]*left[1]; lzz=-left[2]*left[2];
+		        lxy=-left[0]*left[1]; lxz=-left[0]*left[2]; lyz=-left[1]*left[2];
+		        /* symmetric matrix */
+		        mtx[0,0]=fxx+uxx+lxx; mtx[0,1]=fxy+uxy+lxy; mtx[0,2]=fxz+uxz+lxz;
+		        mtx[1,0]=mtx[0,1];   mtx[1,1]=fyy+uyy+lyy; mtx[1,2]=fyz+uyz+lyz;
+		        mtx[2,0]=mtx[0,2];   mtx[2,1]=mtx[1,2];   mtx[2,2]=fzz+uzz+lzz;
+	        }
+	        else  /* the most common case, unless "from"="to", or "from"=-"to" */
+	        {
+		        /* ...otherwise use this hand optimized version (9 mults less) */
+		        float hvx,hvz,hvxy,hvxz,hvyz;
+		        h=(1.0f-e)/Vector3.Dot(v,v);
+		        hvx=h*v[0];
+		        hvz=h*v[2];
+		        hvxy=hvx*v[1];
+		        hvxz=hvx*v[2];
+		        hvyz=hvz*v[1];
+		        mtx[0,0]=e+hvx*v[0]; mtx[0,1]=hvxy-v[2];     mtx[0,2]=hvxz+v[1];
+		        mtx[1,0]=hvxy+v[2];  mtx[1,1]=e+h*v[1]*v[1]; mtx[1,2]=hvyz-v[0];
+		        mtx[2,0]=hvxz-v[1];  mtx[2,1]=hvyz+v[0];     mtx[2,2]=e+hvz*v[2];
+	        }
+
+            return mtx;
+        }
+
+        public static bool LookRotationToMatrix(Vector3 viewVec, Vector3 upVec, out Matrix3x3 m)
+        {
+            Vector3 z = viewVec;
+            // compute u0
+            float mag = z.magnitude;
+            if (mag < Vector3.kEpsilon)
+            {
+                m = identity;
+                return false;
+            }
+            z /= mag;
+
+            Vector3 x = Vector3.Cross (upVec, z);
+            mag = x.magnitude;
+            if (mag < Vector3.kEpsilon)
+            {
+                m = identity;
+                return false;
+            }
+            x /= mag;
+	
+            Vector3 y = (Vector3.Cross (z, x));
+            if (!Mathf.Approximately(y.sqrMagnitude, 1.0F))
+            {
+                m = identity;
+                return false;
+            }
+
+            m = new Matrix3x3();
+            m.SetOrthoNormalBasis (x, y, z);
+            return true;	
+        }
         
-        
+        void SetIdentity()
+        {
+            this[0, 0] = 1.0F;	this[0, 1] = 0.0F;	this[0, 2] = 0.0F;
+            this[1, 0] = 0.0F;	this[1, 1] = 1.0F;	this[1, 2] = 0.0F;
+            this[2, 0] = 0.0F;	this[2, 1] = 0.0F;	this[2, 2] = 1.0F;
+        }
+
+        void SetZero ()
+        {
+            this[0, 0] = 0.0F;	this[0, 1] = 0.0F;	this[0, 2] = 0.0F;
+            this[1, 0] = 0.0F;	this[1, 1] = 0.0F;	this[1, 2] = 0.0F;
+            this[2, 0] = 0.0F;	this[2, 1] = 0.0F;	this[2, 2] = 0.0F;
+        }
+
+        void SetOrthoNormalBasis (Vector3 inX, Vector3 inY, Vector3 inZ)
+        {
+            this[0, 0] = inX[0];	this[0, 1] = inY[0];	this[0, 2] = inZ[0];
+            this[1, 0] = inX[1];	this[1, 1] = inY[1];	this[1, 2] = inZ[1];
+            this[2, 0] = inX[2];	this[2, 1] = inY[2];	this[2, 2] = inZ[2];
+        }
+
+        void SetOrthoNormalBasisInverse (Vector3 inX, Vector3 inY, Vector3 inZ)
+        {
+            this[0, 0] = inX[0];	this[1, 0] = inY[0];	this[2, 0] = inZ[0];
+            this[0, 1] = inX[1];	this[1, 1] = inY[1];	this[2, 1] = inZ[1];
+            this[0, 2] = inX[2];	this[1, 2] = inY[2];	this[2, 2] = inZ[2];
+        }
+
+        void SetScale (Vector3 inScale)
+        {
+            this[0, 0] = inScale[0];	this[0, 1] = 0.0F;			this[0, 2] = 0.0F;
+            this[1, 0] = 0.0F;			this[1, 1] = inScale[1];	this[1, 2] = 0.0F;
+            this[2, 0] = 0.0F;			this[2, 1] = 0.0F;			this[2, 2] = inScale[2];
+        }
+
+        bool IsIdentity (float threshold) {
+            if (Mathf.Approximately (this[0,0],1.0f, threshold) && Mathf.Approximately (this[0,1],0.0f, threshold) && Mathf.Approximately (this[0,2],0.0f, threshold) &&
+                Mathf.Approximately (this[1,0],0.0f, threshold) && Mathf.Approximately (this[1,1],1.0f, threshold) && Mathf.Approximately (this[1,2],0.0f, threshold) &&
+                Mathf.Approximately (this[2,0],0.0f, threshold) && Mathf.Approximately (this[2,1],0.0f, threshold) && Mathf.Approximately (this[2,2],1.0f, threshold))
+                return true;
+            return false;
+        }
         
         // Matrix4x4.zero is of questionable usefulness considering C# sets everything to 0 by default, however:
         //  1. it's consistent with other Math structs in Unity such as Vector2, Vector3 and Vector4,
