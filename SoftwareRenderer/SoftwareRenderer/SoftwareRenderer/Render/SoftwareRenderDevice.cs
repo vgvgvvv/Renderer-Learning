@@ -1,5 +1,5 @@
-﻿using MathLib;
-using Color = System.Drawing.Color;
+﻿using System;
+using MathLib;
 
 namespace SoftwareRenderer.Render
 {
@@ -10,7 +10,7 @@ namespace SoftwareRenderer.Render
         public int Width { get; }
         public int Height { get; }
 
-        public Color ClearColor { get; set; } = Color.Black;
+        public Color ClearColor { get; set; } = Color.black;
 
         public Matrix4x4 ViewMat { get; set; }
         public Matrix4x4 ProjectorMat { get; set; }
@@ -129,9 +129,9 @@ namespace SoftwareRenderer.Render
             {
                 for (int x = 0; x < Width; x++)
                 {
-                    var R = (float)x / Width * 255;
-                    var G = (float)y / Height * 255;
-                    Draw2DPoint(x, y, Color.FromArgb((int)R, (int)G, 0));
+                    var R = (float)x / Width;
+                    var G = (float)y / Height;
+                    Draw2DPoint(x, y, new Color(R, G, 0));
                 }
             }
         }
@@ -177,7 +177,7 @@ namespace SoftwareRenderer.Render
             FrameClear();
 
 
-            Draw2DLine(0, Height, Width, 0, Color.Red);
+            // Draw2DLine(0, Height, Width, 0, Color.red);
 
             // DrawUV();
 

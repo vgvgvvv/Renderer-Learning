@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="764c39d4-cb4a-42de-9740-db8dbb2fce06" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Transform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Transform.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestSoftRender/TestMaths.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestSoftRender/TestMaths.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestSoftRender/TestSoftRender.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TestSoftRender/TestSoftRender.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +26,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/11/Array.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AC613005-B340-44DC-ADAE-EE3E87D91FCA/6/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -64,11 +59,12 @@
       <option value="$PROJECT_DIR$/MathLib/Math/Utility.cs" />
       <option value="$PROJECT_DIR$/MathLib/Math/Matrix4x4.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Transform.cs" />
       <option value="$PROJECT_DIR$/TestSoftRender/TestMaths.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sa05uNJXNvYYKd8QNmqDoEf78f" />
@@ -123,7 +119,7 @@
       <workItem from="1621095233277" duration="2580000" />
       <workItem from="1621502591836" duration="2224000" />
       <workItem from="1621516677864" duration="6976000" />
-      <workItem from="1621580552425" duration="10550000" />
+      <workItem from="1621580552425" duration="11581000" />
     </task>
     <servers />
   </component>

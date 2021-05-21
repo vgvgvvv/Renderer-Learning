@@ -1,5 +1,5 @@
 using System;
-using System.Drawing;
+using MathLib;
 using SDL2;
 using SoftwareRenderer.Render;
 
@@ -31,7 +31,7 @@ namespace SoftwareRenderer.Core
 
 
             var frameBuffer = device.Render();
-            var lastColor = Color.Black;
+            var lastColor = Color.black;
             for (int x = 0; x < Width; x++)
             {
                 for (int y = 0; y < Height; y++)
@@ -39,7 +39,7 @@ namespace SoftwareRenderer.Core
                     var color = frameBuffer[x, Height - y - 1];
                     if (color != lastColor)
                     {
-                        SDL.SDL_SetRenderDrawColor(Renderer, color.R, color.G, color.B, 255);
+                        SDL.SDL_SetRenderDrawColor(Renderer, (byte)(color.r * 255), (byte)(color.g * 255), (byte)(color.b * 255), 255);
                         lastColor = color;
                     }
                     SDL.SDL_RenderDrawPoint(Renderer, x, y);
