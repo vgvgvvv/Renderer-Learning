@@ -1,5 +1,5 @@
-﻿using System.Drawing;
-using System.Numerics;
+﻿using MathLib;
+using Color = System.Drawing.Color;
 
 namespace SoftwareRenderer.Render
 {

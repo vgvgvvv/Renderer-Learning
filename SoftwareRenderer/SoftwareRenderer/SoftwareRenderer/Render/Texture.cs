@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Text;
+using MathLib;
 
 namespace SoftwareRenderer.Render
 {

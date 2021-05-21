@@ -1,4 +1,6 @@
 using System;
+using Common;
+using MathLib;
 using NUnit.Framework;
 
 namespace TestSoftRender
@@ -17,6 +19,16 @@ namespace TestSoftRender
             v |= v >> 16;
             v++;
             Console.Write(v);
+        }
+
+        [Test]
+        public void TestSwap()
+        {
+            int[] a = new[] {1, 2, 3, 4};
+            int[] b = new[] {5, 4, 3, 2, 1};
+            Utility.Swap(ref a, ref b);
+            Console.WriteLine(a.ConverToString());
+            Console.WriteLine(b.ConverToString());
         }
     }
 }

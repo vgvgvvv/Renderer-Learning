@@ -66,7 +66,7 @@ namespace SoftwareRenderer.Core
                 }
             };
             renderSystem = new SDLRenderer(Renderer, WINDOW_WIDTH, WINDOW_HEIGHT);
-
+            world = new World();
         }
 
         private void Update()
