@@ -5,9 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="764c39d4-cb4a-42de-9740-db8dbb2fce06" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/DrawCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Scene/TestWorld.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../OpenGL/TestPlatform/TestPlatform/TestPlatform/imgui.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../OpenGL/TestPlatform/TestPlatform/TestPlatform/imgui.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathLib/Math/Matrix4x4.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathLib/Math/Matrix4x4.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Camera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Camera.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Transform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Transform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/WorldObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/WorldObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/SoftwareRenderer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/SoftwareRenderer.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestSoftRender/TestMaths.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestSoftRender/TestMaths.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,18 +35,12 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/11/Array.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AC613005-B340-44DC-ADAE-EE3E87D91FCA/6/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/SoftwareRenderer/SoftwareRenderer.csproj" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Program.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Time.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Vector2.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Vector4.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Camera.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/IRenderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Plane.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Ray.cs" />
@@ -57,14 +61,20 @@
       <option value="$PROJECT_DIR$/MathLib/Math/PerlinNoise.cs" />
       <option value="$PROJECT_DIR$/MathLib/Math/Math.cs" />
       <option value="$PROJECT_DIR$/MathLib/Math/Utility.cs" />
-      <option value="$PROJECT_DIR$/MathLib/Math/Matrix4x4.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Transform.cs" />
-      <option value="$PROJECT_DIR$/TestSoftRender/TestMaths.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/DrawCommand.cs" />
+      <option value="$PROJECT_DIR$/MathLib/Math/Matrix4x4.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Transform.cs" />
+      <option value="$PROJECT_DIR$/TestSoftRender/TestMaths.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Camera.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Scene/TestWorld.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/World.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/WorldObject.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Program.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sa05uNJXNvYYKd8QNmqDoEf78f" />
@@ -74,6 +84,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -88,7 +99,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.SoftwareRenderer">
+  <component name="RunManager">
     <configuration name="SoftwareRenderer" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -120,6 +131,7 @@
       <workItem from="1621502591836" duration="2224000" />
       <workItem from="1621516677864" duration="6976000" />
       <workItem from="1621580552425" duration="11581000" />
+      <workItem from="1621608462200" duration="7200000" />
     </task>
     <servers />
   </component>

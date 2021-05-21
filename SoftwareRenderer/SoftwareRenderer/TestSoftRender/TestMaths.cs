@@ -30,5 +30,11 @@ namespace TestSoftRender
             Console.WriteLine(a.ConverToString());
             Console.WriteLine(b.ConverToString());
         }
+
+        [Test]
+        public void TestMatrix()
+        {
+            Vector3 forward = new Vector3(0, )
+        }
     }
 }

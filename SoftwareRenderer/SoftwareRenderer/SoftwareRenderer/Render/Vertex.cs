@@ -9,5 +9,16 @@ namespace SoftwareRenderer.Render
     {
         public Vector3 Position;
         public Vector2 UV;
+
+        public Vertex(Vector3 position)
+        {
+            Position = position;
+            UV = Vector2.zero;
+        }
+        
+        public Vertex(Vector3 position, Vector2 uv) : this(position)
+        {
+            UV = uv;
+        }
     }
 }

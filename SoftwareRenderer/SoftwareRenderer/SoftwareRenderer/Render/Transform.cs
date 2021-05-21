@@ -9,6 +9,7 @@ namespace SoftwareRenderer.Render
     {
         public Vector3 position = Vector3.zero;
         public Vector3 scale = Vector3.one;
-        public Vector3 eulerAngle = Vector3.zero;
+        public Vector3 eulerAngle => rotation.eulerAngles;
+        public Quaternion rotation = Quaternion.identity;
     }
 }
