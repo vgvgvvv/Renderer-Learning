@@ -1,9 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using MathLib;
 
 namespace SoftwareRenderer.Render
 {
+    public enum RenderMode
+    {
+        /// <summary>
+        /// 线框模式
+        /// </summary>
+        Wireframe,
+        /// <summary>
+        /// 纹理
+        /// </summary>
+        Textured,
+        /// <summary>
+        /// 顶点色
+        /// </summary>
+        VertexColor
+    }
+    
     public class SoftwareRenderDevice
     {
         public Color[,] FrameBuffer { get; }
@@ -13,9 +28,14 @@ namespace SoftwareRenderer.Render
 
         public Color ClearColor { get; set; } = Color.black;
 
-        public Matrix4x4 ViewMat { get; set; }
-        public Matrix4x4 ProjectorMat { get; set; }
+        public RenderMode RenderMode { get; set; }= RenderMode.Textured;
+        
+        public Matrix4x4 ViewMat { get; internal set; }
+        public Matrix4x4 ProjectorMat { get; internal set; }
 
+        /// <summary>
+        /// 绘制任务列表
+        /// </summary>
         private List<DrawCommand> drawCommands = new List<DrawCommand>();
 
 
@@ -33,8 +53,6 @@ namespace SoftwareRenderer.Render
         // 0,0点平移到了中点
         public void Draw2DPoint(int x, int y, float depth, Color color)
         {
-            x = x + Width / 2;
-            y = y + Height / 2;
             if (x >= 0 && x < Width && y >= 0 && y < Height && ZBuffer[x, y] < depth)
             {
                 FrameBuffer[x, y] = color;
@@ -129,44 +147,277 @@ namespace SoftwareRenderer.Render
                 }
             }
         }
+
+        public void Draw2DLine(Vertex v1, Vertex v2, Color? color = null)
+        {
+            Draw2DLine((int)v1.Position.x, (int)v1.Position.y, v1.Position.z, color ?? v1.Color, 
+                (int)v2.Position.x, (int)v2.Position.y, v2.Position.z, color ?? v2.Color);
+        }
+
+        /// <summary>
+        /// 基本思路是把任意三角形拆分成上下两个，然后逐个进行扫描线填充
+        /// </summary>
+        /// <param name="v1">顶点1信息</param>
+        /// <param name="sp1">屏幕位置</param>
+        /// <param name="v2">顶点2信息</param>
+        /// <param name="sp2">屏幕位置</param>
+        /// <param name="v3">顶点3信息</param>
+        /// <param name="sp3">屏幕位置</param>
+        public void Draw2DTriangle(Vertex v1, Vertex v2, Vertex v3)
+        {
+            // 绘制上三角形
+            void DrawDownTriangle(Vertex v1, Vertex v2, Vertex buttom)
+            {
+                var left = v1;
+                var right = v2;
+                if (left.Position.x > right.Position.x)
+                {
+                    Utility.Swap(ref left, ref right);
+                }
+                var targetY = buttom.Position.y;
+                for (float y = left.Position.y; y >= targetY; y -= 0.5f)
+                {
+                    int yIndex = Mathf.RoundToInt(y);
+                    if (yIndex < 0 || yIndex >= Height)
+                    {
+                        continue;
+                    }
+
+                    var lerpFactor = (targetY - y) / (targetY - left.Position.y);
+                    Vertex vl = Vertex.Lerp(left, buttom, 1.0f - lerpFactor);
+                    Vertex vr = Vertex.Lerp(right, buttom, 1.0f - lerpFactor);
+                    
+                    ScanlineFile(vl, vr, yIndex);
+                }
+            }
+
+            // 绘制下三角形
+            void DrawUpTriangle(Vertex v1, Vertex v2, Vertex top)
+            {
+                var left = v1;
+                var right = v2;
+                if (left.Position.x > right.Position.x)
+                {
+                    Utility.Swap(ref left, ref right);
+                }
+                var targetY = top.Position.y;
+                for (float y = left.Position.y; y <= top.Position.y; y += 0.5f)
+                {
+                    int yIndex = Mathf.RoundToInt(y);
+                    if (yIndex < 0 || yIndex >= Height)
+                    {
+                        continue;
+                    }
+                    
+                    var lerpFactor = (targetY - y) / (targetY - left.Position.y);
+                    Vertex vl = Vertex.Lerp(left, top, 1.0f - lerpFactor);
+                    Vertex vr = Vertex.Lerp(right, top, 1.0f - lerpFactor);
+                    
+                    ScanlineFile(vl, vr, yIndex);
+                    
+                }
+            }
+            
+            // 扫描线算法
+            void ScanlineFile(Vertex left, Vertex right, int yIndex)
+            {
+                float dx = right.Position.x - left.Position.x;
+                for (float x = left.Position.x; x <= right.Position.x; x += 0.5f)
+                {
+                    int xIndex = (int)(x + 0.5f);
+                    if (xIndex >= 0 && xIndex < Width)
+                    {
+                        float lerpFactor = 0;
+                        if (dx != 0)
+                        {
+                            lerpFactor = (x - left.Position.x) / dx;
+                        }
+
+                        var lerpedVertex = Vertex.Lerp(left, right, lerpFactor);
+                        Draw2DPoint(xIndex, yIndex, lerpedVertex.Position.z, Color.red);
+                    }
+                    
+                }
+            }
+
+            if (Mathf.Approximately(v1.Position.y, v2.Position.y) && 
+                Mathf.Approximately(v1.Position.y, v3.Position.y) && 
+                Mathf.Approximately(v2.Position.y, v3.Position.y))
+            {
+                return;
+            }
+            
+            //
+            if (Mathf.Approximately(v1.Position.y, v2.Position.y))
+            {
+                if (v1.Position.y < v3.Position.y)
+                {
+                    // 尖头在上面
+                    DrawUpTriangle(v1, v2, v3);
+                }
+                else
+                {
+                    // 尖头在下面
+                    DrawDownTriangle(v1, v2, v3);
+                }
+            }
+            else if (Mathf.Approximately(v1.Position.y, v3.Position.y))
+            {
+                if (v1.Position.y < v2.Position.y)
+                {
+                    DrawUpTriangle(v1, v3, v2);
+                }
+                else
+                {
+                    DrawDownTriangle(v1, v3, v2);
+                }
+            }
+            else if (Mathf.Approximately(v2.Position.y, v3.Position.y))
+            {
+                if (v2.Position.y < v1.Position.y)
+                {
+                    DrawUpTriangle(v2, v3, v1);
+                }
+                else
+                {
+                    DrawDownTriangle(v2, v3, v1);
+                }
+            }
+            else
+            {
+                // 拆分三角形
+                Vertex top;
+                Vertex mid;
+                Vertex buttom;
+
+                if (v1.Position.y > v2.Position.y && v1.Position.y > v3.Position.y)
+                {
+                    top = v1;
+                    if (v2.Position.y > v3.Position.y)
+                    {
+                        mid = v2;
+                        buttom = v3;
+                    }
+                    else
+                    {
+                        mid = v3;
+                        buttom = v2;
+                    }
+                }
+                else if (v2.Position.y > v1.Position.y && v2.Position.y > v3.Position.y)
+                {
+                    top = v2;
+                    if (v1.Position.y > v3.Position.y)
+                    {
+                        mid = v1;
+                        buttom = v3;
+                    }
+                    else
+                    {
+                        mid = v3;
+                        buttom = v1;
+                    }
+                }
+                else if (v3.Position.y > v1.Position.y && v3.Position.y > v2.Position.y)
+                {
+                    top = v3;
+                    if (v1.Position.y > v2.Position.y)
+                    {
+                        mid = v1;
+                        buttom = v2;
+                    }
+                    else
+                    {
+                        mid = v2;
+                        buttom = v1;
+                    }
+                }else
+                {
+                    return;
+                }
+
+                var lerpfactor = (top.Position.y - mid.Position.y) / (top.Position.y - buttom.Position.y);
+                var anotherMid = Vertex.Lerp(top, buttom, lerpfactor);
+                
+                DrawUpTriangle(mid, anotherMid, top);
+                DrawDownTriangle(mid, anotherMid, buttom);
+
+            }
+        }
+        
+        public void Draw3DLine(Vertex v1, Vertex v2)
+        {
+
+            v1.ApplyTransform(ViewMat);
+            v2.ApplyTransform(ViewMat);
+            v1.ApplyTransform(ProjectorMat);
+            v2.ApplyTransform(ProjectorMat);
+
+            var sp1 = TransformToScreen(v1);
+            var sp2 = TransformToScreen(v2);
+
+            v1.Position = sp1;
+            v2.Position = sp2;
+            
+            if (NeedCVVClip(v1) || NeedCVVClip(v2))
+            {
+                return;
+            }
+
+            Draw2DLine(v1, v2);
+        }
         
         /// <summary>
-        /// 绘制project之前的三角形
+        /// 绘制三角形
         /// </summary>
         /// <param name="p1"></param>
         /// <param name="p2"></param>
         /// <param name="p3"></param>
         public void Draw3DTriangle(Vertex v1, Vertex v2, Vertex v3)
         {
-            var p1 = v1.Position;
-            p1 = ViewMat.MultiplyPoint(p1);
-            p1 = ProjectorMat.MultiplyPoint(p1);
+            v1.ApplyTransform(ViewMat);
+            v2.ApplyTransform(ViewMat);
+            v3.ApplyTransform(ViewMat);
 
-            var p2 = v2.Position;
-            p2 = ViewMat.MultiplyPoint(p2);
-            p2 = ProjectorMat.MultiplyPoint(p2);
+            if (!BackfaceCulling(v1, v2, v3))
+            {
+                return;
+            }
+            
+            v1.ApplyTransform(ProjectorMat);
+            v2.ApplyTransform(ProjectorMat);
+            v3.ApplyTransform(ProjectorMat);
 
-            var p3 = v3.Position;
-            p3 = ViewMat.MultiplyPoint(p3);
-            p3 = ProjectorMat.MultiplyPoint(p3);
-
-            Draw2DLine((int)(p1.x * Width), (int)(p1.y * Height), p1.z, v1.color, (int)(p2.x * Width), (int)(p2.y * Height), p2.z, v2.color);
-            Draw2DLine((int)(p2.x * Width), (int)(p2.y * Height), p2.z, v2.color, (int)(p3.x * Width), (int)(p3.y * Height), p3.z, v3.color);
-            Draw2DLine((int)(p3.x * Width), (int)(p3.y * Height), p3.z, v3.color, (int)(p1.x * Width), (int)(p1.y * Height), p1.z, v1.color);
+            if (NeedCVVClip(v1) || NeedCVVClip(v2) || NeedCVVClip(v3))
+            {
+                return;
+            }
+            
+            var sp1 = TransformToScreen(v1);
+            var sp2 = TransformToScreen(v2);
+            var sp3 = TransformToScreen(v3);
+            
+            v1.Position = sp1;
+            v2.Position = sp2;
+            v3.Position = sp3;
+            
+            if (RenderMode == RenderMode.Wireframe)
+            {
+                Draw2DLine(v1, v2);
+                Draw2DLine(v2, v3);
+                Draw2DLine(v3, v1);
+            }
+            else
+            {
+                Draw2DLine(v1, v2, Color.white);
+                Draw2DLine(v2, v3, Color.white);
+                Draw2DLine(v3, v1, Color.white);
+                Draw2DTriangle(v1, v2, v3);
+            }
+            
         }
-
-        public void Draw3DLine(Vertex v1, Vertex v2)
-        {
-            var p1 = v1.Position;
-            p1 = ViewMat.MultiplyPoint(p1);
-            p1 = ProjectorMat.MultiplyPoint(p1);
-
-            var p2 = v2.Position;
-            p2 = ViewMat.MultiplyPoint(p2);
-            p2 = ProjectorMat.MultiplyPoint(p2);
-
-            Draw2DLine((int)(p1.x * Width), (int)(p1.y * Height), p1.z, v1.color, (int)(p2.x * Width), (int)(p2.y * Height), p2.z, v2.color);
-        }
+        
+        #region Misc
 
         private void DrawUV()
         {
@@ -186,40 +437,61 @@ namespace SoftwareRenderer.Render
             for (int x = -10; x < 10; x++)
             {
                 Draw3DLine(
-                    new Vertex(){Position = new Vector3(x, 0, -10), color = Color.gray}, 
-                    new Vertex(){Position = new Vector3(x, 0, 10), color = Color.gray});
+                    new Vertex(){Position = new Vector3(x, 0, -10), Color = Color.gray}, 
+                    new Vertex(){Position = new Vector3(x, 0, 10), Color = Color.gray});
             }
             
             for (int z = -10; z < 10; z++)
             {
                 Draw3DLine(
-                    new Vertex(){Position = new Vector3(-10, 0, z), color = Color.gray}, 
-                    new Vertex(){Position = new Vector3(10, 0, z), color = Color.gray});
+                    new Vertex(){Position = new Vector3(-10, 0, z), Color = Color.gray}, 
+                    new Vertex(){Position = new Vector3(10, 0, z), Color = Color.gray});
             }
         }
 
         #endregion
 
-        #region Transform
-
-        // public Vector3 TransformModel(Transform transform, Vector3 pos)
-        // {
-        //     Matrix4x4 tranMat = Matrix4x4.Identity;
-        //     
-        //    
-        // }
-        //
-        // public Vector3 TransformView(Transform transform, Vector3 pos)
-        // {
-        //
-        // }
-        //
-        // public Vector3 TransformProjector(Vector3 pos)
-        // {
-        //
-        // }
-
         #endregion
+
+        private Vector3 TransformToScreen(Vertex vertex)
+        {
+            Vector3 pos = new Vector3();
+            pos.x = (vertex.Position.x + 1) * 0.5f * Width;
+            pos.y = (1 - vertex.Position.y) * 0.5f * Height;
+            pos.z = vertex.Position.z;
+            return pos;
+        }
+
+        private bool NeedCVVClip(Vertex v)
+        {
+            var p = v.Position;
+            if (p.x > 1 || p.x < -1 || p.y > 1 || p.y < -1 || p.z > 1.1 || p.z < 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        
+        private bool BackfaceCulling(Vertex p1, Vertex p2, Vertex p3)
+        {
+            if (RenderMode == RenderMode.Wireframe)
+            {
+                return true;
+            }
+            else
+            {
+                var v1 = p2.Position - p1.Position;
+                var v2 = p3.Position - p2.Position;
+                var normal = Vector3.Cross(v1, v2);
+                var viewDir = p2.Position - Vector3.zero;
+                if(Vector3.Dot(normal, viewDir) > 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
 
         public void FrameClear()
         {
@@ -243,9 +515,8 @@ namespace SoftwareRenderer.Render
         {
             FrameClear();
 
-
-            Draw2DLine(0, -Height / 2, 1, Color.green, 0,  Height / 2, 1, Color.red);
-            Draw2DLine(-Width / 2, 0, 1, Color.green, Width / 2,  0, 1, Color.red);
+            Draw2DLine(Width / 2, 0, 1, Color.green, Width / 2,  Height, 1, Color.red);
+            Draw2DLine(0, Height / 2, 1, Color.green, Width,  Height / 2, 1, Color.red);
 
             // DrawGrid();
             

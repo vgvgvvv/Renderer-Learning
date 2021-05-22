@@ -3,6 +3,7 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::588C4E19-AD5C-4021-9C69-0DAD16B92728::.NETCoreApp,Version=v3.1::TestSoftRender.TestMaths.TestEuler&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::588C4E19-AD5C-4021-9C69-0DAD16B92728::.NETCoreApp,Version=v3.1::TestSoftRender.TestMaths.TestRotate&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::588C4E19-AD5C-4021-9C69-0DAD16B92728::.NETCoreApp,Version=v3.1::TestSoftRender.TestMaths.TestCamera&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	

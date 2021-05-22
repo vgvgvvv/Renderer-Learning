@@ -51,7 +51,7 @@ namespace TestSoftRender
         public void TestCamera()
         {
             Camera camera = new Camera();
-            Vector3 point = new Vector3(0, 0, -5);
+            Vector3 point = new Vector3(0, 100, 0.1f);
             var projectionMatrix = camera.GetPerspectiveProjectionMatrix();
             point = projectionMatrix.MultiplyPoint(point);
             Console.WriteLine(point);

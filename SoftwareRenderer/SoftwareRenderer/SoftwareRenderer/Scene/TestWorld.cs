@@ -20,10 +20,15 @@ namespace SoftwareRenderer.Scene
             var cube2 = WorldObject.Create<CubeRenderer>(this, new Vector3(-1, 0, 1));
             cube2.Transform.scale = Vector3.one * 1;
 
-            // cube.OnUpdate += () =>
-            // {
-            //     cube.Transform.rotation = Quaternion.Euler(10, 10, 0) * cube.Transform.rotation;
-            // };
+            cube1.OnUpdate += () =>
+            {
+                cube1.Transform.rotation = Quaternion.Euler(10, 10, 0) * cube1.Transform.rotation;
+            };
+            
+            cube2.OnUpdate += () =>
+            {
+                cube2.Transform.rotation = Quaternion.Euler(10, 10, 0) * cube2.Transform.rotation;
+            };
 
             var inputSystem = Application.Get().InputSystem;
             inputSystem.OnInputEvent += delegate(SDL.SDL_Event e)
