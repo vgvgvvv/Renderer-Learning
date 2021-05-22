@@ -31,13 +31,14 @@ namespace SoftwareRenderer.Render
         #region 绘制函数
 
         // 0,0点平移到了中点
-        public void Draw2DPoint(int x, int y, Color color)
+        public void Draw2DPoint(int x, int y, float depth, Color color)
         {
             x = x + Width / 2;
             y = y + Height / 2;
-            if (x >= 0 && x < Width && y >= 0 && y < Height)
+            if (x >= 0 && x < Width && y >= 0 && y < Height && ZBuffer[x, y] < depth)
             {
                 FrameBuffer[x, y] = color;
+                ZBuffer[x, y] = depth;
             }
         }
 
@@ -49,25 +50,31 @@ namespace SoftwareRenderer.Render
         /// <param name="x2"></param>
         /// <param name="y2"></param>
         /// <param name="color"></param>
-        public void Draw2DLine(int x1, int y1, int x2, int y2, Color color)
+        public void Draw2DLine(int x1, int y1, float depth1, Color color1, int x2, int y2, float depth2, Color color2)
         {
             int x, y, rem = 0;
             if (x1 == x2 && y1 == y2)
             {
-                Draw2DPoint(x1, y1, color);
+                Draw2DPoint(x1, y1, depth1, color1);
             }else if (x1 == x2)
             {
                 int inc = y1 <= y2 ? 1 : -1;
                 for (y = y1; y != y2; y += inc)
                 {
-                    Draw2DPoint(x1, y, color);
+                    var t = (float)(y2 - y) / (y2 - y1);
+                    var depth = Mathf.Lerp(depth1, depth2, t);
+                    var color = Color.Lerp(color1, color2, t);
+                    Draw2DPoint(x1, y, depth, color);
                 }
             }else if (y1 == y2)
             {
                 int inc = x1 <= x2 ? 1 : -1;
                 for (x = x1; x != x2; x += inc)
                 {
-                    Draw2DPoint(x, y1, color);
+                    var t = (float) (x2 - x) / (x2 - x1);
+                    var depth = Mathf.Lerp(depth1, depth2, t);
+                    var color = Color.Lerp(color1, color2, t);
+                    Draw2DPoint(x, y1, depth, color);
                 }
             }
             else
@@ -84,13 +91,16 @@ namespace SoftwareRenderer.Render
 
                     for (x = x1, y = y1; x <= x2; x++)
                     {
-                        Draw2DPoint(x, y, color);
+                        var t = (float)(x2 - x) / (x2 - x1);
+                        var depth = Mathf.Lerp(depth1, depth2, t);
+                        var color = Color.Lerp(color1, color2, t);
+                        Draw2DPoint(x, y, depth, color);
                         rem += dy;
                         if (rem > dx)
                         {
                             rem -= dx;
                             y += y2 >= y1 ? 1 : -1;
-                            Draw2DPoint(x, y, color);
+                            Draw2DPoint(x, y, depth, color);
                         }
                     }
                 }
@@ -104,13 +114,16 @@ namespace SoftwareRenderer.Render
 
                     for (x = x1, y = y1; y <= y2; y++)
                     {
-                        Draw2DPoint(x, y, color);
+                        var t = (float)(y2 - y) / (y2 - y1);
+                        var depth = Mathf.Lerp(depth1, depth2, t);
+                        var color = Color.Lerp(color1, color2, t);
+                        Draw2DPoint(x, y, depth, color);
                         rem += dx;
                         if (rem > dy)
                         {
                             rem -= dy;
                             x += x2 >= x1 ? 1 : -1;
-                            Draw2DPoint(x, y, color);
+                            Draw2DPoint(x, y, depth, color);
                         }
                     }
                 }
@@ -137,9 +150,9 @@ namespace SoftwareRenderer.Render
             p3 = ViewMat.MultiplyPoint(p3);
             p3 = ProjectorMat.MultiplyPoint(p3);
 
-            Draw2DLine((int)(p1.x * Width), (int)(p1.y * Height), (int)(p2.x * Width), (int)(p2.y * Height), Color.red);
-            Draw2DLine((int)(p2.x * Width), (int)(p2.y * Height), (int)(p3.x * Width), (int)(p3.y * Height), Color.red);
-            Draw2DLine((int)(p3.x * Width), (int)(p3.y * Height), (int)(p1.x * Width), (int)(p1.y * Height), Color.red);
+            Draw2DLine((int)(p1.x * Width), (int)(p1.y * Height), p1.z, v1.color, (int)(p2.x * Width), (int)(p2.y * Height), p2.z, v2.color);
+            Draw2DLine((int)(p2.x * Width), (int)(p2.y * Height), p2.z, v2.color, (int)(p3.x * Width), (int)(p3.y * Height), p3.z, v3.color);
+            Draw2DLine((int)(p3.x * Width), (int)(p3.y * Height), p3.z, v3.color, (int)(p1.x * Width), (int)(p1.y * Height), p1.z, v1.color);
         }
 
         public void Draw3DLine(Vertex v1, Vertex v2)
@@ -152,12 +165,7 @@ namespace SoftwareRenderer.Render
             p2 = ViewMat.MultiplyPoint(p2);
             p2 = ProjectorMat.MultiplyPoint(p2);
 
-            Draw2DLine((int)(p1.x * Width), (int)(p1.y * Height), (int)(p2.x * Width), (int)(p2.y * Height), Color.red);
-        }
-
-        public void DrawMesh(Vertex[] vertices, Vector3[] indexs)
-        {
-
+            Draw2DLine((int)(p1.x * Width), (int)(p1.y * Height), p1.z, v1.color, (int)(p2.x * Width), (int)(p2.y * Height), p2.z, v2.color);
         }
 
         private void DrawUV()
@@ -168,8 +176,25 @@ namespace SoftwareRenderer.Render
                 {
                     var R = (float)x / Width;
                     var G = (float)y / Height;
-                    Draw2DPoint(x, y, new Color(R, G, 0));
+                    Draw2DPoint(x, y, 0, new Color(R, G, 0));
                 }
+            }
+        }
+
+        private void DrawGrid()
+        {
+            for (int x = -10; x < 10; x++)
+            {
+                Draw3DLine(
+                    new Vertex(){Position = new Vector3(x, 0, -10), color = Color.gray}, 
+                    new Vertex(){Position = new Vector3(x, 0, 10), color = Color.gray});
+            }
+            
+            for (int z = -10; z < 10; z++)
+            {
+                Draw3DLine(
+                    new Vertex(){Position = new Vector3(-10, 0, z), color = Color.gray}, 
+                    new Vertex(){Position = new Vector3(10, 0, z), color = Color.gray});
             }
         }
 
@@ -203,7 +228,7 @@ namespace SoftwareRenderer.Render
                 for (int x = 0; x < Width; x++)
                 {
                     FrameBuffer[x, y] = ClearColor;
-                    ZBuffer[x, y] = 0;
+                    ZBuffer[x, y] = -float.MaxValue;
                 }
             }
 
@@ -219,9 +244,11 @@ namespace SoftwareRenderer.Render
             FrameClear();
 
 
-            Draw2DLine(0, -Height / 2, 0,  Height / 2, Color.red);
-            Draw2DLine(-Width / 2, 0, Width / 2,  0, Color.red);
+            Draw2DLine(0, -Height / 2, 1, Color.green, 0,  Height / 2, 1, Color.red);
+            Draw2DLine(-Width / 2, 0, 1, Color.green, Width / 2,  0, 1, Color.red);
 
+            // DrawGrid();
+            
             // DrawUV();
 
             // Draw3DLine(new Vertex(new Vector3(0, 1, 0)), new Vertex(new Vector3(0, 0, 0)));

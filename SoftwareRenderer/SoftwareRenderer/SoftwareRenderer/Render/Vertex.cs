@@ -9,11 +9,13 @@ namespace SoftwareRenderer.Render
     {
         public Vector3 Position;
         public Vector2 UV;
+        public Color color;
 
         public Vertex(Vector3 position)
         {
             Position = position;
             UV = Vector2.zero;
+            color = Color.gray;
         }
         
         public Vertex(Vector3 position, Vector2 uv) : this(position)

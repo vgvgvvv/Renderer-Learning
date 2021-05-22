@@ -77,7 +77,6 @@
           <e p="Vertex.cs" t="Include" />
         </e>
         <e p="Scene" t="Include">
-          <e p="InputListener.cs" t="Include" />
           <e p="TestWorld.cs" t="Include" />
         </e>
         <e p="SDL" t="Include">

@@ -1,11 +1,9 @@
 using System;
-using System.Numerics;
+using MathLib;
 using SDL2;
 using SoftwareRenderer.Component;
 using SoftwareRenderer.Core;
 using SoftwareRenderer.Render;
-using Quaternion = MathLib.Quaternion;
-using Vector3 = MathLib.Vector3;
 
 namespace SoftwareRenderer.Scene
 {
@@ -14,7 +12,7 @@ namespace SoftwareRenderer.Scene
 
         public TestWorld()
         {
-            var camera = WorldObject.Create<Camera>(this, new Vector3(0, 1, -10));
+            var camera = WorldObject.Create<Camera>(this, new Vector3(0, 0, -10));
 
             var cube1 = WorldObject.Create<CubeRenderer>(this, new Vector3(1, 0, 1));
             cube1.Transform.scale = Vector3.one * 2;
@@ -68,7 +66,29 @@ namespace SoftwareRenderer.Scene
                         Console.WriteLine("camera position:" + camera.Transform.position);
                         break;
                     }
+
+                    case SDL.SDL_Keycode.SDLK_j:
+                    {
+                        camera.Transform.rotation = Quaternion.Euler(0, -10, 0) * camera.Transform.rotation;
+                        break;
+                    }
+                    case SDL.SDL_Keycode.SDLK_l:
+                    {
+                        camera.Transform.rotation = Quaternion.Euler(0, 10, 0) * camera.Transform.rotation;
+                        break;
+                    }
+                    case SDL.SDL_Keycode.SDLK_i:
+                    {
+                        camera.Transform.rotation = Quaternion.Euler(10, 0, 0) * camera.Transform.rotation;
+                        break;
+                    }
+                    case SDL.SDL_Keycode.SDLK_k:
+                    {
+                        camera.Transform.rotation = Quaternion.Euler(-10, 0, 0) * camera.Transform.rotation;
+                        break;
+                    }
                 } 
+                
             };
         }
     }

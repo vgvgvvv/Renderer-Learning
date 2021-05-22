@@ -51,6 +51,7 @@ namespace SoftwareRenderer.Render
                 0, 0, 1, -pos.z,
                 0, 0, 0, 1);
 
+            
             Matrix4x4 r = Matrix4x4.Rotate(Transform.rotation);
 
             return t * r;

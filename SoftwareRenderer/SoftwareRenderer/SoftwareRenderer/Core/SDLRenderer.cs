@@ -51,7 +51,7 @@ namespace SoftwareRenderer.Core
             {
                 for (int y = 0; y < Height; y++)
                 {
-                    var color = frameBuffer[x, y];
+                    var color = frameBuffer[Width - x - 1, y];
                     if (color != lastColor)
                     {
                         SDL.SDL_SetRenderDrawColor(Renderer, (byte)(color.r * 255), (byte)(color.g * 255), (byte)(color.b * 255), 255);
