@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MathLib;
 using SoftwareRenderer.Core;
 
 namespace SoftwareRenderer.Render
@@ -20,7 +21,8 @@ namespace SoftwareRenderer.Render
             };
             for (var i = 0; i < drawCommand.Vertexs.Length; i++)
             {
-                drawCommand.Vertexs[i] = new Vertex(Transform.TransformMat.MultiplyPoint(mesh.Vertexs[i].Position));
+                drawCommand.Vertexs[i] = mesh.Vertexs[i];
+                drawCommand.Vertexs[i].Position = Transform.TransformMat.MultiplyPoint(mesh.Vertexs[i].Position);
             }
             return drawCommand;
         }

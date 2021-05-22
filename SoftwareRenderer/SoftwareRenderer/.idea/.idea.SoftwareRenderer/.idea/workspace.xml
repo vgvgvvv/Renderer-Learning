@@ -6,12 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="764c39d4-cb4a-42de-9740-db8dbb2fce06" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Component/CubeRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Component/CubeRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Renderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Renderer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Scene/TestWorld.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Scene/TestWorld.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestSoftRender/TestMaths.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestSoftRender/TestMaths.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +59,6 @@
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/MeshRenderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/DrawCommand.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/IRenderer.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Renderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Transform.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Behavior.cs" />
@@ -72,7 +68,6 @@
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/WorldObject.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Program.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Scene/InputListener.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Component/CubeRenderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Camera.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/InputSystem.cs" />
@@ -80,7 +75,9 @@
       <option value="$PROJECT_DIR$/TestSoftRender/TestMaths.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Scene/TestWorld.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Component/CubeRenderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Renderer.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sa05uNJXNvYYKd8QNmqDoEf78f" />
@@ -140,7 +137,7 @@
       <workItem from="1621516677864" duration="6976000" />
       <workItem from="1621580552425" duration="11581000" />
       <workItem from="1621608462200" duration="7200000" />
-      <workItem from="1621692100185" duration="20588000" />
+      <workItem from="1621692100185" duration="22339000" />
     </task>
     <servers />
   </component>
@@ -165,23 +162,6 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs</url>
-          <line>185</line>
-          <properties documentPath="E:\Projects\MyProjects\render\SoftwareRenderer\SoftwareRenderer\SoftwareRenderer\Render\SoftwareRenderDevice.cs" initialLine="185" containingFunctionPresentation="local function 'DrawDownTriangle'">
-            <startOffsets>
-              <option value="6182" />
-            </startOffsets>
-            <endOffsets>
-              <option value="6243" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="DotNetProject">
         <watch expression="p" language="C#" />

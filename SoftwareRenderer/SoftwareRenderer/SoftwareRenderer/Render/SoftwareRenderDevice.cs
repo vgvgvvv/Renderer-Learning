@@ -12,11 +12,11 @@ namespace SoftwareRenderer.Render
         /// <summary>
         /// 纹理
         /// </summary>
-        Textured,
+        Filled,
         /// <summary>
         /// 顶点色
         /// </summary>
-        VertexColor
+        WireframeAndFilled
     }
     
     public class SoftwareRenderDevice
@@ -28,7 +28,7 @@ namespace SoftwareRenderer.Render
 
         public Color ClearColor { get; set; } = Color.black;
 
-        public RenderMode RenderMode { get; set; }= RenderMode.Textured;
+        public RenderMode RenderMode { get; set; }= RenderMode.Filled;
         
         public Matrix4x4 ViewMat { get; internal set; }
         public Matrix4x4 ProjectorMat { get; internal set; }
@@ -234,7 +234,7 @@ namespace SoftwareRenderer.Render
                         }
 
                         var lerpedVertex = Vertex.Lerp(left, right, lerpFactor);
-                        Draw2DPoint(xIndex, yIndex, lerpedVertex.Position.z, Color.red);
+                        Draw2DPoint(xIndex, yIndex, lerpedVertex.Position.z, lerpedVertex.Color);
                     }
                     
                 }
@@ -401,17 +401,16 @@ namespace SoftwareRenderer.Render
             v2.Position = sp2;
             v3.Position = sp3;
             
-            if (RenderMode == RenderMode.Wireframe)
+            if (RenderMode == RenderMode.Wireframe || 
+                RenderMode == RenderMode.WireframeAndFilled)
             {
                 Draw2DLine(v1, v2);
                 Draw2DLine(v2, v3);
                 Draw2DLine(v3, v1);
             }
-            else
+            if(RenderMode == RenderMode.Filled || 
+               RenderMode == RenderMode.WireframeAndFilled)
             {
-                Draw2DLine(v1, v2, Color.white);
-                Draw2DLine(v2, v3, Color.white);
-                Draw2DLine(v3, v1, Color.white);
                 Draw2DTriangle(v1, v2, v3);
             }
             

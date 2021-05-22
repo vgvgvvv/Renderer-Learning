@@ -20,6 +20,73 @@ namespace SoftwareRenderer.Component
                 new Vertex(new Vector3(0.5f,  0.5f, 0.5f)),
             };
 
+            Vector2[] uvs ={
+                new Vector2(0, 0),new Vector2( 0, 1),new Vector2(1, 1),
+                new Vector2(0, 0),new Vector2(1, 1),new Vector2(1, 0),
+                //
+                new Vector2(0, 0),new Vector2( 0, 1),new Vector2(1, 1),
+                new Vector2(0, 0),new Vector2(1, 1),new Vector2(1, 0),
+                //
+                new Vector2(0, 0),new Vector2( 0, 1),new Vector2(1, 1),
+                new Vector2(0, 0),new Vector2(1, 1),new Vector2(1, 0),
+                //
+                new Vector2(0, 0),new Vector2( 0, 1),new Vector2(1, 1),
+                new Vector2(0, 0),new Vector2(1, 1),new Vector2(1, 0),
+                //
+                new Vector2(0, 0),new Vector2( 0, 1),new Vector2(1, 1),
+                new Vector2(0, 0),new Vector2(1, 1),new Vector2(1, 0),
+                ///
+                new Vector2(0, 0),new Vector2( 0, 1),new Vector2(1, 1),
+                new Vector2(0, 0),new Vector2(1, 1),new Vector2(1, 0)
+            };
+            
+            Color[] vertColors = {
+                new Color( 0, 1, 0), new Color( 0, 0, 1), new Color( 1, 0, 0),
+                new Color( 0, 1, 0), new Color( 1, 0, 0), new Color( 0, 0, 1),
+                //
+                new Color( 0, 1, 0), new Color( 0, 0, 1), new Color( 1, 0, 0),
+                new Color( 0, 1, 0), new Color( 1, 0, 0), new Color( 0, 0, 1),
+                //
+                new Color( 0, 1, 0), new Color( 0, 0, 1), new Color( 1, 0, 0),
+                new Color( 0, 1, 0), new Color( 1, 0, 0), new Color( 0, 0, 1),
+                //
+                new Color( 0, 1, 0), new Color( 0, 0, 1), new Color( 1, 0, 0),
+                new Color( 0, 1, 0), new Color( 1, 0, 0), new Color( 0, 0, 1),
+                //
+                new Color( 0, 1, 0), new Color( 0, 0, 1), new Color( 1, 0, 0),
+                new Color( 0, 1, 0), new Color( 1, 0, 0), new Color( 0, 0, 1),
+                //
+                new Color( 0, 1, 0), new Color( 0, 0, 1), new Color( 1, 0, 0),
+                new Color( 0, 1, 0), new Color( 1, 0, 0), new Color( 0, 0, 1)
+            };
+            
+            Vector3[] normals = {
+                new Vector3( 0, 0, -1), new Vector3(0, 0, -1), new Vector3( 0, 0, -1),
+                new Vector3(0, 0, -1), new Vector3( 0, 0, -1), new Vector3( 0, 0, -1),
+                //
+                new Vector3( 0, 0, 1), new Vector3( 0, 0, 1), new Vector3( 0, 0, 1),
+                new Vector3( 0, 0, 1), new Vector3( 0, 0, 1), new Vector3( 0, 0, 1),
+                //
+                new Vector3( -1, 0, 0), new Vector3( -1, 0, 0), new Vector3( -1, 0, 0),
+                new Vector3( -1, 0, 0), new Vector3(-1, 0, 0), new Vector3( -1, 0, 0),
+                //
+                new Vector3( 0, -1, 0), new Vector3(  0, -1, 0), new Vector3(  0, -1, 0),
+                new Vector3(  0, -1, 0), new Vector3( 0, -1, 0), new Vector3( 0, -1, 0),
+                //
+                new Vector3( 1, 0, 0), new Vector3( 1, 0, 0), new Vector3( 1, 0, 0),
+                new Vector3( 1, 0, 0), new Vector3( 1, 0, 0), new Vector3( 1, 0, 0),
+                //
+                new Vector3( 0, 1, 0), new Vector3( 0, 1, 0), new Vector3( 0, 1, 0),
+                new Vector3( 0, 1, 0 ), new Vector3(0, 1, 0), new Vector3( 0, 1, 0)
+            };
+            
+            for (var i = 0; i < RawMesh.Vertexs.Length; i++)
+            {
+                RawMesh.Vertexs[i].UV = uvs[i];
+                RawMesh.Vertexs[i].Color = vertColors[i];
+                RawMesh.Vertexs[i].Normal = normals[i];
+            }
+            
             RawMesh.Indexs = new Vector3[]
             {
                 new Vector3(0, 1, 2),
@@ -35,7 +102,6 @@ namespace SoftwareRenderer.Component
                 new Vector3(3, 7, 4),
                 new Vector3(3, 4, 0),
             };
-
         }
     }
 }
