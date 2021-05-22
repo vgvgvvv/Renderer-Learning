@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MathLib;
 
 namespace SoftwareRenderer.Render
@@ -373,33 +374,30 @@ namespace SoftwareRenderer.Render
         /// <param name="p1"></param>
         /// <param name="p2"></param>
         /// <param name="p3"></param>
-        public void Draw3DTriangle(Vertex v1, Vertex v2, Vertex v3)
+        public void Draw3DTriangle(Vertex v1, Vertex v2, Vertex v3, Material material)
         {
-            v1.ApplyTransform(ViewMat);
-            v2.ApplyTransform(ViewMat);
-            v3.ApplyTransform(ViewMat);
 
-            if (!BackfaceCulling(v1, v2, v3))
-            {
-                return;
-            }
+            // v1.ApplyTransform(ViewMat);
+            // v2.ApplyTransform(ViewMat);
+            // v3.ApplyTransform(ViewMat);
+            //
+            // if (!BackfaceCulling(v1, v2, v3))
+            // {
+            //     return;
+            // }
+            //
+            // v1.ApplyTransform(ProjectorMat);
+            // v2.ApplyTransform(ProjectorMat);
+            // v3.ApplyTransform(ProjectorMat);
             
-            v1.ApplyTransform(ProjectorMat);
-            v2.ApplyTransform(ProjectorMat);
-            v3.ApplyTransform(ProjectorMat);
-
-            if (NeedCVVClip(v1) || NeedCVVClip(v2) || NeedCVVClip(v3))
-            {
-                return;
-            }
-            
-            var sp1 = TransformToScreen(v1);
-            var sp2 = TransformToScreen(v2);
-            var sp3 = TransformToScreen(v3);
-            
-            v1.Position = sp1;
-            v2.Position = sp2;
-            v3.Position = sp3;
+            // if (NeedCVVClip(v1) || NeedCVVClip(v2) || NeedCVVClip(v3))
+            // {
+            //     return;
+            // }
+            //
+            // v1.Position = TransformToScreen(v1);
+            // v2.Position = TransformToScreen(v2);
+            // v3.Position = TransformToScreen(v3);
             
             if (RenderMode == RenderMode.Wireframe || 
                 RenderMode == RenderMode.WireframeAndFilled)
@@ -523,16 +521,67 @@ namespace SoftwareRenderer.Render
 
             // Draw3DLine(new Vertex(new Vector3(0, 1, 0)), new Vertex(new Vector3(0, 0, 0)));
 
-
+            bool[] InvalidIndex = new bool[1024];
             foreach (var command in drawCommands)
             {
-                foreach (var indexGroup in command.Indexs)
+                Array.Fill(InvalidIndex, false);
+
+                // View转换
+                for (var i = 0; i < command.Vertexs.Length; i++)
                 {
-                    Draw3DTriangle(
-                        command.Vertexs[(int) indexGroup.x],
-                        command.Vertexs[(int) indexGroup.y],
-                        command.Vertexs[(int) indexGroup.z]);
+                    command.Vertexs[i].ApplyTransform(ViewMat);
                 }
+
+                // 背隐剔除
+                for (var i = 0; i < command.Indexs.Length; i++)
+                {
+                    var indexGroup = command.Indexs[i];
+                    var v1 = command.Vertexs[(int) indexGroup.x];
+                    var v2 = command.Vertexs[(int) indexGroup.y];
+                    var v3 = command.Vertexs[(int) indexGroup.z];
+                    if (!BackfaceCulling(v1, v2, v3))
+                    {
+                        InvalidIndex[i] = true;
+                    }
+                }
+                
+                // 投影变换
+                for (var i = 0; i < command.Vertexs.Length; i++)
+                {
+                    var v = command.Vertexs[i];
+                    v.ApplyTransform(ProjectorMat);
+                    if (NeedCVVClip(v))
+                    {
+                        v.NeedClip = true;
+                    }
+                    else
+                    {
+                        v.Position = TransformToScreen(v);
+                        command.Vertexs[i] = v;
+                    }
+                    
+                }
+
+                // 绘制三角形
+                for (var i = 0; i < command.Indexs.Length; i++)
+                {
+                    if (InvalidIndex[i])
+                    {
+                        continue;
+                    }
+
+                    var indexGroup = command.Indexs[i];
+                    var v1 = command.Vertexs[(int) indexGroup[0]];
+                    var v2 = command.Vertexs[(int) indexGroup[1]];
+                    var v3 = command.Vertexs[(int) indexGroup[2]];
+                    if (v1.NeedClip || v2.NeedClip || v3.NeedClip)
+                    {
+                        continue;
+                    }
+                    
+                    Draw3DTriangle(v1, v2, v3, command.Mat);
+                }
+                
             }
             drawCommands.Clear();
 

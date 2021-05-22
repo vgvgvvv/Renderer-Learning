@@ -8,13 +8,6 @@ namespace SoftwareRenderer.Render
     {
         public Mesh RawMesh { get; set; } = new Mesh();
 
-        public MeshRenderer() { }
-
-        public override void Update()
-        {
-            base.Update();
-        }
-
         public override Mesh GatherMesh()
         {
             return RawMesh;

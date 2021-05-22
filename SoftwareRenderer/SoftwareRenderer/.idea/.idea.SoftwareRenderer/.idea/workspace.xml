@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="764c39d4-cb4a-42de-9740-db8dbb2fce06" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Material.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Shader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Component/CubeRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Component/CubeRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/DrawCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/DrawCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/MeshRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/MeshRenderer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Renderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Renderer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +62,6 @@
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/World.cs" />
       <option value="$PROJECT_DIR$/MathLib/Math/Quaternion.cs" />
       <option value="$PROJECT_DIR$/MathLib/Math/Matrix3x3.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/MeshRenderer.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/DrawCommand.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/IRenderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Transform.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" />
@@ -71,13 +75,17 @@
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Camera.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/InputSystem.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" />
       <option value="$PROJECT_DIR$/TestSoftRender/TestMaths.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Scene/TestWorld.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Component/CubeRenderer.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Material.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Shader.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/DrawCommand.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Renderer.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/MeshRenderer.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sa05uNJXNvYYKd8QNmqDoEf78f" />
@@ -137,7 +145,7 @@
       <workItem from="1621516677864" duration="6976000" />
       <workItem from="1621580552425" duration="11581000" />
       <workItem from="1621608462200" duration="7200000" />
-      <workItem from="1621692100185" duration="22339000" />
+      <workItem from="1621692100185" duration="26551000" />
     </task>
     <servers />
   </component>

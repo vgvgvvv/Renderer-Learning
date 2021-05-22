@@ -69,9 +69,11 @@
         <e p="render" t="Include">
           <e p="Camera.cs" t="Include" />
           <e p="DrawCommand.cs" t="Include" />
+          <e p="Material.cs" t="Include" />
           <e p="Mesh.cs" t="Include" />
           <e p="MeshRenderer.cs" t="Include" />
           <e p="Renderer.cs" t="Include" />
+          <e p="Shader.cs" t="Include" />
           <e p="SoftwareRenderDevice.cs" t="Include" />
           <e p="Texture.cs" t="Include" />
           <e p="Vertex.cs" t="Include" />

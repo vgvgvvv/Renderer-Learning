@@ -7,5 +7,6 @@ namespace SoftwareRenderer.Render
     {
         public Vertex[] Vertexs;
         public Vector3[] Indexs;
+        public Material Mat;
     }
 }

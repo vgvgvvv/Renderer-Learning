@@ -10,6 +10,8 @@ namespace SoftwareRenderer.Render
     {
 
         public abstract Mesh GatherMesh();
+        
+        public Material Mat { get; set; } = new Material();
 
         public DrawCommand GatherCommand()
         {
@@ -17,7 +19,8 @@ namespace SoftwareRenderer.Render
             var drawCommand = new DrawCommand()
             {
                 Vertexs = new Vertex[mesh.Vertexs.Length],
-                Indexs = mesh.Indexs
+                Indexs = mesh.Indexs,
+                Mat = Mat
             };
             for (var i = 0; i < drawCommand.Vertexs.Length; i++)
             {

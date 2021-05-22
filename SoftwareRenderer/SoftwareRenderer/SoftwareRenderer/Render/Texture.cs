@@ -35,5 +35,10 @@ namespace SoftwareRenderer.Render
             Pixels = new Color[width,height];
         }
 
+        public Color Sample(float u, float v)
+        {
+            Color color = Pixels[(int)(Width * u), (int)(Height * v)];
+            return color;
+        }
     }
 }

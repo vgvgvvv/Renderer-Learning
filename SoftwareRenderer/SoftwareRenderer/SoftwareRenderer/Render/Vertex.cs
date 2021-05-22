@@ -12,12 +12,15 @@ namespace SoftwareRenderer.Render
         public Vector3 Normal;
         public Color Color;
 
+        internal bool NeedClip;
+
         public Vertex(Vector3 position)
         {
             Position = position;
             UV = Vector2.zero;
             Normal = Vector3.zero;
             Color = Color.gray;
+            NeedClip = false;
         }
         
         public Vertex(Vector3 position, Vector2 uv) : this(position)
