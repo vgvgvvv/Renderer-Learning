@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MathLib;
+using SoftwareRenderer.Core;
 
 namespace SoftwareRenderer.Render
 {
@@ -31,16 +33,23 @@ namespace SoftwareRenderer.Render
             
         }
 
+        public override void BeforeRender()
+        {
+            base.BeforeRender();
+            Application.Get().RenderSystem.SetViewMat(GetViewMatrix());
+            Application.Get().RenderSystem.SetProjectorMat(GetPerspectiveProjectionMatrix());
+        }
+
         public Matrix4x4 GetViewMatrix()
         {
             Vector3 right = Vector3.Cross(Vector3.up, Vector3.forward);
             var pos = Transform.position;
 
             Matrix4x4 t = new Matrix4x4(
-                1, 0, 0, 0,
-                0, 1, 0, 0,
-                0, 0, 1, 0,
-                -pos.x, -pos.y, -pos.z, 1);
+                1, 0, 0, -pos.x,
+                0, 1, 0, -pos.y,
+                0, 0, 1, -pos.z,
+                0, 0, 0, 1);
 
             Matrix4x4 r = Matrix4x4.Rotate(Transform.rotation);
 
@@ -51,16 +60,15 @@ namespace SoftwareRenderer.Render
         /// 
         /// </summary>
         /// <returns></returns>
-        public Matrix4x4 GetProjectionMatrix()
+        public Matrix4x4 GetPerspectiveProjectionMatrix()
         {
-            Matrix4x4 p = Matrix4x4.zero;
-            p[0, 0] = (float)(1 / (System.Math.Tan(FOV * 0.5f) * Aspect));
-            p[1, 1] = (float)(1 / System.Math.Tan(FOV * 0.5f));
-            p[2, 2] = FarZ / (FarZ - NearZ);
-            p[2, 3] = 1f;
-            p[3, 2] = (NearZ * FarZ) / (NearZ - FarZ);
-            return p;
-            
+            return Matrix4x4.Perspective(FOV, Aspect, NearZ, FarZ);
+        }
+
+        public Matrix4x4 GetOrthoProjectionMatrix()
+        {
+            throw new NotImplementedException();
+            //Matrix4x4.Ortho()
         }
     }
 }

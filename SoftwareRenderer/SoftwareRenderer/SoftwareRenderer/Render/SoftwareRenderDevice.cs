@@ -16,6 +16,8 @@ namespace SoftwareRenderer.Render
         public Matrix4x4 ViewMat { get; set; }
         public Matrix4x4 ProjectorMat { get; set; }
 
+        private List<DrawCommand> drawCommands = new List<DrawCommand>();
+
 
         public SoftwareRenderDevice(int width, int height)
         {
@@ -28,9 +30,11 @@ namespace SoftwareRenderer.Render
 
         #region 绘制函数
 
-
+        // 0,0点平移到了中点
         public void Draw2DPoint(int x, int y, Color color)
         {
+            x = x + Width / 2;
+            y = y + Height / 2;
             if (x >= 0 && x < Width && y >= 0 && y < Height)
             {
                 FrameBuffer[x, y] = color;
@@ -119,7 +123,39 @@ namespace SoftwareRenderer.Render
         /// <param name="p1"></param>
         /// <param name="p2"></param>
         /// <param name="p3"></param>
-        public void DrawTriangle(Vector3 p1, Vector3 p2, Vector3 p3, Matrix4x4 m, Matrix4x4 v, Matrix4x4 p)
+        public void Draw3DTriangle(Vertex v1, Vertex v2, Vertex v3)
+        {
+            var p1 = v1.Position;
+            p1 = ViewMat.MultiplyPoint(p1);
+            p1 = ProjectorMat.MultiplyPoint(p1);
+
+            var p2 = v2.Position;
+            p2 = ViewMat.MultiplyPoint(p2);
+            p2 = ProjectorMat.MultiplyPoint(p2);
+
+            var p3 = v3.Position;
+            p3 = ViewMat.MultiplyPoint(p3);
+            p3 = ProjectorMat.MultiplyPoint(p3);
+
+            Draw2DLine((int)(p1.x * Width), (int)(p1.y * Height), (int)(p2.x * Width), (int)(p2.y * Height), Color.red);
+            Draw2DLine((int)(p2.x * Width), (int)(p2.y * Height), (int)(p3.x * Width), (int)(p3.y * Height), Color.red);
+            Draw2DLine((int)(p3.x * Width), (int)(p3.y * Height), (int)(p1.x * Width), (int)(p1.y * Height), Color.red);
+        }
+
+        public void Draw3DLine(Vertex v1, Vertex v2)
+        {
+            var p1 = v1.Position;
+            p1 = ViewMat.MultiplyPoint(p1);
+            p1 = ProjectorMat.MultiplyPoint(p1);
+
+            var p2 = v2.Position;
+            p2 = ViewMat.MultiplyPoint(p2);
+            p2 = ProjectorMat.MultiplyPoint(p2);
+
+            Draw2DLine((int)(p1.x * Width), (int)(p1.y * Height), (int)(p2.x * Width), (int)(p2.y * Height), Color.red);
+        }
+
+        public void DrawMesh(Vertex[] vertices, Vector3[] indexs)
         {
 
         }
@@ -173,15 +209,35 @@ namespace SoftwareRenderer.Render
 
         }
 
+        public void PushDrawCommand(DrawCommand command)
+        {
+            drawCommands.Add(command);
+        }
+
         public Color[,] Render()
         {
             FrameClear();
 
 
-            // Draw2DLine(0, Height, Width, 0, Color.red);
+            Draw2DLine(0, -Height / 2, 0,  Height / 2, Color.red);
+            Draw2DLine(-Width / 2, 0, Width / 2,  0, Color.red);
 
             // DrawUV();
 
+            // Draw3DLine(new Vertex(new Vector3(0, 1, 0)), new Vertex(new Vector3(0, 0, 0)));
+
+
+            foreach (var command in drawCommands)
+            {
+                foreach (var indexGroup in command.Indexs)
+                {
+                    Draw3DTriangle(
+                        command.Vertexs[(int) indexGroup.x],
+                        command.Vertexs[(int) indexGroup.y],
+                        command.Vertexs[(int) indexGroup.z]);
+                }
+            }
+            drawCommands.Clear();
 
             return FrameBuffer;
         }

@@ -1,7 +1,11 @@
+
+using MathLib;
+
 namespace SoftwareRenderer.Render
 {
-    public class DrawCommand
+    public struct DrawCommand
     {
-        
+        public Vertex[] Vertexs;
+        public Vector3[] Indexs;
     }
 }

@@ -1,7 +1,9 @@
 using System;
+using System.Threading.Tasks.Dataflow;
 using Common;
 using MathLib;
 using NUnit.Framework;
+using SoftwareRenderer.Render;
 
 namespace TestSoftRender
 {
@@ -34,7 +36,43 @@ namespace TestSoftRender
         [Test]
         public void TestMatrix()
         {
-            Vector3 forward = new Vector3(0, )
+            Vector3 testPoint = new Vector3(0, 1, 0);
+            Matrix4x4 moveMatrix = new Matrix4x4(
+                1, 0, 0, 0,
+                0, 1, 0, 1,
+                0, 0, 1, 0, 
+                0, 0, 0, 1);
+            moveMatrix.MultiplyPoint(testPoint);
+            Console.WriteLine(testPoint);
+
+        }
+
+        [Test]
+        public void TestCamera()
+        {
+            Camera camera = new Camera();
+            Vector3 point = new Vector3(0, 0, -5);
+            var projectionMatrix = camera.GetPerspectiveProjectionMatrix();
+            point = projectionMatrix.MultiplyPoint(point);
+            Console.WriteLine(point);
+        }
+
+        [Test]
+        public void TestEuler()
+        {
+            Vector3 euler = new Vector3(0, 90, 0);
+            var quaternion = Quaternion.Euler(euler);
+            Console.WriteLine(quaternion);
+            Console.WriteLine(quaternion.eulerAngles);
+        }
+
+        [Test]
+        public void TestRotate()
+        {
+            Vector3 point = new Vector3(1, 0, 0);
+            var mat = Matrix4x4.Rotate(Quaternion.Euler(0, 90, 0));
+            point = mat.MultiplyPoint(point);
+            Console.WriteLine(point);
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using SDL2;
 
 namespace SoftwareRenderer.Core
@@ -7,7 +8,7 @@ namespace SoftwareRenderer.Core
     {
         private static Application Instance;
 
-        public static Application GetInstance()
+        public static Application Get()
         {
             if (Instance == null)
             {
@@ -25,23 +26,22 @@ namespace SoftwareRenderer.Core
         public IntPtr Renderer;
 
 
-        public InputSystem inputSystem;
-        public IRenderer renderSystem;
-        public World world;
+        public InputSystem InputSystem;
+        public IRenderer RenderSystem;
+        public World World;
 
         private bool shouldQuit = false;
 
-        public void Run()
+        public void Run(World scene = null)
         {
-            Init();
+            this.World = scene;
             while (!shouldQuit)
             {
                 Update();
             }
-            Uninit();
         }
         
-        private void Init()
+        public void Init()
         {
             if (SDL.SDL_Init(SDL.SDL_INIT_VIDEO) < 0)
             {
@@ -57,32 +57,38 @@ namespace SoftwareRenderer.Core
                 Console.WriteLine("cannot create window, Error : {0}", SDL.SDL_GetError());
             }
 
-            inputSystem = new InputSystem();
-            inputSystem.OnInputEvent += inputEvent =>
+            InputSystem = new InputSystem();
+            InputSystem.OnInputEvent += inputEvent =>
             {
                 if (inputEvent.type == SDL.SDL_EventType.SDL_QUIT)
                 {
                     shouldQuit = true;
                 }
             };
-            renderSystem = new SDLRenderer(Renderer, WINDOW_WIDTH, WINDOW_HEIGHT);
-            world = new World();
+            RenderSystem = new SDLRenderer(Renderer, WINDOW_WIDTH, WINDOW_HEIGHT);
+            if (World == null)
+            {
+                World = new World();
+            }
         }
 
-        private void Update()
-        {
-            world.Update();
-            renderSystem.Update();
-            inputSystem.Update();
-        }
-        
-        private void Uninit()
+        public void Uninit()
         {
             SDL.SDL_DestroyRenderer(Renderer);
             SDL.SDL_DestroyWindow(Window);
             
             SDL.SDL_Quit();
         }
+        
+        private void Update()
+        {
+            World.Update();
+            World.BeforeRender();
+            RenderSystem.Update();
+            InputSystem.Update();
+        }
+        
+        
         
     }
 }

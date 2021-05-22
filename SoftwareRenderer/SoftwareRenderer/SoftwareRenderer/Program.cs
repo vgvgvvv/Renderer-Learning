@@ -1,6 +1,7 @@
-﻿using MathLib;
+﻿using System;
+using SDL2;
 using SoftwareRenderer.Core;
-using SoftwareRenderer.Render;
+using SoftwareRenderer.Scene;
 
 namespace SoftwareRenderer
 {
@@ -8,16 +9,12 @@ namespace SoftwareRenderer
     {
         static void Main(string[] args)
         {
-            Application.GetInstance().Run();
 
-            var camera = WorldObject.Create<Camera>(new Vector3(0, 1, -1));
+            Application.Get().Init();
+            World world = new TestWorld();
+            Application.Get().Run(world);
+            Application.Get().Uninit();
 
-            var renderer = WorldObject.Create<MeshRenderer>(new Vector3(0, 0, 1));
-
-            renderer.RawMesh.vertexs = new[]
-            {
-                new Vertex()
-            };
         }
     }
 }

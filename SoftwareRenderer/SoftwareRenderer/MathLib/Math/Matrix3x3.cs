@@ -49,12 +49,12 @@ namespace MathLib
         {
             get
             {
-                return this[row + column * 4];
+                return this[row + column * 3];
             }
 
             set
             {
-                this[row + column * 4] = value;
+                this[row + column * 3] = value;
             }
         }
 
@@ -68,12 +68,12 @@ namespace MathLib
                     case 0: return m00;
                     case 1: return m10;
                     case 2: return m20;
-                    case 4: return m01;
-                    case 5: return m11;
-                    case 6: return m21;
-                    case 8: return m02;
-                    case 9: return m12;
-                    case 10: return m22;
+                    case 3: return m01;
+                    case 4: return m11;
+                    case 5: return m21;
+                    case 6: return m02;
+                    case 7: return m12;
+                    case 8: return m22;
                     default:
                         throw new IndexOutOfRangeException("Invalid matrix index!");
                 }
@@ -86,12 +86,12 @@ namespace MathLib
                     case 0: m00 = value; break;
                     case 1: m10 = value; break;
                     case 2: m20 = value; break;
-                    case 4: m01 = value; break;
-                    case 5: m11 = value; break;
-                    case 6: m21 = value; break;
-                    case 8: m02 = value; break;
-                    case 9: m12 = value; break;
-                    case 10: m22 = value; break;
+                    case 3: m01 = value; break;
+                    case 4: m11 = value; break;
+                    case 5: m21 = value; break;
+                    case 6: m02 = value; break;
+                    case 7: m12 = value; break;
+                    case 8: m22 = value; break;
 
                     default:
                         throw new IndexOutOfRangeException("Invalid matrix index!");
@@ -123,7 +123,7 @@ namespace MathLib
          // Multiplies two matrices.
         public static Matrix3x3 operator*(Matrix3x3 lhs, Matrix3x3 rhs)
         {
-            Matrix3x3 res;
+            Matrix3x3 res = identity;
             res.m00 = lhs.m00 * rhs.m00 + lhs.m01 * rhs.m10 + lhs.m02 * rhs.m20;
             res.m01 = lhs.m00 * rhs.m01 + lhs.m01 * rhs.m11 + lhs.m02 * rhs.m21;
             res.m02 = lhs.m00 * rhs.m02 + lhs.m01 * rhs.m12 + lhs.m02 * rhs.m22;
@@ -242,9 +242,8 @@ namespace MathLib
             return matrix;
         }
         
-        public bool ToEuler(out Vector3 v)
+        public bool ToEuler(ref Vector3 v)
         {
-            v = new Vector3();
             // from http://www.geometrictools.com/Documentation/EulerAngles.pdf
             // YXZ order
             if ( m12 < 0.999F ) // some fudge for imprecision
@@ -254,7 +253,7 @@ namespace MathLib
                     v.x = Mathf.Asin(-m12);
                     v.y = Mathf.Atan2(m02, m22);
                     v.z = Mathf.Atan2(m10, m11);
-                    SanitizeEuler (out v);
+                    SanitizeEuler (ref v);
                     return true;
                 }
                 else
@@ -263,7 +262,7 @@ namespace MathLib
                     v.x = Mathf.PI * 0.5F;
                     v.y = Mathf.Atan2(m01, m00);
                     v.z = 0.0F;
-                    SanitizeEuler (out v);
+                    SanitizeEuler (ref v);
             
                     return false;
                 }
@@ -274,14 +273,14 @@ namespace MathLib
                 v.x = -(float)Math.PI * 0.5F;
                 v.y = Mathf.Atan2(-m01,m00);
                 v.z = 0.0F;
-                SanitizeEuler (out v);
+                SanitizeEuler (ref v);
                 return false;
             }
         }
         
-        void SanitizeEuler (out Vector3 euler)
+        void SanitizeEuler (ref Vector3 euler)
         {
-            MakePositive (out euler);
+            MakePositive (ref euler);
             /*
              Vector3f option0 = euler;
              option0.x = kPI - option0.x;
@@ -295,9 +294,8 @@ namespace MathLib
              */
         }
         
-        void MakePositive (out Vector3 euler)
+        void MakePositive (ref Vector3 euler)
         {
-            euler = new Vector3();
             const float negativeFlip = -0.0001F;
             const float positiveFlip = (Mathf.PI * 2.0F) - 0.0001F;
 	

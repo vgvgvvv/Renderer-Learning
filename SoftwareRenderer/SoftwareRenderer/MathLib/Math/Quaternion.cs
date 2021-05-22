@@ -378,9 +378,9 @@ namespace MathLib
         private static Vector3 Internal_ToEulerRad(Quaternion rotation)
         {
             Matrix3x3 m;
-            Vector3 rot;
-            m = ToMatrix3x3(rotation);
-            m.ToEuler (out rot);
+            Vector3 rot = new Vector3();
+            m = ToMatrix3x3(rotation.normalized);
+            m.ToEuler (ref rot);
             return rot;
         }
 

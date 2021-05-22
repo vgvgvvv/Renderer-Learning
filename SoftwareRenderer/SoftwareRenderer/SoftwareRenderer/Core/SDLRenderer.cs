@@ -24,6 +24,21 @@ namespace SoftwareRenderer.Core
 
         }
 
+        public void PushDrawCommand(DrawCommand command)
+        {
+            device.PushDrawCommand(command);
+        }
+
+        public void SetViewMat(Matrix4x4 mat)
+        {
+            Device.ViewMat = mat;
+        }
+
+        public void SetProjectorMat(Matrix4x4 mat)
+        {
+            Device.ProjectorMat = mat;
+        }
+
         public void Update()
         {
             SDL.SDL_SetRenderDrawColor(Renderer, 0, 0, 0, 0);
@@ -36,7 +51,7 @@ namespace SoftwareRenderer.Core
             {
                 for (int y = 0; y < Height; y++)
                 {
-                    var color = frameBuffer[x, Height - y - 1];
+                    var color = frameBuffer[x, y];
                     if (color != lastColor)
                     {
                         SDL.SDL_SetRenderDrawColor(Renderer, (byte)(color.r * 255), (byte)(color.g * 255), (byte)(color.b * 255), 255);

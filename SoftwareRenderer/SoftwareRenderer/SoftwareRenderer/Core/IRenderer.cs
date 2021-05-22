@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MathLib;
 using SoftwareRenderer.Render;
 
 namespace SoftwareRenderer.Core
@@ -9,6 +10,11 @@ namespace SoftwareRenderer.Core
     {
         public SoftwareRenderDevice Device { get; }
 
+        public void PushDrawCommand(DrawCommand command);
+
         public void Update();
+
+        public void SetViewMat(Matrix4x4 mat);
+        public void SetProjectorMat(Matrix4x4 mat);
     }
 }

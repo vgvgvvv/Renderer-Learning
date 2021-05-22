@@ -6,7 +6,7 @@ namespace SoftwareRenderer.Core
     public class InputSystem
     {
         public event Action<SDL.SDL_Event> OnInputEvent;
-        
+
         public void Update()
         {
             SDL.SDL_Event e;
