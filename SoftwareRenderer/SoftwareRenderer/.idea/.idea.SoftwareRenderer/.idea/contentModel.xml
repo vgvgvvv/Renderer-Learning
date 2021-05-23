@@ -65,6 +65,7 @@
           <e p="Main.cs" t="Include" />
         </e>
         <e p="LuaWrapper" t="Include">
+          <e p="Common1LogWrap.cs" t="Include" />
           <e p="DelegateFactory.cs" t="Include" />
           <e p="LuaBinder.cs" t="Include" />
           <e p="SoftwareRenderer1Component1CubeRendererWrap.cs" t="Include" />

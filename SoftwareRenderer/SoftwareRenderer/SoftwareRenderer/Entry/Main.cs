@@ -43,7 +43,9 @@ namespace Entry
 
             var worldType = Type.GetType(WorldType);
             Assert.Check<Exception>(worldType != null, "cannot find world type : " + worldType);
-            World world = Activator.CreateInstance(worldType) as World ;
+            var constructor = worldType.GetConstructor(Array.Empty<Type>());
+            Assert.Check<Exception>(constructor != null, "cannot find world constructor : " + worldType);
+            var world = constructor.Invoke(Array.Empty<object>()) as World;
             Assert.Check<Exception>(world != null, "cannot instance world type : " + worldType);
             
             Application.Get().Run(world);

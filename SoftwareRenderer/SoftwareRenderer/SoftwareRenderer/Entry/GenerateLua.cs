@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -49,25 +51,33 @@ namespace Entry
                 return;
             }
 
-            var dllPath = Assembly.GetAssembly(typeof(Application)).Location;
-            var types = Assembly.GetAssembly(typeof(Application))
+            List<Type> allTypes = new List<Type>();
+            
+            allTypes.AddRange(Assembly.GetAssembly(typeof(Application))
                 .GetTypes()
                 .Where(t => t.Namespace.Contains("SoftwareRenderer") && !t.Name.StartsWith("<"))
-                .ToList();
-            ExportToLua.GenWithTypeToExport(dllPath, types, OutputPath);
+                .ToList());
             
-            // UniToLuaGener.ExportToLua.GenWithAssembly(
-            //     Assembly.GetAssembly(typeof(Bounds)), 
-            //     t => t.Namespace != null && t.Namespace.Contains("MathLib"), OutputPath);
+            allTypes.AddRange(new List<Type>()
+            {
+                typeof(Log)
+            });
             
-            EmmyLuaExport.GenLuaTypeDefine(types, HintOutputPath);
-            EmmyLuaExport.GenLuaClassDefine(types, HintOutputPath);
+            ExportToLua.GenWithTypeToExport(null, allTypes, OutputPath);
+
+            EmmyLuaExport.GenLuaTypeDefine(allTypes, HintOutputPath);
+            EmmyLuaExport.GenLuaClassDefine(allTypes, HintOutputPath);
             var CodeHintZipLibFilePath = Path.Combine(dataManager.FileDirectory, hintOutputPath, "LuaHint.zip"); 
             if (File.Exists(CodeHintZipLibFilePath))
             {
                 File.Delete(CodeHintZipLibFilePath);
             }
             ZipFile.CreateFromDirectory(HintOutputPath, CodeHintZipLibFilePath);
+        }
+
+        private void GenDllTypes()
+        {
+            
         }
     }
 }

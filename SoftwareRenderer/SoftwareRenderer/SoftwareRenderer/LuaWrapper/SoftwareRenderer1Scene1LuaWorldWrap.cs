@@ -38,7 +38,12 @@ namespace UniToLua
         
         private static int _CreateSoftwareRenderer1Scene1LuaWorld(UniLua.ILuaState L)
         {
-			if(L.CheckNum(1)&& L.CheckType<string>(1))
+			if(L.CheckNum(0))
+			{
+				L.PushAny<SoftwareRenderer.Scene.LuaWorld>(new SoftwareRenderer.Scene.LuaWorld());
+				return 1;
+			}
+			else if(L.CheckNum(1)&& L.CheckType<string>(1))
 			{
 				var arg1 = L.CheckAny<string>(1);
 				L.PushAny<SoftwareRenderer.Scene.LuaWorld>(new SoftwareRenderer.Scene.LuaWorld(arg1));

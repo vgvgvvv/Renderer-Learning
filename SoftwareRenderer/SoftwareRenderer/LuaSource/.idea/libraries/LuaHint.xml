@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="LuaHint" type="Lua">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Temp/LuaHint/LuaHint.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
