@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="764c39d4-cb4a-42de-9740-db8dbb2fce06" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Material.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Shader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/DrawCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/DrawCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/MeshRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/MeshRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Renderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Renderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Shader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Shader.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +24,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -80,11 +70,11 @@
       <option value="$PROJECT_DIR$/SoftwareRenderer/Component/CubeRenderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Material.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Shader.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/DrawCommand.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Renderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/MeshRenderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Shader.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" />
     </changedPaths>
   </component>
@@ -112,7 +102,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.SoftwareRenderer">
+  <component name="RunManager">
     <configuration name="SoftwareRenderer" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -145,7 +135,8 @@
       <workItem from="1621516677864" duration="6976000" />
       <workItem from="1621580552425" duration="11581000" />
       <workItem from="1621608462200" duration="7200000" />
-      <workItem from="1621692100185" duration="26551000" />
+      <workItem from="1621692100185" duration="27767000" />
+      <workItem from="1621764209848" duration="4732000" />
     </task>
     <servers />
   </component>

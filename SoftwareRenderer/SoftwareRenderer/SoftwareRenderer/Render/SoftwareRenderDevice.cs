@@ -164,7 +164,7 @@ namespace SoftwareRenderer.Render
         /// <param name="sp2">屏幕位置</param>
         /// <param name="v3">顶点3信息</param>
         /// <param name="sp3">屏幕位置</param>
-        public void Draw2DTriangle(Vertex v1, Vertex v2, Vertex v3)
+        public void Draw2DTriangle(Vertex v1, Vertex v2, Vertex v3, Material mat)
         {
             // 绘制上三角形
             void DrawDownTriangle(Vertex v1, Vertex v2, Vertex buttom)
@@ -235,7 +235,15 @@ namespace SoftwareRenderer.Render
                         }
 
                         var lerpedVertex = Vertex.Lerp(left, right, lerpFactor);
-                        Draw2DPoint(xIndex, yIndex, lerpedVertex.Position.z, lerpedVertex.Color);
+
+                        BaseFragmentIn fragmentIn = new BaseFragmentIn();
+                        fragmentIn.Color = lerpedVertex.Color;
+                        fragmentIn.Normal = lerpedVertex.Normal;
+                        fragmentIn.UV = lerpedVertex.UV;
+                        fragmentIn.Position = lerpedVertex.Position;
+                        
+                        var color = mat.Shader.Fragment(fragmentIn);
+                        Draw2DPoint(xIndex, yIndex, lerpedVertex.Position.z, color);
                     }
                     
                 }
@@ -377,28 +385,6 @@ namespace SoftwareRenderer.Render
         public void Draw3DTriangle(Vertex v1, Vertex v2, Vertex v3, Material material)
         {
 
-            // v1.ApplyTransform(ViewMat);
-            // v2.ApplyTransform(ViewMat);
-            // v3.ApplyTransform(ViewMat);
-            //
-            // if (!BackfaceCulling(v1, v2, v3))
-            // {
-            //     return;
-            // }
-            //
-            // v1.ApplyTransform(ProjectorMat);
-            // v2.ApplyTransform(ProjectorMat);
-            // v3.ApplyTransform(ProjectorMat);
-            
-            // if (NeedCVVClip(v1) || NeedCVVClip(v2) || NeedCVVClip(v3))
-            // {
-            //     return;
-            // }
-            //
-            // v1.Position = TransformToScreen(v1);
-            // v2.Position = TransformToScreen(v2);
-            // v3.Position = TransformToScreen(v3);
-            
             if (RenderMode == RenderMode.Wireframe || 
                 RenderMode == RenderMode.WireframeAndFilled)
             {
@@ -409,7 +395,7 @@ namespace SoftwareRenderer.Render
             if(RenderMode == RenderMode.Filled || 
                RenderMode == RenderMode.WireframeAndFilled)
             {
-                Draw2DTriangle(v1, v2, v3);
+                Draw2DTriangle(v1, v2, v3, material);
             }
             
         }
@@ -521,27 +507,40 @@ namespace SoftwareRenderer.Render
 
             // Draw3DLine(new Vertex(new Vector3(0, 1, 0)), new Vertex(new Vector3(0, 0, 0)));
 
-            bool[] InvalidIndex = new bool[1024];
+            // 无效的index
+            bool[] invalidIndex = new bool[1024];
             foreach (var command in drawCommands)
             {
-                Array.Fill(InvalidIndex, false);
-
-                // View转换
+                Array.Fill(invalidIndex, false);
                 for (var i = 0; i < command.Vertexs.Length; i++)
                 {
-                    command.Vertexs[i].ApplyTransform(ViewMat);
+                    var v = command.Vertexs[i];
+                    BaseVertexIn baseVertexIn = new BaseVertexIn();
+                    baseVertexIn.Position = v.Position;
+                    baseVertexIn.Normal = v.Normal;
+                    baseVertexIn.VertexColor = v.Color;
+                    var vertexOut = command.Mat.Shader.Vertex(baseVertexIn);
+                    
+                    v.Position = vertexOut.Position;
+                    v.Normal = vertexOut.Normal;
+                    v.Color = vertexOut.Color;
+                    
+                    // View转换
+                    v.ApplyTransform(ViewMat);
+                    command.Vertexs[i] = v;
+                    
                 }
 
                 // 背隐剔除
                 for (var i = 0; i < command.Indexs.Length; i++)
                 {
                     var indexGroup = command.Indexs[i];
-                    var v1 = command.Vertexs[(int) indexGroup.x];
-                    var v2 = command.Vertexs[(int) indexGroup.y];
-                    var v3 = command.Vertexs[(int) indexGroup.z];
+                    var v1 = command.Vertexs[(int) indexGroup[0]];
+                    var v2 = command.Vertexs[(int) indexGroup[1]];
+                    var v3 = command.Vertexs[(int) indexGroup[2]];
                     if (!BackfaceCulling(v1, v2, v3))
                     {
-                        InvalidIndex[i] = true;
+                        invalidIndex[i] = true;
                     }
                 }
                 
@@ -565,7 +564,7 @@ namespace SoftwareRenderer.Render
                 // 绘制三角形
                 for (var i = 0; i < command.Indexs.Length; i++)
                 {
-                    if (InvalidIndex[i])
+                    if (invalidIndex[i])
                     {
                         continue;
                     }
@@ -588,8 +587,5 @@ namespace SoftwareRenderer.Render
             return FrameBuffer;
         }
 
-        
-
-        
     }
 }
