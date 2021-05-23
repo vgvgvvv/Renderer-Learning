@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using SDL2;
+using UniLua;
 
 namespace SoftwareRenderer.Core
 {
@@ -26,9 +27,10 @@ namespace SoftwareRenderer.Core
         public IntPtr Renderer;
 
 
-        public InputSystem InputSystem;
-        public IRenderer RenderSystem;
-        public World World;
+        public InputSystem InputSystem{ get; private set; }
+        public IRenderer RenderSystem{ get; private set; }
+        public LuaManager LuaSystem { get; private set; }
+        public World World{ get; private set; }
 
         private bool shouldQuit = false;
 
@@ -66,6 +68,10 @@ namespace SoftwareRenderer.Core
                 }
             };
             RenderSystem = new SDLRenderer(Renderer, WINDOW_WIDTH, WINDOW_HEIGHT);
+
+            LuaSystem = new LuaManager();
+            LuaSystem.Init();
+            
             if (World == null)
             {
                 World = new World();
@@ -87,8 +93,7 @@ namespace SoftwareRenderer.Core
             RenderSystem.Update();
             InputSystem.Update();
         }
-        
-        
+
         
     }
 }

@@ -34,7 +34,7 @@
         </e>
         <e p="MathLib.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
-          <e p="Release" t="Include">
+          <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
               <e p="MathLib.AssemblyInfo.cs" t="Include" />
             </e>
@@ -53,13 +53,46 @@
           <e p="Behavior.cs" t="Include" />
           <e p="InputSystem.cs" t="Include" />
           <e p="IRenderer.cs" t="Include" />
+          <e p="LuaManager.cs" t="Include" />
           <e p="SDLRenderer.cs" t="Include" />
           <e p="Transform.cs" t="Include" />
           <e p="World.cs" t="Include" />
           <e p="WorldObject.cs" t="Include" />
         </e>
+        <e p="Entry" t="Include">
+          <e p="GenerateLua.cs" t="Include" />
+          <e p="Main.cs" t="Include" />
+        </e>
+        <e p="LuaWrapper" t="Include">
+          <e p="DelegateFactory.cs" t="Include" />
+          <e p="LuaBinder.cs" t="Include" />
+          <e p="SoftwareRenderer1Component1CubeRendererWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Core1ApplicationWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Core1BehaviorWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Core1InputSystemWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Core1SDLRendererWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Core1TransformWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Core1WorldObjectWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Core1WorldWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1ProgramWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Render1BaseFragmentInWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Render1BaseVertexInWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Render1CameraWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Render1DrawCommandWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Render1MaterialWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Render1MeshRendererWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Render1MeshWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Render1RendererWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Render1RenderModeWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Render1ShaderWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Render1SoftwareRenderDeviceWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Render1TextureFilterModeWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Render1TextureWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Render1VertexWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Scene1TestWorldWrap.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
-          <e p="Release" t="Include">
+          <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
               <e p="SoftwareRenderer.AssemblyInfo.cs" t="Include" />
             </e>
@@ -95,7 +128,7 @@
         <e p=".gitignore" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
-          <e p="Release" t="Include">
+          <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
               <e p="TestSoftRender.AssemblyInfo.cs" t="Include" />
             </e>
