@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="764c39d4-cb4a-42de-9740-db8dbb2fce06" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MathLib/Math/Color.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathLib/Math/Color.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1SoftwareRenderDeviceWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1SoftwareRenderDeviceWrap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +64,6 @@
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Shader.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Program.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1ApplicationWrap.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/World.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Component/LuaObjec.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Component/LuaObject.cs" />
@@ -77,9 +73,10 @@
       <option value="$PROJECT_DIR$/SoftwareRenderer/Scene/LuaWorld.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Entry/Main.cs" />
       <option value="$PROJECT_DIR$/MathLib/Math/Color.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1SoftwareRenderDeviceWrap.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sa05uNJXNvYYKd8QNmqDoEf78f" />
