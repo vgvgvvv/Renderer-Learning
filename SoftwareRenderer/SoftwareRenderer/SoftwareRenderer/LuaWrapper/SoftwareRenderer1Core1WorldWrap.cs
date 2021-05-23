@@ -24,9 +24,10 @@ namespace UniToLua
 			L.RegVar("Objects", get_Objects, null);
 			L.RegVar("Owner", get_Owner, null);
 			L.RegVar("Transform", get_Transform, set_Transform);
+			L.RegFunction("Awake", Awake);
+			L.RegFunction("Init", Init);
 			L.RegFunction("Update", Update);
 			L.RegFunction("BeforeRender", BeforeRender);
-			L.RegFunction("Awake", Awake);
 			L.RegFunction("GetType", GetType);
 			L.RegFunction("ToString", ToString);
 			L.RegFunction("Equals", Equals);
@@ -74,6 +75,30 @@ namespace UniToLua
 			return 0;
         }
         
+        private static int Awake(UniLua.ILuaState L)
+        {
+			if(L.CheckNum(1))
+			{
+				var obj = (SoftwareRenderer.Core.World) L.ToUserData(1);
+				obj.Awake();
+				return 0;
+			}
+			L.L_Error("call function Awake args is error");
+			return 1;
+        }
+        
+        private static int Init(UniLua.ILuaState L)
+        {
+			if(L.CheckNum(1))
+			{
+				var obj = (SoftwareRenderer.Core.World) L.ToUserData(1);
+				obj.Init();
+				return 0;
+			}
+			L.L_Error("call function Init args is error");
+			return 1;
+        }
+        
         private static int Update(UniLua.ILuaState L)
         {
 			if(L.CheckNum(1))
@@ -95,18 +120,6 @@ namespace UniToLua
 				return 0;
 			}
 			L.L_Error("call function BeforeRender args is error");
-			return 1;
-        }
-        
-        private static int Awake(UniLua.ILuaState L)
-        {
-			if(L.CheckNum(1))
-			{
-				var obj = (SoftwareRenderer.Core.World) L.ToUserData(1);
-				obj.Awake();
-				return 0;
-			}
-			L.L_Error("call function Awake args is error");
 			return 1;
         }
         

@@ -47,6 +47,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Component" t="Include">
           <e p="CubeRenderer.cs" t="Include" />
+          <e p="LuaObject.cs" t="Include" />
         </e>
         <e p="Core" t="Include">
           <e p="Application.cs" t="Include" />
@@ -67,9 +68,11 @@
           <e p="DelegateFactory.cs" t="Include" />
           <e p="LuaBinder.cs" t="Include" />
           <e p="SoftwareRenderer1Component1CubeRendererWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Component1LuaObjectWrap.cs" t="Include" />
           <e p="SoftwareRenderer1Core1ApplicationWrap.cs" t="Include" />
           <e p="SoftwareRenderer1Core1BehaviorWrap.cs" t="Include" />
           <e p="SoftwareRenderer1Core1InputSystemWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Core1LuaManagerWrap.cs" t="Include" />
           <e p="SoftwareRenderer1Core1SDLRendererWrap.cs" t="Include" />
           <e p="SoftwareRenderer1Core1TransformWrap.cs" t="Include" />
           <e p="SoftwareRenderer1Core1WorldObjectWrap.cs" t="Include" />
@@ -89,6 +92,7 @@
           <e p="SoftwareRenderer1Render1TextureFilterModeWrap.cs" t="Include" />
           <e p="SoftwareRenderer1Render1TextureWrap.cs" t="Include" />
           <e p="SoftwareRenderer1Render1VertexWrap.cs" t="Include" />
+          <e p="SoftwareRenderer1Scene1LuaWorldWrap.cs" t="Include" />
           <e p="SoftwareRenderer1Scene1TestWorldWrap.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -112,6 +116,7 @@
           <e p="Vertex.cs" t="Include" />
         </e>
         <e p="Scene" t="Include">
+          <e p="LuaWorld.cs" t="Include" />
           <e p="TestWorld.cs" t="Include" />
         </e>
         <e p="SDL" t="Include">

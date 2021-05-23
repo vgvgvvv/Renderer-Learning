@@ -22,10 +22,12 @@ namespace UniToLua
 			L.RegFunction("New", _CreateSoftwareRenderer1Core1Application);
 			L.RegVar("Window", get_Window, set_Window);
 			L.RegVar("Renderer", get_Renderer, set_Renderer);
-			L.RegVar("InputSystem", get_InputSystem, set_InputSystem);
-			L.RegVar("World", get_World, set_World);
 			L.RegVar("WINDOW_WIDTH", get_WINDOW_WIDTH, set_WINDOW_WIDTH);
 			L.RegVar("WINDOW_HEIGHT", get_WINDOW_HEIGHT, set_WINDOW_HEIGHT);
+			L.RegVar("InputSystem", get_InputSystem, null);
+			L.RegVar("RenderSystem", get_RenderSystem, null);
+			L.RegVar("LuaSystem", get_LuaSystem, null);
+			L.RegVar("World", get_World, null);
 			L.RegFunction("Get", Get);
 			L.RegFunction("Run", Run);
 			L.RegFunction("Init", Init);
@@ -73,48 +75,6 @@ namespace UniToLua
 			return 0;
         }
         
-        private static int get_InputSystem(UniLua.ILuaState L)
-        {
-			var obj = (SoftwareRenderer.Core.Application) L.ToUserData(1);
-			L.PushAny<SoftwareRenderer.Core.InputSystem>(obj.InputSystem);
-			return 1;
-        }
-        
-        private static int set_InputSystem(UniLua.ILuaState L)
-        {
-			var obj = (SoftwareRenderer.Core.Application) L.ToUserData(1);
-			var value = L.CheckAny<SoftwareRenderer.Core.InputSystem>(2);
-			return 0;
-        }
-        
-        private static int get_RenderSystem(UniLua.ILuaState L)
-        {
-			var obj = (SoftwareRenderer.Core.Application) L.ToUserData(1);
-			L.PushAny<SoftwareRenderer.Core.IRenderer>(obj.RenderSystem);
-			return 1;
-        }
-        
-        private static int set_RenderSystem(UniLua.ILuaState L)
-        {
-			var obj = (SoftwareRenderer.Core.Application) L.ToUserData(1);
-			var value = L.CheckAny<SoftwareRenderer.Core.IRenderer>(2);
-			return 0;
-        }
-        
-        private static int get_World(UniLua.ILuaState L)
-        {
-			var obj = (SoftwareRenderer.Core.Application) L.ToUserData(1);
-			L.PushAny<SoftwareRenderer.Core.World>(obj.World);
-			return 1;
-        }
-        
-        private static int set_World(UniLua.ILuaState L)
-        {
-			var obj = (SoftwareRenderer.Core.Application) L.ToUserData(1);
-			var value = L.CheckAny<SoftwareRenderer.Core.World>(2);
-			return 0;
-        }
-        
         private static int get_WINDOW_WIDTH(UniLua.ILuaState L)
         {
 			L.PushAny<int>(SoftwareRenderer.Core.Application.WINDOW_WIDTH);
@@ -139,6 +99,34 @@ namespace UniToLua
 			var value = L.CheckAny<int>(1);
 			SoftwareRenderer.Core.Application.WINDOW_HEIGHT = value;
 			return 0;
+        }
+        
+        private static int get_InputSystem(UniLua.ILuaState L)
+        {
+			var obj = (SoftwareRenderer.Core.Application) L.ToUserData(1);
+			L.PushAny<SoftwareRenderer.Core.InputSystem>(obj.InputSystem);
+			return 1;
+        }
+        
+        private static int get_RenderSystem(UniLua.ILuaState L)
+        {
+			var obj = (SoftwareRenderer.Core.Application) L.ToUserData(1);
+			L.PushAny<SoftwareRenderer.Core.IRenderer>(obj.RenderSystem);
+			return 1;
+        }
+        
+        private static int get_LuaSystem(UniLua.ILuaState L)
+        {
+			var obj = (SoftwareRenderer.Core.Application) L.ToUserData(1);
+			L.PushAny<SoftwareRenderer.Core.LuaManager>(obj.LuaSystem);
+			return 1;
+        }
+        
+        private static int get_World(UniLua.ILuaState L)
+        {
+			var obj = (SoftwareRenderer.Core.Application) L.ToUserData(1);
+			L.PushAny<SoftwareRenderer.Core.World>(obj.World);
+			return 1;
         }
         
         private static int Get(UniLua.ILuaState L)

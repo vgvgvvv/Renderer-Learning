@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using Common;
 using Common.ConsoleApp;
+using Common.Persistence;
 using SoftwareRenderer.Core;
 using SoftwareRenderer.Scene;
 using UniLua;
@@ -24,6 +25,17 @@ namespace Entry
             Flag.Parse(args);
             Flag.ShowHelpIfNeed(args);
 
+            var dataManager = DataFileManager.FindConfig("config.json");
+            if (dataManager.TryLoadData<string>("LuaRoot", out var luaRootName))
+            {
+                LuaRoot = Path.Combine(dataManager.FileDirectory, luaRootName);
+            }
+
+            if (dataManager.TryLoadData<string>("WorldType", out var worldName))
+            {
+                WorldType = worldName;
+            }
+            
             Assert.Check<Exception>(LuaRoot != null, "please input lua-root arg");
             
             Application.Get().Init();

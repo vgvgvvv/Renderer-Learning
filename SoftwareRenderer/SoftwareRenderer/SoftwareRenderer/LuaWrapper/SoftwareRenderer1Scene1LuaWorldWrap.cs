@@ -11,24 +11,24 @@ namespace UniToLua
 {
     using SoftwareRenderer.Scene;
     using SoftwareRenderer.Core;
-    using System.Collections.Generic;
     using System;
+    using System.Collections.Generic;
     
     
-    public class SoftwareRenderer1Scene1TestWorldWrap
+    public class SoftwareRenderer1Scene1LuaWorldWrap
     {
         
         public static void Register(UniLua.ILuaState L)
         {
-			L.BeginClass(typeof(SoftwareRenderer.Scene.TestWorld), typeof(SoftwareRenderer.Core.World));
-			L.RegFunction("New", _CreateSoftwareRenderer1Scene1TestWorld);
+			L.BeginClass(typeof(SoftwareRenderer.Scene.LuaWorld), typeof(SoftwareRenderer.Core.World));
+			L.RegFunction("New", _CreateSoftwareRenderer1Scene1LuaWorld);
 			L.RegVar("Objects", get_Objects, null);
 			L.RegVar("Owner", get_Owner, null);
 			L.RegVar("Transform", get_Transform, set_Transform);
+			L.RegFunction("Awake", Awake);
 			L.RegFunction("Init", Init);
 			L.RegFunction("Update", Update);
 			L.RegFunction("BeforeRender", BeforeRender);
-			L.RegFunction("Awake", Awake);
 			L.RegFunction("GetType", GetType);
 			L.RegFunction("ToString", ToString);
 			L.RegFunction("Equals", Equals);
@@ -36,51 +36,64 @@ namespace UniToLua
 			L.EndClass();
         }
         
-        private static int _CreateSoftwareRenderer1Scene1TestWorld(UniLua.ILuaState L)
+        private static int _CreateSoftwareRenderer1Scene1LuaWorld(UniLua.ILuaState L)
         {
-			if(L.CheckNum(0))
+			if(L.CheckNum(1)&& L.CheckType<string>(1))
 			{
-				L.PushAny<SoftwareRenderer.Scene.TestWorld>(new SoftwareRenderer.Scene.TestWorld());
+				var arg1 = L.CheckAny<string>(1);
+				L.PushAny<SoftwareRenderer.Scene.LuaWorld>(new SoftwareRenderer.Scene.LuaWorld(arg1));
 				return 1;
 			}
-			L.L_Error("call TestWorld constructor args is error");
+			L.L_Error("call LuaWorld constructor args is error");
 			return 1;
         }
         
         private static int get_Objects(UniLua.ILuaState L)
         {
-			var obj = (SoftwareRenderer.Scene.TestWorld) L.ToUserData(1);
+			var obj = (SoftwareRenderer.Scene.LuaWorld) L.ToUserData(1);
 			L.PushAny<System.Collections.Generic.List<SoftwareRenderer.Core.WorldObject>>(obj.Objects);
 			return 1;
         }
         
         private static int get_Owner(UniLua.ILuaState L)
         {
-			var obj = (SoftwareRenderer.Scene.TestWorld) L.ToUserData(1);
+			var obj = (SoftwareRenderer.Scene.LuaWorld) L.ToUserData(1);
 			L.PushAny<SoftwareRenderer.Core.WorldObject>(obj.Owner);
 			return 1;
         }
         
         private static int get_Transform(UniLua.ILuaState L)
         {
-			var obj = (SoftwareRenderer.Scene.TestWorld) L.ToUserData(1);
+			var obj = (SoftwareRenderer.Scene.LuaWorld) L.ToUserData(1);
 			L.PushAny<SoftwareRenderer.Core.Transform>(obj.Transform);
 			return 1;
         }
         
         private static int set_Transform(UniLua.ILuaState L)
         {
-			var obj = (SoftwareRenderer.Scene.TestWorld) L.ToUserData(1);
+			var obj = (SoftwareRenderer.Scene.LuaWorld) L.ToUserData(1);
 			var value = L.CheckAny<SoftwareRenderer.Core.Transform>(2);
 			obj.Transform = value;
 			return 0;
+        }
+        
+        private static int Awake(UniLua.ILuaState L)
+        {
+			if(L.CheckNum(1))
+			{
+				var obj = (SoftwareRenderer.Scene.LuaWorld) L.ToUserData(1);
+				obj.Awake();
+				return 0;
+			}
+			L.L_Error("call function Awake args is error");
+			return 1;
         }
         
         private static int Init(UniLua.ILuaState L)
         {
 			if(L.CheckNum(1))
 			{
-				var obj = (SoftwareRenderer.Scene.TestWorld) L.ToUserData(1);
+				var obj = (SoftwareRenderer.Scene.LuaWorld) L.ToUserData(1);
 				obj.Init();
 				return 0;
 			}
@@ -92,7 +105,7 @@ namespace UniToLua
         {
 			if(L.CheckNum(1))
 			{
-				var obj = (SoftwareRenderer.Scene.TestWorld) L.ToUserData(1);
+				var obj = (SoftwareRenderer.Scene.LuaWorld) L.ToUserData(1);
 				obj.Update();
 				return 0;
 			}
@@ -104,23 +117,11 @@ namespace UniToLua
         {
 			if(L.CheckNum(1))
 			{
-				var obj = (SoftwareRenderer.Scene.TestWorld) L.ToUserData(1);
+				var obj = (SoftwareRenderer.Scene.LuaWorld) L.ToUserData(1);
 				obj.BeforeRender();
 				return 0;
 			}
 			L.L_Error("call function BeforeRender args is error");
-			return 1;
-        }
-        
-        private static int Awake(UniLua.ILuaState L)
-        {
-			if(L.CheckNum(1))
-			{
-				var obj = (SoftwareRenderer.Scene.TestWorld) L.ToUserData(1);
-				obj.Awake();
-				return 0;
-			}
-			L.L_Error("call function Awake args is error");
 			return 1;
         }
         
@@ -129,7 +130,7 @@ namespace UniToLua
 			if(L.CheckNum(1))
 			{
 				System.Type result;
-				var obj = (SoftwareRenderer.Scene.TestWorld) L.ToUserData(1);
+				var obj = (SoftwareRenderer.Scene.LuaWorld) L.ToUserData(1);
 				result = obj.GetType();
 				L.PushAny<System.Type>(result);
 				return 1;
@@ -143,7 +144,7 @@ namespace UniToLua
 			if(L.CheckNum(1))
 			{
 				string result;
-				var obj = (SoftwareRenderer.Scene.TestWorld) L.ToUserData(1);
+				var obj = (SoftwareRenderer.Scene.LuaWorld) L.ToUserData(1);
 				result = obj.ToString();
 				L.PushAny<string>(result);
 				return 1;
@@ -154,10 +155,10 @@ namespace UniToLua
         
         private static int Equals(UniLua.ILuaState L)
         {
-			if(L.CheckNum(2) && L.CheckType<SoftwareRenderer.Scene.TestWorld, object>(1))
+			if(L.CheckNum(2) && L.CheckType<SoftwareRenderer.Scene.LuaWorld, object>(1))
 			{
 				bool result;
-				var obj = (SoftwareRenderer.Scene.TestWorld) L.ToUserData(1);
+				var obj = (SoftwareRenderer.Scene.LuaWorld) L.ToUserData(1);
 				var arg1 = L.CheckAny<object>(2);
 				result = obj.Equals(arg1);
 				L.PushAny<bool>(result);
@@ -172,7 +173,7 @@ namespace UniToLua
 			if(L.CheckNum(1))
 			{
 				int result;
-				var obj = (SoftwareRenderer.Scene.TestWorld) L.ToUserData(1);
+				var obj = (SoftwareRenderer.Scene.LuaWorld) L.ToUserData(1);
 				result = obj.GetHashCode();
 				L.PushAny<int>(result);
 				return 1;

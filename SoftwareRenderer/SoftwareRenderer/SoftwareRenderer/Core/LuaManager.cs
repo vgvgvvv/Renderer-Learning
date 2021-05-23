@@ -9,15 +9,14 @@ namespace SoftwareRenderer.Core
 {
     public class LuaManager
     {
-        private LuaState L;
+        public LuaState L { get; private set; }
 
-        public List<string> LuaDirectories { get; } = new List<string>();
+        public List<string> LuaDirectories { get; private set; }
         
         public void Init()
         {
             L = new LuaState();
-            LuaBinder.Bind(L);
-            DelegateFactory.Init(L);
+            LuaDirectories = new List<string>();
 
             ULDebug.Log += o => Log.Info(o);
             ULDebug.LogError += o => Log.Error(o);
@@ -40,6 +39,13 @@ namespace SoftwareRenderer.Core
 
                 return filename;
             });
+            
+            L.L_OpenLibs();
+            L.OpenToLua();
+            
+            LuaBinder.Bind(L);
+            DelegateFactory.Init(L);
+           
         }
     }
 }

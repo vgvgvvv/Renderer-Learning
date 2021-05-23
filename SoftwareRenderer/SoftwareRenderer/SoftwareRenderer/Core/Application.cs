@@ -75,6 +75,7 @@ namespace SoftwareRenderer.Core
             if (World == null)
             {
                 World = new World();
+                World.Init();
             }
         }
 

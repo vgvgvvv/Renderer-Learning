@@ -9,7 +9,12 @@ namespace SoftwareRenderer.Core
     {
         public List<WorldObject> Objects { get; } = new List<WorldObject>();
 
-        public void Update()
+        public virtual void Init()
+        {
+            
+        }
+        
+        public virtual void Update()
         {
             foreach (var worldObject in Objects)
             {
@@ -20,7 +25,7 @@ namespace SoftwareRenderer.Core
             }
         }
 
-        public void BeforeRender()
+        public virtual void BeforeRender()
         {
             foreach (var worldObject in Objects)
             {

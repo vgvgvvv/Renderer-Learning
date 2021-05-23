@@ -1,0 +1,5 @@
+{
+    "LuaRoot":"LuaSource",
+    "LuaWrapperOutputPath":"SoftwareRenderer/LuaWrapper",
+    "HintOutputPath":"Temp/LuaHint"
+}

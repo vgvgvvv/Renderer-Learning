@@ -5,16 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="764c39d4-cb4a-42de-9740-db8dbb2fce06" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Core/LuaManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Entry/GenerateLua.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Entry/Main.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Component/LuaObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Scene/LuaWorld.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/UniToLua.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/UniToLua.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Common.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/Common.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Core/LuaManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Core/LuaManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Core/World.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Core/World.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Entry/GenerateLua.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Entry/GenerateLua.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Entry/Main.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Entry/Main.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/LuaBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/LuaBinder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1ApplicationWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1ApplicationWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1WorldWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1WorldWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Scene1TestWorldWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Scene1TestWorldWrap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftwareRenderer/SoftwareRenderer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/SoftwareRenderer.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,16 +39,19 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniToLua/LuaRegister.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/Util.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3285E3B4-32F8-4A47-A2F6-74664D44CC23/4a/359d0f22/IToLua.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/Common/Common/Persistence/DataFileManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F97A0A83-4342-4D41-AFC3-724CA363D566/5e/b53691de/DataFileManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniToLuaGener/ExportToLua/ExportToLua_Bind.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/LuaAPI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73438F1C-62D6-4D5A-9593-1D2EF03C7556/83/d52b7eb9/ExportToLua.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3285E3B4-32F8-4A47-A2F6-74664D44CC23/2c/c2377c71/LuaState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D5106182-800B-4988-8026-66FA01E87E45/28/b6a31a8f/NeedParseFlagAttribute.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Vector2.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Vector4.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Plane.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Ray.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Color.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Matrix4x4.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Quaternion.cs" />
@@ -60,7 +68,6 @@
       <option value="$PROJECT_DIR$/MathLib/Math/Math.cs" />
       <option value="$PROJECT_DIR$/MathLib/Math/Utility.cs" />
       <option value="$PROJECT_DIR$/MathLib/Math/Matrix4x4.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/World.cs" />
       <option value="$PROJECT_DIR$/MathLib/Math/Quaternion.cs" />
       <option value="$PROJECT_DIR$/MathLib/Math/Matrix3x3.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/IRenderer.cs" />
@@ -86,11 +93,16 @@
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Shader.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Program.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Entry/GenerateLua.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1ApplicationWrap.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/LuaManager.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Entry/Main.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/World.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Component/LuaObjec.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Component/LuaObject.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Scene/LuaWorld.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/LuaBinder.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/LuaManager.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Entry/GenerateLua.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sa05uNJXNvYYKd8QNmqDoEf78f" />
@@ -173,7 +185,7 @@
       <workItem from="1621580552425" duration="11581000" />
       <workItem from="1621608462200" duration="7200000" />
       <workItem from="1621692100185" duration="27767000" />
-      <workItem from="1621764209848" duration="9211000" />
+      <workItem from="1621764209848" duration="13730000" />
     </task>
     <servers />
   </component>
@@ -198,6 +210,36 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniToLua/LuaRegister.cs</url>
+          <line>185</line>
+          <properties documentPath="E:\Projects\ReAutomatic\resetcore-csharp\ResetCoreCSharp\Utility\UniToLua\UniToLua\LuaRegister.cs" initialLine="185" containingFunctionPresentation="method 'BeginClass'">
+            <startOffsets>
+              <option value="6323" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6371" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniToLua/LuaRegister.cs</url>
+          <line>846</line>
+          <properties documentPath="E:\Projects\ReAutomatic\resetcore-csharp\ResetCoreCSharp\Utility\UniToLua\UniToLua\LuaRegister.cs" initialLine="846" containingFunctionPresentation="method 'AddToLoaded'">
+            <startOffsets>
+              <option value="27552" />
+            </startOffsets>
+            <endOffsets>
+              <option value="27598" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="DotNetProject">
         <watch expression="p" language="C#" />
