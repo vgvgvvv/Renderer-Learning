@@ -25,7 +25,6 @@ namespace UniToLua
 			L.RegVar("ZBuffer", get_ZBuffer, null);
 			L.RegVar("Width", get_Width, null);
 			L.RegVar("Height", get_Height, null);
-			L.RegVar("ClearColor", get_ClearColor, set_ClearColor);
 			L.RegVar("RenderMode", get_RenderMode, set_RenderMode);
 			L.RegVar("ViewMat", get_ViewMat, null);
 			L.RegVar("ProjectorMat", get_ProjectorMat, null);
@@ -90,14 +89,6 @@ namespace UniToLua
 			var obj = (SoftwareRenderer.Render.SoftwareRenderDevice) L.ToUserData(1);
 			L.PushAny<MathLib.Color>(obj.ClearColor);
 			return 1;
-        }
-        
-        private static int set_ClearColor(UniLua.ILuaState L)
-        {
-			var obj = (SoftwareRenderer.Render.SoftwareRenderDevice) L.ToUserData(1);
-			var value = L.CheckAny<MathLib.Color>(2);
-			obj.ClearColor = value;
-			return 0;
         }
         
         private static int get_RenderMode(UniLua.ILuaState L)

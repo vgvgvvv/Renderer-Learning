@@ -22,12 +22,12 @@ namespace SoftwareRenderer.Render
     
     public class SoftwareRenderDevice
     {
-        public Color[,] FrameBuffer { get; }
-        public float[,] ZBuffer { get; }
-        public int Width { get; }
-        public int Height { get; }
+        public readonly Color[,] FrameBuffer;
+        public readonly float[,] ZBuffer;
+        public readonly int Width;
+        public readonly int Height;
 
-        public Color ClearColor { get; set; } = Color.black;
+        public readonly Color ClearColor;
 
         public RenderMode RenderMode { get; set; }= RenderMode.Filled;
         
@@ -46,6 +46,7 @@ namespace SoftwareRenderer.Render
             Height = height;
             FrameBuffer = new Color[width, height];
             ZBuffer = new float[width,height];
+            ClearColor = Color.black;
         }
 
 
@@ -482,7 +483,8 @@ namespace SoftwareRenderer.Render
             {
                 for (int x = 0; x < Width; x++)
                 {
-                    FrameBuffer[x, y] = ClearColor;
+                    var color = ClearColor;
+                    FrameBuffer[x, y] = color;
                     ZBuffer[x, y] = -float.MaxValue;
                 }
             }

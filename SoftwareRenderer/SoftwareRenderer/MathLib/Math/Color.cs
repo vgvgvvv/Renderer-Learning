@@ -82,7 +82,10 @@ namespace MathLib
         public static bool operator==(Color lhs, Color rhs)
         {
             // Returns false in the presence of NaN values.
-            return (Vector4)lhs == (Vector4)rhs;
+            return lhs.r == rhs.r && 
+                   lhs.g == rhs.g && 
+                   lhs.b == rhs.b && 
+                   lhs.a == rhs.a;
         }
 
         //*undoc*
