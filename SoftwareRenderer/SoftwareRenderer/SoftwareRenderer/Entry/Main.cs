@@ -20,12 +20,15 @@ namespace Entry
         [Flag("world", "SoftwareRenderer.Scene.TestWorld", "world type")]
         public static string WorldType;
         
+        [Flag("config", "config.json", "world type")]
+        public static string ConfigName;
+        
         public override void Exe(string[] args)
         {
             Flag.Parse(args);
             Flag.ShowHelpIfNeed(args);
 
-            var dataManager = DataFileManager.FindConfig("config.json");
+            var dataManager = DataFileManager.FindConfig(ConfigName);
             if (dataManager.TryLoadData<string>("LuaRoot", out var luaRootName))
             {
                 LuaRoot = Path.Combine(dataManager.FileDirectory, luaRootName);

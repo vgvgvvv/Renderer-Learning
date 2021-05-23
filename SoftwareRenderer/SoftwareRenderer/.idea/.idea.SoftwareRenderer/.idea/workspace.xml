@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="764c39d4-cb4a-42de-9740-db8dbb2fce06" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/LuaSource/LuaWorld.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LuaSource/define.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Entry/GenerateLua.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Entry/GenerateLua.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Entry/Main.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Entry/Main.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/LuaBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/LuaBinder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Scene1LuaWorldWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Scene1LuaWorldWrap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Scene/LuaWorld.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Scene/LuaWorld.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,8 +94,8 @@
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/LuaManager.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/LuaBinder.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Entry/GenerateLua.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Entry/Main.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Scene/LuaWorld.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Entry/Main.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sa05uNJXNvYYKd8QNmqDoEf78f" />
@@ -130,11 +122,29 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.SoftwareRenderer">
-    <configuration name="SoftwareRenderer" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/SoftwareRenderer/bin/Release/netcoreapp3.1/SoftwareRenderer.dll" />
+  <component name="RunManager" selected=".NET Project.TestWorld">
+    <configuration name="LuaWorld" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/SoftwareRenderer/bin/Debug/netcoreapp3.1/SoftwareRenderer.dll" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SoftwareRenderer/bin/Release/netcoreapp3.1" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SoftwareRenderer/bin/Debug/netcoreapp3.1" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/SoftwareRenderer/SoftwareRenderer.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value=".NETCoreApp,Version=v3.1" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="TestWorld" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/SoftwareRenderer/bin/Debug/netcoreapp3.1/SoftwareRenderer.dll" />
+      <option name="PROGRAM_PARAMETERS" value="config=testconfig.json" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SoftwareRenderer/bin/Debug/netcoreapp3.1" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
@@ -168,7 +178,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue=".NET Project.SoftwareRenderer" />
+      <item itemvalue=".NET Project.LuaWorld" />
+      <item itemvalue=".NET Project.TestWorld" />
       <item itemvalue=".NET Project.update lua bind" />
     </list>
   </component>
@@ -186,7 +197,7 @@
       <workItem from="1621580552425" duration="11581000" />
       <workItem from="1621608462200" duration="7200000" />
       <workItem from="1621692100185" duration="27767000" />
-      <workItem from="1621764209848" duration="15611000" />
+      <workItem from="1621764209848" duration="16290000" />
     </task>
     <servers />
   </component>
