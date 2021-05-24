@@ -41,9 +41,6 @@ namespace Entry
             
             Assert.Check<Exception>(LuaRoot != null, "please input lua-root arg");
             
-            Application.Get().Init();
-            Application.Get().LuaSystem.LuaDirectories.Add(LuaRoot);
-
             var worldType = Type.GetType(WorldType);
             Assert.Check<Exception>(worldType != null, "cannot find world type : " + worldType);
             var constructor = worldType.GetConstructor(Array.Empty<Type>());
@@ -51,7 +48,9 @@ namespace Entry
             var world = constructor.Invoke(Array.Empty<object>()) as World;
             Assert.Check<Exception>(world != null, "cannot instance world type : " + worldType);
             
-            Application.Get().Run(world);
+            Application.Get().Init(world);
+            Application.Get().LuaSystem.LuaDirectories.Add(LuaRoot);
+            Application.Get().Run();
             Application.Get().Uninit();
         }
         

@@ -11,8 +11,8 @@ namespace UniToLua
 {
     using SoftwareRenderer.Scene;
     using SoftwareRenderer.Core;
-    using System;
     using System.Collections.Generic;
+    using System;
     
     
     public class SoftwareRenderer1Scene1LuaWorldWrap
@@ -26,9 +26,9 @@ namespace UniToLua
 			L.RegVar("Owner", get_Owner, null);
 			L.RegVar("Transform", get_Transform, set_Transform);
 			L.RegFunction("Awake", Awake);
-			L.RegFunction("Init", Init);
 			L.RegFunction("Update", Update);
 			L.RegFunction("BeforeRender", BeforeRender);
+			L.RegFunction("Init", Init);
 			L.RegFunction("GetType", GetType);
 			L.RegFunction("ToString", ToString);
 			L.RegFunction("Equals", Equals);
@@ -41,12 +41,6 @@ namespace UniToLua
 			if(L.CheckNum(0))
 			{
 				L.PushAny<SoftwareRenderer.Scene.LuaWorld>(new SoftwareRenderer.Scene.LuaWorld());
-				return 1;
-			}
-			else if(L.CheckNum(1)&& L.CheckType<string>(1))
-			{
-				var arg1 = L.CheckAny<string>(1);
-				L.PushAny<SoftwareRenderer.Scene.LuaWorld>(new SoftwareRenderer.Scene.LuaWorld(arg1));
 				return 1;
 			}
 			L.L_Error("call LuaWorld constructor args is error");
@@ -94,18 +88,6 @@ namespace UniToLua
 			return 1;
         }
         
-        private static int Init(UniLua.ILuaState L)
-        {
-			if(L.CheckNum(1))
-			{
-				var obj = (SoftwareRenderer.Scene.LuaWorld) L.ToUserData(1);
-				obj.Init();
-				return 0;
-			}
-			L.L_Error("call function Init args is error");
-			return 1;
-        }
-        
         private static int Update(UniLua.ILuaState L)
         {
 			if(L.CheckNum(1))
@@ -127,6 +109,18 @@ namespace UniToLua
 				return 0;
 			}
 			L.L_Error("call function BeforeRender args is error");
+			return 1;
+        }
+        
+        private static int Init(UniLua.ILuaState L)
+        {
+			if(L.CheckNum(1))
+			{
+				var obj = (SoftwareRenderer.Scene.LuaWorld) L.ToUserData(1);
+				obj.Init();
+				return 0;
+			}
+			L.L_Error("call function Init args is error");
 			return 1;
         }
         

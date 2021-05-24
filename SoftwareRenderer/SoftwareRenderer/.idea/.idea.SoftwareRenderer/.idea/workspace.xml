@@ -6,14 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="764c39d4-cb4a-42de-9740-db8dbb2fce06" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Common.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/Common.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/UniToLua.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/UniToLua.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LuaSource/LuaWorld.lua" beforeDir="false" afterPath="$PROJECT_DIR$/LuaSource/LuaWorld.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Core/WorldObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Core/WorldObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Entry/GenerateLua.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Entry/GenerateLua.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/DelegateFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/DelegateFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Entry/Main.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Entry/Main.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/LuaBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/LuaBinder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1ApplicationWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1ApplicationWrap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1WorldObjectWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1WorldObjectWrap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1WorldWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1WorldWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Scene1LuaWorldWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Scene1LuaWorldWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Scene/LuaWorld.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Scene/LuaWorld.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,16 +34,25 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/E2/UInt32.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/11/Array.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/2A1/ConstructorInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/2B0/RuntimeConstructorInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/A683AC5E-CF68-4ABE-97B0-8498CC6ADE40/fc/2061c638/Common.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6A57240-4A2A-42A0-BDAB-99CFB603FC07/4f/b0aa6220/LuaState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/VM.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniToLua/LuaUtil.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B876795D-B456-4505-9887-02F6DA34D838/c0/a530dae4/LuaState.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/LuaDebug.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/E2/UInt32.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/Do.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniToLua/TypeChecker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/11/Array.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/LuaAPI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AC613005-B340-44DC-ADAE-EE3E87D91FCA/6/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/LuaAuxLib.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6A57240-4A2A-42A0-BDAB-99CFB603FC07/c7/8b183601/IToLua.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Quaternion.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Test/TestMath.cs" />
-      <option value="$PROJECT_DIR$/TestSoftRender/UnitTest1.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Math.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Vector3.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Utility/Bound.cs" />
@@ -74,22 +85,25 @@
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Shader.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Program.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1ApplicationWrap.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/World.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Component/LuaObjec.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Component/LuaObject.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/LuaManager.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Scene/LuaWorld.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Entry/Main.cs" />
       <option value="$PROJECT_DIR$/MathLib/Math/Color.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1SoftwareRenderDeviceWrap.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/IRenderer.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/WorldObject.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Entry/GenerateLua.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/LuaBinder.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/World.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1ApplicationWrap.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Scene1LuaWorldWrap.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Entry/Main.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/LuaManager.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" />
+      <option value="$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniToLua/TypeChecker.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/WorldObject.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1WorldObjectWrap.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Scene/LuaWorld.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sa05uNJXNvYYKd8QNmqDoEf78f" />
@@ -100,7 +114,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34995976" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -116,7 +130,7 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.update lua bind">
+  <component name="RunManager" selected=".NET Project.LuaWorld">
     <configuration name="LuaWorld" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/SoftwareRenderer/bin/Debug/netcoreapp3.1/SoftwareRenderer.dll" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -218,26 +232,9 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/SoftwareRenderer/Scene/LuaWorld.cs</url>
-          <line>56</line>
-          <properties documentPath="E:\Projects\MyProjects\render\SoftwareRenderer\SoftwareRenderer\SoftwareRenderer\Scene\LuaWorld.cs" initialLine="56" containingFunctionPresentation="method 'Awake'" />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/SoftwareRenderer/Scene/LuaWorld.cs</url>
-          <line>57</line>
-          <properties documentPath="E:\Projects\MyProjects\render\SoftwareRenderer\SoftwareRenderer\SoftwareRenderer\Scene\LuaWorld.cs" initialLine="57" containingFunctionPresentation="method 'Awake'" />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/SoftwareRenderer/Scene/LuaWorld.cs</url>
-          <line>50</line>
-          <properties documentPath="E:\Projects\MyProjects\render\SoftwareRenderer\SoftwareRenderer\SoftwareRenderer\Scene\LuaWorld.cs" initialLine="50" containingFunctionPresentation="constructor 'LuaWorld'" />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="DotNet Exception Breakpoints" />
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
 </project>

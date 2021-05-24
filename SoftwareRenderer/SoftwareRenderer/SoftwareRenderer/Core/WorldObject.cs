@@ -1,4 +1,5 @@
 ﻿using System;
+using Common;
 using MathLib;
 using SoftwareRenderer.Render;
 
@@ -18,6 +19,11 @@ namespace SoftwareRenderer.Core
         {
             
             T obj = Activator.CreateInstance<T>();
+            
+            if (obj == null)
+            {
+                return null;
+            }
 
             obj.Owner = context;
             obj.Transform.position = position;
@@ -33,10 +39,15 @@ namespace SoftwareRenderer.Core
             return obj;
         }
 
-        public static object Create(Type type, WorldObject context, Vector3 position)
+        public static WorldObject Create(Type type, WorldObject context, Vector3 position)
         {
             WorldObject obj = Activator.CreateInstance(type) as WorldObject;
 
+            if (obj == null)
+            {
+                return null;
+            }
+            
             obj.Owner = context;
             obj.Transform.position = position;
 
@@ -50,7 +61,31 @@ namespace SoftwareRenderer.Core
             obj.Awake();
             return obj;
         }
-        
+
+        public static WorldObject CreateByTypeName(string typeName, WorldObject context, Vector3 position)
+        {
+            var type = Type.GetType(typeName);
+            Assert.Check<Exception>(type != null, "cannot find type " + typeName);
+            WorldObject obj = Activator.CreateInstance(type) as WorldObject;
+            
+            if (obj == null)
+            {
+                return null;
+            }
+
+            obj.Owner = context;
+            obj.Transform.position = position;
+
+            var owner = context;
+            while (!(owner is World))
+            {
+                owner = owner.Owner;
+            }
+            var world = owner as World;
+            world.Objects.Add(obj);
+            obj.Awake();
+            return obj;
+        }
         
     }
 }

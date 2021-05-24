@@ -8,20 +8,38 @@ require("define")
 
 local LuaWorld = {}
 
-function LuaWorld.Init()
-    Log.Info({"LuaWorld Init"})
-end
-
-function LuaWorld.Awake()
+function LuaWorld:Awake(world)
     Log.Info({"LuaWorld Awake"})
+    self.camera = SoftwareRenderer.Core.WorldObject.CreateByTypeName(
+            "SoftwareRenderer.Render.Camera",
+            world, MathLib.Vector3.New(0, 0, -10))
+
+    ---@type SoftwareRenderer.Component.CubeRenderer
+    self.cube1 = SoftwareRenderer.Core.WorldObject.CreateByTypeName("SoftwareRenderer.Component.CubeRenderer",
+            world, MathLib.Vector3.New(1, 0, 1))
+    self.cube1.Transform.scale = MathLib.Vector3.one * 2
+
+    ---@type SoftwareRenderer.Component.CubeRenderer
+    self.cube2 = SoftwareRenderer.Core.WorldObject.CreateByTypeName("SoftwareRenderer.Component.CubeRenderer",
+            world, MathLib.Vector3.New(-1, 0, 1))
+    self.cube2.Transform.scale = MathLib.Vector3.one * 1
+
+    self.cube1:OnUpdate_Add(function()
+        self.cube1.Transform.rotation = MathLib.Quaternion.Euler(10, 10, 0) * self.cube1.Transform.rotation
+    end)
+
+    self.cube2:OnUpdate_Add(function()
+        self.cube2.Transform.rotation = MathLib.Quaternion.Euler(10, 10, 0) * self.cube2.Transform.rotation
+    end)
+
 end
 
-function LuaWorld.Update()
-    Log.Info({"LuaWorld Update"})
+function LuaWorld:Update(world)
+
 end
 
-function LuaWorld.BeforeRender()
-    Log.Info({"LuaWorld BeforeRender"})
+function LuaWorld:BeforeRender(world)
+
 end
 
 return LuaWorld

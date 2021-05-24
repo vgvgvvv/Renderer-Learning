@@ -25,6 +25,7 @@ namespace UniToLua
 			L.RegVar("Transform", get_Transform, set_Transform);
 			L.RegFunction("Awake", Awake);
 			L.RegFunction("Create", Create);
+			L.RegFunction("CreateByTypeName", CreateByTypeName);
 			L.RegFunction("GetType", GetType);
 			L.RegFunction("ToString", ToString);
 			L.RegFunction("Equals", Equals);
@@ -81,15 +82,31 @@ namespace UniToLua
         {
 			if(L.CheckNum(3) && L.CheckType<System.Type, SoftwareRenderer.Core.WorldObject, MathLib.Vector3>(1))
 			{
-				object result;
+				SoftwareRenderer.Core.WorldObject result;
 				var arg1 = L.CheckAny<System.Type>(1);
 				var arg2 = L.CheckAny<SoftwareRenderer.Core.WorldObject>(2);
 				var arg3 = L.CheckAny<MathLib.Vector3>(3);
 				result = SoftwareRenderer.Core.WorldObject.Create(arg1, arg2, arg3);
-				L.PushAny<object>(result);
+				L.PushAny<SoftwareRenderer.Core.WorldObject>(result);
 				return 1;
 			}
 			L.L_Error("call function Create args is error");
+			return 1;
+        }
+        
+        private static int CreateByTypeName(UniLua.ILuaState L)
+        {
+			if(L.CheckNum(3) && L.CheckType<string, SoftwareRenderer.Core.WorldObject, MathLib.Vector3>(1))
+			{
+				SoftwareRenderer.Core.WorldObject result;
+				var arg1 = L.CheckAny<string>(1);
+				var arg2 = L.CheckAny<SoftwareRenderer.Core.WorldObject>(2);
+				var arg3 = L.CheckAny<MathLib.Vector3>(3);
+				result = SoftwareRenderer.Core.WorldObject.CreateByTypeName(arg1, arg2, arg3);
+				L.PushAny<SoftwareRenderer.Core.WorldObject>(result);
+				return 1;
+			}
+			L.L_Error("call function CreateByTypeName args is error");
 			return 1;
         }
         

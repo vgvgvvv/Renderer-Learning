@@ -10,9 +10,12 @@ namespace SoftwareRenderer.Scene
     {
         private LuaState L;
         private LuaTable LuaModule;
+        
 
-        public LuaWorld()
+        public override void Awake()
         {
+            base.Awake();
+            
             var dataManager = DataFileManager.FindConfig("config.json");
             if (!dataManager.TryLoadData<string>("LuaWorldModule", out var luaModule))
             {
@@ -36,46 +39,19 @@ namespace SoftwareRenderer.Scene
             {
                 LuaModule = luaTable;
             }
-        }
-        
-        public LuaWorld(string luaModule)
-        {
-            L = Application.Get().LuaSystem.L;
-            if (!L.Require(luaModule, out var result))
-            {
-                Log.Error("Cannot find lua module : " + luaModule);
-            }
             
-            if (result is LuaTable luaTable)
-            {
-                LuaModule = luaTable;
-            }
-        }
-
-        public override void Awake()
-        {
-            base.Awake();
             if (LuaModule != null)
             {
-                L.CallField(LuaModule, "Awake");
+                L.CallField(LuaModule, "Awake", this);
             }
         }
         
-        public override void Init()
-        {
-            base.Init();
-            if (LuaModule != null)
-            {
-                L.CallField(LuaModule, "Init");
-            }
-        }
-
         public override void Update()
         {
             base.Update();
             if (LuaModule != null)
             {
-                L.CallField(LuaModule, "Update");
+                L.CallField(LuaModule, "Update", this);
             }
         }
 
@@ -84,7 +60,7 @@ namespace SoftwareRenderer.Scene
             base.BeforeRender();
             if (LuaModule != null)
             {
-                L.CallField(LuaModule, "BeforeRender");
+                L.CallField(LuaModule, "BeforeRender", this);
             }
         }
 

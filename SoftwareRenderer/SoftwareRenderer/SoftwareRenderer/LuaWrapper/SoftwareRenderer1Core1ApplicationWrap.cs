@@ -144,17 +144,9 @@ namespace UniToLua
         
         private static int Run(UniLua.ILuaState L)
         {
-			if(L.CheckRange(1, 2))
+			if(L.CheckNum(1))
 			{
-				var top = L.GetTop();
 				var obj = (SoftwareRenderer.Core.Application) L.ToUserData(1);
-				var arg1 = default(SoftwareRenderer.Core.World);				
-				if(3 > top)
-				{
-					arg1 = L.CheckAny<SoftwareRenderer.Core.World>(2);
-					obj.Run(arg1);
-					return 0;
-				}
 				obj.Run();
 				return 0;
 			}
@@ -164,9 +156,17 @@ namespace UniToLua
         
         private static int Init(UniLua.ILuaState L)
         {
-			if(L.CheckNum(1))
+			if(L.CheckRange(1, 2))
 			{
+				var top = L.GetTop();
 				var obj = (SoftwareRenderer.Core.Application) L.ToUserData(1);
+				var arg1 = default(SoftwareRenderer.Core.World);				
+				if(3 > top)
+				{
+					arg1 = L.CheckAny<SoftwareRenderer.Core.World>(2);
+					obj.Init(arg1);
+					return 0;
+				}
 				obj.Init();
 				return 0;
 			}

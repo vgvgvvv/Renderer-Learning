@@ -34,17 +34,28 @@ namespace SoftwareRenderer.Core
 
         private bool shouldQuit = false;
 
-        public void Run(World scene = null)
+        public void Run()
         {
-            this.World = scene;
+            World.Awake();
             while (!shouldQuit)
             {
                 Update();
             }
         }
         
-        public void Init()
+        public void Init(World scene = null)
         {
+            World = scene;
+            if (World == null)
+            {
+                World = new World();
+            }
+            
+            LuaSystem = new LuaManager();
+            LuaSystem.Init();
+            
+            World.Init();
+            
             if (SDL.SDL_Init(SDL.SDL_INIT_VIDEO) < 0)
             {
                 Console.WriteLine("Unable to initialize SDL. Error : {0}", SDL.SDL_GetError());
@@ -70,14 +81,6 @@ namespace SoftwareRenderer.Core
             RenderSystem = new SDLRenderer(Renderer, WINDOW_WIDTH, WINDOW_HEIGHT);
             RenderSystem.Init();
             
-            LuaSystem = new LuaManager();
-            LuaSystem.Init();
-            
-            if (World == null)
-            {
-                World = new World();
-                World.Init();
-            }
         }
 
         public void Uninit()
