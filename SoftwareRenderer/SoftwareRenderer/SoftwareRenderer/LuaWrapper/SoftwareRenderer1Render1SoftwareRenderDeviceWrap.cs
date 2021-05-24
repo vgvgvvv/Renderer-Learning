@@ -25,6 +25,7 @@ namespace UniToLua
 			L.RegVar("ZBuffer", get_ZBuffer, null);
 			L.RegVar("Width", get_Width, null);
 			L.RegVar("Height", get_Height, null);
+			L.RegVar("ClearColor", get_ClearColor, null);
 			L.RegVar("RenderMode", get_RenderMode, set_RenderMode);
 			L.RegVar("ViewMat", get_ViewMat, null);
 			L.RegVar("ProjectorMat", get_ProjectorMat, null);

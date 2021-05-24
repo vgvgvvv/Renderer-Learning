@@ -29,7 +29,9 @@ namespace UniToLua
 			L.RegFunction("PushDrawCommand", PushDrawCommand);
 			L.RegFunction("SetViewMat", SetViewMat);
 			L.RegFunction("SetProjectorMat", SetProjectorMat);
+			L.RegFunction("Init", Init);
 			L.RegFunction("Update", Update);
+			L.RegFunction("Uninit", Uninit);
 			L.RegFunction("GetType", GetType);
 			L.RegFunction("ToString", ToString);
 			L.RegFunction("Equals", Equals);
@@ -118,6 +120,18 @@ namespace UniToLua
 			return 1;
         }
         
+        private static int Init(UniLua.ILuaState L)
+        {
+			if(L.CheckNum(1))
+			{
+				var obj = (SoftwareRenderer.Core.SDLRenderer) L.ToUserData(1);
+				obj.Init();
+				return 0;
+			}
+			L.L_Error("call function Init args is error");
+			return 1;
+        }
+        
         private static int Update(UniLua.ILuaState L)
         {
 			if(L.CheckNum(1))
@@ -127,6 +141,18 @@ namespace UniToLua
 				return 0;
 			}
 			L.L_Error("call function Update args is error");
+			return 1;
+        }
+        
+        private static int Uninit(UniLua.ILuaState L)
+        {
+			if(L.CheckNum(1))
+			{
+				var obj = (SoftwareRenderer.Core.SDLRenderer) L.ToUserData(1);
+				obj.Uninit();
+				return 0;
+			}
+			L.L_Error("call function Uninit args is error");
 			return 1;
         }
         

@@ -7,6 +7,7 @@ using System.Reflection;
 using Common;
 using Common.ConsoleApp;
 using Common.Persistence;
+using MathLib;
 using SoftwareRenderer.Core;
 using UniToLuaGener;
 
@@ -55,7 +56,12 @@ namespace Entry
             
             allTypes.AddRange(Assembly.GetAssembly(typeof(Application))
                 .GetTypes()
-                .Where(t => t.Namespace.Contains("SoftwareRenderer") && !t.Name.StartsWith("<"))
+                .Where(t => t.Namespace != null &&  t.Namespace.Contains("SoftwareRenderer") && !t.Name.StartsWith("<"))
+                .ToList());
+            
+            allTypes.AddRange(Assembly.GetAssembly(typeof(Bounds))
+                .GetTypes()
+                .Where(t => t.Namespace != null && t.Namespace.Contains("MathLib") && !t.Name.StartsWith("<"))
                 .ToList());
             
             allTypes.AddRange(new List<Type>()
