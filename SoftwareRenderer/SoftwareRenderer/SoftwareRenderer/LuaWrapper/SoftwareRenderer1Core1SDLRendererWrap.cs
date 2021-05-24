@@ -22,9 +22,9 @@ namespace UniToLua
         {
 			L.BeginClass(typeof(SoftwareRenderer.Core.SDLRenderer), null);
 			L.RegFunction("New", _CreateSoftwareRenderer1Core1SDLRenderer);
-			L.RegVar("Renderer", get_Renderer, null);
 			L.RegVar("Width", get_Width, null);
 			L.RegVar("Height", get_Height, null);
+			L.RegVar("Renderer", get_Renderer, null);
 			L.RegVar("Device", get_Device, null);
 			L.RegFunction("PushDrawCommand", PushDrawCommand);
 			L.RegFunction("SetViewMat", SetViewMat);
@@ -53,13 +53,6 @@ namespace UniToLua
 			return 1;
         }
         
-        private static int get_Renderer(UniLua.ILuaState L)
-        {
-			var obj = (SoftwareRenderer.Core.SDLRenderer) L.ToUserData(1);
-			L.PushAny<System.IntPtr>(obj.Renderer);
-			return 1;
-        }
-        
         private static int get_Width(UniLua.ILuaState L)
         {
 			var obj = (SoftwareRenderer.Core.SDLRenderer) L.ToUserData(1);
@@ -71,6 +64,13 @@ namespace UniToLua
         {
 			var obj = (SoftwareRenderer.Core.SDLRenderer) L.ToUserData(1);
 			L.PushAny<int>(obj.Height);
+			return 1;
+        }
+        
+        private static int get_Renderer(UniLua.ILuaState L)
+        {
+			var obj = (SoftwareRenderer.Core.SDLRenderer) L.ToUserData(1);
+			L.PushAny<System.IntPtr>(obj.Renderer);
 			return 1;
         }
         

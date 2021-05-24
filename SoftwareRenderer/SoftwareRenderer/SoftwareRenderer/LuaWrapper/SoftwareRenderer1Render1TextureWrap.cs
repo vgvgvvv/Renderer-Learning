@@ -40,6 +40,7 @@ namespace UniToLua
 			{
 				var arg1 = L.CheckAny<int>(1);
 				var arg2 = L.CheckAny<int>(2);
+				L.PushAny<SoftwareRenderer.Render.Texture>(new SoftwareRenderer.Render.Texture(arg1, arg2));
 				return 1;
 			}
 			L.L_Error("call Texture constructor args is error");
@@ -56,12 +57,14 @@ namespace UniToLua
         private static int get_Width(UniLua.ILuaState L)
         {
 			var obj = (SoftwareRenderer.Render.Texture) L.ToUserData(1);
+			L.PushAny<int>(obj.Width);
 			return 1;
         }
         
         private static int get_Height(UniLua.ILuaState L)
         {
 			var obj = (SoftwareRenderer.Render.Texture) L.ToUserData(1);
+			L.PushAny<int>(obj.Height);
 			return 1;
         }
         

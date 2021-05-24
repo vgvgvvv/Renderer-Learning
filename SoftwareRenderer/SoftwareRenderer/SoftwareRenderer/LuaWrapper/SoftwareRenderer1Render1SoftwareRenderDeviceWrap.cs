@@ -60,12 +60,14 @@ namespace UniToLua
         private static int get_FrameBuffer(UniLua.ILuaState L)
         {
 			var obj = (SoftwareRenderer.Render.SoftwareRenderDevice) L.ToUserData(1);
+			L.PushAny<MathLib.Color[]>(obj.FrameBuffer);
 			return 1;
         }
         
         private static int get_ZBuffer(UniLua.ILuaState L)
         {
 			var obj = (SoftwareRenderer.Render.SoftwareRenderDevice) L.ToUserData(1);
+			L.PushAny<float[]>(obj.ZBuffer);
 			return 1;
         }
         
@@ -246,8 +248,10 @@ namespace UniToLua
         {
 			if(L.CheckNum(1))
 			{
-				MathLib.Color[,] result;
+				MathLib.Color[] result;
 				var obj = (SoftwareRenderer.Render.SoftwareRenderDevice) L.ToUserData(1);
+				result = obj.Render();
+				L.PushAny<MathLib.Color[]>(result);
 				return 1;
 			}
 			L.L_Error("call function Render args is error");
