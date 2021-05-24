@@ -8,9 +8,17 @@ namespace SoftwareRenderer.Render
     {
         public Mesh RawMesh { get; set; } = new Mesh();
 
-        public override Mesh GatherMesh()
+        public override Vertex[] GatherMesh()
         {
-            return RawMesh;
+            var points = RawMesh.Vertexs;
+            var result = new Vertex[RawMesh.Indexs.Length * 3];
+            for (var i = 0; i < RawMesh.Indexs.Length; i++)
+            {
+                result[i * 3] = points[(int)RawMesh.Indexs[i][0]];
+                result[i * 3 + 1] = points[(int)RawMesh.Indexs[i][1]];
+                result[i * 3 + 2] = points[(int)RawMesh.Indexs[i][2]];
+            }
+            return result;
         }
 
     }

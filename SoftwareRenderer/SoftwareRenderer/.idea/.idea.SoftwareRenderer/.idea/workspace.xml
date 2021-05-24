@@ -5,17 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="764c39d4-cb4a-42de-9740-db8dbb2fce06" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Component/Light.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Component/ObjMeshRenderer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Materials/LightMaterial.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Materials/TextureMaterial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Component/DirectionLight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Component/DirectionLight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Component/CubeRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Component/CubeRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Component1CubeRendererWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Component1CubeRendererWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1DrawCommandWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1DrawCommandWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1MeshRendererWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1MeshRendererWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1RendererWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1RendererWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/DrawCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/DrawCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/MeshRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/MeshRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Renderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Renderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Scene/TestWorld.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Scene/TestWorld.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/SoftwareRenderer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/SoftwareRenderer.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestSoftRender/TestMaths.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TestSoftRender/TestMaths.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,36 +35,19 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/2A1/ConstructorInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/2B0/RuntimeConstructorInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C66F7638-D46A-4995-BB93-E999909A0959/0/KnownColor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/A683AC5E-CF68-4ABE-97B0-8498CC6ADE40/fc/2061c638/Common.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33363C81-2E76-43C2-96F1-D0E829505A38/46/69664ecc/IEnumerableEx.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6A57240-4A2A-42A0-BDAB-99CFB603FC07/4f/b0aa6220/LuaState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/18B7ABD7-4AAC-41E1-95E5-EC1E6D8B0B23/8/Bitmap.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/VM.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniToLua/LuaUtil.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B876795D-B456-4505-9887-02F6DA34D838/c0/a530dae4/LuaState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/LuaDebug.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8C8CFD8B-8D5B-488F-A65F-5413EBAE3B36/e2/c355d795/ILuaAPI.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/E2/UInt32.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/Do.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4528E850-001C-4CCA-B802-2191BA2F9ABE/17/ec93a58f/ILuaAPI.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniToLua/TypeChecker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/11/Array.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/LuaAPI.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33206078-F3E8-40C1-99EE-09EBB6D97420/ba/a95b3f8f/LuaState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C66F7638-D46A-4995-BB93-E999909A0959/B/Color.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AC613005-B340-44DC-ADAE-EE3E87D91FCA/6/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/LuaDebug.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/VM.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/LuaAuxLib.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6A57240-4A2A-42A0-BDAB-99CFB603FC07/c7/8b183601/IToLua.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniToLua/LuaUtil.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/LuaAPI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniToLua/TypeChecker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3285E3B4-32F8-4A47-A2F6-74664D44CC23/2c/c2377c71/LuaState.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/MathLib/Math/Bound.cs" />
-      <option value="$PROJECT_DIR$/MathLib/Math/PerlinNoise.cs" />
-      <option value="$PROJECT_DIR$/MathLib/Math/Math.cs" />
-      <option value="$PROJECT_DIR$/MathLib/Math/Utility.cs" />
       <option value="$PROJECT_DIR$/MathLib/Math/Matrix4x4.cs" />
       <option value="$PROJECT_DIR$/MathLib/Math/Quaternion.cs" />
       <option value="$PROJECT_DIR$/MathLib/Math/Matrix3x3.cs" />
@@ -75,19 +59,13 @@
       <option value="$PROJECT_DIR$/SoftwareRenderer/Scene/InputListener.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Camera.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/InputSystem.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Component/CubeRenderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Material.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/DrawCommand.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Renderer.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/MeshRenderer.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Program.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Component/LuaObjec.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Component/LuaObject.cs" />
       <option value="$PROJECT_DIR$/MathLib/Math/Color.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1SoftwareRenderDeviceWrap.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/IRenderer.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Entry/GenerateLua.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/LuaBinder.cs" />
@@ -101,16 +79,26 @@
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1WorldObjectWrap.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Scene/LuaWorld.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1BaseFragmentInWrap.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Shader.cs" />
       <option value="$PROJECT_DIR$/TestSoftRender/TestMaths.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Materials/TextureMaterial.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Scene/TestWorld.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Component/Light.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Component/DirectionLight.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Materials/LightMaterial.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Component/ObjMeshRenderer.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Shader.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/DrawCommand.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1DrawCommandWrap.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Scene/TestWorld.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/MeshRenderer.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Renderer.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1MeshRendererWrap.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1RendererWrap.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Component1CubeRendererWrap.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Component/CubeRenderer.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sa05uNJXNvYYKd8QNmqDoEf78f" />
@@ -137,7 +125,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.TestWorld">
+  <component name="RunManager" selected=".NET Project.update lua bind">
     <configuration name="LuaWorld" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/SoftwareRenderer/bin/Debug/netcoreapp3.1/SoftwareRenderer.dll" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -215,6 +203,7 @@
       <workItem from="1621764209848" duration="16290000" />
       <workItem from="1621811547956" duration="2840000" />
       <workItem from="1621847709906" duration="2746000" />
+      <workItem from="1621858473787" duration="5031000" />
     </task>
     <servers />
   </component>
@@ -246,9 +235,7 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="DotNetProject">
-        <watch expression="API" language="C#" />
-        <watch expression="L" language="C#" />
-        <watch expression="obj.Position" language="C#" />
+        <watch expression="RawMesh.Vertexs" language="C#" />
       </configuration>
     </watches-manager>
   </component>

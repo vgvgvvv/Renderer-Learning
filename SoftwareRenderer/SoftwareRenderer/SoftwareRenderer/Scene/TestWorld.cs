@@ -23,11 +23,11 @@ namespace SoftwareRenderer.Scene
 
             var cube1 = WorldObject.Create<CubeRenderer>(this, new Vector3(1, 0, 1));
             cube1.Transform.scale = Vector3.one * 2;
-            cube1.Mat = new TextureMaterial("test.png");
+            cube1.Mat = new TextureMaterial("test.jpg");
             
             var cube2 = WorldObject.Create<CubeRenderer>(this, new Vector3(-1, 0, 1));
             cube2.Transform.scale = Vector3.one * 1;
-            cube2.Mat = new TextureMaterial("test.png");
+            cube2.Mat = new TextureMaterial("test.jpg");
 
             cube1.OnUpdate += () =>
             {

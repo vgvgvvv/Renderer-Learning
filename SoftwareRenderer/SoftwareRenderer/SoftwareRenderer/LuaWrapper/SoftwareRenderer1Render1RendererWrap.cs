@@ -143,10 +143,10 @@ namespace UniToLua
         {
 			if(L.CheckNum(1))
 			{
-				SoftwareRenderer.Render.Mesh result;
+				SoftwareRenderer.Render.Vertex[] result;
 				var obj = (SoftwareRenderer.Render.Renderer) L.ToUserData(1);
 				result = obj.GatherMesh();
-				L.PushAny<SoftwareRenderer.Render.Mesh>(result);
+				L.PushAny<SoftwareRenderer.Render.Vertex[]>(result);
 				return 1;
 			}
 			L.L_Error("call function GatherMesh args is error");

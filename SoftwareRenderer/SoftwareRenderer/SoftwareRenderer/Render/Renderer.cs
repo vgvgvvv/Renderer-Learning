@@ -9,24 +9,28 @@ namespace SoftwareRenderer.Render
     public abstract class Renderer : Behavior
     {
 
-        public abstract Mesh GatherMesh();
+        public abstract Vertex[] GatherMesh();
         
         public Material Mat { get; set; } = new Material();
 
         public DrawCommand GatherCommand()
         {
-            Mesh mesh = GatherMesh();
+            Vertex[] meshVertexs = GatherMesh();
+            var result = new Vertex[meshVertexs.Length];
+            for (var i = 0; i < result.Length; i++)
+            {
+                result[i].Position = Transform.TransformMat.MultiplyPoint(meshVertexs[i].Position);
+                result[i].Normal = meshVertexs[i].Normal;
+                result[i].Color = meshVertexs[i].Color;
+                result[i].UV = meshVertexs[i].UV;
+            }
+
+           
             var drawCommand = new DrawCommand()
             {
-                Vertexs = new Vertex[mesh.Vertexs.Length],
-                Indexs = mesh.Indexs,
+                Vertexs = result,
                 Mat = Mat
             };
-            for (var i = 0; i < drawCommand.Vertexs.Length; i++)
-            {
-                drawCommand.Vertexs[i] = mesh.Vertexs[i];
-                drawCommand.Vertexs[i].Position = Transform.TransformMat.MultiplyPoint(mesh.Vertexs[i].Position);
-            }
             return drawCommand;
         }
         

@@ -389,9 +389,9 @@ namespace SoftwareRenderer.Render
             if (RenderMode == RenderMode.Wireframe || 
                 RenderMode == RenderMode.WireframeAndFilled)
             {
-                Draw2DLine(v1, v2);
-                Draw2DLine(v2, v3);
-                Draw2DLine(v3, v1);
+                Draw2DLine(v1, v2, Color.white);
+                Draw2DLine(v2, v3, Color.white);
+                Draw2DLine(v3, v1, Color.white);
             }
             if(RenderMode == RenderMode.Filled || 
                RenderMode == RenderMode.WireframeAndFilled)
@@ -534,12 +534,11 @@ namespace SoftwareRenderer.Render
                 }
 
                 // 背隐剔除
-                for (var i = 0; i < command.Indexs.Length; i++)
+                for (var i = 0; i+2 < command.Vertexs.Length; i+=3)
                 {
-                    var indexGroup = command.Indexs[i];
-                    var v1 = command.Vertexs[(int) indexGroup[0]];
-                    var v2 = command.Vertexs[(int) indexGroup[1]];
-                    var v3 = command.Vertexs[(int) indexGroup[2]];
+                    var v1 = command.Vertexs[i];
+                    var v2 = command.Vertexs[i+1];
+                    var v3 = command.Vertexs[i+2];
                     if (!BackfaceCulling(v1, v2, v3))
                     {
                         invalidIndex[i] = true;
@@ -564,17 +563,16 @@ namespace SoftwareRenderer.Render
                 }
 
                 // 绘制三角形
-                for (var i = 0; i < command.Indexs.Length; i++)
+                for (var i = 0; i+2 < command.Vertexs.Length; i+=3)
                 {
                     if (invalidIndex[i])
                     {
                         continue;
                     }
 
-                    var indexGroup = command.Indexs[i];
-                    var v1 = command.Vertexs[(int) indexGroup[0]];
-                    var v2 = command.Vertexs[(int) indexGroup[1]];
-                    var v3 = command.Vertexs[(int) indexGroup[2]];
+                    var v1 = command.Vertexs[i];
+                    var v2 = command.Vertexs[i+1];
+                    var v3 = command.Vertexs[i+2];
                     if (v1.NeedClip || v2.NeedClip || v3.NeedClip)
                     {
                         continue;
