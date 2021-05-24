@@ -500,8 +500,8 @@ namespace SoftwareRenderer.Render
         {
             FrameClear();
 
-            Draw2DLine(Width / 2, 0, 1, Color.green, Width / 2,  Height, 1, Color.red);
-            Draw2DLine(0, Height / 2, 1, Color.green, Width,  Height / 2, 1, Color.red);
+            Draw2DLine(Width / 2, 0, 1, Color.red, Width / 2,  Height, 1, Color.red);
+            Draw2DLine(0, Height / 2, 1, Color.green, Width,  Height / 2, 1, Color.green);
 
             // DrawGrid();
             

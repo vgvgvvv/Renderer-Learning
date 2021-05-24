@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="764c39d4-cb4a-42de-9740-db8dbb2fce06" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/contentModel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/riderModule.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Core/IRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Core/IRenderer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +26,9 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/8C/Int32.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/8E/IntPtr.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/E2/UInt32.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/11/Array.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AC613005-B340-44DC-ADAE-EE3E87D91FCA/6/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -82,9 +79,9 @@
       <option value="$PROJECT_DIR$/SoftwareRenderer/Entry/Main.cs" />
       <option value="$PROJECT_DIR$/MathLib/Math/Color.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1SoftwareRenderDeviceWrap.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/IRenderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" />
     </changedPaths>
   </component>
@@ -96,7 +93,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34987745" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -109,7 +106,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Project.TestWorld">
@@ -235,10 +232,5 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="DotNetProject">
-        <watch expression="p" language="C#" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>
