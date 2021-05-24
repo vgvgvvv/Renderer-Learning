@@ -1,9 +1,11 @@
 using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace MathLib
 {
+    [StructLayout(LayoutKind.Sequential)]
     public struct Vector2 : IEquatable<Vector2>, IFormattable
     {
             // X component of the vector.

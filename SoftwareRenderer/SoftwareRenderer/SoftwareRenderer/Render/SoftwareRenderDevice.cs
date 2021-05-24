@@ -22,8 +22,8 @@ namespace SoftwareRenderer.Render
     
     public class SoftwareRenderDevice
     {
-        public readonly Color[,] FrameBuffer;
-        public readonly float[,] ZBuffer;
+        public readonly Color[] FrameBuffer;
+        public readonly float[] ZBuffer;
         public readonly int Width;
         public readonly int Height;
 
@@ -44,8 +44,8 @@ namespace SoftwareRenderer.Render
         {
             Width = width;
             Height = height;
-            FrameBuffer = new Color[width, height];
-            ZBuffer = new float[width,height];
+            FrameBuffer = new Color[width * height];
+            ZBuffer = new float[width * height];
             ClearColor = Color.black;
         }
 
@@ -55,10 +55,11 @@ namespace SoftwareRenderer.Render
         // 0,0点平移到了中点
         public void Draw2DPoint(int x, int y, float depth, Color color)
         {
-            if (x >= 0 && x < Width && y >= 0 && y < Height && ZBuffer[x, y] < depth)
+            var index = x + y * Width;
+            if (x >= 0 && x < Width && y >= 0 && y < Height && ZBuffer[index] < depth)
             {
-                FrameBuffer[x, y] = color;
-                ZBuffer[x, y] = depth;
+                FrameBuffer[index] = color;
+                ZBuffer[index] = depth;
             }
         }
 
@@ -220,6 +221,7 @@ namespace SoftwareRenderer.Render
                 }
             }
             
+            BaseFragmentIn fragmentIn = new BaseFragmentIn();
             // 扫描线算法
             void ScanlineFile(Vertex left, Vertex right, int yIndex)
             {
@@ -237,7 +239,6 @@ namespace SoftwareRenderer.Render
 
                         var lerpedVertex = Vertex.Lerp(left, right, lerpFactor);
 
-                        BaseFragmentIn fragmentIn = new BaseFragmentIn();
                         fragmentIn.Color = lerpedVertex.Color;
                         fragmentIn.Normal = lerpedVertex.Normal;
                         fragmentIn.UV = lerpedVertex.UV;
@@ -479,16 +480,8 @@ namespace SoftwareRenderer.Render
 
         public void FrameClear()
         {
-            for (int y = 0; y < Height; y++)
-            {
-                for (int x = 0; x < Width; x++)
-                {
-                    var color = ClearColor;
-                    FrameBuffer[x, y] = color;
-                    ZBuffer[x, y] = -float.MaxValue;
-                }
-            }
-
+            Array.Fill(FrameBuffer, ClearColor);
+            Array.Fill(ZBuffer, -float.MaxValue);
         }
 
         public void PushDrawCommand(DrawCommand command)
@@ -496,7 +489,7 @@ namespace SoftwareRenderer.Render
             drawCommands.Add(command);
         }
 
-        public Color[,] Render()
+        public Color[] Render()
         {
             FrameClear();
 
@@ -511,13 +504,13 @@ namespace SoftwareRenderer.Render
 
             // 无效的index
             bool[] invalidIndex = new bool[1024];
+            BaseVertexIn baseVertexIn = new BaseVertexIn();
             foreach (var command in drawCommands)
             {
                 Array.Fill(invalidIndex, false);
                 for (var i = 0; i < command.Vertexs.Length; i++)
                 {
                     var v = command.Vertexs[i];
-                    BaseVertexIn baseVertexIn = new BaseVertexIn();
                     baseVertexIn.Position = v.Position;
                     baseVertexIn.Normal = v.Normal;
                     baseVertexIn.VertexColor = v.Color;

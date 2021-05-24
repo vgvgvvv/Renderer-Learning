@@ -5,18 +5,125 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="764c39d4-cb4a-42de-9740-db8dbb2fce06" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Component/CubeRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Component/CubeRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Component1CubeRendererWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Component1CubeRendererWrap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1DrawCommandWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1DrawCommandWrap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1MeshRendererWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1MeshRendererWrap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1RendererWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1RendererWrap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/DrawCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/DrawCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/MeshRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/MeshRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Renderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Renderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathLib/Math/Color.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathLib/Math/Color.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathLib/Math/Vector2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathLib/Math/Vector2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathLib/Math/Vector3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathLib/Math/Vector3.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathLib/Math/Vector4.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathLib/Math/Vector4.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/DelegateFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/DelegateFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/LuaBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/LuaBinder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1BoundsWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1BoundsWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1ColorWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1ColorWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1FrustumPlanesWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1FrustumPlanesWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1Mathf1MathfInternalWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1Mathf1MathfInternalWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1MathfWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1MathfWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1Matrix3x3Wrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1Matrix3x3Wrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1Matrix4x4Wrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1Matrix4x4Wrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1PerlinNoiseWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1PerlinNoiseWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1PlaneWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1PlaneWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1QuaternionWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1QuaternionWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1RayWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1RayWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1TimeWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1TimeWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1UtilityWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1UtilityWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1Vector2Wrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1Vector2Wrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1Vector3Wrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1Vector3Wrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1Vector4Wrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/MathLib1Vector4Wrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_GameControllerButtonBind_hatWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_GameControllerButtonBind_hatWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_GameControllerButtonBind_unionWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_GameControllerButtonBind_unionWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_SysWMDriverUnionWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_SysWMDriverUnionWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_android_wminfoWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_android_wminfoWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_cocoa_wminfoWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_cocoa_wminfoWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_directfb_wminfoWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_directfb_wminfoWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_mir_wminfoWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_mir_wminfoWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_os2_wminfoWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_os2_wminfoWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_uikit_wminfoWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_uikit_wminfoWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_vivante_wminfoWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_vivante_wminfoWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_wayland_wminfoWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_wayland_wminfoWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_windows_wminfoWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_windows_wminfoWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_winrt_wminfoWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_winrt_wminfoWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_x11_wminfoWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1INTERNAL_x11_wminfoWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_AudioDeviceEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_AudioDeviceEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_AudioSpecWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_AudioSpecWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_ColorWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_ColorWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_ControllerAxisEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_ControllerAxisEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_ControllerButtonEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_ControllerButtonEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_ControllerDeviceEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_ControllerDeviceEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_ControllerSensorEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_ControllerSensorEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_ControllerTouchpadEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_ControllerTouchpadEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_DisplayEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_DisplayEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_DisplayModeWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_DisplayModeWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_DollarGestureEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_DollarGestureEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_DropEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_DropEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_EventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_EventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_FPointWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_FPointWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_FRectWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_FRectWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_FingerWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_FingerWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_GameControllerButtonBindWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_GameControllerButtonBindWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_GenericEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_GenericEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_HapticConditionWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_HapticConditionWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_HapticConstantWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_HapticConstantWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_HapticCustomWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_HapticCustomWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_HapticDirectionWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_HapticDirectionWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_HapticEffectWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_HapticEffectWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_HapticLeftRightWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_HapticLeftRightWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_HapticPeriodicWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_HapticPeriodicWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_HapticRampWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_HapticRampWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_JoyAxisEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_JoyAxisEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_JoyBallEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_JoyBallEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_JoyButtonEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_JoyButtonEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_JoyDeviceEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_JoyDeviceEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_JoyHatEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_JoyHatEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_KeyboardEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_KeyboardEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_KeysymWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_KeysymWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_LocaleWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_LocaleWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_MessageBoxButtonDataWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_MessageBoxButtonDataWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_MessageBoxColorSchemeWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_MessageBoxColorSchemeWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_MessageBoxColorWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_MessageBoxColorWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_MessageBoxDataWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_MessageBoxDataWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_MouseButtonEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_MouseButtonEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_MouseMotionEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_MouseMotionEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_MouseWheelEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_MouseWheelEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_MultiGestureEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_MultiGestureEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_PaletteWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_PaletteWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_PixelFormatWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_PixelFormatWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_PointWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_PointWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_QuitEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_QuitEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_RWopsWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_RWopsWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_RectWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_RectWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_RendererInfoWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_RendererInfoWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_SensorEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_SensorEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_SurfaceWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_SurfaceWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_SysWMEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_SysWMEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_SysWMinfoWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_SysWMinfoWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_TextEditingEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_TextEditingEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_TextInputEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_TextInputEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_TouchFingerEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_TouchFingerEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_UserEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_UserEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_WindowEventWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_WindowEventWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_versionWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL1SDL_versionWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDLWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDLWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL_image1IMG_AnimationWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL_image1IMG_AnimationWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL_imageWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL_imageWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL_mixer1MIX_ChunkWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL_mixer1MIX_ChunkWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL_mixerWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL_mixerWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL_ttfWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SDL21SDL_ttfWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Component1DirectionLightWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Component1DirectionLightWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1ApplicationWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1ApplicationWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1SDLRendererWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1SDLRendererWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1WorldObjectWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1WorldObjectWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1WorldWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1WorldWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1BaseFragmentInWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1BaseFragmentInWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1BaseVertexInWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1BaseVertexInWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1LuaShaderWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1LuaShaderWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1SoftwareRenderDeviceWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1SoftwareRenderDeviceWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1TextureWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1TextureWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1VertexWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1VertexWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Scene1LuaWorldWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Scene1LuaWorldWrap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Scene1TestWorldWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Scene1TestWorldWrap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Scene/TestWorld.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Scene/TestWorld.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,10 +155,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/MathLib/Math/Matrix4x4.cs" />
-      <option value="$PROJECT_DIR$/MathLib/Math/Quaternion.cs" />
-      <option value="$PROJECT_DIR$/MathLib/Math/Matrix3x3.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Transform.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Behavior.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/WorldObject.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/Behavior.cs" />
@@ -63,10 +166,8 @@
       <option value="$PROJECT_DIR$/SoftwareRenderer/Program.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Component/LuaObjec.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Component/LuaObject.cs" />
-      <option value="$PROJECT_DIR$/MathLib/Math/Color.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1SoftwareRenderDeviceWrap.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/IRenderer.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Entry/GenerateLua.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/LuaBinder.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/World.cs" />
@@ -81,24 +182,30 @@
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1BaseFragmentInWrap.cs" />
       <option value="$PROJECT_DIR$/TestSoftRender/TestMaths.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Materials/TextureMaterial.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Component/Light.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Component/DirectionLight.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Materials/LightMaterial.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Component/ObjMeshRenderer.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Shader.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/DrawCommand.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1DrawCommandWrap.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Scene/TestWorld.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/MeshRenderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Renderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1MeshRendererWrap.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1RendererWrap.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Component1CubeRendererWrap.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Component/CubeRenderer.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Shader.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/Application.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1TextureWrap.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Texture.cs" />
+      <option value="$PROJECT_DIR$/MathLib/Math/Vector3.cs" />
+      <option value="$PROJECT_DIR$/MathLib/Math/Vector4.cs" />
+      <option value="$PROJECT_DIR$/MathLib/Math/Vector2.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/SoftwareRenderDevice.cs" />
+      <option value="$PROJECT_DIR$/MathLib/Math/Color.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sa05uNJXNvYYKd8QNmqDoEf78f" />
@@ -125,7 +232,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.update lua bind">
+  <component name="RunManager" selected=".NET Project.TestWorld">
     <configuration name="LuaWorld" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/SoftwareRenderer/bin/Debug/netcoreapp3.1/SoftwareRenderer.dll" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -203,7 +310,7 @@
       <workItem from="1621764209848" duration="16290000" />
       <workItem from="1621811547956" duration="2840000" />
       <workItem from="1621847709906" duration="2746000" />
-      <workItem from="1621858473787" duration="5031000" />
+      <workItem from="1621858473787" duration="7332000" />
     </task>
     <servers />
   </component>

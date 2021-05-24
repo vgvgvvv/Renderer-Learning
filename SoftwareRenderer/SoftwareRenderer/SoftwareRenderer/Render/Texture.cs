@@ -22,9 +22,9 @@ namespace SoftwareRenderer.Render
     
     public class Texture
     {
-        public Color[,] Pixels { get; }
-        public int Width { get; }
-        public int Height { get; }
+        public readonly Color[,] Pixels;
+        public readonly int Width;
+        public readonly int Height;
 
         public TextureFilterMode FilterMode { get; set; } = TextureFilterMode.Bilinear;
 
@@ -54,8 +54,8 @@ namespace SoftwareRenderer.Render
         public Color Sample(float u, float v)
         {
             Color color = Pixels[
-                Mathf.Clamp((int)(Width * u), 0, Width-1), 
-                Mathf.Clamp((int)(Height * v), 0, Height-1)];
+                Mathf.Min((int)(Width * u), Width-1), 
+                Mathf.Min((int)(Height * v), Height-1)];
             return color;
         }
     }

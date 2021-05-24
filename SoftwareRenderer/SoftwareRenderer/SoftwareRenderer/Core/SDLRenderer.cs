@@ -11,8 +11,8 @@ namespace SoftwareRenderer.Core
         public IntPtr Renderer { get; }
         private IntPtr RenderTargetTexture;
         private uint[] PixelBytes;
-        public int Width { get; }
-        public int Height { get; }
+        public readonly int Width;
+        public readonly int Height;
 
         private SoftwareRenderDevice device;
 
@@ -61,7 +61,7 @@ namespace SoftwareRenderer.Core
             {
                 for (int y = 0; y < Height; y++)
                 {
-                    var color = frameBuffer[Width - x - 1, y];
+                    var color = frameBuffer[Width - x - 1 + y * Width];
 
                     PixelBytes[x + y * Width] = 0x00000000 | 
                                                 (uint)(color.r * 255) << 24 | 
@@ -79,7 +79,6 @@ namespace SoftwareRenderer.Core
                     SDL.SDL_UpdateTexture(RenderTargetTexture, IntPtr.Zero, ptr, Width * sizeof(byte) * 4);
                 }
             }
-            
             
             SDL.SDL_SetRenderTarget(Renderer, IntPtr.Zero);
 

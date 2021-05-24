@@ -25,6 +25,8 @@ namespace SoftwareRenderer.Core
         public static int WINDOW_HEIGHT = 720;
         public IntPtr Window;
         public IntPtr Renderer;
+        private DateTime lastUpdateFpsTime = DateTime.Now;
+        private int frameCount = 0;
 
 
         public InputSystem InputSystem{ get; private set; }
@@ -40,6 +42,13 @@ namespace SoftwareRenderer.Core
             while (!shouldQuit)
             {
                 Update();
+                if (DateTime.Now - lastUpdateFpsTime > TimeSpan.FromSeconds(1))
+                {
+                    SDL.SDL_SetWindowTitle(Window, "fps : " + frameCount);
+                    frameCount = 0;
+                    lastUpdateFpsTime = DateTime.Now;
+                }
+                frameCount++;
             }
         }
         

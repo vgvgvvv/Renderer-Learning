@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace MathLib
 {
+    [StructLayout(LayoutKind.Sequential)]
     public partial struct Vector3 : IEquatable<Vector3>, IFormattable
     {
         // *Undocumented*

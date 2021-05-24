@@ -1,7 +1,9 @@
 using System;
+using System.Runtime.InteropServices;
 
 namespace MathLib
 {
+    [StructLayout(LayoutKind.Sequential)]
     public struct Color : IEquatable<Color>
     {
         // Red component of the color.

@@ -25,6 +25,7 @@ namespace UniToLua
 			L.RegVar("Width", get_Width, null);
 			L.RegVar("Height", get_Height, null);
 			L.RegVar("FilterMode", get_FilterMode, set_FilterMode);
+			L.RegFunction("LoadFromFile", LoadFromFile);
 			L.RegFunction("Sample", Sample);
 			L.RegFunction("GetType", GetType);
 			L.RegFunction("ToString", ToString);
@@ -39,7 +40,6 @@ namespace UniToLua
 			{
 				var arg1 = L.CheckAny<int>(1);
 				var arg2 = L.CheckAny<int>(2);
-				L.PushAny<SoftwareRenderer.Render.Texture>(new SoftwareRenderer.Render.Texture(arg1, arg2));
 				return 1;
 			}
 			L.L_Error("call Texture constructor args is error");
@@ -56,14 +56,12 @@ namespace UniToLua
         private static int get_Width(UniLua.ILuaState L)
         {
 			var obj = (SoftwareRenderer.Render.Texture) L.ToUserData(1);
-			L.PushAny<int>(obj.Width);
 			return 1;
         }
         
         private static int get_Height(UniLua.ILuaState L)
         {
 			var obj = (SoftwareRenderer.Render.Texture) L.ToUserData(1);
-			L.PushAny<int>(obj.Height);
 			return 1;
         }
         
@@ -80,6 +78,20 @@ namespace UniToLua
 			var value = L.CheckAny<SoftwareRenderer.Render.TextureFilterMode>(2);
 			obj.FilterMode = value;
 			return 0;
+        }
+        
+        private static int LoadFromFile(UniLua.ILuaState L)
+        {
+			if(L.CheckNum(1) && L.CheckType<string>(1))
+			{
+				SoftwareRenderer.Render.Texture result;
+				var arg1 = L.CheckAny<string>(1);
+				result = SoftwareRenderer.Render.Texture.LoadFromFile(arg1);
+				L.PushAny<SoftwareRenderer.Render.Texture>(result);
+				return 1;
+			}
+			L.L_Error("call function LoadFromFile args is error");
+			return 1;
         }
         
         private static int Sample(UniLua.ILuaState L)

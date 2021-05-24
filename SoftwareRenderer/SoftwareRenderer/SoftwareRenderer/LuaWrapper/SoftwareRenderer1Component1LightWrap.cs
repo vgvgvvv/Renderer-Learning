@@ -14,14 +14,13 @@ namespace UniToLua
     using System;
     
     
-    public class SoftwareRenderer1Component1DirectionLightWrap
+    public class SoftwareRenderer1Component1LightWrap
     {
         
         public static void Register(UniLua.ILuaState L)
         {
-			L.BeginClass(typeof(SoftwareRenderer.Component.DirectionLight), typeof(SoftwareRenderer.Component.Light));
-			L.RegFunction("New", _CreateSoftwareRenderer1Component1DirectionLight);
-			L.RegVar("Main", get_Main, null);
+			L.BeginClass(typeof(SoftwareRenderer.Component.Light), typeof(SoftwareRenderer.Core.WorldObject));
+			L.RegFunction("New", _CreateSoftwareRenderer1Component1Light);
 			L.RegVar("Owner", get_Owner, null);
 			L.RegVar("Transform", get_Transform, set_Transform);
 			L.RegFunction("Awake", Awake);
@@ -32,40 +31,34 @@ namespace UniToLua
 			L.EndClass();
         }
         
-        private static int _CreateSoftwareRenderer1Component1DirectionLight(UniLua.ILuaState L)
+        private static int _CreateSoftwareRenderer1Component1Light(UniLua.ILuaState L)
         {
 			if(L.CheckNum(0))
 			{
-				L.PushAny<SoftwareRenderer.Component.DirectionLight>(new SoftwareRenderer.Component.DirectionLight());
+				L.PushAny<SoftwareRenderer.Component.Light>(new SoftwareRenderer.Component.Light());
 				return 1;
 			}
-			L.L_Error("call DirectionLight constructor args is error");
-			return 1;
-        }
-        
-        private static int get_Main(UniLua.ILuaState L)
-        {
-			L.PushAny<SoftwareRenderer.Component.DirectionLight>(SoftwareRenderer.Component.DirectionLight.Main);
+			L.L_Error("call Light constructor args is error");
 			return 1;
         }
         
         private static int get_Owner(UniLua.ILuaState L)
         {
-			var obj = (SoftwareRenderer.Component.DirectionLight) L.ToUserData(1);
+			var obj = (SoftwareRenderer.Component.Light) L.ToUserData(1);
 			L.PushAny<SoftwareRenderer.Core.WorldObject>(obj.Owner);
 			return 1;
         }
         
         private static int get_Transform(UniLua.ILuaState L)
         {
-			var obj = (SoftwareRenderer.Component.DirectionLight) L.ToUserData(1);
+			var obj = (SoftwareRenderer.Component.Light) L.ToUserData(1);
 			L.PushAny<SoftwareRenderer.Core.Transform>(obj.Transform);
 			return 1;
         }
         
         private static int set_Transform(UniLua.ILuaState L)
         {
-			var obj = (SoftwareRenderer.Component.DirectionLight) L.ToUserData(1);
+			var obj = (SoftwareRenderer.Component.Light) L.ToUserData(1);
 			var value = L.CheckAny<SoftwareRenderer.Core.Transform>(2);
 			obj.Transform = value;
 			return 0;
@@ -75,7 +68,7 @@ namespace UniToLua
         {
 			if(L.CheckNum(1))
 			{
-				var obj = (SoftwareRenderer.Component.DirectionLight) L.ToUserData(1);
+				var obj = (SoftwareRenderer.Component.Light) L.ToUserData(1);
 				obj.Awake();
 				return 0;
 			}
@@ -88,7 +81,7 @@ namespace UniToLua
 			if(L.CheckNum(1))
 			{
 				System.Type result;
-				var obj = (SoftwareRenderer.Component.DirectionLight) L.ToUserData(1);
+				var obj = (SoftwareRenderer.Component.Light) L.ToUserData(1);
 				result = obj.GetType();
 				L.PushAny<System.Type>(result);
 				return 1;
@@ -102,7 +95,7 @@ namespace UniToLua
 			if(L.CheckNum(1))
 			{
 				string result;
-				var obj = (SoftwareRenderer.Component.DirectionLight) L.ToUserData(1);
+				var obj = (SoftwareRenderer.Component.Light) L.ToUserData(1);
 				result = obj.ToString();
 				L.PushAny<string>(result);
 				return 1;
@@ -113,10 +106,10 @@ namespace UniToLua
         
         private static int Equals(UniLua.ILuaState L)
         {
-			if(L.CheckNum(2) && L.CheckType<SoftwareRenderer.Component.DirectionLight, object>(1))
+			if(L.CheckNum(2) && L.CheckType<SoftwareRenderer.Component.Light, object>(1))
 			{
 				bool result;
-				var obj = (SoftwareRenderer.Component.DirectionLight) L.ToUserData(1);
+				var obj = (SoftwareRenderer.Component.Light) L.ToUserData(1);
 				var arg1 = L.CheckAny<object>(2);
 				result = obj.Equals(arg1);
 				L.PushAny<bool>(result);
@@ -131,7 +124,7 @@ namespace UniToLua
 			if(L.CheckNum(1))
 			{
 				int result;
-				var obj = (SoftwareRenderer.Component.DirectionLight) L.ToUserData(1);
+				var obj = (SoftwareRenderer.Component.Light) L.ToUserData(1);
 				result = obj.GetHashCode();
 				L.PushAny<int>(result);
 				return 1;
