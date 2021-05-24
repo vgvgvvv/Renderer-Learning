@@ -11,6 +11,7 @@ namespace UniToLua
 {
     using SoftwareRenderer.Core;
     using System;
+    using MathLib;
     
     
     public class SoftwareRenderer1Core1WorldObjectWrap
@@ -23,6 +24,7 @@ namespace UniToLua
 			L.RegVar("Owner", get_Owner, null);
 			L.RegVar("Transform", get_Transform, set_Transform);
 			L.RegFunction("Awake", Awake);
+			L.RegFunction("Create", Create);
 			L.RegFunction("GetType", GetType);
 			L.RegFunction("ToString", ToString);
 			L.RegFunction("Equals", Equals);
@@ -72,6 +74,22 @@ namespace UniToLua
 				return 0;
 			}
 			L.L_Error("call function Awake args is error");
+			return 1;
+        }
+        
+        private static int Create(UniLua.ILuaState L)
+        {
+			if(L.CheckNum(3) && L.CheckType<System.Type, SoftwareRenderer.Core.WorldObject, MathLib.Vector3>(1))
+			{
+				object result;
+				var arg1 = L.CheckAny<System.Type>(1);
+				var arg2 = L.CheckAny<SoftwareRenderer.Core.WorldObject>(2);
+				var arg3 = L.CheckAny<MathLib.Vector3>(3);
+				result = SoftwareRenderer.Core.WorldObject.Create(arg1, arg2, arg3);
+				L.PushAny<object>(result);
+				return 1;
+			}
+			L.L_Error("call function Create args is error");
 			return 1;
         }
         

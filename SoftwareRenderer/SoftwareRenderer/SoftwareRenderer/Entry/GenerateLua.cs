@@ -56,12 +56,22 @@ namespace Entry
             
             allTypes.AddRange(Assembly.GetAssembly(typeof(Application))
                 .GetTypes()
-                .Where(t => t.Namespace != null &&  t.Namespace.Contains("SoftwareRenderer") && !t.Name.StartsWith("<"))
+                .Where(t => t.Namespace != null &&  
+                            t.Namespace.Contains("SoftwareRenderer") && 
+                            !t.Name.StartsWith("<"))
                 .ToList());
             
             allTypes.AddRange(Assembly.GetAssembly(typeof(Bounds))
                 .GetTypes()
                 .Where(t => t.Namespace != null && t.Namespace.Contains("MathLib") && !t.Name.StartsWith("<"))
+                .ToList());
+            
+            allTypes.AddRange(Assembly.GetAssembly(typeof(Application))
+                .GetTypes()
+                .Where(t => t.Namespace != null &&  
+                            t.Namespace.Contains("SDL2") &&
+                            !t.IsSubclassOf(typeof(MulticastDelegate)) && 
+                            !t.Name.Contains("<"))
                 .ToList());
             
             allTypes.AddRange(new List<Type>()
