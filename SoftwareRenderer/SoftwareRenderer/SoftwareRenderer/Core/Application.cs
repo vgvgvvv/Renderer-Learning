@@ -68,7 +68,8 @@ namespace SoftwareRenderer.Core
                 }
             };
             RenderSystem = new SDLRenderer(Renderer, WINDOW_WIDTH, WINDOW_HEIGHT);
-
+            RenderSystem.Init();
+            
             LuaSystem = new LuaManager();
             LuaSystem.Init();
             
@@ -81,6 +82,7 @@ namespace SoftwareRenderer.Core
 
         public void Uninit()
         {
+            RenderSystem.Uninit();
             SDL.SDL_DestroyRenderer(Renderer);
             SDL.SDL_DestroyWindow(Window);
             

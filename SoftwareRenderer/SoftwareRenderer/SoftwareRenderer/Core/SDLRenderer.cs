@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 using MathLib;
 using SDL2;
 using SoftwareRenderer.Render;
@@ -9,6 +10,8 @@ namespace SoftwareRenderer.Core
     {
         public IntPtr Renderer { get; }
         private IntPtr RenderTargetTexture;
+        private byte[] PixelBytes;
+        private IntPtr PixelBytesIntPtr;
         public int Width { get; }
         public int Height { get; }
 
@@ -21,8 +24,10 @@ namespace SoftwareRenderer.Core
             Renderer = renderer;
             Width = width;
             Height = height;
-            RenderTargetTexture = SDL.SDL_CreateTexture(Renderer, SDL.SDL_PIXELFORMAT_RGB888,
+            RenderTargetTexture = SDL.SDL_CreateTexture(Renderer, SDL.SDL_PIXELFORMAT_RGBA8888,
                 (int) SDL.SDL_TextureAccess.SDL_TEXTUREACCESS_TARGET, width, height);
+            PixelBytes = new byte[Width * Height * 4];
+            PixelBytesIntPtr = Marshal.UnsafeAddrOfPinnedArrayElement(PixelBytes, Width * Height * 4);
             device = new SoftwareRenderDevice(width, height);
 
         }
@@ -42,11 +47,18 @@ namespace SoftwareRenderer.Core
             Device.ProjectorMat = mat;
         }
 
+        public void Init()
+        {
+            
+        }
+        
         public void Update()
         {
             SDL.SDL_SetRenderDrawColor(Renderer, 0, 0, 0, 0);
             SDL.SDL_RenderClear(Renderer);
-
+            
+            // Console.WriteLine("!!!");
+            
             SDL.SDL_SetRenderTarget(Renderer, RenderTargetTexture);
             var frameBuffer = device.Render();
             var lastColor = Color.black;
@@ -63,14 +75,32 @@ namespace SoftwareRenderer.Core
                         SDL.SDL_SetRenderDrawColor(Renderer, (byte)(color.r * 255), (byte)(color.g * 255), (byte)(color.b * 255), 255);
                         lastColor = color;
                     }
+                    
                     SDL.SDL_RenderDrawPoint(Renderer, x, y);
+                    
+                    // PixelBytes[y * Width + x] = (byte) (color.r * 255);
+                    // PixelBytes[y * Width + x + 1] = (byte) (color.g * 255);
+                    // PixelBytes[y * Width + x + 2] = (byte) (color.b * 255);
+                    // PixelBytes[y * Width + x + 3] = (byte) 255;
+                    
+                    // PixelBytes[y * Width + x] = (byte) (1 * 255);
+                    // PixelBytes[y * Width + x + 1] = (byte) (0 * 255);
+                    // PixelBytes[y * Width + x + 2] = (byte) (0 * 255);
+                    // PixelBytes[y * Width + x + 3] = (byte) 255;
+                    
                 }
             }
+            // SDL.SDL_UpdateTexture(RenderTargetTexture, IntPtr.Zero,PixelBytesIntPtr, Width * IntPtr.Size);
             
             SDL.SDL_SetRenderTarget(Renderer, IntPtr.Zero);
             SDL.SDL_RenderCopy(Renderer, RenderTargetTexture, IntPtr.Zero, IntPtr.Zero);
             
             SDL.SDL_RenderPresent(Renderer);
+        }
+
+        public void Uninit()
+        {
+            SDL.SDL_DestroyTexture(RenderTargetTexture);
         }
     }
 }
