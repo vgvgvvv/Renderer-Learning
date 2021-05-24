@@ -74,5 +74,11 @@ namespace TestSoftRender
             point = mat.MultiplyPoint(point);
             Console.WriteLine(point);
         }
+
+        [Test]
+        public void TestColor()
+        {
+            Console.WriteLine(System.Drawing.Color.Wheat.B);
+        }
     }
 }
