@@ -36,6 +36,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_ControllerSensorEvent(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_ControllerSensorEvent>(default(SDL2.SDL.SDL_ControllerSensorEvent));
+				return 1;
+			}
 			L.L_Error("call SDL_ControllerSensorEvent constructor args is error");
 			return 1;
         }
@@ -52,6 +56,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_ControllerSensorEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.type = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_ControllerSensorEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -67,6 +74,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_ControllerSensorEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.timestamp = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_ControllerSensorEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -82,6 +92,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_ControllerSensorEvent) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.which = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_ControllerSensorEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -97,6 +110,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_ControllerSensorEvent) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.sensor = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_ControllerSensorEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -112,6 +128,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_ControllerSensorEvent) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.data1 = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_ControllerSensorEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -127,6 +146,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_ControllerSensorEvent) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.data2 = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_ControllerSensorEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -142,6 +164,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_ControllerSensorEvent) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.data3 = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_ControllerSensorEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         

@@ -10,8 +10,8 @@
 namespace UniToLua
 {
     using SoftwareRenderer.Render;
-    using System;
     using MathLib;
+    using System;
     
     
     public class SoftwareRenderer1Render1BaseFragmentInWrap
@@ -19,21 +19,26 @@ namespace UniToLua
         
         public static void Register(UniLua.ILuaState L)
         {
-			L.BeginClass(typeof(SoftwareRenderer.Render.BaseFragmentIn), typeof(System.ValueType));
+			L.BeginClass(typeof(SoftwareRenderer.Render.BaseFragmentIn), null);
 			L.RegFunction("New", _CreateSoftwareRenderer1Render1BaseFragmentIn);
 			L.RegVar("Position", get_Position, set_Position);
 			L.RegVar("UV", get_UV, set_UV);
 			L.RegVar("Color", get_Color, set_Color);
 			L.RegVar("Normal", get_Normal, set_Normal);
+			L.RegFunction("GetType", GetType);
+			L.RegFunction("ToString", ToString);
 			L.RegFunction("Equals", Equals);
 			L.RegFunction("GetHashCode", GetHashCode);
-			L.RegFunction("ToString", ToString);
-			L.RegFunction("GetType", GetType);
 			L.EndClass();
         }
         
         private static int _CreateSoftwareRenderer1Render1BaseFragmentIn(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0))
+			{
+				L.PushAny<SoftwareRenderer.Render.BaseFragmentIn>(new SoftwareRenderer.Render.BaseFragmentIn());
+				return 1;
+			}
 			L.L_Error("call BaseFragmentIn constructor args is error");
 			return 1;
         }
@@ -98,6 +103,34 @@ namespace UniToLua
 			return 0;
         }
         
+        private static int GetType(UniLua.ILuaState L)
+        {
+			if(L.CheckNum(1))
+			{
+				System.Type result;
+				var obj = (SoftwareRenderer.Render.BaseFragmentIn) L.ToUserData(1);
+				result = obj.GetType();
+				L.PushAny<System.Type>(result);
+				return 1;
+			}
+			L.L_Error("call function GetType args is error");
+			return 1;
+        }
+        
+        private static int ToString(UniLua.ILuaState L)
+        {
+			if(L.CheckNum(1))
+			{
+				string result;
+				var obj = (SoftwareRenderer.Render.BaseFragmentIn) L.ToUserData(1);
+				result = obj.ToString();
+				L.PushAny<string>(result);
+				return 1;
+			}
+			L.L_Error("call function ToString args is error");
+			return 1;
+        }
+        
         private static int Equals(UniLua.ILuaState L)
         {
 			if(L.CheckNum(2) && L.CheckType<SoftwareRenderer.Render.BaseFragmentIn, object>(1))
@@ -124,34 +157,6 @@ namespace UniToLua
 				return 1;
 			}
 			L.L_Error("call function GetHashCode args is error");
-			return 1;
-        }
-        
-        private static int ToString(UniLua.ILuaState L)
-        {
-			if(L.CheckNum(1))
-			{
-				string result;
-				var obj = (SoftwareRenderer.Render.BaseFragmentIn) L.ToUserData(1);
-				result = obj.ToString();
-				L.PushAny<string>(result);
-				return 1;
-			}
-			L.L_Error("call function ToString args is error");
-			return 1;
-        }
-        
-        private static int GetType(UniLua.ILuaState L)
-        {
-			if(L.CheckNum(1))
-			{
-				System.Type result;
-				var obj = (SoftwareRenderer.Render.BaseFragmentIn) L.ToUserData(1);
-				result = obj.GetType();
-				L.PushAny<System.Type>(result);
-				return 1;
-			}
-			L.L_Error("call function GetType args is error");
 			return 1;
         }
     }

@@ -32,6 +32,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_MessageBoxColor(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_MessageBoxColor>(default(SDL2.SDL.SDL_MessageBoxColor));
+				return 1;
+			}
 			L.L_Error("call SDL_MessageBoxColor constructor args is error");
 			return 1;
         }
@@ -48,6 +52,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MessageBoxColor) L.ToUserData(1);
 			var value = L.CheckAny<byte>(2);
 			obj.r = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MessageBoxColor>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -63,6 +70,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MessageBoxColor) L.ToUserData(1);
 			var value = L.CheckAny<byte>(2);
 			obj.g = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MessageBoxColor>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -78,6 +88,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MessageBoxColor) L.ToUserData(1);
 			var value = L.CheckAny<byte>(2);
 			obj.b = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MessageBoxColor>(obj);
+			L.Replace(1);
 			return 0;
         }
         

@@ -33,6 +33,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL_image1IMG_Animation(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL_image.IMG_Animation>(default(SDL2.SDL_image.IMG_Animation));
+				return 1;
+			}
 			L.L_Error("call IMG_Animation constructor args is error");
 			return 1;
         }
@@ -49,6 +53,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL_image.IMG_Animation) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.w = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL_image.IMG_Animation>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -64,6 +71,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL_image.IMG_Animation) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.h = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL_image.IMG_Animation>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -79,6 +89,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL_image.IMG_Animation) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.frames = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL_image.IMG_Animation>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -94,6 +107,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL_image.IMG_Animation) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.delays = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL_image.IMG_Animation>(obj);
+			L.Replace(1);
 			return 0;
         }
         

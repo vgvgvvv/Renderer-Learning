@@ -80,6 +80,10 @@ namespace UniToLua
         
         private static int _CreateMathLib1Mathf(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<MathLib.Mathf>(default(MathLib.Mathf));
+				return 1;
+			}
 			L.L_Error("call Mathf constructor args is error");
 			return 1;
         }

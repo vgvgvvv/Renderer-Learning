@@ -65,6 +65,9 @@ namespace UniToLua
 			var obj = (SoftwareRenderer.Render.Vertex) L.ToUserData(1);
 			var value = L.CheckAny<MathLib.Vector3>(2);
 			obj.Position = value;
+			// replace old struct
+			L.PushAny<SoftwareRenderer.Render.Vertex>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -80,6 +83,9 @@ namespace UniToLua
 			var obj = (SoftwareRenderer.Render.Vertex) L.ToUserData(1);
 			var value = L.CheckAny<MathLib.Vector2>(2);
 			obj.UV = value;
+			// replace old struct
+			L.PushAny<SoftwareRenderer.Render.Vertex>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -95,6 +101,9 @@ namespace UniToLua
 			var obj = (SoftwareRenderer.Render.Vertex) L.ToUserData(1);
 			var value = L.CheckAny<MathLib.Vector3>(2);
 			obj.Normal = value;
+			// replace old struct
+			L.PushAny<SoftwareRenderer.Render.Vertex>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -110,6 +119,9 @@ namespace UniToLua
 			var obj = (SoftwareRenderer.Render.Vertex) L.ToUserData(1);
 			var value = L.CheckAny<MathLib.Color>(2);
 			obj.Color = value;
+			// replace old struct
+			L.PushAny<SoftwareRenderer.Render.Vertex>(obj);
+			L.Replace(1);
 			return 0;
         }
         

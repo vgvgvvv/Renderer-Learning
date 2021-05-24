@@ -33,6 +33,10 @@ namespace UniToLua
         
         private static int _CreateSoftwareRenderer1Render1DrawCommand(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SoftwareRenderer.Render.DrawCommand>(default(SoftwareRenderer.Render.DrawCommand));
+				return 1;
+			}
 			L.L_Error("call DrawCommand constructor args is error");
 			return 1;
         }
@@ -49,6 +53,9 @@ namespace UniToLua
 			var obj = (SoftwareRenderer.Render.DrawCommand) L.ToUserData(1);
 			var value = L.CheckAny<SoftwareRenderer.Render.Vertex[]>(2);
 			obj.Vertexs = value;
+			// replace old struct
+			L.PushAny<SoftwareRenderer.Render.DrawCommand>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -64,6 +71,9 @@ namespace UniToLua
 			var obj = (SoftwareRenderer.Render.DrawCommand) L.ToUserData(1);
 			var value = L.CheckAny<MathLib.Vector3[]>(2);
 			obj.Indexs = value;
+			// replace old struct
+			L.PushAny<SoftwareRenderer.Render.DrawCommand>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -79,6 +89,9 @@ namespace UniToLua
 			var obj = (SoftwareRenderer.Render.DrawCommand) L.ToUserData(1);
 			var value = L.CheckAny<SoftwareRenderer.Render.Material>(2);
 			obj.Mat = value;
+			// replace old struct
+			L.PushAny<SoftwareRenderer.Render.DrawCommand>(obj);
+			L.Replace(1);
 			return 0;
         }
         

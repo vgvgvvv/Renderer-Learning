@@ -32,6 +32,10 @@ namespace UniToLua
         
         private static int _CreateMathLib1Mathf1MathfInternal(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<MathLib.Mathf.MathfInternal>(default(MathLib.Mathf.MathfInternal));
+				return 1;
+			}
 			L.L_Error("call MathfInternal constructor args is error");
 			return 1;
         }

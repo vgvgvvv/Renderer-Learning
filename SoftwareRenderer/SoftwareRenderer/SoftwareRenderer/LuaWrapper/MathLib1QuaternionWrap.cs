@@ -88,6 +88,9 @@ namespace UniToLua
 			var obj = (MathLib.Quaternion) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.x = value;
+			// replace old struct
+			L.PushAny<MathLib.Quaternion>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -103,6 +106,9 @@ namespace UniToLua
 			var obj = (MathLib.Quaternion) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.y = value;
+			// replace old struct
+			L.PushAny<MathLib.Quaternion>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -118,6 +124,9 @@ namespace UniToLua
 			var obj = (MathLib.Quaternion) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.z = value;
+			// replace old struct
+			L.PushAny<MathLib.Quaternion>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -133,6 +142,9 @@ namespace UniToLua
 			var obj = (MathLib.Quaternion) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.w = value;
+			// replace old struct
+			L.PushAny<MathLib.Quaternion>(obj);
+			L.Replace(1);
 			return 0;
         }
         

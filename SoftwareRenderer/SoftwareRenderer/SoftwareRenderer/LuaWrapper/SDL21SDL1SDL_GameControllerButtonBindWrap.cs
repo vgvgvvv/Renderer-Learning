@@ -31,6 +31,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_GameControllerButtonBind(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_GameControllerButtonBind>(default(SDL2.SDL.SDL_GameControllerButtonBind));
+				return 1;
+			}
 			L.L_Error("call SDL_GameControllerButtonBind constructor args is error");
 			return 1;
         }
@@ -47,6 +51,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_GameControllerButtonBind) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_GameControllerBindType>(2);
 			obj.bindType = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_GameControllerButtonBind>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -62,6 +69,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_GameControllerButtonBind) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.INTERNAL_GameControllerButtonBind_union>(2);
 			obj.value = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_GameControllerButtonBind>(obj);
+			L.Replace(1);
 			return 0;
         }
         

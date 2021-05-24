@@ -33,6 +33,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_Color(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_Color>(default(SDL2.SDL.SDL_Color));
+				return 1;
+			}
 			L.L_Error("call SDL_Color constructor args is error");
 			return 1;
         }
@@ -49,6 +53,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Color) L.ToUserData(1);
 			var value = L.CheckAny<byte>(2);
 			obj.r = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_Color>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -64,6 +71,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Color) L.ToUserData(1);
 			var value = L.CheckAny<byte>(2);
 			obj.g = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_Color>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -79,6 +89,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Color) L.ToUserData(1);
 			var value = L.CheckAny<byte>(2);
 			obj.b = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_Color>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -94,6 +107,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Color) L.ToUserData(1);
 			var value = L.CheckAny<byte>(2);
 			obj.a = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_Color>(obj);
+			L.Replace(1);
 			return 0;
         }
         

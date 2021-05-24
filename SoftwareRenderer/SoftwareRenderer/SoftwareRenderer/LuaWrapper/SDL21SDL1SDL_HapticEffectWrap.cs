@@ -36,6 +36,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_HapticEffect(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_HapticEffect>(default(SDL2.SDL.SDL_HapticEffect));
+				return 1;
+			}
 			L.L_Error("call SDL_HapticEffect constructor args is error");
 			return 1;
         }
@@ -52,6 +56,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticEffect) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.type = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticEffect>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -67,6 +74,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticEffect) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_HapticConstant>(2);
 			obj.constant = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticEffect>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -82,6 +92,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticEffect) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_HapticPeriodic>(2);
 			obj.periodic = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticEffect>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -97,6 +110,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticEffect) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_HapticCondition>(2);
 			obj.condition = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticEffect>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -112,6 +128,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticEffect) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_HapticRamp>(2);
 			obj.ramp = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticEffect>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -127,6 +146,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticEffect) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_HapticLeftRight>(2);
 			obj.leftright = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticEffect>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -142,6 +164,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticEffect) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_HapticCustom>(2);
 			obj.custom = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticEffect>(obj);
+			L.Replace(1);
 			return 0;
         }
         

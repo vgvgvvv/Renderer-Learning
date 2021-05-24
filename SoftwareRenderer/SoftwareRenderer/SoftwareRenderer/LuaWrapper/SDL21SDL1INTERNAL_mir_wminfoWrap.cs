@@ -31,6 +31,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1INTERNAL_mir_wminfo(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.INTERNAL_mir_wminfo>(default(SDL2.SDL.INTERNAL_mir_wminfo));
+				return 1;
+			}
 			L.L_Error("call INTERNAL_mir_wminfo constructor args is error");
 			return 1;
         }
@@ -47,6 +51,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_mir_wminfo) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.connection = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.INTERNAL_mir_wminfo>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -62,6 +69,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_mir_wminfo) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.surface = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.INTERNAL_mir_wminfo>(obj);
+			L.Replace(1);
 			return 0;
         }
         

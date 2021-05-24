@@ -18,11 +18,13 @@ function LuaWorld:Awake(world)
     self.cube1 = SoftwareRenderer.Core.WorldObject.CreateByTypeName("SoftwareRenderer.Component.CubeRenderer",
             world, MathLib.Vector3.New(1, 0, 1))
     self.cube1.Transform.scale = MathLib.Vector3.one * 2
+    self.cube1.Mat.Shader = SoftwareRenderer.Render.LuaShader.New("Materials.UVShader")
 
     ---@type SoftwareRenderer.Component.CubeRenderer
     self.cube2 = SoftwareRenderer.Core.WorldObject.CreateByTypeName("SoftwareRenderer.Component.CubeRenderer",
             world, MathLib.Vector3.New(-1, 0, 1))
     self.cube2.Transform.scale = MathLib.Vector3.one * 1
+    self.cube2.Mat.Shader = SoftwareRenderer.Render.LuaShader.New("Materials.UVShader")
 
     self.cube1:OnUpdate_Add(function()
         self.cube1.Transform.rotation = MathLib.Quaternion.Euler(10, 10, 0) * self.cube1.Transform.rotation

@@ -37,6 +37,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_ControllerTouchpadEvent(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_ControllerTouchpadEvent>(default(SDL2.SDL.SDL_ControllerTouchpadEvent));
+				return 1;
+			}
 			L.L_Error("call SDL_ControllerTouchpadEvent constructor args is error");
 			return 1;
         }
@@ -53,6 +57,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_ControllerTouchpadEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.type = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_ControllerTouchpadEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -68,6 +75,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_ControllerTouchpadEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.timestamp = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_ControllerTouchpadEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -83,6 +93,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_ControllerTouchpadEvent) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.which = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_ControllerTouchpadEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -98,6 +111,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_ControllerTouchpadEvent) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.touchpad = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_ControllerTouchpadEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -113,6 +129,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_ControllerTouchpadEvent) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.finger = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_ControllerTouchpadEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -128,6 +147,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_ControllerTouchpadEvent) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.x = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_ControllerTouchpadEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -143,6 +165,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_ControllerTouchpadEvent) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.y = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_ControllerTouchpadEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -158,6 +183,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_ControllerTouchpadEvent) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.pressure = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_ControllerTouchpadEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         

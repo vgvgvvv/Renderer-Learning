@@ -2,6 +2,6 @@
     "LuaRoot":"LuaSource",
     "LuaWrapperOutputPath":"SoftwareRenderer/LuaWrapper",
     "HintOutputPath":"Temp/LuaHint",
-    "LuaWorldModule":"LuaWorld",
+    "LuaWorldModule":"World.LuaWorld",
     "WorldType":"SoftwareRenderer.Scene.LuaWorld"
 }

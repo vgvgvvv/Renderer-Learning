@@ -32,6 +32,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_version(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_version>(default(SDL2.SDL.SDL_version));
+				return 1;
+			}
 			L.L_Error("call SDL_version constructor args is error");
 			return 1;
         }
@@ -48,6 +52,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_version) L.ToUserData(1);
 			var value = L.CheckAny<byte>(2);
 			obj.major = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_version>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -63,6 +70,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_version) L.ToUserData(1);
 			var value = L.CheckAny<byte>(2);
 			obj.minor = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_version>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -78,6 +88,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_version) L.ToUserData(1);
 			var value = L.CheckAny<byte>(2);
 			obj.patch = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_version>(obj);
+			L.Replace(1);
 			return 0;
         }
         

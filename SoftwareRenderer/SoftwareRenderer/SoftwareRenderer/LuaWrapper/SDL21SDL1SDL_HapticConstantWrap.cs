@@ -40,6 +40,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_HapticConstant(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_HapticConstant>(default(SDL2.SDL.SDL_HapticConstant));
+				return 1;
+			}
 			L.L_Error("call SDL_HapticConstant constructor args is error");
 			return 1;
         }
@@ -56,6 +60,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticConstant) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.type = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticConstant>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -71,6 +78,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticConstant) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_HapticDirection>(2);
 			obj.direction = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticConstant>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -86,6 +96,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticConstant) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.length = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticConstant>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -101,6 +114,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticConstant) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.delay = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticConstant>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -116,6 +132,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticConstant) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.button = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticConstant>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -131,6 +150,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticConstant) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.interval = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticConstant>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -146,6 +168,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticConstant) L.ToUserData(1);
 			var value = L.CheckAny<short>(2);
 			obj.level = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticConstant>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -161,6 +186,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticConstant) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.attack_length = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticConstant>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -176,6 +204,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticConstant) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.attack_level = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticConstant>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -191,6 +222,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticConstant) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.fade_length = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticConstant>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -206,6 +240,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticConstant) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.fade_level = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticConstant>(obj);
+			L.Replace(1);
 			return 0;
         }
         

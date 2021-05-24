@@ -33,6 +33,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_AudioDeviceEvent(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_AudioDeviceEvent>(default(SDL2.SDL.SDL_AudioDeviceEvent));
+				return 1;
+			}
 			L.L_Error("call SDL_AudioDeviceEvent constructor args is error");
 			return 1;
         }
@@ -49,6 +53,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_AudioDeviceEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.type = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_AudioDeviceEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -64,6 +71,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_AudioDeviceEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.timestamp = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_AudioDeviceEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -79,6 +89,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_AudioDeviceEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.which = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_AudioDeviceEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -94,6 +107,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_AudioDeviceEvent) L.ToUserData(1);
 			var value = L.CheckAny<byte>(2);
 			obj.iscapture = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_AudioDeviceEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         

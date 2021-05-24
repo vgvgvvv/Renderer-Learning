@@ -38,6 +38,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_MouseMotionEvent(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_MouseMotionEvent>(default(SDL2.SDL.SDL_MouseMotionEvent));
+				return 1;
+			}
 			L.L_Error("call SDL_MouseMotionEvent constructor args is error");
 			return 1;
         }
@@ -54,6 +58,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MouseMotionEvent) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_EventType>(2);
 			obj.type = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MouseMotionEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -69,6 +76,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MouseMotionEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.timestamp = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MouseMotionEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -84,6 +94,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MouseMotionEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.windowID = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MouseMotionEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -99,6 +112,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MouseMotionEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.which = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MouseMotionEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -114,6 +130,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MouseMotionEvent) L.ToUserData(1);
 			var value = L.CheckAny<byte>(2);
 			obj.state = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MouseMotionEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -129,6 +148,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MouseMotionEvent) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.x = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MouseMotionEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -144,6 +166,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MouseMotionEvent) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.y = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MouseMotionEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -159,6 +184,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MouseMotionEvent) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.xrel = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MouseMotionEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -174,6 +202,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MouseMotionEvent) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.yrel = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MouseMotionEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         

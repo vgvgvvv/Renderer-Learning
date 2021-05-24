@@ -33,6 +33,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_FRect(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_FRect>(default(SDL2.SDL.SDL_FRect));
+				return 1;
+			}
 			L.L_Error("call SDL_FRect constructor args is error");
 			return 1;
         }
@@ -49,6 +53,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_FRect) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.x = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_FRect>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -64,6 +71,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_FRect) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.y = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_FRect>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -79,6 +89,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_FRect) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.w = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_FRect>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -94,6 +107,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_FRect) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.h = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_FRect>(obj);
+			L.Replace(1);
 			return 0;
         }
         

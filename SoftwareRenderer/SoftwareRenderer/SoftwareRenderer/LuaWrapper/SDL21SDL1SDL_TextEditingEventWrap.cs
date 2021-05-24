@@ -34,6 +34,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_TextEditingEvent(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_TextEditingEvent>(default(SDL2.SDL.SDL_TextEditingEvent));
+				return 1;
+			}
 			L.L_Error("call SDL_TextEditingEvent constructor args is error");
 			return 1;
         }
@@ -50,6 +54,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_TextEditingEvent) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_EventType>(2);
 			obj.type = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_TextEditingEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -65,6 +72,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_TextEditingEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.timestamp = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_TextEditingEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -80,6 +90,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_TextEditingEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.windowID = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_TextEditingEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -95,6 +108,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_TextEditingEvent) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.start = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_TextEditingEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -110,6 +126,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_TextEditingEvent) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.length = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_TextEditingEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         

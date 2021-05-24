@@ -29,6 +29,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_Locale(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_Locale>(default(SDL2.SDL.SDL_Locale));
+				return 1;
+			}
 			L.L_Error("call SDL_Locale constructor args is error");
 			return 1;
         }

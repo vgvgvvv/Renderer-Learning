@@ -35,6 +35,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_HapticCondition(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_HapticCondition>(default(SDL2.SDL.SDL_HapticCondition));
+				return 1;
+			}
 			L.L_Error("call SDL_HapticCondition constructor args is error");
 			return 1;
         }
@@ -51,6 +55,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticCondition) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.type = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticCondition>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -66,6 +73,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticCondition) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_HapticDirection>(2);
 			obj.direction = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticCondition>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -81,6 +91,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticCondition) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.length = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticCondition>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -96,6 +109,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticCondition) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.delay = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticCondition>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -111,6 +127,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticCondition) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.button = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticCondition>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -126,6 +145,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticCondition) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.interval = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticCondition>(obj);
+			L.Replace(1);
 			return 0;
         }
         

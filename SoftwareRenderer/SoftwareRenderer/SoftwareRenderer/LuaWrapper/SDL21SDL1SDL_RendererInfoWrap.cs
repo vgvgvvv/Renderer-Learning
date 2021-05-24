@@ -34,6 +34,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_RendererInfo(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_RendererInfo>(default(SDL2.SDL.SDL_RendererInfo));
+				return 1;
+			}
 			L.L_Error("call SDL_RendererInfo constructor args is error");
 			return 1;
         }
@@ -50,6 +54,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_RendererInfo) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.name = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_RendererInfo>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -65,6 +72,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_RendererInfo) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.flags = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_RendererInfo>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -80,6 +90,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_RendererInfo) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.num_texture_formats = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_RendererInfo>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -95,6 +108,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_RendererInfo) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.max_texture_width = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_RendererInfo>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -110,6 +126,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_RendererInfo) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.max_texture_height = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_RendererInfo>(obj);
+			L.Replace(1);
 			return 0;
         }
         

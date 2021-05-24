@@ -32,6 +32,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_ControllerDeviceEvent(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_ControllerDeviceEvent>(default(SDL2.SDL.SDL_ControllerDeviceEvent));
+				return 1;
+			}
 			L.L_Error("call SDL_ControllerDeviceEvent constructor args is error");
 			return 1;
         }
@@ -48,6 +52,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_ControllerDeviceEvent) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_EventType>(2);
 			obj.type = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_ControllerDeviceEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -63,6 +70,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_ControllerDeviceEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.timestamp = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_ControllerDeviceEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -78,6 +88,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_ControllerDeviceEvent) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.which = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_ControllerDeviceEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         

@@ -35,6 +35,10 @@ namespace UniToLua
         
         private static int _CreateMathLib1FrustumPlanes(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<MathLib.FrustumPlanes>(default(MathLib.FrustumPlanes));
+				return 1;
+			}
 			L.L_Error("call FrustumPlanes constructor args is error");
 			return 1;
         }
@@ -51,6 +55,9 @@ namespace UniToLua
 			var obj = (MathLib.FrustumPlanes) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.left = value;
+			// replace old struct
+			L.PushAny<MathLib.FrustumPlanes>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -66,6 +73,9 @@ namespace UniToLua
 			var obj = (MathLib.FrustumPlanes) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.right = value;
+			// replace old struct
+			L.PushAny<MathLib.FrustumPlanes>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -81,6 +91,9 @@ namespace UniToLua
 			var obj = (MathLib.FrustumPlanes) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.bottom = value;
+			// replace old struct
+			L.PushAny<MathLib.FrustumPlanes>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -96,6 +109,9 @@ namespace UniToLua
 			var obj = (MathLib.FrustumPlanes) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.top = value;
+			// replace old struct
+			L.PushAny<MathLib.FrustumPlanes>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -111,6 +127,9 @@ namespace UniToLua
 			var obj = (MathLib.FrustumPlanes) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.zNear = value;
+			// replace old struct
+			L.PushAny<MathLib.FrustumPlanes>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -126,6 +145,9 @@ namespace UniToLua
 			var obj = (MathLib.FrustumPlanes) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.zFar = value;
+			// replace old struct
+			L.PushAny<MathLib.FrustumPlanes>(obj);
+			L.Replace(1);
 			return 0;
         }
         

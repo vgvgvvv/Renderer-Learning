@@ -39,6 +39,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_TouchFingerEvent(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_TouchFingerEvent>(default(SDL2.SDL.SDL_TouchFingerEvent));
+				return 1;
+			}
 			L.L_Error("call SDL_TouchFingerEvent constructor args is error");
 			return 1;
         }
@@ -55,6 +59,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_TouchFingerEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.type = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_TouchFingerEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -70,6 +77,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_TouchFingerEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.timestamp = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_TouchFingerEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -85,6 +95,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_TouchFingerEvent) L.ToUserData(1);
 			var value = L.CheckAny<long>(2);
 			obj.touchId = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_TouchFingerEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -100,6 +113,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_TouchFingerEvent) L.ToUserData(1);
 			var value = L.CheckAny<long>(2);
 			obj.fingerId = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_TouchFingerEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -115,6 +131,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_TouchFingerEvent) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.x = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_TouchFingerEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -130,6 +149,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_TouchFingerEvent) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.y = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_TouchFingerEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -145,6 +167,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_TouchFingerEvent) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.dx = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_TouchFingerEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -160,6 +185,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_TouchFingerEvent) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.dy = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_TouchFingerEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -175,6 +203,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_TouchFingerEvent) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.pressure = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_TouchFingerEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -190,6 +221,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_TouchFingerEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.windowID = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_TouchFingerEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         

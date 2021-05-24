@@ -31,6 +31,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_FPoint(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_FPoint>(default(SDL2.SDL.SDL_FPoint));
+				return 1;
+			}
 			L.L_Error("call SDL_FPoint constructor args is error");
 			return 1;
         }
@@ -47,6 +51,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_FPoint) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.x = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_FPoint>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -62,6 +69,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_FPoint) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.y = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_FPoint>(obj);
+			L.Replace(1);
 			return 0;
         }
         

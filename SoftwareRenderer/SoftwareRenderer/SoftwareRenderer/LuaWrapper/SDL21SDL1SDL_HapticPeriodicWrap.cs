@@ -43,6 +43,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_HapticPeriodic(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_HapticPeriodic>(default(SDL2.SDL.SDL_HapticPeriodic));
+				return 1;
+			}
 			L.L_Error("call SDL_HapticPeriodic constructor args is error");
 			return 1;
         }
@@ -59,6 +63,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticPeriodic) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.type = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticPeriodic>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -74,6 +81,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticPeriodic) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_HapticDirection>(2);
 			obj.direction = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticPeriodic>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -89,6 +99,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticPeriodic) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.length = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticPeriodic>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -104,6 +117,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticPeriodic) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.delay = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticPeriodic>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -119,6 +135,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticPeriodic) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.button = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticPeriodic>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -134,6 +153,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticPeriodic) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.interval = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticPeriodic>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -149,6 +171,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticPeriodic) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.period = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticPeriodic>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -164,6 +189,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticPeriodic) L.ToUserData(1);
 			var value = L.CheckAny<short>(2);
 			obj.magnitude = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticPeriodic>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -179,6 +207,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticPeriodic) L.ToUserData(1);
 			var value = L.CheckAny<short>(2);
 			obj.offset = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticPeriodic>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -194,6 +225,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticPeriodic) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.phase = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticPeriodic>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -209,6 +243,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticPeriodic) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.attack_length = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticPeriodic>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -224,6 +261,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticPeriodic) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.attack_level = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticPeriodic>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -239,6 +279,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticPeriodic) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.fade_length = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticPeriodic>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -254,6 +297,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticPeriodic) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.fade_level = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_HapticPeriodic>(obj);
+			L.Replace(1);
 			return 0;
         }
         

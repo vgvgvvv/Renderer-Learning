@@ -32,6 +32,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_SysWMinfo(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_SysWMinfo>(default(SDL2.SDL.SDL_SysWMinfo));
+				return 1;
+			}
 			L.L_Error("call SDL_SysWMinfo constructor args is error");
 			return 1;
         }
@@ -48,6 +52,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_SysWMinfo) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_version>(2);
 			obj.version = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_SysWMinfo>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -63,6 +70,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_SysWMinfo) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_SYSWM_TYPE>(2);
 			obj.subsystem = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_SysWMinfo>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -78,6 +88,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_SysWMinfo) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.INTERNAL_SysWMDriverUnion>(2);
 			obj.info = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_SysWMinfo>(obj);
+			L.Replace(1);
 			return 0;
         }
         

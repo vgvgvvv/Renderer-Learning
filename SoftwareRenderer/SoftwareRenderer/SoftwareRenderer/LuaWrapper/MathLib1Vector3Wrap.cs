@@ -109,6 +109,9 @@ namespace UniToLua
 			var obj = (MathLib.Vector3) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.x = value;
+			// replace old struct
+			L.PushAny<MathLib.Vector3>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -124,6 +127,9 @@ namespace UniToLua
 			var obj = (MathLib.Vector3) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.y = value;
+			// replace old struct
+			L.PushAny<MathLib.Vector3>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -139,6 +145,9 @@ namespace UniToLua
 			var obj = (MathLib.Vector3) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.z = value;
+			// replace old struct
+			L.PushAny<MathLib.Vector3>(obj);
+			L.Replace(1);
 			return 0;
         }
         

@@ -36,6 +36,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_MessageBoxData(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_MessageBoxData>(default(SDL2.SDL.SDL_MessageBoxData));
+				return 1;
+			}
 			L.L_Error("call SDL_MessageBoxData constructor args is error");
 			return 1;
         }
@@ -52,6 +56,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MessageBoxData) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_MessageBoxFlags>(2);
 			obj.flags = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MessageBoxData>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -67,6 +74,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MessageBoxData) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.window = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MessageBoxData>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -82,6 +92,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MessageBoxData) L.ToUserData(1);
 			var value = L.CheckAny<string>(2);
 			obj.title = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MessageBoxData>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -97,6 +110,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MessageBoxData) L.ToUserData(1);
 			var value = L.CheckAny<string>(2);
 			obj.message = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MessageBoxData>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -112,6 +128,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MessageBoxData) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.numbuttons = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MessageBoxData>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -127,6 +146,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MessageBoxData) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_MessageBoxButtonData[]>(2);
 			obj.buttons = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MessageBoxData>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -142,6 +164,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MessageBoxData) L.ToUserData(1);
 			var value = L.CheckAny<System.Nullable<SDL2.SDL.SDL_MessageBoxColorScheme>>(2);
 			obj.colorScheme = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MessageBoxData>(obj);
+			L.Replace(1);
 			return 0;
         }
         

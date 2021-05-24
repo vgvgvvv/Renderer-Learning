@@ -38,6 +38,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_MultiGestureEvent(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_MultiGestureEvent>(default(SDL2.SDL.SDL_MultiGestureEvent));
+				return 1;
+			}
 			L.L_Error("call SDL_MultiGestureEvent constructor args is error");
 			return 1;
         }
@@ -54,6 +58,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MultiGestureEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.type = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MultiGestureEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -69,6 +76,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MultiGestureEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.timestamp = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MultiGestureEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -84,6 +94,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MultiGestureEvent) L.ToUserData(1);
 			var value = L.CheckAny<long>(2);
 			obj.touchId = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MultiGestureEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -99,6 +112,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MultiGestureEvent) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.dTheta = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MultiGestureEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -114,6 +130,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MultiGestureEvent) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.dDist = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MultiGestureEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -129,6 +148,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MultiGestureEvent) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.x = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MultiGestureEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -144,6 +166,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MultiGestureEvent) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.y = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MultiGestureEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -159,6 +184,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MultiGestureEvent) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.numFingers = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MultiGestureEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -174,6 +202,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MultiGestureEvent) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.padding = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_MultiGestureEvent>(obj);
+			L.Replace(1);
 			return 0;
         }
         

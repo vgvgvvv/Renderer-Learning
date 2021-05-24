@@ -40,6 +40,10 @@ namespace UniToLua
         
         private static int _CreateSDL21SDL1SDL_AudioSpec(UniLua.ILuaState L)
         {
+			if(L.CheckNum(0)) {
+				L.PushAny<SDL2.SDL.SDL_AudioSpec>(default(SDL2.SDL.SDL_AudioSpec));
+				return 1;
+			}
 			L.L_Error("call SDL_AudioSpec constructor args is error");
 			return 1;
         }
@@ -56,6 +60,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_AudioSpec) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.freq = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_AudioSpec>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -71,6 +78,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_AudioSpec) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.format = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_AudioSpec>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -86,6 +96,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_AudioSpec) L.ToUserData(1);
 			var value = L.CheckAny<byte>(2);
 			obj.channels = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_AudioSpec>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -101,6 +114,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_AudioSpec) L.ToUserData(1);
 			var value = L.CheckAny<byte>(2);
 			obj.silence = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_AudioSpec>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -116,6 +132,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_AudioSpec) L.ToUserData(1);
 			var value = L.CheckAny<ushort>(2);
 			obj.samples = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_AudioSpec>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -131,6 +150,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_AudioSpec) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.size = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_AudioSpec>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -146,6 +168,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_AudioSpec) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_AudioCallback>(2);
 			obj.callback = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_AudioSpec>(obj);
+			L.Replace(1);
 			return 0;
         }
         
@@ -202,6 +227,9 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_AudioSpec) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.userdata = value;
+			// replace old struct
+			L.PushAny<SDL2.SDL.SDL_AudioSpec>(obj);
+			L.Replace(1);
 			return 0;
         }
         
