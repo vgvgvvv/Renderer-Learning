@@ -1,4 +1,7 @@
 using System;
+using System.IO;
+using Common.ConsoleApp;
+using Common.Persistence;
 using MathLib;
 using SDL2;
 using SoftwareRenderer.Component;
@@ -18,16 +21,20 @@ namespace SoftwareRenderer.Scene
         public override void Awake()
         {
             base.Awake();
+
+            var dataFileManager = DataFileManager.FindConfig(Flag.GetFlag("config").GetValue<string>());
+            var resourceDirName = dataFileManager.LoadData<string>("ResourcesDir", "Resourecs");
+            var imagePath = Path.Combine(dataFileManager.FileDirectory, resourceDirName, "test.png");
             
             var camera = WorldObject.Create<Camera>(this, new Vector3(0, 0, -10));
 
             var cube1 = WorldObject.Create<CubeRenderer>(this, new Vector3(1, 0, 1));
             cube1.Transform.scale = Vector3.one * 2;
-            cube1.Mat = new TextureMaterial("test.jpg");
+            cube1.Mat = new TextureMaterial(imagePath);
             
             var cube2 = WorldObject.Create<CubeRenderer>(this, new Vector3(-1, 0, 1));
             cube2.Transform.scale = Vector3.one * 1;
-            cube2.Mat = new TextureMaterial("test.jpg");
+            cube2.Mat = new TextureMaterial(imagePath);
 
             cube1.OnUpdate += () =>
             {

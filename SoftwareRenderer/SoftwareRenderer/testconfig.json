@@ -1,4 +1,5 @@
 {
     "LuaRoot":"LuaSource",
-    "WorldType":"SoftwareRenderer.Scene.TestWorld"
+    "WorldType":"SoftwareRenderer.Scene.TestWorld",
+    "ResourcesDir":"Resources"
 }
