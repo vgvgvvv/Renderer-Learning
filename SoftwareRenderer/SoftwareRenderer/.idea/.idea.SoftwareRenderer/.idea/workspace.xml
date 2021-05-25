@@ -4,7 +4,33 @@
     <projectFile>SoftwareRenderer/SoftwareRenderer.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="764c39d4-cb4a-42de-9740-db8dbb2fce06" name="Default Changelist" comment="" />
+    <list default="true" id="764c39d4-cb4a-42de-9740-db8dbb2fce06" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Custom/Scene/AssimpWorld.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/Engine/Component/SingleMeshRender.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SoftwareRenderer/ThirdPart/Assimp/AssimpLib.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Common.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/Common.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/UniToLua.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/UniToLua.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Custom/LuaWrapper/LuaBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Custom/LuaWrapper/LuaBinder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Custom/LuaWrapper/SoftwareRenderer1Component1CubeRendererWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Custom/LuaWrapper/SoftwareRenderer1Component1ObjMeshRendererWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Custom/LuaWrapper/SoftwareRenderer1Core1SDLRendererWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Custom/LuaWrapper/SoftwareRenderer1Render1MeshRendererWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Custom/LuaWrapper/SoftwareRenderer1Render1RendererWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Custom/LuaWrapper/SoftwareRenderer1Render1SoftwareRenderDeviceWrap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Custom/Scene/TestWorld.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Custom/Scene/TestWorld.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Engine/Component/CubeRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Engine/Component/CubeRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Engine/Component/ObjMeshRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Engine/Component/ObjMeshRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Engine/Core/IRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Engine/Core/IRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Engine/Core/SDLRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Engine/Core/SDLRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Engine/Render/DrawCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Engine/Render/DrawCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Engine/Render/MeshRenderer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Engine/Render/Renderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Engine/Render/Renderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Engine/Render/SoftwareRenderDevice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Engine/Render/SoftwareRenderDevice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/SoftwareRenderer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/SoftwareRenderer.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testconfig.json" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,14 +51,21 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/2A1/ConstructorInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/2B0/RuntimeConstructorInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/316AB451-6B81-40E7-B94D-342A1F91D04E/10/Gdiplus.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/Common/ConsoleApp/ConsoleProgram.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33363C81-2E76-43C2-96F1-D0E829505A38/46/69664ecc/IEnumerableEx.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6A57240-4A2A-42A0-BDAB-99CFB603FC07/4f/b0aa6220/LuaState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1EFBE8B9-CA86-4F3F-BFE9-484F2A47A6E0/c2/3fe7b75f/DataFileManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/VM.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B876795D-B456-4505-9887-02F6DA34D838/c0/a530dae4/LuaState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8C8CFD8B-8D5B-488F-A65F-5413EBAE3B36/e2/c355d795/ILuaAPI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33206078-F3E8-40C1-99EE-09EBB6D97420/ba/a95b3f8f/LuaState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33363C81-2E76-43C2-96F1-D0E829505A38/be/9820f715/DataFileManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AC613005-B340-44DC-ADAE-EE3E87D91FCA/6/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/30/RuntimeType.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/Common/Common/Persistence/DataFileManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C66F7638-D46A-4995-BB93-E999909A0959/0/KnownColor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/A683AC5E-CF68-4ABE-97B0-8498CC6ADE40/fc/2061c638/Common.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33363C81-2E76-43C2-96F1-D0E829505A38/c6/2dfe2117/Flag.cs" root0="SKIP_HIGHLIGHTING" />
@@ -51,23 +84,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Behavior.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/WorldObject.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/Behavior.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/Transform.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Scene/InputListener.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Camera.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/InputSystem.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Material.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Program.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Component/LuaObjec.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Component/LuaObject.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/IRenderer.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Entry/GenerateLua.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/LuaBinder.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Core/World.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Core1ApplicationWrap.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Scene1LuaWorldWrap.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Entry/Main.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/LuaManager.cs" />
       <option value="$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniToLua/TypeChecker.cs" />
@@ -80,7 +96,6 @@
       <option value="$PROJECT_DIR$/SoftwareRenderer/Component/Light.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Component/DirectionLight.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Materials/LightMaterial.cs" />
-      <option value="$PROJECT_DIR$/SoftwareRenderer/Component/ObjMeshRenderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/Vertex.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Render/DrawCommand.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1DrawCommandWrap.cs" />
@@ -102,6 +117,24 @@
       <option value="$PROJECT_DIR$/SoftwareRenderer/Core/SDLRenderer.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/LuaWrapper/SoftwareRenderer1Render1SoftwareRenderDeviceWrap.cs" />
       <option value="$PROJECT_DIR$/SoftwareRenderer/Scene/TestWorld.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Component/ObjMeshRenderer.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/ThirdPart/Assimp/AssimpLib.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Custom/Scene/TestWorld.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Custom/Scene/AssimpWorld.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Engine/Render/DrawCommand.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Custom/LuaWrapper/SoftwareRenderer1Component1CubeRendererWrap.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Custom/LuaWrapper/SoftwareRenderer1Component1ObjMeshRendererWrap.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Custom/LuaWrapper/SoftwareRenderer1Render1MeshRendererWrap.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Custom/LuaWrapper/SoftwareRenderer1Render1RendererWrap.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Engine/Core/IRenderer.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Engine/Render/SoftwareRenderDevice.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Engine/Core/SDLRenderer.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Engine/Render/Renderer.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Engine/Render/MeshRenderer.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Engine/Component/CubeRenderer.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Engine/Component/SingleMeshRender.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Custom/LuaWrapper/LuaBinder.cs" />
+      <option value="$PROJECT_DIR$/SoftwareRenderer/Engine/Component/ObjMeshRenderer.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sa05uNJXNvYYKd8QNmqDoEf78f" />
@@ -112,7 +145,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34995976" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -125,13 +158,31 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.LuaWorld">
+  <component name="RunManager" selected=".NET Project.TestWorld">
+    <configuration name="AssimpWorld " type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/SoftwareRenderer/bin/Debug/netcoreapp3.1/SoftwareRenderer.exe" />
+      <option name="PROGRAM_PARAMETERS" value="config=Configs/assimp_config.json" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SoftwareRenderer/bin/Debug/netcoreapp3.1" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/SoftwareRenderer/SoftwareRenderer.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value=".NETCoreApp,Version=v3.1" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
     <configuration name="LuaWorld" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/SoftwareRenderer/bin/Debug/netcoreapp3.1/SoftwareRenderer.dll" />
-      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/SoftwareRenderer/bin/Debug/netcoreapp3.1/SoftwareRenderer.exe" />
+      <option name="PROGRAM_PARAMETERS" value="config=Configs/config.json" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SoftwareRenderer/bin/Debug/netcoreapp3.1" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -148,8 +199,8 @@
       </method>
     </configuration>
     <configuration name="TestWorld" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/SoftwareRenderer/bin/Debug/netcoreapp3.1/SoftwareRenderer.dll" />
-      <option name="PROGRAM_PARAMETERS" value="config=testconfig.json" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/SoftwareRenderer/bin/Debug/netcoreapp3.1/SoftwareRenderer.exe" />
+      <option name="PROGRAM_PARAMETERS" value="config=Configs/testconfig.json" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SoftwareRenderer/bin/Debug/netcoreapp3.1" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -186,6 +237,7 @@
     <list>
       <item itemvalue=".NET Project.LuaWorld" />
       <item itemvalue=".NET Project.TestWorld" />
+      <item itemvalue=".NET Project.AssimpWorld " />
       <item itemvalue=".NET Project.update lua bind" />
     </list>
   </component>
@@ -238,10 +290,8 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="DotNetProject">
-        <watch expression="API" language="C#" />
-        <watch expression="L" language="C#" />
-        <watch expression="obj.Position" language="C#" />
         <watch expression="Flag.GlobalFlags" language="C#" />
+        <watch expression="dataFileManager" language="C#" />
       </configuration>
     </watches-manager>
   </component>

@@ -10,7 +10,7 @@ namespace SoftwareRenderer.Core
     {
         public SoftwareRenderDevice Device { get; }
 
-        public void PushDrawCommand(DrawCommand command);
+        public void PushDrawCommand(List<DrawCommand> commands);
 
         public void Init();
         public void Update();

@@ -9,7 +9,6 @@
     <ItemGroup>
       <Folder Include="Custom" />
       <Folder Include="Engine" />
-      <Folder Include="ThirdPart" />
     </ItemGroup>
 
     <ItemGroup>

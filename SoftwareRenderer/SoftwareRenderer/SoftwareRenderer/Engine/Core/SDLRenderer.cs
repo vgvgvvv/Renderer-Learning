@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using MathLib;
 using SDL2;
@@ -30,9 +31,9 @@ namespace SoftwareRenderer.Core
 
         }
 
-        public void PushDrawCommand(DrawCommand command)
+        public void PushDrawCommand(List<DrawCommand> commands)
         {
-            device.PushDrawCommand(command);
+            device.PushDrawCommand(commands);
         }
 
         public void SetViewMat(Matrix4x4 mat)

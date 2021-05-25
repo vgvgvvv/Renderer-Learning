@@ -59,11 +59,8 @@ namespace UniToLua
 			SoftwareRenderer1Render1DrawCommandWrap.Register(L);
 			SoftwareRenderer1Render1MaterialWrap.Register(L);
 			SoftwareRenderer1Render1BaseVertexInWrap.Register(L);
-			SoftwareRenderer1Render1SoftwareRenderDeviceWrap.Register(L);
 			SoftwareRenderer1Render1LuaShaderWrap.Register(L);
-			SoftwareRenderer1Render1MeshRendererWrap.Register(L);
 			SoftwareRenderer1Render1CameraWrap.Register(L);
-			SoftwareRenderer1Render1RendererWrap.Register(L);
 			SoftwareRenderer1Render1TextureFilterModeWrap.Register(L);
 			SoftwareRenderer1Render1RenderModeWrap.Register(L);
 			SoftwareRenderer1Render1TextureWrap.Register(L);
@@ -79,14 +76,11 @@ namespace UniToLua
 			SoftwareRenderer1Core1InputSystemWrap.Register(L);
 			SoftwareRenderer1Core1ApplicationWrap.Register(L);
 			SoftwareRenderer1Core1WorldWrap.Register(L);
-			SoftwareRenderer1Core1SDLRendererWrap.Register(L);
 			SoftwareRenderer1Core1WorldObjectWrap.Register(L);
 			L.EndModule();
 			L.BeginModule("Component");
-			SoftwareRenderer1Component1ObjMeshRendererWrap.Register(L);
 			SoftwareRenderer1Component1DirectionLightWrap.Register(L);
 			SoftwareRenderer1Component1LuaObjectWrap.Register(L);
-			SoftwareRenderer1Component1CubeRendererWrap.Register(L);
 			SoftwareRenderer1Component1LightWrap.Register(L);
 			L.EndModule();
 			L.BeginModule("Scene");

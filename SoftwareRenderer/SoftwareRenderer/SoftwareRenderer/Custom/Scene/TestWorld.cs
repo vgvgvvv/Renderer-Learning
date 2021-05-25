@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using Common;
 using Common.ConsoleApp;
 using Common.Persistence;
 using MathLib;
@@ -23,6 +24,7 @@ namespace SoftwareRenderer.Scene
             base.Awake();
 
             var dataFileManager = DataFileManager.FindConfig(Flag.GetFlag("config").GetValue<string>());
+            Assert.Check<Exception>(dataFileManager != null, "cannot find config " + Flag.GetFlag("config").GetValue<string>());
             var resourceDirName = dataFileManager.LoadData<string>("ResourcesDir", "Resourecs");
             var imagePath = Path.Combine(dataFileManager.FileDirectory, resourceDirName, "test.png");
             
@@ -35,7 +37,7 @@ namespace SoftwareRenderer.Scene
             var cube2 = WorldObject.Create<CubeRenderer>(this, new Vector3(-1, 0, 1));
             cube2.Transform.scale = Vector3.one * 1;
             cube2.Mat = new TextureMaterial(imagePath);
-
+            
             cube1.OnUpdate += () =>
             {
                 cube1.Transform.rotation = Quaternion.Euler(1, 1, 0) * cube1.Transform.rotation;

@@ -1,0 +1,5 @@
+{
+    "LuaRoot":"LuaSource",
+    "WorldType":"SoftwareRenderer.Scene.AssimpWorld",
+    "ResourcesDir":"Resources"
+}

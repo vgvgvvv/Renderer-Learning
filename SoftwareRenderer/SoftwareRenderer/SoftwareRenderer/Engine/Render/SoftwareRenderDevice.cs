@@ -484,9 +484,9 @@ namespace SoftwareRenderer.Render
             Array.Fill(ZBuffer, -float.MaxValue);
         }
 
-        public void PushDrawCommand(DrawCommand command)
+        public void PushDrawCommand(List<DrawCommand> commands)
         {
-            drawCommands.Add(command);
+            drawCommands.AddRange(commands);
         }
 
         public Color[] Render()
@@ -527,11 +527,11 @@ namespace SoftwareRenderer.Render
                 }
 
                 // 背隐剔除
-                for (var i = 0; i+2 < command.Vertexs.Length; i+=3)
+                for (var i = 0; i < command.Indexes.Length; i++)
                 {
-                    var v1 = command.Vertexs[i];
-                    var v2 = command.Vertexs[i+1];
-                    var v3 = command.Vertexs[i+2];
+                    var v1 = command.Vertexs[(int)command.Indexes[i][0]];
+                    var v2 = command.Vertexs[(int)command.Indexes[i][1]];
+                    var v3 = command.Vertexs[(int)command.Indexes[i][2]];
                     if (!BackfaceCulling(v1, v2, v3))
                     {
                         invalidIndex[i] = true;
@@ -556,16 +556,16 @@ namespace SoftwareRenderer.Render
                 }
 
                 // 绘制三角形
-                for (var i = 0; i+2 < command.Vertexs.Length; i+=3)
+                for (var i = 0; i < command.Indexes.Length; i++)
                 {
                     if (invalidIndex[i])
                     {
                         continue;
                     }
 
-                    var v1 = command.Vertexs[i];
-                    var v2 = command.Vertexs[i+1];
-                    var v3 = command.Vertexs[i+2];
+                    var v1 = command.Vertexs[(int)command.Indexes[i][0]];
+                    var v2 = command.Vertexs[(int)command.Indexes[i][1]];
+                    var v3 = command.Vertexs[(int)command.Indexes[i][2]];
                     if (v1.NeedClip || v2.NeedClip || v3.NeedClip)
                     {
                         continue;
