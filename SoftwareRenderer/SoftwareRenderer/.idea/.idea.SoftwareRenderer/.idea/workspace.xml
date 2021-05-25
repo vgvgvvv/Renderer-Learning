@@ -131,7 +131,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.TestWorld">
+  <component name="RunManager" selected=".NET Project.LuaWorld">
     <configuration name="LuaWorld" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/SoftwareRenderer/bin/Debug/netcoreapp3.1/SoftwareRenderer.dll" />
       <option name="PROGRAM_PARAMETERS" value="" />
