@@ -7,8 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="LuaWrapper" />
-      <Folder Include="SDL" />
+      <Folder Include="Custom" />
+      <Folder Include="Engine" />
+      <Folder Include="ThirdPart" />
     </ItemGroup>
 
     <ItemGroup>
@@ -22,6 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="AssimpNet" Version="4.1.0" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
       <PackageReference Include="System.CodeDom" Version="5.0.0" />
       <PackageReference Include="System.Drawing.Common" Version="5.0.2" />

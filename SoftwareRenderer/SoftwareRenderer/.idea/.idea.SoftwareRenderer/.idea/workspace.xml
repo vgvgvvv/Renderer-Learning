@@ -4,13 +4,7 @@
     <projectFile>SoftwareRenderer/SoftwareRenderer.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="764c39d4-cb4a-42de-9740-db8dbb2fce06" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SoftwareRenderer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRenderer/Scene/TestWorld.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRenderer/Scene/TestWorld.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/testconfig.json" afterDir="false" />
-    </list>
+    <list default="true" id="764c39d4-cb4a-42de-9740-db8dbb2fce06" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,25 +24,28 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/2A1/ConstructorInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/2B0/RuntimeConstructorInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C66F7638-D46A-4995-BB93-E999909A0959/0/KnownColor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/A683AC5E-CF68-4ABE-97B0-8498CC6ADE40/fc/2061c638/Common.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33363C81-2E76-43C2-96F1-D0E829505A38/46/69664ecc/IEnumerableEx.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6A57240-4A2A-42A0-BDAB-99CFB603FC07/4f/b0aa6220/LuaState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/18B7ABD7-4AAC-41E1-95E5-EC1E6D8B0B23/8/Bitmap.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/VM.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniToLua/LuaUtil.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B876795D-B456-4505-9887-02F6DA34D838/c0/a530dae4/LuaState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/LuaDebug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8C8CFD8B-8D5B-488F-A65F-5413EBAE3B36/e2/c355d795/ILuaAPI.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33206078-F3E8-40C1-99EE-09EBB6D97420/ba/a95b3f8f/LuaState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AC613005-B340-44DC-ADAE-EE3E87D91FCA/6/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C66F7638-D46A-4995-BB93-E999909A0959/0/KnownColor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/A683AC5E-CF68-4ABE-97B0-8498CC6ADE40/fc/2061c638/Common.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33363C81-2E76-43C2-96F1-D0E829505A38/c6/2dfe2117/Flag.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/18B7ABD7-4AAC-41E1-95E5-EC1E6D8B0B23/8/Bitmap.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniToLua/LuaUtil.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/LuaDebug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/E2/UInt32.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/Do.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4528E850-001C-4CCA-B802-2191BA2F9ABE/17/ec93a58f/ILuaAPI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniToLua/TypeChecker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C870CA06-9021-47A9-A402-5993CEEFDC2D/11/Array.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/LuaAPI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33206078-F3E8-40C1-99EE-09EBB6D97420/ba/a95b3f8f/LuaState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C66F7638-D46A-4995-BB93-E999909A0959/B/Color.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AC613005-B340-44DC-ADAE-EE3E87D91FCA/6/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../ReAutomatic/resetcore-csharp/ResetCoreCSharp/Utility/UniToLua/UniLua/LuaAuxLib.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6A57240-4A2A-42A0-BDAB-99CFB603FC07/c7/8b183601/IToLua.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -241,7 +238,10 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="DotNetProject">
-        <watch expression="RawMesh.Vertexs" language="C#" />
+        <watch expression="API" language="C#" />
+        <watch expression="L" language="C#" />
+        <watch expression="obj.Position" language="C#" />
+        <watch expression="Flag.GlobalFlags" language="C#" />
       </configuration>
     </watches-manager>
   </component>
