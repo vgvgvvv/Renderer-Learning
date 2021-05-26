@@ -90,9 +90,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix3x3) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m00 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix3x3>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -108,9 +105,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix3x3) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m10 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix3x3>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -126,9 +120,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix3x3) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m20 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix3x3>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -144,9 +135,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix3x3) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m01 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix3x3>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -162,9 +150,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix3x3) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m11 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix3x3>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -180,9 +165,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix3x3) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m21 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix3x3>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -198,9 +180,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix3x3) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m02 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix3x3>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -216,9 +195,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix3x3) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m12 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix3x3>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -234,9 +210,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix3x3) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m22 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix3x3>(obj);
-			L.Replace(1);
 			return 0;
         }
         

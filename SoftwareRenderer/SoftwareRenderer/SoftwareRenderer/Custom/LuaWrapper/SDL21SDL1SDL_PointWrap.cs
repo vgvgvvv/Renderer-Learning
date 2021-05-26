@@ -51,9 +51,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Point) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.x = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Point>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -69,9 +66,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Point) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.y = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Point>(obj);
-			L.Replace(1);
 			return 0;
         }
         

@@ -55,9 +55,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_RWops) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.size = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_RWops>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -73,9 +70,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_RWops) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.seek = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_RWops>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -91,9 +85,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_RWops) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.read = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_RWops>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -109,9 +100,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_RWops) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.write = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_RWops>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -127,9 +115,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_RWops) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.close = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_RWops>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -145,9 +130,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_RWops) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.type = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_RWops>(obj);
-			L.Replace(1);
 			return 0;
         }
         

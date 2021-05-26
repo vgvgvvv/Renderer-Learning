@@ -93,9 +93,6 @@ namespace UniToLua
 			var obj = (MathLib.Color) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.r = value;
-			// replace old struct
-			L.PushAny<MathLib.Color>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -111,9 +108,6 @@ namespace UniToLua
 			var obj = (MathLib.Color) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.g = value;
-			// replace old struct
-			L.PushAny<MathLib.Color>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -129,9 +123,6 @@ namespace UniToLua
 			var obj = (MathLib.Color) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.b = value;
-			// replace old struct
-			L.PushAny<MathLib.Color>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -147,9 +138,6 @@ namespace UniToLua
 			var obj = (MathLib.Color) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.a = value;
-			// replace old struct
-			L.PushAny<MathLib.Color>(obj);
-			L.Replace(1);
 			return 0;
         }
         

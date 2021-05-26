@@ -28,7 +28,7 @@ namespace Entry
             Flag.Parse(args);
             Flag.ShowHelpIfNeed();
 
-            var dataManager = DataFileManager.FindConfig("config.json");
+            var dataManager = DataFileManager.FindConfig(Flag.GetFlag("config").GetValue<string>());
 
             if (dataManager.TryLoadData<string>("LuaWrapperOutputPath", out var luaWrapperOutputPath))
             {

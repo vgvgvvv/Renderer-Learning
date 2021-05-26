@@ -52,9 +52,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MessageBoxButtonData) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_MessageBoxButtonFlags>(2);
 			obj.flags = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_MessageBoxButtonData>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -70,9 +67,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MessageBoxButtonData) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.buttonid = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_MessageBoxButtonData>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -88,9 +82,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MessageBoxButtonData) L.ToUserData(1);
 			var value = L.CheckAny<string>(2);
 			obj.text = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_MessageBoxButtonData>(obj);
-			L.Replace(1);
 			return 0;
         }
         

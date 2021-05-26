@@ -16,7 +16,7 @@ namespace SoftwareRenderer.Scene
         {
             base.Awake();
             
-            var dataManager = DataFileManager.FindConfig("config.json");
+            var dataManager = DataFileManager.FindConfig(Flag.GetFlag("config").GetValue<string>());
             if (!dataManager.TryLoadData<string>("LuaWorldModule", out var luaModule))
             {
                 Log.Error("cannot find 'LuaWorldModule' from config.json");

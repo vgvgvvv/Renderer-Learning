@@ -51,9 +51,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_vivante_wminfo) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.display = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.INTERNAL_vivante_wminfo>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -69,9 +66,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_vivante_wminfo) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.window = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.INTERNAL_vivante_wminfo>(obj);
-			L.Replace(1);
 			return 0;
         }
         

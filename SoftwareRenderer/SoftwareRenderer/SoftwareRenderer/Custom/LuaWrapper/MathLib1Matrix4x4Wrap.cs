@@ -125,9 +125,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix4x4) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m00 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix4x4>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -143,9 +140,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix4x4) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m10 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix4x4>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -161,9 +155,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix4x4) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m20 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix4x4>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -179,9 +170,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix4x4) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m30 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix4x4>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -197,9 +185,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix4x4) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m01 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix4x4>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -215,9 +200,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix4x4) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m11 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix4x4>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -233,9 +215,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix4x4) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m21 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix4x4>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -251,9 +230,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix4x4) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m31 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix4x4>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -269,9 +245,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix4x4) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m02 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix4x4>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -287,9 +260,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix4x4) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m12 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix4x4>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -305,9 +275,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix4x4) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m22 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix4x4>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -323,9 +290,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix4x4) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m32 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix4x4>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -341,9 +305,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix4x4) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m03 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix4x4>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -359,9 +320,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix4x4) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m13 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix4x4>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -377,9 +335,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix4x4) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m23 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix4x4>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -395,9 +350,6 @@ namespace UniToLua
 			var obj = (MathLib.Matrix4x4) L.ToUserData(1);
 			var value = L.CheckAny<float>(2);
 			obj.m33 = value;
-			// replace old struct
-			L.PushAny<MathLib.Matrix4x4>(obj);
-			L.Replace(1);
 			return 0;
         }
         

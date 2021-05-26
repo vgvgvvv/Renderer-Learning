@@ -9,23 +9,27 @@
 
 namespace UniToLua
 {
+    using SoftwareRenderer.Render;
     using SoftwareRenderer.Core;
     using System;
+    using System.Collections.Generic;
     
     
-    public class SoftwareRenderer1Core1BehaviorWrap
+    public class SoftwareRenderer1Render1RendererWrap
     {
         
         public static void Register(UniLua.ILuaState L)
         {
-			L.BeginClass(typeof(SoftwareRenderer.Core.Behavior), typeof(SoftwareRenderer.Core.WorldObject));
-			L.RegFunction("New", _CreateSoftwareRenderer1Core1Behavior);
+			L.BeginClass(typeof(SoftwareRenderer.Render.Renderer), typeof(SoftwareRenderer.Core.Behavior));
+			L.RegFunction("New", _CreateSoftwareRenderer1Render1Renderer);
+			L.RegVar("Mat", get_Mat, set_Mat);
 			L.RegVar("Owner", get_Owner, null);
 			L.RegVar("Transform", get_Transform, set_Transform);
 			L.RegFunction("OnUpdate_Add", add_OnUpdate);
 			L.RegFunction("OnUpdate_Remove", remove_OnUpdate);
 			L.RegFunction("OnBeforeRender_Add", add_OnBeforeRender);
 			L.RegFunction("OnBeforeRender_Remove", remove_OnBeforeRender);
+			L.RegFunction("GatherCommand", GatherCommand);
 			L.RegFunction("BeforeRender", BeforeRender);
 			L.RegFunction("Update", Update);
 			L.RegFunction("Awake", Awake);
@@ -36,34 +40,44 @@ namespace UniToLua
 			L.EndClass();
         }
         
-        private static int _CreateSoftwareRenderer1Core1Behavior(UniLua.ILuaState L)
+        private static int _CreateSoftwareRenderer1Render1Renderer(UniLua.ILuaState L)
         {
-			if(L.CheckNum(0))
-			{
-				L.PushAny<SoftwareRenderer.Core.Behavior>(new SoftwareRenderer.Core.Behavior());
-				return 1;
-			}
-			L.L_Error("call Behavior constructor args is error");
+			L.L_Error("call Renderer constructor args is error");
 			return 1;
+        }
+        
+        private static int get_Mat(UniLua.ILuaState L)
+        {
+			var obj = (SoftwareRenderer.Render.Renderer) L.ToUserData(1);
+			L.PushAny<SoftwareRenderer.Render.Material>(obj.Mat);
+			return 1;
+        }
+        
+        private static int set_Mat(UniLua.ILuaState L)
+        {
+			var obj = (SoftwareRenderer.Render.Renderer) L.ToUserData(1);
+			var value = L.CheckAny<SoftwareRenderer.Render.Material>(2);
+			obj.Mat = value;
+			return 0;
         }
         
         private static int get_Owner(UniLua.ILuaState L)
         {
-			var obj = (SoftwareRenderer.Core.Behavior) L.ToUserData(1);
+			var obj = (SoftwareRenderer.Render.Renderer) L.ToUserData(1);
 			L.PushAny<SoftwareRenderer.Core.WorldObject>(obj.Owner);
 			return 1;
         }
         
         private static int get_Transform(UniLua.ILuaState L)
         {
-			var obj = (SoftwareRenderer.Core.Behavior) L.ToUserData(1);
+			var obj = (SoftwareRenderer.Render.Renderer) L.ToUserData(1);
 			L.PushAny<SoftwareRenderer.Core.Transform>(obj.Transform);
 			return 1;
         }
         
         private static int set_Transform(UniLua.ILuaState L)
         {
-			var obj = (SoftwareRenderer.Core.Behavior) L.ToUserData(1);
+			var obj = (SoftwareRenderer.Render.Renderer) L.ToUserData(1);
 			var value = L.CheckAny<SoftwareRenderer.Core.Transform>(2);
 			obj.Transform = value;
 			return 0;
@@ -71,12 +85,12 @@ namespace UniToLua
         
         private static int add_OnUpdate(UniLua.ILuaState L)
         {
-			if(L.CheckNum(2) && L.CheckType<SoftwareRenderer.Core.Behavior, System.Action>(1))
+			if(L.CheckNum(2) && L.CheckType<SoftwareRenderer.Render.Renderer, System.Action>(1))
 			{
-				var obj = L.CheckAny<SoftwareRenderer.Core.Behavior>(1);
+				var obj = L.CheckAny<SoftwareRenderer.Render.Renderer>(1);
 				var value = L.CheckAny<System.Action>(2);
 				obj.OnUpdate += value;
-				L.PushAny<SoftwareRenderer.Core.Behavior>(obj);
+				L.PushAny<SoftwareRenderer.Render.Renderer>(obj);
 				return 1;
 			}
 			L.L_Error("add method args is error");
@@ -85,12 +99,12 @@ namespace UniToLua
         
         private static int remove_OnUpdate(UniLua.ILuaState L)
         {
-			if(L.CheckNum(2) && L.CheckType<SoftwareRenderer.Core.Behavior, System.Action>(1))
+			if(L.CheckNum(2) && L.CheckType<SoftwareRenderer.Render.Renderer, System.Action>(1))
 			{
-				var obj = L.CheckAny<SoftwareRenderer.Core.Behavior>(1);
+				var obj = L.CheckAny<SoftwareRenderer.Render.Renderer>(1);
 				var value = L.CheckAny<System.Action>(2);
 				obj.OnUpdate -= value;
-				L.PushAny<SoftwareRenderer.Core.Behavior>(obj);
+				L.PushAny<SoftwareRenderer.Render.Renderer>(obj);
 				return 1;
 			}
 			L.L_Error("add method args is error");
@@ -99,12 +113,12 @@ namespace UniToLua
         
         private static int add_OnBeforeRender(UniLua.ILuaState L)
         {
-			if(L.CheckNum(2) && L.CheckType<SoftwareRenderer.Core.Behavior, System.Action>(1))
+			if(L.CheckNum(2) && L.CheckType<SoftwareRenderer.Render.Renderer, System.Action>(1))
 			{
-				var obj = L.CheckAny<SoftwareRenderer.Core.Behavior>(1);
+				var obj = L.CheckAny<SoftwareRenderer.Render.Renderer>(1);
 				var value = L.CheckAny<System.Action>(2);
 				obj.OnBeforeRender += value;
-				L.PushAny<SoftwareRenderer.Core.Behavior>(obj);
+				L.PushAny<SoftwareRenderer.Render.Renderer>(obj);
 				return 1;
 			}
 			L.L_Error("add method args is error");
@@ -113,15 +127,29 @@ namespace UniToLua
         
         private static int remove_OnBeforeRender(UniLua.ILuaState L)
         {
-			if(L.CheckNum(2) && L.CheckType<SoftwareRenderer.Core.Behavior, System.Action>(1))
+			if(L.CheckNum(2) && L.CheckType<SoftwareRenderer.Render.Renderer, System.Action>(1))
 			{
-				var obj = L.CheckAny<SoftwareRenderer.Core.Behavior>(1);
+				var obj = L.CheckAny<SoftwareRenderer.Render.Renderer>(1);
 				var value = L.CheckAny<System.Action>(2);
 				obj.OnBeforeRender -= value;
-				L.PushAny<SoftwareRenderer.Core.Behavior>(obj);
+				L.PushAny<SoftwareRenderer.Render.Renderer>(obj);
 				return 1;
 			}
 			L.L_Error("add method args is error");
+			return 1;
+        }
+        
+        private static int GatherCommand(UniLua.ILuaState L)
+        {
+			if(L.CheckNum(1))
+			{
+				System.Collections.Generic.List<SoftwareRenderer.Render.DrawCommand> result;
+				var obj = (SoftwareRenderer.Render.Renderer) L.ToUserData(1);
+				result = obj.GatherCommand();
+				L.PushAny<System.Collections.Generic.List<SoftwareRenderer.Render.DrawCommand>>(result);
+				return 1;
+			}
+			L.L_Error("call function GatherCommand args is error");
 			return 1;
         }
         
@@ -129,7 +157,7 @@ namespace UniToLua
         {
 			if(L.CheckNum(1))
 			{
-				var obj = (SoftwareRenderer.Core.Behavior) L.ToUserData(1);
+				var obj = (SoftwareRenderer.Render.Renderer) L.ToUserData(1);
 				obj.BeforeRender();
 				return 0;
 			}
@@ -141,7 +169,7 @@ namespace UniToLua
         {
 			if(L.CheckNum(1))
 			{
-				var obj = (SoftwareRenderer.Core.Behavior) L.ToUserData(1);
+				var obj = (SoftwareRenderer.Render.Renderer) L.ToUserData(1);
 				obj.Update();
 				return 0;
 			}
@@ -153,7 +181,7 @@ namespace UniToLua
         {
 			if(L.CheckNum(1))
 			{
-				var obj = (SoftwareRenderer.Core.Behavior) L.ToUserData(1);
+				var obj = (SoftwareRenderer.Render.Renderer) L.ToUserData(1);
 				obj.Awake();
 				return 0;
 			}
@@ -166,7 +194,7 @@ namespace UniToLua
 			if(L.CheckNum(1))
 			{
 				System.Type result;
-				var obj = (SoftwareRenderer.Core.Behavior) L.ToUserData(1);
+				var obj = (SoftwareRenderer.Render.Renderer) L.ToUserData(1);
 				result = obj.GetType();
 				L.PushAny<System.Type>(result);
 				return 1;
@@ -180,7 +208,7 @@ namespace UniToLua
 			if(L.CheckNum(1))
 			{
 				string result;
-				var obj = (SoftwareRenderer.Core.Behavior) L.ToUserData(1);
+				var obj = (SoftwareRenderer.Render.Renderer) L.ToUserData(1);
 				result = obj.ToString();
 				L.PushAny<string>(result);
 				return 1;
@@ -191,10 +219,10 @@ namespace UniToLua
         
         private static int Equals(UniLua.ILuaState L)
         {
-			if(L.CheckNum(2) && L.CheckType<SoftwareRenderer.Core.Behavior, object>(1))
+			if(L.CheckNum(2) && L.CheckType<SoftwareRenderer.Render.Renderer, object>(1))
 			{
 				bool result;
-				var obj = (SoftwareRenderer.Core.Behavior) L.ToUserData(1);
+				var obj = (SoftwareRenderer.Render.Renderer) L.ToUserData(1);
 				var arg1 = L.CheckAny<object>(2);
 				result = obj.Equals(arg1);
 				L.PushAny<bool>(result);
@@ -209,7 +237,7 @@ namespace UniToLua
 			if(L.CheckNum(1))
 			{
 				int result;
-				var obj = (SoftwareRenderer.Core.Behavior) L.ToUserData(1);
+				var obj = (SoftwareRenderer.Render.Renderer) L.ToUserData(1);
 				result = obj.GetHashCode();
 				L.PushAny<int>(result);
 				return 1;

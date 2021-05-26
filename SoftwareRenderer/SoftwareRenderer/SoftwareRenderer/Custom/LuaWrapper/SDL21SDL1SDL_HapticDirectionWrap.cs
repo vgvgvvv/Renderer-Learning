@@ -50,9 +50,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_HapticDirection) L.ToUserData(1);
 			var value = L.CheckAny<byte>(2);
 			obj.type = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_HapticDirection>(obj);
-			L.Replace(1);
 			return 0;
         }
         

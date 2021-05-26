@@ -51,9 +51,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_GameControllerButtonBind_hat) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.hat = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.INTERNAL_GameControllerButtonBind_hat>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -69,9 +66,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_GameControllerButtonBind_hat) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.hat_mask = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.INTERNAL_GameControllerButtonBind_hat>(obj);
-			L.Replace(1);
 			return 0;
         }
         

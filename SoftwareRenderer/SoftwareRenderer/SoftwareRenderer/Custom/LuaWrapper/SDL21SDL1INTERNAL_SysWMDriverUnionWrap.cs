@@ -60,9 +60,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_SysWMDriverUnion) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.INTERNAL_windows_wminfo>(2);
 			obj.win = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.INTERNAL_SysWMDriverUnion>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -78,9 +75,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_SysWMDriverUnion) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.INTERNAL_winrt_wminfo>(2);
 			obj.winrt = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.INTERNAL_SysWMDriverUnion>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -96,9 +90,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_SysWMDriverUnion) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.INTERNAL_x11_wminfo>(2);
 			obj.x11 = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.INTERNAL_SysWMDriverUnion>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -114,9 +105,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_SysWMDriverUnion) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.INTERNAL_directfb_wminfo>(2);
 			obj.dfb = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.INTERNAL_SysWMDriverUnion>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -132,9 +120,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_SysWMDriverUnion) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.INTERNAL_cocoa_wminfo>(2);
 			obj.cocoa = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.INTERNAL_SysWMDriverUnion>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -150,9 +135,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_SysWMDriverUnion) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.INTERNAL_uikit_wminfo>(2);
 			obj.uikit = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.INTERNAL_SysWMDriverUnion>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -168,9 +150,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_SysWMDriverUnion) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.INTERNAL_wayland_wminfo>(2);
 			obj.wl = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.INTERNAL_SysWMDriverUnion>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -186,9 +165,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_SysWMDriverUnion) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.INTERNAL_mir_wminfo>(2);
 			obj.mir = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.INTERNAL_SysWMDriverUnion>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -204,9 +180,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_SysWMDriverUnion) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.INTERNAL_android_wminfo>(2);
 			obj.android = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.INTERNAL_SysWMDriverUnion>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -222,9 +195,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_SysWMDriverUnion) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.INTERNAL_vivante_wminfo>(2);
 			obj.vivante = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.INTERNAL_SysWMDriverUnion>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -240,9 +210,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_SysWMDriverUnion) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.INTERNAL_os2_wminfo>(2);
 			obj.os2 = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.INTERNAL_SysWMDriverUnion>(obj);
-			L.Replace(1);
 			return 0;
         }
         

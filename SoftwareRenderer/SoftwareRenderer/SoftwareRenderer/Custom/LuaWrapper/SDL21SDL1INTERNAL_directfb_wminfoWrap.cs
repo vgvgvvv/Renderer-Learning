@@ -52,9 +52,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_directfb_wminfo) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.dfb = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.INTERNAL_directfb_wminfo>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -70,9 +67,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_directfb_wminfo) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.window = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.INTERNAL_directfb_wminfo>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -88,9 +82,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.INTERNAL_directfb_wminfo) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.surface = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.INTERNAL_directfb_wminfo>(obj);
-			L.Replace(1);
 			return 0;
         }
         

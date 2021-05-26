@@ -11,6 +11,7 @@ namespace UniToLua
 {
     using SoftwareRenderer.Render;
     using System;
+    using MathLib;
     
     
     public class SoftwareRenderer1Render1DrawCommandWrap
@@ -21,6 +22,7 @@ namespace UniToLua
 			L.BeginClass(typeof(SoftwareRenderer.Render.DrawCommand), typeof(System.ValueType));
 			L.RegFunction("New", _CreateSoftwareRenderer1Render1DrawCommand);
 			L.RegVar("Vertexs", get_Vertexs, set_Vertexs);
+			L.RegVar("Indexes", get_Indexes, set_Indexes);
 			L.RegVar("Mat", get_Mat, set_Mat);
 			L.RegFunction("Equals", Equals);
 			L.RegFunction("GetHashCode", GetHashCode);
@@ -51,9 +53,21 @@ namespace UniToLua
 			var obj = (SoftwareRenderer.Render.DrawCommand) L.ToUserData(1);
 			var value = L.CheckAny<SoftwareRenderer.Render.Vertex[]>(2);
 			obj.Vertexs = value;
-			// replace old struct
-			L.PushAny<SoftwareRenderer.Render.DrawCommand>(obj);
-			L.Replace(1);
+			return 0;
+        }
+        
+        private static int get_Indexes(UniLua.ILuaState L)
+        {
+			var obj = (SoftwareRenderer.Render.DrawCommand) L.ToUserData(1);
+			L.PushAny<MathLib.Vector3[]>(obj.Indexes);
+			return 1;
+        }
+        
+        private static int set_Indexes(UniLua.ILuaState L)
+        {
+			var obj = (SoftwareRenderer.Render.DrawCommand) L.ToUserData(1);
+			var value = L.CheckAny<MathLib.Vector3[]>(2);
+			obj.Indexes = value;
 			return 0;
         }
         
@@ -69,9 +83,6 @@ namespace UniToLua
 			var obj = (SoftwareRenderer.Render.DrawCommand) L.ToUserData(1);
 			var value = L.CheckAny<SoftwareRenderer.Render.Material>(2);
 			obj.Mat = value;
-			// replace old struct
-			L.PushAny<SoftwareRenderer.Render.DrawCommand>(obj);
-			L.Replace(1);
 			return 0;
         }
         

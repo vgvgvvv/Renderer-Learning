@@ -50,9 +50,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_MessageBoxColorScheme) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_MessageBoxColor[]>(2);
 			obj.colors = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_MessageBoxColorScheme>(obj);
-			L.Replace(1);
 			return 0;
         }
         

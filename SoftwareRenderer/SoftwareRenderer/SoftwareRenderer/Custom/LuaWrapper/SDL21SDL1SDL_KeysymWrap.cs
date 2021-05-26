@@ -53,9 +53,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Keysym) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_Scancode>(2);
 			obj.scancode = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Keysym>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -71,9 +68,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Keysym) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_Keycode>(2);
 			obj.sym = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Keysym>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -89,9 +83,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Keysym) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_Keymod>(2);
 			obj.mod = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Keysym>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -107,9 +98,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Keysym) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.unicode = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Keysym>(obj);
-			L.Replace(1);
 			return 0;
         }
         

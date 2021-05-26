@@ -52,9 +52,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_SensorEvent) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_EventType>(2);
 			obj.type = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_SensorEvent>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -70,9 +67,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_SensorEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.timestamp = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_SensorEvent>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -88,9 +82,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_SensorEvent) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.which = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_SensorEvent>(obj);
-			L.Replace(1);
 			return 0;
         }
         

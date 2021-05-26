@@ -54,9 +54,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_DisplayEvent) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_EventType>(2);
 			obj.type = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_DisplayEvent>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -72,9 +69,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_DisplayEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.timestamp = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_DisplayEvent>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -90,9 +84,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_DisplayEvent) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.display = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_DisplayEvent>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -108,9 +99,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_DisplayEvent) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_DisplayEventID>(2);
 			obj.displayEvent = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_DisplayEvent>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -126,9 +114,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_DisplayEvent) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.data1 = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_DisplayEvent>(obj);
-			L.Replace(1);
 			return 0;
         }
         

@@ -53,9 +53,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Palette) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.ncolors = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Palette>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -71,9 +68,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Palette) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.colors = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Palette>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -89,9 +83,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Palette) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.version = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Palette>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -107,9 +98,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Palette) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.refcount = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Palette>(obj);
-			L.Replace(1);
 			return 0;
         }
         

@@ -61,9 +61,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Surface) L.ToUserData(1);
 			var value = L.CheckAny<uint>(2);
 			obj.flags = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Surface>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -79,9 +76,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Surface) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.format = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Surface>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -97,9 +91,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Surface) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.w = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Surface>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -115,9 +106,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Surface) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.h = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Surface>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -133,9 +121,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Surface) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.pitch = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Surface>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -151,9 +136,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Surface) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.pixels = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Surface>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -169,9 +151,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Surface) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.userdata = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Surface>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -187,9 +166,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Surface) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.locked = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Surface>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -205,9 +181,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Surface) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.list_blitmap = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Surface>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -223,9 +196,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Surface) L.ToUserData(1);
 			var value = L.CheckAny<SDL2.SDL.SDL_Rect>(2);
 			obj.clip_rect = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Surface>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -241,9 +211,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Surface) L.ToUserData(1);
 			var value = L.CheckAny<System.IntPtr>(2);
 			obj.map = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Surface>(obj);
-			L.Replace(1);
 			return 0;
         }
         
@@ -259,9 +226,6 @@ namespace UniToLua
 			var obj = (SDL2.SDL.SDL_Surface) L.ToUserData(1);
 			var value = L.CheckAny<int>(2);
 			obj.refcount = value;
-			// replace old struct
-			L.PushAny<SDL2.SDL.SDL_Surface>(obj);
-			L.Replace(1);
 			return 0;
         }
         
