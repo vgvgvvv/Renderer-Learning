@@ -16,33 +16,40 @@ namespace CustomRP.RunTime
             name = BufferName
         };
 
+        private CullingResults CullingResults;
+
+        private static ShaderTagId UnLitShaderTagId = new ShaderTagId("SRPDefaultUnlit");
+        
         public void Render(ScriptableRenderContext context, Camera camera)
         {
             Context = context;
             Camera = camera;
+
+            if (!Cull())
+            {
+                return;
+            }
             
             Setup();
             
-            DrawSkyBox();
+            DrawVisibleGeometry();
+            
             
             Submit();
         }
 
         private void Setup()
         {
-            Buffer.BeginSample(BufferName);
-            
             Context.SetupCameraProperties(Camera);
+            Buffer.ClearRenderTarget(true, true, Color.clear);
+            Buffer.BeginSample(BufferName);
+            ExecuteBuffer();
         }
         
-        private void DrawSkyBox()
-        {
-            Context.DrawSkybox(Camera);
-        }
-
         private void Submit()
         {
             Buffer.EndSample(BufferName);
+            ExecuteBuffer();
             Context.Submit();
         }
 
@@ -50,6 +57,30 @@ namespace CustomRP.RunTime
         {
             Context.ExecuteCommandBuffer(Buffer);
             Buffer.Clear();
+        }
+
+        private bool Cull()
+        {
+            if (Camera.TryGetCullingParameters(out var p))
+            {
+                CullingResults = Context.Cull(ref p);
+                return true;
+            }
+
+            return false;
+        }
+
+        private void DrawVisibleGeometry()
+        {
+            var sortSettings = new SortingSettings(Camera);
+            var drawingSettings = new DrawingSettings(UnLitShaderTagId, sortSettings);
+            var filteringSettings = new FilteringSettings(RenderQueueRange.all);
+            
+            Context.DrawRenderers(
+                CullingResults, ref drawingSettings, ref filteringSettings);
+
+            Context.DrawSkybox(Camera);
+
         }
     }
 }
