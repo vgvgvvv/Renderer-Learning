@@ -7,7 +7,6 @@ namespace CustomRP.Runtime
 {
     public partial class CustomRenderPipeline : RenderPipeline
     {
-        private CameraRenderer CameraRenderer = new CameraRenderer();
         private PipelineSetting PipelineSetting;
 
         public CustomRenderPipeline(PipelineSetting pipelineSetting)
