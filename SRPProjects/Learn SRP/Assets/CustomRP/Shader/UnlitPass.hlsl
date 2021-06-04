@@ -1,5 +1,5 @@
-﻿#ifndef __UNLIT_PASS__
-#define __UNLIT_PASS__
+﻿#ifndef __CUSTON_UNLIT_PASS__
+#define __CUSTON_UNLIT_PASS__
 
 #include "../ShaderLibrary/Common.hlsl"
 

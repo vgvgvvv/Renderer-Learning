@@ -24,7 +24,7 @@ namespace CustomRP.Runtime.Passes
                 drawingSettings.enableInstancing = renderingData.useGPUInstancing;
             };
 
-            var filteringSettings = new FilteringSettings(RenderQueueRange.opaque);
+            var filteringSettings = new FilteringSettings(isOpaque ? RenderQueueRange.opaque : RenderQueueRange.transparent);
             
             context.DrawRenderers(
                 renderingData.cullingResults, ref drawingSettings, ref filteringSettings);

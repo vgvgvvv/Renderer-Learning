@@ -1,5 +1,5 @@
-#ifndef __LIT__
-#define __LIT__
+#ifndef __CUSTOM_LIT_PASS__
+#define __CUSTOM_LIT_PASS__
 
 #include "../ShaderLibrary/Common.hlsl"
 #include "../ShaderLibrary/Surface.hlsl"

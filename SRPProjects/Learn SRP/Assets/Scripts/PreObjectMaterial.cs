@@ -17,6 +17,7 @@ namespace CustomRP.Test
         private Color baseColor = Color.white;
 
         [SerializeField]
+        [Range(0f, 1f)]
         private float cutoff = 0.5f;
 
         [SerializeField]
