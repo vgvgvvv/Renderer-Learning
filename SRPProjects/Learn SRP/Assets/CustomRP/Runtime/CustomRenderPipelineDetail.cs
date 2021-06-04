@@ -28,6 +28,9 @@ namespace CustomRP.Runtime
                 data.cameraType = camera.cameraType;
                 
                 data.renderer = PipelineSetting.Renderer;
+                data.maxShadowDistance = Mathf.Min(PipelineSetting.ShadowSetting.maxDistance, camera.farClipPlane);
+                data.maxShadowDistance = (data.maxShadowDistance >= camera.nearClipPlane) ? 
+                    data.maxShadowDistance : 0.0f;
             };
         }
 
@@ -37,6 +40,11 @@ namespace CustomRP.Runtime
             {
                 visibleLights = visibleLights
             };
+        }
+
+        private void InitShadowData(out ShadowData shadowData)
+        {
+            shadowData = new ShadowData();
         }
         
         private void InitRenderingData(ref CameraData cameraData, ref CullingResults cullingResults, out RenderingData renderingData)

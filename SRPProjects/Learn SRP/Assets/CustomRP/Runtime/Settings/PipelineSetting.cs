@@ -24,7 +24,8 @@ namespace CustomRP.Runtime.Settings
             }
         }
         public ScriptableRendererData rendererData;
-     
+
+        public ShadowSetting ShadowSetting;
         
         public bool UseDynamicBatching = true;
         public bool UseGpuInstancing = true;

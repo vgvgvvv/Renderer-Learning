@@ -49,9 +49,12 @@ namespace CustomRP.Runtime
             }          
 
             CommandBuffer buffer = CommandBufferPool.Get();
-            
+
             if (!TryGetCullingParameters(cameraData, out var cullingParameters))
+            {
+                Debug.LogWarning("TryGetCullingParameters Failed!!!");
                 return;
+            }
 
             renderer.Clear();
             renderer.SetupCullingParameters(ref cullingParameters, ref cameraData);

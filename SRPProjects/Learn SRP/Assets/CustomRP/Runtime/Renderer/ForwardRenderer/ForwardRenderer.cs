@@ -53,5 +53,11 @@ namespace CustomRP.Runtime.Renderer
             base.SetupLight(context, ref renderingData);
             Lighting.Setup(context, ref renderingData);
         }
+
+        public override void SetupCullingParameters(ref ScriptableCullingParameters cullingParameters, ref CameraData cameraData)
+        {
+            base.SetupCullingParameters(ref cullingParameters, ref cameraData);
+            cullingParameters.shadowDistance = cameraData.maxShadowDistance;
+        }
     }
 }
