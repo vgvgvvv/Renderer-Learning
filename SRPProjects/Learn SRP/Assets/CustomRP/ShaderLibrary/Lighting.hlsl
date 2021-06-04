@@ -1,7 +1,6 @@
 #ifndef __CUSTOM_LIGHTING__
 #define __CUSTOM_LIGHTING__
 
-#include "Surface.hlsl"
 #include "Light.hlsl"
 #include "BRDF.hlsl"
 

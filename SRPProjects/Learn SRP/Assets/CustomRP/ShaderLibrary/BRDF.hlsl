@@ -37,7 +37,7 @@ float SpecularStrength(Surface surface, BRDF brdf, Light light)
     // r^2 / d^2 * max(0.1, (L * H)^2) * n
     // d = (N * H)^2 * (r^2 - 1) + 1.0001
     // n = 4r + 2
-    float h = SafeNormalize(light.direction + surface.viewDirection);
+    float3 h = SafeNormalize(light.direction + surface.viewDirection);
     float nh2 = Square(saturate(dot(surface.normal, h)));
     float lh2 = Square(saturate(dot(light.direction, h)));
     float r2 = Square(brdf.roughness);

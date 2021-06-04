@@ -20,9 +20,11 @@ namespace CustomRP.Test
         private float cutoff = 0.5f;
 
         [SerializeField]
+        [Range(0f, 1f)]
         private float metallic = 0.5f;
 
         [SerializeField]
+        [Range(0f, 1f)]
         private float smoothness = 0.5f;
         
         private void Awake()
