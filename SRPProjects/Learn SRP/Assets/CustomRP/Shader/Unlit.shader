@@ -9,6 +9,8 @@ Shader "CustomRP/Unlit"
         Pass
         {
             HLSLPROGRAM
+            // 添加支持GPU Instancing的变体
+            #pragma multi_compile_instancing
             #pragma vertex UnlitPassVertex
             #pragma fragment UnlitPassFragment
             #include "UnlitPass.hlsl"

@@ -28,6 +28,7 @@ namespace CustomRP.Runtime.Settings
         
         public bool UseDynamicBatching = true;
         public bool UseGpuInstancing = true;
-        
+        public bool UseScriptableRenderPipelineBatching = true;
+
     }
 }

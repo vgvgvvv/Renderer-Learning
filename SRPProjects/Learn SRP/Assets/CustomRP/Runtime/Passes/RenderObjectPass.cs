@@ -17,15 +17,13 @@ namespace CustomRP.Runtime.Passes
         
         public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
         {
-            var camera = renderingData.cameraData.camera;
             var criteria = isOpaque ? SortingCriteria.CommonOpaque : SortingCriteria.CommonTransparent;
             var drawingSettings = CreateDrawSettings(shaderTagIdList, ref renderingData, criteria);
             {
-                drawingSettings.enableDynamicBatching = true;
-                drawingSettings.enableInstancing = true;
+                drawingSettings.enableDynamicBatching = renderingData.useDynamicBatching;
+                drawingSettings.enableInstancing = renderingData.useGPUInstancing;
             };
 
-            var queueRange = isOpaque ? RenderQueueRange.opaque : RenderQueueRange.transparent;
             var filteringSettings = new FilteringSettings(RenderQueueRange.opaque);
             
             context.DrawRenderers(

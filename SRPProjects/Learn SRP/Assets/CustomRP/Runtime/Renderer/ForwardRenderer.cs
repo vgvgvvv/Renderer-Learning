@@ -29,19 +29,21 @@ namespace CustomRP.Runtime.Renderer
         public override void Setup(ScriptableRenderContext context, ref RenderingData renderingData)
         {
             base.Setup(context, ref renderingData);
-            CommandBuffer buffer = new CommandBuffer();
+            CommandBuffer buffer = CommandBufferPool.Get();
             context.SetupCameraProperties(renderingData.cameraData.camera);
 
             buffer.ClearRenderTarget(true, true, Color.clear);
             
             context.ExecuteCommandBuffer(buffer);
-            buffer.Release();
+            buffer.Clear();
+            CommandBufferPool.Release(buffer);
             
             EnqueuePass(renderOpaquePass);
             EnqueuePass(renderSkyBoxPass);
             EnqueuePass(renderTransparentPass);
             EnqueuePass(renderUnsupportPass);
         }
-
+        
+        
     }
 }

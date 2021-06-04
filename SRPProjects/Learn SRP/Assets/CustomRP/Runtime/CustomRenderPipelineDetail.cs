@@ -34,6 +34,8 @@ namespace CustomRP.Runtime
         {
             renderingData = new RenderingData()
             {
+                useDynamicBatching = PipelineSetting.UseDynamicBatching,
+                useGPUInstancing = PipelineSetting.UseGpuInstancing,
                 cameraData = cameraData,
                 cullingResults = cullingResults
             };

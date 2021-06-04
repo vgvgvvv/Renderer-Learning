@@ -12,6 +12,7 @@ namespace CustomRP.Runtime
         public CustomRenderPipeline(PipelineSetting pipelineSetting)
         {
             PipelineSetting = pipelineSetting;
+            GraphicsSettings.useScriptableRenderPipelineBatching = PipelineSetting.UseScriptableRenderPipelineBatching;
         }
     
         protected override void Render(ScriptableRenderContext context, Camera[] cameras)
@@ -40,7 +41,7 @@ namespace CustomRP.Runtime
                 return;
             }          
 
-            CommandBuffer buffer = new CommandBuffer();
+            CommandBuffer buffer = CommandBufferPool.Get();
             
             if (!TryGetCullingParameters(cameraData, out var cullingParameters))
                 return;
@@ -60,11 +61,15 @@ namespace CustomRP.Runtime
             InitRenderingData(ref cameraData, ref cullResults, out var renderingData);
             
             renderer.Setup(context, ref renderingData);
-            
-            renderer.Execute(context, ref renderingData);
 
+            string DrawPassesSampleName = "Draw Passes";
+            buffer.BeginSample(DrawPassesSampleName);
+            renderer.Execute(context, ref renderingData);
+            buffer.EndSample(DrawPassesSampleName);
+            
             context.ExecuteCommandBuffer(buffer);
-            buffer.Release();
+            buffer.Clear();
+            CommandBufferPool.Release(buffer);
 
             context.Submit();
             

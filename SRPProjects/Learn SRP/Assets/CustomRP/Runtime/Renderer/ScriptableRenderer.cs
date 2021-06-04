@@ -40,6 +40,8 @@ namespace CustomRP.Runtime.Renderer
             }
             
             DrawGizmos(context, camera);
+            
+            InternalFinishRendering(context);
         }
 
         public void Clear()
@@ -64,5 +66,18 @@ namespace CustomRP.Runtime.Renderer
                 context.DrawGizmos(camera, GizmoSubset.PostImageEffects);
             }
         }
+
+        private void InternalFinishRendering(ScriptableRenderContext context)
+        {
+            CommandBuffer buffer = CommandBufferPool.Get();
+            
+            FinishRendering(buffer);
+            ActiveRenderPassQueue.Clear();
+            
+            context.ExecuteCommandBuffer(buffer);
+            buffer.Clear();
+            CommandBufferPool.Release(buffer);
+        }
+        
     }
 }

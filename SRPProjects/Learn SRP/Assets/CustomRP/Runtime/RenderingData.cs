@@ -6,6 +6,8 @@ namespace CustomRP.Runtime
 {
     public struct RenderingData
     {
+        public bool useGPUInstancing;
+        public bool useDynamicBatching;
         public CameraData cameraData;
         public CullingResults cullingResults;
         public LightingData lightingData;
