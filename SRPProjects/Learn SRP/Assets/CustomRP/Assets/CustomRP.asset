@@ -16,3 +16,4 @@ MonoBehaviour:
     rendererData: {fileID: 11400000, guid: 0cb434ed24e7ef34f84c35bd1b5a447a, type: 2}
     UseDynamicBatching: 1
     UseGpuInstancing: 1
+    UseScriptableRenderPipelineBatching: 1

@@ -1,4 +1,5 @@
 ﻿using CustomRP.Runtime.Renderer;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -30,7 +31,8 @@ namespace CustomRP.Runtime
 
     public struct LightingData
     {
-        
+        public const int MAXDirLightCount = 4;
+        public NativeArray<VisibleLight> visibleLights;
     }
 
     public struct ShadowData

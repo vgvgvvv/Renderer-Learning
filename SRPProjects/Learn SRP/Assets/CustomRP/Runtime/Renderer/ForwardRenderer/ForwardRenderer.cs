@@ -6,6 +6,8 @@ namespace CustomRP.Runtime.Renderer
 {
     public class ForwardRenderer : ScriptableRenderer
     {
+        private ForwardLighting Lighting;
+        
         private RenderObjectPass renderOpaquePass;
         private RenderSkyBoxPass renderSkyBoxPass;
         private RenderObjectPass renderTransparentPass;
@@ -18,8 +20,10 @@ namespace CustomRP.Runtime.Renderer
                 new ShaderTagId("UniversalForwardOnly"),
                 new ShaderTagId("SRPDefaultUnlit"), // Legacy shaders (do not have a gbuffer pass) are considered forward-only for backward compatibility
                 new ShaderTagId("LightweightForward"), // Legacy shaders (do not have a gbuffer pass) are considered forward-only for backward compatibility
+                // 自定义光照模型
                 new ShaderTagId("CustomLit"), 
             };
+            Lighting = new ForwardLighting();
             renderOpaquePass = new RenderObjectPass(forwardOnlyShaderTagIds, true);
             renderSkyBoxPass = new RenderSkyBoxPass();
             renderTransparentPass = new RenderObjectPass(forwardOnlyShaderTagIds, false);
@@ -43,7 +47,11 @@ namespace CustomRP.Runtime.Renderer
             EnqueuePass(renderTransparentPass);
             EnqueuePass(renderUnsupportPass);
         }
-        
-        
+
+        public override void SetupLight(ScriptableRenderContext context, ref RenderingData renderingData)
+        {
+            base.SetupLight(context, ref renderingData);
+            Lighting.Setup(context, ref renderingData);
+        }
     }
 }

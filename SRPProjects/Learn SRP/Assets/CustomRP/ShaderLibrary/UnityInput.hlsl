@@ -1,5 +1,5 @@
-﻿#ifndef __UNITY_INPUT__
-#define __UNITY_INPUT__
+﻿#ifndef __CUSTOM_UNITY_INPUT__
+#define __CUSTOM_UNITY_INPUT__
 
 CBUFFER_START(UnityPerDraw)
     // 从模型空间转换到世界空间

@@ -1,5 +1,5 @@
-﻿#ifndef __COMMON__
-#define __COMMON__
+﻿#ifndef __CUSTOM_COMMON__
+#define __CUSTOM_COMMON__
 
 #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
 #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/CommonMaterial.hlsl"

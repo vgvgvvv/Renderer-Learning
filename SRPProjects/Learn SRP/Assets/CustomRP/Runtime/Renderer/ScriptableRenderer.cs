@@ -19,6 +19,10 @@ namespace CustomRP.Runtime.Renderer
         public virtual void Setup(ScriptableRenderContext context, ref RenderingData renderingData)
         {
         }
+        
+        public virtual void SetupLight(ScriptableRenderContext context, ref RenderingData renderingData)
+        {
+        }
 
         public virtual void SetupCullingParameters(ref ScriptableCullingParameters cullingParameters,
             ref CameraData cameraData)
@@ -33,6 +37,8 @@ namespace CustomRP.Runtime.Renderer
         public void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
         {
             var camera = renderingData.cameraData.camera;
+
+            SetupLight(context, ref renderingData);
             
             foreach (var pass in ActiveRenderPassQueue)
             {

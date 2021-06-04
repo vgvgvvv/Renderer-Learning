@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -30,14 +31,25 @@ namespace CustomRP.Runtime
             };
         }
 
+        private void InitLightingData(NativeArray<VisibleLight> visibleLights, out LightingData lightingData)
+        {
+            lightingData = new LightingData()
+            {
+                visibleLights = visibleLights
+            };
+        }
+        
         private void InitRenderingData(ref CameraData cameraData, ref CullingResults cullingResults, out RenderingData renderingData)
         {
+            var visibleLights = cullingResults.visibleLights;
+            InitLightingData(visibleLights, out var lightingData);
             renderingData = new RenderingData()
             {
                 useDynamicBatching = PipelineSetting.UseDynamicBatching,
                 useGPUInstancing = PipelineSetting.UseGpuInstancing,
                 cameraData = cameraData,
-                cullingResults = cullingResults
+                cullingResults = cullingResults,
+                lightingData = lightingData
             };
         }
 
