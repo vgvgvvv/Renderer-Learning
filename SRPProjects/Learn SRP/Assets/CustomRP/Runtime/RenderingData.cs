@@ -44,8 +44,25 @@ namespace CustomRP.Runtime
             _2048 = 2048, _4096 = 4096, _8192 = 8192
         }
         
+        public struct ShadowedDirectionalLight {
+            public int visibleLightIndex;
+        }
+        
+        /// <summary>
+        /// Shadowmap 尺寸
+        /// </summary>
         public TextureSize textureSize;
-        const int maxShadowedDirectionalLightCount = 1;
+        
+        /// <summary>
+        /// 最大方向阴影灯数量
+        /// </summary>
+        public const int maxShadowedDirectionalLightCount = 1;
+
+        public int shadowDirectionalLightCount;
+        /// <summary>
+        /// 投射阴影的方向灯
+        /// </summary>
+        public ShadowedDirectionalLight[] shadowedDirectionalLights;
 
     }
 }

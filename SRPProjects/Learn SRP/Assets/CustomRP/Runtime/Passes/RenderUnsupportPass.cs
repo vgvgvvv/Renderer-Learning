@@ -15,6 +15,13 @@ namespace CustomRP.Runtime.Passes
             new ShaderTagId("VertexLMRGBM"),
             new ShaderTagId("VertexLM")
         };
+
+        private bool isOpaque;
+
+        public RenderUnsupportPass(bool isOpaque)
+        {
+            this.isOpaque = isOpaque;
+        }
         
         public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
         {
@@ -25,7 +32,10 @@ namespace CustomRP.Runtime.Passes
                 errorMaterial = new Material(Shader.Find("Hidden/InternalErrorShader"));
             }
 
-            var drawingSettings = new DrawingSettings(legacyShaderTagIds[0], new SortingSettings(camera))
+            var drawingSettings = new DrawingSettings(legacyShaderTagIds[0], new SortingSettings(camera)
+            {
+                criteria = isOpaque ? SortingCriteria.CommonOpaque : SortingCriteria.CommonTransparent
+            })
             {
                 overrideMaterial = errorMaterial
             };
@@ -34,6 +44,7 @@ namespace CustomRP.Runtime.Passes
                 drawingSettings.SetShaderPassName(i, legacyShaderTagIds[i]);
             }
             var filteringSettings = FilteringSettings.defaultValue;
+            filteringSettings.renderQueueRange = isOpaque ? RenderQueueRange.opaque : RenderQueueRange.transparent;
             context.DrawRenderers(
                 renderingData.cullingResults, ref drawingSettings, ref filteringSettings
             );

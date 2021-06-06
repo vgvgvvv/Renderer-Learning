@@ -7,11 +7,13 @@ namespace CustomRP.Runtime.Renderer
     public class ForwardRenderer : ScriptableRenderer
     {
         private ForwardLighting Lighting;
-        
+
+        private DirectionalShadowPass shadowPass;
         private RenderObjectPass renderOpaquePass;
         private RenderSkyBoxPass renderSkyBoxPass;
         private RenderObjectPass renderTransparentPass;
-        private RenderUnsupportPass renderUnsupportPass;
+        private RenderUnsupportPass renderUnsupportOpaquePass;
+        private RenderUnsupportPass renderUnsupportTransparentPass;
         
         public ForwardRenderer(ForwardRendererData data) : base(data)
         {
@@ -23,29 +25,27 @@ namespace CustomRP.Runtime.Renderer
                 // 自定义光照模型
                 new ShaderTagId("CustomLit"), 
             };
+            
             Lighting = new ForwardLighting();
+
+            shadowPass = new DirectionalShadowPass();
             renderOpaquePass = new RenderObjectPass(forwardOnlyShaderTagIds, true);
             renderSkyBoxPass = new RenderSkyBoxPass();
             renderTransparentPass = new RenderObjectPass(forwardOnlyShaderTagIds, false);
-            renderUnsupportPass = new RenderUnsupportPass();
+            renderUnsupportOpaquePass = new RenderUnsupportPass(true);
+            renderUnsupportTransparentPass = new RenderUnsupportPass(false);
         }
 
         public override void Setup(ScriptableRenderContext context, ref RenderingData renderingData)
         {
             base.Setup(context, ref renderingData);
-            CommandBuffer buffer = CommandBufferPool.Get();
-            context.SetupCameraProperties(renderingData.cameraData.camera);
 
-            buffer.ClearRenderTarget(true, true, Color.clear);
-            
-            context.ExecuteCommandBuffer(buffer);
-            buffer.Clear();
-            CommandBufferPool.Release(buffer);
-            
-            EnqueuePass(renderOpaquePass);
-            EnqueuePass(renderSkyBoxPass);
-            EnqueuePass(renderTransparentPass);
-            EnqueuePass(renderUnsupportPass);
+            EnqueuePass(shadowPass, RenderEvent.BeforeRenderingShadows);
+            EnqueuePass(renderOpaquePass, RenderEvent.BeforeRenderingOpaques);
+            EnqueuePass(renderUnsupportOpaquePass, RenderEvent.BeforeRenderingOpaques);
+            EnqueuePass(renderSkyBoxPass, RenderEvent.BeforeRenderingSkyBox);
+            EnqueuePass(renderTransparentPass, RenderEvent.BeforeRenderingTransparents);
+            EnqueuePass(renderUnsupportTransparentPass, RenderEvent.BeforeRenderingTransparents);
         }
 
         public override void SetupLight(ScriptableRenderContext context, ref RenderingData renderingData)

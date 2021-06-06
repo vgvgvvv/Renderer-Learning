@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using CustomRP.Runtime.Settings;
+using CustomRP.Runtime.Utility;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -75,11 +76,15 @@ namespace CustomRP.Runtime
             // Renderer初始化
             renderer.Setup(context, ref renderingData);
 
-            string DrawPassesSampleName = "Draw Passes";
+            string DrawPassesSampleName = "MainRendering";
             buffer.BeginSample(DrawPassesSampleName);
+            buffer.Execute(context);
+            
             // Renderer主函数
             renderer.Execute(context, ref renderingData);
+            
             buffer.EndSample(DrawPassesSampleName);
+            buffer.Execute(context);
             
             context.ExecuteCommandBuffer(buffer);
             buffer.Clear();

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using CustomRP.Runtime.Passes;
+using CustomRP.Runtime.Utility;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -36,18 +38,53 @@ namespace CustomRP.Runtime.Renderer
 
         public void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
         {
+          
+            
             var camera = renderingData.cameraData.camera;
 
-            SetupLight(context, ref renderingData);
-            
             foreach (var pass in ActiveRenderPassQueue)
             {
-                pass.Execute(context, ref renderingData);
+                pass.Setup(context, ref renderingData);
             }
+            
+            SetupLight(context, ref renderingData);
+ 
+            RenderPasses(context, ref renderingData, RenderEvent.BeforeRendering);
+            
+            RenderPasses(context, ref renderingData, RenderEvent.BeforeRenderingPrePasses);
+            RenderPasses(context, ref renderingData, RenderEvent.AfterRenderingPrePasses);
+            
+            RenderPasses(context, ref renderingData, RenderEvent.BeforeRenderingShadows);
+            RenderPasses(context, ref renderingData, RenderEvent.AfterRenderingShadows);
+            
+            CommandBuffer buffer = CommandBufferPool.Get();
+            buffer.name = "Main Camera";
+            
+            context.SetupCameraProperties(renderingData.cameraData.camera);
+            buffer.ClearRenderTarget(true, true, Color.clear);
+            
+            buffer.Execute(context);
+            CommandBufferPool.Release(buffer);
+
+            RenderPasses(context, ref renderingData, RenderEvent.BeforeRenderingOpaques);
+            RenderPasses(context, ref renderingData, RenderEvent.AfterRenderingOpaques);
+            
+            RenderPasses(context, ref renderingData, RenderEvent.BeforeRenderingSkyBox);
+            RenderPasses(context, ref renderingData, RenderEvent.AfterRenderingSkyBox);
+            
+            RenderPasses(context, ref renderingData, RenderEvent.BeforeRenderingTransparents);
+            RenderPasses(context, ref renderingData, RenderEvent.AfterRenderingTransparents);
+            
+            RenderPasses(context, ref renderingData, RenderEvent.BeforeRenderingPostProcessing);
+            RenderPasses(context, ref renderingData, RenderEvent.AfterRenderingPostProcessing);
             
             DrawGizmos(context, camera);
             
+            RenderPasses(context, ref renderingData, RenderEvent.AfterRendering);
+            
             InternalFinishRendering(context);
+            
+
         }
 
         public void Clear()
@@ -59,8 +96,9 @@ namespace CustomRP.Runtime.Renderer
         {
         }
 
-        public void EnqueuePass(ScriptablePass pass)
+        public void EnqueuePass(ScriptablePass pass, RenderEvent renderEvent)
         {
+            pass.RenderEvent = renderEvent;
             ActiveRenderPassQueue.Add(pass);
         }
         
@@ -73,11 +111,39 @@ namespace CustomRP.Runtime.Renderer
             }
         }
 
+        private void RenderPasses(ScriptableRenderContext context, 
+            ref RenderingData renderingData, RenderEvent renderEvent)
+        {
+            CommandBuffer buffer = CommandBufferPool.Get();
+            buffer.name = renderEvent.ToString();
+            buffer.BeginSample(buffer.name);
+            buffer.Execute(context);
+            
+            var passes = ActiveRenderPassQueue
+                .Where(pass => pass.RenderEvent == renderEvent)
+                .ToList();
+            
+            foreach (var pass in passes)
+            {
+                pass.Execute(context, ref renderingData);
+            }
+            
+            buffer.EndSample(buffer.name);
+            buffer.Execute(context);
+            CommandBufferPool.Release(buffer);
+        }
+        
         private void InternalFinishRendering(ScriptableRenderContext context)
         {
             CommandBuffer buffer = CommandBufferPool.Get();
             
             FinishRendering(buffer);
+            
+            foreach (var pass in ActiveRenderPassQueue)
+            {
+                pass.Cleanup(context);
+            }
+            
             ActiveRenderPassQueue.Clear();
             
             context.ExecuteCommandBuffer(buffer);

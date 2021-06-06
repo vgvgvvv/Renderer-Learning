@@ -42,9 +42,45 @@ namespace CustomRP.Runtime
             };
         }
 
-        private void InitShadowData(out ShadowData shadowData)
+        private void InitShadowData(out ShadowData shadowData, ref RenderingData renderingData)
         {
             shadowData = new ShadowData();
+            var lightingData = renderingData.lightingData;
+            shadowData.textureSize = PipelineSetting.ShadowSetting.directional.atlasSize;
+
+            // 初始化方向光数据
+            {
+                shadowData.shadowedDirectionalLights =
+                    new ShadowData.ShadowedDirectionalLight[ShadowData.maxShadowedDirectionalLightCount];
+                var lights = lightingData.visibleLights;
+                int currentShadowLightCount = 0;
+                for (int i = 0; i < lights.Length; i++)
+                {
+                    var currentLightIndex = i;
+                    var currentLight = lights[i].light;
+                    if (currentShadowLightCount >= ShadowData.maxShadowedDirectionalLightCount)
+                    {
+                        break;
+                    }
+    
+                    if (currentLight.shadows == LightShadows.None || 
+                        currentLight.shadowStrength <= 0 || 
+                        !renderingData.cullingResults.GetShadowCasterBounds(currentLightIndex, out var bounds))
+                    {
+                        continue;
+                    }
+                    
+                    shadowData.shadowedDirectionalLights[currentShadowLightCount] = 
+                        new ShadowData.ShadowedDirectionalLight()
+                    {
+                        visibleLightIndex = currentLightIndex
+                    };
+                    currentShadowLightCount++;
+                }
+
+                shadowData.shadowDirectionalLightCount = currentShadowLightCount;
+            }
+            
         }
         
         private void InitRenderingData(ref CameraData cameraData, ref CullingResults cullingResults, out RenderingData renderingData)
@@ -57,8 +93,11 @@ namespace CustomRP.Runtime
                 useGPUInstancing = PipelineSetting.UseGpuInstancing,
                 cameraData = cameraData,
                 cullingResults = cullingResults,
-                lightingData = lightingData
+                lightingData = lightingData,
             };
+            // 阴影依赖灯光数据，以及剔除数据
+            InitShadowData(out var shadowData, ref renderingData);
+            renderingData.shadowData = shadowData;
         }
 
         bool TryGetCullingParameters(CameraData cameraData, out ScriptableCullingParameters cullingParams)
