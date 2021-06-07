@@ -1,8 +1,6 @@
 #ifndef __CUSTOM_LIGHT__
 #define __CUSTOM_LIGHT__
 
-#include "../ShaderLibrary/Shadow.hlsl"
-
 #define MAX_DIRECTIONAL_LIGHT_COUNT 4
 
 CBUFFER_START(_CustomLight)
@@ -24,13 +22,6 @@ int GetDirectionalLightCount()
     return _DirectionalLightCount;
 }
 
-DirectionalShadowData GetDirectionalShadowData (int lightIndex, ShadowData shadowData) {
-    DirectionalShadowData data;
-    data.strength = _DirectionalLightShadowData[lightIndex].x;
-    data.tileIndex = _DirectionalLightShadowData[lightIndex].y + shadowData.cascadeIndex;
-    return data;
-}
-
 Light GetDirectionalLight(int index)
 {
     Light light;
@@ -40,12 +31,6 @@ Light GetDirectionalLight(int index)
     return light;
 }
 
-float GetAttenuation(int index, Surface surfaceWS)
-{
-    ShadowData shadowData = GetShadowData(surfaceWS);
-    DirectionalShadowData directionalShadowData = GetDirectionalShadowData(index, shadowData);
-    float attenuation = GetDirectionalShadowAttenuation(directionalShadowData, surfaceWS);
-    return attenuation;
-}
+
 
 #endif

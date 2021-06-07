@@ -3,6 +3,7 @@
 
 #include "../ShaderLibrary/Common.hlsl"
 #include "../ShaderLibrary/Surface.hlsl"
+#include "../ShaderLibrary/Light.hlsl"
 
 #define MAX_SHADOWED_DIRECTIONAL_LIGHT_COUNT 4
 #define MAX_SHADOW_CASCADE_COUNT 4
@@ -24,10 +25,14 @@ struct DirectionalShadowData {
 
 struct ShadowData {
     int cascadeIndex;
+    float strength;
 };
 
 ShadowData GetShadowData (Surface surfaceWS) {
     ShadowData data;
+
+    // 
+    data.strength = 1.0;
 
     // 获得正确的cascade
     int i;
@@ -40,6 +45,13 @@ ShadowData GetShadowData (Surface surfaceWS) {
             break;
         }
     }
+
+    if(i == _CascadeCount)
+    {
+        // 如果匹配不到任意一个cascade则直接不给予阴影
+        data.strength = 0;
+    }
+    
     data.cascadeIndex = i;
     return data;
 }
@@ -64,7 +76,20 @@ float GetDirectionalShadowAttenuation (DirectionalShadowData data, Surface surfa
     return lerp(1.0, shadow, data.strength);
 }
 
+DirectionalShadowData GetDirectionalShadowData (int lightIndex, ShadowData shadowData) {
+    DirectionalShadowData data;
+    data.strength = _DirectionalLightShadowData[lightIndex].x * shadowData.strength;
+    data.tileIndex = _DirectionalLightShadowData[lightIndex].y + shadowData.cascadeIndex;
+    return data;
+}
 
-
+// 获取阴影衰减
+float GetAttenuation(int index, Surface surfaceWS)
+{
+    ShadowData shadowData = GetShadowData(surfaceWS);
+    DirectionalShadowData directionalShadowData = GetDirectionalShadowData(index, shadowData);
+    float attenuation = GetDirectionalShadowAttenuation(directionalShadowData, surfaceWS);
+    return attenuation;
+}
 
 #endif

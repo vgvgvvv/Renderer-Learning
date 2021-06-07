@@ -2,6 +2,7 @@
 #define __CUSTOM_LIGHTING__
 
 #include "Light.hlsl"
+#include "Shadow.hlsl"
 #include "BRDF.hlsl"
 
 float3 IncomingLight(Surface surface, Light light)
