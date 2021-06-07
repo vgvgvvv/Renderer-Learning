@@ -56,7 +56,7 @@ namespace CustomRP.Runtime
         /// <summary>
         /// 最大方向阴影灯数量
         /// </summary>
-        public const int maxShadowedDirectionalLightCount = 1;
+        public const int maxShadowedDirectionalLightCount = 4;
 
         public int shadowDirectionalLightCount;
         /// <summary>

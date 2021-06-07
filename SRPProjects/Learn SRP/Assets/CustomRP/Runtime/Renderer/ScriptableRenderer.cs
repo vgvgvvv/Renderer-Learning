@@ -42,12 +42,12 @@ namespace CustomRP.Runtime.Renderer
             
             var camera = renderingData.cameraData.camera;
 
+            SetupLight(context, ref renderingData);
+            
             foreach (var pass in ActiveRenderPassQueue)
             {
                 pass.Setup(context, ref renderingData);
             }
-            
-            SetupLight(context, ref renderingData);
  
             RenderPasses(context, ref renderingData, RenderEvent.BeforeRendering);
             
