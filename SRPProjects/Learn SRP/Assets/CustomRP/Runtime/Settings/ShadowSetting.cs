@@ -27,8 +27,13 @@ namespace CustomRP.Runtime.Settings
             public float cascadeRatio3;
         }
         
-        [Min(0f)]
+        [Min(0.001f)]
         public float maxDistance = 100f;
+
+        [Range(0.001f, 1f)]
+        public float distanceFade = 0.1f;
+        
+        
         public Directional directional = new Directional {
             atlasSize = ShadowData.TextureSize._1024,
             cascadeCount = 4,

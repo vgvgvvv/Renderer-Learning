@@ -28,6 +28,7 @@ namespace CustomRP.Runtime
         public bool isGameView => cameraType == CameraType.Game;
 
         public float maxShadowDistance;
+        public float shadowDistanceFade;
 
     }
 

@@ -31,6 +31,8 @@ namespace CustomRP.Runtime
                 data.maxShadowDistance = Mathf.Min(PipelineSetting.ShadowSetting.maxDistance, camera.farClipPlane);
                 data.maxShadowDistance = (data.maxShadowDistance >= camera.nearClipPlane) ? 
                     data.maxShadowDistance : 0.0f;
+                data.shadowDistanceFade = PipelineSetting.ShadowSetting.distanceFade;
+
             };
         }
 

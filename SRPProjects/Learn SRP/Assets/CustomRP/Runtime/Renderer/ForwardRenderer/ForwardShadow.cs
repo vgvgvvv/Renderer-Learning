@@ -23,6 +23,12 @@ namespace CustomRP.Runtime.Renderer
         
         private static int cascadeCullingSpheresId = Shader.PropertyToID("_CascadeCullingSpheres");
         private static Vector4[] cascadeCullingSpheres = new Vector4[ShadowData.maxCascadeCount];
+
+        private static int cascadeDataId = Shader.PropertyToID("_CascadeData");
+        private static Vector4[] cascadeData = new Vector4[ShadowData.maxCascadeCount]; 
+
+        private static int shadowDistanceId = Shader.PropertyToID("_ShadowDistance");
+        private static int shadowDistanceFadeId = Shader.PropertyToID("_ShadowDistanceFade");
         
         public void Setup(ScriptableRenderContext context, ref RenderingData renderingData)
         {
@@ -78,9 +84,18 @@ namespace CustomRP.Runtime.Renderer
             {
                 RenderSingleDirectionalShadow(i, context, ref renderingData);
             }
+
+            var cameraData = renderingData.cameraData;
+            float f = 1f - cameraData.shadowDistanceFade;
+            buffer.SetGlobalVector(shadowDistanceFadeId, new Vector4(
+                1f / cameraData.maxShadowDistance, 
+                1f / cameraData.shadowDistanceFade, 
+                1f / (1f - f * f)));
             
+            buffer.SetGlobalFloat(shadowDistanceId, cameraData.maxShadowDistance);
             buffer.SetGlobalInt( cascadeCountId, renderingData.shadowData.cascadeCount);
             buffer.SetGlobalVectorArray(cascadeCullingSpheresId, cascadeCullingSpheres);
+            buffer.SetGlobalVectorArray(cascadeDataId, cascadeData);
             buffer.SetGlobalMatrixArray(dirShadowMatricesId, dirShadowMatrices);
 
             buffer.Execute(context);
@@ -115,6 +130,11 @@ namespace CustomRP.Runtime.Renderer
                 if (index == 0)
                 {
                     var cullingSphere = shadowSplitData.cullingSphere;
+                    float texelSize = 2f * cullingSphere.w / tileSize;
+                    cascadeData[i] = new Vector4(
+                        1f / cullingSphere.w,
+                        // texel数据，用于计算偏移量
+                        texelSize * 1.4142136f);
                     cascadeCullingSpheres[i] = cullingSphere;
                 }
 
