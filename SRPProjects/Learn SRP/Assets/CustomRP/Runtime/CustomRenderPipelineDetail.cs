@@ -46,7 +46,13 @@ namespace CustomRP.Runtime
         {
             shadowData = new ShadowData();
             var lightingData = renderingData.lightingData;
-            shadowData.textureSize = PipelineSetting.ShadowSetting.directional.atlasSize;
+
+            var directionalShadowSetting = PipelineSetting.ShadowSetting.directional;
+            shadowData.textureSize = directionalShadowSetting.atlasSize;
+            shadowData.cascadeCount = directionalShadowSetting.cascadeCount;
+            shadowData.cascadeRatio1 = directionalShadowSetting.cascadeRatio1;
+            shadowData.cascadeRatio2 = directionalShadowSetting.cascadeRatio2;
+            shadowData.cascadeRatio3 = directionalShadowSetting.cascadeRatio3;
 
             // 初始化方向光数据
             {

@@ -6,11 +6,12 @@
 
 float3 IncomingLight(Surface surface, Light light)
 {
-    return saturate(dot(surface.normal, light.direction) * light.attenuation) * light.color;
+    return saturate(dot(surface.normal, light.direction) * GetAttenuation(light.lightIndex, surface)) * light.color;
 }
 
 float3 GetLighting(Surface surface, BRDF brdf, Light light)
 {
+   
     return IncomingLight(surface, light) * DirectBRDF(surface, brdf, light);
 }
 
@@ -20,10 +21,12 @@ float3 GetLighting(Surface surfaceWS, BRDF brdf)
     //叠加所有的灯光
     for(int i = 0; i < GetDirectionalLightCount(); i ++)
     {
-        color = color + GetLighting(surfaceWS, brdf, GetDirectionalLight(i, surfaceWS));
+        color = color + GetLighting(surfaceWS, brdf, GetDirectionalLight(i));
     }
     
     return color;
 }
+
+
 
 #endif

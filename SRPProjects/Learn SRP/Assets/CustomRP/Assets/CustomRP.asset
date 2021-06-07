@@ -15,9 +15,13 @@ MonoBehaviour:
   PipelineSetting:
     rendererData: {fileID: 11400000, guid: 0cb434ed24e7ef34f84c35bd1b5a447a, type: 2}
     ShadowSetting:
-      maxDistance: 20
+      maxDistance: 50
       directional:
-        atlasSize: 1024
+        atlasSize: 4096
+        cascadeCount: 4
+        cascadeRatio1: 0.205
+        cascadeRatio2: 0.329
+        cascadeRatio3: 0.461
     UseDynamicBatching: 1
     UseGpuInstancing: 1
     UseScriptableRenderPipelineBatching: 1

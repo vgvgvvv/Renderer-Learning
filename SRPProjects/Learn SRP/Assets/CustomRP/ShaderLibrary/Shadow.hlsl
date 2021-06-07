@@ -5,13 +5,16 @@
 #include "../ShaderLibrary/Surface.hlsl"
 
 #define MAX_SHADOWED_DIRECTIONAL_LIGHT_COUNT 4
+#define MAX_SHADOW_CASCADE_COUNT 4
 
 TEXTURE2D_SHADOW(_DirectionalShadowAtlas);
 #define SHADOW_SAMPLER sampler_linear_clamp_compare
 SAMPLER_CMP(SHADOW_SAMPLER);
 
 CBUFFER_START(_CustomShadows)
-    float4x4 _DirectionalShadowMatrices[MAX_SHADOWED_DIRECTIONAL_LIGHT_COUNT];
+    int _CascadeCount;
+    float4 _CascadeCullingSpheres[MAX_SHADOW_CASCADE_COUNT];
+    float4x4 _DirectionalShadowMatrices[MAX_SHADOWED_DIRECTIONAL_LIGHT_COUNT * MAX_SHADOW_CASCADE_COUNT];
 CBUFFER_END
 
 struct DirectionalShadowData {
@@ -19,12 +22,24 @@ struct DirectionalShadowData {
     int tileIndex;
 };
 
+struct ShadowData {
+    int cascadeIndex;
+};
+
+ShadowData GetShadowData (Surface surfaceWS) {
+    ShadowData data;
+    data.cascadeIndex = 0;
+    return data;
+}
+
+
 float SampleDirectionalShadowAtlas (float3 positionSTS) {
     return SAMPLE_TEXTURE2D_SHADOW(
         _DirectionalShadowAtlas, SHADOW_SAMPLER, positionSTS
     );
 }
 
+// 获取阴影衰减
 float GetDirectionalShadowAttenuation (DirectionalShadowData data, Surface surfaceWS) {
     if (data.strength <= 0.0) {
         return 1.0;
@@ -36,5 +51,8 @@ float GetDirectionalShadowAttenuation (DirectionalShadowData data, Surface surfa
     float shadow = SampleDirectionalShadowAtlas(positionSTS);
     return lerp(1.0, shadow, data.strength);
 }
+
+
+
 
 #endif

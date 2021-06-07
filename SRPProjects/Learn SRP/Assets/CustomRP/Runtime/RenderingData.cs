@@ -58,6 +58,20 @@ namespace CustomRP.Runtime
         /// </summary>
         public const int maxShadowedDirectionalLightCount = 4;
 
+        /// <summary>
+        /// 最大连级数量
+        /// </summary>
+        public const int maxCascadeCount = 4;
+
+        public int cascadeCount;
+
+        public Vector3 cascadeRatios => new Vector3(cascadeRatio1, cascadeRatio2, cascadeRatio3);
+        
+        public float cascadeRatio1;
+        public float cascadeRatio2;
+        public float cascadeRatio3;
+        
+
         public int shadowDirectionalLightCount;
         /// <summary>
         /// 投射阴影的方向灯

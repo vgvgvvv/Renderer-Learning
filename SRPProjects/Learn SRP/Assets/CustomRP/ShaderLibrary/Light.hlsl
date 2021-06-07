@@ -14,9 +14,9 @@ CBUFFER_END
 
 struct Light
 {
+    int lightIndex;
     float3 color;
     float3 direction;
-    float attenuation;
 };
 
 int GetDirectionalLightCount()
@@ -24,23 +24,28 @@ int GetDirectionalLightCount()
     return _DirectionalLightCount;
 }
 
-DirectionalShadowData GetDirectionalShadowData (int lightIndex) {
+DirectionalShadowData GetDirectionalShadowData (int lightIndex, ShadowData shadowData) {
     DirectionalShadowData data;
     data.strength = _DirectionalLightShadowData[lightIndex].x;
-    data.tileIndex = _DirectionalLightShadowData[lightIndex].y;
+    data.tileIndex = _DirectionalLightShadowData[lightIndex].y + shadowData.cascadeIndex;
     return data;
 }
 
-Light GetDirectionalLight(int index, Surface surfaceWS)
+Light GetDirectionalLight(int index)
 {
     Light light;
+    light.lightIndex = index;
     light.color = _DirectionalLightColors[index].rgb;
     light.direction = _DirectionalLightDirections[index].xyz;
-    DirectionalShadowData shadowData = GetDirectionalShadowData(index);
-    light.attenuation = GetDirectionalShadowAttenuation(shadowData, surfaceWS);
     return light;
 }
 
-
+float GetAttenuation(int index, Surface surfaceWS)
+{
+    ShadowData shadowData = GetShadowData(surfaceWS);
+    DirectionalShadowData directionalShadowData = GetDirectionalShadowData(index, shadowData);
+    float attenuation = GetDirectionalShadowAttenuation(directionalShadowData, surfaceWS);
+    return attenuation;
+}
 
 #endif
