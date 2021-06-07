@@ -115,7 +115,6 @@ namespace CustomRP.Runtime.Renderer
                 if (index == 0)
                 {
                     var cullingSphere = shadowSplitData.cullingSphere;
-                    cullingSphere.w *= cullingSphere.w;
                     cascadeCullingSpheres[i] = cullingSphere;
                 }
 

@@ -28,7 +28,19 @@ struct ShadowData {
 
 ShadowData GetShadowData (Surface surfaceWS) {
     ShadowData data;
-    data.cascadeIndex = 0;
+
+    // 获得正确的cascade
+    int i;
+    for(i = 0; i < _CascadeCount; i++)
+    {
+        float4 sphere = _CascadeCullingSpheres[i];
+        float distanceSqr = DistanceSquared(surfaceWS.position, sphere.xyz);
+        if(distanceSqr < sphere.w * sphere.w)
+        {
+            break;
+        }
+    }
+    data.cascadeIndex = i;
     return data;
 }
 
