@@ -17,6 +17,7 @@ Shader "CustomRP/Lit"
         
         // 阴影显示模式
         [KeywordEnum(On, Clip, Dither, Off)] _Shadows ("Shadows", Float) = 0
+        [Toggle(_RECEIVE_SHADOWS)] _ReceiveShadows ("Receive Shadows", Float) = 1
     }
     SubShader
     {
@@ -34,10 +35,13 @@ Shader "CustomRP/Lit"
             #pragma target 3.5
             // 添加支持GPU Instancing的变体
             #pragma multi_compile_instancing
+            // PCF变体
             #pragma multi_compile _ _DIRECTIONAL_PCF3 _DIRECTIONAL_PCF5 _DIRECTIONAL_PCF7
+            // 阴影类型变体
             #pragma multi_compile _ _CASCADE_BLEND_SOFT _CASCADE_BLEND_DITHER
             // 添加变体
             #pragma shader_feature _CLIPPING
+            #pragma  shader_feature _RECEIVE_SHADOWS
             
             #pragma vertex LitPassVertex
             #pragma fragment LitPassFragment

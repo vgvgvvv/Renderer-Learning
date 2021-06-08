@@ -138,6 +138,9 @@ float FilterDirectionalShadow(float3 positionSTS)
 
 // 获取阴影衰减
 float GetDirectionalShadowAttenuation (DirectionalShadowData directionalData, ShadowData global, Surface surfaceWS) {
+    #if !defined(_RECEIVE_SHADOWS)
+        return 1.0;
+    #endif
     if (directionalData.strength <= 0.0) {
         return 1.0;
     }
