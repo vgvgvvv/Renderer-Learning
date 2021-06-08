@@ -51,6 +51,8 @@ namespace CustomRP.Runtime
 
             var directionalShadowSetting = PipelineSetting.ShadowSetting.directional;
             shadowData.textureSize = directionalShadowSetting.atlasSize;
+            shadowData.filter = directionalShadowSetting.filter;
+            shadowData.cascadeBlend = directionalShadowSetting.cascadeBlend;
             shadowData.cascadeCount = directionalShadowSetting.cascadeCount;
             shadowData.cascadeRatio1 = directionalShadowSetting.cascadeRatio1;
             shadowData.cascadeRatio2 = directionalShadowSetting.cascadeRatio2;
@@ -81,7 +83,9 @@ namespace CustomRP.Runtime
                     shadowData.shadowedDirectionalLights[currentShadowLightCount] = 
                         new ShadowData.ShadowedDirectionalLight()
                     {
-                        visibleLightIndex = currentLightIndex
+                        visibleLightIndex = currentLightIndex,
+                        slopeScaleBias = currentLight.shadowBias,
+                        nearPlaneOffset = currentLight.shadowNearPlane
                     };
                     currentShadowLightCount++;
                 }

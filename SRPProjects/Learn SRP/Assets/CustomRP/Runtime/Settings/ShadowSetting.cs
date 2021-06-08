@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CustomRP.Runtime.Settings
 {
@@ -13,6 +14,16 @@ namespace CustomRP.Runtime.Settings
             /// 图集大小
             /// </summary>
             public ShadowData.TextureSize atlasSize;
+
+            /// <summary>
+            /// 阴影 filter
+            /// </summary>
+            public ShadowData.FilterMode filter;
+
+            /// <summary>
+            /// cascade混合模式
+            /// </summary>
+            public ShadowData.CascadeBlendMode cascadeBlend;
             
             [Range(1, 4)]
             public int cascadeCount;
@@ -36,6 +47,8 @@ namespace CustomRP.Runtime.Settings
         
         public Directional directional = new Directional {
             atlasSize = ShadowData.TextureSize._1024,
+            filter = ShadowData.FilterMode.PCF2x2,
+            cascadeBlend = ShadowData.CascadeBlendMode.Hard,
             cascadeCount = 4,
             cascadeRatio1 = 0.1f,
             cascadeRatio2 = 0.25f,

@@ -1,5 +1,6 @@
 Shader "CustomRP/Lit"
 {
+    
     Properties
     {
         _BaseMap ("Texture", 2D) = "white" {}
@@ -13,6 +14,9 @@ Shader "CustomRP/Lit"
         [Enum(UnityEngine.Rendering.BlendMode)] _SrcBlend ("Src Blend", Float) = 1
         [Enum(UnityEngine.Rendering.BlendMode)] _DstBlend ("Dst Blend", Float) = 0
         [Enum(Off, 0, On, 1)] _ZWrite ("Z Write", Float) = 1
+        
+        // 阴影显示模式
+        [KeywordEnum(On, Clip, Dither, Off)] _Shadows ("Shadows", Float) = 0
     }
     SubShader
     {
@@ -30,8 +34,11 @@ Shader "CustomRP/Lit"
             #pragma target 3.5
             // 添加支持GPU Instancing的变体
             #pragma multi_compile_instancing
+            #pragma multi_compile _ _DIRECTIONAL_PCF3 _DIRECTIONAL_PCF5 _DIRECTIONAL_PCF7
+            #pragma multi_compile _ _CASCADE_BLEND_SOFT _CASCADE_BLEND_DITHER
             // 添加变体
             #pragma shader_feature _CLIPPING
+            
             #pragma vertex LitPassVertex
             #pragma fragment LitPassFragment
             #include "LitPass.hlsl"
@@ -51,7 +58,7 @@ Shader "CustomRP/Lit"
             HLSLPROGRAM
 
             #pragma target 3.5
-            #pragma shader_feature _CLIPPING
+            #pragma shader_feature _ _SHADOWS_CLIP _SHADOWS_DITHER
             #pragma multi_compile_instancing
             #pragma vertex ShadowCastPassVertex
             #pragma fragment ShadowCastPassFragment
@@ -59,4 +66,7 @@ Shader "CustomRP/Lit"
             ENDHLSL
         }
     }
+    
+    CustomEditor "CustomRP.Shader.Editor.LitShaderGUI"
+
 }

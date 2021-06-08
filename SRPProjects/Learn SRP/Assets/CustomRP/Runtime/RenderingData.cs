@@ -44,15 +44,41 @@ namespace CustomRP.Runtime
             _256 = 256, _512 = 512, _1024 = 1024,
             _2048 = 2048, _4096 = 4096, _8192 = 8192
         }
+
+        public enum FilterMode
+        {
+            PCF2x2 = 0, 
+            PCF3x3, 
+            PCF5x5, 
+            PCF7x7
+        }
+        
+        public enum CascadeBlendMode {
+            Hard, 
+            Soft, 
+            Dither
+        }
         
         public struct ShadowedDirectionalLight {
             public int visibleLightIndex;
+            public float slopeScaleBias;
+            public float nearPlaneOffset;
         }
         
         /// <summary>
         /// Shadowmap 尺寸
         /// </summary>
         public TextureSize textureSize;
+
+        /// <summary>
+        /// Filter类型
+        /// </summary>
+        public FilterMode filter;
+
+        /// <summary>
+        /// cascade混合模式
+        /// </summary>
+        public CascadeBlendMode cascadeBlend;
         
         /// <summary>
         /// 最大方向阴影灯数量

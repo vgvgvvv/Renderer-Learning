@@ -24,7 +24,8 @@ float3 GetLighting(Surface surfaceWS, BRDF brdf)
     {
         color = color + GetLighting(surfaceWS, brdf, GetDirectionalLight(i));
     }
-    
+    // 解除注释以获得阴影视图
+    // return GetAttenuation(0, surfaceWS);
     return color;
 }
 
