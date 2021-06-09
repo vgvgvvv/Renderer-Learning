@@ -22,6 +22,10 @@ namespace CustomRP.Runtime.Passes
             {
                 drawingSettings.enableDynamicBatching = renderingData.useDynamicBatching;
                 drawingSettings.enableInstancing = renderingData.useGPUInstancing;
+                // 采样Lightmap以及LightProbe
+                drawingSettings.perObjectData = PerObjectData.Lightmaps | 
+                                                PerObjectData.LightProbe |
+                                                PerObjectData.LightProbeProxyVolume;
             };
 
             var filteringSettings = new FilteringSettings(isOpaque ? RenderQueueRange.opaque : RenderQueueRange.transparent);

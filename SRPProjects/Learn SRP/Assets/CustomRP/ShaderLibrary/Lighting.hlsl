@@ -4,6 +4,7 @@
 #include "Light.hlsl"
 #include "Shadow.hlsl"
 #include "BRDF.hlsl"
+#include "GI.hlsl"
 
 float3 IncomingLight(Surface surface, Light light)
 {
@@ -16,9 +17,10 @@ float3 GetLighting(Surface surface, BRDF brdf, Light light)
     return IncomingLight(surface, light) * DirectBRDF(surface, brdf, light);
 }
 
-float3 GetLighting(Surface surfaceWS, BRDF brdf)
+float3 GetLighting(Surface surfaceWS, BRDF brdf, GI gi)
 {
-    float3 color = 0.0;
+    // 初始为GI光照色
+    float3 color = gi.diffuse;
     //叠加所有的灯光
     for(int i = 0; i < GetDirectionalLightCount(); i ++)
     {

@@ -60,9 +60,9 @@ namespace CustomRP.Runtime
 
             // 初始化方向光数据
             {
-                shadowData.shadowedDirectionalLights =
-                    new ShadowData.ShadowedDirectionalLight[ShadowData.maxShadowedDirectionalLightCount];
                 var lights = lightingData.visibleLights;
+                shadowData.shadowedDirectionalLights =
+                    new ShadowData.ShadowedDirectionalLight[Mathf.Min(lights.Length, ShadowData.maxCascadeCount)];
                 int currentShadowLightCount = 0;
                 for (int i = 0; i < lights.Length; i++)
                 {

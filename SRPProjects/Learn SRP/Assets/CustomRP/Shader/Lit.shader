@@ -21,6 +21,11 @@ Shader "CustomRP/Lit"
     }
     SubShader
     {
+        HLSLINCLUDE
+        #include "../ShaderLibrary/Common.hlsl"
+        #include "LitInput.hlsl"
+        ENDHLSL
+    
         Pass
         {
             Tags
@@ -35,6 +40,10 @@ Shader "CustomRP/Lit"
             #pragma target 3.5
             // 添加支持GPU Instancing的变体
             #pragma multi_compile_instancing
+
+            // 支持LightMap,Unity自带宏
+            #pragma multi_compile _ LIGHTMAP_ON
+            
             // PCF变体
             #pragma multi_compile _ _DIRECTIONAL_PCF3 _DIRECTIONAL_PCF5 _DIRECTIONAL_PCF7
             // 阴影类型变体
