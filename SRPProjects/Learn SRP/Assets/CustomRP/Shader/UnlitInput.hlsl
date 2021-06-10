@@ -23,9 +23,22 @@ float4 GetBase(float2 baseUV)
     return map * color;
 }
 
+float3 GetEmission (float2 baseUV) {
+    return GetBase(baseUV).rgb;
+}
+
 float GetCutoff(float2 baseUV)
 {
     return UNITY_ACCESS_INSTANCED_PROP(UnityPerMaterial, _Cutoff);
 }
+
+float GetMetallic (float2 baseUV) {
+    return 0.0;
+}
+
+float GetSmoothness (float2 baseUV) {
+    return 0.0;
+}
+
 
 #endif

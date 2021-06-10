@@ -5,6 +5,12 @@ Shader "CustomRP/Lit"
     {
         _BaseMap ("Texture", 2D) = "white" {}
         _BaseColor ("Color", Color) = (0.5, 0.5, 0.5, 1.0)
+        
+        // NoScaleOffset可以隐藏UV偏移选项
+        [NoScaleOffset] _EmissionMap("Emission", 2D) = "white" {}
+        // 可以更亮的颜色
+        [HDR] _EmissionColor ("Emission Color", Color) = (0.0, 0.0, 0.0, 0.0)
+        
         _Cutoff ("Alpha Cutoff", Range(0.0, 1.0)) = 0.5
         [Toggle(_CLIPPING)] _Clipping("Alpha Clipping", Float) = 0
         
@@ -18,6 +24,10 @@ Shader "CustomRP/Lit"
         // 阴影显示模式
         [KeywordEnum(On, Clip, Dither, Off)] _Shadows ("Shadows", Float) = 0
         [Toggle(_RECEIVE_SHADOWS)] _ReceiveShadows ("Receive Shadows", Float) = 1
+        
+        // 用于拷贝光照贴图属性
+        [HideInInspector] _MainTex("Texture for Lightmap", 2D) = "white" {}
+        [HideInInspector] _Color("Color for Lightmap", Color) = (0.5, 0.5, 0.5, 1.0)
     }
     SubShader
     {
@@ -76,6 +86,25 @@ Shader "CustomRP/Lit"
             #pragma vertex ShadowCastPassVertex
             #pragma fragment ShadowCastPassFragment
             #include "ShadowCastPass.hlsl"
+            ENDHLSL
+        }
+        
+        Pass
+        {
+            Tags
+            {
+                "LightMode" = "Meta"
+            }
+            
+            // 关闭裁切
+            Cull Off
+            
+            HLSLPROGRAM
+            #pragma target 3.5
+            #pragma vertex MetaPassVertex
+            #pragma fragment MetaPassFragment
+            #include "MetaPass.hlsl"
+            
             ENDHLSL
         }
     }
