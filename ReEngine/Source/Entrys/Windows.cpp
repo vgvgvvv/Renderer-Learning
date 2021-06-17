@@ -1,8 +1,9 @@
 
 #include <iostream>
+#include <windows.h>
 
-int main(int argc, char** argv)
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
+	PSTR cmdLine, int showCmd)
 {
-	std::cout << "hello world" << std::endl;
-	return 0;
+	
 }
