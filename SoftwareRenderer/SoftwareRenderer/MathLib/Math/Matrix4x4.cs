@@ -502,15 +502,25 @@ namespace MathLib
             
             float[,] wtmp = new float[4,8];
            float m0, m1, m2, m3, s;
-           float[] r0 = new float[4];
-           float[] r1 = new float[4];
-           float[] r2 = new float[4];
-           float[] r3 = new float[4];
+           float[] r0 = new float[8];
+           float[] r1 = new float[8];
+           float[] r2 = new float[8];
+           float[] r3 = new float[8];
 
-           r0 = new []{wtmp[0, 0], wtmp[0, 1], wtmp[0, 2], wtmp[0, 3]};
-           r1 = new []{wtmp[1, 0], wtmp[1, 1], wtmp[1, 2], wtmp[1, 3]};
-           r2 = new []{wtmp[2, 0], wtmp[2, 1], wtmp[2, 2], wtmp[2, 3]};
-           r3 = new []{wtmp[3, 0], wtmp[3, 1], wtmp[3, 2], wtmp[3, 3]};
+           r0 = new []
+           {
+               wtmp[0, 0], wtmp[0, 1], wtmp[0, 2], wtmp[0, 3],
+               wtmp[0, 4], wtmp[0, 5], wtmp[0, 6], wtmp[0, 7]
+           };
+           r1 = new []{
+               wtmp[1, 0], wtmp[1, 1], wtmp[1, 2], wtmp[1, 3],
+               wtmp[1, 4], wtmp[1, 5], wtmp[1, 6], wtmp[1, 7]};
+           r2 = new []{
+               wtmp[2, 0], wtmp[2, 1], wtmp[2, 2], wtmp[2, 3],
+               wtmp[2, 4], wtmp[2, 5], wtmp[2, 6], wtmp[2, 7]};
+           r3 = new []{
+               wtmp[3, 0], wtmp[3, 1], wtmp[3, 2], wtmp[3, 3],
+               wtmp[3, 4], wtmp[3, 5], wtmp[3, 6], wtmp[3, 7]};
 
            r0[0] = m[0, 0];
            r0[1] = m[0, 1];
