@@ -233,7 +233,7 @@ namespace MathLib
     
             matrix[1,0] = cx*sz;
             matrix[1,1] = cx*cz;
-            matrix[1,1] = -sx;
+            matrix[1,2] = -sx;
     
             matrix[2,0] = -cz*sy + cy*sx*sz;
             matrix[2,1] = cy*cz*sx + sy*sz;
