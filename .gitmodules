@@ -1,3 +1,7 @@
 [submodule "ReEngine/external/mathlib"]
 	path = ReEngine/external/mathlib
 	url = git@github.com:vgvgvvv/3d-math.git
+[submodule "ReEngine/external/lua"]
+	path = ReEngine/external/lua
+	url = git@github.com:vgvgvvv/lua.git
+	branch = for-rengine
