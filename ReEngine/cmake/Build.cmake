@@ -8,7 +8,9 @@ function(ReMake_AddSubDirsRec path)
   list(APPEND children "${CMAKE_CURRENT_SOURCE_DIR}/${path}")
   foreach(item ${children})
     if(IS_DIRECTORY ${item} AND EXISTS "${item}/CMakeLists.txt")
-      list(APPEND dirs ${item})
+        # 加入子文件夹的同时 添加include文件夹
+        include_directories(${item})
+        list(APPEND dirs ${item})
     endif()
   endforeach()
   foreach(dir ${dirs})
@@ -24,10 +26,10 @@ function(ReMake_GetTargetName rst targetPath)
 endfunction()
 
 # 获取源文件
-function(ReMake_ExpandSources rst _sources)
+function(ReMake_ExpandSources rst sources)
 
     set(tmp_rst "")
-    foreach(item ${${_sources}})
+    foreach(item ${${sources}})
         if(IS_DIRECTORY ${item})
             file(GLOB_RECURSE itemSrcs
                 # cmake
@@ -164,14 +166,16 @@ function(ReMake_AddTarget)
     endif()
 
     ReMake_ExpandSources(sources_public ARG_SOURCE_PUBLIC)
-    ReMake_ExpandSources(source_interface ARG_SOURCE_INTERFACE)
-    ReMake_ExpandSources(source_private ARG_SOURCE)
+    ReMake_ExpandSources(sources_interface ARG_SOURCE_INTERFACE)
+    ReMake_ExpandSources(sources_private ARG_SOURCE)
+
+
 
     # target folder
     file(RELATIVE_PATH targetRelPath "${PROJECT_SOURCE_DIR}/src" "${CMAKE_CURRENT_SOURCE_DIR}/..")
     set(targetFolder "${PROJECT_NAME}/${targetRelPath}")
 
-    if(NOT TARGET_NAME)
+    if("${ARG_TARGET_NAME}" STREQUAL "")
         ReMake_GetTargetName(coreTargetName ${CMAKE_CURRENT_SOURCE_DIR})
     else()
         set(coreTargetName ${ARG_TARGET_NAME})
@@ -182,11 +186,13 @@ function(ReMake_AddTarget)
         set(${ARG_RETURN_TARGET_NAME} ${coreTargetName} PARENT_SCOPE)
     endif()
 
+
     # print
     message(STATUS "- name: ${coreTargetName}")
     message(STATUS "- folder : ${targetFolder}")
     message(STATUS "- mode: ${ARG_MODE}")
-    ReMake_List_Print(STRS ${sources_private}
+
+    REMAKE_LIST_PRINT(STRS ${sources_private}
     TITLE  "- sources (private):"
     PREFIX "  * ")
     ReMake_List_Print(STRS ${sources_interface}
