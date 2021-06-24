@@ -1,0 +1,3 @@
+[submodule "ReEngine/external/mathlib"]
+	path = ReEngine/external/mathlib
+	url = git@github.com:vgvgvvv/3d-math.git
