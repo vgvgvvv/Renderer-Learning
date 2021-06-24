@@ -77,7 +77,7 @@ endfunction()
 # C_OPTION: compile options                          | target_compile_options
 # L_OPTION: link options                             | target_link_options
 # PCH: precompile headers                            | target_precompile_headers
-function(AddTarget)
+function(ReMake_AddTarget)
 
     message(STATUS "----------")
     message(STATUS "Add Target")
@@ -113,7 +113,7 @@ function(AddTarget)
     cmake_parse_arguments(
         "ARG"
         "TEST"
-        "MODE;ADD_CURRENT_TO;CXX_STANDARD"
+        "TARGET_NAME;MODE;ADD_CURRENT_TO;CXX_STANDARD"
         "${arglist}"
         ${ARGN}
     )
@@ -171,7 +171,13 @@ function(AddTarget)
     file(RELATIVE_PATH targetRelPath "${PROJECT_SOURCE_DIR}/src" "${CMAKE_CURRENT_SOURCE_DIR}/..")
     set(targetFolder "${PROJECT_NAME}/${targetRelPath}")
 
-    ReMake_GetTargetName(coreTargetName ${CMAKE_CURRENT_SOURCE_DIR})
+    if(NOT TARGET_NAME)
+        ReMake_GetTargetName(coreTargetName ${CMAKE_CURRENT_SOURCE_DIR})
+    else()
+        set(coreTargetName ${ARG_TARGET_NAME})
+    endif()
+
+    
     if(NOT "${ARG_RETURN_TARGET_NAME}" STREQUAL "")
         set(${ARG_RETURN_TARGET_NAME} ${coreTargetName} PARENT_SCOPE)
     endif()
@@ -180,88 +186,163 @@ function(AddTarget)
     message(STATUS "- name: ${coreTargetName}")
     message(STATUS "- folder : ${targetFolder}")
     message(STATUS "- mode: ${ARG_MODE}")
-    Ubpa_List_Print(STRS ${sources_private}
+    ReMake_List_Print(STRS ${sources_private}
     TITLE  "- sources (private):"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${sources_interface}
+    ReMake_List_Print(STRS ${sources_interface}
     TITLE  "- sources interface:"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${sources_public}
+    ReMake_List_Print(STRS ${sources_public}
     TITLE  "- sources public:"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${ARG_DEFINE}
+    ReMake_List_Print(STRS ${ARG_DEFINE}
     TITLE  "- define (public):"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${ARG_DEFINE_PRIVATE}
+    ReMake_List_Print(STRS ${ARG_DEFINE_PRIVATE}
     TITLE  "- define interface:"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${ARG_DEFINE_INTERFACE}
+    ReMake_List_Print(STRS ${ARG_DEFINE_INTERFACE}
     TITLE  "- define private:"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${ARG_LIB}
+    ReMake_List_Print(STRS ${ARG_LIB}
     TITLE  "- lib (public):"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${ARG_LIB_INTERFACE}
+    ReMake_List_Print(STRS ${ARG_LIB_INTERFACE}
     TITLE  "- lib interface:"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${ARG_LIB_PRIVATE}
+    ReMake_List_Print(STRS ${ARG_LIB_PRIVATE}
     TITLE  "- lib private:"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${ARG_INC}
+    ReMake_List_Print(STRS ${ARG_INC}
     TITLE  "- inc (public):"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${ARG_INC_INTERFACE}
+    ReMake_List_Print(STRS ${ARG_INC_INTERFACE}
     TITLE  "- inc interface:"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${ARG_INC_PRIVATE}
+    ReMake_List_Print(STRS ${ARG_INC_PRIVATE}
     TITLE  "- inc private:"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${ARG_DEFINE}
+    ReMake_List_Print(STRS ${ARG_DEFINE}
     TITLE  "- define (public):"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${ARG_DEFINE_INTERFACE}
+    ReMake_List_Print(STRS ${ARG_DEFINE_INTERFACE}
     TITLE  "- define interface:"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${ARG_DEFINE_PRIVATE}
+    ReMake_List_Print(STRS ${ARG_DEFINE_PRIVATE}
     TITLE  "- define private:"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${ARG_C_OPTION}
+    ReMake_List_Print(STRS ${ARG_C_OPTION}
     TITLE  "- compile option (public):"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${ARG_C_OPTION_INTERFACE}
+    ReMake_List_Print(STRS ${ARG_C_OPTION_INTERFACE}
     TITLE  "- compile option interface:"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${ARG_C_OPTION_PRIVATE}
+    ReMake_List_Print(STRS ${ARG_C_OPTION_PRIVATE}
     TITLE  "- compile option private:"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${ARG_L_OPTION}
+    ReMake_List_Print(STRS ${ARG_L_OPTION}
     TITLE  "- link option (public):"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${ARG_L_OPTION_INTERFACE}
+    ReMake_List_Print(STRS ${ARG_L_OPTION_INTERFACE}
     TITLE  "- link option interface:"
     PREFIX "  * ")
-    Ubpa_List_Print(STRS ${ARG_L_OPTION_PRIVATE}
+    ReMake_List_Print(STRS ${ARG_L_OPTION_PRIVATE}
     TITLE  "- link option private:"
     PREFIX "  * ")
 
-    set(targetNames "")
-
     if("${ARG_MODE}" STREQUAL "EXE")
         add_executable(${coreTargetName})
-        set_target_properties(${coreTargetName} CMAKE_DEBUG_TARGET_PROPERTIES DEBUG_POSTFIX ${CMAKE_DEBUF_POSTFIX)
-
+        if(MSVC)
+			set_target_properties(${ARG_NAME} PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/bin")
+		endif()
+        set_target_properties(${coreTargetName} PROPERTIES DEBUG_POSTFIX ${CMAKE_DEBUG_POSTFIX})
+        set_target_properties(${coreTargetName} PROPERTIES MINSIZEREL_POSTFIX ${CMAKE_MINSIZEREL_POSTFIX})
+        set_target_properties(${coreTargetName} PROPERTIES RELWITHDEBINFO_POSTFIX ${CMAKE_RELWITHDEBINFO_POSTFIX})
     elseif("${ARG_MODE}" STREQUAL "STATIC")
-    
+        add_library(${coreTargetName} STATIC)
     elseif("${ARG_MODE}" STREQUAL "SHARED")
-    
+        add_library(${coreTargetName} SHARED)
     elseif("${ARG_MODE}" STREQUAL "INTERFACE")
-    
-    elseif("${ARG_MODE}" STREQUAL "STATIC_AND_SHARED")
-    
+        add_library(${coreTargetName} INTERFACE)
     else()
         message(FATAL_ERROR "mode [${ARG_MODE}] is not supported")
         return()
     endif()
+
+    set(targetName ${coreTargetName})
+
+    if(NOT "${ARG_CXX_STANDARD}" STREQUAL "")
+      set_property(TARGET ${targetName} PROPERTY CXX_STANDARD ${ARG_CXX_STANDARD})
+      message(STATUS "- CXX_STANDARD : ${ARG_CXX_STANDARD}")
+    endif()
+
+    # folder
+    if(NOT ${ARG_MODE} STREQUAL "INTERFACE")
+      set_target_properties(${targetName} PROPERTIES FOLDER ${targetFolder})
+    endif()
+
+    foreach(src ${sources_public})
+        get_filename_component(abs_src ${src} ABSOLUTE)
+        target_sources(${targetName} PUBLIC ${abs_src})
+    endforeach()
+
+    foreach(src ${sources_private})
+        get_filename_component(abs_src ${src} ABSOLUTE)
+        target_sources(${targetName} PRIVATE ${abs_src})
+    endforeach()
+
+    foreach(src ${sources_interface})
+        get_filename_component(abs_src ${src} ABSOLUTE)
+        target_sources(${targetName} INTERFACE ${abs_src})
+    endforeach()
+
+    foreach(inc ${ARG_INC})
+      get_filename_component(abs_inc ${inc} ABSOLUTE)
+      target_include_directories(${targetName} PUBLIC ${abs_inc})
+    endforeach()
+    foreach(inc ${ARG_INC_PRIVATE})
+      get_filename_component(abs_inc ${inc} ABSOLUTE)
+      target_include_directories(${targetName} PRIVATE ${abs_inc})
+    endforeach()
+    foreach(inc ${ARG_INC_INTERFACE})
+      get_filename_component(abs_inc ${inc} ABSOLUTE)
+      target_include_directories(${targetName} INTERFACE ${abs_inc})
+    endforeach()
+
+     # target define
+    target_compile_definitions(${targetName}
+      PUBLIC ${ARG_DEFINE}
+      INTERFACE ${ARG_DEFINE_INTERFACE}
+      PRIVATE ${ARG_DEFINE_PRIVATE}
+    )
+
+     # target lib
+    target_link_libraries(${targetName}
+      PUBLIC ${ARG_LIB}
+      INTERFACE ${ARG_LIB_INTERFACE}
+      PRIVATE ${ARG_LIB_PRIVATE}
+    )
+
+    # target compile option
+    target_compile_options(${targetName}
+      PUBLIC ${ARG_C_OPTION}
+      INTERFACE ${ARG_C_OPTION_INTERFACE}
+      PRIVATE ${ARG_C_OPTION_PRIVATE}
+    )
+    
+    # target link option
+    target_link_options(${targetName}
+      PUBLIC ${ARG_L_OPTION}
+      INTERFACE ${ARG_L_OPTION_INTERFACE}
+      PRIVATE ${ARG_L_OPTION_PRIVATE}
+    )
+    
+    # target pch
+    target_precompile_headers(${targetName}
+      PUBLIC ${ARG_PCH_PUBLIC}
+      INTERFACE ${ARG_PCH_INTERFACE}
+      PRIVATE ${ARG_PCH}
+    )
 
     message(STATUS "----------")
 endfunction()
