@@ -23,6 +23,7 @@ ReMake_UpdateSubModule()
 
 ReMake_InitProject()
 
+ReMake_AddSubDirsRec(external)
 ReMake_AddSubDirsRec(src)
 
 message(STATUS "project Root ${PROJECT_SOURCE_DIR}")
