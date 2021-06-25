@@ -5,3 +5,6 @@
 	path = ReEngine/external/lua
 	url = git@github.com:vgvgvvv/lua.git
 	branch = for-rengine
+[submodule "ReEngine/external/thirdpart"]
+	path = ReEngine/external/thirdpart
+	url = git@github.com:vgvgvvv/re-third-part.git
