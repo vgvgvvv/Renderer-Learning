@@ -1,8 +1,17 @@
-#include <iostream>
-#include "OpenGL.h"
+
+#include "GlfwContext.h"
 
 int main()
 {
-	std::cout << "test open gl start " << add(1, 3) << std::endl;
+	GlfwContext glfwCxt;
+	glfwCxt.Init();
+
+	while (!glfwCxt.ShouldQuit())
+	{
+		glfwCxt.SwapBuffer();
+		glfwCxt.PollEvents();
+	}
+	
+	glfwCxt.ShutDown();
 	return 0;
 }

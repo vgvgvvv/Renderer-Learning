@@ -9,8 +9,14 @@ message(STATUS "ReOpenGL RELATIVE_PATH ${rel_src}")
 
 set(ReOpenGL_INCLUDE_DIR ${rel_src} PARENT_SCOPE)
 
+set(targetName ReOpenGL)
+
 ReMake_AddTarget(
-	TARGET_NAME ReOpenGL
+	TARGET_NAME ${targetName}
 	MODE STATIC
+	LIB opengl32
 )
 
+USEGLAD(${targetName})
+USEGLEW(${targetName})
+USEGLFW(${targetName})
