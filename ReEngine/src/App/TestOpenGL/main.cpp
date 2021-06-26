@@ -1,8 +1,11 @@
 
+#include "Common.h"
 #include "GlfwContext.h"
+#include "Log.h"
 
 int main()
 {
+	
 	GlfwContext glfwCxt;
 	GlfwInitDesc desc;
 	
