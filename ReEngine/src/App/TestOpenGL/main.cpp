@@ -4,7 +4,9 @@
 int main()
 {
 	GlfwContext glfwCxt;
-	glfwCxt.Init();
+	GlfwInitDesc desc;
+	
+	glfwCxt.Init(desc);
 
 	while (!glfwCxt.ShouldQuit())
 	{

@@ -1,18 +1,30 @@
 #pragma once
+#include <string>
+
 #include "GLFW/glfw3.h"
+
+class GlfwInitDesc
+{
+public:
+	int Width;
+	int Height;
+	std::string Title;
+
+	GlfwInitDesc();
+};
 
 class GlfwContext
 {
 public:
-	bool Init();
+	bool Init(const GlfwInitDesc& desc);
 
-	bool ShouldQuit();
+	bool ShouldQuit() const;
 
-	bool ShutDown();
+	bool ShutDown() const;
 
-	void SwapBuffer();
+	void SwapBuffer() const;
 
-	void PollEvents();
+	void PollEvents() const;
 
 private:
 	GLFWwindow* window = nullptr;

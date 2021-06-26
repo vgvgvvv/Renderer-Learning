@@ -2,7 +2,15 @@
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 
-bool GlfwContext::Init()
+
+GlfwInitDesc::GlfwInitDesc()
+{
+    Width = 640;
+    Height = 480;
+    Title = "Glfw Windows";
+}
+
+bool GlfwContext::Init(const GlfwInitDesc& desc)
 {
 	/* Initialize the library */
     if (!glfwInit())
@@ -19,7 +27,7 @@ bool GlfwContext::Init()
 #endif
 	
     /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+    window = glfwCreateWindow(desc.Width, desc.Height, desc.Title.c_str(), nullptr, nullptr);
 
     if (!window)
     {
@@ -35,27 +43,26 @@ bool GlfwContext::Init()
     return true;
 }
 
-bool GlfwContext::ShouldQuit()
+bool GlfwContext::ShouldQuit() const
 {
     return glfwWindowShouldClose(window);
 }
 
-bool GlfwContext::ShutDown()
+bool GlfwContext::ShutDown() const
 {
     glfwTerminate();
     return true;
 }
 
-void GlfwContext::SwapBuffer()
+void GlfwContext::SwapBuffer() const
 {
     glfwSwapBuffers(window);
 }
 
-void GlfwContext::PollEvents()
+void GlfwContext::PollEvents() const
 {
     glfwPollEvents();
 }
-
 
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
