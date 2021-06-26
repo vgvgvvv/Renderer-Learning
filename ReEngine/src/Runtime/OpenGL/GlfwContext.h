@@ -2,6 +2,7 @@
 #include <string>
 
 #include "GLFW/glfw3.h"
+#include "Singleton.h"
 
 class GlfwInitDesc
 {
@@ -15,6 +16,9 @@ public:
 
 class GlfwContext
 {
+	
+	DEFINE_SINGLETON(GlfwContext)
+	
 public:
 	bool Init(const GlfwInitDesc& desc);
 
@@ -25,6 +29,8 @@ public:
 	void SwapBuffer() const;
 
 	void PollEvents() const;
+
+	void ProcessEvent() const;
 
 private:
 	GLFWwindow* window = nullptr;
