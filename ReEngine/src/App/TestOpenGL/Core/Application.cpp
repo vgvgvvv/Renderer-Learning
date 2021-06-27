@@ -1,10 +1,7 @@
 #include "Application.h"
 #include "Common.h"
+#include "Layers/WindowLayer.h"
 #include "OpenGL.h"
-#include "Render/RenderLoop.h"
-#include "Render/TestRenderPipeline.h"
-
-#include "Renderer/OpenGLRenderContext.h"
 
 
 bool Application::ShouldQuit()
@@ -20,40 +17,26 @@ bool Application::ShouldQuit()
 void Application::Init()
 {
 	RE_LOG_INFO("Application", "Application::Init");
-	GlfwInitDesc glfwDesc;
-	GlfwContext::Get().Init(glfwDesc);
-	GladContext::Get().Init();
-}
-
-void Application::Update()
-{
-	
-	
-	
+	LayerManager.PushLayer(new WindowLayer());
 }
 
 void Application::Uninit()
 {
 	RE_LOG_INFO("Application", "Application::Uninit");
-	GlfwContext::Get().ShutDown();
+	
 }
 
 int Application::Run()
 {
 	Init();
 
-	auto& glfw = GlfwContext::Get();
-
-	RenderLoop renderLoop;
-	
 	while (!ShouldQuit())
 	{
-		Update();
-
-		renderLoop.Update();
-
-		glfw.SwapBuffer();
-		glfw.PollEvents();
+		LayerManager.PreUpdate();
+		LayerManager.Update();
+		LayerManager.LateUpdate();
+		LayerManager.Render();
+		LayerManager.AfterRender();
 	}
 
 	Uninit();
