@@ -24,6 +24,9 @@ void Application::Init()
 void Application::Update()
 {
 	auto& glfw = GlfwContext::Get();
+
+	
+	
 	glfw.SwapBuffer();
 	glfw.PollEvents();
 }
