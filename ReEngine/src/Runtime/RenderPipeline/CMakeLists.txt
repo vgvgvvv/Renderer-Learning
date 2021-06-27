@@ -1,0 +1,5 @@
+
+REMAKE_ADDTARGET(
+	TARGET_NAME RenderPipeline
+	MODE STATIC
+)

@@ -1,6 +1,10 @@
 #include "Application.h"
 #include "Common.h"
-#include "GlfwContext.h"
+#include "OpenGL.h"
+#include "Render/RenderLoop.h"
+#include "Render/TestRenderPipeline.h"
+
+#include "Renderer/OpenGLRenderContext.h"
 
 
 bool Application::ShouldQuit()
@@ -16,19 +20,16 @@ bool Application::ShouldQuit()
 void Application::Init()
 {
 	RE_LOG_INFO("Application", "Application::Init");
-	auto& glfw = GlfwContext::Get();
 	GlfwInitDesc glfwDesc;
-	glfw.Init(glfwDesc);
+	GlfwContext::Get().Init(glfwDesc);
+	GladContext::Get().Init();
 }
 
 void Application::Update()
 {
-	auto& glfw = GlfwContext::Get();
-
 	
 	
-	glfw.SwapBuffer();
-	glfw.PollEvents();
+	
 }
 
 void Application::Uninit()
@@ -41,9 +42,18 @@ int Application::Run()
 {
 	Init();
 
+	auto& glfw = GlfwContext::Get();
+
+	RenderLoop renderLoop;
+	
 	while (!ShouldQuit())
 	{
 		Update();
+
+		renderLoop.Update();
+
+		glfw.SwapBuffer();
+		glfw.PollEvents();
 	}
 
 	Uninit();

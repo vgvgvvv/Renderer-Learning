@@ -1,7 +1,8 @@
 ﻿#include "Texture.h"
 
-#include "Renderer.h"
+#include "OpenGLRenderContext.h"
 #include "stb_image.h"
+#include "VertexArrayObject.h"
 
 Texture::Texture(const std::string& filepath)
 	: render_id_(0), file_path_(filepath), local_buffer_(nullptr), width_(0), height_(0), bpp_(0)

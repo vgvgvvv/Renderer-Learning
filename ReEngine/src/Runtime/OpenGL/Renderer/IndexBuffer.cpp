@@ -1,6 +1,7 @@
 ﻿#include "IndexBuffer.h"
 
-#include "Renderer.h"
+
+#include "OpenGLRenderContext.h"
 
 IndexBuffer::IndexBuffer(const uint32_t* data, uint32_t count)
 	: render_id_(0), count_(count)

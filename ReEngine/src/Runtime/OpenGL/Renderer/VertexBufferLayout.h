@@ -1,7 +1,8 @@
 ﻿#pragma once
 #include <cassert>
-#include <GL/glew.h>
 #include <vector>
+#include "Common.h"
+#include "OpenGL.h"
 
 
 struct VertexBufferElement
@@ -20,7 +21,7 @@ struct VertexBufferElement
 		case GL_BYTE: return sizeof(GLbyte);
 		case GL_UNSIGNED_BYTE: return sizeof(GLubyte);
 		}
-		assert(false);
+		RE_ASSERT_MSG(false, "type is unkonwn");
 		return 0;
 	}
 };
@@ -37,7 +38,7 @@ public:
 	template<typename T>
 	void Push(uint32_t count)
 	{
-		static_assert(false);
+		RE_ASSERT_MSG(false, "push type is unkonwn");
 	}
 
 	template<>

@@ -5,7 +5,8 @@
 #include <sstream>
 #include <iostream>
 
-#include "Renderer.h"
+#include "OpenGLRenderContext.h"
+#include "Common.h"
 
 Shader::Shader(const std::string& fileName)
 	: render_id_(0), file_path_(fileName)
@@ -101,10 +102,11 @@ uint32_t Shader::CompileShader(uint32_t type, const std::string& source)
 		char* message = (char*)alloca(length * sizeof(char));
 
 		GLCall(glGetShaderInfoLog(id, length, &length, message));
-		std::cout << "Failed to compile " << ((type == GL_VERTEX_SHADER) ? "vertex" : "fragments") << std::endl;
-		std::cout << message << std::endl;
 
-		std::cout << source << std::endl;
+		RE_LOG_ERROR("OpenGL", "Failed to compile {0}", ((type == GL_VERTEX_SHADER) ? "vertex" : "fragments"));
+		RE_LOG_ERROR("OpenGL", "Error Info : {0}", message);
+		RE_LOG_ERROR("OpenGL", "Source : {0}", source);
+		
 		GLCall(glDeleteShader(id));
 		return 0;
 	}
@@ -139,7 +141,7 @@ int32_t Shader::GetUniformLocation(const std::string& name)
 	GLCall(int32_t location = glGetUniformLocation(render_id_, name.c_str()));
 	if(location != -1)
 	{
-		std::cout << "Warning: cannot find shader location at " << name << std::endl;
+		RE_LOG_WARN("OpenGL", "Warning: cannot find shader location at {}", name);
 	}
 	
 	location_cache_[name] = location;

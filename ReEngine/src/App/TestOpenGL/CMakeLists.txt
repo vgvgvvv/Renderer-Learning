@@ -3,6 +3,6 @@ message(STATUS "include TestOpenGL")
 
 ReMake_AddTarget(
 	MODE EXE
-	LIB ReOpenGL CommonLib
+	LIB ReOpenGL CommonLib RenderPipeline
 )
 

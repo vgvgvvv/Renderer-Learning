@@ -1,4 +1,4 @@
-﻿#include "Renderer.h"
+﻿#include "OpenGLRenderContext.h"
 #include <iostream>
 
 
@@ -23,7 +23,7 @@ bool GLLogCall(const char* function, const char* file, int line)
 	return true;
 }
 
-void Renderer::Draw(const VertexArrayObject& vao, const IndexBuffer& ib, const Shader& shader) const
+void OpenGLRenderContext::Draw(const VertexArrayObject& vao, const IndexBuffer& ib, const Shader& shader) const
 {
 	shader.Bind();
 	vao.Bind();
@@ -32,12 +32,13 @@ void Renderer::Draw(const VertexArrayObject& vao, const IndexBuffer& ib, const S
 	GLCall(glDrawElements(GL_TRIANGLES, ib.GetCount(), GL_UNSIGNED_INT, nullptr));
 }
 
-void Renderer::Clear() const
+void OpenGLRenderContext::Clear() const
 {
+	GLCall(glClearColor(0.2f, 0.3f, 0.3f, 1.0f));
 	GLCall(glClear(GL_COLOR_BUFFER_BIT));
 }
 
-void Renderer::SetAlpha(uint32_t from, uint32_t to)
+void OpenGLRenderContext::SetAlpha(uint32_t from, uint32_t to)
 {
 	GLCall(glEnable(GL_ALPHA))
 	GLCall(glBlendFunc(from, to));

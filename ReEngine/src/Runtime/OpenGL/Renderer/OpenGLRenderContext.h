@@ -1,15 +1,14 @@
 ﻿#pragma once
 
 #include <cstdint>
-#include <GL/glew.h>
+#include "Common.h"
+#include "OpenGL.h"
 
 #if _DEBUG
-#define ASSERT(x) if(!(x)) __debugbreak();
 #define GLCall(x) GLClearError();\
 	x;\
-	ASSERT(GLLogCall(#x, __FILE__, __LINE__))
+	RE_ASSERT(GLLogCall(#x, __FILE__, __LINE__))
 #else
-	#define ASSERT(x) x;
 	#define GLCall(x) x;
 #endif
 
@@ -22,7 +21,7 @@ class Shader;
 class IndexBuffer;
 class VertexArrayObject;
 
-class Renderer
+class OpenGLRenderContext
 {
 public:
 

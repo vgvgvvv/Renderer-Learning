@@ -10,6 +10,5 @@ ReMake_AddTarget(
 )
 
 USEGLAD(${targetName})
-USEGLEW(${targetName})
 USEGLFW(${targetName})
 USESTBIMAGE(${targetName})

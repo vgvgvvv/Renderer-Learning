@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-#include "GLFW/glfw3.h"
+#include "OpenGL.h"
 #include "Singleton.h"
 
 class GlfwInitDesc
