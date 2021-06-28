@@ -9,20 +9,20 @@ class LogContext
 {
 public:
 	template<typename... Args>
-	static void Info(std::string tag, std::string formatString, const Args &...args);
+	static void Info(const std::string& tag, const std::string& formatString, const Args &...args);
 	template<typename... Args>
-	static void Log(std::string tag, std::string formatString, const Args &...args);
+	static void Log(const std::string& tag, const std::string& formatString, const Args &...args);
 	template<typename... Args>
-	static void Debug(std::string tag, std::string formatString, const Args &...args);
+	static void Debug(const std::string& tag, const std::string& formatString, const Args &...args);
 	template<typename... Args>
-	static void Warn(std::string tag, std::string formatString, const Args &...args);
+	static void Warn(const std::string& tag, const std::string& formatString, const Args &...args);
 	template<typename... Args>
-	static void Error(std::string tag, std::string formatString, const Args &...args);
+	static void Error(const std::string& tag, const std::string& formatString, const Args &...args);
 };
 
 
-template <typename ... Args>
-void ::LogContext::Info(std::string tag, std::string formatString, const Args&... args)
+template <typename... Args>
+void ::LogContext::Info(const std::string& tag, const std::string& formatString, const Args&... args)
 {
 	auto logger = spdlog::get(tag);
 	if(!logger)
@@ -32,8 +32,8 @@ void ::LogContext::Info(std::string tag, std::string formatString, const Args&..
 	logger->info(formatString, args...);
 }
 
-template <typename ... Args>
-void ::LogContext::Log(std::string tag, std::string formatString, const Args&... args)
+template <typename... Args>
+void ::LogContext::Log(const std::string& tag, const std::string& formatString, const Args&... args)
 {
 	auto logger = spdlog::get(tag);
 	if (!logger)
@@ -43,8 +43,8 @@ void ::LogContext::Log(std::string tag, std::string formatString, const Args&...
 	logger->log(formatString, args...);
 }
 
-template <typename ... Args>
-void ::LogContext::Debug(std::string tag, std::string formatString, const Args&... args)
+template <typename... Args>
+void ::LogContext::Debug(const std::string& tag, const std::string& formatString, const Args&... args)
 {
 	auto logger = spdlog::get(tag);
 	if (!logger)
@@ -54,8 +54,8 @@ void ::LogContext::Debug(std::string tag, std::string formatString, const Args&.
 	logger->debug(formatString, args...);
 }
 
-template <typename ... Args>
-void ::LogContext::Warn(std::string tag, std::string formatString, const Args&... args)
+template <typename... Args>
+void ::LogContext::Warn(const std::string& tag, const std::string& formatString, const Args&... args)
 {
 	auto logger = spdlog::get(tag);
 	if (!logger)
@@ -65,8 +65,8 @@ void ::LogContext::Warn(std::string tag, std::string formatString, const Args&..
 	logger->warn(formatString, args...);
 }
 
-template <typename ... Args>
-void ::LogContext::Error(std::string tag, std::string formatString, const Args&... args)
+template <typename... Args>
+void ::LogContext::Error(const std::string& tag, const std::string& formatString, const Args&... args)
 {
 	auto logger = spdlog::get(tag);
 	if (!logger)
@@ -76,17 +76,17 @@ void ::LogContext::Error(std::string tag, std::string formatString, const Args&.
 	logger->error(formatString, args...);
 }
 
-#define RE_LOG_INFO(Tag, ...)	\
-	LogContext::Info(Tag, __VA_ARGS__);
+#define RE_LOG_INFO(Tag, formatString, ...)	\
+	LogContext::Info(Tag, formatString, __VA_ARGS__);
 
-#define RE_LOG_LOG(Tag, ...) \
-	LogContext::Log(Tag, __VA_ARGS__);
+#define RE_LOG_LOG(Tag, formatString, ...) \
+	LogContext::Log(Tag, formatString, __VA_ARGS__);
 
-#define RE_LOG_DEBUG(Tag, ...) \
+#define RE_LOG_DEBUG(Tag, formatString, ...) \
 	LogContext::Debug(Tag, __VA_ARGS__);
 
-#define RE_LOG_WARN(Tag, ...)	\
-	LogContext::Warn(Tag, __VA_ARGS__);
+#define RE_LOG_WARN(Tag, formatString, ...)	\
+	LogContext::Warn(Tag, formatString, __VA_ARGS__);
 
-#define RE_LOG_ERROR(Tag, ...) \
-	LogContext::Error(Tag, __VA_ARGS__);
+#define RE_LOG_ERROR(Tag, formatString, ...) \
+	LogContext::Error(Tag, formatString, __VA_ARGS__);
