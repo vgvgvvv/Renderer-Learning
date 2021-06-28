@@ -1,11 +1,9 @@
 #pragma once
 #include "Layer/Layer.h"
 
-class ImguiLayer : public Layer
+class RenderLayer : public Layer
 {
 public:
-	ImguiLayer() = default;
-	~ImguiLayer() = default;
 	void OnInit() override;
 	void OnBeforeRender() override;
 	void OnRender() override;

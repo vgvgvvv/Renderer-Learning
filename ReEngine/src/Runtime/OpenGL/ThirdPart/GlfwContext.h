@@ -32,6 +32,8 @@ public:
 
 	void ProcessEvent() const;
 
+	GLFWwindow* GetWindow() const;
+
 private:
 	GLFWwindow* window = nullptr;
 };

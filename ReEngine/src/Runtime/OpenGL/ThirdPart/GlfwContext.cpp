@@ -1,7 +1,10 @@
 #include "GlfwContext.h"
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+#include "Logging/Log.h"
 
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+static void glfw_error_callback(int error, const char* description);
 
 GlfwInitDesc::GlfwInitDesc()
 {
@@ -12,6 +15,7 @@ GlfwInitDesc::GlfwInitDesc()
 
 bool GlfwContext::Init(const GlfwInitDesc& desc)
 {
+    glfwSetErrorCallback(glfw_error_callback);
 	/* Initialize the library */
     if (!glfwInit())
     {
@@ -71,7 +75,18 @@ void GlfwContext::ProcessEvent() const
         glfwSetWindowShouldClose(window, true);
 }
 
+
+GLFWwindow* GlfwContext::GetWindow() const
+{
+    return window;
+}
+
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
+}
+
+static void glfw_error_callback(int error, const char* description)
+{
+	RE_LOG_ERROR("Glfw", "Glfw Error {0}: {1}\n", error, description)
 }

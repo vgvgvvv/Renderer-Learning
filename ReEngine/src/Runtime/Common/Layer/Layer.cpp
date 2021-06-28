@@ -44,6 +44,19 @@ void LayerManager::LateUpdate()
 	}
 }
 
+
+void LayerManager::BeforeRender()
+{
+	for (auto& layer : Layers)
+	{
+		if (!layer)
+		{
+			continue;
+		}
+		layer->OnBeforeRender();
+	}
+}
+
 void LayerManager::Render()
 {
 	for (auto& layer : Layers)

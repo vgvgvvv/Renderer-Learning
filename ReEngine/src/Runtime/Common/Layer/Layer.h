@@ -11,6 +11,7 @@ public:
 	virtual void OnPreUpdate(){}
 	virtual void OnUpdate(){}
 	virtual void OnLateUpdate(){}
+	virtual void OnBeforeRender() {}
 	virtual void OnRender(){};
 	virtual void OnAfterRender(){};
 	virtual void OnShutDown() = 0;
@@ -25,6 +26,7 @@ public:
 	void PreUpdate();
 	void Update();
 	void LateUpdate();
+	void BeforeRender();
 	void Render();
 	void AfterRender();
 	
