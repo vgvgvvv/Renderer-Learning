@@ -60,11 +60,23 @@ bool DotNetLibManager::LoadAssembly(const string_t& configPath, DotNetAssembly* 
     return true;
 }
 
+bool DotNetAssembly::GetFunctionPointer(const string_t& DotNetLibPath, const string_t& DotNetTypeName,
+    const string_t& DotNetMethodName, EntryPointFunc Result)
+{
+    int rc = load_assembly_and_get_function_pointer(
+        DotNetLibPath.c_str(),
+        DotNetTypeName.c_str(),
+        DotNetMethodName.c_str(), /*method_name*/
+        nullptr, /*delegate_type_name*/
+        nullptr,
+        (void**)(&Result));
+    RE_ASSERT_MSG(rc == 0 && Result != nullptr, "Failure: load_assembly_and_get_function_pointer()");
+    return rc == 0 && Result != nullptr;
+}
+
 //------------------------------------------------
 // Private Methods
 //------------------------------------------------
-
-
 
 load_assembly_and_get_function_pointer_fn DotNetLibManager::GetDotNetLoadAssemblyFunc(const char_t* config_path)
 {
@@ -113,3 +125,5 @@ bool DotNetLibManager::LoadHostfxr()
 
     return (init_fptr && get_delegate_fptr && close_fptr);
 }
+
+
