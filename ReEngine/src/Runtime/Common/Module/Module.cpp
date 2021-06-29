@@ -1,17 +1,20 @@
 #include "Module.h"
 
+#if PLATFORM_WINDOWS
+#include <Windows.h>
+#endif
 
-#if defined(_WIN32)
+#if defined(PLATFORM_WINDOWS)
 void* CommonLib::LoadModuleLibrary(const char_t* path)
 {
-    HMODULE h = ::LoadLibraryW(path);
-    assert(h != nullptr);
+    HMODULE h = LoadLibraryW(path);
+    RE_ASSERT(h != nullptr);
     return (void*)h;
 }
 void* CommonLib::GetModuleExport(void* h, const char* name)
 {
-    void* f = ::GetProcAddress((HMODULE)h, name);
-    assert(f != nullptr);
+    void* f = GetProcAddress((HMODULE)h, name);
+    RE_ASSERT(f != nullptr);
     return f;
 }
 #else

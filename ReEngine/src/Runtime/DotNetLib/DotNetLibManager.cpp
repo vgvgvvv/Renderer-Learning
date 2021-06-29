@@ -12,7 +12,7 @@
 // Provided by the AppHost NuGet package and installed as an SDK pack
 #include <nethost.h>
 
-#ifdef WINDOWS
+#ifdef PLATFORM_WINDOWS
 #include <Windows.h>
 
 #define STR(s) L ## s
@@ -31,6 +31,39 @@
 #endif
 
 #include "Module/Module.h"
+#include "Common.h"
+
+//------------------------------------------------
+// Public Methods
+//------------------------------------------------
+
+void DotNetLibManager::Init()
+{
+    RE_ASSERT_MSG(LoadHostfxr(), "Cannot Load Hostfxr lib");
+}
+
+void DotNetLibManager::Uninit()
+{
+	
+}
+
+bool DotNetLibManager::LoadAssembly(const string_t& configPath, DotNetAssembly* Assembly)
+{
+    load_assembly_and_get_function_pointer_fn load_assembly_and_get_function_pointer = nullptr;
+    load_assembly_and_get_function_pointer = GetDotNetLoadAssemblyFunc(configPath.c_str());
+	if(!load_assembly_and_get_function_pointer)
+	{
+        RE_ASSERT_MSG(load_assembly_and_get_function_pointer != nullptr, "Failure: get_dotnet_load_assembly()");
+		return false;
+	}
+    Assembly->load_assembly_and_get_function_pointer = load_assembly_and_get_function_pointer;
+    return true;
+}
+
+//------------------------------------------------
+// Private Methods
+//------------------------------------------------
+
 
 
 load_assembly_and_get_function_pointer_fn DotNetLibManager::GetDotNetLoadAssemblyFunc(const char_t* config_path)

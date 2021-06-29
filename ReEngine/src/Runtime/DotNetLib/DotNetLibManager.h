@@ -2,10 +2,17 @@
 
 #include "coreclr_delegates.h"
 #include "hostfxr.h"
+#include "Common.h"
+
+class DotNetAssembly;
 
 class DotNetLibManager
 {
 public:
+	void Init();
+	void Uninit();
+
+	bool LoadAssembly(const string_t& configPath, DotNetAssembly* Assembly);
 
 private:
 	// <SnippetInitialize>
@@ -21,3 +28,16 @@ private:
 	hostfxr_close_fn close_fptr;
 
 };
+
+class DotNetAssembly
+{
+	friend DotNetLibManager;
+public:
+
+	template<typename EntryPointFuncType>
+	int GetFunctionPointer();
+	
+private:
+	load_assembly_and_get_function_pointer_fn load_assembly_and_get_function_pointer = nullptr;
+};
+
