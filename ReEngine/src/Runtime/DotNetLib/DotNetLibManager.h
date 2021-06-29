@@ -47,7 +47,7 @@ public:
 	bool GetFunctionPointer(const string_t& DotNetLibPath,
 		const string_t& DotNetTypeName,
 		const string_t& DotNetMethodName,
-		EntryPointFunc Result);
+		EntryPointFunc Result) const;
 	
 private:
 	load_assembly_and_get_function_pointer_fn load_assembly_and_get_function_pointer = nullptr;

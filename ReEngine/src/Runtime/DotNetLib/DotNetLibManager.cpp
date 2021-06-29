@@ -61,7 +61,7 @@ bool DotNetLibManager::LoadAssembly(const string_t& configPath, DotNetAssembly* 
 }
 
 bool DotNetAssembly::GetFunctionPointer(const string_t& DotNetLibPath, const string_t& DotNetTypeName,
-    const string_t& DotNetMethodName, EntryPointFunc Result)
+    const string_t& DotNetMethodName, EntryPointFunc Result) const
 {
     int rc = load_assembly_and_get_function_pointer(
         DotNetLibPath.c_str(),
