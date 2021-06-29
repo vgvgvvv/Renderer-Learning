@@ -35,7 +35,7 @@
 
 #endif
 
-using string_t = std::basic_string<char_t>;
+using T_String = std::basic_string<char_t>;
 
 namespace
 {
@@ -66,9 +66,9 @@ int main(int argc, char *argv[])
     assert(resolved != nullptr);
 #endif
 
-    string_t root_path = host_path;
+    T_String root_path = host_path;
     auto pos = root_path.find_last_of(DIR_SEPARATOR);
-    assert(pos != string_t::npos);
+    assert(pos != T_String::npos);
     root_path = root_path.substr(0, pos + 1);
 
     //
@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
     //
     // STEP 2: Initialize and start the .NET Core runtime
     //
-    const string_t config_path = root_path + STR("DotNetLib.runtimeconfig.json");
+    const T_String config_path = root_path + STR("DotNetLib.runtimeconfig.json");
     load_assembly_and_get_function_pointer_fn load_assembly_and_get_function_pointer = nullptr;
     load_assembly_and_get_function_pointer = get_dotnet_load_assembly(config_path.c_str());
     assert(load_assembly_and_get_function_pointer != nullptr && "Failure: get_dotnet_load_assembly()");
@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
     //
     // STEP 3: Load managed assembly and get function pointer to a managed method
     //
-    const string_t dotnetlib_path = root_path + STR("DotNetLib.dll");
+    const T_String dotnetlib_path = root_path + STR("DotNetLib.dll");
     const char_t *dotnet_type = STR("DotNetLib.Lib, DotNetLib");
     const char_t *dotnet_type_method = STR("Hello");
     // <SnippetLoadAndGet>
