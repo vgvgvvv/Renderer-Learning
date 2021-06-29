@@ -1,0 +1,8 @@
+
+ReMake_AddTarget(
+	TARGET_NAME DotNetLib
+	MODE STATIC
+	DEFINE_PRIVATE WINDOWS
+	LIB CommonLib
+	LIB_PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/ThirdPart/win-x64/nethost.lib"
+)
