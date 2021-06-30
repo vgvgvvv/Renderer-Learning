@@ -7,4 +7,8 @@
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
   </PropertyGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy $(TargetDir)$(TargetFileName) $(SolutionDir)..\..\binary\dotnet\$(TargetFileName)&#xD;&#xA;copy $(TargetDir)$(TargetName).runtimeconfig.json $(SolutionDir)..\..\binary\dotnet\$(TargetName).runtimeconfig.json&#xD;&#xA;copy $(TargetDir)$(TargetName).pdb $(SolutionDir)..\..\binary\dotnet\$(TargetName).pdb" />
+  </Target>
+
 </Project>

@@ -23,6 +23,13 @@ ReMake_UpdateSubModule()
 
 ReMake_InitProject()
 
+set(RENGINE_DOTNET_DIR "${CMAKE_CURRENT_LIST_DIR}/dotnet")
+set(RENGINE_CONFIG_DIR "${CMAKE_CURRENT_LIST_DIR}/config")
+set(RENGINE_BINARY_DIR "${CMAKE_CURRENT_LIST_DIR}/binary")
+set(RENGINE_DOTNET_BINARY_DIR "${CMAKE_CURRENT_LIST_DIR}/binary/dotnet")
+set(RENGINE_EXTERNAL_DIR "${CMAKE_CURRENT_LIST_DIR}/external")
+
+
 ReMake_AddSubDirsRec(external)
 ReMake_AddSubDirsRec(src)
 

@@ -12,6 +12,7 @@ public:
 	virtual void OnUpdate(float deltaTime){}
 	virtual void OnLateUpdate(float deltaTime){}
 	virtual void OnBeforeRender(float deltaTime) {}
+	virtual void OnGUI(float deltaTime) {}
 	virtual void OnRender(float deltaTime){};
 	virtual void OnAfterRender(float deltaTime){};
 	virtual void OnShutDown() = 0;
@@ -27,6 +28,7 @@ public:
 	void Update(float deltaTime);
 	void LateUpdate(float deltaTime);
 	void BeforeRender(float deltaTime);
+	void OnGUI(float deltaTime);
 	void Render(float deltaTime);
 	void AfterRender(float deltaTime);
 	

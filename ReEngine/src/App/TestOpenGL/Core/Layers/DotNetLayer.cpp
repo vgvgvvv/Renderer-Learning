@@ -74,6 +74,14 @@ void DotNetLayer::OnInit()
 	assembly.GetFunctionPointer(
 		dllPath,
 		entryClassName,
+		CommonLib::StringToWString("OnGUI"),
+		&OnGUIFuncPtr);
+
+	RE_ASSERT(OnBeforeRenderFuncPtr != nullptr);
+
+	assembly.GetFunctionPointer(
+		dllPath,
+		entryClassName,
 		CommonLib::StringToWString("OnRender"),
 		&OnRenderFuncPtr);
 
@@ -117,6 +125,11 @@ void DotNetLayer::OnLateUpdate(float deltaTime)
 void DotNetLayer::OnBeforeRender(float deltaTime)
 {
 	OnBeforeRenderFuncPtr(&deltaTime, sizeof(float));
+}
+
+void DotNetLayer::OnGUI(float deltaTime)
+{
+	OnGUIFuncPtr(&deltaTime, sizeof(float));
 }
 
 void DotNetLayer::OnRender(float deltaTime)

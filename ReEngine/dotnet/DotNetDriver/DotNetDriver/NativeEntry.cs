@@ -36,6 +36,12 @@ namespace DotNetDriver
             return 0;
         }
 
+        public static int OnGUI(IntPtr arg, int argLength)
+        {
+            Console.WriteLine("OnGUI");
+            return 0;
+        }
+
         public static int OnRender(IntPtr arg, int argLength)
         {
             Console.WriteLine("OnRender");

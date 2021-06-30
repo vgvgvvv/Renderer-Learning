@@ -57,6 +57,18 @@ void LayerManager::BeforeRender(float deltaTime)
 	}
 }
 
+void LayerManager::OnGUI(float deltaTime)
+{
+	for (auto& layer : Layers)
+	{
+		if (!layer)
+		{
+			continue;
+		}
+		layer->OnGUI(deltaTime);
+	}
+}
+
 void LayerManager::Render(float deltaTime)
 {
 	for (auto& layer : Layers)
