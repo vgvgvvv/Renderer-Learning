@@ -8,7 +8,7 @@ void LayerManager::PushLayer(Layer* layer)
 	Layers.push_back(layer);
 }
 
-void LayerManager::PreUpdate()
+void LayerManager::PreUpdate(float deltaTime)
 {
 	for (auto& layer : Layers)
 	{
@@ -16,11 +16,11 @@ void LayerManager::PreUpdate()
 		{
 			continue;
 		}
-		layer->OnPreUpdate();
+		layer->OnPreUpdate(deltaTime);
 	}
 }
 
-void LayerManager::Update()
+void LayerManager::Update(float deltaTime)
 {
 	for(auto& layer : Layers)
 	{
@@ -28,11 +28,11 @@ void LayerManager::Update()
 		{
 			continue;
 		}
-		layer->OnUpdate();
+		layer->OnUpdate(deltaTime);
 	}
 }
 
-void LayerManager::LateUpdate()
+void LayerManager::LateUpdate(float deltaTime)
 {
 	for (auto& layer : Layers)
 	{
@@ -40,12 +40,12 @@ void LayerManager::LateUpdate()
 		{
 			continue;
 		}
-		layer->OnLateUpdate();
+		layer->OnLateUpdate(deltaTime);
 	}
 }
 
 
-void LayerManager::BeforeRender()
+void LayerManager::BeforeRender(float deltaTime)
 {
 	for (auto& layer : Layers)
 	{
@@ -53,11 +53,11 @@ void LayerManager::BeforeRender()
 		{
 			continue;
 		}
-		layer->OnBeforeRender();
+		layer->OnBeforeRender(deltaTime);
 	}
 }
 
-void LayerManager::Render()
+void LayerManager::Render(float deltaTime)
 {
 	for (auto& layer : Layers)
 	{
@@ -65,11 +65,11 @@ void LayerManager::Render()
 		{
 			continue;
 		}
-		layer->OnRender();
+		layer->OnRender(deltaTime);
 	}
 }
 
-void LayerManager::AfterRender()
+void LayerManager::AfterRender(float deltaTime)
 {
 	for (auto& layer : Layers)
 	{
@@ -77,7 +77,7 @@ void LayerManager::AfterRender()
 		{
 			continue;
 		}
-		layer->OnAfterRender();
+		layer->OnAfterRender(deltaTime);
 	}
 }
 

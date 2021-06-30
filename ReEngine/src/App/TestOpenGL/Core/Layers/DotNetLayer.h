@@ -7,15 +7,24 @@ class DotNetLayer : public Layer
 public:
 
 	void OnInit() override;
-	void OnPreUpdate() override;
-	void OnUpdate() override;
-	void OnLateUpdate() override;
-	void OnBeforeRender() override;
-	void OnRender() override;
-	void OnAfterRender() override;
+	void OnPreUpdate(float deltaTime) override;
+	void OnUpdate(float deltaTime) override;
+	void OnLateUpdate(float deltaTime) override;
+	void OnBeforeRender(float deltaTime) override;
+	void OnRender(float deltaTime) override;
+	void OnAfterRender(float deltaTime) override;
 	void OnShutDown() override;
 
 private:
 	DotNetLibManager Manager;
-	std::unordered_map<std::string, DotNetAssembly*> assemblies;
+
+	DotNetAssembly::EntryPointFunc OnInitFuncPtr = nullptr;
+	DotNetAssembly::EntryPointFunc OnPreUpdateFuncPtr = nullptr;
+	DotNetAssembly::EntryPointFunc OnUpdateFuncPtr = nullptr;
+	DotNetAssembly::EntryPointFunc OnLateUpdateFuncPtr = nullptr;
+	DotNetAssembly::EntryPointFunc OnBeforeRenderFuncPtr = nullptr;
+	DotNetAssembly::EntryPointFunc OnRenderFuncPtr = nullptr;
+	DotNetAssembly::EntryPointFunc OnAfterRenderFuncPtr = nullptr;
+	DotNetAssembly::EntryPointFunc OnShutDownFuncPtr = nullptr;
+	
 };

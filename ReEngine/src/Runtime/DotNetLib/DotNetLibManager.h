@@ -40,14 +40,14 @@ public:
 		const std::wstring& DotNetTypeName,
 		const std::wstring& DotNetMethodName,
 		const std::wstring& DotNetDelegateTypeName,
-		EntryPointFuncType Result);
+		EntryPointFuncType* Result);
 
 	typedef component_entry_point_fn EntryPointFunc;
 	
 	bool GetFunctionPointer(const std::wstring& DotNetLibPath,
 		const std::wstring& DotNetTypeName,
 		const std::wstring& DotNetMethodName,
-		EntryPointFunc Result) const;
+		EntryPointFunc* Result) const;
 	
 private:
 	load_assembly_and_get_function_pointer_fn load_assembly_and_get_function_pointer = nullptr;
@@ -59,7 +59,7 @@ bool DotNetAssembly::GetCustomFunctionPointer(
 	const std::wstring& DotNetTypeName,
 	const std::wstring& DotNetMethodName,
 	const std::wstring& DotNetDelegateTypeName,
- 	EntryPointFuncType Result)
+ 	EntryPointFuncType* Result)
 {
 	int rc = load_assembly_and_get_function_pointer(
 		DotNetLibPath.c_str(),
@@ -67,8 +67,8 @@ bool DotNetAssembly::GetCustomFunctionPointer(
 		DotNetMethodName.c_str(), /*method_name*/
 		DotNetDelegateTypeName.c_str(), /*delegate_type_name*/
 		nullptr,
-		(void**)(&Result));
-	RE_ASSERT_MSG(rc == 0 && Result != nullptr, "Failure: load_assembly_and_get_function_pointer()");
-	return rc == 0 && Result != nullptr;
+		(void**)(Result));
+	RE_ASSERT_MSG(rc == 0 && *Result != nullptr, "Failure: load_assembly_and_get_function_pointer()");
+	return rc == 0 && *Result != nullptr;
 }
 

@@ -7,8 +7,8 @@ public:
 	ImguiLayer() = default;
 	~ImguiLayer() = default;
 	void OnInit() override;
-	void OnBeforeRender() override;
-	void OnRender() override;
-	void OnAfterRender() override;
+	void OnBeforeRender(float deltaTime) override;
+	void OnRender(float deltaTime) override;
+	void OnAfterRender(float deltaTime) override;
 	void OnShutDown() override;
 };

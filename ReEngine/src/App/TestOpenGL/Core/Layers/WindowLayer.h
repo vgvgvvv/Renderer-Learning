@@ -8,6 +8,6 @@ public:
 	WindowLayer() = default;
 	~WindowLayer() = default;
 	void OnInit() override;
-	void OnAfterRender() override;
+	void OnAfterRender(float deltaTime) override;
 	void OnShutDown() override;
 };

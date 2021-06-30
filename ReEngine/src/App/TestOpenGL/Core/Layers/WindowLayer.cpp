@@ -9,7 +9,7 @@ void WindowLayer::OnInit()
 }
 
 
-void WindowLayer::OnAfterRender()
+void WindowLayer::OnAfterRender(float deltaTime)
 {
 	static auto& glfw = GlfwContext::Get();
 	glfw.SwapBuffer();

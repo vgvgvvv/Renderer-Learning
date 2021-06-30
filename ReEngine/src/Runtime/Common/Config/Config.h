@@ -6,6 +6,6 @@
 class Config
 {
 public:
-	static inifile::IniFile LoadConfig(const std::string& config);
-	static inifile::IniFile LoadConfigByName(const std::string& name);
+	static bool LoadConfig(const std::string& config, inifile::IniFile* iniFile);
+	static bool LoadConfigByName(const std::string& name, inifile::IniFile* iniFile);
 };

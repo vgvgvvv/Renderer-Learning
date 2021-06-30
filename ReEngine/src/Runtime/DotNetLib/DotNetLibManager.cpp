@@ -60,8 +60,8 @@ bool DotNetLibManager::LoadAssembly(const std::wstring& configPath, DotNetAssemb
     return true;
 }
 
-bool DotNetAssembly::GetFunctionPointer(const std::wstring& DotNetLibPath, const T_String& DotNetTypeName,
-    const T_String& DotNetMethodName, EntryPointFunc Result) const
+bool DotNetAssembly::GetFunctionPointer(const std::wstring& DotNetLibPath, const std::wstring& DotNetTypeName,
+    const std::wstring& DotNetMethodName, EntryPointFunc* Result) const
 {
     int rc = load_assembly_and_get_function_pointer(
         DotNetLibPath.c_str(),
@@ -69,9 +69,9 @@ bool DotNetAssembly::GetFunctionPointer(const std::wstring& DotNetLibPath, const
         DotNetMethodName.c_str(), /*method_name*/
         nullptr, /*delegate_type_name*/
         nullptr,
-        (void**)(&Result));
-    RE_ASSERT_MSG(rc == 0 && Result != nullptr, "Failure: load_assembly_and_get_function_pointer()");
-    return rc == 0 && Result != nullptr;
+        (void**)(Result));
+    RE_ASSERT_MSG(rc == 0 && *Result != nullptr, "Failure: load_assembly_and_get_function_pointer()");
+    return rc == 0 && *Result != nullptr;
 }
 
 //------------------------------------------------

@@ -5,17 +5,17 @@ void RenderLayer::OnInit()
 {
 }
 
-void RenderLayer::OnBeforeRender()
+void RenderLayer::OnBeforeRender(float deltaTime)
 {
 	// glClearColor(clear_color.x * clear_color.w, clear_color.y * clear_color.w, clear_color.z * clear_color.w, clear_color.w);
 	glClear(GL_COLOR_BUFFER_BIT);
 }
 
-void RenderLayer::OnRender()
+void RenderLayer::OnRender(float deltaTime)
 {
 }
 
-void RenderLayer::OnAfterRender()
+void RenderLayer::OnAfterRender(float deltaTime)
 {
 }
 

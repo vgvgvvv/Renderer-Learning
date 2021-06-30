@@ -49,7 +49,7 @@ void ImguiLayer::OnInit()
 }
 
 
-void ImguiLayer::OnBeforeRender()
+void ImguiLayer::OnBeforeRender(float deltaTime)
 {
     // Start the Dear ImGui frame
     ImGui_ImplOpenGL3_NewFrame();
@@ -59,7 +59,7 @@ void ImguiLayer::OnBeforeRender()
 
 }
 
-void ImguiLayer::OnRender()
+void ImguiLayer::OnRender(float deltaTime)
 {
     // Rendering
     ImGui::Render();
@@ -69,7 +69,7 @@ void ImguiLayer::OnRender()
 }
 
 
-void ImguiLayer::OnAfterRender()
+void ImguiLayer::OnAfterRender(float deltaTime)
 {
     ImGuiIO& io = ImGui::GetIO(); (void)io;
     // Update and Render additional Platform Windows
