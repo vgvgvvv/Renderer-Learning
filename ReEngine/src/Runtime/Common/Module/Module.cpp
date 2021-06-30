@@ -5,7 +5,7 @@
 #endif
 
 #if defined(PLATFORM_WINDOWS)
-void* CommonLib::LoadModuleLibrary(const char_t* path)
+void* CommonLib::LoadModuleLibrary(const T_CHAR* path)
 {
     HMODULE h = LoadLibraryW(path);
     RE_ASSERT(h != nullptr);
@@ -18,7 +18,7 @@ void* CommonLib::GetModuleExport(void* h, const char* name)
     return f;
 }
 #else
-void* CommonLib::LoadModuleLibrary(const char_t* path)
+void* CommonLib::LoadModuleLibrary(const T_CHAR* path)
 {
     void* h = dlopen(path, RTLD_LAZY | RTLD_LOCAL);
     assert(h != nullptr);

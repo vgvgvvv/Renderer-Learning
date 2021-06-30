@@ -22,3 +22,20 @@ std::string Path::GetCurrentExeDirectory()
 	std::string f = GetCurrentExeFilePath();
 	return f.substr(0, f.find_last_of("\\/"));
 }
+
+std::string Path::Combine(const std::string& p1, const std::string& p2)
+{
+    char sep = '/';
+    std::string tmp = p1;
+
+#ifdef PLATFORM_WINDOWS
+    sep = '\\';
+#endif
+
+    if (p1[p1.length()-1] != sep) { // Need to add a
+        tmp += sep;                // path separator
+        return(tmp + p2);
+    }
+    else
+        return(p1 + p2);
+}

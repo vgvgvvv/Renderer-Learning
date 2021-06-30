@@ -2,6 +2,7 @@
 
 void DotNetLayer::OnInit()
 {
+	Manager.Init();
 }
 
 void DotNetLayer::OnPreUpdate()
@@ -30,4 +31,5 @@ void DotNetLayer::OnAfterRender()
 
 void DotNetLayer::OnShutDown()
 {
+	Manager.Uninit();
 }

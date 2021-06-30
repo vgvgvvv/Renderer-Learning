@@ -1,9 +1,8 @@
 #include <iostream>
 #include "Misc/Path.h"
 
-using namespace std;
 int main()
 {
-	cout << Path::GetCurrentExeFilePath() << endl;
+	std::cout << Path::Combine("hahah/asd/", "qqqq") << std::endl;
 	return 0;
 }

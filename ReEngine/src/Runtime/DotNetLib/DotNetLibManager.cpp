@@ -86,7 +86,7 @@ load_assembly_and_get_function_pointer_fn DotNetLibManager::GetDotNetLoadAssembl
     int rc = init_fptr(config_path, nullptr, &cxt);
     if (rc != 0 || cxt == nullptr)
     {
-        RE_LOG_ERROR("DotNet", "Init failed:{0} {1} {2}", std::hex, std::showbase, rc);
+        RE_LOG_ERROR("DotNet", "Init failed:{0:#x}", rc);
         close_fptr(cxt);
         return nullptr;
     }
@@ -98,7 +98,7 @@ load_assembly_and_get_function_pointer_fn DotNetLibManager::GetDotNetLoadAssembl
         &load_assembly_and_get_function_pointer);
     if (rc != 0 || load_assembly_and_get_function_pointer == nullptr)
     {
-        RE_LOG_ERROR("DotNet", "Get delegate failed:{0} {1} {2}", std::hex, std::showbase, rc);
+        RE_LOG_ERROR("DotNet", "Get delegate failed:{0:#x}", rc);
     }
 
     close_fptr(cxt);
