@@ -1,5 +1,5 @@
 #include "Path.h"
-
+#include "Misc/StringEx.h"
 
 #if PLATFORM_WINDOWS
 #include <windows.h>
@@ -30,12 +30,49 @@ std::string Path::Combine(const std::string& p1, const std::string& p2)
 
 #ifdef PLATFORM_WINDOWS
     sep = '\\';
+    CommonLib::ReplaceAll(tmp, "/", "\\");
 #endif
+	
 
-    if (p1[p1.length()-1] != sep) { // Need to add a
+    if (tmp[tmp.length()-1] != sep) { // Need to add a
         tmp += sep;                // path separator
         return(tmp + p2);
     }
     else
         return(p1 + p2);
+}
+
+std::string Path::GetEngineRootPath()
+{
+    return Combine(GetCurrentExeDirectory(), "../..");
+}
+
+std::string Path::GetBinaryPath()
+{
+    return Combine(GetEngineRootPath(), "binary");
+}
+
+std::string Path::GetExternalPath()
+{
+    return Combine(GetEngineRootPath(), "external");
+}
+
+std::string Path::GetDotnetSourcePath()
+{
+    return Combine(GetEngineRootPath(), "dotnet");
+}
+
+std::string Path::GetSourcePath()
+{
+    return Combine(GetEngineRootPath(), "src");
+}
+
+std::string Path::GetConfigPath()
+{
+    return Combine(GetEngineRootPath(), "config");
+}
+
+std::string Path::GetDotNetBinaryPath()
+{
+    return Path::Combine(GetBinaryPath(), "dotnet");
 }

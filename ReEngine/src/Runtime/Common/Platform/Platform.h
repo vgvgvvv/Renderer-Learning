@@ -58,6 +58,7 @@ typedef FPlatformTypes::TYPE_OF_NULLPTR	TYPE_OF_NULLPTR;
 
 using T_String = std::basic_string<T_CHAR>;
 
+
 //------------------------------------------------------------------
 // Test the global types
 //------------------------------------------------------------------

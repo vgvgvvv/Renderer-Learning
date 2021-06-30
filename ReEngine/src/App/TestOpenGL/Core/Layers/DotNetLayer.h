@@ -17,4 +17,5 @@ public:
 
 private:
 	DotNetLibManager Manager;
+	std::unordered_map<std::string, DotNetAssembly*> assemblies;
 };

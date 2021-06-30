@@ -12,7 +12,7 @@ public:
 	void Init();
 	void Uninit();
 
-	bool LoadAssembly(const T_String& configPath, DotNetAssembly* Assembly);
+	bool LoadAssembly(const std::wstring& configPath, DotNetAssembly* Assembly);
 
 private:
 	// <SnippetInitialize>
@@ -36,17 +36,17 @@ public:
 
 	template<typename EntryPointFuncType>
 	bool GetCustomFunctionPointer(
-		const T_String& DotNetLibPath, 
-		const T_String& DotNetTypeName,
-		const T_String& DotNetMethodName,
-		const T_String& DotNetDelegateTypeName, 
+		const std::wstring& DotNetLibPath,
+		const std::wstring& DotNetTypeName,
+		const std::wstring& DotNetMethodName,
+		const std::wstring& DotNetDelegateTypeName,
 		EntryPointFuncType Result);
 
 	typedef component_entry_point_fn EntryPointFunc;
 	
-	bool GetFunctionPointer(const T_String& DotNetLibPath,
-		const T_String& DotNetTypeName,
-		const T_String& DotNetMethodName,
+	bool GetFunctionPointer(const std::wstring& DotNetLibPath,
+		const std::wstring& DotNetTypeName,
+		const std::wstring& DotNetMethodName,
 		EntryPointFunc Result) const;
 	
 private:
@@ -55,10 +55,10 @@ private:
 
 template <typename EntryPointFuncType>
 bool DotNetAssembly::GetCustomFunctionPointer(
-	const T_String& DotNetLibPath, 
-	const T_String& DotNetTypeName, 
-	const T_String& DotNetMethodName,
-	const T_String& DotNetDelegateTypeName,
+	const std::wstring& DotNetLibPath,
+	const std::wstring& DotNetTypeName,
+	const std::wstring& DotNetMethodName,
+	const std::wstring& DotNetDelegateTypeName,
  	EntryPointFuncType Result)
 {
 	int rc = load_assembly_and_get_function_pointer(

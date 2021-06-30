@@ -11,3 +11,4 @@ ReMake_AddTarget(
 UseFmt(${TargetName})
 UseSpdlog(${TargetName})
 UseTinyDir(${TargetName})
+UseIniFile(${TargetName})

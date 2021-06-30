@@ -10,4 +10,4 @@ ReMake_AddTarget(
 )
 
 UseImGUIWithDock(${targetName} Glfw)
-
+UseIniFile(${targetName})

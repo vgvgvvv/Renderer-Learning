@@ -47,7 +47,7 @@ void DotNetLibManager::Uninit()
 	
 }
 
-bool DotNetLibManager::LoadAssembly(const T_String& configPath, DotNetAssembly* Assembly)
+bool DotNetLibManager::LoadAssembly(const std::wstring& configPath, DotNetAssembly* Assembly)
 {
     load_assembly_and_get_function_pointer_fn load_assembly_and_get_function_pointer = nullptr;
     load_assembly_and_get_function_pointer = GetDotNetLoadAssemblyFunc(configPath.c_str());
@@ -60,7 +60,7 @@ bool DotNetLibManager::LoadAssembly(const T_String& configPath, DotNetAssembly* 
     return true;
 }
 
-bool DotNetAssembly::GetFunctionPointer(const T_String& DotNetLibPath, const T_String& DotNetTypeName,
+bool DotNetAssembly::GetFunctionPointer(const std::wstring& DotNetLibPath, const T_String& DotNetTypeName,
     const T_String& DotNetMethodName, EntryPointFunc Result) const
 {
     int rc = load_assembly_and_get_function_pointer(
