@@ -49,6 +49,7 @@ int Application::Run()
 		LayerManager.Update(deltaTime);
 		LayerManager.LateUpdate(deltaTime);
 		LayerManager.BeforeRender(deltaTime);
+		LayerManager.OnGUI(deltaTime);
 		LayerManager.Render(deltaTime);
 		LayerManager.AfterRender(deltaTime);
 	}

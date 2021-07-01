@@ -52,6 +52,16 @@ std::string Path::GetBinaryPath()
     return Combine(GetEngineRootPath(), "binary");
 }
 
+std::string Path::GetBinaryBinPath()
+{
+    return Combine(GetEngineRootPath(), "binary/bin");
+}
+
+std::string Path::GetBinaryLibPath()
+{
+    return Combine(GetEngineRootPath(), "binary/lib");
+}
+
 std::string Path::GetExternalPath()
 {
     return Combine(GetEngineRootPath(), "external");

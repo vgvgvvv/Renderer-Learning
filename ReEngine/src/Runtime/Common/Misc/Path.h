@@ -11,6 +11,8 @@ public:
 
 	static std::string GetEngineRootPath();
 	static std::string GetBinaryPath();
+	static std::string GetBinaryBinPath();
+	static std::string GetBinaryLibPath();
 	static std::string GetExternalPath();
 	static std::string GetDotnetSourcePath();
 	static std::string GetSourcePath();
