@@ -1,10 +1,21 @@
 #include "WindowLayer.h"
+
+#include "Common.h"
+#include "Config/Config.h"
 #include "OpenGL.h"
 
 void WindowLayer::OnInit()
 {
 	GlfwInitDesc glfwDesc;
+	
+	inifile::IniFile baseSettingIni;
+	RE_ASSERT(Config::LoadConfigByName("BaseSetting", &baseSettingIni));
+	baseSettingIni.GetIntValue("Window", "Height", &glfwDesc.Height);
+	baseSettingIni.GetIntValue("Window", "Width", &glfwDesc.Width);
+	baseSettingIni.GetStringValue("Window", "Title", &glfwDesc.Title);
+	
 	GlfwContext::Get().Init(glfwDesc);
+
 	GladContext::Get().Init();
 }
 
