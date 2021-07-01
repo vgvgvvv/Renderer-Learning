@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
@@ -6,6 +6,15 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CppSharp" Version="0.11.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="copy $(TargetDir)$(TargetFileName) $(SolutionDir)..\..\binary\dotnet\$(TargetFileName)&#xD;&#xA;copy $(TargetDir)$(TargetName).runtimeconfig.json $(SolutionDir)..\..\binary\dotnet\$(TargetName).runtimeconfig.json&#xD;&#xA;copy $(TargetDir)$(TargetName).pdb $(SolutionDir)..\..\binary\dotnet\$(TargetName).pdb" />
