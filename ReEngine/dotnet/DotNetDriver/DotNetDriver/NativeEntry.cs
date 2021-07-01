@@ -37,7 +37,10 @@ namespace DotNetDriver
         public static int OnGUI(IntPtr arg, int argLength)
         {
             bool open = true;
-            imgui.ShowDemoWindow(ref open);
+            // imgui.ShowDemoWindow(ref open);
+            imgui.Begin("haha", ref open, 0);
+            imgui.Text("hahah");
+            imgui.End();
             return 0;
         }
 
