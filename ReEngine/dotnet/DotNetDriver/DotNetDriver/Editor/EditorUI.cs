@@ -13,8 +13,8 @@ namespace DotNetDriver.Editor
         {
             BeginDockSpace();
 
-
-
+            bool open = true;
+            imgui.ShowDemoWindow(ref open);
 
 
             EndDockSpace();
