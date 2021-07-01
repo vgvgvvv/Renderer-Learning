@@ -1,8 +1,8 @@
 #pragma once
 #include "Layer/Layer.h"
+#include "TestOpenGL_API.h"
 
-
-class Application
+class TestOpenGL_API Application
 {
 public:
 	int Run();

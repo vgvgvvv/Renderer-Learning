@@ -5,7 +5,6 @@ set(targetName TestApp)
 ReMake_AddTarget(
 	TARGET_NAME ${targetName}
 	MODE "EXE"
-	LIB CommonLib
+	LIB CommonLib TestOpenGL
 )
 
-UseIniFile(${targetName})
