@@ -1,4 +1,5 @@
-﻿using CppSharp;
+﻿using System.Collections.Generic;
+using CppSharp;
 using CppSharp.AST;
 using CppSharp.Generators;
 
@@ -7,7 +8,7 @@ namespace DotNetExporter
     public class TestDllLibrary : ILibrary
     {
         
-        public override void Setup(Driver driver)
+        public void Setup(Driver driver)
         {
             var option = driver.Options;
             option.GeneratorKind = GeneratorKind.CSharp;
@@ -26,16 +27,22 @@ namespace DotNetExporter
             });
         }
 
-        public override void SetupPasses(Driver driver)
+        public void SetupPasses(Driver driver)
         {
             
         }
-        public override void Preprocess(Driver driver, ASTContext ctx)
+
+        public void GenerateCode(Driver driver, List<GeneratorOutput> outputs)
+        {
+            
+        }
+
+        public void Preprocess(Driver driver, ASTContext ctx)
         {
            
         }
 
-        public override void Postprocess(Driver driver, ASTContext ctx)
+        public void Postprocess(Driver driver, ASTContext ctx)
         {
             
         }

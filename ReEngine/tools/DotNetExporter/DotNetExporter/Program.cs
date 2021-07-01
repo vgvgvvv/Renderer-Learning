@@ -7,7 +7,6 @@ namespace DotNetExporter
     {
         static void Main(string[] args)
         {
-            ConsoleDriver.Run(new TestDllLibrary());
             ConsoleDriver.Run(new ImGuiLibrary());
         }
     }
