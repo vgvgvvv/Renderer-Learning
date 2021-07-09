@@ -1,0 +1,38 @@
+{
+    "OutputDir" : "tools/temp/Output",
+    "Libraries" : 
+    [
+        {
+            "LibraryName" : "TestOpenGLd",
+            "HeaderGroups" : [
+                {
+                    "IncludePaths" : [
+                        "external\\thirdpart\\src\\imgui-docking"
+                    ],
+                    "HeaderFiles" : [
+                        "imgui.h",
+                        "imstb_rectpack.h",
+                        "imstb_textedit.h",
+                        "imstb_truetype.h"
+                    ]
+                }
+            ],
+            "LibGroups" :[
+                {
+                    "LibPaths" : [
+    
+                    ],
+                    "LibFiles" : [
+            
+                    ],
+                    "CodeFiles" : [
+            
+                    ]
+                }
+            ],
+            "Defines" : [
+    
+            ]
+        }
+    ]
+}
