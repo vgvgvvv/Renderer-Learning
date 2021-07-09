@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using DotNetDriver.Common;
 using DotNetDriver.Editor;
+using TestOpenGLd;
 using TestOpenGLd.ImGui;
 
 namespace DotNetDriver
@@ -12,12 +14,12 @@ namespace DotNetDriver
         {
             try
             {
-                Console.WriteLine("Init DotNet");
+                NetLog.Info("Init DotNet");
                 Modules.Initialize();
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                NetLog.Error(e.ToString());
             }
             return 0;
         }
@@ -26,11 +28,11 @@ namespace DotNetDriver
         {
             try
             {
-
+                
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                NetLog.Error(e.ToString());
             }
             return 0;
         }
@@ -43,7 +45,7 @@ namespace DotNetDriver
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                NetLog.Error(e.ToString());
             }
             return 0;
         }
@@ -56,7 +58,7 @@ namespace DotNetDriver
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                NetLog.Error(e.ToString());
             }
             return 0; 
         }
@@ -69,7 +71,7 @@ namespace DotNetDriver
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                NetLog.Error(e.ToString());
             }
             return 0;
         }
@@ -82,7 +84,7 @@ namespace DotNetDriver
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                NetLog.Error(e.ToString());
             }
             return 0;
         }
@@ -95,7 +97,7 @@ namespace DotNetDriver
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                NetLog.Error(e.ToString());
             }
             return 0;
         }
@@ -108,7 +110,7 @@ namespace DotNetDriver
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                NetLog.Error(e.ToString());
             }
             return 0;
         }
@@ -121,9 +123,9 @@ namespace DotNetDriver
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                NetLog.Error(e.ToString());
             }
-            Console.WriteLine("ShutDown DotNet");
+            NetLog.Info("ShutDown DotNet");
             return 0;
         }
     }

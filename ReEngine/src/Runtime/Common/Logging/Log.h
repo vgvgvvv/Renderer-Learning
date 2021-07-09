@@ -11,8 +11,6 @@ public:
 	template<typename... Args>
 	static void Info(const std::string& tag, const std::string& formatString, const Args &...args);
 	template<typename... Args>
-	static void Log(const std::string& tag, const std::string& formatString, const Args &...args);
-	template<typename... Args>
 	static void Debug(const std::string& tag, const std::string& formatString, const Args &...args);
 	template<typename... Args>
 	static void Warn(const std::string& tag, const std::string& formatString, const Args &...args);
@@ -32,16 +30,6 @@ void ::LogContext::Info(const std::string& tag, const std::string& formatString,
 	logger->info(formatString, args...);
 }
 
-template <typename... Args>
-void ::LogContext::Log(const std::string& tag, const std::string& formatString, const Args&... args)
-{
-	auto logger = spdlog::get(tag);
-	if (!logger)
-	{
-		logger = spdlog::stdout_color_mt(tag);
-	}
-	logger->log(formatString, args...);
-}
 
 template <typename... Args>
 void ::LogContext::Debug(const std::string& tag, const std::string& formatString, const Args&... args)
@@ -78,9 +66,6 @@ void ::LogContext::Error(const std::string& tag, const std::string& formatString
 
 #define RE_LOG_INFO(Tag, formatString, ...)	\
 	LogContext::Info(Tag, formatString, __VA_ARGS__);
-
-#define RE_LOG_LOG(Tag, formatString, ...) \
-	LogContext::Log(Tag, formatString, __VA_ARGS__);
 
 #define RE_LOG_DEBUG(Tag, formatString, ...) \
 	LogContext::Debug(Tag, __VA_ARGS__);

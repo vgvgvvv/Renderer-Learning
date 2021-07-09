@@ -7,7 +7,7 @@
             "HeaderGroups" : [
                 {
                     "IncludePaths" : [
-                        "external\\thirdpart\\src\\imgui-docking"
+                        "external/thirdpart/src/imgui-docking"
                     ],
                     "HeaderFiles" : [
                         "imgui.h",
@@ -15,23 +15,16 @@
                         "imstb_textedit.h",
                         "imstb_truetype.h"
                     ]
-                }
-            ],
-            "LibGroups" :[
+                },
                 {
-                    "LibPaths" : [
-    
+                    "IncludePaths" : [
+                        "src/App/TestOpenGL"
                     ],
-                    "LibFiles" : [
-            
-                    ],
-                    "CodeFiles" : [
-            
+                    "HeaderFiles" : [
+                        "TestOpenGL_API.h",
+                        "DotNetAPI/NetLog.h"
                     ]
                 }
-            ],
-            "Defines" : [
-    
             ]
         }
     ]
