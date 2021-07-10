@@ -16,6 +16,10 @@ namespace DotNetDriver.Editor
         {
             BuildInEditorPanel.AddRange(new List<IEditorPanel>()
             {
+                new PropertyPanel(),
+                new WorldOutlinePanel(),
+                new GamePanel(),
+                new SceneViewPanel(),
                 new LogPanel()
             });
 
