@@ -10,6 +10,7 @@ namespace DotNetDriver.Editor
     public class EditorUI
     {
         private List<IEditorPanel> BuildInEditorPanel = new List<IEditorPanel>();
+        private EditorMenu Menu = new EditorMenu();
 
         public void OnInit()
         {
@@ -27,6 +28,7 @@ namespace DotNetDriver.Editor
         public void OnGUI()
         {
             DockSpace.BeginDockSpace();
+            Menu.OnGUI();
 
             foreach (var editorPanel in BuildInEditorPanel)
             {
