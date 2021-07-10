@@ -34,6 +34,9 @@ namespace DotNetDriver.Editor
             DockSpace.BeginDockSpace();
             Menu.OnGUI();
 
+            bool open = true;
+            imgui.ShowDemoWindow(ref open);
+
             foreach (var editorPanel in BuildInEditorPanel)
             {
                 bool isOpen = editorPanel.IsShow;
