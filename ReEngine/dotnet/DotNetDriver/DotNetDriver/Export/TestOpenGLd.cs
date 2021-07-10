@@ -19678,8 +19678,8 @@ namespace TestOpenGLd
             [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Info@NetLog@@SAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Info([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string info);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Log@NetLog@@SAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
-            internal static extern void Log([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string info);
+            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Debug@NetLog@@SAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern void Debug([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string info);
 
             [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Warning@NetLog@@SAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Warning([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string info);
@@ -19772,9 +19772,9 @@ namespace TestOpenGLd
             __Internal.Info(info);
         }
 
-        public static void Log(string info)
+        public static void Debug(string info)
         {
-            __Internal.Log(info);
+            __Internal.Debug(info);
         }
 
         public static void Warning(string info)

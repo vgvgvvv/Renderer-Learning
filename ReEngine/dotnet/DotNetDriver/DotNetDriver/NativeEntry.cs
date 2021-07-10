@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Common;
 using DotNetDriver.Common;
 using DotNetDriver.Editor;
 using TestOpenGLd;
@@ -9,17 +10,42 @@ namespace DotNetDriver
 {
     public static class NativeEntry
     {
+        public static EditorEntry Editor = new EditorEntry();
+
+        private static void InitLog()
+        {
+            Log.AppendLogger(new DynamicLogger((info) =>
+            {
+                NetLog.Info(info);
+            }, (info) =>
+            {
+                NetLog.Debug(info);
+            }, (info) =>
+            {
+                NetLog.Warning(info);
+            }, (info) =>
+            {
+                NetLog.Error(info);
+            }, (exception) =>
+            {
+                NetLog.Error(exception.ToString());
+            }));
+        }
+
 
         public static int OnInit(IntPtr arg, int argLength)
         {
+            InitLog();
+
             try
             {
                 NetLog.Info("Init DotNet");
                 Modules.Initialize();
+                Editor.OnInit();
             }
             catch (Exception e)
             {
-                NetLog.Error(e.ToString());
+                Log.Error(e.ToString());
             }
             return 0;
         }
@@ -32,7 +58,7 @@ namespace DotNetDriver
             }
             catch (Exception e)
             {
-                NetLog.Error(e.ToString());
+                Log.Error(e.ToString());
             }
             return 0;
         }
@@ -41,11 +67,11 @@ namespace DotNetDriver
         {
             try
             {
-
+                
             }
             catch (Exception e)
             {
-                NetLog.Error(e.ToString());
+                Log.Error(e.ToString());
             }
             return 0;
         }
@@ -58,7 +84,7 @@ namespace DotNetDriver
             }
             catch (Exception e)
             {
-                NetLog.Error(e.ToString());
+                Log.Error(e.ToString());
             }
             return 0; 
         }
@@ -71,7 +97,7 @@ namespace DotNetDriver
             }
             catch (Exception e)
             {
-                NetLog.Error(e.ToString());
+                Log.Error(e.ToString());
             }
             return 0;
         }
@@ -80,11 +106,11 @@ namespace DotNetDriver
         {
             try
             {
-                EditorUI.Entry();
+                Editor.OnGUI();
             }
             catch (Exception e)
             {
-                NetLog.Error(e.ToString());
+                Log.Error(e.ToString());
             }
             return 0;
         }
@@ -97,7 +123,7 @@ namespace DotNetDriver
             }
             catch (Exception e)
             {
-                NetLog.Error(e.ToString());
+                Log.Error(e.ToString());
             }
             return 0;
         }
@@ -110,7 +136,7 @@ namespace DotNetDriver
             }
             catch (Exception e)
             {
-                NetLog.Error(e.ToString());
+                Log.Error(e.ToString());
             }
             return 0;
         }
@@ -123,9 +149,9 @@ namespace DotNetDriver
             }
             catch (Exception e)
             {
-                NetLog.Error(e.ToString());
+                Log.Error(e.ToString());
             }
-            NetLog.Info("ShutDown DotNet");
+            Log.Info("ShutDown DotNet");
             return 0;
         }
     }

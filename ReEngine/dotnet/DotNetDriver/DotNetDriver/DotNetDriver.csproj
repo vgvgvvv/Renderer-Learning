@@ -9,11 +9,21 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <OutputPath />
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="CppSharp" Version="0.11.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Common">
+      <HintPath>..\Libraries\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MathLib">
+      <HintPath>..\Libraries\MathLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

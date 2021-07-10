@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DotNetDriver": {
+      "commandName": "Executable",
+      "executablePath": "../../../../../../binary/bin/TestAppd.exe"
+    }
+  }
+}
