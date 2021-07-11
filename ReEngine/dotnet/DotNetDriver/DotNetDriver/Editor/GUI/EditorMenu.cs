@@ -2,6 +2,7 @@
 using Common;
 using Cored.ImGui;
 using CppSharp.Types.Std;
+using DotNetAPId;
 using DotNetDriver.Common;
 
 namespace DotNetDriver.Editor
@@ -20,6 +21,7 @@ namespace DotNetDriver.Editor
             if (imgui.BeginMenuBar())
             {
                 OnFiles();
+                OnGameObject();
                 OnWindow();
                 OnHelp();
             }
@@ -30,9 +32,34 @@ namespace DotNetDriver.Editor
         {
             if (imgui.BeginMenu("Files", true))
             {
-                if (imgui.MenuItem("OpenScene", "", false, true))
+                if (imgui.MenuItem("Open Scene", "", false, true))
                 {
+                    // TODO Open Scene
                     Log.Info("On Open Scene");
+                }
+
+                if (imgui.MenuItem("Open Project", "", false, true))
+                {
+                    ApplicationAPI.SelectProjectRoot();
+                }
+                imgui.EndMenu();
+            }
+        }
+
+        private void OnGameObject()
+        {
+            if (imgui.BeginMenu("GameObject", true))
+            {
+                if (imgui.MenuItem("Create Empty", "", false, true))
+                {
+                    // TODO Create Empty
+                    Log.Info("On Create Camera");
+                }
+
+                if (imgui.MenuItem("Create Camera","", false, true))
+                {
+                    // TODO Create Camera
+                    Log.Info("On Create Camera");
                 }
                 imgui.EndMenu();
             }
