@@ -5,3 +5,5 @@ ReMake_AddTarget(
 	MODE SHARED
 	LIB CommonLib Core
 )
+
+UseFileDialog(${targetName})

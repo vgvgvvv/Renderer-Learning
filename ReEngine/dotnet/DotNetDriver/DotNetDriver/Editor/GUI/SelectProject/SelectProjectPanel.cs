@@ -1,5 +1,6 @@
 ﻿using Common;
 using Cored;
+using Cored.ImGui;
 
 namespace DotNetDriver.Editor
 {
@@ -7,7 +8,12 @@ namespace DotNetDriver.Editor
     {
         public void OnGUI()
         {
-            
+            bool open = true;
+            imgui.Begin("Main", ref open, 0);
+
+            imgui.Text("Please select target path");
+
+            imgui.End();
         }
     }
 }

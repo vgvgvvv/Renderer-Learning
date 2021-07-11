@@ -1,6 +1,7 @@
 ﻿using System;
 using Cored;
 using Cored.ImGui;
+using DotNetAPId;
 
 namespace DotNetDriver.Editor
 {
@@ -19,7 +20,11 @@ namespace DotNetDriver.Editor
         {
             if (imgui.BeginMenu("Project", true))
             {
-                
+                if (imgui.MenuItem("Select Project", "", false, true))
+                {
+                    ApplicationAPI.SelectProjectRoot();
+                }
+                imgui.EndMenu();
             }
         }
     }

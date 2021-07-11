@@ -8,5 +8,7 @@ public:
 
 	static const char* GetProjectRoot();
 	static void SetProjectRoot(const char* Root);
+
+	static void SelectProjectRoot();
 	
 };

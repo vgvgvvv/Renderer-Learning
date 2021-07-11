@@ -141,6 +141,9 @@ namespace DotNetAPId
             [SuppressUnmanagedCodeSecurity, DllImport("DotNetAPId", EntryPoint = "??0ApplicationAPI@@QEAA@AEBV0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
+            [SuppressUnmanagedCodeSecurity, DllImport("DotNetAPId", EntryPoint = "?SelectProjectRoot@ApplicationAPI@@SAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern void SelectProjectRoot();
+
             [SuppressUnmanagedCodeSecurity, DllImport("DotNetAPId", EntryPoint = "?GetProjectRoot@ApplicationAPI@@SAPEBDXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr GetProjectRoot();
 
@@ -225,6 +228,11 @@ namespace DotNetAPId
             if (__ownsNativeInstance)
                 Marshal.FreeHGlobal(__Instance);
             __Instance = IntPtr.Zero;
+        }
+
+        public static void SelectProjectRoot()
+        {
+            __Internal.SelectProjectRoot();
         }
 
         public static string ProjectRoot

@@ -1,8 +1,12 @@
-﻿namespace DotNetDriver.Editor
+﻿using Cored.ImGui;
+
+namespace DotNetDriver.Editor
 {
     public class SelectProjectUI
     {
         private SelectProjectMenu Menu = new SelectProjectMenu();
+
+        private SelectProjectPanel Panel = new SelectProjectPanel();
 
         public void OnInit()
         {
@@ -14,6 +18,7 @@
             DockSpace.BeginDockSpace();
 
             Menu.OnGUI();
+            Panel.OnGUI();
 
             DockSpace.EndDockSpace();
         }
