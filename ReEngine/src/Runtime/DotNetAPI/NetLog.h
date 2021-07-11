@@ -1,7 +1,8 @@
 #pragma once
-#include "TestOpenGL_API.h"
 
-class TestOpenGL_API NetLog
+#include "DotNetAPI_API.h"
+
+class DotNetAPI_API NetLog
 {
 public:
 	static void Info(const char* info);

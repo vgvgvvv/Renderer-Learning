@@ -2,8 +2,6 @@
 #include <imstb_rectpack.h>
 #include <imstb_textedit.h>
 #include <imstb_truetype.h>
-#include <TestOpenGL_API.h>
-#include <DotNetAPI/NetLog.h>
 #include <new>
 
 extern "C" __declspec(dllexport) void ImVec2_ImVec2(void* __instance) { ::new (__instance) ImVec2(); }
@@ -187,4 +185,3 @@ stbtt_pack_context& (stbtt_pack_context::*_121)(stbtt_pack_context&&) = &stbtt_p
 stbtt_fontinfo& (stbtt_fontinfo::*_122)(stbtt_fontinfo&&) = &stbtt_fontinfo::operator=;
 stbtt_vertex& (stbtt_vertex::*_123)(stbtt_vertex&&) = &stbtt_vertex::operator=;
 stbtt__bitmap& (stbtt__bitmap::*_124)(stbtt__bitmap&&) = &stbtt__bitmap::operator=;
-NetLog& (NetLog::*_125)(NetLog&&) = &NetLog::operator=;

@@ -3,7 +3,21 @@
     "Libraries" : 
     [
         {
-            "LibraryName" : "TestOpenGLd",
+            "LibraryName" : "DotNetAPId",
+            "HeaderGroups" : [
+                {
+                    "IncludePaths" : [
+                        "src/Runtime/DotNetAPI"
+                    ],
+                    "HeaderFiles" : [
+                        "DotNetAPI_API.h",
+                        "NetLog.h"
+                    ]
+                }
+            ]
+        },
+        {
+            "LibraryName" : "Cored",
             "HeaderGroups" : [
                 {
                     "IncludePaths" : [
@@ -14,15 +28,6 @@
                         "imstb_rectpack.h",
                         "imstb_textedit.h",
                         "imstb_truetype.h"
-                    ]
-                },
-                {
-                    "IncludePaths" : [
-                        "src/App/TestOpenGL"
-                    ],
-                    "HeaderFiles" : [
-                        "TestOpenGL_API.h",
-                        "DotNetAPI/NetLog.h"
                     ]
                 }
             ]

@@ -4,10 +4,10 @@
 #include "RenderPipeline.h"
 #include "Layer/Layer.h"
 
-#include "TestOpenGL_API.h"
+#include "Core_API.h"
 
 
-class TestOpenGL_API RenderLayer : public Layer
+class Core_API RenderLayer : public Layer
 {
 public:
 	void OnInit() override;

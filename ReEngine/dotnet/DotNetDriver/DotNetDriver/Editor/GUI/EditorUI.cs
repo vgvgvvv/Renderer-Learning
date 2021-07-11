@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using Cored.ImGui;
 using CppSharp.Types.Std;
-using TestOpenGLd;
-using TestOpenGLd.ImGui;
 
 namespace DotNetDriver.Editor
 {

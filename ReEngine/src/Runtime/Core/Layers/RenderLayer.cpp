@@ -1,10 +1,10 @@
 #include "RenderLayer.h"
 #include "OpenGL.h"
-#include "Render/TestRenderPipeline.h"
+#include "RenderLayer/DefaultRenderPipeline.h"
 
 void RenderLayer::OnInit()
 {
-	pipeline = std::make_shared<TestRenderPipeline>();
+	pipeline = std::make_shared<DefaultRenderPipeline>();
 	renderContext = std::make_shared<RenderContext>();
 }
 

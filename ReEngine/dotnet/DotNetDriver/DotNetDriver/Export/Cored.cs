@@ -10,7 +10,7 @@ using System.Security;
 using __CallingConvention = global::System.Runtime.InteropServices.CallingConvention;
 using __IntPtr = global::System.IntPtr;
 
-namespace TestOpenGLd
+namespace Cored
 {
     public enum ImGuiWindowFlags
     {
@@ -708,22 +708,22 @@ namespace TestOpenGLd
             internal float x;
             internal float y;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImVec2@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImVec2@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImVec2@@QEAA@MM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImVec2@@QEAA@MM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance, float _x, float _y);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImVec2@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImVec2@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??AImVec2@@QEAAAEAM_K@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??AImVec2@@QEAAAEAM_K@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern float* OperatorSubscript(__IntPtr __instance, ulong idx);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImVec2> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImVec2>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImVec2> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImVec2>();
 
         protected bool __ownsNativeInstance;
 
@@ -772,7 +772,7 @@ namespace TestOpenGLd
 
         public ImVec2()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImVec2.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImVec2.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
@@ -780,18 +780,18 @@ namespace TestOpenGLd
 
         public ImVec2(float _x, float _y)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImVec2.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImVec2.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance, _x, _y);
         }
 
-        public ImVec2(global::TestOpenGLd.ImVec2 _0)
+        public ImVec2(global::Cored.ImVec2 _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImVec2.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImVec2.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImVec2.__Internal*) __Instance) = *((global::TestOpenGLd.ImVec2.__Internal*) _0.__Instance);
+            *((global::Cored.ImVec2.__Internal*) __Instance) = *((global::Cored.ImVec2.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -819,7 +819,7 @@ namespace TestOpenGLd
 
             set
             {
-                *global::TestOpenGLd.ImVec2.__Internal.OperatorSubscript(__Instance, idx) = value;
+                *global::Cored.ImVec2.__Internal.OperatorSubscript(__Instance, idx) = value;
             }
         }
 
@@ -858,7 +858,7 @@ namespace TestOpenGLd
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImDrawListSharedData> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImDrawListSharedData>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImDrawListSharedData> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImDrawListSharedData>();
 
         protected bool __ownsNativeInstance;
 
@@ -914,7 +914,7 @@ namespace TestOpenGLd
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImFontBuilderIO> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImFontBuilderIO>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImFontBuilderIO> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImFontBuilderIO>();
 
         protected bool __ownsNativeInstance;
 
@@ -970,7 +970,7 @@ namespace TestOpenGLd
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiContext> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiContext>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiContext> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiContext>();
 
         protected bool __ownsNativeInstance;
 
@@ -1028,19 +1028,19 @@ namespace TestOpenGLd
             internal float z;
             internal float w;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImVec4@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImVec4@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImVec4@@QEAA@MMMM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImVec4@@QEAA@MMMM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance, float _x, float _y, float _z, float _w);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImVec4@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImVec4@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImVec4> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImVec4>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImVec4> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImVec4>();
 
         protected bool __ownsNativeInstance;
 
@@ -1089,7 +1089,7 @@ namespace TestOpenGLd
 
         public ImVec4()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImVec4.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImVec4.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
@@ -1097,18 +1097,18 @@ namespace TestOpenGLd
 
         public ImVec4(float _x, float _y, float _z, float _w)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImVec4.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImVec4.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance, _x, _y, _z, _w);
         }
 
-        public ImVec4(global::TestOpenGLd.ImVec4 _0)
+        public ImVec4(global::Cored.ImVec4 _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImVec4.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImVec4.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImVec4.__Internal*) __Instance) = *((global::TestOpenGLd.ImVec4.__Internal*) _0.__Instance);
+            *((global::Cored.ImVec4.__Internal*) __Instance) = *((global::Cored.ImVec4.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -1184,13 +1184,13 @@ namespace TestOpenGLd
         [StructLayout(LayoutKind.Sequential, Size = 1)]
         public partial struct __Internal
         {
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImNewWrapper@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImNewWrapper@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImNewWrapper> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImNewWrapper>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImNewWrapper> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImNewWrapper>();
 
         protected bool __ownsNativeInstance;
 
@@ -1239,17 +1239,17 @@ namespace TestOpenGLd
 
         public ImNewWrapper()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImNewWrapper.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImNewWrapper.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public ImNewWrapper(global::TestOpenGLd.ImNewWrapper _0)
+        public ImNewWrapper(global::Cored.ImNewWrapper _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImNewWrapper.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImNewWrapper.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImNewWrapper.__Internal*) __Instance) = *((global::TestOpenGLd.ImNewWrapper.__Internal*) _0.__Instance);
+            *((global::Cored.ImNewWrapper.__Internal*) __Instance) = *((global::Cored.ImNewWrapper.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -1274,23 +1274,23 @@ namespace TestOpenGLd
         public partial struct __Internal
         {
             internal float Alpha;
-            internal global::TestOpenGLd.ImVec2.__Internal WindowPadding;
+            internal global::Cored.ImVec2.__Internal WindowPadding;
             internal float WindowRounding;
             internal float WindowBorderSize;
-            internal global::TestOpenGLd.ImVec2.__Internal WindowMinSize;
-            internal global::TestOpenGLd.ImVec2.__Internal WindowTitleAlign;
+            internal global::Cored.ImVec2.__Internal WindowMinSize;
+            internal global::Cored.ImVec2.__Internal WindowTitleAlign;
             internal int WindowMenuButtonPosition;
             internal float ChildRounding;
             internal float ChildBorderSize;
             internal float PopupRounding;
             internal float PopupBorderSize;
-            internal global::TestOpenGLd.ImVec2.__Internal FramePadding;
+            internal global::Cored.ImVec2.__Internal FramePadding;
             internal float FrameRounding;
             internal float FrameBorderSize;
-            internal global::TestOpenGLd.ImVec2.__Internal ItemSpacing;
-            internal global::TestOpenGLd.ImVec2.__Internal ItemInnerSpacing;
-            internal global::TestOpenGLd.ImVec2.__Internal CellPadding;
-            internal global::TestOpenGLd.ImVec2.__Internal TouchExtraPadding;
+            internal global::Cored.ImVec2.__Internal ItemSpacing;
+            internal global::Cored.ImVec2.__Internal ItemInnerSpacing;
+            internal global::Cored.ImVec2.__Internal CellPadding;
+            internal global::Cored.ImVec2.__Internal TouchExtraPadding;
             internal float IndentSpacing;
             internal float ColumnsMinSpacing;
             internal float ScrollbarSize;
@@ -1302,10 +1302,10 @@ namespace TestOpenGLd
             internal float TabBorderSize;
             internal float TabMinWidthForCloseButton;
             internal int ColorButtonPosition;
-            internal global::TestOpenGLd.ImVec2.__Internal ButtonTextAlign;
-            internal global::TestOpenGLd.ImVec2.__Internal SelectableTextAlign;
-            internal global::TestOpenGLd.ImVec2.__Internal DisplayWindowPadding;
-            internal global::TestOpenGLd.ImVec2.__Internal DisplaySafeAreaPadding;
+            internal global::Cored.ImVec2.__Internal ButtonTextAlign;
+            internal global::Cored.ImVec2.__Internal SelectableTextAlign;
+            internal global::Cored.ImVec2.__Internal DisplayWindowPadding;
+            internal global::Cored.ImVec2.__Internal DisplaySafeAreaPadding;
             internal float MouseCursorScale;
             internal byte AntiAliasedLines;
             internal byte AntiAliasedLinesUseTex;
@@ -1314,19 +1314,19 @@ namespace TestOpenGLd
             internal float CircleTessellationMaxError;
             internal fixed byte Colors[880];
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiStyle@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiStyle@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiStyle@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiStyle@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ScaleAllSizes@ImGuiStyle@@QEAAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ScaleAllSizes@ImGuiStyle@@QEAAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void ScaleAllSizes(__IntPtr __instance, float scale_factor);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiStyle> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiStyle>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiStyle> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiStyle>();
 
         protected bool __ownsNativeInstance;
 
@@ -1375,18 +1375,18 @@ namespace TestOpenGLd
 
         public ImGuiStyle()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiStyle.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiStyle.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImGuiStyle(global::TestOpenGLd.ImGuiStyle _0)
+        public ImGuiStyle(global::Cored.ImGuiStyle _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiStyle.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiStyle.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImGuiStyle.__Internal*) __Instance) = *((global::TestOpenGLd.ImGuiStyle.__Internal*) _0.__Instance);
+            *((global::Cored.ImGuiStyle.__Internal*) __Instance) = *((global::Cored.ImGuiStyle.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -1422,18 +1422,18 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec2 WindowPadding
+        public global::Cored.ImVec2 WindowPadding
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->WindowPadding));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->WindowPadding));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->WindowPadding = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->WindowPadding = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
@@ -1463,33 +1463,33 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec2 WindowMinSize
+        public global::Cored.ImVec2 WindowMinSize
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->WindowMinSize));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->WindowMinSize));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->WindowMinSize = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->WindowMinSize = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 WindowTitleAlign
+        public global::Cored.ImVec2 WindowTitleAlign
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->WindowTitleAlign));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->WindowTitleAlign));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->WindowTitleAlign = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->WindowTitleAlign = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
@@ -1558,18 +1558,18 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec2 FramePadding
+        public global::Cored.ImVec2 FramePadding
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->FramePadding));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->FramePadding));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->FramePadding = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->FramePadding = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
@@ -1599,63 +1599,63 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec2 ItemSpacing
+        public global::Cored.ImVec2 ItemSpacing
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->ItemSpacing));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->ItemSpacing));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->ItemSpacing = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->ItemSpacing = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 ItemInnerSpacing
+        public global::Cored.ImVec2 ItemInnerSpacing
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->ItemInnerSpacing));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->ItemInnerSpacing));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->ItemInnerSpacing = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->ItemInnerSpacing = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 CellPadding
+        public global::Cored.ImVec2 CellPadding
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->CellPadding));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->CellPadding));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->CellPadding = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->CellPadding = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 TouchExtraPadding
+        public global::Cored.ImVec2 TouchExtraPadding
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->TouchExtraPadding));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->TouchExtraPadding));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->TouchExtraPadding = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->TouchExtraPadding = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
@@ -1802,63 +1802,63 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec2 ButtonTextAlign
+        public global::Cored.ImVec2 ButtonTextAlign
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->ButtonTextAlign));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->ButtonTextAlign));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->ButtonTextAlign = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->ButtonTextAlign = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 SelectableTextAlign
+        public global::Cored.ImVec2 SelectableTextAlign
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->SelectableTextAlign));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->SelectableTextAlign));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->SelectableTextAlign = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->SelectableTextAlign = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 DisplayWindowPadding
+        public global::Cored.ImVec2 DisplayWindowPadding
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->DisplayWindowPadding));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->DisplayWindowPadding));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->DisplayWindowPadding = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->DisplayWindowPadding = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 DisplaySafeAreaPadding
+        public global::Cored.ImVec2 DisplaySafeAreaPadding
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->DisplaySafeAreaPadding));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->DisplaySafeAreaPadding));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->DisplaySafeAreaPadding = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->DisplaySafeAreaPadding = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
@@ -1940,16 +1940,16 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec4[] Colors
+        public global::Cored.ImVec4[] Colors
         {
             get
             {
-                global::TestOpenGLd.ImVec4[] __value = null;
+                global::Cored.ImVec4[] __value = null;
                 if (((__Internal*)__Instance)->Colors != null)
                 {
-                    __value = new global::TestOpenGLd.ImVec4[55];
+                    __value = new global::Cored.ImVec4[55];
                     for (int i = 0; i < 55; i++)
-                        __value[i] = global::TestOpenGLd.ImVec4.__CreateInstance(*((global::TestOpenGLd.ImVec4.__Internal*)&(((__Internal*)__Instance)->Colors[i * sizeof(global::TestOpenGLd.ImVec4.__Internal)])));
+                        __value[i] = global::Cored.ImVec4.__CreateInstance(*((global::Cored.ImVec4.__Internal*)&(((__Internal*)__Instance)->Colors[i * sizeof(global::Cored.ImVec4.__Internal)])));
                 }
                 return __value;
             }
@@ -1961,7 +1961,7 @@ namespace TestOpenGLd
                     if (value.Length != 55)
                         throw new ArgumentOutOfRangeException("value", "The dimensions of the provided array don't match the required size.");
                     for (int i = 0; i < 55; i++)
-                        *(global::TestOpenGLd.ImVec4.__Internal*) &((__Internal*)__Instance)->Colors[i * sizeof(global::TestOpenGLd.ImVec4.__Internal)] = *(global::TestOpenGLd.ImVec4.__Internal*)value[i].__Instance;
+                        *(global::Cored.ImVec4.__Internal*) &((__Internal*)__Instance)->Colors[i * sizeof(global::Cored.ImVec4.__Internal)] = *(global::Cored.ImVec4.__Internal*)value[i].__Instance;
                 }
             }
         }
@@ -1974,7 +1974,7 @@ namespace TestOpenGLd
         {
             internal int ConfigFlags;
             internal int BackendFlags;
-            internal global::TestOpenGLd.ImVec2.__Internal DisplaySize;
+            internal global::Cored.ImVec2.__Internal DisplaySize;
             internal float DeltaTime;
             internal float IniSavingRate;
             internal __IntPtr IniFilename;
@@ -1990,7 +1990,7 @@ namespace TestOpenGLd
             internal float FontGlobalScale;
             internal byte FontAllowUserScaling;
             internal __IntPtr FontDefault;
-            internal global::TestOpenGLd.ImVec2.__Internal DisplayFramebufferScale;
+            internal global::Cored.ImVec2.__Internal DisplayFramebufferScale;
             internal byte ConfigDockingNoSplit;
             internal byte ConfigDockingAlwaysTabBar;
             internal byte ConfigDockingTransparentPayload;
@@ -2013,7 +2013,7 @@ namespace TestOpenGLd
             internal __IntPtr GetClipboardTextFn;
             internal __IntPtr SetClipboardTextFn;
             internal __IntPtr ClipboardUserData;
-            internal global::TestOpenGLd.ImVec2.__Internal MousePos;
+            internal global::Cored.ImVec2.__Internal MousePos;
             internal fixed byte MouseDown[5];
             internal float MouseWheel;
             internal float MouseWheelH;
@@ -2037,9 +2037,9 @@ namespace TestOpenGLd
             internal int MetricsRenderWindows;
             internal int MetricsActiveWindows;
             internal int MetricsActiveAllocations;
-            internal global::TestOpenGLd.ImVec2.__Internal MouseDelta;
+            internal global::Cored.ImVec2.__Internal MouseDelta;
             internal int KeyMods;
-            internal global::TestOpenGLd.ImVec2.__Internal MousePosPrev;
+            internal global::Cored.ImVec2.__Internal MousePosPrev;
             internal fixed byte MouseClickedPos[40];
             internal fixed double MouseClickedTime[5];
             internal fixed byte MouseClicked[5];
@@ -2057,33 +2057,33 @@ namespace TestOpenGLd
             internal fixed float NavInputsDownDurationPrev[21];
             internal float PenPressure;
             internal ushort InputQueueSurrogate;
-            internal global::TestOpenGLd.ImVector.__Internal InputQueueCharacters;
+            internal global::Cored.ImVector.__Internal InputQueueCharacters;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiIO@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiIO@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiIO@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiIO@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??1ImGuiIO@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??1ImGuiIO@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void dtor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddInputCharacter@ImGuiIO@@QEAAXI@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddInputCharacter@ImGuiIO@@QEAAXI@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddInputCharacter(__IntPtr __instance, uint c);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddInputCharacterUTF16@ImGuiIO@@QEAAXG@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddInputCharacterUTF16@ImGuiIO@@QEAAXG@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddInputCharacterUTF16(__IntPtr __instance, ushort c);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddInputCharactersUTF8@ImGuiIO@@QEAAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddInputCharactersUTF8@ImGuiIO@@QEAAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddInputCharactersUTF8(__IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ClearInputCharacters@ImGuiIO@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ClearInputCharacters@ImGuiIO@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void ClearInputCharacters(__IntPtr __instance);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiIO> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiIO>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiIO> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiIO>();
 
         protected bool __ownsNativeInstance;
 
@@ -2112,7 +2112,7 @@ namespace TestOpenGLd
         private static void* __CopyValue(__Internal native)
         {
             var ret = Marshal.AllocHGlobal(sizeof(__Internal));
-            global::TestOpenGLd.ImGuiIO.__Internal.cctor(ret, new __IntPtr(&native));
+            global::Cored.ImGuiIO.__Internal.cctor(ret, new __IntPtr(&native));
             return ret.ToPointer();
         }
 
@@ -2132,15 +2132,15 @@ namespace TestOpenGLd
 
         public ImGuiIO()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiIO.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiIO.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImGuiIO(global::TestOpenGLd.ImGuiIO _0)
+        public ImGuiIO(global::Cored.ImGuiIO _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiIO.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiIO.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             if (ReferenceEquals(_0, null))
@@ -2212,18 +2212,18 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec2 DisplaySize
+        public global::Cored.ImVec2 DisplaySize
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->DisplaySize));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->DisplaySize));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->DisplaySize = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->DisplaySize = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
@@ -2382,11 +2382,11 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImFontAtlas Fonts
+        public global::Cored.ImFontAtlas Fonts
         {
             get
             {
-                var __result0 = global::TestOpenGLd.ImFontAtlas.__GetOrCreateInstance(((__Internal*)__Instance)->Fonts, false);
+                var __result0 = global::Cored.ImFontAtlas.__GetOrCreateInstance(((__Internal*)__Instance)->Fonts, false);
                 return __result0;
             }
 
@@ -2422,11 +2422,11 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImFont FontDefault
+        public global::Cored.ImFont FontDefault
         {
             get
             {
-                var __result0 = global::TestOpenGLd.ImFont.__GetOrCreateInstance(((__Internal*)__Instance)->FontDefault, false);
+                var __result0 = global::Cored.ImFont.__GetOrCreateInstance(((__Internal*)__Instance)->FontDefault, false);
                 return __result0;
             }
 
@@ -2436,18 +2436,18 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec2 DisplayFramebufferScale
+        public global::Cored.ImVec2 DisplayFramebufferScale
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->DisplayFramebufferScale));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->DisplayFramebufferScale));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->DisplayFramebufferScale = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->DisplayFramebufferScale = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
@@ -2706,12 +2706,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Func___IntPtr___IntPtr GetClipboardTextFn
+        public global::Cored.Delegates.Func___IntPtr___IntPtr GetClipboardTextFn
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->GetClipboardTextFn;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Func___IntPtr___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Func___IntPtr___IntPtr));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Func___IntPtr___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Func___IntPtr___IntPtr));
             }
 
             set
@@ -2720,12 +2720,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Action___IntPtr__MarshalAs_UnmanagedType_CustomMarshaler__MarshalTypeRef___typeof_CppSharp_Runtime_UTF8Marshaller____string SetClipboardTextFn
+        public global::Cored.Delegates.Action___IntPtr__MarshalAs_UnmanagedType_CustomMarshaler__MarshalTypeRef___typeof_CppSharp_Runtime_UTF8Marshaller____string SetClipboardTextFn
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->SetClipboardTextFn;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Action___IntPtr__MarshalAs_UnmanagedType_CustomMarshaler__MarshalTypeRef___typeof_CppSharp_Runtime_UTF8Marshaller____string) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Action___IntPtr__MarshalAs_UnmanagedType_CustomMarshaler__MarshalTypeRef___typeof_CppSharp_Runtime_UTF8Marshaller____string));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Action___IntPtr__MarshalAs_UnmanagedType_CustomMarshaler__MarshalTypeRef___typeof_CppSharp_Runtime_UTF8Marshaller____string) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Action___IntPtr__MarshalAs_UnmanagedType_CustomMarshaler__MarshalTypeRef___typeof_CppSharp_Runtime_UTF8Marshaller____string));
             }
 
             set
@@ -2747,18 +2747,18 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec2 MousePos
+        public global::Cored.ImVec2 MousePos
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->MousePos));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->MousePos));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->MousePos = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->MousePos = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
@@ -3073,18 +3073,18 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec2 MouseDelta
+        public global::Cored.ImVec2 MouseDelta
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->MouseDelta));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->MouseDelta));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->MouseDelta = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->MouseDelta = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
@@ -3101,31 +3101,31 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec2 MousePosPrev
+        public global::Cored.ImVec2 MousePosPrev
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->MousePosPrev));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->MousePosPrev));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->MousePosPrev = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->MousePosPrev = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2[] MouseClickedPos
+        public global::Cored.ImVec2[] MouseClickedPos
         {
             get
             {
-                global::TestOpenGLd.ImVec2[] __value = null;
+                global::Cored.ImVec2[] __value = null;
                 if (((__Internal*)__Instance)->MouseClickedPos != null)
                 {
-                    __value = new global::TestOpenGLd.ImVec2[5];
+                    __value = new global::Cored.ImVec2[5];
                     for (int i = 0; i < 5; i++)
-                        __value[i] = global::TestOpenGLd.ImVec2.__CreateInstance(*((global::TestOpenGLd.ImVec2.__Internal*)&(((__Internal*)__Instance)->MouseClickedPos[i * sizeof(global::TestOpenGLd.ImVec2.__Internal)])));
+                        __value[i] = global::Cored.ImVec2.__CreateInstance(*((global::Cored.ImVec2.__Internal*)&(((__Internal*)__Instance)->MouseClickedPos[i * sizeof(global::Cored.ImVec2.__Internal)])));
                 }
                 return __value;
             }
@@ -3137,7 +3137,7 @@ namespace TestOpenGLd
                     if (value.Length != 5)
                         throw new ArgumentOutOfRangeException("value", "The dimensions of the provided array don't match the required size.");
                     for (int i = 0; i < 5; i++)
-                        *(global::TestOpenGLd.ImVec2.__Internal*) &((__Internal*)__Instance)->MouseClickedPos[i * sizeof(global::TestOpenGLd.ImVec2.__Internal)] = *(global::TestOpenGLd.ImVec2.__Internal*)value[i].__Instance;
+                        *(global::Cored.ImVec2.__Internal*) &((__Internal*)__Instance)->MouseClickedPos[i * sizeof(global::Cored.ImVec2.__Internal)] = *(global::Cored.ImVec2.__Internal*)value[i].__Instance;
                 }
             }
         }
@@ -3278,16 +3278,16 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec2[] MouseDragMaxDistanceAbs
+        public global::Cored.ImVec2[] MouseDragMaxDistanceAbs
         {
             get
             {
-                global::TestOpenGLd.ImVec2[] __value = null;
+                global::Cored.ImVec2[] __value = null;
                 if (((__Internal*)__Instance)->MouseDragMaxDistanceAbs != null)
                 {
-                    __value = new global::TestOpenGLd.ImVec2[5];
+                    __value = new global::Cored.ImVec2[5];
                     for (int i = 0; i < 5; i++)
-                        __value[i] = global::TestOpenGLd.ImVec2.__CreateInstance(*((global::TestOpenGLd.ImVec2.__Internal*)&(((__Internal*)__Instance)->MouseDragMaxDistanceAbs[i * sizeof(global::TestOpenGLd.ImVec2.__Internal)])));
+                        __value[i] = global::Cored.ImVec2.__CreateInstance(*((global::Cored.ImVec2.__Internal*)&(((__Internal*)__Instance)->MouseDragMaxDistanceAbs[i * sizeof(global::Cored.ImVec2.__Internal)])));
                 }
                 return __value;
             }
@@ -3299,7 +3299,7 @@ namespace TestOpenGLd
                     if (value.Length != 5)
                         throw new ArgumentOutOfRangeException("value", "The dimensions of the provided array don't match the required size.");
                     for (int i = 0; i < 5; i++)
-                        *(global::TestOpenGLd.ImVec2.__Internal*) &((__Internal*)__Instance)->MouseDragMaxDistanceAbs[i * sizeof(global::TestOpenGLd.ImVec2.__Internal)] = *(global::TestOpenGLd.ImVec2.__Internal*)value[i].__Instance;
+                        *(global::Cored.ImVec2.__Internal*) &((__Internal*)__Instance)->MouseDragMaxDistanceAbs[i * sizeof(global::Cored.ImVec2.__Internal)] = *(global::Cored.ImVec2.__Internal*)value[i].__Instance;
                 }
             }
         }
@@ -3434,32 +3434,32 @@ namespace TestOpenGLd
             internal int SelectionStart;
             internal int SelectionEnd;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiInputTextCallbackData@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiInputTextCallbackData@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiInputTextCallbackData@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiInputTextCallbackData@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DeleteChars@ImGuiInputTextCallbackData@@QEAAXHH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DeleteChars@ImGuiInputTextCallbackData@@QEAAXHH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void DeleteChars(__IntPtr __instance, int pos, int bytes_count);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?InsertChars@ImGuiInputTextCallbackData@@QEAAXHPEBD0@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?InsertChars@ImGuiInputTextCallbackData@@QEAAXHPEBD0@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void InsertChars(__IntPtr __instance, int pos, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_end);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SelectAll@ImGuiInputTextCallbackData@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SelectAll@ImGuiInputTextCallbackData@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void SelectAll(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ClearSelection@ImGuiInputTextCallbackData@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ClearSelection@ImGuiInputTextCallbackData@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void ClearSelection(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?HasSelection@ImGuiInputTextCallbackData@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?HasSelection@ImGuiInputTextCallbackData@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool HasSelection(__IntPtr __instance);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiInputTextCallbackData> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiInputTextCallbackData>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiInputTextCallbackData> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiInputTextCallbackData>();
 
         protected bool __ownsNativeInstance;
 
@@ -3508,18 +3508,18 @@ namespace TestOpenGLd
 
         public ImGuiInputTextCallbackData()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiInputTextCallbackData.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiInputTextCallbackData.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImGuiInputTextCallbackData(global::TestOpenGLd.ImGuiInputTextCallbackData _0)
+        public ImGuiInputTextCallbackData(global::Cored.ImGuiInputTextCallbackData _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiInputTextCallbackData.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiInputTextCallbackData.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImGuiInputTextCallbackData.__Internal*) __Instance) = *((global::TestOpenGLd.ImGuiInputTextCallbackData.__Internal*) _0.__Instance);
+            *((global::Cored.ImGuiInputTextCallbackData.__Internal*) __Instance) = *((global::Cored.ImGuiInputTextCallbackData.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -3729,20 +3729,20 @@ namespace TestOpenGLd
         public partial struct __Internal
         {
             internal __IntPtr UserData;
-            internal global::TestOpenGLd.ImVec2.__Internal Pos;
-            internal global::TestOpenGLd.ImVec2.__Internal CurrentSize;
-            internal global::TestOpenGLd.ImVec2.__Internal DesiredSize;
+            internal global::Cored.ImVec2.__Internal Pos;
+            internal global::Cored.ImVec2.__Internal CurrentSize;
+            internal global::Cored.ImVec2.__Internal DesiredSize;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiSizeCallbackData@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiSizeCallbackData@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiSizeCallbackData@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiSizeCallbackData@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiSizeCallbackData> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiSizeCallbackData>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiSizeCallbackData> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiSizeCallbackData>();
 
         protected bool __ownsNativeInstance;
 
@@ -3791,18 +3791,18 @@ namespace TestOpenGLd
 
         public ImGuiSizeCallbackData()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiSizeCallbackData.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiSizeCallbackData.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImGuiSizeCallbackData(global::TestOpenGLd.ImGuiSizeCallbackData _0)
+        public ImGuiSizeCallbackData(global::Cored.ImGuiSizeCallbackData _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiSizeCallbackData.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiSizeCallbackData.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImGuiSizeCallbackData.__Internal*) __Instance) = *((global::TestOpenGLd.ImGuiSizeCallbackData.__Internal*) _0.__Instance);
+            *((global::Cored.ImGuiSizeCallbackData.__Internal*) __Instance) = *((global::Cored.ImGuiSizeCallbackData.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -3833,48 +3833,48 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec2 Pos
+        public global::Cored.ImVec2 Pos
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->Pos));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->Pos));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->Pos = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->Pos = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 CurrentSize
+        public global::Cored.ImVec2 CurrentSize
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->CurrentSize));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->CurrentSize));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->CurrentSize = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->CurrentSize = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 DesiredSize
+        public global::Cored.ImVec2 DesiredSize
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->DesiredSize));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->DesiredSize));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->DesiredSize = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->DesiredSize = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
     }
@@ -3894,16 +3894,16 @@ namespace TestOpenGLd
             internal byte DockingAlwaysTabBar;
             internal byte DockingAllowUnclassed;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiWindowClass@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiWindowClass@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiWindowClass@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiWindowClass@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiWindowClass> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiWindowClass>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiWindowClass> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiWindowClass>();
 
         protected bool __ownsNativeInstance;
 
@@ -3952,18 +3952,18 @@ namespace TestOpenGLd
 
         public ImGuiWindowClass()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiWindowClass.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiWindowClass.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImGuiWindowClass(global::TestOpenGLd.ImGuiWindowClass _0)
+        public ImGuiWindowClass(global::Cored.ImGuiWindowClass _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiWindowClass.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiWindowClass.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImGuiWindowClass.__Internal*) __Instance) = *((global::TestOpenGLd.ImGuiWindowClass.__Internal*) _0.__Instance);
+            *((global::Cored.ImGuiWindowClass.__Internal*) __Instance) = *((global::Cored.ImGuiWindowClass.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -4113,31 +4113,31 @@ namespace TestOpenGLd
             internal byte Preview;
             internal byte Delivery;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiPayload@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiPayload@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiPayload@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiPayload@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Clear@ImGuiPayload@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Clear@ImGuiPayload@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Clear(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsDataType@ImGuiPayload@@QEBA_NPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsDataType@ImGuiPayload@@QEBA_NPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool IsDataType(__IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string type);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsPreview@ImGuiPayload@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsPreview@ImGuiPayload@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool IsPreview(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsDelivery@ImGuiPayload@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsDelivery@ImGuiPayload@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool IsDelivery(__IntPtr __instance);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiPayload> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiPayload>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiPayload> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiPayload>();
 
         protected bool __ownsNativeInstance;
 
@@ -4186,18 +4186,18 @@ namespace TestOpenGLd
 
         public ImGuiPayload()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiPayload.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiPayload.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImGuiPayload(global::TestOpenGLd.ImGuiPayload _0)
+        public ImGuiPayload(global::Cored.ImGuiPayload _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiPayload.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiPayload.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImGuiPayload.__Internal*) __Instance) = *((global::TestOpenGLd.ImGuiPayload.__Internal*) _0.__Instance);
+            *((global::Cored.ImGuiPayload.__Internal*) __Instance) = *((global::Cored.ImGuiPayload.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -4363,16 +4363,16 @@ namespace TestOpenGLd
             internal short SortOrder;
             internal int SortDirection;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiTableColumnSortSpecs@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiTableColumnSortSpecs@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiTableColumnSortSpecs@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiTableColumnSortSpecs@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiTableColumnSortSpecs> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiTableColumnSortSpecs>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiTableColumnSortSpecs> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiTableColumnSortSpecs>();
 
         protected bool __ownsNativeInstance;
 
@@ -4421,18 +4421,18 @@ namespace TestOpenGLd
 
         public ImGuiTableColumnSortSpecs()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiTableColumnSortSpecs.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiTableColumnSortSpecs.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImGuiTableColumnSortSpecs(global::TestOpenGLd.ImGuiTableColumnSortSpecs _0)
+        public ImGuiTableColumnSortSpecs(global::Cored.ImGuiTableColumnSortSpecs _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiTableColumnSortSpecs.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiTableColumnSortSpecs.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImGuiTableColumnSortSpecs.__Internal*) __Instance) = *((global::TestOpenGLd.ImGuiTableColumnSortSpecs.__Internal*) _0.__Instance);
+            *((global::Cored.ImGuiTableColumnSortSpecs.__Internal*) __Instance) = *((global::Cored.ImGuiTableColumnSortSpecs.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -4512,16 +4512,16 @@ namespace TestOpenGLd
             internal int SpecsCount;
             internal byte SpecsDirty;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiTableSortSpecs@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiTableSortSpecs@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiTableSortSpecs@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiTableSortSpecs@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiTableSortSpecs> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiTableSortSpecs>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiTableSortSpecs> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiTableSortSpecs>();
 
         protected bool __ownsNativeInstance;
 
@@ -4570,18 +4570,18 @@ namespace TestOpenGLd
 
         public ImGuiTableSortSpecs()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiTableSortSpecs.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiTableSortSpecs.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImGuiTableSortSpecs(global::TestOpenGLd.ImGuiTableSortSpecs _0)
+        public ImGuiTableSortSpecs(global::Cored.ImGuiTableSortSpecs _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiTableSortSpecs.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiTableSortSpecs.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImGuiTableSortSpecs.__Internal*) __Instance) = *((global::TestOpenGLd.ImGuiTableSortSpecs.__Internal*) _0.__Instance);
+            *((global::Cored.ImGuiTableSortSpecs.__Internal*) __Instance) = *((global::Cored.ImGuiTableSortSpecs.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -4599,11 +4599,11 @@ namespace TestOpenGLd
             __Instance = IntPtr.Zero;
         }
 
-        public global::TestOpenGLd.ImGuiTableColumnSortSpecs Specs
+        public global::Cored.ImGuiTableColumnSortSpecs Specs
         {
             get
             {
-                var __result0 = global::TestOpenGLd.ImGuiTableColumnSortSpecs.__GetOrCreateInstance(((__Internal*)__Instance)->Specs, false);
+                var __result0 = global::Cored.ImGuiTableColumnSortSpecs.__GetOrCreateInstance(((__Internal*)__Instance)->Specs, false);
                 return __result0;
             }
         }
@@ -4642,20 +4642,20 @@ namespace TestOpenGLd
         {
             internal int RefFrame;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiOnceUponAFrame@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiOnceUponAFrame@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiOnceUponAFrame@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiOnceUponAFrame@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??BImGuiOnceUponAFrame@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??BImGuiOnceUponAFrame@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool OperatorConversion(__IntPtr __instance);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiOnceUponAFrame> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiOnceUponAFrame>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiOnceUponAFrame> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiOnceUponAFrame>();
 
         protected bool __ownsNativeInstance;
 
@@ -4704,18 +4704,18 @@ namespace TestOpenGLd
 
         public ImGuiOnceUponAFrame()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiOnceUponAFrame.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiOnceUponAFrame.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImGuiOnceUponAFrame(global::TestOpenGLd.ImGuiOnceUponAFrame _0)
+        public ImGuiOnceUponAFrame(global::Cored.ImGuiOnceUponAFrame _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiOnceUponAFrame.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiOnceUponAFrame.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImGuiOnceUponAFrame.__Internal*) __Instance) = *((global::TestOpenGLd.ImGuiOnceUponAFrame.__Internal*) _0.__Instance);
+            *((global::Cored.ImGuiOnceUponAFrame.__Internal*) __Instance) = *((global::Cored.ImGuiOnceUponAFrame.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -4733,7 +4733,7 @@ namespace TestOpenGLd
             __Instance = IntPtr.Zero;
         }
 
-        public static implicit operator bool(global::TestOpenGLd.ImGuiOnceUponAFrame __op)
+        public static implicit operator bool(global::Cored.ImGuiOnceUponAFrame __op)
         {
             if (ReferenceEquals(__op, null))
                 throw new global::System.ArgumentNullException("__op", "Cannot be null because it is a C++ reference (&).");
@@ -4762,33 +4762,33 @@ namespace TestOpenGLd
         public partial struct __Internal
         {
             internal fixed sbyte InputBuf[256];
-            internal global::TestOpenGLd.ImVector.__Internal Filters;
+            internal global::Cored.ImVector.__Internal Filters;
             internal int CountGrep;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiTextFilter@@QEAA@PEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiTextFilter@@QEAA@PEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string default_filter);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiTextFilter@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiTextFilter@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??1ImGuiTextFilter@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??1ImGuiTextFilter@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void dtor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Draw@ImGuiTextFilter@@QEAA_NPEBDM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Draw@ImGuiTextFilter@@QEAA_NPEBDM@Z", CallingConvention = __CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool Draw(__IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float width);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PassFilter@ImGuiTextFilter@@QEBA_NPEBD0@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PassFilter@ImGuiTextFilter@@QEBA_NPEBD0@Z", CallingConvention = __CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool PassFilter(__IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_end);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Build@ImGuiTextFilter@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Build@ImGuiTextFilter@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Build(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Clear@ImGuiTextFilter@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Clear@ImGuiTextFilter@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Clear(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsActive@ImGuiTextFilter@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsActive@ImGuiTextFilter@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool IsActive(__IntPtr __instance);
         }
@@ -4801,23 +4801,23 @@ namespace TestOpenGLd
                 internal __IntPtr b;
                 internal __IntPtr e;
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiTextRange@ImGuiTextFilter@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiTextRange@ImGuiTextFilter@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr ctor(__IntPtr __instance);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiTextRange@ImGuiTextFilter@@QEAA@PEBD0@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiTextRange@ImGuiTextFilter@@QEAA@PEBD0@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr ctor(__IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string _b, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string _e);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiTextRange@ImGuiTextFilter@@QEAA@AEBU01@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiTextRange@ImGuiTextFilter@@QEAA@AEBU01@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?empty@ImGuiTextRange@ImGuiTextFilter@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?empty@ImGuiTextRange@ImGuiTextFilter@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool Empty(__IntPtr __instance);
             }
 
             public __IntPtr __Instance { get; protected set; }
 
-            internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiTextFilter.ImGuiTextRange> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiTextFilter.ImGuiTextRange>();
+            internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiTextFilter.ImGuiTextRange> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiTextFilter.ImGuiTextRange>();
 
             protected bool __ownsNativeInstance;
 
@@ -4866,7 +4866,7 @@ namespace TestOpenGLd
 
             public ImGuiTextRange()
             {
-                __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiTextFilter.ImGuiTextRange.__Internal));
+                __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiTextFilter.ImGuiTextRange.__Internal));
                 __ownsNativeInstance = true;
                 NativeToManagedMap[__Instance] = this;
                 __Internal.ctor(__Instance);
@@ -4874,18 +4874,18 @@ namespace TestOpenGLd
 
             public ImGuiTextRange(string _b, string _e)
             {
-                __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiTextFilter.ImGuiTextRange.__Internal));
+                __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiTextFilter.ImGuiTextRange.__Internal));
                 __ownsNativeInstance = true;
                 NativeToManagedMap[__Instance] = this;
                 __Internal.ctor(__Instance, _b, _e);
             }
 
-            public ImGuiTextRange(global::TestOpenGLd.ImGuiTextFilter.ImGuiTextRange _0)
+            public ImGuiTextRange(global::Cored.ImGuiTextFilter.ImGuiTextRange _0)
             {
-                __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiTextFilter.ImGuiTextRange.__Internal));
+                __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiTextFilter.ImGuiTextRange.__Internal));
                 __ownsNativeInstance = true;
                 NativeToManagedMap[__Instance] = this;
-                *((global::TestOpenGLd.ImGuiTextFilter.ImGuiTextRange.__Internal*) __Instance) = *((global::TestOpenGLd.ImGuiTextFilter.ImGuiTextRange.__Internal*) _0.__Instance);
+                *((global::Cored.ImGuiTextFilter.ImGuiTextRange.__Internal*) __Instance) = *((global::Cored.ImGuiTextFilter.ImGuiTextRange.__Internal*) _0.__Instance);
             }
 
             public void Dispose()
@@ -4949,7 +4949,7 @@ namespace TestOpenGLd
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiTextFilter> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiTextFilter>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiTextFilter> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiTextFilter>();
 
         protected bool __ownsNativeInstance;
 
@@ -4978,7 +4978,7 @@ namespace TestOpenGLd
         private static void* __CopyValue(__Internal native)
         {
             var ret = Marshal.AllocHGlobal(sizeof(__Internal));
-            global::TestOpenGLd.ImGuiTextFilter.__Internal.cctor(ret, new __IntPtr(&native));
+            global::Cored.ImGuiTextFilter.__Internal.cctor(ret, new __IntPtr(&native));
             return ret.ToPointer();
         }
 
@@ -4998,15 +4998,15 @@ namespace TestOpenGLd
 
         public ImGuiTextFilter(string default_filter)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiTextFilter.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiTextFilter.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance, default_filter);
         }
 
-        public ImGuiTextFilter(global::TestOpenGLd.ImGuiTextFilter _0)
+        public ImGuiTextFilter(global::Cored.ImGuiTextFilter _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiTextFilter.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiTextFilter.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             if (ReferenceEquals(_0, null))
@@ -5054,9 +5054,9 @@ namespace TestOpenGLd
             __Internal.Clear(__Instance);
         }
 
-        public static implicit operator global::TestOpenGLd.ImGuiTextFilter(string default_filter)
+        public static implicit operator global::Cored.ImGuiTextFilter(string default_filter)
         {
-            return new global::TestOpenGLd.ImGuiTextFilter(default_filter);
+            return new global::Cored.ImGuiTextFilter(default_filter);
         }
 
         public sbyte[] InputBuf
@@ -5104,52 +5104,52 @@ namespace TestOpenGLd
         [StructLayout(LayoutKind.Sequential, Size = 16)]
         public partial struct __Internal
         {
-            internal global::TestOpenGLd.ImVector.__Internal Buf;
+            internal global::Cored.ImVector.__Internal Buf;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiTextBuffer@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiTextBuffer@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiTextBuffer@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiTextBuffer@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??1ImGuiTextBuffer@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??1ImGuiTextBuffer@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void dtor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?begin@ImGuiTextBuffer@@QEBAPEBDXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?begin@ImGuiTextBuffer@@QEBAPEBDXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr Begin(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?end@ImGuiTextBuffer@@QEBAPEBDXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?end@ImGuiTextBuffer@@QEBAPEBDXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr End(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?clear@ImGuiTextBuffer@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?clear@ImGuiTextBuffer@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Clear(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?reserve@ImGuiTextBuffer@@QEAAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?reserve@ImGuiTextBuffer@@QEAAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Reserve(__IntPtr __instance, int capacity);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?append@ImGuiTextBuffer@@QEAAXPEBD0@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?append@ImGuiTextBuffer@@QEAAXPEBD0@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Append(__IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_end);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?appendf@ImGuiTextBuffer@@QEAAXPEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?appendf@ImGuiTextBuffer@@QEAAXPEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Appendf(__IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??AImGuiTextBuffer@@QEBADH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??AImGuiTextBuffer@@QEBADH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern sbyte OperatorSubscript(__IntPtr __instance, int i);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?size@ImGuiTextBuffer@@QEBAHXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?size@ImGuiTextBuffer@@QEBAHXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int Size(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?empty@ImGuiTextBuffer@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?empty@ImGuiTextBuffer@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool Empty(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?c_str@ImGuiTextBuffer@@QEBAPEBDXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?c_str@ImGuiTextBuffer@@QEBAPEBDXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr CStr(__IntPtr __instance);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiTextBuffer> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiTextBuffer>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiTextBuffer> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiTextBuffer>();
 
         protected bool __ownsNativeInstance;
 
@@ -5178,7 +5178,7 @@ namespace TestOpenGLd
         private static void* __CopyValue(__Internal native)
         {
             var ret = Marshal.AllocHGlobal(sizeof(__Internal));
-            global::TestOpenGLd.ImGuiTextBuffer.__Internal.cctor(ret, new __IntPtr(&native));
+            global::Cored.ImGuiTextBuffer.__Internal.cctor(ret, new __IntPtr(&native));
             return ret.ToPointer();
         }
 
@@ -5198,15 +5198,15 @@ namespace TestOpenGLd
 
         public ImGuiTextBuffer()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiTextBuffer.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiTextBuffer.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImGuiTextBuffer(global::TestOpenGLd.ImGuiTextBuffer _0)
+        public ImGuiTextBuffer(global::Cored.ImGuiTextBuffer _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiTextBuffer.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiTextBuffer.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             if (ReferenceEquals(_0, null))
@@ -5268,7 +5268,7 @@ namespace TestOpenGLd
         {
             get
             {
-                var __ptr = (sbyte*)global::TestOpenGLd.__Symbols.TestOpenGLd._EmptyString_ImGuiTextBuffer__2PADA;
+                var __ptr = (sbyte*)global::Cored.__Symbols.Cored._EmptyString_ImGuiTextBuffer__2PADA;
                 return CppSharp.Runtime.MarshalUtil.GetArray<sbyte>(__ptr, 1);
             }
         }
@@ -5315,61 +5315,61 @@ namespace TestOpenGLd
         [StructLayout(LayoutKind.Sequential, Size = 16)]
         public partial struct __Internal
         {
-            internal global::TestOpenGLd.ImVector.__Internal Data;
+            internal global::Cored.ImVector.__Internal Data;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiStorage@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiStorage@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiStorage@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiStorage@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??1ImGuiStorage@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??1ImGuiStorage@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void dtor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Clear@ImGuiStorage@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Clear@ImGuiStorage@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Clear(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetInt@ImGuiStorage@@QEBAHIH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetInt@ImGuiStorage@@QEBAHIH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int GetInt(__IntPtr __instance, uint key, int default_val);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetInt@ImGuiStorage@@QEAAXIH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetInt@ImGuiStorage@@QEAAXIH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void SetInt(__IntPtr __instance, uint key, int val);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetBool@ImGuiStorage@@QEBA_NI_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetBool@ImGuiStorage@@QEBA_NI_N@Z", CallingConvention = __CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool GetBool(__IntPtr __instance, uint key, bool default_val);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetBool@ImGuiStorage@@QEAAXI_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetBool@ImGuiStorage@@QEAAXI_N@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void SetBool(__IntPtr __instance, uint key, bool val);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetFloat@ImGuiStorage@@QEBAMIM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetFloat@ImGuiStorage@@QEBAMIM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern float GetFloat(__IntPtr __instance, uint key, float default_val);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetFloat@ImGuiStorage@@QEAAXIM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetFloat@ImGuiStorage@@QEAAXIM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void SetFloat(__IntPtr __instance, uint key, float val);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetVoidPtr@ImGuiStorage@@QEBAPEAXI@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetVoidPtr@ImGuiStorage@@QEBAPEAXI@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr GetVoidPtr(__IntPtr __instance, uint key);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetVoidPtr@ImGuiStorage@@QEAAXIPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetVoidPtr@ImGuiStorage@@QEAAXIPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void SetVoidPtr(__IntPtr __instance, uint key, __IntPtr val);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetIntRef@ImGuiStorage@@QEAAPEAHIH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetIntRef@ImGuiStorage@@QEAAPEAHIH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int* GetIntRef(__IntPtr __instance, uint key, int default_val);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetBoolRef@ImGuiStorage@@QEAAPEA_NI_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetBoolRef@ImGuiStorage@@QEAAPEA_NI_N@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern bool* GetBoolRef(__IntPtr __instance, uint key, bool default_val);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetFloatRef@ImGuiStorage@@QEAAPEAMIM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetFloatRef@ImGuiStorage@@QEAAPEAMIM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern float* GetFloatRef(__IntPtr __instance, uint key, float default_val);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetVoidPtrRef@ImGuiStorage@@QEAAPEAPEAXIPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetVoidPtrRef@ImGuiStorage@@QEAAPEAPEAXIPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void** GetVoidPtrRef(__IntPtr __instance, uint key, __IntPtr default_val);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetAllInt@ImGuiStorage@@QEAAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetAllInt@ImGuiStorage@@QEAAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void SetAllInt(__IntPtr __instance, int val);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BuildSortByKey@ImGuiStorage@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BuildSortByKey@ImGuiStorage@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void BuildSortByKey(__IntPtr __instance);
         }
 
@@ -5390,22 +5390,22 @@ namespace TestOpenGLd
                 [FieldOffset(8)]
                 internal __IntPtr val_p;
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiStoragePair@ImGuiStorage@@QEAA@IH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiStoragePair@ImGuiStorage@@QEAA@IH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr ctor(__IntPtr __instance, uint _key, int _val_i);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiStoragePair@ImGuiStorage@@QEAA@IM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiStoragePair@ImGuiStorage@@QEAA@IM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr ctor_1(__IntPtr __instance, uint _key, float _val_f);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiStoragePair@ImGuiStorage@@QEAA@IPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiStoragePair@ImGuiStorage@@QEAA@IPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr ctor(__IntPtr __instance, uint _key, __IntPtr _val_p);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiStoragePair@ImGuiStorage@@QEAA@AEBU01@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiStoragePair@ImGuiStorage@@QEAA@AEBU01@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
             }
 
             public __IntPtr __Instance { get; protected set; }
 
-            internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiStorage.ImGuiStoragePair> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiStorage.ImGuiStoragePair>();
+            internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiStorage.ImGuiStoragePair> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiStorage.ImGuiStoragePair>();
 
             protected bool __ownsNativeInstance;
 
@@ -5454,7 +5454,7 @@ namespace TestOpenGLd
 
             public ImGuiStoragePair(uint _key, int _val_i)
             {
-                __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiStorage.ImGuiStoragePair.__Internal));
+                __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiStorage.ImGuiStoragePair.__Internal));
                 __ownsNativeInstance = true;
                 NativeToManagedMap[__Instance] = this;
                 __Internal.ctor(__Instance, _key, _val_i);
@@ -5462,7 +5462,7 @@ namespace TestOpenGLd
 
             public ImGuiStoragePair(uint _key, float _val_f)
             {
-                __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiStorage.ImGuiStoragePair.__Internal));
+                __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiStorage.ImGuiStoragePair.__Internal));
                 __ownsNativeInstance = true;
                 NativeToManagedMap[__Instance] = this;
                 __Internal.ctor_1(__Instance, _key, _val_f);
@@ -5470,18 +5470,18 @@ namespace TestOpenGLd
 
             public ImGuiStoragePair(uint _key, __IntPtr _val_p)
             {
-                __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiStorage.ImGuiStoragePair.__Internal));
+                __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiStorage.ImGuiStoragePair.__Internal));
                 __ownsNativeInstance = true;
                 NativeToManagedMap[__Instance] = this;
                 __Internal.ctor(__Instance, _key, _val_p);
             }
 
-            public ImGuiStoragePair(global::TestOpenGLd.ImGuiStorage.ImGuiStoragePair _0)
+            public ImGuiStoragePair(global::Cored.ImGuiStorage.ImGuiStoragePair _0)
             {
-                __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiStorage.ImGuiStoragePair.__Internal));
+                __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiStorage.ImGuiStoragePair.__Internal));
                 __ownsNativeInstance = true;
                 NativeToManagedMap[__Instance] = this;
-                *((global::TestOpenGLd.ImGuiStorage.ImGuiStoragePair.__Internal*) __Instance) = *((global::TestOpenGLd.ImGuiStorage.ImGuiStoragePair.__Internal*) _0.__Instance);
+                *((global::Cored.ImGuiStorage.ImGuiStoragePair.__Internal*) __Instance) = *((global::Cored.ImGuiStorage.ImGuiStoragePair.__Internal*) _0.__Instance);
             }
 
             public void Dispose()
@@ -5554,7 +5554,7 @@ namespace TestOpenGLd
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiStorage> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiStorage>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiStorage> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiStorage>();
 
         protected bool __ownsNativeInstance;
 
@@ -5583,7 +5583,7 @@ namespace TestOpenGLd
         private static void* __CopyValue(__Internal native)
         {
             var ret = Marshal.AllocHGlobal(sizeof(__Internal));
-            global::TestOpenGLd.ImGuiStorage.__Internal.cctor(ret, new __IntPtr(&native));
+            global::Cored.ImGuiStorage.__Internal.cctor(ret, new __IntPtr(&native));
             return ret.ToPointer();
         }
 
@@ -5601,9 +5601,9 @@ namespace TestOpenGLd
             __Instance = new __IntPtr(native);
         }
 
-        public ImGuiStorage(global::TestOpenGLd.ImGuiStorage _0)
+        public ImGuiStorage(global::Cored.ImGuiStorage _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiStorage.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiStorage.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             if (ReferenceEquals(_0, null))
@@ -5614,7 +5614,7 @@ namespace TestOpenGLd
 
         public ImGuiStorage()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiStorage.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiStorage.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
@@ -5734,32 +5734,32 @@ namespace TestOpenGLd
             internal float ItemsHeight;
             internal float StartPosY;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiListClipper@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiListClipper@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiListClipper@@QEAA@HM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiListClipper@@QEAA@HM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance, int items_count, float items_height);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiListClipper@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiListClipper@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??1ImGuiListClipper@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??1ImGuiListClipper@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void dtor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Begin@ImGuiListClipper@@QEAAXHM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Begin@ImGuiListClipper@@QEAAXHM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Begin(__IntPtr __instance, int items_count, float items_height);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?End@ImGuiListClipper@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?End@ImGuiListClipper@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void End(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Step@ImGuiListClipper@@QEAA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Step@ImGuiListClipper@@QEAA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool Step(__IntPtr __instance);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiListClipper> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiListClipper>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiListClipper> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiListClipper>();
 
         protected bool __ownsNativeInstance;
 
@@ -5808,7 +5808,7 @@ namespace TestOpenGLd
 
         public ImGuiListClipper()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiListClipper.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiListClipper.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
@@ -5816,18 +5816,18 @@ namespace TestOpenGLd
 
         public ImGuiListClipper(int items_count, float items_height)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiListClipper.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiListClipper.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance, items_count, items_height);
         }
 
-        public ImGuiListClipper(global::TestOpenGLd.ImGuiListClipper _0)
+        public ImGuiListClipper(global::Cored.ImGuiListClipper _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiListClipper.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiListClipper.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImGuiListClipper.__Internal*) __Instance) = *((global::TestOpenGLd.ImGuiListClipper.__Internal*) _0.__Instance);
+            *((global::Cored.ImGuiListClipper.__Internal*) __Instance) = *((global::Cored.ImGuiListClipper.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -5963,42 +5963,42 @@ namespace TestOpenGLd
         [StructLayout(LayoutKind.Sequential, Size = 16)]
         public partial struct __Internal
         {
-            internal global::TestOpenGLd.ImVec4.__Internal Value;
+            internal global::Cored.ImVec4.__Internal Value;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImColor@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImColor@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImColor@@QEAA@HHHH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImColor@@QEAA@HHHH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance, int r, int g, int b, int a);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImColor@@QEAA@I@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImColor@@QEAA@I@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance, uint rgba);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImColor@@QEAA@MMMM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImColor@@QEAA@MMMM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor_1(__IntPtr __instance, float r, float g, float b, float a);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImColor@@QEAA@AEBUImVec4@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImColor@@QEAA@AEBUImVec4@@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance, __IntPtr col);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImColor@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImColor@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor_1(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??BImColor@@QEBAIXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??BImColor@@QEBAIXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern uint OperatorConversion(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??BImColor@@QEBA?AUImVec4@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??BImColor@@QEBA?AUImVec4@@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void OperatorConversion(__IntPtr __instance, __IntPtr @return);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetHSV@ImColor@@QEAAXMMMM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetHSV@ImColor@@QEAAXMMMM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void SetHSV(__IntPtr __instance, float h, float s, float v, float a);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?HSV@ImColor@@SA?AU1@MMMM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?HSV@ImColor@@SA?AU1@MMMM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void HSV(__IntPtr @return, float h, float s, float v, float a);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImColor> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImColor>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImColor> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImColor>();
 
         protected bool __ownsNativeInstance;
 
@@ -6047,7 +6047,7 @@ namespace TestOpenGLd
 
         public ImColor()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImColor.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImColor.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
@@ -6055,7 +6055,7 @@ namespace TestOpenGLd
 
         public ImColor(int r, int g, int b, int a)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImColor.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImColor.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance, r, g, b, a);
@@ -6063,7 +6063,7 @@ namespace TestOpenGLd
 
         public ImColor(uint rgba)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImColor.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImColor.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance, rgba);
@@ -6071,15 +6071,15 @@ namespace TestOpenGLd
 
         public ImColor(float r, float g, float b, float a)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImColor.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImColor.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor_1(__Instance, r, g, b, a);
         }
 
-        public ImColor(global::TestOpenGLd.ImVec4 col)
+        public ImColor(global::Cored.ImVec4 col)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImColor.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImColor.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             if (ReferenceEquals(col, null))
@@ -6088,12 +6088,12 @@ namespace TestOpenGLd
             __Internal.ctor(__Instance, __arg0);
         }
 
-        public ImColor(global::TestOpenGLd.ImColor _0)
+        public ImColor(global::Cored.ImColor _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImColor.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImColor.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImColor.__Internal*) __Instance) = *((global::TestOpenGLd.ImColor.__Internal*) _0.__Instance);
+            *((global::Cored.ImColor.__Internal*) __Instance) = *((global::Cored.ImColor.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -6111,7 +6111,7 @@ namespace TestOpenGLd
             __Instance = IntPtr.Zero;
         }
 
-        public static implicit operator uint(global::TestOpenGLd.ImColor __op)
+        public static implicit operator uint(global::Cored.ImColor __op)
         {
             if (ReferenceEquals(__op, null))
                 throw new global::System.ArgumentNullException("__op", "Cannot be null because it is a C++ reference (&).");
@@ -6120,14 +6120,14 @@ namespace TestOpenGLd
             return __ret;
         }
 
-        public static implicit operator global::TestOpenGLd.ImVec4(global::TestOpenGLd.ImColor __op)
+        public static implicit operator global::Cored.ImVec4(global::Cored.ImColor __op)
         {
             if (ReferenceEquals(__op, null))
                 throw new global::System.ArgumentNullException("__op", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = __op.__Instance;
-            var __ret = new global::TestOpenGLd.ImVec4.__Internal();
+            var __ret = new global::Cored.ImVec4.__Internal();
             __Internal.OperatorConversion(__arg0, new IntPtr(&__ret));
-            return global::TestOpenGLd.ImVec4.__CreateInstance(__ret);
+            return global::Cored.ImVec4.__CreateInstance(__ret);
         }
 
         public void SetHSV(float h, float s, float v, float a)
@@ -6135,35 +6135,35 @@ namespace TestOpenGLd
             __Internal.SetHSV(__Instance, h, s, v, a);
         }
 
-        public static implicit operator global::TestOpenGLd.ImColor(uint rgba)
+        public static implicit operator global::Cored.ImColor(uint rgba)
         {
-            return new global::TestOpenGLd.ImColor(rgba);
+            return new global::Cored.ImColor(rgba);
         }
 
-        public static implicit operator global::TestOpenGLd.ImColor(global::TestOpenGLd.ImVec4 col)
+        public static implicit operator global::Cored.ImColor(global::Cored.ImVec4 col)
         {
-            return new global::TestOpenGLd.ImColor(col);
+            return new global::Cored.ImColor(col);
         }
 
-        public static global::TestOpenGLd.ImColor HSV(float h, float s, float v, float a)
+        public static global::Cored.ImColor HSV(float h, float s, float v, float a)
         {
-            var __ret = new global::TestOpenGLd.ImColor.__Internal();
+            var __ret = new global::Cored.ImColor.__Internal();
             __Internal.HSV(new IntPtr(&__ret), h, s, v, a);
-            return global::TestOpenGLd.ImColor.__CreateInstance(__ret);
+            return global::Cored.ImColor.__CreateInstance(__ret);
         }
 
-        public global::TestOpenGLd.ImVec4 Value
+        public global::Cored.ImVec4 Value
         {
             get
             {
-                return global::TestOpenGLd.ImVec4.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->Value));
+                return global::Cored.ImVec4.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->Value));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->Value = *(global::TestOpenGLd.ImVec4.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->Value = *(global::Cored.ImVec4.__Internal*) value.__Instance;
             }
         }
     }
@@ -6173,7 +6173,7 @@ namespace TestOpenGLd
         [StructLayout(LayoutKind.Sequential, Size = 56)]
         public partial struct __Internal
         {
-            internal global::TestOpenGLd.ImVec4.__Internal ClipRect;
+            internal global::Cored.ImVec4.__Internal ClipRect;
             internal __IntPtr TextureId;
             internal uint VtxOffset;
             internal uint IdxOffset;
@@ -6181,19 +6181,19 @@ namespace TestOpenGLd
             internal __IntPtr UserCallback;
             internal __IntPtr UserCallbackData;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImDrawCmd@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImDrawCmd@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImDrawCmd@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImDrawCmd@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetTexID@ImDrawCmd@@QEBAPEAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetTexID@ImDrawCmd@@QEBAPEAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr GetTexID(__IntPtr __instance);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImDrawCmd> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImDrawCmd>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImDrawCmd> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImDrawCmd>();
 
         protected bool __ownsNativeInstance;
 
@@ -6242,18 +6242,18 @@ namespace TestOpenGLd
 
         public ImDrawCmd()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImDrawCmd.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImDrawCmd.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImDrawCmd(global::TestOpenGLd.ImDrawCmd _0)
+        public ImDrawCmd(global::Cored.ImDrawCmd _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImDrawCmd.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImDrawCmd.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImDrawCmd.__Internal*) __Instance) = *((global::TestOpenGLd.ImDrawCmd.__Internal*) _0.__Instance);
+            *((global::Cored.ImDrawCmd.__Internal*) __Instance) = *((global::Cored.ImDrawCmd.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -6271,18 +6271,18 @@ namespace TestOpenGLd
             __Instance = IntPtr.Zero;
         }
 
-        public global::TestOpenGLd.ImVec4 ClipRect
+        public global::Cored.ImVec4 ClipRect
         {
             get
             {
-                return global::TestOpenGLd.ImVec4.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->ClipRect));
+                return global::Cored.ImVec4.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->ClipRect));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->ClipRect = *(global::TestOpenGLd.ImVec4.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->ClipRect = *(global::Cored.ImVec4.__Internal*) value.__Instance;
             }
         }
 
@@ -6338,12 +6338,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImDrawCallback UserCallback
+        public global::Cored.ImDrawCallback UserCallback
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->UserCallback;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.ImDrawCallback) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.ImDrawCallback));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.ImDrawCallback) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.ImDrawCallback));
             }
 
             set
@@ -6380,20 +6380,20 @@ namespace TestOpenGLd
         [StructLayout(LayoutKind.Sequential, Size = 20)]
         public partial struct __Internal
         {
-            internal global::TestOpenGLd.ImVec2.__Internal pos;
-            internal global::TestOpenGLd.ImVec2.__Internal uv;
+            internal global::Cored.ImVec2.__Internal pos;
+            internal global::Cored.ImVec2.__Internal uv;
             internal uint col;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImDrawVert@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImDrawVert@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImDrawVert@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImDrawVert@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImDrawVert> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImDrawVert>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImDrawVert> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImDrawVert>();
 
         protected bool __ownsNativeInstance;
 
@@ -6442,18 +6442,18 @@ namespace TestOpenGLd
 
         public ImDrawVert()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImDrawVert.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImDrawVert.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImDrawVert(global::TestOpenGLd.ImDrawVert _0)
+        public ImDrawVert(global::Cored.ImDrawVert _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImDrawVert.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImDrawVert.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImDrawVert.__Internal*) __Instance) = *((global::TestOpenGLd.ImDrawVert.__Internal*) _0.__Instance);
+            *((global::Cored.ImDrawVert.__Internal*) __Instance) = *((global::Cored.ImDrawVert.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -6471,33 +6471,33 @@ namespace TestOpenGLd
             __Instance = IntPtr.Zero;
         }
 
-        public global::TestOpenGLd.ImVec2 Pos
+        public global::Cored.ImVec2 Pos
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->pos));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->pos));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->pos = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->pos = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 Uv
+        public global::Cored.ImVec2 Uv
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->uv));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->uv));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->uv = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->uv = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
@@ -6520,20 +6520,20 @@ namespace TestOpenGLd
         [StructLayout(LayoutKind.Sequential, Size = 32)]
         public partial struct __Internal
         {
-            internal global::TestOpenGLd.ImVec4.__Internal ClipRect;
+            internal global::Cored.ImVec4.__Internal ClipRect;
             internal __IntPtr TextureId;
             internal uint VtxOffset;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImDrawCmdHeader@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImDrawCmdHeader@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImDrawCmdHeader@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImDrawCmdHeader@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImDrawCmdHeader> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImDrawCmdHeader>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImDrawCmdHeader> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImDrawCmdHeader>();
 
         protected bool __ownsNativeInstance;
 
@@ -6580,17 +6580,17 @@ namespace TestOpenGLd
             __Instance = new __IntPtr(native);
         }
 
-        public ImDrawCmdHeader(global::TestOpenGLd.ImDrawCmdHeader _0)
+        public ImDrawCmdHeader(global::Cored.ImDrawCmdHeader _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImDrawCmdHeader.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImDrawCmdHeader.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImDrawCmdHeader.__Internal*) __Instance) = *((global::TestOpenGLd.ImDrawCmdHeader.__Internal*) _0.__Instance);
+            *((global::Cored.ImDrawCmdHeader.__Internal*) __Instance) = *((global::Cored.ImDrawCmdHeader.__Internal*) _0.__Instance);
         }
 
         public ImDrawCmdHeader()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImDrawCmdHeader.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImDrawCmdHeader.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
@@ -6611,18 +6611,18 @@ namespace TestOpenGLd
             __Instance = IntPtr.Zero;
         }
 
-        public global::TestOpenGLd.ImVec4 ClipRect
+        public global::Cored.ImVec4 ClipRect
         {
             get
             {
-                return global::TestOpenGLd.ImVec4.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->ClipRect));
+                return global::Cored.ImVec4.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->ClipRect));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->ClipRect = *(global::TestOpenGLd.ImVec4.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->ClipRect = *(global::Cored.ImVec4.__Internal*) value.__Instance;
             }
         }
 
@@ -6658,22 +6658,22 @@ namespace TestOpenGLd
         [StructLayout(LayoutKind.Sequential, Size = 32)]
         public partial struct __Internal
         {
-            internal global::TestOpenGLd.ImVector.__Internal _CmdBuffer;
-            internal global::TestOpenGLd.ImVector.__Internal _IdxBuffer;
+            internal global::Cored.ImVector.__Internal _CmdBuffer;
+            internal global::Cored.ImVector.__Internal _IdxBuffer;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImDrawChannel@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImDrawChannel@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImDrawChannel@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImDrawChannel@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??1ImDrawChannel@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??1ImDrawChannel@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void dtor(__IntPtr __instance);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImDrawChannel> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImDrawChannel>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImDrawChannel> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImDrawChannel>();
 
         protected bool __ownsNativeInstance;
 
@@ -6702,7 +6702,7 @@ namespace TestOpenGLd
         private static void* __CopyValue(__Internal native)
         {
             var ret = Marshal.AllocHGlobal(sizeof(__Internal));
-            global::TestOpenGLd.ImDrawChannel.__Internal.cctor(ret, new __IntPtr(&native));
+            global::Cored.ImDrawChannel.__Internal.cctor(ret, new __IntPtr(&native));
             return ret.ToPointer();
         }
 
@@ -6720,9 +6720,9 @@ namespace TestOpenGLd
             __Instance = new __IntPtr(native);
         }
 
-        public ImDrawChannel(global::TestOpenGLd.ImDrawChannel _0)
+        public ImDrawChannel(global::Cored.ImDrawChannel _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImDrawChannel.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImDrawChannel.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             if (ReferenceEquals(_0, null))
@@ -6733,7 +6733,7 @@ namespace TestOpenGLd
 
         public ImDrawChannel()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImDrawChannel.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImDrawChannel.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
@@ -6764,36 +6764,36 @@ namespace TestOpenGLd
         {
             internal int _Current;
             internal int _Count;
-            internal global::TestOpenGLd.ImVector.__Internal _Channels;
+            internal global::Cored.ImVector.__Internal _Channels;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImDrawListSplitter@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImDrawListSplitter@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImDrawListSplitter@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImDrawListSplitter@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??1ImDrawListSplitter@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??1ImDrawListSplitter@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void dtor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Clear@ImDrawListSplitter@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Clear@ImDrawListSplitter@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Clear(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ClearFreeMemory@ImDrawListSplitter@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ClearFreeMemory@ImDrawListSplitter@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void ClearFreeMemory(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Split@ImDrawListSplitter@@QEAAXPEAUImDrawList@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Split@ImDrawListSplitter@@QEAAXPEAUImDrawList@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Split(__IntPtr __instance, __IntPtr draw_list, int count);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Merge@ImDrawListSplitter@@QEAAXPEAUImDrawList@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Merge@ImDrawListSplitter@@QEAAXPEAUImDrawList@@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Merge(__IntPtr __instance, __IntPtr draw_list);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetCurrentChannel@ImDrawListSplitter@@QEAAXPEAUImDrawList@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetCurrentChannel@ImDrawListSplitter@@QEAAXPEAUImDrawList@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void SetCurrentChannel(__IntPtr __instance, __IntPtr draw_list, int channel_idx);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImDrawListSplitter> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImDrawListSplitter>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImDrawListSplitter> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImDrawListSplitter>();
 
         protected bool __ownsNativeInstance;
 
@@ -6822,7 +6822,7 @@ namespace TestOpenGLd
         private static void* __CopyValue(__Internal native)
         {
             var ret = Marshal.AllocHGlobal(sizeof(__Internal));
-            global::TestOpenGLd.ImDrawListSplitter.__Internal.cctor(ret, new __IntPtr(&native));
+            global::Cored.ImDrawListSplitter.__Internal.cctor(ret, new __IntPtr(&native));
             return ret.ToPointer();
         }
 
@@ -6842,15 +6842,15 @@ namespace TestOpenGLd
 
         public ImDrawListSplitter()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImDrawListSplitter.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImDrawListSplitter.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImDrawListSplitter(global::TestOpenGLd.ImDrawListSplitter _0)
+        public ImDrawListSplitter(global::Cored.ImDrawListSplitter _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImDrawListSplitter.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImDrawListSplitter.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             if (ReferenceEquals(_0, null))
@@ -6886,19 +6886,19 @@ namespace TestOpenGLd
             __Internal.ClearFreeMemory(__Instance);
         }
 
-        public void Split(global::TestOpenGLd.ImDrawList draw_list, int count)
+        public void Split(global::Cored.ImDrawList draw_list, int count)
         {
             var __arg0 = draw_list is null ? __IntPtr.Zero : draw_list.__Instance;
             __Internal.Split(__Instance, __arg0, count);
         }
 
-        public void Merge(global::TestOpenGLd.ImDrawList draw_list)
+        public void Merge(global::Cored.ImDrawList draw_list)
         {
             var __arg0 = draw_list is null ? __IntPtr.Zero : draw_list.__Instance;
             __Internal.Merge(__Instance, __arg0);
         }
 
-        public void SetCurrentChannel(global::TestOpenGLd.ImDrawList draw_list, int channel_idx)
+        public void SetCurrentChannel(global::Cored.ImDrawList draw_list, int channel_idx)
         {
             var __arg0 = draw_list is null ? __IntPtr.Zero : draw_list.__Instance;
             __Internal.SetCurrentChannel(__Instance, __arg0, channel_idx);
@@ -6936,227 +6936,227 @@ namespace TestOpenGLd
         [StructLayout(LayoutKind.Sequential, Size = 200)]
         public partial struct __Internal
         {
-            internal global::TestOpenGLd.ImVector.__Internal CmdBuffer;
-            internal global::TestOpenGLd.ImVector.__Internal IdxBuffer;
-            internal global::TestOpenGLd.ImVector.__Internal VtxBuffer;
+            internal global::Cored.ImVector.__Internal CmdBuffer;
+            internal global::Cored.ImVector.__Internal IdxBuffer;
+            internal global::Cored.ImVector.__Internal VtxBuffer;
             internal int Flags;
             internal uint _VtxCurrentIdx;
             internal __IntPtr _Data;
             internal __IntPtr _OwnerName;
             internal __IntPtr _VtxWritePtr;
             internal __IntPtr _IdxWritePtr;
-            internal global::TestOpenGLd.ImVector.__Internal _ClipRectStack;
-            internal global::TestOpenGLd.ImVector.__Internal _TextureIdStack;
-            internal global::TestOpenGLd.ImVector.__Internal _Path;
-            internal global::TestOpenGLd.ImDrawCmdHeader.__Internal _CmdHeader;
-            internal global::TestOpenGLd.ImDrawListSplitter.__Internal _Splitter;
+            internal global::Cored.ImVector.__Internal _ClipRectStack;
+            internal global::Cored.ImVector.__Internal _TextureIdStack;
+            internal global::Cored.ImVector.__Internal _Path;
+            internal global::Cored.ImDrawCmdHeader.__Internal _CmdHeader;
+            internal global::Cored.ImDrawListSplitter.__Internal _Splitter;
             internal float _FringeScale;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImDrawList@@QEAA@PEBUImDrawListSharedData@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImDrawList@@QEAA@PEBUImDrawListSharedData@@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance, __IntPtr shared_data);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImDrawList@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImDrawList@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor_1(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??1ImDrawList@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??1ImDrawList@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void dtor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PushClipRect@ImDrawList@@QEAAXUImVec2@@0_N@Z", CallingConvention = __CallingConvention.Cdecl)]
-            internal static extern void PushClipRect(__IntPtr __instance, global::TestOpenGLd.ImVec2.__Internal clip_rect_min, global::TestOpenGLd.ImVec2.__Internal clip_rect_max, bool intersect_with_current_clip_rect);
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PushClipRect@ImDrawList@@QEAAXUImVec2@@0_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern void PushClipRect(__IntPtr __instance, global::Cored.ImVec2.__Internal clip_rect_min, global::Cored.ImVec2.__Internal clip_rect_max, bool intersect_with_current_clip_rect);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PushClipRectFullScreen@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PushClipRectFullScreen@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PushClipRectFullScreen(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PopClipRect@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PopClipRect@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PopClipRect(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PushTextureID@ImDrawList@@QEAAXPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PushTextureID@ImDrawList@@QEAAXPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PushTextureID(__IntPtr __instance, __IntPtr texture_id);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PopTextureID@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PopTextureID@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PopTextureID(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddLine@ImDrawList@@QEAAXAEBUImVec2@@0IM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddLine@ImDrawList@@QEAAXAEBUImVec2@@0IM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddLine(__IntPtr __instance, __IntPtr p1, __IntPtr p2, uint col, float thickness);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddRect@ImDrawList@@QEAAXAEBUImVec2@@0IMHM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddRect@ImDrawList@@QEAAXAEBUImVec2@@0IMHM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddRect(__IntPtr __instance, __IntPtr p_min, __IntPtr p_max, uint col, float rounding, int flags, float thickness);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddRectFilled@ImDrawList@@QEAAXAEBUImVec2@@0IMH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddRectFilled@ImDrawList@@QEAAXAEBUImVec2@@0IMH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddRectFilled(__IntPtr __instance, __IntPtr p_min, __IntPtr p_max, uint col, float rounding, int flags);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddRectFilledMultiColor@ImDrawList@@QEAAXAEBUImVec2@@0IIII@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddRectFilledMultiColor@ImDrawList@@QEAAXAEBUImVec2@@0IIII@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddRectFilledMultiColor(__IntPtr __instance, __IntPtr p_min, __IntPtr p_max, uint col_upr_left, uint col_upr_right, uint col_bot_right, uint col_bot_left);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddQuad@ImDrawList@@QEAAXAEBUImVec2@@000IM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddQuad@ImDrawList@@QEAAXAEBUImVec2@@000IM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddQuad(__IntPtr __instance, __IntPtr p1, __IntPtr p2, __IntPtr p3, __IntPtr p4, uint col, float thickness);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddQuadFilled@ImDrawList@@QEAAXAEBUImVec2@@000I@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddQuadFilled@ImDrawList@@QEAAXAEBUImVec2@@000I@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddQuadFilled(__IntPtr __instance, __IntPtr p1, __IntPtr p2, __IntPtr p3, __IntPtr p4, uint col);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddTriangle@ImDrawList@@QEAAXAEBUImVec2@@00IM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddTriangle@ImDrawList@@QEAAXAEBUImVec2@@00IM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddTriangle(__IntPtr __instance, __IntPtr p1, __IntPtr p2, __IntPtr p3, uint col, float thickness);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddTriangleFilled@ImDrawList@@QEAAXAEBUImVec2@@00I@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddTriangleFilled@ImDrawList@@QEAAXAEBUImVec2@@00I@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddTriangleFilled(__IntPtr __instance, __IntPtr p1, __IntPtr p2, __IntPtr p3, uint col);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddCircle@ImDrawList@@QEAAXAEBUImVec2@@MIHM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddCircle@ImDrawList@@QEAAXAEBUImVec2@@MIHM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddCircle(__IntPtr __instance, __IntPtr center, float radius, uint col, int num_segments, float thickness);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddCircleFilled@ImDrawList@@QEAAXAEBUImVec2@@MIH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddCircleFilled@ImDrawList@@QEAAXAEBUImVec2@@MIH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddCircleFilled(__IntPtr __instance, __IntPtr center, float radius, uint col, int num_segments);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddNgon@ImDrawList@@QEAAXAEBUImVec2@@MIHM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddNgon@ImDrawList@@QEAAXAEBUImVec2@@MIHM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddNgon(__IntPtr __instance, __IntPtr center, float radius, uint col, int num_segments, float thickness);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddNgonFilled@ImDrawList@@QEAAXAEBUImVec2@@MIH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddNgonFilled@ImDrawList@@QEAAXAEBUImVec2@@MIH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddNgonFilled(__IntPtr __instance, __IntPtr center, float radius, uint col, int num_segments);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddText@ImDrawList@@QEAAXAEBUImVec2@@IPEBD1@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddText@ImDrawList@@QEAAXAEBUImVec2@@IPEBD1@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddText(__IntPtr __instance, __IntPtr pos, uint col, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_begin, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_end);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddText@ImDrawList@@QEAAXPEBUImFont@@MAEBUImVec2@@IPEBD2MPEBUImVec4@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddText@ImDrawList@@QEAAXPEBUImFont@@MAEBUImVec2@@IPEBD2MPEBUImVec4@@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddText(__IntPtr __instance, __IntPtr font, float font_size, __IntPtr pos, uint col, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_begin, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_end, float wrap_width, __IntPtr cpu_fine_clip_rect);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddPolyline@ImDrawList@@QEAAXPEBUImVec2@@HIHM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddPolyline@ImDrawList@@QEAAXPEBUImVec2@@HIHM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddPolyline(__IntPtr __instance, __IntPtr points, int num_points, uint col, int flags, float thickness);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddConvexPolyFilled@ImDrawList@@QEAAXPEBUImVec2@@HI@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddConvexPolyFilled@ImDrawList@@QEAAXPEBUImVec2@@HI@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddConvexPolyFilled(__IntPtr __instance, __IntPtr points, int num_points, uint col);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddBezierCubic@ImDrawList@@QEAAXAEBUImVec2@@000IMH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddBezierCubic@ImDrawList@@QEAAXAEBUImVec2@@000IMH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddBezierCubic(__IntPtr __instance, __IntPtr p1, __IntPtr p2, __IntPtr p3, __IntPtr p4, uint col, float thickness, int num_segments);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddBezierQuadratic@ImDrawList@@QEAAXAEBUImVec2@@00IMH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddBezierQuadratic@ImDrawList@@QEAAXAEBUImVec2@@00IMH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddBezierQuadratic(__IntPtr __instance, __IntPtr p1, __IntPtr p2, __IntPtr p3, uint col, float thickness, int num_segments);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddImage@ImDrawList@@QEAAXPEAXAEBUImVec2@@111I@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddImage@ImDrawList@@QEAAXPEAXAEBUImVec2@@111I@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddImage(__IntPtr __instance, __IntPtr user_texture_id, __IntPtr p_min, __IntPtr p_max, __IntPtr uv_min, __IntPtr uv_max, uint col);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddImageQuad@ImDrawList@@QEAAXPEAXAEBUImVec2@@1111111I@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddImageQuad@ImDrawList@@QEAAXPEAXAEBUImVec2@@1111111I@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddImageQuad(__IntPtr __instance, __IntPtr user_texture_id, __IntPtr p1, __IntPtr p2, __IntPtr p3, __IntPtr p4, __IntPtr uv1, __IntPtr uv2, __IntPtr uv3, __IntPtr uv4, uint col);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddImageRounded@ImDrawList@@QEAAXPEAXAEBUImVec2@@111IMH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddImageRounded@ImDrawList@@QEAAXPEAXAEBUImVec2@@111IMH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddImageRounded(__IntPtr __instance, __IntPtr user_texture_id, __IntPtr p_min, __IntPtr p_max, __IntPtr uv_min, __IntPtr uv_max, uint col, float rounding, int flags);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PathClear@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PathClear@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PathClear(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PathLineTo@ImDrawList@@QEAAXAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PathLineTo@ImDrawList@@QEAAXAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PathLineTo(__IntPtr __instance, __IntPtr pos);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PathLineToMergeDuplicate@ImDrawList@@QEAAXAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PathLineToMergeDuplicate@ImDrawList@@QEAAXAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PathLineToMergeDuplicate(__IntPtr __instance, __IntPtr pos);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PathFillConvex@ImDrawList@@QEAAXI@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PathFillConvex@ImDrawList@@QEAAXI@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PathFillConvex(__IntPtr __instance, uint col);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PathStroke@ImDrawList@@QEAAXIHM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PathStroke@ImDrawList@@QEAAXIHM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PathStroke(__IntPtr __instance, uint col, int flags, float thickness);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PathArcTo@ImDrawList@@QEAAXAEBUImVec2@@MMMH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PathArcTo@ImDrawList@@QEAAXAEBUImVec2@@MMMH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PathArcTo(__IntPtr __instance, __IntPtr center, float radius, float a_min, float a_max, int num_segments);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PathArcToFast@ImDrawList@@QEAAXAEBUImVec2@@MHH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PathArcToFast@ImDrawList@@QEAAXAEBUImVec2@@MHH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PathArcToFast(__IntPtr __instance, __IntPtr center, float radius, int a_min_of_12, int a_max_of_12);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PathBezierCubicCurveTo@ImDrawList@@QEAAXAEBUImVec2@@00H@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PathBezierCubicCurveTo@ImDrawList@@QEAAXAEBUImVec2@@00H@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PathBezierCubicCurveTo(__IntPtr __instance, __IntPtr p2, __IntPtr p3, __IntPtr p4, int num_segments);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PathBezierQuadraticCurveTo@ImDrawList@@QEAAXAEBUImVec2@@0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PathBezierQuadraticCurveTo@ImDrawList@@QEAAXAEBUImVec2@@0H@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PathBezierQuadraticCurveTo(__IntPtr __instance, __IntPtr p2, __IntPtr p3, int num_segments);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PathRect@ImDrawList@@QEAAXAEBUImVec2@@0MH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PathRect@ImDrawList@@QEAAXAEBUImVec2@@0MH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PathRect(__IntPtr __instance, __IntPtr rect_min, __IntPtr rect_max, float rounding, int flags);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddCallback@ImDrawList@@QEAAXP6AXPEBU1@PEBUImDrawCmd@@@ZPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddCallback@ImDrawList@@QEAAXP6AXPEBU1@PEBUImDrawCmd@@@ZPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddCallback(__IntPtr __instance, __IntPtr callback, __IntPtr callback_data);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddDrawCmd@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddDrawCmd@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddDrawCmd(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?CloneOutput@ImDrawList@@QEBAPEAU1@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?CloneOutput@ImDrawList@@QEBAPEAU1@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr CloneOutput(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ChannelsSplit@ImDrawList@@QEAAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ChannelsSplit@ImDrawList@@QEAAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void ChannelsSplit(__IntPtr __instance, int count);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ChannelsMerge@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ChannelsMerge@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void ChannelsMerge(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ChannelsSetCurrent@ImDrawList@@QEAAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ChannelsSetCurrent@ImDrawList@@QEAAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void ChannelsSetCurrent(__IntPtr __instance, int n);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PrimReserve@ImDrawList@@QEAAXHH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PrimReserve@ImDrawList@@QEAAXHH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PrimReserve(__IntPtr __instance, int idx_count, int vtx_count);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PrimUnreserve@ImDrawList@@QEAAXHH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PrimUnreserve@ImDrawList@@QEAAXHH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PrimUnreserve(__IntPtr __instance, int idx_count, int vtx_count);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PrimRect@ImDrawList@@QEAAXAEBUImVec2@@0I@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PrimRect@ImDrawList@@QEAAXAEBUImVec2@@0I@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PrimRect(__IntPtr __instance, __IntPtr a, __IntPtr b, uint col);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PrimRectUV@ImDrawList@@QEAAXAEBUImVec2@@000I@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PrimRectUV@ImDrawList@@QEAAXAEBUImVec2@@000I@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PrimRectUV(__IntPtr __instance, __IntPtr a, __IntPtr b, __IntPtr uv_a, __IntPtr uv_b, uint col);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PrimQuadUV@ImDrawList@@QEAAXAEBUImVec2@@0000000I@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PrimQuadUV@ImDrawList@@QEAAXAEBUImVec2@@0000000I@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PrimQuadUV(__IntPtr __instance, __IntPtr a, __IntPtr b, __IntPtr c, __IntPtr d, __IntPtr uv_a, __IntPtr uv_b, __IntPtr uv_c, __IntPtr uv_d, uint col);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PrimWriteVtx@ImDrawList@@QEAAXAEBUImVec2@@0I@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PrimWriteVtx@ImDrawList@@QEAAXAEBUImVec2@@0I@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PrimWriteVtx(__IntPtr __instance, __IntPtr pos, __IntPtr uv, uint col);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PrimWriteIdx@ImDrawList@@QEAAXG@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PrimWriteIdx@ImDrawList@@QEAAXG@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PrimWriteIdx(__IntPtr __instance, ushort idx);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PrimVtx@ImDrawList@@QEAAXAEBUImVec2@@0I@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PrimVtx@ImDrawList@@QEAAXAEBUImVec2@@0I@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PrimVtx(__IntPtr __instance, __IntPtr pos, __IntPtr uv, uint col);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddBezierCurve@ImDrawList@@QEAAXAEBUImVec2@@000IMH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddBezierCurve@ImDrawList@@QEAAXAEBUImVec2@@000IMH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddBezierCurve(__IntPtr __instance, __IntPtr p1, __IntPtr p2, __IntPtr p3, __IntPtr p4, uint col, float thickness, int num_segments);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PathBezierCurveTo@ImDrawList@@QEAAXAEBUImVec2@@00H@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PathBezierCurveTo@ImDrawList@@QEAAXAEBUImVec2@@00H@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PathBezierCurveTo(__IntPtr __instance, __IntPtr p2, __IntPtr p3, __IntPtr p4, int num_segments);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?_ResetForNewFrame@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?_ResetForNewFrame@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void ResetForNewFrame(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?_ClearFreeMemory@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?_ClearFreeMemory@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void ClearFreeMemory(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?_PopUnusedDrawCmd@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?_PopUnusedDrawCmd@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PopUnusedDrawCmd(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?_TryMergeDrawCmds@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?_TryMergeDrawCmds@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void TryMergeDrawCmds(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?_OnChangedClipRect@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?_OnChangedClipRect@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void OnChangedClipRect(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?_OnChangedTextureID@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?_OnChangedTextureID@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void OnChangedTextureID(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?_OnChangedVtxOffset@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?_OnChangedVtxOffset@ImDrawList@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void OnChangedVtxOffset(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?_CalcCircleAutoSegmentCount@ImDrawList@@QEBAHM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?_CalcCircleAutoSegmentCount@ImDrawList@@QEBAHM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int CalcCircleAutoSegmentCount(__IntPtr __instance, float radius);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?_PathArcToFastEx@ImDrawList@@QEAAXAEBUImVec2@@MHHH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?_PathArcToFastEx@ImDrawList@@QEAAXAEBUImVec2@@MHHH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PathArcToFastEx(__IntPtr __instance, __IntPtr center, float radius, int a_min_sample, int a_max_sample, int a_step);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?_PathArcToN@ImDrawList@@QEAAXAEBUImVec2@@MMMH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?_PathArcToN@ImDrawList@@QEAAXAEBUImVec2@@MMMH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void PathArcToN(__IntPtr __instance, __IntPtr center, float radius, float a_min, float a_max, int num_segments);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetClipRectMin@ImDrawList@@QEBA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetClipRectMin@ImDrawList@@QEBA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void GetClipRectMin(__IntPtr __instance, __IntPtr @return);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetClipRectMax@ImDrawList@@QEBA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetClipRectMax@ImDrawList@@QEBA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void GetClipRectMax(__IntPtr __instance, __IntPtr @return);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImDrawList> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImDrawList>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImDrawList> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImDrawList>();
 
         protected bool __ownsNativeInstance;
 
@@ -7185,7 +7185,7 @@ namespace TestOpenGLd
         private static void* __CopyValue(__Internal native)
         {
             var ret = Marshal.AllocHGlobal(sizeof(__Internal));
-            global::TestOpenGLd.ImDrawList.__Internal.cctor_1(ret, new __IntPtr(&native));
+            global::Cored.ImDrawList.__Internal.cctor_1(ret, new __IntPtr(&native));
             return ret.ToPointer();
         }
 
@@ -7203,18 +7203,18 @@ namespace TestOpenGLd
             __Instance = new __IntPtr(native);
         }
 
-        public ImDrawList(global::TestOpenGLd.ImDrawListSharedData shared_data)
+        public ImDrawList(global::Cored.ImDrawListSharedData shared_data)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImDrawList.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImDrawList.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             var __arg0 = shared_data is null ? __IntPtr.Zero : shared_data.__Instance;
             __Internal.ctor(__Instance, __arg0);
         }
 
-        public ImDrawList(global::TestOpenGLd.ImDrawList _0)
+        public ImDrawList(global::Cored.ImDrawList _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImDrawList.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImDrawList.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             if (ReferenceEquals(_0, null))
@@ -7240,7 +7240,7 @@ namespace TestOpenGLd
             __Instance = IntPtr.Zero;
         }
 
-        public void PushClipRect(global::TestOpenGLd.ImVec2 clip_rect_min, global::TestOpenGLd.ImVec2 clip_rect_max, bool intersect_with_current_clip_rect)
+        public void PushClipRect(global::Cored.ImVec2 clip_rect_min, global::Cored.ImVec2 clip_rect_max, bool intersect_with_current_clip_rect)
         {
             if (ReferenceEquals(clip_rect_min, null))
                 throw new global::System.ArgumentNullException("clip_rect_min", "Cannot be null because it is passed by value.");
@@ -7248,7 +7248,7 @@ namespace TestOpenGLd
             if (ReferenceEquals(clip_rect_max, null))
                 throw new global::System.ArgumentNullException("clip_rect_max", "Cannot be null because it is passed by value.");
             var __arg1 = clip_rect_max.__Instance;
-            __Internal.PushClipRect(__Instance, *(global::TestOpenGLd.ImVec2.__Internal*) __arg0, *(global::TestOpenGLd.ImVec2.__Internal*) __arg1, intersect_with_current_clip_rect);
+            __Internal.PushClipRect(__Instance, *(global::Cored.ImVec2.__Internal*) __arg0, *(global::Cored.ImVec2.__Internal*) __arg1, intersect_with_current_clip_rect);
         }
 
         public void PushClipRectFullScreen()
@@ -7271,7 +7271,7 @@ namespace TestOpenGLd
             __Internal.PopTextureID(__Instance);
         }
 
-        public void AddLine(global::TestOpenGLd.ImVec2 p1, global::TestOpenGLd.ImVec2 p2, uint col, float thickness)
+        public void AddLine(global::Cored.ImVec2 p1, global::Cored.ImVec2 p2, uint col, float thickness)
         {
             if (ReferenceEquals(p1, null))
                 throw new global::System.ArgumentNullException("p1", "Cannot be null because it is a C++ reference (&).");
@@ -7282,7 +7282,7 @@ namespace TestOpenGLd
             __Internal.AddLine(__Instance, __arg0, __arg1, col, thickness);
         }
 
-        public void AddRect(global::TestOpenGLd.ImVec2 p_min, global::TestOpenGLd.ImVec2 p_max, uint col, float rounding, int flags, float thickness)
+        public void AddRect(global::Cored.ImVec2 p_min, global::Cored.ImVec2 p_max, uint col, float rounding, int flags, float thickness)
         {
             if (ReferenceEquals(p_min, null))
                 throw new global::System.ArgumentNullException("p_min", "Cannot be null because it is a C++ reference (&).");
@@ -7293,7 +7293,7 @@ namespace TestOpenGLd
             __Internal.AddRect(__Instance, __arg0, __arg1, col, rounding, flags, thickness);
         }
 
-        public void AddRectFilled(global::TestOpenGLd.ImVec2 p_min, global::TestOpenGLd.ImVec2 p_max, uint col, float rounding, int flags)
+        public void AddRectFilled(global::Cored.ImVec2 p_min, global::Cored.ImVec2 p_max, uint col, float rounding, int flags)
         {
             if (ReferenceEquals(p_min, null))
                 throw new global::System.ArgumentNullException("p_min", "Cannot be null because it is a C++ reference (&).");
@@ -7304,7 +7304,7 @@ namespace TestOpenGLd
             __Internal.AddRectFilled(__Instance, __arg0, __arg1, col, rounding, flags);
         }
 
-        public void AddRectFilledMultiColor(global::TestOpenGLd.ImVec2 p_min, global::TestOpenGLd.ImVec2 p_max, uint col_upr_left, uint col_upr_right, uint col_bot_right, uint col_bot_left)
+        public void AddRectFilledMultiColor(global::Cored.ImVec2 p_min, global::Cored.ImVec2 p_max, uint col_upr_left, uint col_upr_right, uint col_bot_right, uint col_bot_left)
         {
             if (ReferenceEquals(p_min, null))
                 throw new global::System.ArgumentNullException("p_min", "Cannot be null because it is a C++ reference (&).");
@@ -7315,7 +7315,7 @@ namespace TestOpenGLd
             __Internal.AddRectFilledMultiColor(__Instance, __arg0, __arg1, col_upr_left, col_upr_right, col_bot_right, col_bot_left);
         }
 
-        public void AddQuad(global::TestOpenGLd.ImVec2 p1, global::TestOpenGLd.ImVec2 p2, global::TestOpenGLd.ImVec2 p3, global::TestOpenGLd.ImVec2 p4, uint col, float thickness)
+        public void AddQuad(global::Cored.ImVec2 p1, global::Cored.ImVec2 p2, global::Cored.ImVec2 p3, global::Cored.ImVec2 p4, uint col, float thickness)
         {
             if (ReferenceEquals(p1, null))
                 throw new global::System.ArgumentNullException("p1", "Cannot be null because it is a C++ reference (&).");
@@ -7332,7 +7332,7 @@ namespace TestOpenGLd
             __Internal.AddQuad(__Instance, __arg0, __arg1, __arg2, __arg3, col, thickness);
         }
 
-        public void AddQuadFilled(global::TestOpenGLd.ImVec2 p1, global::TestOpenGLd.ImVec2 p2, global::TestOpenGLd.ImVec2 p3, global::TestOpenGLd.ImVec2 p4, uint col)
+        public void AddQuadFilled(global::Cored.ImVec2 p1, global::Cored.ImVec2 p2, global::Cored.ImVec2 p3, global::Cored.ImVec2 p4, uint col)
         {
             if (ReferenceEquals(p1, null))
                 throw new global::System.ArgumentNullException("p1", "Cannot be null because it is a C++ reference (&).");
@@ -7349,7 +7349,7 @@ namespace TestOpenGLd
             __Internal.AddQuadFilled(__Instance, __arg0, __arg1, __arg2, __arg3, col);
         }
 
-        public void AddTriangle(global::TestOpenGLd.ImVec2 p1, global::TestOpenGLd.ImVec2 p2, global::TestOpenGLd.ImVec2 p3, uint col, float thickness)
+        public void AddTriangle(global::Cored.ImVec2 p1, global::Cored.ImVec2 p2, global::Cored.ImVec2 p3, uint col, float thickness)
         {
             if (ReferenceEquals(p1, null))
                 throw new global::System.ArgumentNullException("p1", "Cannot be null because it is a C++ reference (&).");
@@ -7363,7 +7363,7 @@ namespace TestOpenGLd
             __Internal.AddTriangle(__Instance, __arg0, __arg1, __arg2, col, thickness);
         }
 
-        public void AddTriangleFilled(global::TestOpenGLd.ImVec2 p1, global::TestOpenGLd.ImVec2 p2, global::TestOpenGLd.ImVec2 p3, uint col)
+        public void AddTriangleFilled(global::Cored.ImVec2 p1, global::Cored.ImVec2 p2, global::Cored.ImVec2 p3, uint col)
         {
             if (ReferenceEquals(p1, null))
                 throw new global::System.ArgumentNullException("p1", "Cannot be null because it is a C++ reference (&).");
@@ -7377,7 +7377,7 @@ namespace TestOpenGLd
             __Internal.AddTriangleFilled(__Instance, __arg0, __arg1, __arg2, col);
         }
 
-        public void AddCircle(global::TestOpenGLd.ImVec2 center, float radius, uint col, int num_segments, float thickness)
+        public void AddCircle(global::Cored.ImVec2 center, float radius, uint col, int num_segments, float thickness)
         {
             if (ReferenceEquals(center, null))
                 throw new global::System.ArgumentNullException("center", "Cannot be null because it is a C++ reference (&).");
@@ -7385,7 +7385,7 @@ namespace TestOpenGLd
             __Internal.AddCircle(__Instance, __arg0, radius, col, num_segments, thickness);
         }
 
-        public void AddCircleFilled(global::TestOpenGLd.ImVec2 center, float radius, uint col, int num_segments)
+        public void AddCircleFilled(global::Cored.ImVec2 center, float radius, uint col, int num_segments)
         {
             if (ReferenceEquals(center, null))
                 throw new global::System.ArgumentNullException("center", "Cannot be null because it is a C++ reference (&).");
@@ -7393,7 +7393,7 @@ namespace TestOpenGLd
             __Internal.AddCircleFilled(__Instance, __arg0, radius, col, num_segments);
         }
 
-        public void AddNgon(global::TestOpenGLd.ImVec2 center, float radius, uint col, int num_segments, float thickness)
+        public void AddNgon(global::Cored.ImVec2 center, float radius, uint col, int num_segments, float thickness)
         {
             if (ReferenceEquals(center, null))
                 throw new global::System.ArgumentNullException("center", "Cannot be null because it is a C++ reference (&).");
@@ -7401,7 +7401,7 @@ namespace TestOpenGLd
             __Internal.AddNgon(__Instance, __arg0, radius, col, num_segments, thickness);
         }
 
-        public void AddNgonFilled(global::TestOpenGLd.ImVec2 center, float radius, uint col, int num_segments)
+        public void AddNgonFilled(global::Cored.ImVec2 center, float radius, uint col, int num_segments)
         {
             if (ReferenceEquals(center, null))
                 throw new global::System.ArgumentNullException("center", "Cannot be null because it is a C++ reference (&).");
@@ -7409,7 +7409,7 @@ namespace TestOpenGLd
             __Internal.AddNgonFilled(__Instance, __arg0, radius, col, num_segments);
         }
 
-        public void AddText(global::TestOpenGLd.ImVec2 pos, uint col, string text_begin, string text_end)
+        public void AddText(global::Cored.ImVec2 pos, uint col, string text_begin, string text_end)
         {
             if (ReferenceEquals(pos, null))
                 throw new global::System.ArgumentNullException("pos", "Cannot be null because it is a C++ reference (&).");
@@ -7417,7 +7417,7 @@ namespace TestOpenGLd
             __Internal.AddText(__Instance, __arg0, col, text_begin, text_end);
         }
 
-        public void AddText(global::TestOpenGLd.ImFont font, float font_size, global::TestOpenGLd.ImVec2 pos, uint col, string text_begin, string text_end, float wrap_width, global::TestOpenGLd.ImVec4 cpu_fine_clip_rect)
+        public void AddText(global::Cored.ImFont font, float font_size, global::Cored.ImVec2 pos, uint col, string text_begin, string text_end, float wrap_width, global::Cored.ImVec4 cpu_fine_clip_rect)
         {
             var __arg0 = font is null ? __IntPtr.Zero : font.__Instance;
             if (ReferenceEquals(pos, null))
@@ -7427,19 +7427,19 @@ namespace TestOpenGLd
             __Internal.AddText(__Instance, __arg0, font_size, __arg2, col, text_begin, text_end, wrap_width, __arg7);
         }
 
-        public void AddPolyline(global::TestOpenGLd.ImVec2 points, int num_points, uint col, int flags, float thickness)
+        public void AddPolyline(global::Cored.ImVec2 points, int num_points, uint col, int flags, float thickness)
         {
             var __arg0 = points is null ? __IntPtr.Zero : points.__Instance;
             __Internal.AddPolyline(__Instance, __arg0, num_points, col, flags, thickness);
         }
 
-        public void AddConvexPolyFilled(global::TestOpenGLd.ImVec2 points, int num_points, uint col)
+        public void AddConvexPolyFilled(global::Cored.ImVec2 points, int num_points, uint col)
         {
             var __arg0 = points is null ? __IntPtr.Zero : points.__Instance;
             __Internal.AddConvexPolyFilled(__Instance, __arg0, num_points, col);
         }
 
-        public void AddBezierCubic(global::TestOpenGLd.ImVec2 p1, global::TestOpenGLd.ImVec2 p2, global::TestOpenGLd.ImVec2 p3, global::TestOpenGLd.ImVec2 p4, uint col, float thickness, int num_segments)
+        public void AddBezierCubic(global::Cored.ImVec2 p1, global::Cored.ImVec2 p2, global::Cored.ImVec2 p3, global::Cored.ImVec2 p4, uint col, float thickness, int num_segments)
         {
             if (ReferenceEquals(p1, null))
                 throw new global::System.ArgumentNullException("p1", "Cannot be null because it is a C++ reference (&).");
@@ -7456,7 +7456,7 @@ namespace TestOpenGLd
             __Internal.AddBezierCubic(__Instance, __arg0, __arg1, __arg2, __arg3, col, thickness, num_segments);
         }
 
-        public void AddBezierQuadratic(global::TestOpenGLd.ImVec2 p1, global::TestOpenGLd.ImVec2 p2, global::TestOpenGLd.ImVec2 p3, uint col, float thickness, int num_segments)
+        public void AddBezierQuadratic(global::Cored.ImVec2 p1, global::Cored.ImVec2 p2, global::Cored.ImVec2 p3, uint col, float thickness, int num_segments)
         {
             if (ReferenceEquals(p1, null))
                 throw new global::System.ArgumentNullException("p1", "Cannot be null because it is a C++ reference (&).");
@@ -7470,7 +7470,7 @@ namespace TestOpenGLd
             __Internal.AddBezierQuadratic(__Instance, __arg0, __arg1, __arg2, col, thickness, num_segments);
         }
 
-        public void AddImage(__IntPtr user_texture_id, global::TestOpenGLd.ImVec2 p_min, global::TestOpenGLd.ImVec2 p_max, global::TestOpenGLd.ImVec2 uv_min, global::TestOpenGLd.ImVec2 uv_max, uint col)
+        public void AddImage(__IntPtr user_texture_id, global::Cored.ImVec2 p_min, global::Cored.ImVec2 p_max, global::Cored.ImVec2 uv_min, global::Cored.ImVec2 uv_max, uint col)
         {
             if (ReferenceEquals(p_min, null))
                 throw new global::System.ArgumentNullException("p_min", "Cannot be null because it is a C++ reference (&).");
@@ -7487,7 +7487,7 @@ namespace TestOpenGLd
             __Internal.AddImage(__Instance, user_texture_id, __arg1, __arg2, __arg3, __arg4, col);
         }
 
-        public void AddImageQuad(__IntPtr user_texture_id, global::TestOpenGLd.ImVec2 p1, global::TestOpenGLd.ImVec2 p2, global::TestOpenGLd.ImVec2 p3, global::TestOpenGLd.ImVec2 p4, global::TestOpenGLd.ImVec2 uv1, global::TestOpenGLd.ImVec2 uv2, global::TestOpenGLd.ImVec2 uv3, global::TestOpenGLd.ImVec2 uv4, uint col)
+        public void AddImageQuad(__IntPtr user_texture_id, global::Cored.ImVec2 p1, global::Cored.ImVec2 p2, global::Cored.ImVec2 p3, global::Cored.ImVec2 p4, global::Cored.ImVec2 uv1, global::Cored.ImVec2 uv2, global::Cored.ImVec2 uv3, global::Cored.ImVec2 uv4, uint col)
         {
             if (ReferenceEquals(p1, null))
                 throw new global::System.ArgumentNullException("p1", "Cannot be null because it is a C++ reference (&).");
@@ -7516,7 +7516,7 @@ namespace TestOpenGLd
             __Internal.AddImageQuad(__Instance, user_texture_id, __arg1, __arg2, __arg3, __arg4, __arg5, __arg6, __arg7, __arg8, col);
         }
 
-        public void AddImageRounded(__IntPtr user_texture_id, global::TestOpenGLd.ImVec2 p_min, global::TestOpenGLd.ImVec2 p_max, global::TestOpenGLd.ImVec2 uv_min, global::TestOpenGLd.ImVec2 uv_max, uint col, float rounding, int flags)
+        public void AddImageRounded(__IntPtr user_texture_id, global::Cored.ImVec2 p_min, global::Cored.ImVec2 p_max, global::Cored.ImVec2 uv_min, global::Cored.ImVec2 uv_max, uint col, float rounding, int flags)
         {
             if (ReferenceEquals(p_min, null))
                 throw new global::System.ArgumentNullException("p_min", "Cannot be null because it is a C++ reference (&).");
@@ -7538,7 +7538,7 @@ namespace TestOpenGLd
             __Internal.PathClear(__Instance);
         }
 
-        public void PathLineTo(global::TestOpenGLd.ImVec2 pos)
+        public void PathLineTo(global::Cored.ImVec2 pos)
         {
             if (ReferenceEquals(pos, null))
                 throw new global::System.ArgumentNullException("pos", "Cannot be null because it is a C++ reference (&).");
@@ -7546,7 +7546,7 @@ namespace TestOpenGLd
             __Internal.PathLineTo(__Instance, __arg0);
         }
 
-        public void PathLineToMergeDuplicate(global::TestOpenGLd.ImVec2 pos)
+        public void PathLineToMergeDuplicate(global::Cored.ImVec2 pos)
         {
             if (ReferenceEquals(pos, null))
                 throw new global::System.ArgumentNullException("pos", "Cannot be null because it is a C++ reference (&).");
@@ -7564,7 +7564,7 @@ namespace TestOpenGLd
             __Internal.PathStroke(__Instance, col, flags, thickness);
         }
 
-        public void PathArcTo(global::TestOpenGLd.ImVec2 center, float radius, float a_min, float a_max, int num_segments)
+        public void PathArcTo(global::Cored.ImVec2 center, float radius, float a_min, float a_max, int num_segments)
         {
             if (ReferenceEquals(center, null))
                 throw new global::System.ArgumentNullException("center", "Cannot be null because it is a C++ reference (&).");
@@ -7572,7 +7572,7 @@ namespace TestOpenGLd
             __Internal.PathArcTo(__Instance, __arg0, radius, a_min, a_max, num_segments);
         }
 
-        public void PathArcToFast(global::TestOpenGLd.ImVec2 center, float radius, int a_min_of_12, int a_max_of_12)
+        public void PathArcToFast(global::Cored.ImVec2 center, float radius, int a_min_of_12, int a_max_of_12)
         {
             if (ReferenceEquals(center, null))
                 throw new global::System.ArgumentNullException("center", "Cannot be null because it is a C++ reference (&).");
@@ -7580,7 +7580,7 @@ namespace TestOpenGLd
             __Internal.PathArcToFast(__Instance, __arg0, radius, a_min_of_12, a_max_of_12);
         }
 
-        public void PathBezierCubicCurveTo(global::TestOpenGLd.ImVec2 p2, global::TestOpenGLd.ImVec2 p3, global::TestOpenGLd.ImVec2 p4, int num_segments)
+        public void PathBezierCubicCurveTo(global::Cored.ImVec2 p2, global::Cored.ImVec2 p3, global::Cored.ImVec2 p4, int num_segments)
         {
             if (ReferenceEquals(p2, null))
                 throw new global::System.ArgumentNullException("p2", "Cannot be null because it is a C++ reference (&).");
@@ -7594,7 +7594,7 @@ namespace TestOpenGLd
             __Internal.PathBezierCubicCurveTo(__Instance, __arg0, __arg1, __arg2, num_segments);
         }
 
-        public void PathBezierQuadraticCurveTo(global::TestOpenGLd.ImVec2 p2, global::TestOpenGLd.ImVec2 p3, int num_segments)
+        public void PathBezierQuadraticCurveTo(global::Cored.ImVec2 p2, global::Cored.ImVec2 p3, int num_segments)
         {
             if (ReferenceEquals(p2, null))
                 throw new global::System.ArgumentNullException("p2", "Cannot be null because it is a C++ reference (&).");
@@ -7605,7 +7605,7 @@ namespace TestOpenGLd
             __Internal.PathBezierQuadraticCurveTo(__Instance, __arg0, __arg1, num_segments);
         }
 
-        public void PathRect(global::TestOpenGLd.ImVec2 rect_min, global::TestOpenGLd.ImVec2 rect_max, float rounding, int flags)
+        public void PathRect(global::Cored.ImVec2 rect_min, global::Cored.ImVec2 rect_max, float rounding, int flags)
         {
             if (ReferenceEquals(rect_min, null))
                 throw new global::System.ArgumentNullException("rect_min", "Cannot be null because it is a C++ reference (&).");
@@ -7616,7 +7616,7 @@ namespace TestOpenGLd
             __Internal.PathRect(__Instance, __arg0, __arg1, rounding, flags);
         }
 
-        public void AddCallback(global::TestOpenGLd.ImDrawCallback callback, __IntPtr callback_data)
+        public void AddCallback(global::Cored.ImDrawCallback callback, __IntPtr callback_data)
         {
             var __arg0 = callback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(callback);
             __Internal.AddCallback(__Instance, __arg0, callback_data);
@@ -7627,10 +7627,10 @@ namespace TestOpenGLd
             __Internal.AddDrawCmd(__Instance);
         }
 
-        public global::TestOpenGLd.ImDrawList CloneOutput()
+        public global::Cored.ImDrawList CloneOutput()
         {
             var __ret = __Internal.CloneOutput(__Instance);
-            var __result0 = global::TestOpenGLd.ImDrawList.__GetOrCreateInstance(__ret, false);
+            var __result0 = global::Cored.ImDrawList.__GetOrCreateInstance(__ret, false);
             return __result0;
         }
 
@@ -7659,7 +7659,7 @@ namespace TestOpenGLd
             __Internal.PrimUnreserve(__Instance, idx_count, vtx_count);
         }
 
-        public void PrimRect(global::TestOpenGLd.ImVec2 a, global::TestOpenGLd.ImVec2 b, uint col)
+        public void PrimRect(global::Cored.ImVec2 a, global::Cored.ImVec2 b, uint col)
         {
             if (ReferenceEquals(a, null))
                 throw new global::System.ArgumentNullException("a", "Cannot be null because it is a C++ reference (&).");
@@ -7670,7 +7670,7 @@ namespace TestOpenGLd
             __Internal.PrimRect(__Instance, __arg0, __arg1, col);
         }
 
-        public void PrimRectUV(global::TestOpenGLd.ImVec2 a, global::TestOpenGLd.ImVec2 b, global::TestOpenGLd.ImVec2 uv_a, global::TestOpenGLd.ImVec2 uv_b, uint col)
+        public void PrimRectUV(global::Cored.ImVec2 a, global::Cored.ImVec2 b, global::Cored.ImVec2 uv_a, global::Cored.ImVec2 uv_b, uint col)
         {
             if (ReferenceEquals(a, null))
                 throw new global::System.ArgumentNullException("a", "Cannot be null because it is a C++ reference (&).");
@@ -7687,7 +7687,7 @@ namespace TestOpenGLd
             __Internal.PrimRectUV(__Instance, __arg0, __arg1, __arg2, __arg3, col);
         }
 
-        public void PrimQuadUV(global::TestOpenGLd.ImVec2 a, global::TestOpenGLd.ImVec2 b, global::TestOpenGLd.ImVec2 c, global::TestOpenGLd.ImVec2 d, global::TestOpenGLd.ImVec2 uv_a, global::TestOpenGLd.ImVec2 uv_b, global::TestOpenGLd.ImVec2 uv_c, global::TestOpenGLd.ImVec2 uv_d, uint col)
+        public void PrimQuadUV(global::Cored.ImVec2 a, global::Cored.ImVec2 b, global::Cored.ImVec2 c, global::Cored.ImVec2 d, global::Cored.ImVec2 uv_a, global::Cored.ImVec2 uv_b, global::Cored.ImVec2 uv_c, global::Cored.ImVec2 uv_d, uint col)
         {
             if (ReferenceEquals(a, null))
                 throw new global::System.ArgumentNullException("a", "Cannot be null because it is a C++ reference (&).");
@@ -7716,7 +7716,7 @@ namespace TestOpenGLd
             __Internal.PrimQuadUV(__Instance, __arg0, __arg1, __arg2, __arg3, __arg4, __arg5, __arg6, __arg7, col);
         }
 
-        public void PrimWriteVtx(global::TestOpenGLd.ImVec2 pos, global::TestOpenGLd.ImVec2 uv, uint col)
+        public void PrimWriteVtx(global::Cored.ImVec2 pos, global::Cored.ImVec2 uv, uint col)
         {
             if (ReferenceEquals(pos, null))
                 throw new global::System.ArgumentNullException("pos", "Cannot be null because it is a C++ reference (&).");
@@ -7732,7 +7732,7 @@ namespace TestOpenGLd
             __Internal.PrimWriteIdx(__Instance, idx);
         }
 
-        public void PrimVtx(global::TestOpenGLd.ImVec2 pos, global::TestOpenGLd.ImVec2 uv, uint col)
+        public void PrimVtx(global::Cored.ImVec2 pos, global::Cored.ImVec2 uv, uint col)
         {
             if (ReferenceEquals(pos, null))
                 throw new global::System.ArgumentNullException("pos", "Cannot be null because it is a C++ reference (&).");
@@ -7743,7 +7743,7 @@ namespace TestOpenGLd
             __Internal.PrimVtx(__Instance, __arg0, __arg1, col);
         }
 
-        public void AddBezierCurve(global::TestOpenGLd.ImVec2 p1, global::TestOpenGLd.ImVec2 p2, global::TestOpenGLd.ImVec2 p3, global::TestOpenGLd.ImVec2 p4, uint col, float thickness, int num_segments)
+        public void AddBezierCurve(global::Cored.ImVec2 p1, global::Cored.ImVec2 p2, global::Cored.ImVec2 p3, global::Cored.ImVec2 p4, uint col, float thickness, int num_segments)
         {
             if (ReferenceEquals(p1, null))
                 throw new global::System.ArgumentNullException("p1", "Cannot be null because it is a C++ reference (&).");
@@ -7760,7 +7760,7 @@ namespace TestOpenGLd
             __Internal.AddBezierCurve(__Instance, __arg0, __arg1, __arg2, __arg3, col, thickness, num_segments);
         }
 
-        public void PathBezierCurveTo(global::TestOpenGLd.ImVec2 p2, global::TestOpenGLd.ImVec2 p3, global::TestOpenGLd.ImVec2 p4, int num_segments)
+        public void PathBezierCurveTo(global::Cored.ImVec2 p2, global::Cored.ImVec2 p3, global::Cored.ImVec2 p4, int num_segments)
         {
             if (ReferenceEquals(p2, null))
                 throw new global::System.ArgumentNullException("p2", "Cannot be null because it is a C++ reference (&).");
@@ -7815,7 +7815,7 @@ namespace TestOpenGLd
             return __ret;
         }
 
-        public void PathArcToFastEx(global::TestOpenGLd.ImVec2 center, float radius, int a_min_sample, int a_max_sample, int a_step)
+        public void PathArcToFastEx(global::Cored.ImVec2 center, float radius, int a_min_sample, int a_max_sample, int a_step)
         {
             if (ReferenceEquals(center, null))
                 throw new global::System.ArgumentNullException("center", "Cannot be null because it is a C++ reference (&).");
@@ -7823,7 +7823,7 @@ namespace TestOpenGLd
             __Internal.PathArcToFastEx(__Instance, __arg0, radius, a_min_sample, a_max_sample, a_step);
         }
 
-        public void PathArcToN(global::TestOpenGLd.ImVec2 center, float radius, float a_min, float a_max, int num_segments)
+        public void PathArcToN(global::Cored.ImVec2 center, float radius, float a_min, float a_max, int num_segments)
         {
             if (ReferenceEquals(center, null))
                 throw new global::System.ArgumentNullException("center", "Cannot be null because it is a C++ reference (&).");
@@ -7831,9 +7831,9 @@ namespace TestOpenGLd
             __Internal.PathArcToN(__Instance, __arg0, radius, a_min, a_max, num_segments);
         }
 
-        public static implicit operator global::TestOpenGLd.ImDrawList(global::TestOpenGLd.ImDrawListSharedData shared_data)
+        public static implicit operator global::Cored.ImDrawList(global::Cored.ImDrawListSharedData shared_data)
         {
-            return new global::TestOpenGLd.ImDrawList(shared_data);
+            return new global::Cored.ImDrawList(shared_data);
         }
 
         public int Flags
@@ -7862,11 +7862,11 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImDrawListSharedData Data
+        public global::Cored.ImDrawListSharedData Data
         {
             get
             {
-                var __result0 = global::TestOpenGLd.ImDrawListSharedData.__GetOrCreateInstance(((__Internal*)__Instance)->_Data, false);
+                var __result0 = global::Cored.ImDrawListSharedData.__GetOrCreateInstance(((__Internal*)__Instance)->_Data, false);
                 return __result0;
             }
         }
@@ -7888,11 +7888,11 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImDrawVert VtxWritePtr
+        public global::Cored.ImDrawVert VtxWritePtr
         {
             get
             {
-                var __result0 = global::TestOpenGLd.ImDrawVert.__GetOrCreateInstance(((__Internal*)__Instance)->_VtxWritePtr, false);
+                var __result0 = global::Cored.ImDrawVert.__GetOrCreateInstance(((__Internal*)__Instance)->_VtxWritePtr, false);
                 return __result0;
             }
 
@@ -7915,33 +7915,33 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImDrawCmdHeader CmdHeader
+        public global::Cored.ImDrawCmdHeader CmdHeader
         {
             get
             {
-                return global::TestOpenGLd.ImDrawCmdHeader.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->_CmdHeader));
+                return global::Cored.ImDrawCmdHeader.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->_CmdHeader));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->_CmdHeader = *(global::TestOpenGLd.ImDrawCmdHeader.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->_CmdHeader = *(global::Cored.ImDrawCmdHeader.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImDrawListSplitter Splitter
+        public global::Cored.ImDrawListSplitter Splitter
         {
             get
             {
-                return global::TestOpenGLd.ImDrawListSplitter.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->_Splitter));
+                return global::Cored.ImDrawListSplitter.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->_Splitter));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->_Splitter = *(global::TestOpenGLd.ImDrawListSplitter.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->_Splitter = *(global::Cored.ImDrawListSplitter.__Internal*) value.__Instance;
             }
         }
 
@@ -7958,23 +7958,23 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec2 ClipRectMin
+        public global::Cored.ImVec2 ClipRectMin
         {
             get
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetClipRectMin(__Instance, new IntPtr(&__ret));
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
         }
 
-        public global::TestOpenGLd.ImVec2 ClipRectMax
+        public global::Cored.ImVec2 ClipRectMax
         {
             get
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetClipRectMax(__Instance, new IntPtr(&__ret));
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
         }
     }
@@ -7989,30 +7989,30 @@ namespace TestOpenGLd
             internal int TotalIdxCount;
             internal int TotalVtxCount;
             internal __IntPtr CmdLists;
-            internal global::TestOpenGLd.ImVec2.__Internal DisplayPos;
-            internal global::TestOpenGLd.ImVec2.__Internal DisplaySize;
-            internal global::TestOpenGLd.ImVec2.__Internal FramebufferScale;
+            internal global::Cored.ImVec2.__Internal DisplayPos;
+            internal global::Cored.ImVec2.__Internal DisplaySize;
+            internal global::Cored.ImVec2.__Internal FramebufferScale;
             internal __IntPtr OwnerViewport;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImDrawData@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImDrawData@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImDrawData@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImDrawData@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Clear@ImDrawData@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Clear@ImDrawData@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Clear(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DeIndexAllBuffers@ImDrawData@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DeIndexAllBuffers@ImDrawData@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void DeIndexAllBuffers(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ScaleClipRects@ImDrawData@@QEAAXAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ScaleClipRects@ImDrawData@@QEAAXAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void ScaleClipRects(__IntPtr __instance, __IntPtr fb_scale);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImDrawData> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImDrawData>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImDrawData> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImDrawData>();
 
         protected bool __ownsNativeInstance;
 
@@ -8061,18 +8061,18 @@ namespace TestOpenGLd
 
         public ImDrawData()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImDrawData.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImDrawData.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImDrawData(global::TestOpenGLd.ImDrawData _0)
+        public ImDrawData(global::Cored.ImDrawData _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImDrawData.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImDrawData.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImDrawData.__Internal*) __Instance) = *((global::TestOpenGLd.ImDrawData.__Internal*) _0.__Instance);
+            *((global::Cored.ImDrawData.__Internal*) __Instance) = *((global::Cored.ImDrawData.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -8100,7 +8100,7 @@ namespace TestOpenGLd
             __Internal.DeIndexAllBuffers(__Instance);
         }
 
-        public void ScaleClipRects(global::TestOpenGLd.ImVec2 fb_scale)
+        public void ScaleClipRects(global::Cored.ImVec2 fb_scale)
         {
             if (ReferenceEquals(fb_scale, null))
                 throw new global::System.ArgumentNullException("fb_scale", "Cannot be null because it is a C++ reference (&).");
@@ -8160,11 +8160,11 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImDrawList CmdLists
+        public global::Cored.ImDrawList CmdLists
         {
             get
             {
-                var __result0 = global::TestOpenGLd.ImDrawList.__GetOrCreateInstance(((__Internal*)__Instance)->CmdLists, false);
+                var __result0 = global::Cored.ImDrawList.__GetOrCreateInstance(((__Internal*)__Instance)->CmdLists, false);
                 return __result0;
             }
 
@@ -8175,56 +8175,56 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec2 DisplayPos
+        public global::Cored.ImVec2 DisplayPos
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->DisplayPos));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->DisplayPos));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->DisplayPos = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->DisplayPos = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 DisplaySize
+        public global::Cored.ImVec2 DisplaySize
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->DisplaySize));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->DisplaySize));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->DisplaySize = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->DisplaySize = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 FramebufferScale
+        public global::Cored.ImVec2 FramebufferScale
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->FramebufferScale));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->FramebufferScale));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->FramebufferScale = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->FramebufferScale = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImGuiViewport OwnerViewport
+        public global::Cored.ImGuiViewport OwnerViewport
         {
             get
             {
-                var __result0 = global::TestOpenGLd.ImGuiViewport.__GetOrCreateInstance(((__Internal*)__Instance)->OwnerViewport, false);
+                var __result0 = global::Cored.ImGuiViewport.__GetOrCreateInstance(((__Internal*)__Instance)->OwnerViewport, false);
                 return __result0;
             }
 
@@ -8248,8 +8248,8 @@ namespace TestOpenGLd
             internal int OversampleH;
             internal int OversampleV;
             internal byte PixelSnapH;
-            internal global::TestOpenGLd.ImVec2.__Internal GlyphExtraSpacing;
-            internal global::TestOpenGLd.ImVec2.__Internal GlyphOffset;
+            internal global::Cored.ImVec2.__Internal GlyphExtraSpacing;
+            internal global::Cored.ImVec2.__Internal GlyphOffset;
             internal __IntPtr GlyphRanges;
             internal float GlyphMinAdvanceX;
             internal float GlyphMaxAdvanceX;
@@ -8260,16 +8260,16 @@ namespace TestOpenGLd
             internal fixed sbyte Name[40];
             internal __IntPtr DstFont;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImFontConfig@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImFontConfig@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImFontConfig@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImFontConfig@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImFontConfig> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImFontConfig>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImFontConfig> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImFontConfig>();
 
         protected bool __ownsNativeInstance;
 
@@ -8318,18 +8318,18 @@ namespace TestOpenGLd
 
         public ImFontConfig()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImFontConfig.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImFontConfig.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImFontConfig(global::TestOpenGLd.ImFontConfig _0)
+        public ImFontConfig(global::Cored.ImFontConfig _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImFontConfig.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImFontConfig.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImFontConfig.__Internal*) __Instance) = *((global::TestOpenGLd.ImFontConfig.__Internal*) _0.__Instance);
+            *((global::Cored.ImFontConfig.__Internal*) __Instance) = *((global::Cored.ImFontConfig.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -8451,33 +8451,33 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec2 GlyphExtraSpacing
+        public global::Cored.ImVec2 GlyphExtraSpacing
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->GlyphExtraSpacing));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->GlyphExtraSpacing));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->GlyphExtraSpacing = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->GlyphExtraSpacing = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 GlyphOffset
+        public global::Cored.ImVec2 GlyphOffset
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->GlyphOffset));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->GlyphOffset));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->GlyphOffset = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->GlyphOffset = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
@@ -8584,11 +8584,11 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImFont DstFont
+        public global::Cored.ImFont DstFont
         {
             get
             {
-                var __result0 = global::TestOpenGLd.ImFont.__GetOrCreateInstance(((__Internal*)__Instance)->DstFont, false);
+                var __result0 = global::Cored.ImFont.__GetOrCreateInstance(((__Internal*)__Instance)->DstFont, false);
                 return __result0;
             }
 
@@ -8640,13 +8640,13 @@ namespace TestOpenGLd
             [FieldOffset(36)]
             internal float V1;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImFontGlyph@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImFontGlyph@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImFontGlyph> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImFontGlyph>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImFontGlyph> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImFontGlyph>();
 
         protected bool __ownsNativeInstance;
 
@@ -8695,17 +8695,17 @@ namespace TestOpenGLd
 
         public ImFontGlyph()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImFontGlyph.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImFontGlyph.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public ImFontGlyph(global::TestOpenGLd.ImFontGlyph _0)
+        public ImFontGlyph(global::Cored.ImFontGlyph _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImFontGlyph.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImFontGlyph.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImFontGlyph.__Internal*) __Instance) = *((global::TestOpenGLd.ImFontGlyph.__Internal*) _0.__Instance);
+            *((global::Cored.ImFontGlyph.__Internal*) __Instance) = *((global::Cored.ImFontGlyph.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -8885,40 +8885,40 @@ namespace TestOpenGLd
         [StructLayout(LayoutKind.Sequential, Size = 16)]
         public partial struct __Internal
         {
-            internal global::TestOpenGLd.ImVector.__Internal UsedChars;
+            internal global::Cored.ImVector.__Internal UsedChars;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImFontGlyphRangesBuilder@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImFontGlyphRangesBuilder@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImFontGlyphRangesBuilder@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImFontGlyphRangesBuilder@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??1ImFontGlyphRangesBuilder@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??1ImFontGlyphRangesBuilder@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void dtor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Clear@ImFontGlyphRangesBuilder@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Clear@ImFontGlyphRangesBuilder@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Clear(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetBit@ImFontGlyphRangesBuilder@@QEBA_N_K@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetBit@ImFontGlyphRangesBuilder@@QEBA_N_K@Z", CallingConvention = __CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool GetBit(__IntPtr __instance, ulong n);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetBit@ImFontGlyphRangesBuilder@@QEAAX_K@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetBit@ImFontGlyphRangesBuilder@@QEAAX_K@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void SetBit(__IntPtr __instance, ulong n);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddChar@ImFontGlyphRangesBuilder@@QEAAXG@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddChar@ImFontGlyphRangesBuilder@@QEAAXG@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddChar(__IntPtr __instance, ushort c);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddText@ImFontGlyphRangesBuilder@@QEAAXPEBD0@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddText@ImFontGlyphRangesBuilder@@QEAAXPEBD0@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddText(__IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_end);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddRanges@ImFontGlyphRangesBuilder@@QEAAXPEBG@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddRanges@ImFontGlyphRangesBuilder@@QEAAXPEBG@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddRanges(__IntPtr __instance, ushort* ranges);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImFontGlyphRangesBuilder> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImFontGlyphRangesBuilder>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImFontGlyphRangesBuilder> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImFontGlyphRangesBuilder>();
 
         protected bool __ownsNativeInstance;
 
@@ -8947,7 +8947,7 @@ namespace TestOpenGLd
         private static void* __CopyValue(__Internal native)
         {
             var ret = Marshal.AllocHGlobal(sizeof(__Internal));
-            global::TestOpenGLd.ImFontGlyphRangesBuilder.__Internal.cctor(ret, new __IntPtr(&native));
+            global::Cored.ImFontGlyphRangesBuilder.__Internal.cctor(ret, new __IntPtr(&native));
             return ret.ToPointer();
         }
 
@@ -8967,15 +8967,15 @@ namespace TestOpenGLd
 
         public ImFontGlyphRangesBuilder()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImFontGlyphRangesBuilder.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImFontGlyphRangesBuilder.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImFontGlyphRangesBuilder(global::TestOpenGLd.ImFontGlyphRangesBuilder _0)
+        public ImFontGlyphRangesBuilder(global::Cored.ImFontGlyphRangesBuilder _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImFontGlyphRangesBuilder.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImFontGlyphRangesBuilder.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             if (ReferenceEquals(_0, null))
@@ -9048,23 +9048,23 @@ namespace TestOpenGLd
             internal ushort Y;
             internal uint GlyphID;
             internal float GlyphAdvanceX;
-            internal global::TestOpenGLd.ImVec2.__Internal GlyphOffset;
+            internal global::Cored.ImVec2.__Internal GlyphOffset;
             internal __IntPtr Font;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImFontAtlasCustomRect@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImFontAtlasCustomRect@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImFontAtlasCustomRect@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImFontAtlasCustomRect@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsPacked@ImFontAtlasCustomRect@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsPacked@ImFontAtlasCustomRect@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool IsPacked(__IntPtr __instance);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImFontAtlasCustomRect> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImFontAtlasCustomRect>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImFontAtlasCustomRect> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImFontAtlasCustomRect>();
 
         protected bool __ownsNativeInstance;
 
@@ -9113,18 +9113,18 @@ namespace TestOpenGLd
 
         public ImFontAtlasCustomRect()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImFontAtlasCustomRect.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImFontAtlasCustomRect.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImFontAtlasCustomRect(global::TestOpenGLd.ImFontAtlasCustomRect _0)
+        public ImFontAtlasCustomRect(global::Cored.ImFontAtlasCustomRect _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImFontAtlasCustomRect.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImFontAtlasCustomRect.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImFontAtlasCustomRect.__Internal*) __Instance) = *((global::TestOpenGLd.ImFontAtlasCustomRect.__Internal*) _0.__Instance);
+            *((global::Cored.ImFontAtlasCustomRect.__Internal*) __Instance) = *((global::Cored.ImFontAtlasCustomRect.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -9220,26 +9220,26 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec2 GlyphOffset
+        public global::Cored.ImVec2 GlyphOffset
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->GlyphOffset));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->GlyphOffset));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->GlyphOffset = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->GlyphOffset = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImFont Font
+        public global::Cored.ImFont Font
         {
             get
             {
-                var __result0 = global::TestOpenGLd.ImFont.__GetOrCreateInstance(((__Internal*)__Instance)->Font, false);
+                var __result0 = global::Cored.ImFont.__GetOrCreateInstance(((__Internal*)__Instance)->Font, false);
                 return __result0;
             }
 
@@ -9274,117 +9274,117 @@ namespace TestOpenGLd
             internal __IntPtr TexPixelsRGBA32;
             internal int TexWidth;
             internal int TexHeight;
-            internal global::TestOpenGLd.ImVec2.__Internal TexUvScale;
-            internal global::TestOpenGLd.ImVec2.__Internal TexUvWhitePixel;
-            internal global::TestOpenGLd.ImVector.__Internal Fonts;
-            internal global::TestOpenGLd.ImVector.__Internal CustomRects;
-            internal global::TestOpenGLd.ImVector.__Internal ConfigData;
+            internal global::Cored.ImVec2.__Internal TexUvScale;
+            internal global::Cored.ImVec2.__Internal TexUvWhitePixel;
+            internal global::Cored.ImVector.__Internal Fonts;
+            internal global::Cored.ImVector.__Internal CustomRects;
+            internal global::Cored.ImVector.__Internal ConfigData;
             internal fixed byte TexUvLines[1024];
             internal __IntPtr FontBuilderIO;
             internal uint FontBuilderFlags;
             internal int PackIdMouseCursors;
             internal int PackIdLines;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImFontAtlas@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImFontAtlas@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImFontAtlas@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImFontAtlas@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??1ImFontAtlas@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??1ImFontAtlas@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void dtor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddFont@ImFontAtlas@@QEAAPEAUImFont@@PEBUImFontConfig@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddFont@ImFontAtlas@@QEAAPEAUImFont@@PEBUImFontConfig@@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr AddFont(__IntPtr __instance, __IntPtr font_cfg);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddFontDefault@ImFontAtlas@@QEAAPEAUImFont@@PEBUImFontConfig@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddFontDefault@ImFontAtlas@@QEAAPEAUImFont@@PEBUImFontConfig@@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr AddFontDefault(__IntPtr __instance, __IntPtr font_cfg);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddFontFromFileTTF@ImFontAtlas@@QEAAPEAUImFont@@PEBDMPEBUImFontConfig@@PEBG@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddFontFromFileTTF@ImFontAtlas@@QEAAPEAUImFont@@PEBDMPEBUImFontConfig@@PEBG@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr AddFontFromFileTTF(__IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string filename, float size_pixels, __IntPtr font_cfg, ushort* glyph_ranges);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddFontFromMemoryTTF@ImFontAtlas@@QEAAPEAUImFont@@PEAXHMPEBUImFontConfig@@PEBG@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddFontFromMemoryTTF@ImFontAtlas@@QEAAPEAUImFont@@PEAXHMPEBUImFontConfig@@PEBG@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr AddFontFromMemoryTTF(__IntPtr __instance, __IntPtr font_data, int font_size, float size_pixels, __IntPtr font_cfg, ushort* glyph_ranges);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddFontFromMemoryCompressedTTF@ImFontAtlas@@QEAAPEAUImFont@@PEBXHMPEBUImFontConfig@@PEBG@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddFontFromMemoryCompressedTTF@ImFontAtlas@@QEAAPEAUImFont@@PEBXHMPEBUImFontConfig@@PEBG@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr AddFontFromMemoryCompressedTTF(__IntPtr __instance, __IntPtr compressed_font_data, int compressed_font_size, float size_pixels, __IntPtr font_cfg, ushort* glyph_ranges);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddFontFromMemoryCompressedBase85TTF@ImFontAtlas@@QEAAPEAUImFont@@PEBDMPEBUImFontConfig@@PEBG@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddFontFromMemoryCompressedBase85TTF@ImFontAtlas@@QEAAPEAUImFont@@PEBDMPEBUImFontConfig@@PEBG@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr AddFontFromMemoryCompressedBase85TTF(__IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string compressed_font_data_base85, float size_pixels, __IntPtr font_cfg, ushort* glyph_ranges);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ClearInputData@ImFontAtlas@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ClearInputData@ImFontAtlas@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void ClearInputData(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ClearTexData@ImFontAtlas@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ClearTexData@ImFontAtlas@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void ClearTexData(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ClearFonts@ImFontAtlas@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ClearFonts@ImFontAtlas@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void ClearFonts(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Clear@ImFontAtlas@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Clear@ImFontAtlas@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Clear(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Build@ImFontAtlas@@QEAA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Build@ImFontAtlas@@QEAA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool Build(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetTexDataAsAlpha8@ImFontAtlas@@QEAAXPEAPEAEPEAH11@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetTexDataAsAlpha8@ImFontAtlas@@QEAAXPEAPEAEPEAH11@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void GetTexDataAsAlpha8(__IntPtr __instance, byte** out_pixels, int* out_width, int* out_height, int* out_bytes_per_pixel);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetTexDataAsRGBA32@ImFontAtlas@@QEAAXPEAPEAEPEAH11@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetTexDataAsRGBA32@ImFontAtlas@@QEAAXPEAPEAEPEAH11@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void GetTexDataAsRGBA32(__IntPtr __instance, byte** out_pixels, int* out_width, int* out_height, int* out_bytes_per_pixel);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetTexID@ImFontAtlas@@QEAAXPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetTexID@ImFontAtlas@@QEAAXPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void SetTexID(__IntPtr __instance, __IntPtr id);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddCustomRectRegular@ImFontAtlas@@QEAAHHH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddCustomRectRegular@ImFontAtlas@@QEAAHHH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int AddCustomRectRegular(__IntPtr __instance, int width, int height);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddCustomRectFontGlyph@ImFontAtlas@@QEAAHPEAUImFont@@GHHMAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddCustomRectFontGlyph@ImFontAtlas@@QEAAHPEAUImFont@@GHHMAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int AddCustomRectFontGlyph(__IntPtr __instance, __IntPtr font, ushort id, int width, int height, float advance_x, __IntPtr offset);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetCustomRectByIndex@ImFontAtlas@@QEAAPEAUImFontAtlasCustomRect@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetCustomRectByIndex@ImFontAtlas@@QEAAPEAUImFontAtlasCustomRect@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr GetCustomRectByIndex(__IntPtr __instance, int index);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?CalcCustomRectUV@ImFontAtlas@@QEBAXPEBUImFontAtlasCustomRect@@PEAUImVec2@@1@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?CalcCustomRectUV@ImFontAtlas@@QEBAXPEBUImFontAtlasCustomRect@@PEAUImVec2@@1@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void CalcCustomRectUV(__IntPtr __instance, __IntPtr rect, __IntPtr out_uv_min, __IntPtr out_uv_max);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetMouseCursorTexData@ImFontAtlas@@QEAA_NHPEAUImVec2@@0QEAU2@1@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetMouseCursorTexData@ImFontAtlas@@QEAA_NHPEAUImVec2@@0QEAU2@1@Z", CallingConvention = __CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool GetMouseCursorTexData(__IntPtr __instance, int cursor, __IntPtr out_offset, __IntPtr out_size, global::TestOpenGLd.ImVec2.__Internal[] out_uv_border, global::TestOpenGLd.ImVec2.__Internal[] out_uv_fill);
+            internal static extern bool GetMouseCursorTexData(__IntPtr __instance, int cursor, __IntPtr out_offset, __IntPtr out_size, global::Cored.ImVec2.__Internal[] out_uv_border, global::Cored.ImVec2.__Internal[] out_uv_fill);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsBuilt@ImFontAtlas@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsBuilt@ImFontAtlas@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool IsBuilt(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetGlyphRangesDefault@ImFontAtlas@@QEAAPEBGXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetGlyphRangesDefault@ImFontAtlas@@QEAAPEBGXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern ushort* GetGlyphRangesDefault(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetGlyphRangesKorean@ImFontAtlas@@QEAAPEBGXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetGlyphRangesKorean@ImFontAtlas@@QEAAPEBGXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern ushort* GetGlyphRangesKorean(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetGlyphRangesJapanese@ImFontAtlas@@QEAAPEBGXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetGlyphRangesJapanese@ImFontAtlas@@QEAAPEBGXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern ushort* GetGlyphRangesJapanese(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetGlyphRangesChineseFull@ImFontAtlas@@QEAAPEBGXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetGlyphRangesChineseFull@ImFontAtlas@@QEAAPEBGXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern ushort* GetGlyphRangesChineseFull(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetGlyphRangesChineseSimplifiedCommon@ImFontAtlas@@QEAAPEBGXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetGlyphRangesChineseSimplifiedCommon@ImFontAtlas@@QEAAPEBGXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern ushort* GetGlyphRangesChineseSimplifiedCommon(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetGlyphRangesCyrillic@ImFontAtlas@@QEAAPEBGXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetGlyphRangesCyrillic@ImFontAtlas@@QEAAPEBGXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern ushort* GetGlyphRangesCyrillic(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetGlyphRangesThai@ImFontAtlas@@QEAAPEBGXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetGlyphRangesThai@ImFontAtlas@@QEAAPEBGXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern ushort* GetGlyphRangesThai(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetGlyphRangesVietnamese@ImFontAtlas@@QEAAPEBGXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetGlyphRangesVietnamese@ImFontAtlas@@QEAAPEBGXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern ushort* GetGlyphRangesVietnamese(__IntPtr __instance);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImFontAtlas> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImFontAtlas>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImFontAtlas> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImFontAtlas>();
 
         protected bool __ownsNativeInstance;
 
@@ -9413,7 +9413,7 @@ namespace TestOpenGLd
         private static void* __CopyValue(__Internal native)
         {
             var ret = Marshal.AllocHGlobal(sizeof(__Internal));
-            global::TestOpenGLd.ImFontAtlas.__Internal.cctor(ret, new __IntPtr(&native));
+            global::Cored.ImFontAtlas.__Internal.cctor(ret, new __IntPtr(&native));
             return ret.ToPointer();
         }
 
@@ -9433,15 +9433,15 @@ namespace TestOpenGLd
 
         public ImFontAtlas()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImFontAtlas.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImFontAtlas.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImFontAtlas(global::TestOpenGLd.ImFontAtlas _0)
+        public ImFontAtlas(global::Cored.ImFontAtlas _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImFontAtlas.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImFontAtlas.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             if (ReferenceEquals(_0, null))
@@ -9467,66 +9467,66 @@ namespace TestOpenGLd
             __Instance = IntPtr.Zero;
         }
 
-        public global::TestOpenGLd.ImFont AddFont(global::TestOpenGLd.ImFontConfig font_cfg)
+        public global::Cored.ImFont AddFont(global::Cored.ImFontConfig font_cfg)
         {
             var __arg0 = font_cfg is null ? __IntPtr.Zero : font_cfg.__Instance;
             var __ret = __Internal.AddFont(__Instance, __arg0);
-            var __result0 = global::TestOpenGLd.ImFont.__GetOrCreateInstance(__ret, false);
+            var __result0 = global::Cored.ImFont.__GetOrCreateInstance(__ret, false);
             return __result0;
         }
 
-        public global::TestOpenGLd.ImFont AddFontDefault(global::TestOpenGLd.ImFontConfig font_cfg)
+        public global::Cored.ImFont AddFontDefault(global::Cored.ImFontConfig font_cfg)
         {
             var __arg0 = font_cfg is null ? __IntPtr.Zero : font_cfg.__Instance;
             var __ret = __Internal.AddFontDefault(__Instance, __arg0);
-            var __result0 = global::TestOpenGLd.ImFont.__GetOrCreateInstance(__ret, false);
+            var __result0 = global::Cored.ImFont.__GetOrCreateInstance(__ret, false);
             return __result0;
         }
 
-        public global::TestOpenGLd.ImFont AddFontFromFileTTF(string filename, float size_pixels, global::TestOpenGLd.ImFontConfig font_cfg, ref ushort glyph_ranges)
+        public global::Cored.ImFont AddFontFromFileTTF(string filename, float size_pixels, global::Cored.ImFontConfig font_cfg, ref ushort glyph_ranges)
         {
             var __arg2 = font_cfg is null ? __IntPtr.Zero : font_cfg.__Instance;
             fixed (ushort* __glyph_ranges3 = &glyph_ranges)
             {
                 var __arg3 = __glyph_ranges3;
                 var __ret = __Internal.AddFontFromFileTTF(__Instance, filename, size_pixels, __arg2, __arg3);
-                var __result0 = global::TestOpenGLd.ImFont.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImFont.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
         }
 
-        public global::TestOpenGLd.ImFont AddFontFromMemoryTTF(__IntPtr font_data, int font_size, float size_pixels, global::TestOpenGLd.ImFontConfig font_cfg, ref ushort glyph_ranges)
+        public global::Cored.ImFont AddFontFromMemoryTTF(__IntPtr font_data, int font_size, float size_pixels, global::Cored.ImFontConfig font_cfg, ref ushort glyph_ranges)
         {
             var __arg3 = font_cfg is null ? __IntPtr.Zero : font_cfg.__Instance;
             fixed (ushort* __glyph_ranges4 = &glyph_ranges)
             {
                 var __arg4 = __glyph_ranges4;
                 var __ret = __Internal.AddFontFromMemoryTTF(__Instance, font_data, font_size, size_pixels, __arg3, __arg4);
-                var __result0 = global::TestOpenGLd.ImFont.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImFont.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
         }
 
-        public global::TestOpenGLd.ImFont AddFontFromMemoryCompressedTTF(__IntPtr compressed_font_data, int compressed_font_size, float size_pixels, global::TestOpenGLd.ImFontConfig font_cfg, ref ushort glyph_ranges)
+        public global::Cored.ImFont AddFontFromMemoryCompressedTTF(__IntPtr compressed_font_data, int compressed_font_size, float size_pixels, global::Cored.ImFontConfig font_cfg, ref ushort glyph_ranges)
         {
             var __arg3 = font_cfg is null ? __IntPtr.Zero : font_cfg.__Instance;
             fixed (ushort* __glyph_ranges4 = &glyph_ranges)
             {
                 var __arg4 = __glyph_ranges4;
                 var __ret = __Internal.AddFontFromMemoryCompressedTTF(__Instance, compressed_font_data, compressed_font_size, size_pixels, __arg3, __arg4);
-                var __result0 = global::TestOpenGLd.ImFont.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImFont.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
         }
 
-        public global::TestOpenGLd.ImFont AddFontFromMemoryCompressedBase85TTF(string compressed_font_data_base85, float size_pixels, global::TestOpenGLd.ImFontConfig font_cfg, ref ushort glyph_ranges)
+        public global::Cored.ImFont AddFontFromMemoryCompressedBase85TTF(string compressed_font_data_base85, float size_pixels, global::Cored.ImFontConfig font_cfg, ref ushort glyph_ranges)
         {
             var __arg2 = font_cfg is null ? __IntPtr.Zero : font_cfg.__Instance;
             fixed (ushort* __glyph_ranges3 = &glyph_ranges)
             {
                 var __arg3 = __glyph_ranges3;
                 var __ret = __Internal.AddFontFromMemoryCompressedBase85TTF(__Instance, compressed_font_data_base85, size_pixels, __arg2, __arg3);
-                var __result0 = global::TestOpenGLd.ImFont.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImFont.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
         }
@@ -9602,7 +9602,7 @@ namespace TestOpenGLd
             return __ret;
         }
 
-        public int AddCustomRectFontGlyph(global::TestOpenGLd.ImFont font, ushort id, int width, int height, float advance_x, global::TestOpenGLd.ImVec2 offset)
+        public int AddCustomRectFontGlyph(global::Cored.ImFont font, ushort id, int width, int height, float advance_x, global::Cored.ImVec2 offset)
         {
             var __arg0 = font is null ? __IntPtr.Zero : font.__Instance;
             if (ReferenceEquals(offset, null))
@@ -9612,14 +9612,14 @@ namespace TestOpenGLd
             return __ret;
         }
 
-        public global::TestOpenGLd.ImFontAtlasCustomRect GetCustomRectByIndex(int index)
+        public global::Cored.ImFontAtlasCustomRect GetCustomRectByIndex(int index)
         {
             var __ret = __Internal.GetCustomRectByIndex(__Instance, index);
-            var __result0 = global::TestOpenGLd.ImFontAtlasCustomRect.__GetOrCreateInstance(__ret, false);
+            var __result0 = global::Cored.ImFontAtlasCustomRect.__GetOrCreateInstance(__ret, false);
             return __result0;
         }
 
-        public void CalcCustomRectUV(global::TestOpenGLd.ImFontAtlasCustomRect rect, global::TestOpenGLd.ImVec2 out_uv_min, global::TestOpenGLd.ImVec2 out_uv_max)
+        public void CalcCustomRectUV(global::Cored.ImFontAtlasCustomRect rect, global::Cored.ImVec2 out_uv_min, global::Cored.ImVec2 out_uv_max)
         {
             var __arg0 = rect is null ? __IntPtr.Zero : rect.__Instance;
             var __arg1 = out_uv_min is null ? __IntPtr.Zero : out_uv_min.__Instance;
@@ -9627,37 +9627,37 @@ namespace TestOpenGLd
             __Internal.CalcCustomRectUV(__Instance, __arg0, __arg1, __arg2);
         }
 
-        public bool GetMouseCursorTexData(int cursor, global::TestOpenGLd.ImVec2 out_offset, global::TestOpenGLd.ImVec2 out_size, global::TestOpenGLd.ImVec2[] out_uv_border, global::TestOpenGLd.ImVec2[] out_uv_fill)
+        public bool GetMouseCursorTexData(int cursor, global::Cored.ImVec2 out_offset, global::Cored.ImVec2 out_size, global::Cored.ImVec2[] out_uv_border, global::Cored.ImVec2[] out_uv_fill)
         {
             var __arg1 = out_offset is null ? __IntPtr.Zero : out_offset.__Instance;
             var __arg2 = out_size is null ? __IntPtr.Zero : out_size.__Instance;
             if (out_uv_border == null || out_uv_border.Length != 2)
                 throw new ArgumentOutOfRangeException("out_uv_border", "The dimensions of the provided array don't match the required size.");
-            global::TestOpenGLd.ImVec2.__Internal[] __out_uv_border;
+            global::Cored.ImVec2.__Internal[] __out_uv_border;
             if (out_uv_border is null)
                 __out_uv_border = null;
             else
             {
-                __out_uv_border = new global::TestOpenGLd.ImVec2.__Internal[out_uv_border.Length];
+                __out_uv_border = new global::Cored.ImVec2.__Internal[out_uv_border.Length];
                 for (int i = 0; i < __out_uv_border.Length; i++)
                 {
                     var __element = out_uv_border[i];
-                    __out_uv_border[i] = __element is null ? new global::TestOpenGLd.ImVec2.__Internal() : *(global::TestOpenGLd.ImVec2.__Internal*) __element.__Instance;
+                    __out_uv_border[i] = __element is null ? new global::Cored.ImVec2.__Internal() : *(global::Cored.ImVec2.__Internal*) __element.__Instance;
                 }
             }
             var __arg3 = __out_uv_border;
             if (out_uv_fill == null || out_uv_fill.Length != 2)
                 throw new ArgumentOutOfRangeException("out_uv_fill", "The dimensions of the provided array don't match the required size.");
-            global::TestOpenGLd.ImVec2.__Internal[] __out_uv_fill;
+            global::Cored.ImVec2.__Internal[] __out_uv_fill;
             if (out_uv_fill is null)
                 __out_uv_fill = null;
             else
             {
-                __out_uv_fill = new global::TestOpenGLd.ImVec2.__Internal[out_uv_fill.Length];
+                __out_uv_fill = new global::Cored.ImVec2.__Internal[out_uv_fill.Length];
                 for (int i = 0; i < __out_uv_fill.Length; i++)
                 {
                     var __element = out_uv_fill[i];
-                    __out_uv_fill[i] = __element is null ? new global::TestOpenGLd.ImVec2.__Internal() : *(global::TestOpenGLd.ImVec2.__Internal*) __element.__Instance;
+                    __out_uv_fill[i] = __element is null ? new global::Cored.ImVec2.__Internal() : *(global::Cored.ImVec2.__Internal*) __element.__Instance;
                 }
             }
             var __arg4 = __out_uv_fill;
@@ -9795,46 +9795,46 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec2 TexUvScale
+        public global::Cored.ImVec2 TexUvScale
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->TexUvScale));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->TexUvScale));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->TexUvScale = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->TexUvScale = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 TexUvWhitePixel
+        public global::Cored.ImVec2 TexUvWhitePixel
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->TexUvWhitePixel));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->TexUvWhitePixel));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->TexUvWhitePixel = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->TexUvWhitePixel = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec4[] TexUvLines
+        public global::Cored.ImVec4[] TexUvLines
         {
             get
             {
-                global::TestOpenGLd.ImVec4[] __value = null;
+                global::Cored.ImVec4[] __value = null;
                 if (((__Internal*)__Instance)->TexUvLines != null)
                 {
-                    __value = new global::TestOpenGLd.ImVec4[64];
+                    __value = new global::Cored.ImVec4[64];
                     for (int i = 0; i < 64; i++)
-                        __value[i] = global::TestOpenGLd.ImVec4.__CreateInstance(*((global::TestOpenGLd.ImVec4.__Internal*)&(((__Internal*)__Instance)->TexUvLines[i * sizeof(global::TestOpenGLd.ImVec4.__Internal)])));
+                        __value[i] = global::Cored.ImVec4.__CreateInstance(*((global::Cored.ImVec4.__Internal*)&(((__Internal*)__Instance)->TexUvLines[i * sizeof(global::Cored.ImVec4.__Internal)])));
                 }
                 return __value;
             }
@@ -9846,16 +9846,16 @@ namespace TestOpenGLd
                     if (value.Length != 64)
                         throw new ArgumentOutOfRangeException("value", "The dimensions of the provided array don't match the required size.");
                     for (int i = 0; i < 64; i++)
-                        *(global::TestOpenGLd.ImVec4.__Internal*) &((__Internal*)__Instance)->TexUvLines[i * sizeof(global::TestOpenGLd.ImVec4.__Internal)] = *(global::TestOpenGLd.ImVec4.__Internal*)value[i].__Instance;
+                        *(global::Cored.ImVec4.__Internal*) &((__Internal*)__Instance)->TexUvLines[i * sizeof(global::Cored.ImVec4.__Internal)] = *(global::Cored.ImVec4.__Internal*)value[i].__Instance;
                 }
             }
         }
 
-        public global::TestOpenGLd.ImFontBuilderIO FontBuilderIO
+        public global::Cored.ImFontBuilderIO FontBuilderIO
         {
             get
             {
-                var __result0 = global::TestOpenGLd.ImFontBuilderIO.__GetOrCreateInstance(((__Internal*)__Instance)->FontBuilderIO, false);
+                var __result0 = global::Cored.ImFontBuilderIO.__GetOrCreateInstance(((__Internal*)__Instance)->FontBuilderIO, false);
                 return __result0;
             }
         }
@@ -9986,11 +9986,11 @@ namespace TestOpenGLd
         [StructLayout(LayoutKind.Sequential, Size = 112)]
         public partial struct __Internal
         {
-            internal global::TestOpenGLd.ImVector.__Internal IndexAdvanceX;
+            internal global::Cored.ImVector.__Internal IndexAdvanceX;
             internal float FallbackAdvanceX;
             internal float FontSize;
-            internal global::TestOpenGLd.ImVector.__Internal IndexLookup;
-            internal global::TestOpenGLd.ImVector.__Internal Glyphs;
+            internal global::Cored.ImVector.__Internal IndexLookup;
+            internal global::Cored.ImVector.__Internal Glyphs;
             internal __IntPtr FallbackGlyph;
             internal __IntPtr ContainerAtlas;
             internal __IntPtr ConfigData;
@@ -10004,72 +10004,72 @@ namespace TestOpenGLd
             internal int MetricsTotalSurface;
             internal fixed byte Used4kPagesMap[2];
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImFont@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImFont@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImFont@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImFont@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??1ImFont@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??1ImFont@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void dtor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?FindGlyph@ImFont@@QEBAPEBUImFontGlyph@@G@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?FindGlyph@ImFont@@QEBAPEBUImFontGlyph@@G@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr FindGlyph(__IntPtr __instance, ushort c);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?FindGlyphNoFallback@ImFont@@QEBAPEBUImFontGlyph@@G@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?FindGlyphNoFallback@ImFont@@QEBAPEBUImFontGlyph@@G@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr FindGlyphNoFallback(__IntPtr __instance, ushort c);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetCharAdvance@ImFont@@QEBAMG@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetCharAdvance@ImFont@@QEBAMG@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern float GetCharAdvance(__IntPtr __instance, ushort c);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?CalcTextSizeA@ImFont@@QEBA?AUImVec2@@MMMPEBD0PEAPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?CalcTextSizeA@ImFont@@QEBA?AUImVec2@@MMMPEBD0PEAPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void CalcTextSizeA(__IntPtr __instance, __IntPtr @return, float size, float max_width, float wrap_width, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_begin, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_end, sbyte** remaining);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?CalcWordWrapPositionA@ImFont@@QEBAPEBDMPEBD0M@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?CalcWordWrapPositionA@ImFont@@QEBAPEBDMPEBD0M@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr CalcWordWrapPositionA(__IntPtr __instance, float scale, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_end, float wrap_width);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?RenderChar@ImFont@@QEBAXPEAUImDrawList@@MUImVec2@@IG@Z", CallingConvention = __CallingConvention.Cdecl)]
-            internal static extern void RenderChar(__IntPtr __instance, __IntPtr draw_list, float size, global::TestOpenGLd.ImVec2.__Internal pos, uint col, ushort c);
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?RenderChar@ImFont@@QEBAXPEAUImDrawList@@MUImVec2@@IG@Z", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern void RenderChar(__IntPtr __instance, __IntPtr draw_list, float size, global::Cored.ImVec2.__Internal pos, uint col, ushort c);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?RenderText@ImFont@@QEBAXPEAUImDrawList@@MUImVec2@@IAEBUImVec4@@PEBD3M_N@Z", CallingConvention = __CallingConvention.Cdecl)]
-            internal static extern void RenderText(__IntPtr __instance, __IntPtr draw_list, float size, global::TestOpenGLd.ImVec2.__Internal pos, uint col, __IntPtr clip_rect, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_begin, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_end, float wrap_width, bool cpu_fine_clip);
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?RenderText@ImFont@@QEBAXPEAUImDrawList@@MUImVec2@@IAEBUImVec4@@PEBD3M_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern void RenderText(__IntPtr __instance, __IntPtr draw_list, float size, global::Cored.ImVec2.__Internal pos, uint col, __IntPtr clip_rect, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_begin, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_end, float wrap_width, bool cpu_fine_clip);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BuildLookupTable@ImFont@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BuildLookupTable@ImFont@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void BuildLookupTable(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ClearOutputData@ImFont@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ClearOutputData@ImFont@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void ClearOutputData(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GrowIndex@ImFont@@QEAAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GrowIndex@ImFont@@QEAAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void GrowIndex(__IntPtr __instance, int new_size);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddGlyph@ImFont@@QEAAXPEBUImFontConfig@@GMMMMMMMMM@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddGlyph@ImFont@@QEAAXPEBUImFontConfig@@GMMMMMMMMM@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddGlyph(__IntPtr __instance, __IntPtr src_cfg, ushort c, float x0, float y0, float x1, float y1, float u0, float v0, float u1, float v1, float advance_x);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AddRemapChar@ImFont@@QEAAXGG_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AddRemapChar@ImFont@@QEAAXGG_N@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void AddRemapChar(__IntPtr __instance, ushort dst, ushort src, bool overwrite_dst);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetGlyphVisible@ImFont@@QEAAXG_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetGlyphVisible@ImFont@@QEAAXG_N@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void SetGlyphVisible(__IntPtr __instance, ushort c, bool visible);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetFallbackChar@ImFont@@QEAAXG@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetFallbackChar@ImFont@@QEAAXG@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void SetFallbackChar(__IntPtr __instance, ushort c);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsGlyphRangeUnused@ImFont@@QEAA_NII@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsGlyphRangeUnused@ImFont@@QEAA_NII@Z", CallingConvention = __CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool IsGlyphRangeUnused(__IntPtr __instance, uint c_begin, uint c_last);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsLoaded@ImFont@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsLoaded@ImFont@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool IsLoaded(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetDebugName@ImFont@@QEBAPEBDXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetDebugName@ImFont@@QEBAPEBDXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr GetDebugName(__IntPtr __instance);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImFont> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImFont>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImFont> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImFont>();
 
         protected bool __ownsNativeInstance;
 
@@ -10098,7 +10098,7 @@ namespace TestOpenGLd
         private static void* __CopyValue(__Internal native)
         {
             var ret = Marshal.AllocHGlobal(sizeof(__Internal));
-            global::TestOpenGLd.ImFont.__Internal.cctor(ret, new __IntPtr(&native));
+            global::Cored.ImFont.__Internal.cctor(ret, new __IntPtr(&native));
             return ret.ToPointer();
         }
 
@@ -10118,15 +10118,15 @@ namespace TestOpenGLd
 
         public ImFont()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImFont.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImFont.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImFont(global::TestOpenGLd.ImFont _0)
+        public ImFont(global::Cored.ImFont _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImFont.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImFont.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             if (ReferenceEquals(_0, null))
@@ -10152,17 +10152,17 @@ namespace TestOpenGLd
             __Instance = IntPtr.Zero;
         }
 
-        public global::TestOpenGLd.ImFontGlyph FindGlyph(ushort c)
+        public global::Cored.ImFontGlyph FindGlyph(ushort c)
         {
             var __ret = __Internal.FindGlyph(__Instance, c);
-            var __result0 = global::TestOpenGLd.ImFontGlyph.__GetOrCreateInstance(__ret, false);
+            var __result0 = global::Cored.ImFontGlyph.__GetOrCreateInstance(__ret, false);
             return __result0;
         }
 
-        public global::TestOpenGLd.ImFontGlyph FindGlyphNoFallback(ushort c)
+        public global::Cored.ImFontGlyph FindGlyphNoFallback(ushort c)
         {
             var __ret = __Internal.FindGlyphNoFallback(__Instance, c);
-            var __result0 = global::TestOpenGLd.ImFontGlyph.__GetOrCreateInstance(__ret, false);
+            var __result0 = global::Cored.ImFontGlyph.__GetOrCreateInstance(__ret, false);
             return __result0;
         }
 
@@ -10172,11 +10172,11 @@ namespace TestOpenGLd
             return __ret;
         }
 
-        public global::TestOpenGLd.ImVec2 CalcTextSizeA(float size, float max_width, float wrap_width, string text_begin, string text_end, sbyte** remaining)
+        public global::Cored.ImVec2 CalcTextSizeA(float size, float max_width, float wrap_width, string text_begin, string text_end, sbyte** remaining)
         {
-            var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+            var __ret = new global::Cored.ImVec2.__Internal();
             __Internal.CalcTextSizeA(__Instance, new IntPtr(&__ret), size, max_width, wrap_width, text_begin, text_end, remaining);
-            return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+            return global::Cored.ImVec2.__CreateInstance(__ret);
         }
 
         public string CalcWordWrapPositionA(float scale, string text, string text_end, float wrap_width)
@@ -10185,16 +10185,16 @@ namespace TestOpenGLd
             return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, __ret);
         }
 
-        public void RenderChar(global::TestOpenGLd.ImDrawList draw_list, float size, global::TestOpenGLd.ImVec2 pos, uint col, ushort c)
+        public void RenderChar(global::Cored.ImDrawList draw_list, float size, global::Cored.ImVec2 pos, uint col, ushort c)
         {
             var __arg0 = draw_list is null ? __IntPtr.Zero : draw_list.__Instance;
             if (ReferenceEquals(pos, null))
                 throw new global::System.ArgumentNullException("pos", "Cannot be null because it is passed by value.");
             var __arg2 = pos.__Instance;
-            __Internal.RenderChar(__Instance, __arg0, size, *(global::TestOpenGLd.ImVec2.__Internal*) __arg2, col, c);
+            __Internal.RenderChar(__Instance, __arg0, size, *(global::Cored.ImVec2.__Internal*) __arg2, col, c);
         }
 
-        public void RenderText(global::TestOpenGLd.ImDrawList draw_list, float size, global::TestOpenGLd.ImVec2 pos, uint col, global::TestOpenGLd.ImVec4 clip_rect, string text_begin, string text_end, float wrap_width, bool cpu_fine_clip)
+        public void RenderText(global::Cored.ImDrawList draw_list, float size, global::Cored.ImVec2 pos, uint col, global::Cored.ImVec4 clip_rect, string text_begin, string text_end, float wrap_width, bool cpu_fine_clip)
         {
             var __arg0 = draw_list is null ? __IntPtr.Zero : draw_list.__Instance;
             if (ReferenceEquals(pos, null))
@@ -10203,7 +10203,7 @@ namespace TestOpenGLd
             if (ReferenceEquals(clip_rect, null))
                 throw new global::System.ArgumentNullException("clip_rect", "Cannot be null because it is a C++ reference (&).");
             var __arg4 = clip_rect.__Instance;
-            __Internal.RenderText(__Instance, __arg0, size, *(global::TestOpenGLd.ImVec2.__Internal*) __arg2, col, __arg4, text_begin, text_end, wrap_width, cpu_fine_clip);
+            __Internal.RenderText(__Instance, __arg0, size, *(global::Cored.ImVec2.__Internal*) __arg2, col, __arg4, text_begin, text_end, wrap_width, cpu_fine_clip);
         }
 
         public void BuildLookupTable()
@@ -10221,7 +10221,7 @@ namespace TestOpenGLd
             __Internal.GrowIndex(__Instance, new_size);
         }
 
-        public void AddGlyph(global::TestOpenGLd.ImFontConfig src_cfg, ushort c, float x0, float y0, float x1, float y1, float u0, float v0, float u1, float v1, float advance_x)
+        public void AddGlyph(global::Cored.ImFontConfig src_cfg, ushort c, float x0, float y0, float x1, float y1, float u0, float v0, float u1, float v1, float advance_x)
         {
             var __arg0 = src_cfg is null ? __IntPtr.Zero : src_cfg.__Instance;
             __Internal.AddGlyph(__Instance, __arg0, c, x0, y0, x1, y1, u0, v0, u1, v1, advance_x);
@@ -10274,20 +10274,20 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImFontGlyph FallbackGlyph
+        public global::Cored.ImFontGlyph FallbackGlyph
         {
             get
             {
-                var __result0 = global::TestOpenGLd.ImFontGlyph.__GetOrCreateInstance(((__Internal*)__Instance)->FallbackGlyph, false);
+                var __result0 = global::Cored.ImFontGlyph.__GetOrCreateInstance(((__Internal*)__Instance)->FallbackGlyph, false);
                 return __result0;
             }
         }
 
-        public global::TestOpenGLd.ImFontAtlas ContainerAtlas
+        public global::Cored.ImFontAtlas ContainerAtlas
         {
             get
             {
-                var __result0 = global::TestOpenGLd.ImFontAtlas.__GetOrCreateInstance(((__Internal*)__Instance)->ContainerAtlas, false);
+                var __result0 = global::Cored.ImFontAtlas.__GetOrCreateInstance(((__Internal*)__Instance)->ContainerAtlas, false);
                 return __result0;
             }
 
@@ -10297,11 +10297,11 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImFontConfig ConfigData
+        public global::Cored.ImFontConfig ConfigData
         {
             get
             {
-                var __result0 = global::TestOpenGLd.ImFontConfig.__GetOrCreateInstance(((__Internal*)__Instance)->ConfigData, false);
+                var __result0 = global::Cored.ImFontConfig.__GetOrCreateInstance(((__Internal*)__Instance)->ConfigData, false);
                 return __result0;
             }
         }
@@ -10453,10 +10453,10 @@ namespace TestOpenGLd
         {
             internal uint ID;
             internal int Flags;
-            internal global::TestOpenGLd.ImVec2.__Internal Pos;
-            internal global::TestOpenGLd.ImVec2.__Internal Size;
-            internal global::TestOpenGLd.ImVec2.__Internal WorkPos;
-            internal global::TestOpenGLd.ImVec2.__Internal WorkSize;
+            internal global::Cored.ImVec2.__Internal Pos;
+            internal global::Cored.ImVec2.__Internal Size;
+            internal global::Cored.ImVec2.__Internal WorkPos;
+            internal global::Cored.ImVec2.__Internal WorkSize;
             internal float DpiScale;
             internal uint ParentViewportId;
             internal __IntPtr DrawData;
@@ -10468,25 +10468,25 @@ namespace TestOpenGLd
             internal byte PlatformRequestResize;
             internal byte PlatformRequestClose;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiViewport@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiViewport@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiViewport@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiViewport@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??1ImGuiViewport@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??1ImGuiViewport@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void dtor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetCenter@ImGuiViewport@@QEBA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetCenter@ImGuiViewport@@QEBA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void GetCenter(__IntPtr __instance, __IntPtr @return);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetWorkCenter@ImGuiViewport@@QEBA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetWorkCenter@ImGuiViewport@@QEBA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void GetWorkCenter(__IntPtr __instance, __IntPtr @return);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiViewport> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiViewport>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiViewport> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiViewport>();
 
         protected bool __ownsNativeInstance;
 
@@ -10535,18 +10535,18 @@ namespace TestOpenGLd
 
         public ImGuiViewport()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiViewport.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiViewport.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImGuiViewport(global::TestOpenGLd.ImGuiViewport _0)
+        public ImGuiViewport(global::Cored.ImGuiViewport _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiViewport.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiViewport.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImGuiViewport.__Internal*) __Instance) = *((global::TestOpenGLd.ImGuiViewport.__Internal*) _0.__Instance);
+            *((global::Cored.ImGuiViewport.__Internal*) __Instance) = *((global::Cored.ImGuiViewport.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -10592,63 +10592,63 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec2 Pos
+        public global::Cored.ImVec2 Pos
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->Pos));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->Pos));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->Pos = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->Pos = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 Size
+        public global::Cored.ImVec2 Size
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->Size));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->Size));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->Size = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->Size = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 WorkPos
+        public global::Cored.ImVec2 WorkPos
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->WorkPos));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->WorkPos));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->WorkPos = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->WorkPos = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 WorkSize
+        public global::Cored.ImVec2 WorkSize
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->WorkSize));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->WorkSize));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->WorkSize = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->WorkSize = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
@@ -10678,11 +10678,11 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImDrawData DrawData
+        public global::Cored.ImDrawData DrawData
         {
             get
             {
-                var __result0 = global::TestOpenGLd.ImDrawData.__GetOrCreateInstance(((__Internal*)__Instance)->DrawData, false);
+                var __result0 = global::Cored.ImDrawData.__GetOrCreateInstance(((__Internal*)__Instance)->DrawData, false);
                 return __result0;
             }
 
@@ -10783,23 +10783,23 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.ImVec2 Center
+        public global::Cored.ImVec2 Center
         {
             get
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetCenter(__Instance, new IntPtr(&__ret));
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
         }
 
-        public global::TestOpenGLd.ImVec2 WorkCenter
+        public global::Cored.ImVec2 WorkCenter
         {
             get
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetWorkCenter(__Instance, new IntPtr(&__ret));
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
         }
     }
@@ -10833,22 +10833,22 @@ namespace TestOpenGLd
             internal __IntPtr Renderer_SetWindowSize;
             internal __IntPtr Renderer_RenderWindow;
             internal __IntPtr Renderer_SwapBuffers;
-            internal global::TestOpenGLd.ImVector.__Internal Monitors;
-            internal global::TestOpenGLd.ImVector.__Internal Viewports;
+            internal global::Cored.ImVector.__Internal Monitors;
+            internal global::Cored.ImVector.__Internal Viewports;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiPlatformIO@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiPlatformIO@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiPlatformIO@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiPlatformIO@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??1ImGuiPlatformIO@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??1ImGuiPlatformIO@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void dtor(__IntPtr __instance);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiPlatformIO> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiPlatformIO>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiPlatformIO> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiPlatformIO>();
 
         protected bool __ownsNativeInstance;
 
@@ -10877,7 +10877,7 @@ namespace TestOpenGLd
         private static void* __CopyValue(__Internal native)
         {
             var ret = Marshal.AllocHGlobal(sizeof(__Internal));
-            global::TestOpenGLd.ImGuiPlatformIO.__Internal.cctor(ret, new __IntPtr(&native));
+            global::Cored.ImGuiPlatformIO.__Internal.cctor(ret, new __IntPtr(&native));
             return ret.ToPointer();
         }
 
@@ -10897,15 +10897,15 @@ namespace TestOpenGLd
 
         public ImGuiPlatformIO()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiPlatformIO.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiPlatformIO.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImGuiPlatformIO(global::TestOpenGLd.ImGuiPlatformIO _0)
+        public ImGuiPlatformIO(global::Cored.ImGuiPlatformIO _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiPlatformIO.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiPlatformIO.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             if (ReferenceEquals(_0, null))
@@ -10931,12 +10931,12 @@ namespace TestOpenGLd
             __Instance = IntPtr.Zero;
         }
 
-        public global::TestOpenGLd.Delegates.Action___IntPtr PlatformCreateWindow
+        public global::Cored.Delegates.Action___IntPtr PlatformCreateWindow
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_CreateWindow;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Action___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Action___IntPtr));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Action___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Action___IntPtr));
             }
 
             set
@@ -10945,12 +10945,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Action___IntPtr PlatformDestroyWindow
+        public global::Cored.Delegates.Action___IntPtr PlatformDestroyWindow
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_DestroyWindow;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Action___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Action___IntPtr));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Action___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Action___IntPtr));
             }
 
             set
@@ -10959,12 +10959,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Action___IntPtr PlatformShowWindow
+        public global::Cored.Delegates.Action___IntPtr PlatformShowWindow
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_ShowWindow;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Action___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Action___IntPtr));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Action___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Action___IntPtr));
             }
 
             set
@@ -10973,12 +10973,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Action___IntPtr_TestOpenGLd_ImVec2___Internal PlatformSetWindowPos
+        public global::Cored.Delegates.Action___IntPtr_Cored_ImVec2___Internal PlatformSetWindowPos
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_SetWindowPos;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Action___IntPtr_TestOpenGLd_ImVec2___Internal) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Action___IntPtr_TestOpenGLd_ImVec2___Internal));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Action___IntPtr_Cored_ImVec2___Internal) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Action___IntPtr_Cored_ImVec2___Internal));
             }
 
             set
@@ -10987,12 +10987,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Func_TestOpenGLd_ImVec2___Internal___IntPtr PlatformGetWindowPos
+        public global::Cored.Delegates.Func_Cored_ImVec2___Internal___IntPtr PlatformGetWindowPos
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_GetWindowPos;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Func_TestOpenGLd_ImVec2___Internal___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Func_TestOpenGLd_ImVec2___Internal___IntPtr));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Func_Cored_ImVec2___Internal___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Func_Cored_ImVec2___Internal___IntPtr));
             }
 
             set
@@ -11001,12 +11001,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Action___IntPtr_TestOpenGLd_ImVec2___Internal PlatformSetWindowSize
+        public global::Cored.Delegates.Action___IntPtr_Cored_ImVec2___Internal PlatformSetWindowSize
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_SetWindowSize;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Action___IntPtr_TestOpenGLd_ImVec2___Internal) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Action___IntPtr_TestOpenGLd_ImVec2___Internal));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Action___IntPtr_Cored_ImVec2___Internal) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Action___IntPtr_Cored_ImVec2___Internal));
             }
 
             set
@@ -11015,12 +11015,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Func_TestOpenGLd_ImVec2___Internal___IntPtr PlatformGetWindowSize
+        public global::Cored.Delegates.Func_Cored_ImVec2___Internal___IntPtr PlatformGetWindowSize
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_GetWindowSize;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Func_TestOpenGLd_ImVec2___Internal___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Func_TestOpenGLd_ImVec2___Internal___IntPtr));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Func_Cored_ImVec2___Internal___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Func_Cored_ImVec2___Internal___IntPtr));
             }
 
             set
@@ -11029,12 +11029,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Action___IntPtr PlatformSetWindowFocus
+        public global::Cored.Delegates.Action___IntPtr PlatformSetWindowFocus
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_SetWindowFocus;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Action___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Action___IntPtr));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Action___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Action___IntPtr));
             }
 
             set
@@ -11043,12 +11043,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Func_bool___IntPtr PlatformGetWindowFocus
+        public global::Cored.Delegates.Func_bool___IntPtr PlatformGetWindowFocus
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_GetWindowFocus;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Func_bool___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Func_bool___IntPtr));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Func_bool___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Func_bool___IntPtr));
             }
 
             set
@@ -11057,12 +11057,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Func_bool___IntPtr PlatformGetWindowMinimized
+        public global::Cored.Delegates.Func_bool___IntPtr PlatformGetWindowMinimized
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_GetWindowMinimized;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Func_bool___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Func_bool___IntPtr));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Func_bool___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Func_bool___IntPtr));
             }
 
             set
@@ -11071,12 +11071,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Action___IntPtr__MarshalAs_UnmanagedType_CustomMarshaler__MarshalTypeRef___typeof_CppSharp_Runtime_UTF8Marshaller____string PlatformSetWindowTitle
+        public global::Cored.Delegates.Action___IntPtr__MarshalAs_UnmanagedType_CustomMarshaler__MarshalTypeRef___typeof_CppSharp_Runtime_UTF8Marshaller____string PlatformSetWindowTitle
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_SetWindowTitle;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Action___IntPtr__MarshalAs_UnmanagedType_CustomMarshaler__MarshalTypeRef___typeof_CppSharp_Runtime_UTF8Marshaller____string) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Action___IntPtr__MarshalAs_UnmanagedType_CustomMarshaler__MarshalTypeRef___typeof_CppSharp_Runtime_UTF8Marshaller____string));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Action___IntPtr__MarshalAs_UnmanagedType_CustomMarshaler__MarshalTypeRef___typeof_CppSharp_Runtime_UTF8Marshaller____string) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Action___IntPtr__MarshalAs_UnmanagedType_CustomMarshaler__MarshalTypeRef___typeof_CppSharp_Runtime_UTF8Marshaller____string));
             }
 
             set
@@ -11085,12 +11085,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Action___IntPtr_float PlatformSetWindowAlpha
+        public global::Cored.Delegates.Action___IntPtr_float PlatformSetWindowAlpha
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_SetWindowAlpha;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Action___IntPtr_float) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Action___IntPtr_float));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Action___IntPtr_float) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Action___IntPtr_float));
             }
 
             set
@@ -11099,12 +11099,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Action___IntPtr PlatformUpdateWindow
+        public global::Cored.Delegates.Action___IntPtr PlatformUpdateWindow
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_UpdateWindow;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Action___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Action___IntPtr));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Action___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Action___IntPtr));
             }
 
             set
@@ -11113,12 +11113,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Action___IntPtr___IntPtr PlatformRenderWindow
+        public global::Cored.Delegates.Action___IntPtr___IntPtr PlatformRenderWindow
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_RenderWindow;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Action___IntPtr___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Action___IntPtr___IntPtr));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Action___IntPtr___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Action___IntPtr___IntPtr));
             }
 
             set
@@ -11127,12 +11127,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Action___IntPtr___IntPtr PlatformSwapBuffers
+        public global::Cored.Delegates.Action___IntPtr___IntPtr PlatformSwapBuffers
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_SwapBuffers;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Action___IntPtr___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Action___IntPtr___IntPtr));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Action___IntPtr___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Action___IntPtr___IntPtr));
             }
 
             set
@@ -11141,12 +11141,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Func_float___IntPtr PlatformGetWindowDpiScale
+        public global::Cored.Delegates.Func_float___IntPtr PlatformGetWindowDpiScale
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_GetWindowDpiScale;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Func_float___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Func_float___IntPtr));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Func_float___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Func_float___IntPtr));
             }
 
             set
@@ -11155,12 +11155,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Action___IntPtr PlatformOnChangedViewport
+        public global::Cored.Delegates.Action___IntPtr PlatformOnChangedViewport
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_OnChangedViewport;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Action___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Action___IntPtr));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Action___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Action___IntPtr));
             }
 
             set
@@ -11169,12 +11169,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Action___IntPtr_TestOpenGLd_ImVec2___Internal PlatformSetImeInputPos
+        public global::Cored.Delegates.Action___IntPtr_Cored_ImVec2___Internal PlatformSetImeInputPos
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_SetImeInputPos;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Action___IntPtr_TestOpenGLd_ImVec2___Internal) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Action___IntPtr_TestOpenGLd_ImVec2___Internal));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Action___IntPtr_Cored_ImVec2___Internal) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Action___IntPtr_Cored_ImVec2___Internal));
             }
 
             set
@@ -11183,12 +11183,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Func_int___IntPtr_ulong___IntPtr_ulongPtr PlatformCreateVkSurface
+        public global::Cored.Delegates.Func_int___IntPtr_ulong___IntPtr_ulongPtr PlatformCreateVkSurface
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_CreateVkSurface;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Func_int___IntPtr_ulong___IntPtr_ulongPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Func_int___IntPtr_ulong___IntPtr_ulongPtr));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Func_int___IntPtr_ulong___IntPtr_ulongPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Func_int___IntPtr_ulong___IntPtr_ulongPtr));
             }
 
             set
@@ -11197,12 +11197,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Action___IntPtr RendererCreateWindow
+        public global::Cored.Delegates.Action___IntPtr RendererCreateWindow
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Renderer_CreateWindow;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Action___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Action___IntPtr));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Action___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Action___IntPtr));
             }
 
             set
@@ -11211,12 +11211,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Action___IntPtr RendererDestroyWindow
+        public global::Cored.Delegates.Action___IntPtr RendererDestroyWindow
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Renderer_DestroyWindow;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Action___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Action___IntPtr));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Action___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Action___IntPtr));
             }
 
             set
@@ -11225,12 +11225,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Action___IntPtr_TestOpenGLd_ImVec2___Internal RendererSetWindowSize
+        public global::Cored.Delegates.Action___IntPtr_Cored_ImVec2___Internal RendererSetWindowSize
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Renderer_SetWindowSize;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Action___IntPtr_TestOpenGLd_ImVec2___Internal) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Action___IntPtr_TestOpenGLd_ImVec2___Internal));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Action___IntPtr_Cored_ImVec2___Internal) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Action___IntPtr_Cored_ImVec2___Internal));
             }
 
             set
@@ -11239,12 +11239,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Action___IntPtr___IntPtr RendererRenderWindow
+        public global::Cored.Delegates.Action___IntPtr___IntPtr RendererRenderWindow
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Renderer_RenderWindow;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Action___IntPtr___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Action___IntPtr___IntPtr));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Action___IntPtr___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Action___IntPtr___IntPtr));
             }
 
             set
@@ -11253,12 +11253,12 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.Delegates.Action___IntPtr___IntPtr RendererSwapBuffers
+        public global::Cored.Delegates.Action___IntPtr___IntPtr RendererSwapBuffers
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Renderer_SwapBuffers;
-                return __ptr0 == IntPtr.Zero? null : (global::TestOpenGLd.Delegates.Action___IntPtr___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::TestOpenGLd.Delegates.Action___IntPtr___IntPtr));
+                return __ptr0 == IntPtr.Zero? null : (global::Cored.Delegates.Action___IntPtr___IntPtr) Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::Cored.Delegates.Action___IntPtr___IntPtr));
             }
 
             set
@@ -11273,22 +11273,22 @@ namespace TestOpenGLd
         [StructLayout(LayoutKind.Sequential, Size = 36)]
         public partial struct __Internal
         {
-            internal global::TestOpenGLd.ImVec2.__Internal MainPos;
-            internal global::TestOpenGLd.ImVec2.__Internal MainSize;
-            internal global::TestOpenGLd.ImVec2.__Internal WorkPos;
-            internal global::TestOpenGLd.ImVec2.__Internal WorkSize;
+            internal global::Cored.ImVec2.__Internal MainPos;
+            internal global::Cored.ImVec2.__Internal MainSize;
+            internal global::Cored.ImVec2.__Internal WorkPos;
+            internal global::Cored.ImVec2.__Internal WorkSize;
             internal float DpiScale;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiPlatformMonitor@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiPlatformMonitor@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr ctor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0ImGuiPlatformMonitor@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0ImGuiPlatformMonitor@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiPlatformMonitor> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.ImGuiPlatformMonitor>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiPlatformMonitor> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.ImGuiPlatformMonitor>();
 
         protected bool __ownsNativeInstance;
 
@@ -11337,18 +11337,18 @@ namespace TestOpenGLd
 
         public ImGuiPlatformMonitor()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiPlatformMonitor.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiPlatformMonitor.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
             __Internal.ctor(__Instance);
         }
 
-        public ImGuiPlatformMonitor(global::TestOpenGLd.ImGuiPlatformMonitor _0)
+        public ImGuiPlatformMonitor(global::Cored.ImGuiPlatformMonitor _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.ImGuiPlatformMonitor.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.ImGuiPlatformMonitor.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.ImGuiPlatformMonitor.__Internal*) __Instance) = *((global::TestOpenGLd.ImGuiPlatformMonitor.__Internal*) _0.__Instance);
+            *((global::Cored.ImGuiPlatformMonitor.__Internal*) __Instance) = *((global::Cored.ImGuiPlatformMonitor.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -11366,63 +11366,63 @@ namespace TestOpenGLd
             __Instance = IntPtr.Zero;
         }
 
-        public global::TestOpenGLd.ImVec2 MainPos
+        public global::Cored.ImVec2 MainPos
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->MainPos));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->MainPos));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->MainPos = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->MainPos = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 MainSize
+        public global::Cored.ImVec2 MainSize
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->MainSize));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->MainSize));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->MainSize = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->MainSize = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 WorkPos
+        public global::Cored.ImVec2 WorkPos
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->WorkPos));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->WorkPos));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->WorkPos = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->WorkPos = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.ImVec2 WorkSize
+        public global::Cored.ImVec2 WorkSize
         {
             get
             {
-                return global::TestOpenGLd.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->WorkSize));
+                return global::Cored.ImVec2.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->WorkSize));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->WorkSize = *(global::TestOpenGLd.ImVec2.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->WorkSize = *(global::Cored.ImVec2.__Internal*) value.__Instance;
             }
         }
 
@@ -11446,1377 +11446,1377 @@ namespace TestOpenGLd
         {
             public partial struct __Internal
             {
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?CreateContext@ImGui@@YAPEAUImGuiContext@@PEAUImFontAtlas@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?CreateContext@ImGui@@YAPEAUImGuiContext@@PEAUImFontAtlas@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr CreateContext(__IntPtr shared_font_atlas);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DestroyContext@ImGui@@YAXPEAUImGuiContext@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DestroyContext@ImGui@@YAXPEAUImGuiContext@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void DestroyContext(__IntPtr ctx);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetCurrentContext@ImGui@@YAPEAUImGuiContext@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetCurrentContext@ImGui@@YAPEAUImGuiContext@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetCurrentContext();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetCurrentContext@ImGui@@YAXPEAUImGuiContext@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetCurrentContext@ImGui@@YAXPEAUImGuiContext@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetCurrentContext(__IntPtr ctx);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetIO@ImGui@@YAAEAUImGuiIO@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetIO@ImGui@@YAAEAUImGuiIO@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetIO();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetStyle@ImGui@@YAAEAUImGuiStyle@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetStyle@ImGui@@YAAEAUImGuiStyle@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetStyle();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?NewFrame@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?NewFrame@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void NewFrame();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?EndFrame@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?EndFrame@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void EndFrame();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Render@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Render@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void Render();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetDrawData@ImGui@@YAPEAUImDrawData@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetDrawData@ImGui@@YAPEAUImDrawData@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetDrawData();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ShowDemoWindow@ImGui@@YAXPEA_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ShowDemoWindow@ImGui@@YAXPEA_N@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void ShowDemoWindow(bool* p_open);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ShowMetricsWindow@ImGui@@YAXPEA_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ShowMetricsWindow@ImGui@@YAXPEA_N@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void ShowMetricsWindow(bool* p_open);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ShowAboutWindow@ImGui@@YAXPEA_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ShowAboutWindow@ImGui@@YAXPEA_N@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void ShowAboutWindow(bool* p_open);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ShowStyleEditor@ImGui@@YAXPEAUImGuiStyle@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ShowStyleEditor@ImGui@@YAXPEAUImGuiStyle@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void ShowStyleEditor(__IntPtr @ref);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ShowStyleSelector@ImGui@@YA_NPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ShowStyleSelector@ImGui@@YA_NPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool ShowStyleSelector([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ShowFontSelector@ImGui@@YAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ShowFontSelector@ImGui@@YAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void ShowFontSelector([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ShowUserGuide@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ShowUserGuide@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void ShowUserGuide();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetVersion@ImGui@@YAPEBDXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetVersion@ImGui@@YAPEBDXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetVersion();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?StyleColorsDark@ImGui@@YAXPEAUImGuiStyle@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?StyleColorsDark@ImGui@@YAXPEAUImGuiStyle@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void StyleColorsDark(__IntPtr dst);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?StyleColorsLight@ImGui@@YAXPEAUImGuiStyle@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?StyleColorsLight@ImGui@@YAXPEAUImGuiStyle@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void StyleColorsLight(__IntPtr dst);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?StyleColorsClassic@ImGui@@YAXPEAUImGuiStyle@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?StyleColorsClassic@ImGui@@YAXPEAUImGuiStyle@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void StyleColorsClassic(__IntPtr dst);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Begin@ImGui@@YA_NPEBDPEA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Begin@ImGui@@YA_NPEBDPEA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool Begin([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, bool* p_open, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?End@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?End@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void End();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginChild@ImGui@@YA_NPEBDAEBUImVec2@@_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginChild@ImGui@@YA_NPEBDAEBUImVec2@@_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool BeginChild([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, __IntPtr size, bool border, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginChild@ImGui@@YA_NIAEBUImVec2@@_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginChild@ImGui@@YA_NIAEBUImVec2@@_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool BeginChild_1(uint id, __IntPtr size, bool border, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?EndChild@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?EndChild@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void EndChild();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsWindowAppearing@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsWindowAppearing@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsWindowAppearing();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsWindowCollapsed@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsWindowCollapsed@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsWindowCollapsed();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsWindowFocused@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsWindowFocused@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsWindowFocused(int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsWindowHovered@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsWindowHovered@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsWindowHovered(int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetWindowDrawList@ImGui@@YAPEAUImDrawList@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetWindowDrawList@ImGui@@YAPEAUImDrawList@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetWindowDrawList();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetWindowDpiScale@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetWindowDpiScale@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float GetWindowDpiScale();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetWindowPos@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetWindowPos@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void GetWindowPos(__IntPtr @return);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetWindowSize@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetWindowSize@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void GetWindowSize(__IntPtr @return);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetWindowWidth@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetWindowWidth@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float GetWindowWidth();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetWindowHeight@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetWindowHeight@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float GetWindowHeight();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetWindowViewport@ImGui@@YAPEAUImGuiViewport@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetWindowViewport@ImGui@@YAPEAUImGuiViewport@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetWindowViewport();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetNextWindowPos@ImGui@@YAXAEBUImVec2@@H0@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetNextWindowPos@ImGui@@YAXAEBUImVec2@@H0@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetNextWindowPos(__IntPtr pos, int cond, __IntPtr pivot);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetNextWindowSize@ImGui@@YAXAEBUImVec2@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetNextWindowSize@ImGui@@YAXAEBUImVec2@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetNextWindowSize(__IntPtr size, int cond);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetNextWindowSizeConstraints@ImGui@@YAXAEBUImVec2@@0P6AXPEAUImGuiSizeCallbackData@@@ZPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetNextWindowSizeConstraints@ImGui@@YAXAEBUImVec2@@0P6AXPEAUImGuiSizeCallbackData@@@ZPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetNextWindowSizeConstraints(__IntPtr size_min, __IntPtr size_max, __IntPtr custom_callback, __IntPtr custom_callback_data);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetNextWindowContentSize@ImGui@@YAXAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetNextWindowContentSize@ImGui@@YAXAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetNextWindowContentSize(__IntPtr size);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetNextWindowCollapsed@ImGui@@YAX_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetNextWindowCollapsed@ImGui@@YAX_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetNextWindowCollapsed(bool collapsed, int cond);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetNextWindowFocus@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetNextWindowFocus@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetNextWindowFocus();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetNextWindowBgAlpha@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetNextWindowBgAlpha@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetNextWindowBgAlpha(float alpha);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetNextWindowViewport@ImGui@@YAXI@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetNextWindowViewport@ImGui@@YAXI@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetNextWindowViewport(uint viewport_id);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetWindowPos@ImGui@@YAXAEBUImVec2@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetWindowPos@ImGui@@YAXAEBUImVec2@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetWindowPos(__IntPtr pos, int cond);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetWindowSize@ImGui@@YAXAEBUImVec2@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetWindowSize@ImGui@@YAXAEBUImVec2@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetWindowSize(__IntPtr size, int cond);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetWindowCollapsed@ImGui@@YAX_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetWindowCollapsed@ImGui@@YAX_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetWindowCollapsed(bool collapsed, int cond);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetWindowFocus@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetWindowFocus@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetWindowFocus();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetWindowFontScale@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetWindowFontScale@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetWindowFontScale(float scale);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetWindowPos@ImGui@@YAXPEBDAEBUImVec2@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetWindowPos@ImGui@@YAXPEBDAEBUImVec2@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetWindowPos([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, __IntPtr pos, int cond);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetWindowSize@ImGui@@YAXPEBDAEBUImVec2@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetWindowSize@ImGui@@YAXPEBDAEBUImVec2@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetWindowSize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, __IntPtr size, int cond);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetWindowCollapsed@ImGui@@YAXPEBD_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetWindowCollapsed@ImGui@@YAXPEBD_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetWindowCollapsed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, bool collapsed, int cond);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetWindowFocus@ImGui@@YAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetWindowFocus@ImGui@@YAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetWindowFocus([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetContentRegionAvail@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetContentRegionAvail@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void GetContentRegionAvail(__IntPtr @return);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetContentRegionMax@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetContentRegionMax@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void GetContentRegionMax(__IntPtr @return);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetWindowContentRegionMin@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetWindowContentRegionMin@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void GetWindowContentRegionMin(__IntPtr @return);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetWindowContentRegionMax@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetWindowContentRegionMax@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void GetWindowContentRegionMax(__IntPtr @return);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetWindowContentRegionWidth@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetWindowContentRegionWidth@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float GetWindowContentRegionWidth();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetScrollX@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetScrollX@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float GetScrollX();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetScrollY@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetScrollY@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float GetScrollY();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetScrollX@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetScrollX@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetScrollX(float scroll_x);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetScrollY@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetScrollY@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetScrollY(float scroll_y);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetScrollMaxX@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetScrollMaxX@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float GetScrollMaxX();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetScrollMaxY@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetScrollMaxY@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float GetScrollMaxY();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetScrollHereX@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetScrollHereX@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetScrollHereX(float center_x_ratio);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetScrollHereY@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetScrollHereY@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetScrollHereY(float center_y_ratio);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetScrollFromPosX@ImGui@@YAXMM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetScrollFromPosX@ImGui@@YAXMM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetScrollFromPosX(float local_x, float center_x_ratio);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetScrollFromPosY@ImGui@@YAXMM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetScrollFromPosY@ImGui@@YAXMM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetScrollFromPosY(float local_y, float center_y_ratio);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PushFont@ImGui@@YAXPEAUImFont@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PushFont@ImGui@@YAXPEAUImFont@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PushFont(__IntPtr font);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PopFont@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PopFont@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PopFont();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PushStyleColor@ImGui@@YAXHI@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PushStyleColor@ImGui@@YAXHI@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PushStyleColor(int idx, uint col);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PushStyleColor@ImGui@@YAXHAEBUImVec4@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PushStyleColor@ImGui@@YAXHAEBUImVec4@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PushStyleColor(int idx, __IntPtr col);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PopStyleColor@ImGui@@YAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PopStyleColor@ImGui@@YAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PopStyleColor(int count);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PushStyleVar@ImGui@@YAXHM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PushStyleVar@ImGui@@YAXHM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PushStyleVar(int idx, float val);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PushStyleVar@ImGui@@YAXHAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PushStyleVar@ImGui@@YAXHAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PushStyleVar(int idx, __IntPtr val);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PopStyleVar@ImGui@@YAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PopStyleVar@ImGui@@YAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PopStyleVar(int count);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PushAllowKeyboardFocus@ImGui@@YAX_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PushAllowKeyboardFocus@ImGui@@YAX_N@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PushAllowKeyboardFocus(bool allow_keyboard_focus);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PopAllowKeyboardFocus@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PopAllowKeyboardFocus@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PopAllowKeyboardFocus();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PushButtonRepeat@ImGui@@YAX_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PushButtonRepeat@ImGui@@YAX_N@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PushButtonRepeat(bool repeat);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PopButtonRepeat@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PopButtonRepeat@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PopButtonRepeat();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PushItemWidth@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PushItemWidth@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PushItemWidth(float item_width);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PopItemWidth@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PopItemWidth@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PopItemWidth();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetNextItemWidth@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetNextItemWidth@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetNextItemWidth(float item_width);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?CalcItemWidth@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?CalcItemWidth@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float CalcItemWidth();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PushTextWrapPos@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PushTextWrapPos@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PushTextWrapPos(float wrap_local_pos_x);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PopTextWrapPos@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PopTextWrapPos@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PopTextWrapPos();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetFont@ImGui@@YAPEAUImFont@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetFont@ImGui@@YAPEAUImFont@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetFont();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetFontSize@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetFontSize@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float GetFontSize();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetFontTexUvWhitePixel@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetFontTexUvWhitePixel@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void GetFontTexUvWhitePixel(__IntPtr @return);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetColorU32@ImGui@@YAIHM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetColorU32@ImGui@@YAIHM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern uint GetColorU32(int idx, float alpha_mul);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetColorU32@ImGui@@YAIAEBUImVec4@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetColorU32@ImGui@@YAIAEBUImVec4@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern uint GetColorU32(__IntPtr col);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetColorU32@ImGui@@YAII@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetColorU32@ImGui@@YAII@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern uint GetColorU32(uint col);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetStyleColorVec4@ImGui@@YAAEBUImVec4@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetStyleColorVec4@ImGui@@YAAEBUImVec4@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetStyleColorVec4(int idx);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Separator@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Separator@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void Separator();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SameLine@ImGui@@YAXMM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SameLine@ImGui@@YAXMM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SameLine(float offset_from_start_x, float spacing);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?NewLine@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?NewLine@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void NewLine();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Spacing@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Spacing@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void Spacing();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Dummy@ImGui@@YAXAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Dummy@ImGui@@YAXAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void Dummy(__IntPtr size);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Indent@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Indent@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void Indent(float indent_w);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Unindent@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Unindent@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void Unindent(float indent_w);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginGroup@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginGroup@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void BeginGroup();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?EndGroup@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?EndGroup@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void EndGroup();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetCursorPos@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetCursorPos@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void GetCursorPos(__IntPtr @return);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetCursorPosX@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetCursorPosX@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float GetCursorPosX();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetCursorPosY@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetCursorPosY@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float GetCursorPosY();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetCursorPos@ImGui@@YAXAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetCursorPos@ImGui@@YAXAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetCursorPos(__IntPtr local_pos);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetCursorPosX@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetCursorPosX@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetCursorPosX(float local_x);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetCursorPosY@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetCursorPosY@ImGui@@YAXM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetCursorPosY(float local_y);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetCursorStartPos@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetCursorStartPos@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void GetCursorStartPos(__IntPtr @return);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetCursorScreenPos@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetCursorScreenPos@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void GetCursorScreenPos(__IntPtr @return);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetCursorScreenPos@ImGui@@YAXAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetCursorScreenPos@ImGui@@YAXAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetCursorScreenPos(__IntPtr pos);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AlignTextToFramePadding@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AlignTextToFramePadding@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void AlignTextToFramePadding();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetTextLineHeight@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetTextLineHeight@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float GetTextLineHeight();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetTextLineHeightWithSpacing@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetTextLineHeightWithSpacing@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float GetTextLineHeightWithSpacing();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetFrameHeight@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetFrameHeight@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float GetFrameHeight();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetFrameHeightWithSpacing@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetFrameHeightWithSpacing@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float GetFrameHeightWithSpacing();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PushID@ImGui@@YAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PushID@ImGui@@YAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PushID([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PushID@ImGui@@YAXPEBD0@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PushID@ImGui@@YAXPEBD0@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PushID([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id_begin, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id_end);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PushID@ImGui@@YAXPEBX@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PushID@ImGui@@YAXPEBX@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PushID(__IntPtr ptr_id);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PushID@ImGui@@YAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PushID@ImGui@@YAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PushID_1(int int_id);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PopID@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PopID@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PopID();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetID@ImGui@@YAIPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetID@ImGui@@YAIPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern uint GetID([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetID@ImGui@@YAIPEBD0@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetID@ImGui@@YAIPEBD0@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern uint GetID([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id_begin, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id_end);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetID@ImGui@@YAIPEBX@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetID@ImGui@@YAIPEBX@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern uint GetID(__IntPtr ptr_id);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TextUnformatted@ImGui@@YAXPEBD0@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TextUnformatted@ImGui@@YAXPEBD0@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void TextUnformatted([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_end);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Text@ImGui@@YAXPEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Text@ImGui@@YAXPEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void Text([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TextColored@ImGui@@YAXAEBUImVec4@@PEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TextColored@ImGui@@YAXAEBUImVec4@@PEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void TextColored(__IntPtr col, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TextDisabled@ImGui@@YAXPEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TextDisabled@ImGui@@YAXPEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void TextDisabled([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TextWrapped@ImGui@@YAXPEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TextWrapped@ImGui@@YAXPEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void TextWrapped([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?LabelText@ImGui@@YAXPEBD0ZZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?LabelText@ImGui@@YAXPEBD0ZZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void LabelText([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BulletText@ImGui@@YAXPEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BulletText@ImGui@@YAXPEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void BulletText([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Button@ImGui@@YA_NPEBDAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Button@ImGui@@YA_NPEBDAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool Button([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, __IntPtr size);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SmallButton@ImGui@@YA_NPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SmallButton@ImGui@@YA_NPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool SmallButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?InvisibleButton@ImGui@@YA_NPEBDAEBUImVec2@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?InvisibleButton@ImGui@@YA_NPEBDAEBUImVec2@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool InvisibleButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, __IntPtr size, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ArrowButton@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ArrowButton@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool ArrowButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, int dir);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Image@ImGui@@YAXPEAXAEBUImVec2@@11AEBUImVec4@@2@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Image@ImGui@@YAXPEAXAEBUImVec2@@11AEBUImVec4@@2@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void Image(__IntPtr user_texture_id, __IntPtr size, __IntPtr uv0, __IntPtr uv1, __IntPtr tint_col, __IntPtr border_col);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ImageButton@ImGui@@YA_NPEAXAEBUImVec2@@11HAEBUImVec4@@2@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ImageButton@ImGui@@YA_NPEAXAEBUImVec2@@11HAEBUImVec4@@2@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool ImageButton(__IntPtr user_texture_id, __IntPtr size, __IntPtr uv0, __IntPtr uv1, int frame_padding, __IntPtr bg_col, __IntPtr tint_col);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Checkbox@ImGui@@YA_NPEBDPEA_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Checkbox@ImGui@@YA_NPEBDPEA_N@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool Checkbox([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool* v);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?CheckboxFlags@ImGui@@YA_NPEBDPEAHH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?CheckboxFlags@ImGui@@YA_NPEBDPEAHH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool CheckboxFlags([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* flags, int flags_value);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?CheckboxFlags@ImGui@@YA_NPEBDPEAII@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?CheckboxFlags@ImGui@@YA_NPEBDPEAII@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool CheckboxFlags_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, uint* flags, uint flags_value);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?RadioButton@ImGui@@YA_NPEBD_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?RadioButton@ImGui@@YA_NPEBD_N@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool RadioButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool active);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?RadioButton@ImGui@@YA_NPEBDPEAHH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?RadioButton@ImGui@@YA_NPEBDPEAHH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool RadioButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int v_button);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ProgressBar@ImGui@@YAXMAEBUImVec2@@PEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ProgressBar@ImGui@@YAXMAEBUImVec2@@PEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void ProgressBar(float fraction, __IntPtr size_arg, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Bullet@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Bullet@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void Bullet();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginCombo@ImGui@@YA_NPEBD0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginCombo@ImGui@@YA_NPEBD0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool BeginCombo([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string preview_value, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?EndCombo@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?EndCombo@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void EndCombo();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Combo@ImGui@@YA_NPEBDPEAHQEBQEBDHH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Combo@ImGui@@YA_NPEBDPEAHQEBQEBDHH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool Combo([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* current_item, [MarshalAs(UnmanagedType.LPArray)] string[] items, int items_count, int popup_max_height_in_items);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Combo@ImGui@@YA_NPEBDPEAH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Combo@ImGui@@YA_NPEBDPEAH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool Combo([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* current_item, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string items_separated_by_zeros, int popup_max_height_in_items);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Combo@ImGui@@YA_NPEBDPEAHP6A_NPEAXHPEAPEBD@Z2HH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Combo@ImGui@@YA_NPEBDPEAHP6A_NPEAXHPEAPEBD@Z2HH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool Combo([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* current_item, __IntPtr items_getter, __IntPtr data, int items_count, int popup_max_height_in_items);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DragFloat@ImGui@@YA_NPEBDPEAMMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DragFloat@ImGui@@YA_NPEBDPEAMMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool DragFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DragFloat2@ImGui@@YA_NPEBDQEAMMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DragFloat2@ImGui@@YA_NPEBDQEAMMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool DragFloat2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float[] v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DragFloat3@ImGui@@YA_NPEBDQEAMMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DragFloat3@ImGui@@YA_NPEBDQEAMMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool DragFloat3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float[] v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DragFloat4@ImGui@@YA_NPEBDQEAMMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DragFloat4@ImGui@@YA_NPEBDQEAMMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool DragFloat4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float[] v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DragFloatRange2@ImGui@@YA_NPEBDPEAM1MMM00H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DragFloatRange2@ImGui@@YA_NPEBDPEAM1MMM00H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool DragFloatRange2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v_current_min, float* v_current_max, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format_max, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DragInt@ImGui@@YA_NPEBDPEAHMHH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DragInt@ImGui@@YA_NPEBDPEAHMHH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool DragInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DragInt2@ImGui@@YA_NPEBDQEAHMHH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DragInt2@ImGui@@YA_NPEBDQEAHMHH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool DragInt2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int[] v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DragInt3@ImGui@@YA_NPEBDQEAHMHH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DragInt3@ImGui@@YA_NPEBDQEAHMHH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool DragInt3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int[] v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DragInt4@ImGui@@YA_NPEBDQEAHMHH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DragInt4@ImGui@@YA_NPEBDQEAHMHH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool DragInt4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int[] v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DragIntRange2@ImGui@@YA_NPEBDPEAH1MHH00H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DragIntRange2@ImGui@@YA_NPEBDPEAH1MHH00H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool DragIntRange2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v_current_min, int* v_current_max, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format_max, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DragScalar@ImGui@@YA_NPEBDHPEAXMPEBX20H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DragScalar@ImGui@@YA_NPEBDHPEAXMPEBX20H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool DragScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int data_type, __IntPtr p_data, float v_speed, __IntPtr p_min, __IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DragScalarN@ImGui@@YA_NPEBDHPEAXHMPEBX20H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DragScalarN@ImGui@@YA_NPEBDHPEAXHMPEBX20H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool DragScalarN([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int data_type, __IntPtr p_data, int components, float v_speed, __IntPtr p_min, __IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SliderFloat@ImGui@@YA_NPEBDPEAMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SliderFloat@ImGui@@YA_NPEBDPEAMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool SliderFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SliderFloat2@ImGui@@YA_NPEBDQEAMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SliderFloat2@ImGui@@YA_NPEBDQEAMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool SliderFloat2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float[] v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SliderFloat3@ImGui@@YA_NPEBDQEAMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SliderFloat3@ImGui@@YA_NPEBDQEAMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool SliderFloat3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float[] v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SliderFloat4@ImGui@@YA_NPEBDQEAMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SliderFloat4@ImGui@@YA_NPEBDQEAMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool SliderFloat4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float[] v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SliderAngle@ImGui@@YA_NPEBDPEAMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SliderAngle@ImGui@@YA_NPEBDPEAMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool SliderAngle([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v_rad, float v_degrees_min, float v_degrees_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SliderInt@ImGui@@YA_NPEBDPEAHHH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SliderInt@ImGui@@YA_NPEBDPEAHHH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool SliderInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SliderInt2@ImGui@@YA_NPEBDQEAHHH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SliderInt2@ImGui@@YA_NPEBDQEAHHH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool SliderInt2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int[] v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SliderInt3@ImGui@@YA_NPEBDQEAHHH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SliderInt3@ImGui@@YA_NPEBDQEAHHH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool SliderInt3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int[] v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SliderInt4@ImGui@@YA_NPEBDQEAHHH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SliderInt4@ImGui@@YA_NPEBDQEAHHH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool SliderInt4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int[] v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SliderScalar@ImGui@@YA_NPEBDHPEAXPEBX20H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SliderScalar@ImGui@@YA_NPEBDHPEAXPEBX20H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool SliderScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int data_type, __IntPtr p_data, __IntPtr p_min, __IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SliderScalarN@ImGui@@YA_NPEBDHPEAXHPEBX20H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SliderScalarN@ImGui@@YA_NPEBDHPEAXHPEBX20H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool SliderScalarN([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int data_type, __IntPtr p_data, int components, __IntPtr p_min, __IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?VSliderFloat@ImGui@@YA_NPEBDAEBUImVec2@@PEAMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?VSliderFloat@ImGui@@YA_NPEBDAEBUImVec2@@PEAMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool VSliderFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, __IntPtr size, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?VSliderInt@ImGui@@YA_NPEBDAEBUImVec2@@PEAHHH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?VSliderInt@ImGui@@YA_NPEBDAEBUImVec2@@PEAHHH0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool VSliderInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, __IntPtr size, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?VSliderScalar@ImGui@@YA_NPEBDAEBUImVec2@@HPEAXPEBX30H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?VSliderScalar@ImGui@@YA_NPEBDAEBUImVec2@@HPEAXPEBX30H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool VSliderScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, __IntPtr size, int data_type, __IntPtr p_data, __IntPtr p_min, __IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?InputText@ImGui@@YA_NPEBDPEAD_KHP6AHPEAUImGuiInputTextCallbackData@@@ZPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?InputText@ImGui@@YA_NPEBDPEAD_KHP6AHPEAUImGuiInputTextCallbackData@@@ZPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool InputText([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, sbyte* buf, ulong buf_size, int flags, __IntPtr callback, __IntPtr user_data);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?InputTextMultiline@ImGui@@YA_NPEBDPEAD_KAEBUImVec2@@HP6AHPEAUImGuiInputTextCallbackData@@@ZPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?InputTextMultiline@ImGui@@YA_NPEBDPEAD_KAEBUImVec2@@HP6AHPEAUImGuiInputTextCallbackData@@@ZPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool InputTextMultiline([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, sbyte* buf, ulong buf_size, __IntPtr size, int flags, __IntPtr callback, __IntPtr user_data);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?InputTextWithHint@ImGui@@YA_NPEBD0PEAD_KHP6AHPEAUImGuiInputTextCallbackData@@@ZPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?InputTextWithHint@ImGui@@YA_NPEBD0PEAD_KHP6AHPEAUImGuiInputTextCallbackData@@@ZPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool InputTextWithHint([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string hint, sbyte* buf, ulong buf_size, int flags, __IntPtr callback, __IntPtr user_data);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?InputFloat@ImGui@@YA_NPEBDPEAMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?InputFloat@ImGui@@YA_NPEBDPEAMMM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool InputFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float step, float step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?InputFloat2@ImGui@@YA_NPEBDQEAM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?InputFloat2@ImGui@@YA_NPEBDQEAM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool InputFloat2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float[] v, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?InputFloat3@ImGui@@YA_NPEBDQEAM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?InputFloat3@ImGui@@YA_NPEBDQEAM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool InputFloat3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float[] v, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?InputFloat4@ImGui@@YA_NPEBDQEAM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?InputFloat4@ImGui@@YA_NPEBDQEAM0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool InputFloat4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float[] v, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?InputInt@ImGui@@YA_NPEBDPEAHHHH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?InputInt@ImGui@@YA_NPEBDPEAHHHH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool InputInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int step, int step_fast, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?InputInt2@ImGui@@YA_NPEBDQEAHH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?InputInt2@ImGui@@YA_NPEBDQEAHH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool InputInt2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int[] v, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?InputInt3@ImGui@@YA_NPEBDQEAHH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?InputInt3@ImGui@@YA_NPEBDQEAHH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool InputInt3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int[] v, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?InputInt4@ImGui@@YA_NPEBDQEAHH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?InputInt4@ImGui@@YA_NPEBDQEAHH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool InputInt4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int[] v, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?InputDouble@ImGui@@YA_NPEBDPEANNN0H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?InputDouble@ImGui@@YA_NPEBDPEANNN0H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool InputDouble([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, double* v, double step, double step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?InputScalar@ImGui@@YA_NPEBDHPEAXPEBX20H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?InputScalar@ImGui@@YA_NPEBDHPEAXPEBX20H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool InputScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int data_type, __IntPtr p_data, __IntPtr p_step, __IntPtr p_step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?InputScalarN@ImGui@@YA_NPEBDHPEAXHPEBX20H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?InputScalarN@ImGui@@YA_NPEBDHPEAXHPEBX20H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool InputScalarN([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int data_type, __IntPtr p_data, int components, __IntPtr p_step, __IntPtr p_step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ColorEdit3@ImGui@@YA_NPEBDQEAMH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ColorEdit3@ImGui@@YA_NPEBDQEAMH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool ColorEdit3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float[] col, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ColorEdit4@ImGui@@YA_NPEBDQEAMH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ColorEdit4@ImGui@@YA_NPEBDQEAMH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool ColorEdit4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float[] col, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ColorPicker3@ImGui@@YA_NPEBDQEAMH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ColorPicker3@ImGui@@YA_NPEBDQEAMH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool ColorPicker3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float[] col, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ColorPicker4@ImGui@@YA_NPEBDQEAMHPEBM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ColorPicker4@ImGui@@YA_NPEBDQEAMHPEBM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool ColorPicker4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float[] col, int flags, float* ref_col);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ColorButton@ImGui@@YA_NPEBDAEBUImVec4@@HUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ColorButton@ImGui@@YA_NPEBDAEBUImVec4@@HUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
-                internal static extern bool ColorButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string desc_id, __IntPtr col, int flags, global::TestOpenGLd.ImVec2.__Internal size);
+                internal static extern bool ColorButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string desc_id, __IntPtr col, int flags, global::Cored.ImVec2.__Internal size);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetColorEditOptions@ImGui@@YAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetColorEditOptions@ImGui@@YAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetColorEditOptions(int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TreeNode@ImGui@@YA_NPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TreeNode@ImGui@@YA_NPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool TreeNode([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TreeNode@ImGui@@YA_NPEBD0ZZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TreeNode@ImGui@@YA_NPEBD0ZZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool TreeNode([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TreeNode@ImGui@@YA_NPEBXPEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TreeNode@ImGui@@YA_NPEBXPEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool TreeNode(__IntPtr ptr_id, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TreeNodeEx@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TreeNodeEx@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool TreeNodeEx([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TreeNodeEx@ImGui@@YA_NPEBDH0ZZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TreeNodeEx@ImGui@@YA_NPEBDH0ZZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool TreeNodeEx([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, int flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TreeNodeEx@ImGui@@YA_NPEBXHPEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TreeNodeEx@ImGui@@YA_NPEBXHPEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool TreeNodeEx(__IntPtr ptr_id, int flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TreePush@ImGui@@YAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TreePush@ImGui@@YAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void TreePush([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TreePush@ImGui@@YAXPEBX@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TreePush@ImGui@@YAXPEBX@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void TreePush(__IntPtr ptr_id);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TreePop@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TreePop@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void TreePop();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetTreeNodeToLabelSpacing@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetTreeNodeToLabelSpacing@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float GetTreeNodeToLabelSpacing();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?CollapsingHeader@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?CollapsingHeader@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool CollapsingHeader([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?CollapsingHeader@ImGui@@YA_NPEBDPEA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?CollapsingHeader@ImGui@@YA_NPEBDPEA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool CollapsingHeader([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool* p_visible, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetNextItemOpen@ImGui@@YAX_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetNextItemOpen@ImGui@@YAX_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetNextItemOpen(bool is_open, int cond);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Selectable@ImGui@@YA_NPEBD_NHAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Selectable@ImGui@@YA_NPEBD_NHAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool Selectable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool selected, int flags, __IntPtr size);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Selectable@ImGui@@YA_NPEBDPEA_NHAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Selectable@ImGui@@YA_NPEBDPEA_NHAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool Selectable_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool* p_selected, int flags, __IntPtr size);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginListBox@ImGui@@YA_NPEBDAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginListBox@ImGui@@YA_NPEBDAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool BeginListBox([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, __IntPtr size);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?EndListBox@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?EndListBox@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void EndListBox();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ListBox@ImGui@@YA_NPEBDPEAHQEBQEBDHH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ListBox@ImGui@@YA_NPEBDPEAHQEBQEBDHH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool ListBox([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* current_item, [MarshalAs(UnmanagedType.LPArray)] string[] items, int items_count, int height_in_items);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ListBox@ImGui@@YA_NPEBDPEAHP6A_NPEAXHPEAPEBD@Z2HH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ListBox@ImGui@@YA_NPEBDPEAHP6A_NPEAXHPEAPEBD@Z2HH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool ListBox([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* current_item, __IntPtr items_getter, __IntPtr data, int items_count, int height_in_items);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PlotLines@ImGui@@YAXPEBDPEBMHH0MMUImVec2@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void PlotLines([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* values, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, global::TestOpenGLd.ImVec2.__Internal graph_size, int stride);
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PlotLines@ImGui@@YAXPEBDPEBMHH0MMUImVec2@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern void PlotLines([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* values, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, global::Cored.ImVec2.__Internal graph_size, int stride);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PlotLines@ImGui@@YAXPEBDP6AMPEAXH@Z1HH0MMUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void PlotLines([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, __IntPtr values_getter, __IntPtr data, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, global::TestOpenGLd.ImVec2.__Internal graph_size);
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PlotLines@ImGui@@YAXPEBDP6AMPEAXH@Z1HH0MMUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern void PlotLines([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, __IntPtr values_getter, __IntPtr data, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, global::Cored.ImVec2.__Internal graph_size);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PlotHistogram@ImGui@@YAXPEBDPEBMHH0MMUImVec2@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void PlotHistogram([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* values, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, global::TestOpenGLd.ImVec2.__Internal graph_size, int stride);
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PlotHistogram@ImGui@@YAXPEBDPEBMHH0MMUImVec2@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern void PlotHistogram([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* values, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, global::Cored.ImVec2.__Internal graph_size, int stride);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PlotHistogram@ImGui@@YAXPEBDP6AMPEAXH@Z1HH0MMUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void PlotHistogram([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, __IntPtr values_getter, __IntPtr data, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, global::TestOpenGLd.ImVec2.__Internal graph_size);
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PlotHistogram@ImGui@@YAXPEBDP6AMPEAXH@Z1HH0MMUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern void PlotHistogram([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, __IntPtr values_getter, __IntPtr data, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, global::Cored.ImVec2.__Internal graph_size);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Value@ImGui@@YAXPEBD_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Value@ImGui@@YAXPEBD_N@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void Value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string prefix, bool b);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Value@ImGui@@YAXPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Value@ImGui@@YAXPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void Value_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string prefix, int v);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Value@ImGui@@YAXPEBDI@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Value@ImGui@@YAXPEBDI@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void Value_2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string prefix, uint v);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Value@ImGui@@YAXPEBDM0@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Value@ImGui@@YAXPEBDM0@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void Value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string prefix, float v, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string float_format);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginMenuBar@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginMenuBar@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool BeginMenuBar();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?EndMenuBar@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?EndMenuBar@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void EndMenuBar();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginMainMenuBar@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginMainMenuBar@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool BeginMainMenuBar();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?EndMainMenuBar@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?EndMainMenuBar@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void EndMainMenuBar();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginMenu@ImGui@@YA_NPEBD_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginMenu@ImGui@@YA_NPEBD_N@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool BeginMenu([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool enabled);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?EndMenu@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?EndMenu@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void EndMenu();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?MenuItem@ImGui@@YA_NPEBD0_N1@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?MenuItem@ImGui@@YA_NPEBD0_N1@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool MenuItem([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string shortcut, bool selected, bool enabled);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?MenuItem@ImGui@@YA_NPEBD0PEA_N_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?MenuItem@ImGui@@YA_NPEBD0PEA_N_N@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool MenuItem_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string shortcut, bool* p_selected, bool enabled);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginTooltip@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginTooltip@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void BeginTooltip();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?EndTooltip@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?EndTooltip@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void EndTooltip();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetTooltip@ImGui@@YAXPEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetTooltip@ImGui@@YAXPEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetTooltip([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginPopup@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginPopup@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool BeginPopup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginPopupModal@ImGui@@YA_NPEBDPEA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginPopupModal@ImGui@@YA_NPEBDPEA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool BeginPopupModal([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, bool* p_open, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?EndPopup@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?EndPopup@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void EndPopup();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?OpenPopup@ImGui@@YAXPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?OpenPopup@ImGui@@YAXPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void OpenPopup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, int popup_flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?OpenPopup@ImGui@@YAXIH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?OpenPopup@ImGui@@YAXIH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void OpenPopup_1(uint id, int popup_flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?OpenPopupOnItemClick@ImGui@@YAXPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?OpenPopupOnItemClick@ImGui@@YAXPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void OpenPopupOnItemClick([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, int popup_flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?CloseCurrentPopup@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?CloseCurrentPopup@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void CloseCurrentPopup();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginPopupContextItem@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginPopupContextItem@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool BeginPopupContextItem([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, int popup_flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginPopupContextWindow@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginPopupContextWindow@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool BeginPopupContextWindow([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, int popup_flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginPopupContextVoid@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginPopupContextVoid@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool BeginPopupContextVoid([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, int popup_flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsPopupOpen@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsPopupOpen@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsPopupOpen([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginTable@ImGui@@YA_NPEBDHHAEBUImVec2@@M@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginTable@ImGui@@YA_NPEBDHHAEBUImVec2@@M@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool BeginTable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, int column, int flags, __IntPtr outer_size, float inner_width);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?EndTable@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?EndTable@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void EndTable();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TableNextRow@ImGui@@YAXHM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TableNextRow@ImGui@@YAXHM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void TableNextRow(int row_flags, float min_row_height);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TableNextColumn@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TableNextColumn@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool TableNextColumn();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TableSetColumnIndex@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TableSetColumnIndex@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool TableSetColumnIndex(int column_n);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TableSetupColumn@ImGui@@YAXPEBDHMI@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TableSetupColumn@ImGui@@YAXPEBDHMI@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void TableSetupColumn([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int flags, float init_width_or_weight, uint user_id);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TableSetupScrollFreeze@ImGui@@YAXHH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TableSetupScrollFreeze@ImGui@@YAXHH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void TableSetupScrollFreeze(int cols, int rows);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TableHeadersRow@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TableHeadersRow@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void TableHeadersRow();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TableHeader@ImGui@@YAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TableHeader@ImGui@@YAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void TableHeader([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TableGetSortSpecs@ImGui@@YAPEAUImGuiTableSortSpecs@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TableGetSortSpecs@ImGui@@YAPEAUImGuiTableSortSpecs@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr TableGetSortSpecs();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TableGetColumnCount@ImGui@@YAHXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TableGetColumnCount@ImGui@@YAHXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern int TableGetColumnCount();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TableGetColumnIndex@ImGui@@YAHXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TableGetColumnIndex@ImGui@@YAHXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern int TableGetColumnIndex();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TableGetRowIndex@ImGui@@YAHXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TableGetRowIndex@ImGui@@YAHXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern int TableGetRowIndex();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TableGetColumnName@ImGui@@YAPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TableGetColumnName@ImGui@@YAPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr TableGetColumnName(int column_n);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TableGetColumnFlags@ImGui@@YAHH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TableGetColumnFlags@ImGui@@YAHH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern int TableGetColumnFlags(int column_n);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TableSetColumnEnabled@ImGui@@YAXH_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TableSetColumnEnabled@ImGui@@YAXH_N@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void TableSetColumnEnabled(int column_n, bool v);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TableSetBgColor@ImGui@@YAXHIH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TableSetBgColor@ImGui@@YAXHIH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void TableSetBgColor(int target, uint color, int column_n);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Columns@ImGui@@YAXHPEBD_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?Columns@ImGui@@YAXHPEBD_N@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void Columns(int count, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string id, bool border);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?NextColumn@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?NextColumn@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void NextColumn();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetColumnIndex@ImGui@@YAHXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetColumnIndex@ImGui@@YAHXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern int GetColumnIndex();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetColumnWidth@ImGui@@YAMH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetColumnWidth@ImGui@@YAMH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float GetColumnWidth(int column_index);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetColumnWidth@ImGui@@YAXHM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetColumnWidth@ImGui@@YAXHM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetColumnWidth(int column_index, float width);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetColumnOffset@ImGui@@YAMH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetColumnOffset@ImGui@@YAMH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float GetColumnOffset(int column_index);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetColumnOffset@ImGui@@YAXHM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetColumnOffset@ImGui@@YAXHM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetColumnOffset(int column_index, float offset_x);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetColumnsCount@ImGui@@YAHXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetColumnsCount@ImGui@@YAHXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern int GetColumnsCount();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginTabBar@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginTabBar@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool BeginTabBar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?EndTabBar@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?EndTabBar@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void EndTabBar();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginTabItem@ImGui@@YA_NPEBDPEA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginTabItem@ImGui@@YA_NPEBDPEA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool BeginTabItem([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool* p_open, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?EndTabItem@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?EndTabItem@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void EndTabItem();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TabItemButton@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TabItemButton@ImGui@@YA_NPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool TabItemButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetTabItemClosed@ImGui@@YAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetTabItemClosed@ImGui@@YAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetTabItemClosed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string tab_or_docked_window_label);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DockSpace@ImGui@@YAIIAEBUImVec2@@HPEBUImGuiWindowClass@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DockSpace@ImGui@@YAIIAEBUImVec2@@HPEBUImGuiWindowClass@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern uint DockSpace(uint id, __IntPtr size, int flags, __IntPtr window_class);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DockSpaceOverViewport@ImGui@@YAIPEBUImGuiViewport@@HPEBUImGuiWindowClass@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DockSpaceOverViewport@ImGui@@YAIPEBUImGuiViewport@@HPEBUImGuiWindowClass@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern uint DockSpaceOverViewport(__IntPtr viewport, int flags, __IntPtr window_class);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetNextWindowDockID@ImGui@@YAXIH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetNextWindowDockID@ImGui@@YAXIH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetNextWindowDockID(uint dock_id, int cond);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetNextWindowClass@ImGui@@YAXPEBUImGuiWindowClass@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetNextWindowClass@ImGui@@YAXPEBUImGuiWindowClass@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetNextWindowClass(__IntPtr window_class);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetWindowDockID@ImGui@@YAIXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetWindowDockID@ImGui@@YAIXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern uint GetWindowDockID();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsWindowDocked@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsWindowDocked@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsWindowDocked();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?LogToTTY@ImGui@@YAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?LogToTTY@ImGui@@YAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void LogToTTY(int auto_open_depth);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?LogToFile@ImGui@@YAXHPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?LogToFile@ImGui@@YAXHPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void LogToFile(int auto_open_depth, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string filename);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?LogToClipboard@ImGui@@YAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?LogToClipboard@ImGui@@YAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void LogToClipboard(int auto_open_depth);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?LogFinish@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?LogFinish@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void LogFinish();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?LogButtons@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?LogButtons@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void LogButtons();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?LogText@ImGui@@YAXPEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?LogText@ImGui@@YAXPEBDZZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void LogText([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginDragDropSource@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginDragDropSource@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool BeginDragDropSource(int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetDragDropPayload@ImGui@@YA_NPEBDPEBX_KH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetDragDropPayload@ImGui@@YA_NPEBDPEBX_KH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool SetDragDropPayload([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string type, __IntPtr data, ulong sz, int cond);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?EndDragDropSource@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?EndDragDropSource@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void EndDragDropSource();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginDragDropTarget@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginDragDropTarget@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool BeginDragDropTarget();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?AcceptDragDropPayload@ImGui@@YAPEBUImGuiPayload@@PEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?AcceptDragDropPayload@ImGui@@YAPEBUImGuiPayload@@PEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr AcceptDragDropPayload([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string type, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?EndDragDropTarget@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?EndDragDropTarget@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void EndDragDropTarget();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetDragDropPayload@ImGui@@YAPEBUImGuiPayload@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetDragDropPayload@ImGui@@YAPEBUImGuiPayload@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetDragDropPayload();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PushClipRect@ImGui@@YAXAEBUImVec2@@0_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PushClipRect@ImGui@@YAXAEBUImVec2@@0_N@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PushClipRect(__IntPtr clip_rect_min, __IntPtr clip_rect_max, bool intersect_with_current_clip_rect);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?PopClipRect@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?PopClipRect@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void PopClipRect();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetItemDefaultFocus@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetItemDefaultFocus@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetItemDefaultFocus();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetKeyboardFocusHere@ImGui@@YAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetKeyboardFocusHere@ImGui@@YAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetKeyboardFocusHere(int offset);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsItemHovered@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsItemHovered@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsItemHovered(int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsItemActive@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsItemActive@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsItemActive();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsItemFocused@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsItemFocused@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsItemFocused();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsItemClicked@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsItemClicked@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsItemClicked(int mouse_button);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsItemVisible@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsItemVisible@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsItemVisible();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsItemEdited@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsItemEdited@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsItemEdited();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsItemActivated@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsItemActivated@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsItemActivated();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsItemDeactivated@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsItemDeactivated@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsItemDeactivated();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsItemDeactivatedAfterEdit@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsItemDeactivatedAfterEdit@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsItemDeactivatedAfterEdit();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsItemToggledOpen@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsItemToggledOpen@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsItemToggledOpen();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsAnyItemHovered@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsAnyItemHovered@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsAnyItemHovered();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsAnyItemActive@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsAnyItemActive@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsAnyItemActive();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsAnyItemFocused@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsAnyItemFocused@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsAnyItemFocused();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetItemRectMin@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetItemRectMin@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void GetItemRectMin(__IntPtr @return);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetItemRectMax@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetItemRectMax@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void GetItemRectMax(__IntPtr @return);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetItemRectSize@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetItemRectSize@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void GetItemRectSize(__IntPtr @return);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetItemAllowOverlap@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetItemAllowOverlap@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetItemAllowOverlap();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetMainViewport@ImGui@@YAPEAUImGuiViewport@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetMainViewport@ImGui@@YAPEAUImGuiViewport@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetMainViewport();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsRectVisible@ImGui@@YA_NAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsRectVisible@ImGui@@YA_NAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsRectVisible(__IntPtr size);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsRectVisible@ImGui@@YA_NAEBUImVec2@@0@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsRectVisible@ImGui@@YA_NAEBUImVec2@@0@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsRectVisible(__IntPtr rect_min, __IntPtr rect_max);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetTime@ImGui@@YANXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetTime@ImGui@@YANXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern double GetTime();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetFrameCount@ImGui@@YAHXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetFrameCount@ImGui@@YAHXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern int GetFrameCount();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetBackgroundDrawList@ImGui@@YAPEAUImDrawList@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetBackgroundDrawList@ImGui@@YAPEAUImDrawList@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetBackgroundDrawList();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetForegroundDrawList@ImGui@@YAPEAUImDrawList@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetForegroundDrawList@ImGui@@YAPEAUImDrawList@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetForegroundDrawList();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetBackgroundDrawList@ImGui@@YAPEAUImDrawList@@PEAUImGuiViewport@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetBackgroundDrawList@ImGui@@YAPEAUImDrawList@@PEAUImGuiViewport@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetBackgroundDrawList(__IntPtr viewport);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetForegroundDrawList@ImGui@@YAPEAUImDrawList@@PEAUImGuiViewport@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetForegroundDrawList@ImGui@@YAPEAUImDrawList@@PEAUImGuiViewport@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetForegroundDrawList(__IntPtr viewport);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetDrawListSharedData@ImGui@@YAPEAUImDrawListSharedData@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetDrawListSharedData@ImGui@@YAPEAUImDrawListSharedData@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetDrawListSharedData();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetStyleColorName@ImGui@@YAPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetStyleColorName@ImGui@@YAPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetStyleColorName(int idx);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetStateStorage@ImGui@@YAXPEAUImGuiStorage@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetStateStorage@ImGui@@YAXPEAUImGuiStorage@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetStateStorage(__IntPtr storage);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetStateStorage@ImGui@@YAPEAUImGuiStorage@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetStateStorage@ImGui@@YAPEAUImGuiStorage@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetStateStorage();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?CalcListClipping@ImGui@@YAXHMPEAH0@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?CalcListClipping@ImGui@@YAXHMPEAH0@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void CalcListClipping(int items_count, float items_height, int* out_items_display_start, int* out_items_display_end);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginChildFrame@ImGui@@YA_NIAEBUImVec2@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginChildFrame@ImGui@@YA_NIAEBUImVec2@@H@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool BeginChildFrame(uint id, __IntPtr size, int flags);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?EndChildFrame@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?EndChildFrame@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void EndChildFrame();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?CalcTextSize@ImGui@@YA?AUImVec2@@PEBD0_NM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?CalcTextSize@ImGui@@YA?AUImVec2@@PEBD0_NM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void CalcTextSize(__IntPtr @return, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_end, bool hide_text_after_double_hash, float wrap_width);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ColorConvertU32ToFloat4@ImGui@@YA?AUImVec4@@I@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ColorConvertU32ToFloat4@ImGui@@YA?AUImVec4@@I@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void ColorConvertU32ToFloat4(__IntPtr @return, uint @in);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ColorConvertFloat4ToU32@ImGui@@YAIAEBUImVec4@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ColorConvertFloat4ToU32@ImGui@@YAIAEBUImVec4@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern uint ColorConvertFloat4ToU32(__IntPtr @in);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ColorConvertRGBtoHSV@ImGui@@YAXMMMAEAM00@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ColorConvertRGBtoHSV@ImGui@@YAXMMMAEAM00@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void ColorConvertRGBtoHSV(float r, float g, float b, float* out_h, float* out_s, float* out_v);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ColorConvertHSVtoRGB@ImGui@@YAXMMMAEAM00@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ColorConvertHSVtoRGB@ImGui@@YAXMMMAEAM00@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void ColorConvertHSVtoRGB(float h, float s, float v, float* out_r, float* out_g, float* out_b);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetKeyIndex@ImGui@@YAHH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetKeyIndex@ImGui@@YAHH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern int GetKeyIndex(int imgui_key);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsKeyDown@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsKeyDown@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsKeyDown(int user_key_index);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsKeyPressed@ImGui@@YA_NH_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsKeyPressed@ImGui@@YA_NH_N@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsKeyPressed(int user_key_index, bool repeat);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsKeyReleased@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsKeyReleased@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsKeyReleased(int user_key_index);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetKeyPressedAmount@ImGui@@YAHHMM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetKeyPressedAmount@ImGui@@YAHHMM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern int GetKeyPressedAmount(int key_index, float repeat_delay, float rate);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?CaptureKeyboardFromApp@ImGui@@YAX_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?CaptureKeyboardFromApp@ImGui@@YAX_N@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void CaptureKeyboardFromApp(bool want_capture_keyboard_value);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsMouseDown@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsMouseDown@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsMouseDown(int button);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsMouseClicked@ImGui@@YA_NH_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsMouseClicked@ImGui@@YA_NH_N@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsMouseClicked(int button, bool repeat);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsMouseReleased@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsMouseReleased@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsMouseReleased(int button);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsMouseDoubleClicked@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsMouseDoubleClicked@ImGui@@YA_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsMouseDoubleClicked(int button);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsMouseHoveringRect@ImGui@@YA_NAEBUImVec2@@0_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsMouseHoveringRect@ImGui@@YA_NAEBUImVec2@@0_N@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsMouseHoveringRect(__IntPtr r_min, __IntPtr r_max, bool clip);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsMousePosValid@ImGui@@YA_NPEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsMousePosValid@ImGui@@YA_NPEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsMousePosValid(__IntPtr mouse_pos);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsAnyMouseDown@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsAnyMouseDown@ImGui@@YA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsAnyMouseDown();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetMousePos@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetMousePos@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void GetMousePos(__IntPtr @return);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetMousePosOnOpeningCurrentPopup@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetMousePosOnOpeningCurrentPopup@ImGui@@YA?AUImVec2@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void GetMousePosOnOpeningCurrentPopup(__IntPtr @return);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?IsMouseDragging@ImGui@@YA_NHM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?IsMouseDragging@ImGui@@YA_NHM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool IsMouseDragging(int button, float lock_threshold);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetMouseDragDelta@ImGui@@YA?AUImVec2@@HM@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetMouseDragDelta@ImGui@@YA?AUImVec2@@HM@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void GetMouseDragDelta(__IntPtr @return, int button, float lock_threshold);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ResetMouseDragDelta@ImGui@@YAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ResetMouseDragDelta@ImGui@@YAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void ResetMouseDragDelta(int button);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetMouseCursor@ImGui@@YAHXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetMouseCursor@ImGui@@YAHXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern int GetMouseCursor();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetMouseCursor@ImGui@@YAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetMouseCursor@ImGui@@YAXH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetMouseCursor(int cursor_type);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?CaptureMouseFromApp@ImGui@@YAX_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?CaptureMouseFromApp@ImGui@@YAX_N@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void CaptureMouseFromApp(bool want_capture_mouse_value);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetClipboardText@ImGui@@YAPEBDXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetClipboardText@ImGui@@YAPEBDXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetClipboardText();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetClipboardText@ImGui@@YAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetClipboardText@ImGui@@YAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetClipboardText([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?LoadIniSettingsFromDisk@ImGui@@YAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?LoadIniSettingsFromDisk@ImGui@@YAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void LoadIniSettingsFromDisk([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string ini_filename);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?LoadIniSettingsFromMemory@ImGui@@YAXPEBD_K@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?LoadIniSettingsFromMemory@ImGui@@YAXPEBD_K@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void LoadIniSettingsFromMemory([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string ini_data, ulong ini_size);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SaveIniSettingsToDisk@ImGui@@YAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SaveIniSettingsToDisk@ImGui@@YAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SaveIniSettingsToDisk([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string ini_filename);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SaveIniSettingsToMemory@ImGui@@YAPEBDPEA_K@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SaveIniSettingsToMemory@ImGui@@YAPEBDPEA_K@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr SaveIniSettingsToMemory(ulong* out_ini_size);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DebugCheckVersionAndDataLayout@ImGui@@YA_NPEBD_K11111@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DebugCheckVersionAndDataLayout@ImGui@@YA_NPEBD_K11111@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool DebugCheckVersionAndDataLayout([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string version_str, ulong sz_io, ulong sz_style, ulong sz_vec2, ulong sz_vec4, ulong sz_drawvert, ulong sz_drawidx);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetAllocatorFunctions@ImGui@@YAXP6APEAX_KPEAX@ZP6AX11@Z1@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetAllocatorFunctions@ImGui@@YAXP6APEAX_KPEAX@ZP6AX11@Z1@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetAllocatorFunctions(__IntPtr alloc_func, __IntPtr free_func, __IntPtr user_data);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetAllocatorFunctions@ImGui@@YAXPEAP6APEAX_KPEAX@ZPEAP6AX11@ZPEAPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetAllocatorFunctions@ImGui@@YAXPEAP6APEAX_KPEAX@ZPEAP6AX11@ZPEAPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void GetAllocatorFunctions(__IntPtr p_alloc_func, __IntPtr p_free_func, void** p_user_data);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?MemAlloc@ImGui@@YAPEAX_K@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?MemAlloc@ImGui@@YAPEAX_K@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr MemAlloc(ulong size);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?MemFree@ImGui@@YAXPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?MemFree@ImGui@@YAXPEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void MemFree(__IntPtr ptr);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetPlatformIO@ImGui@@YAAEAUImGuiPlatformIO@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetPlatformIO@ImGui@@YAAEAUImGuiPlatformIO@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetPlatformIO();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?UpdatePlatformWindows@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?UpdatePlatformWindows@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void UpdatePlatformWindows();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?RenderPlatformWindowsDefault@ImGui@@YAXPEAX0@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?RenderPlatformWindowsDefault@ImGui@@YAXPEAX0@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void RenderPlatformWindowsDefault(__IntPtr platform_render_arg, __IntPtr renderer_render_arg);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DestroyPlatformWindows@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DestroyPlatformWindows@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void DestroyPlatformWindows();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?FindViewportByID@ImGui@@YAPEAUImGuiViewport@@I@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?FindViewportByID@ImGui@@YAPEAUImGuiViewport@@I@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr FindViewportByID(uint id);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?FindViewportByPlatformHandle@ImGui@@YAPEAUImGuiViewport@@PEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?FindViewportByPlatformHandle@ImGui@@YAPEAUImGuiViewport@@PEAX@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr FindViewportByPlatformHandle(__IntPtr platform_handle);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ListBoxHeader@ImGui@@YA_NPEBDHH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ListBoxHeader@ImGui@@YA_NPEBDHH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool ListBoxHeader([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int items_count, int height_in_items);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ListBoxHeader@ImGui@@YA_NPEBDAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ListBoxHeader@ImGui@@YA_NPEBDAEBUImVec2@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool ListBoxHeader([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, __IntPtr size);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?ListBoxFooter@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?ListBoxFooter@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void ListBoxFooter();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?OpenPopupContextItem@ImGui@@YAXPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?OpenPopupContextItem@ImGui@@YAXPEBDH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void OpenPopupContextItem([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, int mb);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DragScalar@ImGui@@YA_NPEBDHPEAXMPEBX20M@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DragScalar@ImGui@@YA_NPEBDHPEAXMPEBX20M@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool DragScalar_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int data_type, __IntPtr p_data, float v_speed, __IntPtr p_min, __IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, float power);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DragScalarN@ImGui@@YA_NPEBDHPEAXHMPEBX20M@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DragScalarN@ImGui@@YA_NPEBDHPEAXHMPEBX20M@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool DragScalarN_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int data_type, __IntPtr p_data, int components, float v_speed, __IntPtr p_min, __IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, float power);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DragFloat@ImGui@@YA_NPEBDPEAMMMM0M@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DragFloat@ImGui@@YA_NPEBDPEAMMMM0M@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool DragFloat_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, float power);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DragFloat2@ImGui@@YA_NPEBDQEAMMMM0M@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DragFloat2@ImGui@@YA_NPEBDQEAMMMM0M@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool DragFloat2_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float[] v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, float power);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DragFloat3@ImGui@@YA_NPEBDQEAMMMM0M@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DragFloat3@ImGui@@YA_NPEBDQEAMMMM0M@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool DragFloat3_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float[] v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, float power);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?DragFloat4@ImGui@@YA_NPEBDQEAMMMM0M@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?DragFloat4@ImGui@@YA_NPEBDQEAMMMM0M@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool DragFloat4_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float[] v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, float power);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SliderScalar@ImGui@@YA_NPEBDHPEAXPEBX20M@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SliderScalar@ImGui@@YA_NPEBDHPEAXPEBX20M@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool SliderScalar_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int data_type, __IntPtr p_data, __IntPtr p_min, __IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, float power);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SliderScalarN@ImGui@@YA_NPEBDHPEAXHPEBX20M@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SliderScalarN@ImGui@@YA_NPEBDHPEAXHPEBX20M@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool SliderScalarN_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int data_type, __IntPtr p_data, int components, __IntPtr p_min, __IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, float power);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SliderFloat@ImGui@@YA_NPEBDPEAMMM0M@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SliderFloat@ImGui@@YA_NPEBDPEAMMM0M@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool SliderFloat_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, float power);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SliderFloat2@ImGui@@YA_NPEBDQEAMMM0M@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SliderFloat2@ImGui@@YA_NPEBDQEAMMM0M@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool SliderFloat2_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float[] v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, float power);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SliderFloat3@ImGui@@YA_NPEBDQEAMMM0M@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SliderFloat3@ImGui@@YA_NPEBDQEAMMM0M@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool SliderFloat3_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float[] v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, float power);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SliderFloat4@ImGui@@YA_NPEBDQEAMMM0M@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SliderFloat4@ImGui@@YA_NPEBDQEAMMM0M@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool SliderFloat4_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float[] v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, float power);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?BeginPopupContextWindow@ImGui@@YA_NPEBDH_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?BeginPopupContextWindow@ImGui@@YA_NPEBDH_N@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool BeginPopupContextWindow([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, int mb, bool over_items);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?TreeAdvanceToLabelPos@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?TreeAdvanceToLabelPos@ImGui@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void TreeAdvanceToLabelPos();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?SetNextTreeNodeOpen@ImGui@@YAX_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?SetNextTreeNodeOpen@ImGui@@YAX_NH@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void SetNextTreeNodeOpen(bool open, int cond);
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetContentRegionAvailWidth@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetContentRegionAvailWidth@ImGui@@YAMXZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern float GetContentRegionAvailWidth();
 
-                [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?GetOverlayDrawList@ImGui@@YAPEAUImDrawList@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "?GetOverlayDrawList@ImGui@@YAPEAUImDrawList@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetOverlayDrawList();
             }
 
-            public static global::TestOpenGLd.ImGuiContext CreateContext(global::TestOpenGLd.ImFontAtlas shared_font_atlas)
+            public static global::Cored.ImGuiContext CreateContext(global::Cored.ImFontAtlas shared_font_atlas)
             {
                 var __arg0 = shared_font_atlas is null ? __IntPtr.Zero : shared_font_atlas.__Instance;
                 var __ret = __Internal.CreateContext(__arg0);
-                var __result0 = global::TestOpenGLd.ImGuiContext.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImGuiContext.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
-            public static void DestroyContext(global::TestOpenGLd.ImGuiContext ctx)
+            public static void DestroyContext(global::Cored.ImGuiContext ctx)
             {
                 var __arg0 = ctx is null ? __IntPtr.Zero : ctx.__Instance;
                 __Internal.DestroyContext(__arg0);
             }
 
-            public static global::TestOpenGLd.ImGuiContext GetCurrentContext()
+            public static global::Cored.ImGuiContext GetCurrentContext()
             {
                 var __ret = __Internal.GetCurrentContext();
-                var __result0 = global::TestOpenGLd.ImGuiContext.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImGuiContext.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
-            public static void SetCurrentContext(global::TestOpenGLd.ImGuiContext ctx)
+            public static void SetCurrentContext(global::Cored.ImGuiContext ctx)
             {
                 var __arg0 = ctx is null ? __IntPtr.Zero : ctx.__Instance;
                 __Internal.SetCurrentContext(__arg0);
             }
 
-            public static global::TestOpenGLd.ImGuiIO GetIO()
+            public static global::Cored.ImGuiIO GetIO()
             {
                 var __ret = __Internal.GetIO();
-                var __result0 = global::TestOpenGLd.ImGuiIO.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImGuiIO.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
-            public static global::TestOpenGLd.ImGuiStyle GetStyle()
+            public static global::Cored.ImGuiStyle GetStyle()
             {
                 var __ret = __Internal.GetStyle();
-                var __result0 = global::TestOpenGLd.ImGuiStyle.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImGuiStyle.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
@@ -12835,10 +12835,10 @@ namespace TestOpenGLd
                 __Internal.Render();
             }
 
-            public static global::TestOpenGLd.ImDrawData GetDrawData()
+            public static global::Cored.ImDrawData GetDrawData()
             {
                 var __ret = __Internal.GetDrawData();
-                var __result0 = global::TestOpenGLd.ImDrawData.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImDrawData.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
@@ -12869,7 +12869,7 @@ namespace TestOpenGLd
                 }
             }
 
-            public static void ShowStyleEditor(global::TestOpenGLd.ImGuiStyle @ref)
+            public static void ShowStyleEditor(global::Cored.ImGuiStyle @ref)
             {
                 var __arg0 = @ref is null ? __IntPtr.Zero : @ref.__Instance;
                 __Internal.ShowStyleEditor(__arg0);
@@ -12897,19 +12897,19 @@ namespace TestOpenGLd
                 return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, __ret);
             }
 
-            public static void StyleColorsDark(global::TestOpenGLd.ImGuiStyle dst)
+            public static void StyleColorsDark(global::Cored.ImGuiStyle dst)
             {
                 var __arg0 = dst is null ? __IntPtr.Zero : dst.__Instance;
                 __Internal.StyleColorsDark(__arg0);
             }
 
-            public static void StyleColorsLight(global::TestOpenGLd.ImGuiStyle dst)
+            public static void StyleColorsLight(global::Cored.ImGuiStyle dst)
             {
                 var __arg0 = dst is null ? __IntPtr.Zero : dst.__Instance;
                 __Internal.StyleColorsLight(__arg0);
             }
 
-            public static void StyleColorsClassic(global::TestOpenGLd.ImGuiStyle dst)
+            public static void StyleColorsClassic(global::Cored.ImGuiStyle dst)
             {
                 var __arg0 = dst is null ? __IntPtr.Zero : dst.__Instance;
                 __Internal.StyleColorsClassic(__arg0);
@@ -12930,7 +12930,7 @@ namespace TestOpenGLd
                 __Internal.End();
             }
 
-            public static bool BeginChild(string str_id, global::TestOpenGLd.ImVec2 size, bool border, int flags)
+            public static bool BeginChild(string str_id, global::Cored.ImVec2 size, bool border, int flags)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -12939,7 +12939,7 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static bool BeginChild(uint id, global::TestOpenGLd.ImVec2 size, bool border, int flags)
+            public static bool BeginChild(uint id, global::Cored.ImVec2 size, bool border, int flags)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -12977,10 +12977,10 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static global::TestOpenGLd.ImDrawList GetWindowDrawList()
+            public static global::Cored.ImDrawList GetWindowDrawList()
             {
                 var __ret = __Internal.GetWindowDrawList();
-                var __result0 = global::TestOpenGLd.ImDrawList.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImDrawList.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
@@ -12990,18 +12990,18 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static global::TestOpenGLd.ImVec2 GetWindowPos()
+            public static global::Cored.ImVec2 GetWindowPos()
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetWindowPos(new IntPtr(&__ret));
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
 
-            public static global::TestOpenGLd.ImVec2 GetWindowSize()
+            public static global::Cored.ImVec2 GetWindowSize()
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetWindowSize(new IntPtr(&__ret));
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
 
             public static float GetWindowWidth()
@@ -13016,14 +13016,14 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static global::TestOpenGLd.ImGuiViewport GetWindowViewport()
+            public static global::Cored.ImGuiViewport GetWindowViewport()
             {
                 var __ret = __Internal.GetWindowViewport();
-                var __result0 = global::TestOpenGLd.ImGuiViewport.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImGuiViewport.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
-            public static void SetNextWindowPos(global::TestOpenGLd.ImVec2 pos, int cond, global::TestOpenGLd.ImVec2 pivot)
+            public static void SetNextWindowPos(global::Cored.ImVec2 pos, int cond, global::Cored.ImVec2 pivot)
             {
                 if (ReferenceEquals(pos, null))
                     throw new global::System.ArgumentNullException("pos", "Cannot be null because it is a C++ reference (&).");
@@ -13034,7 +13034,7 @@ namespace TestOpenGLd
                 __Internal.SetNextWindowPos(__arg0, cond, __arg2);
             }
 
-            public static void SetNextWindowSize(global::TestOpenGLd.ImVec2 size, int cond)
+            public static void SetNextWindowSize(global::Cored.ImVec2 size, int cond)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -13042,7 +13042,7 @@ namespace TestOpenGLd
                 __Internal.SetNextWindowSize(__arg0, cond);
             }
 
-            public static void SetNextWindowSizeConstraints(global::TestOpenGLd.ImVec2 size_min, global::TestOpenGLd.ImVec2 size_max, global::TestOpenGLd.ImGuiSizeCallback custom_callback, __IntPtr custom_callback_data)
+            public static void SetNextWindowSizeConstraints(global::Cored.ImVec2 size_min, global::Cored.ImVec2 size_max, global::Cored.ImGuiSizeCallback custom_callback, __IntPtr custom_callback_data)
             {
                 if (ReferenceEquals(size_min, null))
                     throw new global::System.ArgumentNullException("size_min", "Cannot be null because it is a C++ reference (&).");
@@ -13054,7 +13054,7 @@ namespace TestOpenGLd
                 __Internal.SetNextWindowSizeConstraints(__arg0, __arg1, __arg2, custom_callback_data);
             }
 
-            public static void SetNextWindowContentSize(global::TestOpenGLd.ImVec2 size)
+            public static void SetNextWindowContentSize(global::Cored.ImVec2 size)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -13082,7 +13082,7 @@ namespace TestOpenGLd
                 __Internal.SetNextWindowViewport(viewport_id);
             }
 
-            public static void SetWindowPos(global::TestOpenGLd.ImVec2 pos, int cond)
+            public static void SetWindowPos(global::Cored.ImVec2 pos, int cond)
             {
                 if (ReferenceEquals(pos, null))
                     throw new global::System.ArgumentNullException("pos", "Cannot be null because it is a C++ reference (&).");
@@ -13090,7 +13090,7 @@ namespace TestOpenGLd
                 __Internal.SetWindowPos(__arg0, cond);
             }
 
-            public static void SetWindowSize(global::TestOpenGLd.ImVec2 size, int cond)
+            public static void SetWindowSize(global::Cored.ImVec2 size, int cond)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -13113,7 +13113,7 @@ namespace TestOpenGLd
                 __Internal.SetWindowFontScale(scale);
             }
 
-            public static void SetWindowPos(string name, global::TestOpenGLd.ImVec2 pos, int cond)
+            public static void SetWindowPos(string name, global::Cored.ImVec2 pos, int cond)
             {
                 if (ReferenceEquals(pos, null))
                     throw new global::System.ArgumentNullException("pos", "Cannot be null because it is a C++ reference (&).");
@@ -13121,7 +13121,7 @@ namespace TestOpenGLd
                 __Internal.SetWindowPos(name, __arg1, cond);
             }
 
-            public static void SetWindowSize(string name, global::TestOpenGLd.ImVec2 size, int cond)
+            public static void SetWindowSize(string name, global::Cored.ImVec2 size, int cond)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -13139,32 +13139,32 @@ namespace TestOpenGLd
                 __Internal.SetWindowFocus(name);
             }
 
-            public static global::TestOpenGLd.ImVec2 GetContentRegionAvail()
+            public static global::Cored.ImVec2 GetContentRegionAvail()
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetContentRegionAvail(new IntPtr(&__ret));
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
 
-            public static global::TestOpenGLd.ImVec2 GetContentRegionMax()
+            public static global::Cored.ImVec2 GetContentRegionMax()
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetContentRegionMax(new IntPtr(&__ret));
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
 
-            public static global::TestOpenGLd.ImVec2 GetWindowContentRegionMin()
+            public static global::Cored.ImVec2 GetWindowContentRegionMin()
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetWindowContentRegionMin(new IntPtr(&__ret));
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
 
-            public static global::TestOpenGLd.ImVec2 GetWindowContentRegionMax()
+            public static global::Cored.ImVec2 GetWindowContentRegionMax()
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetWindowContentRegionMax(new IntPtr(&__ret));
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
 
             public static float GetWindowContentRegionWidth()
@@ -13227,7 +13227,7 @@ namespace TestOpenGLd
                 __Internal.SetScrollFromPosY(local_y, center_y_ratio);
             }
 
-            public static void PushFont(global::TestOpenGLd.ImFont font)
+            public static void PushFont(global::Cored.ImFont font)
             {
                 var __arg0 = font is null ? __IntPtr.Zero : font.__Instance;
                 __Internal.PushFont(__arg0);
@@ -13243,7 +13243,7 @@ namespace TestOpenGLd
                 __Internal.PushStyleColor(idx, col);
             }
 
-            public static void PushStyleColor(int idx, global::TestOpenGLd.ImVec4 col)
+            public static void PushStyleColor(int idx, global::Cored.ImVec4 col)
             {
                 if (ReferenceEquals(col, null))
                     throw new global::System.ArgumentNullException("col", "Cannot be null because it is a C++ reference (&).");
@@ -13261,7 +13261,7 @@ namespace TestOpenGLd
                 __Internal.PushStyleVar(idx, val);
             }
 
-            public static void PushStyleVar(int idx, global::TestOpenGLd.ImVec2 val)
+            public static void PushStyleVar(int idx, global::Cored.ImVec2 val)
             {
                 if (ReferenceEquals(val, null))
                     throw new global::System.ArgumentNullException("val", "Cannot be null because it is a C++ reference (&).");
@@ -13325,10 +13325,10 @@ namespace TestOpenGLd
                 __Internal.PopTextWrapPos();
             }
 
-            public static global::TestOpenGLd.ImFont GetFont()
+            public static global::Cored.ImFont GetFont()
             {
                 var __ret = __Internal.GetFont();
-                var __result0 = global::TestOpenGLd.ImFont.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImFont.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
@@ -13338,11 +13338,11 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static global::TestOpenGLd.ImVec2 GetFontTexUvWhitePixel()
+            public static global::Cored.ImVec2 GetFontTexUvWhitePixel()
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetFontTexUvWhitePixel(new IntPtr(&__ret));
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
 
             public static uint GetColorU32(int idx, float alpha_mul)
@@ -13351,7 +13351,7 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static uint GetColorU32(global::TestOpenGLd.ImVec4 col)
+            public static uint GetColorU32(global::Cored.ImVec4 col)
             {
                 if (ReferenceEquals(col, null))
                     throw new global::System.ArgumentNullException("col", "Cannot be null because it is a C++ reference (&).");
@@ -13366,10 +13366,10 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static global::TestOpenGLd.ImVec4 GetStyleColorVec4(int idx)
+            public static global::Cored.ImVec4 GetStyleColorVec4(int idx)
             {
                 var __ret = __Internal.GetStyleColorVec4(idx);
-                var __result0 = global::TestOpenGLd.ImVec4.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImVec4.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
@@ -13393,7 +13393,7 @@ namespace TestOpenGLd
                 __Internal.Spacing();
             }
 
-            public static void Dummy(global::TestOpenGLd.ImVec2 size)
+            public static void Dummy(global::Cored.ImVec2 size)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -13421,11 +13421,11 @@ namespace TestOpenGLd
                 __Internal.EndGroup();
             }
 
-            public static global::TestOpenGLd.ImVec2 GetCursorPos()
+            public static global::Cored.ImVec2 GetCursorPos()
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetCursorPos(new IntPtr(&__ret));
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
 
             public static float GetCursorPosX()
@@ -13440,7 +13440,7 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static void SetCursorPos(global::TestOpenGLd.ImVec2 local_pos)
+            public static void SetCursorPos(global::Cored.ImVec2 local_pos)
             {
                 if (ReferenceEquals(local_pos, null))
                     throw new global::System.ArgumentNullException("local_pos", "Cannot be null because it is a C++ reference (&).");
@@ -13458,21 +13458,21 @@ namespace TestOpenGLd
                 __Internal.SetCursorPosY(local_y);
             }
 
-            public static global::TestOpenGLd.ImVec2 GetCursorStartPos()
+            public static global::Cored.ImVec2 GetCursorStartPos()
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetCursorStartPos(new IntPtr(&__ret));
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
 
-            public static global::TestOpenGLd.ImVec2 GetCursorScreenPos()
+            public static global::Cored.ImVec2 GetCursorScreenPos()
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetCursorScreenPos(new IntPtr(&__ret));
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
 
-            public static void SetCursorScreenPos(global::TestOpenGLd.ImVec2 pos)
+            public static void SetCursorScreenPos(global::Cored.ImVec2 pos)
             {
                 if (ReferenceEquals(pos, null))
                     throw new global::System.ArgumentNullException("pos", "Cannot be null because it is a C++ reference (&).");
@@ -13562,7 +13562,7 @@ namespace TestOpenGLd
                 __Internal.Text(fmt);
             }
 
-            public static void TextColored(global::TestOpenGLd.ImVec4 col, string fmt)
+            public static void TextColored(global::Cored.ImVec4 col, string fmt)
             {
                 if (ReferenceEquals(col, null))
                     throw new global::System.ArgumentNullException("col", "Cannot be null because it is a C++ reference (&).");
@@ -13590,7 +13590,7 @@ namespace TestOpenGLd
                 __Internal.BulletText(fmt);
             }
 
-            public static bool Button(string label, global::TestOpenGLd.ImVec2 size)
+            public static bool Button(string label, global::Cored.ImVec2 size)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -13605,7 +13605,7 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static bool InvisibleButton(string str_id, global::TestOpenGLd.ImVec2 size, int flags)
+            public static bool InvisibleButton(string str_id, global::Cored.ImVec2 size, int flags)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -13620,7 +13620,7 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static void Image(__IntPtr user_texture_id, global::TestOpenGLd.ImVec2 size, global::TestOpenGLd.ImVec2 uv0, global::TestOpenGLd.ImVec2 uv1, global::TestOpenGLd.ImVec4 tint_col, global::TestOpenGLd.ImVec4 border_col)
+            public static void Image(__IntPtr user_texture_id, global::Cored.ImVec2 size, global::Cored.ImVec2 uv0, global::Cored.ImVec2 uv1, global::Cored.ImVec4 tint_col, global::Cored.ImVec4 border_col)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -13640,7 +13640,7 @@ namespace TestOpenGLd
                 __Internal.Image(user_texture_id, __arg1, __arg2, __arg3, __arg4, __arg5);
             }
 
-            public static bool ImageButton(__IntPtr user_texture_id, global::TestOpenGLd.ImVec2 size, global::TestOpenGLd.ImVec2 uv0, global::TestOpenGLd.ImVec2 uv1, int frame_padding, global::TestOpenGLd.ImVec4 bg_col, global::TestOpenGLd.ImVec4 tint_col)
+            public static bool ImageButton(__IntPtr user_texture_id, global::Cored.ImVec2 size, global::Cored.ImVec2 uv0, global::Cored.ImVec2 uv1, int frame_padding, global::Cored.ImVec4 bg_col, global::Cored.ImVec4 tint_col)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -13707,7 +13707,7 @@ namespace TestOpenGLd
                 }
             }
 
-            public static void ProgressBar(float fraction, global::TestOpenGLd.ImVec2 size_arg, string overlay)
+            public static void ProgressBar(float fraction, global::Cored.ImVec2 size_arg, string overlay)
             {
                 if (ReferenceEquals(size_arg, null))
                     throw new global::System.ArgumentNullException("size_arg", "Cannot be null because it is a C++ reference (&).");
@@ -13751,7 +13751,7 @@ namespace TestOpenGLd
                 }
             }
 
-            public static bool Combo(string label, ref int current_item, global::TestOpenGLd.Delegates.Func_bool___IntPtr_int_sbytePtrPtr items_getter, __IntPtr data, int items_count, int popup_max_height_in_items)
+            public static bool Combo(string label, ref int current_item, global::Cored.Delegates.Func_bool___IntPtr_int_sbytePtrPtr items_getter, __IntPtr data, int items_count, int popup_max_height_in_items)
             {
                 fixed (int* __current_item1 = &current_item)
                 {
@@ -13960,7 +13960,7 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static bool VSliderFloat(string label, global::TestOpenGLd.ImVec2 size, ref float v, float v_min, float v_max, string format, int flags)
+            public static bool VSliderFloat(string label, global::Cored.ImVec2 size, ref float v, float v_min, float v_max, string format, int flags)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -13973,7 +13973,7 @@ namespace TestOpenGLd
                 }
             }
 
-            public static bool VSliderInt(string label, global::TestOpenGLd.ImVec2 size, ref int v, int v_min, int v_max, string format, int flags)
+            public static bool VSliderInt(string label, global::Cored.ImVec2 size, ref int v, int v_min, int v_max, string format, int flags)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -13986,7 +13986,7 @@ namespace TestOpenGLd
                 }
             }
 
-            public static bool VSliderScalar(string label, global::TestOpenGLd.ImVec2 size, int data_type, __IntPtr p_data, __IntPtr p_min, __IntPtr p_max, string format, int flags)
+            public static bool VSliderScalar(string label, global::Cored.ImVec2 size, int data_type, __IntPtr p_data, __IntPtr p_min, __IntPtr p_max, string format, int flags)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -13995,14 +13995,14 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static bool InputText(string label, sbyte* buf, ulong buf_size, int flags, global::TestOpenGLd.ImGuiInputTextCallback callback, __IntPtr user_data)
+            public static bool InputText(string label, sbyte* buf, ulong buf_size, int flags, global::Cored.ImGuiInputTextCallback callback, __IntPtr user_data)
             {
                 var __arg4 = callback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(callback);
                 var __ret = __Internal.InputText(label, buf, buf_size, flags, __arg4, user_data);
                 return __ret;
             }
 
-            public static bool InputTextMultiline(string label, sbyte* buf, ulong buf_size, global::TestOpenGLd.ImVec2 size, int flags, global::TestOpenGLd.ImGuiInputTextCallback callback, __IntPtr user_data)
+            public static bool InputTextMultiline(string label, sbyte* buf, ulong buf_size, global::Cored.ImVec2 size, int flags, global::Cored.ImGuiInputTextCallback callback, __IntPtr user_data)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -14012,7 +14012,7 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static bool InputTextWithHint(string label, string hint, sbyte* buf, ulong buf_size, int flags, global::TestOpenGLd.ImGuiInputTextCallback callback, __IntPtr user_data)
+            public static bool InputTextWithHint(string label, string hint, sbyte* buf, ulong buf_size, int flags, global::Cored.ImGuiInputTextCallback callback, __IntPtr user_data)
             {
                 var __arg5 = callback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(callback);
                 var __ret = __Internal.InputTextWithHint(label, hint, buf, buf_size, flags, __arg5, user_data);
@@ -14145,7 +14145,7 @@ namespace TestOpenGLd
                 }
             }
 
-            public static bool ColorButton(string desc_id, global::TestOpenGLd.ImVec4 col, int flags, global::TestOpenGLd.ImVec2 size)
+            public static bool ColorButton(string desc_id, global::Cored.ImVec4 col, int flags, global::Cored.ImVec2 size)
             {
                 if (ReferenceEquals(col, null))
                     throw new global::System.ArgumentNullException("col", "Cannot be null because it is a C++ reference (&).");
@@ -14153,7 +14153,7 @@ namespace TestOpenGLd
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is passed by value.");
                 var __arg3 = size.__Instance;
-                var __ret = __Internal.ColorButton(desc_id, __arg1, flags, *(global::TestOpenGLd.ImVec2.__Internal*) __arg3);
+                var __ret = __Internal.ColorButton(desc_id, __arg1, flags, *(global::Cored.ImVec2.__Internal*) __arg3);
                 return __ret;
             }
 
@@ -14240,7 +14240,7 @@ namespace TestOpenGLd
                 __Internal.SetNextItemOpen(is_open, cond);
             }
 
-            public static bool Selectable(string label, bool selected, int flags, global::TestOpenGLd.ImVec2 size)
+            public static bool Selectable(string label, bool selected, int flags, global::Cored.ImVec2 size)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -14249,7 +14249,7 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static bool Selectable(string label, ref bool p_selected, int flags, global::TestOpenGLd.ImVec2 size)
+            public static bool Selectable(string label, ref bool p_selected, int flags, global::Cored.ImVec2 size)
             {
                 fixed (bool* __p_selected1 = &p_selected)
                 {
@@ -14262,7 +14262,7 @@ namespace TestOpenGLd
                 }
             }
 
-            public static bool BeginListBox(string label, global::TestOpenGLd.ImVec2 size)
+            public static bool BeginListBox(string label, global::Cored.ImVec2 size)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -14286,7 +14286,7 @@ namespace TestOpenGLd
                 }
             }
 
-            public static bool ListBox(string label, ref int current_item, global::TestOpenGLd.Delegates.Func_bool___IntPtr_int_sbytePtrPtr items_getter, __IntPtr data, int items_count, int height_in_items)
+            public static bool ListBox(string label, ref int current_item, global::Cored.Delegates.Func_bool___IntPtr_int_sbytePtrPtr items_getter, __IntPtr data, int items_count, int height_in_items)
             {
                 fixed (int* __current_item1 = &current_item)
                 {
@@ -14297,7 +14297,7 @@ namespace TestOpenGLd
                 }
             }
 
-            public static void PlotLines(string label, ref float values, int values_count, int values_offset, string overlay_text, float scale_min, float scale_max, global::TestOpenGLd.ImVec2 graph_size, int stride)
+            public static void PlotLines(string label, ref float values, int values_count, int values_offset, string overlay_text, float scale_min, float scale_max, global::Cored.ImVec2 graph_size, int stride)
             {
                 fixed (float* __values1 = &values)
                 {
@@ -14305,20 +14305,20 @@ namespace TestOpenGLd
                     if (ReferenceEquals(graph_size, null))
                         throw new global::System.ArgumentNullException("graph_size", "Cannot be null because it is passed by value.");
                     var __arg7 = graph_size.__Instance;
-                    __Internal.PlotLines(label, __arg1, values_count, values_offset, overlay_text, scale_min, scale_max, *(global::TestOpenGLd.ImVec2.__Internal*) __arg7, stride);
+                    __Internal.PlotLines(label, __arg1, values_count, values_offset, overlay_text, scale_min, scale_max, *(global::Cored.ImVec2.__Internal*) __arg7, stride);
                 }
             }
 
-            public static void PlotLines(string label, global::TestOpenGLd.Delegates.Func_float___IntPtr_int values_getter, __IntPtr data, int values_count, int values_offset, string overlay_text, float scale_min, float scale_max, global::TestOpenGLd.ImVec2 graph_size)
+            public static void PlotLines(string label, global::Cored.Delegates.Func_float___IntPtr_int values_getter, __IntPtr data, int values_count, int values_offset, string overlay_text, float scale_min, float scale_max, global::Cored.ImVec2 graph_size)
             {
                 var __arg1 = values_getter == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(values_getter);
                 if (ReferenceEquals(graph_size, null))
                     throw new global::System.ArgumentNullException("graph_size", "Cannot be null because it is passed by value.");
                 var __arg8 = graph_size.__Instance;
-                __Internal.PlotLines(label, __arg1, data, values_count, values_offset, overlay_text, scale_min, scale_max, *(global::TestOpenGLd.ImVec2.__Internal*) __arg8);
+                __Internal.PlotLines(label, __arg1, data, values_count, values_offset, overlay_text, scale_min, scale_max, *(global::Cored.ImVec2.__Internal*) __arg8);
             }
 
-            public static void PlotHistogram(string label, ref float values, int values_count, int values_offset, string overlay_text, float scale_min, float scale_max, global::TestOpenGLd.ImVec2 graph_size, int stride)
+            public static void PlotHistogram(string label, ref float values, int values_count, int values_offset, string overlay_text, float scale_min, float scale_max, global::Cored.ImVec2 graph_size, int stride)
             {
                 fixed (float* __values1 = &values)
                 {
@@ -14326,17 +14326,17 @@ namespace TestOpenGLd
                     if (ReferenceEquals(graph_size, null))
                         throw new global::System.ArgumentNullException("graph_size", "Cannot be null because it is passed by value.");
                     var __arg7 = graph_size.__Instance;
-                    __Internal.PlotHistogram(label, __arg1, values_count, values_offset, overlay_text, scale_min, scale_max, *(global::TestOpenGLd.ImVec2.__Internal*) __arg7, stride);
+                    __Internal.PlotHistogram(label, __arg1, values_count, values_offset, overlay_text, scale_min, scale_max, *(global::Cored.ImVec2.__Internal*) __arg7, stride);
                 }
             }
 
-            public static void PlotHistogram(string label, global::TestOpenGLd.Delegates.Func_float___IntPtr_int values_getter, __IntPtr data, int values_count, int values_offset, string overlay_text, float scale_min, float scale_max, global::TestOpenGLd.ImVec2 graph_size)
+            public static void PlotHistogram(string label, global::Cored.Delegates.Func_float___IntPtr_int values_getter, __IntPtr data, int values_count, int values_offset, string overlay_text, float scale_min, float scale_max, global::Cored.ImVec2 graph_size)
             {
                 var __arg1 = values_getter == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(values_getter);
                 if (ReferenceEquals(graph_size, null))
                     throw new global::System.ArgumentNullException("graph_size", "Cannot be null because it is passed by value.");
                 var __arg8 = graph_size.__Instance;
-                __Internal.PlotHistogram(label, __arg1, data, values_count, values_offset, overlay_text, scale_min, scale_max, *(global::TestOpenGLd.ImVec2.__Internal*) __arg8);
+                __Internal.PlotHistogram(label, __arg1, data, values_count, values_offset, overlay_text, scale_min, scale_max, *(global::Cored.ImVec2.__Internal*) __arg8);
             }
 
             public static void Value(string prefix, bool b)
@@ -14488,7 +14488,7 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static bool BeginTable(string str_id, int column, int flags, global::TestOpenGLd.ImVec2 outer_size, float inner_width)
+            public static bool BeginTable(string str_id, int column, int flags, global::Cored.ImVec2 outer_size, float inner_width)
             {
                 if (ReferenceEquals(outer_size, null))
                     throw new global::System.ArgumentNullException("outer_size", "Cannot be null because it is a C++ reference (&).");
@@ -14539,10 +14539,10 @@ namespace TestOpenGLd
                 __Internal.TableHeader(label);
             }
 
-            public static global::TestOpenGLd.ImGuiTableSortSpecs TableGetSortSpecs()
+            public static global::Cored.ImGuiTableSortSpecs TableGetSortSpecs()
             {
                 var __ret = __Internal.TableGetSortSpecs();
-                var __result0 = global::TestOpenGLd.ImGuiTableSortSpecs.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImGuiTableSortSpecs.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
@@ -14667,7 +14667,7 @@ namespace TestOpenGLd
                 __Internal.SetTabItemClosed(tab_or_docked_window_label);
             }
 
-            public static uint DockSpace(uint id, global::TestOpenGLd.ImVec2 size, int flags, global::TestOpenGLd.ImGuiWindowClass window_class)
+            public static uint DockSpace(uint id, global::Cored.ImVec2 size, int flags, global::Cored.ImGuiWindowClass window_class)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -14677,7 +14677,7 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static uint DockSpaceOverViewport(global::TestOpenGLd.ImGuiViewport viewport, int flags, global::TestOpenGLd.ImGuiWindowClass window_class)
+            public static uint DockSpaceOverViewport(global::Cored.ImGuiViewport viewport, int flags, global::Cored.ImGuiWindowClass window_class)
             {
                 var __arg0 = viewport is null ? __IntPtr.Zero : viewport.__Instance;
                 var __arg2 = window_class is null ? __IntPtr.Zero : window_class.__Instance;
@@ -14690,7 +14690,7 @@ namespace TestOpenGLd
                 __Internal.SetNextWindowDockID(dock_id, cond);
             }
 
-            public static void SetNextWindowClass(global::TestOpenGLd.ImGuiWindowClass window_class)
+            public static void SetNextWindowClass(global::Cored.ImGuiWindowClass window_class)
             {
                 var __arg0 = window_class is null ? __IntPtr.Zero : window_class.__Instance;
                 __Internal.SetNextWindowClass(__arg0);
@@ -14761,10 +14761,10 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static global::TestOpenGLd.ImGuiPayload AcceptDragDropPayload(string type, int flags)
+            public static global::Cored.ImGuiPayload AcceptDragDropPayload(string type, int flags)
             {
                 var __ret = __Internal.AcceptDragDropPayload(type, flags);
-                var __result0 = global::TestOpenGLd.ImGuiPayload.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImGuiPayload.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
@@ -14773,14 +14773,14 @@ namespace TestOpenGLd
                 __Internal.EndDragDropTarget();
             }
 
-            public static global::TestOpenGLd.ImGuiPayload GetDragDropPayload()
+            public static global::Cored.ImGuiPayload GetDragDropPayload()
             {
                 var __ret = __Internal.GetDragDropPayload();
-                var __result0 = global::TestOpenGLd.ImGuiPayload.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImGuiPayload.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
-            public static void PushClipRect(global::TestOpenGLd.ImVec2 clip_rect_min, global::TestOpenGLd.ImVec2 clip_rect_max, bool intersect_with_current_clip_rect)
+            public static void PushClipRect(global::Cored.ImVec2 clip_rect_min, global::Cored.ImVec2 clip_rect_max, bool intersect_with_current_clip_rect)
             {
                 if (ReferenceEquals(clip_rect_min, null))
                     throw new global::System.ArgumentNullException("clip_rect_min", "Cannot be null because it is a C++ reference (&).");
@@ -14884,25 +14884,25 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static global::TestOpenGLd.ImVec2 GetItemRectMin()
+            public static global::Cored.ImVec2 GetItemRectMin()
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetItemRectMin(new IntPtr(&__ret));
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
 
-            public static global::TestOpenGLd.ImVec2 GetItemRectMax()
+            public static global::Cored.ImVec2 GetItemRectMax()
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetItemRectMax(new IntPtr(&__ret));
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
 
-            public static global::TestOpenGLd.ImVec2 GetItemRectSize()
+            public static global::Cored.ImVec2 GetItemRectSize()
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetItemRectSize(new IntPtr(&__ret));
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
 
             public static void SetItemAllowOverlap()
@@ -14910,14 +14910,14 @@ namespace TestOpenGLd
                 __Internal.SetItemAllowOverlap();
             }
 
-            public static global::TestOpenGLd.ImGuiViewport GetMainViewport()
+            public static global::Cored.ImGuiViewport GetMainViewport()
             {
                 var __ret = __Internal.GetMainViewport();
-                var __result0 = global::TestOpenGLd.ImGuiViewport.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImGuiViewport.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
-            public static bool IsRectVisible(global::TestOpenGLd.ImVec2 size)
+            public static bool IsRectVisible(global::Cored.ImVec2 size)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -14926,7 +14926,7 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static bool IsRectVisible(global::TestOpenGLd.ImVec2 rect_min, global::TestOpenGLd.ImVec2 rect_max)
+            public static bool IsRectVisible(global::Cored.ImVec2 rect_min, global::Cored.ImVec2 rect_max)
             {
                 if (ReferenceEquals(rect_min, null))
                     throw new global::System.ArgumentNullException("rect_min", "Cannot be null because it is a C++ reference (&).");
@@ -14950,40 +14950,40 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static global::TestOpenGLd.ImDrawList GetBackgroundDrawList()
+            public static global::Cored.ImDrawList GetBackgroundDrawList()
             {
                 var __ret = __Internal.GetBackgroundDrawList();
-                var __result0 = global::TestOpenGLd.ImDrawList.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImDrawList.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
-            public static global::TestOpenGLd.ImDrawList GetForegroundDrawList()
+            public static global::Cored.ImDrawList GetForegroundDrawList()
             {
                 var __ret = __Internal.GetForegroundDrawList();
-                var __result0 = global::TestOpenGLd.ImDrawList.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImDrawList.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
-            public static global::TestOpenGLd.ImDrawList GetBackgroundDrawList(global::TestOpenGLd.ImGuiViewport viewport)
+            public static global::Cored.ImDrawList GetBackgroundDrawList(global::Cored.ImGuiViewport viewport)
             {
                 var __arg0 = viewport is null ? __IntPtr.Zero : viewport.__Instance;
                 var __ret = __Internal.GetBackgroundDrawList(__arg0);
-                var __result0 = global::TestOpenGLd.ImDrawList.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImDrawList.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
-            public static global::TestOpenGLd.ImDrawList GetForegroundDrawList(global::TestOpenGLd.ImGuiViewport viewport)
+            public static global::Cored.ImDrawList GetForegroundDrawList(global::Cored.ImGuiViewport viewport)
             {
                 var __arg0 = viewport is null ? __IntPtr.Zero : viewport.__Instance;
                 var __ret = __Internal.GetForegroundDrawList(__arg0);
-                var __result0 = global::TestOpenGLd.ImDrawList.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImDrawList.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
-            public static global::TestOpenGLd.ImDrawListSharedData GetDrawListSharedData()
+            public static global::Cored.ImDrawListSharedData GetDrawListSharedData()
             {
                 var __ret = __Internal.GetDrawListSharedData();
-                var __result0 = global::TestOpenGLd.ImDrawListSharedData.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImDrawListSharedData.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
@@ -14993,16 +14993,16 @@ namespace TestOpenGLd
                 return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, __ret);
             }
 
-            public static void SetStateStorage(global::TestOpenGLd.ImGuiStorage storage)
+            public static void SetStateStorage(global::Cored.ImGuiStorage storage)
             {
                 var __arg0 = storage is null ? __IntPtr.Zero : storage.__Instance;
                 __Internal.SetStateStorage(__arg0);
             }
 
-            public static global::TestOpenGLd.ImGuiStorage GetStateStorage()
+            public static global::Cored.ImGuiStorage GetStateStorage()
             {
                 var __ret = __Internal.GetStateStorage();
-                var __result0 = global::TestOpenGLd.ImGuiStorage.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImGuiStorage.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
@@ -15019,7 +15019,7 @@ namespace TestOpenGLd
                 }
             }
 
-            public static bool BeginChildFrame(uint id, global::TestOpenGLd.ImVec2 size, int flags)
+            public static bool BeginChildFrame(uint id, global::Cored.ImVec2 size, int flags)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -15033,21 +15033,21 @@ namespace TestOpenGLd
                 __Internal.EndChildFrame();
             }
 
-            public static global::TestOpenGLd.ImVec2 CalcTextSize(string text, string text_end, bool hide_text_after_double_hash, float wrap_width)
+            public static global::Cored.ImVec2 CalcTextSize(string text, string text_end, bool hide_text_after_double_hash, float wrap_width)
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.CalcTextSize(new IntPtr(&__ret), text, text_end, hide_text_after_double_hash, wrap_width);
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
 
-            public static global::TestOpenGLd.ImVec4 ColorConvertU32ToFloat4(uint @in)
+            public static global::Cored.ImVec4 ColorConvertU32ToFloat4(uint @in)
             {
-                var __ret = new global::TestOpenGLd.ImVec4.__Internal();
+                var __ret = new global::Cored.ImVec4.__Internal();
                 __Internal.ColorConvertU32ToFloat4(new IntPtr(&__ret), @in);
-                return global::TestOpenGLd.ImVec4.__CreateInstance(__ret);
+                return global::Cored.ImVec4.__CreateInstance(__ret);
             }
 
-            public static uint ColorConvertFloat4ToU32(global::TestOpenGLd.ImVec4 @in)
+            public static uint ColorConvertFloat4ToU32(global::Cored.ImVec4 @in)
             {
                 if (ReferenceEquals(@in, null))
                     throw new global::System.ArgumentNullException("@in", "Cannot be null because it is a C++ reference (&).");
@@ -15149,7 +15149,7 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static bool IsMouseHoveringRect(global::TestOpenGLd.ImVec2 r_min, global::TestOpenGLd.ImVec2 r_max, bool clip)
+            public static bool IsMouseHoveringRect(global::Cored.ImVec2 r_min, global::Cored.ImVec2 r_max, bool clip)
             {
                 if (ReferenceEquals(r_min, null))
                     throw new global::System.ArgumentNullException("r_min", "Cannot be null because it is a C++ reference (&).");
@@ -15161,7 +15161,7 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static bool IsMousePosValid(global::TestOpenGLd.ImVec2 mouse_pos)
+            public static bool IsMousePosValid(global::Cored.ImVec2 mouse_pos)
             {
                 var __arg0 = mouse_pos is null ? __IntPtr.Zero : mouse_pos.__Instance;
                 var __ret = __Internal.IsMousePosValid(__arg0);
@@ -15174,18 +15174,18 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static global::TestOpenGLd.ImVec2 GetMousePos()
+            public static global::Cored.ImVec2 GetMousePos()
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetMousePos(new IntPtr(&__ret));
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
 
-            public static global::TestOpenGLd.ImVec2 GetMousePosOnOpeningCurrentPopup()
+            public static global::Cored.ImVec2 GetMousePosOnOpeningCurrentPopup()
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetMousePosOnOpeningCurrentPopup(new IntPtr(&__ret));
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
 
             public static bool IsMouseDragging(int button, float lock_threshold)
@@ -15194,11 +15194,11 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static global::TestOpenGLd.ImVec2 GetMouseDragDelta(int button, float lock_threshold)
+            public static global::Cored.ImVec2 GetMouseDragDelta(int button, float lock_threshold)
             {
-                var __ret = new global::TestOpenGLd.ImVec2.__Internal();
+                var __ret = new global::Cored.ImVec2.__Internal();
                 __Internal.GetMouseDragDelta(new IntPtr(&__ret), button, lock_threshold);
-                return global::TestOpenGLd.ImVec2.__CreateInstance(__ret);
+                return global::Cored.ImVec2.__CreateInstance(__ret);
             }
 
             public static void ResetMouseDragDelta(int button)
@@ -15264,14 +15264,14 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static void SetAllocatorFunctions(global::TestOpenGLd.ImGuiMemAllocFunc alloc_func, global::TestOpenGLd.ImGuiMemFreeFunc free_func, __IntPtr user_data)
+            public static void SetAllocatorFunctions(global::Cored.ImGuiMemAllocFunc alloc_func, global::Cored.ImGuiMemFreeFunc free_func, __IntPtr user_data)
             {
                 var __arg0 = alloc_func == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(alloc_func);
                 var __arg1 = free_func == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(free_func);
                 __Internal.SetAllocatorFunctions(__arg0, __arg1, user_data);
             }
 
-            public static void GetAllocatorFunctions(global::TestOpenGLd.ImGuiMemAllocFunc p_alloc_func, global::TestOpenGLd.ImGuiMemFreeFunc p_free_func, void** p_user_data)
+            public static void GetAllocatorFunctions(global::Cored.ImGuiMemAllocFunc p_alloc_func, global::Cored.ImGuiMemFreeFunc p_free_func, void** p_user_data)
             {
                 var __arg0 = p_alloc_func == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(p_alloc_func);
                 var __arg1 = p_free_func == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(p_free_func);
@@ -15289,10 +15289,10 @@ namespace TestOpenGLd
                 __Internal.MemFree(ptr);
             }
 
-            public static global::TestOpenGLd.ImGuiPlatformIO GetPlatformIO()
+            public static global::Cored.ImGuiPlatformIO GetPlatformIO()
             {
                 var __ret = __Internal.GetPlatformIO();
-                var __result0 = global::TestOpenGLd.ImGuiPlatformIO.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImGuiPlatformIO.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
@@ -15311,17 +15311,17 @@ namespace TestOpenGLd
                 __Internal.DestroyPlatformWindows();
             }
 
-            public static global::TestOpenGLd.ImGuiViewport FindViewportByID(uint id)
+            public static global::Cored.ImGuiViewport FindViewportByID(uint id)
             {
                 var __ret = __Internal.FindViewportByID(id);
-                var __result0 = global::TestOpenGLd.ImGuiViewport.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImGuiViewport.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
-            public static global::TestOpenGLd.ImGuiViewport FindViewportByPlatformHandle(__IntPtr platform_handle)
+            public static global::Cored.ImGuiViewport FindViewportByPlatformHandle(__IntPtr platform_handle)
             {
                 var __ret = __Internal.FindViewportByPlatformHandle(platform_handle);
-                var __result0 = global::TestOpenGLd.ImGuiViewport.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImGuiViewport.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
 
@@ -15331,7 +15331,7 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static bool ListBoxHeader(string label, global::TestOpenGLd.ImVec2 size)
+            public static bool ListBoxHeader(string label, global::Cored.ImVec2 size)
             {
                 if (ReferenceEquals(size, null))
                     throw new global::System.ArgumentNullException("size", "Cannot be null because it is a C++ reference (&).");
@@ -15464,10 +15464,10 @@ namespace TestOpenGLd
                 return __ret;
             }
 
-            public static global::TestOpenGLd.ImDrawList GetOverlayDrawList()
+            public static global::Cored.ImDrawList GetOverlayDrawList()
             {
                 var __ret = __Internal.GetOverlayDrawList();
-                var __result0 = global::TestOpenGLd.ImDrawList.__GetOrCreateInstance(__ret, false);
+                var __result0 = global::Cored.ImDrawList.__GetOrCreateInstance(__ret, false);
                 return __result0;
             }
         }
@@ -15492,13 +15492,13 @@ namespace TestOpenGLd
             internal ushort y;
             internal int was_packed;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0stbrp_rect@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0stbrp_rect@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbrpRect> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbrpRect>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbrpRect> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbrpRect>();
 
         protected bool __ownsNativeInstance;
 
@@ -15547,17 +15547,17 @@ namespace TestOpenGLd
 
         public StbrpRect()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbrpRect.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbrpRect.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public StbrpRect(global::TestOpenGLd.StbrpRect _0)
+        public StbrpRect(global::Cored.StbrpRect _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbrpRect.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbrpRect.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.StbrpRect.__Internal*) __Instance) = *((global::TestOpenGLd.StbrpRect.__Internal*) _0.__Instance);
+            *((global::Cored.StbrpRect.__Internal*) __Instance) = *((global::Cored.StbrpRect.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -15664,13 +15664,13 @@ namespace TestOpenGLd
             internal ushort y;
             internal __IntPtr next;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0stbrp_node@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0stbrp_node@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbrpNode> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbrpNode>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbrpNode> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbrpNode>();
 
         protected bool __ownsNativeInstance;
 
@@ -15719,17 +15719,17 @@ namespace TestOpenGLd
 
         public StbrpNode()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbrpNode.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbrpNode.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public StbrpNode(global::TestOpenGLd.StbrpNode _0)
+        public StbrpNode(global::Cored.StbrpNode _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbrpNode.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbrpNode.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.StbrpNode.__Internal*) __Instance) = *((global::TestOpenGLd.StbrpNode.__Internal*) _0.__Instance);
+            *((global::Cored.StbrpNode.__Internal*) __Instance) = *((global::Cored.StbrpNode.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -15773,11 +15773,11 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.StbrpNode Next
+        public global::Cored.StbrpNode Next
         {
             get
             {
-                var __result0 = global::TestOpenGLd.StbrpNode.__GetOrCreateInstance(((__Internal*)__Instance)->next, false);
+                var __result0 = global::Cored.StbrpNode.__GetOrCreateInstance(((__Internal*)__Instance)->next, false);
                 return __result0;
             }
 
@@ -15803,13 +15803,13 @@ namespace TestOpenGLd
             internal __IntPtr free_head;
             internal fixed byte extra[32];
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0stbrp_context@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0stbrp_context@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbrpContext> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbrpContext>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbrpContext> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbrpContext>();
 
         protected bool __ownsNativeInstance;
 
@@ -15858,17 +15858,17 @@ namespace TestOpenGLd
 
         public StbrpContext()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbrpContext.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbrpContext.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public StbrpContext(global::TestOpenGLd.StbrpContext _0)
+        public StbrpContext(global::Cored.StbrpContext _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbrpContext.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbrpContext.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.StbrpContext.__Internal*) __Instance) = *((global::TestOpenGLd.StbrpContext.__Internal*) _0.__Instance);
+            *((global::Cored.StbrpContext.__Internal*) __Instance) = *((global::Cored.StbrpContext.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -15964,11 +15964,11 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.StbrpNode ActiveHead
+        public global::Cored.StbrpNode ActiveHead
         {
             get
             {
-                var __result0 = global::TestOpenGLd.StbrpNode.__GetOrCreateInstance(((__Internal*)__Instance)->active_head, false);
+                var __result0 = global::Cored.StbrpNode.__GetOrCreateInstance(((__Internal*)__Instance)->active_head, false);
                 return __result0;
             }
 
@@ -15978,11 +15978,11 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.StbrpNode FreeHead
+        public global::Cored.StbrpNode FreeHead
         {
             get
             {
-                var __result0 = global::TestOpenGLd.StbrpNode.__GetOrCreateInstance(((__Internal*)__Instance)->free_head, false);
+                var __result0 = global::Cored.StbrpNode.__GetOrCreateInstance(((__Internal*)__Instance)->free_head, false);
                 return __result0;
             }
 
@@ -15992,16 +15992,16 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.StbrpNode[] Extra
+        public global::Cored.StbrpNode[] Extra
         {
             get
             {
-                global::TestOpenGLd.StbrpNode[] __value = null;
+                global::Cored.StbrpNode[] __value = null;
                 if (((__Internal*)__Instance)->extra != null)
                 {
-                    __value = new global::TestOpenGLd.StbrpNode[2];
+                    __value = new global::Cored.StbrpNode[2];
                     for (int i = 0; i < 2; i++)
-                        __value[i] = global::TestOpenGLd.StbrpNode.__CreateInstance(*((global::TestOpenGLd.StbrpNode.__Internal*)&(((__Internal*)__Instance)->extra[i * sizeof(global::TestOpenGLd.StbrpNode.__Internal)])));
+                        __value[i] = global::Cored.StbrpNode.__CreateInstance(*((global::Cored.StbrpNode.__Internal*)&(((__Internal*)__Instance)->extra[i * sizeof(global::Cored.StbrpNode.__Internal)])));
                 }
                 return __value;
             }
@@ -16013,7 +16013,7 @@ namespace TestOpenGLd
                     if (value.Length != 2)
                         throw new ArgumentOutOfRangeException("value", "The dimensions of the provided array don't match the required size.");
                     for (int i = 0; i < 2; i++)
-                        *(global::TestOpenGLd.StbrpNode.__Internal*) &((__Internal*)__Instance)->extra[i * sizeof(global::TestOpenGLd.StbrpNode.__Internal)] = *(global::TestOpenGLd.StbrpNode.__Internal*)value[i].__Instance;
+                        *(global::Cored.StbrpNode.__Internal*) &((__Internal*)__Instance)->extra[i * sizeof(global::Cored.StbrpNode.__Internal)] = *(global::Cored.StbrpNode.__Internal*)value[i].__Instance;
                 }
             }
         }
@@ -16023,20 +16023,20 @@ namespace TestOpenGLd
     {
         public partial struct __Internal
         {
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbrp_pack_rects", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbrp_pack_rects", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbrpPackRects(__IntPtr context, __IntPtr rects, int num_rects);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbrp_init_target", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbrp_init_target", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbrpInitTarget(__IntPtr context, int width, int height, __IntPtr nodes, int num_nodes);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbrp_setup_allow_out_of_mem", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbrp_setup_allow_out_of_mem", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbrpSetupAllowOutOfMem(__IntPtr context, int allow_out_of_mem);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbrp_setup_heuristic", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbrp_setup_heuristic", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbrpSetupHeuristic(__IntPtr context, int heuristic);
         }
 
-        public static int StbrpPackRects(global::TestOpenGLd.StbrpContext context, global::TestOpenGLd.StbrpRect rects, int num_rects)
+        public static int StbrpPackRects(global::Cored.StbrpContext context, global::Cored.StbrpRect rects, int num_rects)
         {
             var __arg0 = context is null ? __IntPtr.Zero : context.__Instance;
             var __arg1 = rects is null ? __IntPtr.Zero : rects.__Instance;
@@ -16044,20 +16044,20 @@ namespace TestOpenGLd
             return __ret;
         }
 
-        public static void StbrpInitTarget(global::TestOpenGLd.StbrpContext context, int width, int height, global::TestOpenGLd.StbrpNode nodes, int num_nodes)
+        public static void StbrpInitTarget(global::Cored.StbrpContext context, int width, int height, global::Cored.StbrpNode nodes, int num_nodes)
         {
             var __arg0 = context is null ? __IntPtr.Zero : context.__Instance;
             var __arg3 = nodes is null ? __IntPtr.Zero : nodes.__Instance;
             __Internal.StbrpInitTarget(__arg0, width, height, __arg3, num_nodes);
         }
 
-        public static void StbrpSetupAllowOutOfMem(global::TestOpenGLd.StbrpContext context, int allow_out_of_mem)
+        public static void StbrpSetupAllowOutOfMem(global::Cored.StbrpContext context, int allow_out_of_mem)
         {
             var __arg0 = context is null ? __IntPtr.Zero : context.__Instance;
             __Internal.StbrpSetupAllowOutOfMem(__arg0, allow_out_of_mem);
         }
 
-        public static void StbrpSetupHeuristic(global::TestOpenGLd.StbrpContext context, int heuristic)
+        public static void StbrpSetupHeuristic(global::Cored.StbrpContext context, int heuristic)
         {
             var __arg0 = context is null ? __IntPtr.Zero : context.__Instance;
             __Internal.StbrpSetupHeuristic(__arg0, heuristic);
@@ -16075,13 +16075,13 @@ namespace TestOpenGLd
             internal int delete_length;
             internal int char_storage;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0StbUndoRecord@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0StbUndoRecord@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr __0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbUndoRecord> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbUndoRecord>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbUndoRecord> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbUndoRecord>();
 
         protected bool __ownsNativeInstance;
 
@@ -16130,17 +16130,17 @@ namespace TestOpenGLd
 
         public StbUndoRecord()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbUndoRecord.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbUndoRecord.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public StbUndoRecord(global::TestOpenGLd.StbUndoRecord __0)
+        public StbUndoRecord(global::Cored.StbUndoRecord __0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbUndoRecord.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbUndoRecord.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.StbUndoRecord.__Internal*) __Instance) = *((global::TestOpenGLd.StbUndoRecord.__Internal*) __0.__Instance);
+            *((global::Cored.StbUndoRecord.__Internal*) __Instance) = *((global::Cored.StbUndoRecord.__Internal*) __0.__Instance);
         }
 
         public void Dispose()
@@ -16223,13 +16223,13 @@ namespace TestOpenGLd
             internal int undo_char_point;
             internal int redo_char_point;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0StbUndoState@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0StbUndoState@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr __0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbUndoState> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbUndoState>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbUndoState> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbUndoState>();
 
         protected bool __ownsNativeInstance;
 
@@ -16278,17 +16278,17 @@ namespace TestOpenGLd
 
         public StbUndoState()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbUndoState.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbUndoState.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public StbUndoState(global::TestOpenGLd.StbUndoState __0)
+        public StbUndoState(global::Cored.StbUndoState __0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbUndoState.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbUndoState.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.StbUndoState.__Internal*) __Instance) = *((global::TestOpenGLd.StbUndoState.__Internal*) __0.__Instance);
+            *((global::Cored.StbUndoState.__Internal*) __Instance) = *((global::Cored.StbUndoState.__Internal*) __0.__Instance);
         }
 
         public void Dispose()
@@ -16306,16 +16306,16 @@ namespace TestOpenGLd
             __Instance = IntPtr.Zero;
         }
 
-        public global::TestOpenGLd.StbUndoRecord[] UndoRec
+        public global::Cored.StbUndoRecord[] UndoRec
         {
             get
             {
-                global::TestOpenGLd.StbUndoRecord[] __value = null;
+                global::Cored.StbUndoRecord[] __value = null;
                 if (((__Internal*)__Instance)->undo_rec != null)
                 {
-                    __value = new global::TestOpenGLd.StbUndoRecord[99];
+                    __value = new global::Cored.StbUndoRecord[99];
                     for (int i = 0; i < 99; i++)
-                        __value[i] = global::TestOpenGLd.StbUndoRecord.__CreateInstance(*((global::TestOpenGLd.StbUndoRecord.__Internal*)&(((__Internal*)__Instance)->undo_rec[i * sizeof(global::TestOpenGLd.StbUndoRecord.__Internal)])));
+                        __value[i] = global::Cored.StbUndoRecord.__CreateInstance(*((global::Cored.StbUndoRecord.__Internal*)&(((__Internal*)__Instance)->undo_rec[i * sizeof(global::Cored.StbUndoRecord.__Internal)])));
                 }
                 return __value;
             }
@@ -16327,7 +16327,7 @@ namespace TestOpenGLd
                     if (value.Length != 99)
                         throw new ArgumentOutOfRangeException("value", "The dimensions of the provided array don't match the required size.");
                     for (int i = 0; i < 99; i++)
-                        *(global::TestOpenGLd.StbUndoRecord.__Internal*) &((__Internal*)__Instance)->undo_rec[i * sizeof(global::TestOpenGLd.StbUndoRecord.__Internal)] = *(global::TestOpenGLd.StbUndoRecord.__Internal*)value[i].__Instance;
+                        *(global::Cored.StbUndoRecord.__Internal*) &((__Internal*)__Instance)->undo_rec[i * sizeof(global::Cored.StbUndoRecord.__Internal)] = *(global::Cored.StbUndoRecord.__Internal*)value[i].__Instance;
                 }
             }
         }
@@ -16420,15 +16420,15 @@ namespace TestOpenGLd
             internal byte padding2;
             internal byte padding3;
             internal float preferred_x;
-            internal global::TestOpenGLd.StbUndoState.__Internal undostate;
+            internal global::Cored.StbUndoState.__Internal undostate;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0STB_TexteditState@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0STB_TexteditState@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr __0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.STB_TexteditState> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.STB_TexteditState>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.STB_TexteditState> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.STB_TexteditState>();
 
         protected bool __ownsNativeInstance;
 
@@ -16477,17 +16477,17 @@ namespace TestOpenGLd
 
         public STB_TexteditState()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.STB_TexteditState.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.STB_TexteditState.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public STB_TexteditState(global::TestOpenGLd.STB_TexteditState __0)
+        public STB_TexteditState(global::Cored.STB_TexteditState __0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.STB_TexteditState.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.STB_TexteditState.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.STB_TexteditState.__Internal*) __Instance) = *((global::TestOpenGLd.STB_TexteditState.__Internal*) __0.__Instance);
+            *((global::Cored.STB_TexteditState.__Internal*) __Instance) = *((global::Cored.STB_TexteditState.__Internal*) __0.__Instance);
         }
 
         public void Dispose()
@@ -16674,18 +16674,18 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.StbUndoState Undostate
+        public global::Cored.StbUndoState Undostate
         {
             get
             {
-                return global::TestOpenGLd.StbUndoState.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->undostate));
+                return global::Cored.StbUndoState.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->undostate));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->undostate = *(global::TestOpenGLd.StbUndoState.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->undostate = *(global::Cored.StbUndoState.__Internal*) value.__Instance;
             }
         }
     }
@@ -16703,13 +16703,13 @@ namespace TestOpenGLd
             internal float ymax;
             internal int num_chars;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0StbTexteditRow@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0StbTexteditRow@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr __0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbTexteditRow> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbTexteditRow>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbTexteditRow> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbTexteditRow>();
 
         protected bool __ownsNativeInstance;
 
@@ -16758,17 +16758,17 @@ namespace TestOpenGLd
 
         public StbTexteditRow()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbTexteditRow.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbTexteditRow.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public StbTexteditRow(global::TestOpenGLd.StbTexteditRow __0)
+        public StbTexteditRow(global::Cored.StbTexteditRow __0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbTexteditRow.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbTexteditRow.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.StbTexteditRow.__Internal*) __Instance) = *((global::TestOpenGLd.StbTexteditRow.__Internal*) __0.__Instance);
+            *((global::Cored.StbTexteditRow.__Internal*) __Instance) = *((global::Cored.StbTexteditRow.__Internal*) __0.__Instance);
         }
 
         public void Dispose()
@@ -16955,13 +16955,13 @@ namespace TestOpenGLd
             internal int cursor;
             internal int size;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0stbtt__buf@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0stbtt__buf@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr __0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbttBuf> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbttBuf>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbttBuf> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbttBuf>();
 
         protected bool __ownsNativeInstance;
 
@@ -17010,17 +17010,17 @@ namespace TestOpenGLd
 
         public StbttBuf()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbttBuf.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbttBuf.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public StbttBuf(global::TestOpenGLd.StbttBuf __0)
+        public StbttBuf(global::Cored.StbttBuf __0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbttBuf.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbttBuf.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.StbttBuf.__Internal*) __Instance) = *((global::TestOpenGLd.StbttBuf.__Internal*) __0.__Instance);
+            *((global::Cored.StbttBuf.__Internal*) __Instance) = *((global::Cored.StbttBuf.__Internal*) __0.__Instance);
         }
 
         public void Dispose()
@@ -17092,13 +17092,13 @@ namespace TestOpenGLd
             internal float yoff;
             internal float xadvance;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0stbtt_bakedchar@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0stbtt_bakedchar@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr __0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbttBakedchar> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbttBakedchar>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbttBakedchar> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbttBakedchar>();
 
         protected bool __ownsNativeInstance;
 
@@ -17147,17 +17147,17 @@ namespace TestOpenGLd
 
         public StbttBakedchar()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbttBakedchar.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbttBakedchar.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public StbttBakedchar(global::TestOpenGLd.StbttBakedchar __0)
+        public StbttBakedchar(global::Cored.StbttBakedchar __0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbttBakedchar.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbttBakedchar.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.StbttBakedchar.__Internal*) __Instance) = *((global::TestOpenGLd.StbttBakedchar.__Internal*) __0.__Instance);
+            *((global::Cored.StbttBakedchar.__Internal*) __Instance) = *((global::Cored.StbttBakedchar.__Internal*) __0.__Instance);
         }
 
         public void Dispose()
@@ -17281,13 +17281,13 @@ namespace TestOpenGLd
             internal float s1;
             internal float t1;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0stbtt_aligned_quad@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0stbtt_aligned_quad@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr __0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbttAlignedQuad> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbttAlignedQuad>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbttAlignedQuad> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbttAlignedQuad>();
 
         protected bool __ownsNativeInstance;
 
@@ -17336,17 +17336,17 @@ namespace TestOpenGLd
 
         public StbttAlignedQuad()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbttAlignedQuad.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbttAlignedQuad.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public StbttAlignedQuad(global::TestOpenGLd.StbttAlignedQuad __0)
+        public StbttAlignedQuad(global::Cored.StbttAlignedQuad __0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbttAlignedQuad.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbttAlignedQuad.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.StbttAlignedQuad.__Internal*) __Instance) = *((global::TestOpenGLd.StbttAlignedQuad.__Internal*) __0.__Instance);
+            *((global::Cored.StbttAlignedQuad.__Internal*) __Instance) = *((global::Cored.StbttAlignedQuad.__Internal*) __0.__Instance);
         }
 
         public void Dispose()
@@ -17485,13 +17485,13 @@ namespace TestOpenGLd
             internal float xoff2;
             internal float yoff2;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0stbtt_packedchar@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0stbtt_packedchar@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr __0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbttPackedchar> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbttPackedchar>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbttPackedchar> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbttPackedchar>();
 
         protected bool __ownsNativeInstance;
 
@@ -17540,17 +17540,17 @@ namespace TestOpenGLd
 
         public StbttPackedchar()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbttPackedchar.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbttPackedchar.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public StbttPackedchar(global::TestOpenGLd.StbttPackedchar __0)
+        public StbttPackedchar(global::Cored.StbttPackedchar __0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbttPackedchar.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbttPackedchar.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.StbttPackedchar.__Internal*) __Instance) = *((global::TestOpenGLd.StbttPackedchar.__Internal*) __0.__Instance);
+            *((global::Cored.StbttPackedchar.__Internal*) __Instance) = *((global::Cored.StbttPackedchar.__Internal*) __0.__Instance);
         }
 
         public void Dispose()
@@ -17699,13 +17699,13 @@ namespace TestOpenGLd
             internal byte h_oversample;
             internal byte v_oversample;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0stbtt_pack_range@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0stbtt_pack_range@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr __0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbttPackRange> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbttPackRange>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbttPackRange> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbttPackRange>();
 
         protected bool __ownsNativeInstance;
 
@@ -17754,17 +17754,17 @@ namespace TestOpenGLd
 
         public StbttPackRange()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbttPackRange.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbttPackRange.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public StbttPackRange(global::TestOpenGLd.StbttPackRange __0)
+        public StbttPackRange(global::Cored.StbttPackRange __0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbttPackRange.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbttPackRange.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.StbttPackRange.__Internal*) __Instance) = *((global::TestOpenGLd.StbttPackRange.__Internal*) __0.__Instance);
+            *((global::Cored.StbttPackRange.__Internal*) __Instance) = *((global::Cored.StbttPackRange.__Internal*) __0.__Instance);
         }
 
         public void Dispose()
@@ -17834,11 +17834,11 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.StbttPackedchar ChardataForRange
+        public global::Cored.StbttPackedchar ChardataForRange
         {
             get
             {
-                var __result0 = global::TestOpenGLd.StbttPackedchar.__GetOrCreateInstance(((__Internal*)__Instance)->chardata_for_range, false);
+                var __result0 = global::Cored.StbttPackedchar.__GetOrCreateInstance(((__Internal*)__Instance)->chardata_for_range, false);
                 return __result0;
             }
 
@@ -17892,13 +17892,13 @@ namespace TestOpenGLd
             internal __IntPtr pixels;
             internal __IntPtr nodes;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0stbtt_pack_context@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0stbtt_pack_context@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbttPackContext> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbttPackContext>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbttPackContext> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbttPackContext>();
 
         protected bool __ownsNativeInstance;
 
@@ -17947,17 +17947,17 @@ namespace TestOpenGLd
 
         public StbttPackContext()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbttPackContext.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbttPackContext.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public StbttPackContext(global::TestOpenGLd.StbttPackContext _0)
+        public StbttPackContext(global::Cored.StbttPackContext _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbttPackContext.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbttPackContext.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.StbttPackContext.__Internal*) __Instance) = *((global::TestOpenGLd.StbttPackContext.__Internal*) _0.__Instance);
+            *((global::Cored.StbttPackContext.__Internal*) __Instance) = *((global::Cored.StbttPackContext.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -18137,20 +18137,20 @@ namespace TestOpenGLd
             internal int gpos;
             internal int index_map;
             internal int indexToLocFormat;
-            internal global::TestOpenGLd.StbttBuf.__Internal cff;
-            internal global::TestOpenGLd.StbttBuf.__Internal charstrings;
-            internal global::TestOpenGLd.StbttBuf.__Internal gsubrs;
-            internal global::TestOpenGLd.StbttBuf.__Internal subrs;
-            internal global::TestOpenGLd.StbttBuf.__Internal fontdicts;
-            internal global::TestOpenGLd.StbttBuf.__Internal fdselect;
+            internal global::Cored.StbttBuf.__Internal cff;
+            internal global::Cored.StbttBuf.__Internal charstrings;
+            internal global::Cored.StbttBuf.__Internal gsubrs;
+            internal global::Cored.StbttBuf.__Internal subrs;
+            internal global::Cored.StbttBuf.__Internal fontdicts;
+            internal global::Cored.StbttBuf.__Internal fdselect;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0stbtt_fontinfo@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0stbtt_fontinfo@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbttFontinfo> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbttFontinfo>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbttFontinfo> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbttFontinfo>();
 
         protected bool __ownsNativeInstance;
 
@@ -18199,17 +18199,17 @@ namespace TestOpenGLd
 
         public StbttFontinfo()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbttFontinfo.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbttFontinfo.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public StbttFontinfo(global::TestOpenGLd.StbttFontinfo _0)
+        public StbttFontinfo(global::Cored.StbttFontinfo _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbttFontinfo.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbttFontinfo.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.StbttFontinfo.__Internal*) __Instance) = *((global::TestOpenGLd.StbttFontinfo.__Internal*) _0.__Instance);
+            *((global::Cored.StbttFontinfo.__Internal*) __Instance) = *((global::Cored.StbttFontinfo.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -18396,93 +18396,93 @@ namespace TestOpenGLd
             }
         }
 
-        public global::TestOpenGLd.StbttBuf Cff
+        public global::Cored.StbttBuf Cff
         {
             get
             {
-                return global::TestOpenGLd.StbttBuf.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->cff));
+                return global::Cored.StbttBuf.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->cff));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->cff = *(global::TestOpenGLd.StbttBuf.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->cff = *(global::Cored.StbttBuf.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.StbttBuf Charstrings
+        public global::Cored.StbttBuf Charstrings
         {
             get
             {
-                return global::TestOpenGLd.StbttBuf.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->charstrings));
+                return global::Cored.StbttBuf.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->charstrings));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->charstrings = *(global::TestOpenGLd.StbttBuf.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->charstrings = *(global::Cored.StbttBuf.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.StbttBuf Gsubrs
+        public global::Cored.StbttBuf Gsubrs
         {
             get
             {
-                return global::TestOpenGLd.StbttBuf.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->gsubrs));
+                return global::Cored.StbttBuf.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->gsubrs));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->gsubrs = *(global::TestOpenGLd.StbttBuf.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->gsubrs = *(global::Cored.StbttBuf.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.StbttBuf Subrs
+        public global::Cored.StbttBuf Subrs
         {
             get
             {
-                return global::TestOpenGLd.StbttBuf.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->subrs));
+                return global::Cored.StbttBuf.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->subrs));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->subrs = *(global::TestOpenGLd.StbttBuf.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->subrs = *(global::Cored.StbttBuf.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.StbttBuf Fontdicts
+        public global::Cored.StbttBuf Fontdicts
         {
             get
             {
-                return global::TestOpenGLd.StbttBuf.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->fontdicts));
+                return global::Cored.StbttBuf.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->fontdicts));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->fontdicts = *(global::TestOpenGLd.StbttBuf.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->fontdicts = *(global::Cored.StbttBuf.__Internal*) value.__Instance;
             }
         }
 
-        public global::TestOpenGLd.StbttBuf Fdselect
+        public global::Cored.StbttBuf Fdselect
         {
             get
             {
-                return global::TestOpenGLd.StbttBuf.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->fdselect));
+                return global::Cored.StbttBuf.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->fdselect));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((__Internal*)__Instance)->fdselect = *(global::TestOpenGLd.StbttBuf.__Internal*) value.__Instance;
+                ((__Internal*)__Instance)->fdselect = *(global::Cored.StbttBuf.__Internal*) value.__Instance;
             }
         }
     }
@@ -18501,13 +18501,13 @@ namespace TestOpenGLd
             internal byte type;
             internal byte padding;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0stbtt_vertex@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0stbtt_vertex@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr __0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbttVertex> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbttVertex>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbttVertex> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbttVertex>();
 
         protected bool __ownsNativeInstance;
 
@@ -18556,17 +18556,17 @@ namespace TestOpenGLd
 
         public StbttVertex()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbttVertex.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbttVertex.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public StbttVertex(global::TestOpenGLd.StbttVertex __0)
+        public StbttVertex(global::Cored.StbttVertex __0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbttVertex.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbttVertex.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.StbttVertex.__Internal*) __Instance) = *((global::TestOpenGLd.StbttVertex.__Internal*) __0.__Instance);
+            *((global::Cored.StbttVertex.__Internal*) __Instance) = *((global::Cored.StbttVertex.__Internal*) __0.__Instance);
         }
 
         public void Dispose()
@@ -18699,13 +18699,13 @@ namespace TestOpenGLd
             internal int stride;
             internal __IntPtr pixels;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0stbtt__bitmap@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "??0stbtt__bitmap@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr __0);
         }
 
         public __IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbttBitmap> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.StbttBitmap>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbttBitmap> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Cored.StbttBitmap>();
 
         protected bool __ownsNativeInstance;
 
@@ -18754,17 +18754,17 @@ namespace TestOpenGLd
 
         public StbttBitmap()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbttBitmap.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbttBitmap.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public StbttBitmap(global::TestOpenGLd.StbttBitmap __0)
+        public StbttBitmap(global::Cored.StbttBitmap __0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.StbttBitmap.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Cored.StbttBitmap.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.StbttBitmap.__Internal*) __Instance) = *((global::TestOpenGLd.StbttBitmap.__Internal*) __0.__Instance);
+            *((global::Cored.StbttBitmap.__Internal*) __Instance) = *((global::Cored.StbttBitmap.__Internal*) __0.__Instance);
         }
 
         public void Dispose()
@@ -18839,177 +18839,177 @@ namespace TestOpenGLd
     {
         public partial struct __Internal
         {
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_BakeFontBitmap", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_BakeFontBitmap", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttBakeFontBitmap(byte* data, int offset, float pixel_height, byte* pixels, int pw, int ph, int first_char, int num_chars, __IntPtr chardata);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetBakedQuad", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetBakedQuad", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttGetBakedQuad(__IntPtr chardata, int pw, int ph, int char_index, float* xpos, float* ypos, __IntPtr q, int opengl_fillrule);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetScaledFontVMetrics", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetScaledFontVMetrics", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttGetScaledFontVMetrics(byte* fontdata, int index, float size, float* ascent, float* descent, float* lineGap);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_PackBegin", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_PackBegin", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttPackBegin(__IntPtr spc, byte* pixels, int width, int height, int stride_in_bytes, int padding, __IntPtr alloc_context);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_PackEnd", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_PackEnd", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttPackEnd(__IntPtr spc);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_PackFontRange", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_PackFontRange", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttPackFontRange(__IntPtr spc, byte* fontdata, int font_index, float font_size, int first_unicode_char_in_range, int num_chars_in_range, __IntPtr chardata_for_range);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_PackFontRanges", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_PackFontRanges", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttPackFontRanges(__IntPtr spc, byte* fontdata, int font_index, __IntPtr ranges, int num_ranges);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_PackSetOversampling", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_PackSetOversampling", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttPackSetOversampling(__IntPtr spc, uint h_oversample, uint v_oversample);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_PackSetSkipMissingCodepoints", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_PackSetSkipMissingCodepoints", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttPackSetSkipMissingCodepoints(__IntPtr spc, int skip);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetPackedQuad", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetPackedQuad", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttGetPackedQuad(__IntPtr chardata, int pw, int ph, int char_index, float* xpos, float* ypos, __IntPtr q, int align_to_integer);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_PackFontRangesGatherRects", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_PackFontRangesGatherRects", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttPackFontRangesGatherRects(__IntPtr spc, __IntPtr info, __IntPtr ranges, int num_ranges, __IntPtr rects);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_PackFontRangesPackRects", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_PackFontRangesPackRects", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttPackFontRangesPackRects(__IntPtr spc, __IntPtr rects, int num_rects);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_PackFontRangesRenderIntoRects", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_PackFontRangesRenderIntoRects", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttPackFontRangesRenderIntoRects(__IntPtr spc, __IntPtr info, __IntPtr ranges, int num_ranges, __IntPtr rects);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetNumberOfFonts", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetNumberOfFonts", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttGetNumberOfFonts(byte* data);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetFontOffsetForIndex", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetFontOffsetForIndex", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttGetFontOffsetForIndex(byte* data, int index);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_InitFont", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_InitFont", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttInitFont(__IntPtr info, byte* data, int offset);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_FindGlyphIndex", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_FindGlyphIndex", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttFindGlyphIndex(__IntPtr info, int unicode_codepoint);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_ScaleForPixelHeight", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_ScaleForPixelHeight", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern float StbttScaleForPixelHeight(__IntPtr info, float pixels);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_ScaleForMappingEmToPixels", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_ScaleForMappingEmToPixels", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern float StbttScaleForMappingEmToPixels(__IntPtr info, float pixels);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetFontVMetrics", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetFontVMetrics", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttGetFontVMetrics(__IntPtr info, int* ascent, int* descent, int* lineGap);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetFontVMetricsOS2", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetFontVMetricsOS2", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttGetFontVMetricsOS2(__IntPtr info, int* typoAscent, int* typoDescent, int* typoLineGap);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetFontBoundingBox", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetFontBoundingBox", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttGetFontBoundingBox(__IntPtr info, int* x0, int* y0, int* x1, int* y1);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetCodepointHMetrics", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetCodepointHMetrics", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttGetCodepointHMetrics(__IntPtr info, int codepoint, int* advanceWidth, int* leftSideBearing);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetCodepointKernAdvance", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetCodepointKernAdvance", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttGetCodepointKernAdvance(__IntPtr info, int ch1, int ch2);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetCodepointBox", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetCodepointBox", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttGetCodepointBox(__IntPtr info, int codepoint, int* x0, int* y0, int* x1, int* y1);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetGlyphHMetrics", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetGlyphHMetrics", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttGetGlyphHMetrics(__IntPtr info, int glyph_index, int* advanceWidth, int* leftSideBearing);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetGlyphKernAdvance", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetGlyphKernAdvance", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttGetGlyphKernAdvance(__IntPtr info, int glyph1, int glyph2);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetGlyphBox", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetGlyphBox", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttGetGlyphBox(__IntPtr info, int glyph_index, int* x0, int* y0, int* x1, int* y1);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_IsGlyphEmpty", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_IsGlyphEmpty", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttIsGlyphEmpty(__IntPtr info, int glyph_index);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetCodepointShape", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetCodepointShape", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttGetCodepointShape(__IntPtr info, int unicode_codepoint, __IntPtr vertices);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetGlyphShape", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetGlyphShape", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttGetGlyphShape(__IntPtr info, int glyph_index, __IntPtr vertices);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_FreeShape", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_FreeShape", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttFreeShape(__IntPtr info, __IntPtr vertices);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_FreeBitmap", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_FreeBitmap", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttFreeBitmap(byte* bitmap, __IntPtr userdata);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetCodepointBitmap", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetCodepointBitmap", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern byte* StbttGetCodepointBitmap(__IntPtr info, float scale_x, float scale_y, int codepoint, int* width, int* height, int* xoff, int* yoff);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetCodepointBitmapSubpixel", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetCodepointBitmapSubpixel", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern byte* StbttGetCodepointBitmapSubpixel(__IntPtr info, float scale_x, float scale_y, float shift_x, float shift_y, int codepoint, int* width, int* height, int* xoff, int* yoff);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_MakeCodepointBitmap", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_MakeCodepointBitmap", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttMakeCodepointBitmap(__IntPtr info, byte* output, int out_w, int out_h, int out_stride, float scale_x, float scale_y, int codepoint);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_MakeCodepointBitmapSubpixel", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_MakeCodepointBitmapSubpixel", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttMakeCodepointBitmapSubpixel(__IntPtr info, byte* output, int out_w, int out_h, int out_stride, float scale_x, float scale_y, float shift_x, float shift_y, int codepoint);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_MakeCodepointBitmapSubpixelPrefilter", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_MakeCodepointBitmapSubpixelPrefilter", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttMakeCodepointBitmapSubpixelPrefilter(__IntPtr info, byte* output, int out_w, int out_h, int out_stride, float scale_x, float scale_y, float shift_x, float shift_y, int oversample_x, int oversample_y, float* sub_x, float* sub_y, int codepoint);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetCodepointBitmapBox", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetCodepointBitmapBox", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttGetCodepointBitmapBox(__IntPtr font, int codepoint, float scale_x, float scale_y, int* ix0, int* iy0, int* ix1, int* iy1);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetCodepointBitmapBoxSubpixel", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetCodepointBitmapBoxSubpixel", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttGetCodepointBitmapBoxSubpixel(__IntPtr font, int codepoint, float scale_x, float scale_y, float shift_x, float shift_y, int* ix0, int* iy0, int* ix1, int* iy1);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetGlyphBitmap", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetGlyphBitmap", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern byte* StbttGetGlyphBitmap(__IntPtr info, float scale_x, float scale_y, int glyph, int* width, int* height, int* xoff, int* yoff);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetGlyphBitmapSubpixel", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetGlyphBitmapSubpixel", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern byte* StbttGetGlyphBitmapSubpixel(__IntPtr info, float scale_x, float scale_y, float shift_x, float shift_y, int glyph, int* width, int* height, int* xoff, int* yoff);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_MakeGlyphBitmap", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_MakeGlyphBitmap", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttMakeGlyphBitmap(__IntPtr info, byte* output, int out_w, int out_h, int out_stride, float scale_x, float scale_y, int glyph);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_MakeGlyphBitmapSubpixel", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_MakeGlyphBitmapSubpixel", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttMakeGlyphBitmapSubpixel(__IntPtr info, byte* output, int out_w, int out_h, int out_stride, float scale_x, float scale_y, float shift_x, float shift_y, int glyph);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_MakeGlyphBitmapSubpixelPrefilter", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_MakeGlyphBitmapSubpixelPrefilter", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttMakeGlyphBitmapSubpixelPrefilter(__IntPtr info, byte* output, int out_w, int out_h, int out_stride, float scale_x, float scale_y, float shift_x, float shift_y, int oversample_x, int oversample_y, float* sub_x, float* sub_y, int glyph);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetGlyphBitmapBox", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetGlyphBitmapBox", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttGetGlyphBitmapBox(__IntPtr font, int glyph, float scale_x, float scale_y, int* ix0, int* iy0, int* ix1, int* iy1);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetGlyphBitmapBoxSubpixel", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetGlyphBitmapBoxSubpixel", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttGetGlyphBitmapBoxSubpixel(__IntPtr font, int glyph, float scale_x, float scale_y, float shift_x, float shift_y, int* ix0, int* iy0, int* ix1, int* iy1);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_Rasterize", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_Rasterize", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttRasterize(__IntPtr result, float flatness_in_pixels, __IntPtr vertices, int num_verts, float scale_x, float scale_y, float shift_x, float shift_y, int x_off, int y_off, int invert, __IntPtr userdata);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_FreeSDF", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_FreeSDF", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void StbttFreeSDF(byte* bitmap, __IntPtr userdata);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetGlyphSDF", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetGlyphSDF", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern byte* StbttGetGlyphSDF(__IntPtr info, float scale, int glyph, int padding, byte onedge_value, float pixel_dist_scale, int* width, int* height, int* xoff, int* yoff);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetCodepointSDF", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetCodepointSDF", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern byte* StbttGetCodepointSDF(__IntPtr info, float scale, int codepoint, int padding, byte onedge_value, float pixel_dist_scale, int* width, int* height, int* xoff, int* yoff);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_FindMatchingFont", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_FindMatchingFont", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttFindMatchingFont(byte* fontdata, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, int flags);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_CompareUTF8toUTF16_bigendian", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_CompareUTF8toUTF16_bigendian", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern int StbttCompareUTF8toUTF16Bigendian([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string s1, int len1, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string s2, int len2);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "stbtt_GetFontNameString", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Cored", EntryPoint = "stbtt_GetFontNameString", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr StbttGetFontNameString(__IntPtr font, int* length, int platformID, int encodingID, int languageID, int nameID);
         }
 
-        public static int StbttBakeFontBitmap(byte* data, int offset, float pixel_height, byte* pixels, int pw, int ph, int first_char, int num_chars, global::TestOpenGLd.StbttBakedchar chardata)
+        public static int StbttBakeFontBitmap(byte* data, int offset, float pixel_height, byte* pixels, int pw, int ph, int first_char, int num_chars, global::Cored.StbttBakedchar chardata)
         {
             var __arg8 = chardata is null ? __IntPtr.Zero : chardata.__Instance;
             var __ret = __Internal.StbttBakeFontBitmap(data, offset, pixel_height, pixels, pw, ph, first_char, num_chars, __arg8);
             return __ret;
         }
 
-        public static void StbttGetBakedQuad(global::TestOpenGLd.StbttBakedchar chardata, int pw, int ph, int char_index, ref float xpos, ref float ypos, global::TestOpenGLd.StbttAlignedQuad q, int opengl_fillrule)
+        public static void StbttGetBakedQuad(global::Cored.StbttBakedchar chardata, int pw, int ph, int char_index, ref float xpos, ref float ypos, global::Cored.StbttAlignedQuad q, int opengl_fillrule)
         {
             var __arg0 = chardata is null ? __IntPtr.Zero : chardata.__Instance;
             fixed (float* __xpos4 = &xpos)
@@ -19041,20 +19041,20 @@ namespace TestOpenGLd
             }
         }
 
-        public static int StbttPackBegin(global::TestOpenGLd.StbttPackContext spc, byte* pixels, int width, int height, int stride_in_bytes, int padding, __IntPtr alloc_context)
+        public static int StbttPackBegin(global::Cored.StbttPackContext spc, byte* pixels, int width, int height, int stride_in_bytes, int padding, __IntPtr alloc_context)
         {
             var __arg0 = spc is null ? __IntPtr.Zero : spc.__Instance;
             var __ret = __Internal.StbttPackBegin(__arg0, pixels, width, height, stride_in_bytes, padding, alloc_context);
             return __ret;
         }
 
-        public static void StbttPackEnd(global::TestOpenGLd.StbttPackContext spc)
+        public static void StbttPackEnd(global::Cored.StbttPackContext spc)
         {
             var __arg0 = spc is null ? __IntPtr.Zero : spc.__Instance;
             __Internal.StbttPackEnd(__arg0);
         }
 
-        public static int StbttPackFontRange(global::TestOpenGLd.StbttPackContext spc, byte* fontdata, int font_index, float font_size, int first_unicode_char_in_range, int num_chars_in_range, global::TestOpenGLd.StbttPackedchar chardata_for_range)
+        public static int StbttPackFontRange(global::Cored.StbttPackContext spc, byte* fontdata, int font_index, float font_size, int first_unicode_char_in_range, int num_chars_in_range, global::Cored.StbttPackedchar chardata_for_range)
         {
             var __arg0 = spc is null ? __IntPtr.Zero : spc.__Instance;
             var __arg6 = chardata_for_range is null ? __IntPtr.Zero : chardata_for_range.__Instance;
@@ -19062,7 +19062,7 @@ namespace TestOpenGLd
             return __ret;
         }
 
-        public static int StbttPackFontRanges(global::TestOpenGLd.StbttPackContext spc, byte* fontdata, int font_index, global::TestOpenGLd.StbttPackRange ranges, int num_ranges)
+        public static int StbttPackFontRanges(global::Cored.StbttPackContext spc, byte* fontdata, int font_index, global::Cored.StbttPackRange ranges, int num_ranges)
         {
             var __arg0 = spc is null ? __IntPtr.Zero : spc.__Instance;
             var __arg3 = ranges is null ? __IntPtr.Zero : ranges.__Instance;
@@ -19070,19 +19070,19 @@ namespace TestOpenGLd
             return __ret;
         }
 
-        public static void StbttPackSetOversampling(global::TestOpenGLd.StbttPackContext spc, uint h_oversample, uint v_oversample)
+        public static void StbttPackSetOversampling(global::Cored.StbttPackContext spc, uint h_oversample, uint v_oversample)
         {
             var __arg0 = spc is null ? __IntPtr.Zero : spc.__Instance;
             __Internal.StbttPackSetOversampling(__arg0, h_oversample, v_oversample);
         }
 
-        public static void StbttPackSetSkipMissingCodepoints(global::TestOpenGLd.StbttPackContext spc, int skip)
+        public static void StbttPackSetSkipMissingCodepoints(global::Cored.StbttPackContext spc, int skip)
         {
             var __arg0 = spc is null ? __IntPtr.Zero : spc.__Instance;
             __Internal.StbttPackSetSkipMissingCodepoints(__arg0, skip);
         }
 
-        public static void StbttGetPackedQuad(global::TestOpenGLd.StbttPackedchar chardata, int pw, int ph, int char_index, ref float xpos, ref float ypos, global::TestOpenGLd.StbttAlignedQuad q, int align_to_integer)
+        public static void StbttGetPackedQuad(global::Cored.StbttPackedchar chardata, int pw, int ph, int char_index, ref float xpos, ref float ypos, global::Cored.StbttAlignedQuad q, int align_to_integer)
         {
             var __arg0 = chardata is null ? __IntPtr.Zero : chardata.__Instance;
             fixed (float* __xpos4 = &xpos)
@@ -19097,7 +19097,7 @@ namespace TestOpenGLd
             }
         }
 
-        public static int StbttPackFontRangesGatherRects(global::TestOpenGLd.StbttPackContext spc, global::TestOpenGLd.StbttFontinfo info, global::TestOpenGLd.StbttPackRange ranges, int num_ranges, global::TestOpenGLd.StbrpRect rects)
+        public static int StbttPackFontRangesGatherRects(global::Cored.StbttPackContext spc, global::Cored.StbttFontinfo info, global::Cored.StbttPackRange ranges, int num_ranges, global::Cored.StbrpRect rects)
         {
             var __arg0 = spc is null ? __IntPtr.Zero : spc.__Instance;
             var __arg1 = info is null ? __IntPtr.Zero : info.__Instance;
@@ -19107,14 +19107,14 @@ namespace TestOpenGLd
             return __ret;
         }
 
-        public static void StbttPackFontRangesPackRects(global::TestOpenGLd.StbttPackContext spc, global::TestOpenGLd.StbrpRect rects, int num_rects)
+        public static void StbttPackFontRangesPackRects(global::Cored.StbttPackContext spc, global::Cored.StbrpRect rects, int num_rects)
         {
             var __arg0 = spc is null ? __IntPtr.Zero : spc.__Instance;
             var __arg1 = rects is null ? __IntPtr.Zero : rects.__Instance;
             __Internal.StbttPackFontRangesPackRects(__arg0, __arg1, num_rects);
         }
 
-        public static int StbttPackFontRangesRenderIntoRects(global::TestOpenGLd.StbttPackContext spc, global::TestOpenGLd.StbttFontinfo info, global::TestOpenGLd.StbttPackRange ranges, int num_ranges, global::TestOpenGLd.StbrpRect rects)
+        public static int StbttPackFontRangesRenderIntoRects(global::Cored.StbttPackContext spc, global::Cored.StbttFontinfo info, global::Cored.StbttPackRange ranges, int num_ranges, global::Cored.StbrpRect rects)
         {
             var __arg0 = spc is null ? __IntPtr.Zero : spc.__Instance;
             var __arg1 = info is null ? __IntPtr.Zero : info.__Instance;
@@ -19137,7 +19137,7 @@ namespace TestOpenGLd
             return __ret;
         }
 
-        public static int StbttInitFont(global::TestOpenGLd.StbttFontinfo info, byte* data, int offset)
+        public static int StbttInitFont(global::Cored.StbttFontinfo info, byte* data, int offset)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             var __ret = __Internal.StbttInitFont(__arg0, data, offset);
@@ -19145,7 +19145,7 @@ namespace TestOpenGLd
         }
 
         /// <summary>///////////////////////////////////////////////////////////////////////////</summary>
-        public static int StbttFindGlyphIndex(global::TestOpenGLd.StbttFontinfo info, int unicode_codepoint)
+        public static int StbttFindGlyphIndex(global::Cored.StbttFontinfo info, int unicode_codepoint)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             var __ret = __Internal.StbttFindGlyphIndex(__arg0, unicode_codepoint);
@@ -19153,21 +19153,21 @@ namespace TestOpenGLd
         }
 
         /// <summary>///////////////////////////////////////////////////////////////////////////</summary>
-        public static float StbttScaleForPixelHeight(global::TestOpenGLd.StbttFontinfo info, float pixels)
+        public static float StbttScaleForPixelHeight(global::Cored.StbttFontinfo info, float pixels)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             var __ret = __Internal.StbttScaleForPixelHeight(__arg0, pixels);
             return __ret;
         }
 
-        public static float StbttScaleForMappingEmToPixels(global::TestOpenGLd.StbttFontinfo info, float pixels)
+        public static float StbttScaleForMappingEmToPixels(global::Cored.StbttFontinfo info, float pixels)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             var __ret = __Internal.StbttScaleForMappingEmToPixels(__arg0, pixels);
             return __ret;
         }
 
-        public static void StbttGetFontVMetrics(global::TestOpenGLd.StbttFontinfo info, ref int ascent, ref int descent, ref int lineGap)
+        public static void StbttGetFontVMetrics(global::Cored.StbttFontinfo info, ref int ascent, ref int descent, ref int lineGap)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             fixed (int* __ascent1 = &ascent)
@@ -19185,7 +19185,7 @@ namespace TestOpenGLd
             }
         }
 
-        public static int StbttGetFontVMetricsOS2(global::TestOpenGLd.StbttFontinfo info, ref int typoAscent, ref int typoDescent, ref int typoLineGap)
+        public static int StbttGetFontVMetricsOS2(global::Cored.StbttFontinfo info, ref int typoAscent, ref int typoDescent, ref int typoLineGap)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             fixed (int* __typoAscent1 = &typoAscent)
@@ -19204,7 +19204,7 @@ namespace TestOpenGLd
             }
         }
 
-        public static void StbttGetFontBoundingBox(global::TestOpenGLd.StbttFontinfo info, ref int x0, ref int y0, ref int x1, ref int y1)
+        public static void StbttGetFontBoundingBox(global::Cored.StbttFontinfo info, ref int x0, ref int y0, ref int x1, ref int y1)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             fixed (int* __x01 = &x0)
@@ -19226,7 +19226,7 @@ namespace TestOpenGLd
             }
         }
 
-        public static void StbttGetCodepointHMetrics(global::TestOpenGLd.StbttFontinfo info, int codepoint, ref int advanceWidth, ref int leftSideBearing)
+        public static void StbttGetCodepointHMetrics(global::Cored.StbttFontinfo info, int codepoint, ref int advanceWidth, ref int leftSideBearing)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             fixed (int* __advanceWidth2 = &advanceWidth)
@@ -19240,14 +19240,14 @@ namespace TestOpenGLd
             }
         }
 
-        public static int StbttGetCodepointKernAdvance(global::TestOpenGLd.StbttFontinfo info, int ch1, int ch2)
+        public static int StbttGetCodepointKernAdvance(global::Cored.StbttFontinfo info, int ch1, int ch2)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             var __ret = __Internal.StbttGetCodepointKernAdvance(__arg0, ch1, ch2);
             return __ret;
         }
 
-        public static int StbttGetCodepointBox(global::TestOpenGLd.StbttFontinfo info, int codepoint, ref int x0, ref int y0, ref int x1, ref int y1)
+        public static int StbttGetCodepointBox(global::Cored.StbttFontinfo info, int codepoint, ref int x0, ref int y0, ref int x1, ref int y1)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             fixed (int* __x02 = &x0)
@@ -19270,7 +19270,7 @@ namespace TestOpenGLd
             }
         }
 
-        public static void StbttGetGlyphHMetrics(global::TestOpenGLd.StbttFontinfo info, int glyph_index, ref int advanceWidth, ref int leftSideBearing)
+        public static void StbttGetGlyphHMetrics(global::Cored.StbttFontinfo info, int glyph_index, ref int advanceWidth, ref int leftSideBearing)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             fixed (int* __advanceWidth2 = &advanceWidth)
@@ -19284,14 +19284,14 @@ namespace TestOpenGLd
             }
         }
 
-        public static int StbttGetGlyphKernAdvance(global::TestOpenGLd.StbttFontinfo info, int glyph1, int glyph2)
+        public static int StbttGetGlyphKernAdvance(global::Cored.StbttFontinfo info, int glyph1, int glyph2)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             var __ret = __Internal.StbttGetGlyphKernAdvance(__arg0, glyph1, glyph2);
             return __ret;
         }
 
-        public static int StbttGetGlyphBox(global::TestOpenGLd.StbttFontinfo info, int glyph_index, ref int x0, ref int y0, ref int x1, ref int y1)
+        public static int StbttGetGlyphBox(global::Cored.StbttFontinfo info, int glyph_index, ref int x0, ref int y0, ref int x1, ref int y1)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             fixed (int* __x02 = &x0)
@@ -19314,14 +19314,14 @@ namespace TestOpenGLd
             }
         }
 
-        public static int StbttIsGlyphEmpty(global::TestOpenGLd.StbttFontinfo info, int glyph_index)
+        public static int StbttIsGlyphEmpty(global::Cored.StbttFontinfo info, int glyph_index)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             var __ret = __Internal.StbttIsGlyphEmpty(__arg0, glyph_index);
             return __ret;
         }
 
-        public static int StbttGetCodepointShape(global::TestOpenGLd.StbttFontinfo info, int unicode_codepoint, global::TestOpenGLd.StbttVertex vertices)
+        public static int StbttGetCodepointShape(global::Cored.StbttFontinfo info, int unicode_codepoint, global::Cored.StbttVertex vertices)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             var ____arg2 = vertices is null ? __IntPtr.Zero : vertices.__Instance;
@@ -19330,7 +19330,7 @@ namespace TestOpenGLd
             return __ret;
         }
 
-        public static int StbttGetGlyphShape(global::TestOpenGLd.StbttFontinfo info, int glyph_index, global::TestOpenGLd.StbttVertex vertices)
+        public static int StbttGetGlyphShape(global::Cored.StbttFontinfo info, int glyph_index, global::Cored.StbttVertex vertices)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             var ____arg2 = vertices is null ? __IntPtr.Zero : vertices.__Instance;
@@ -19339,7 +19339,7 @@ namespace TestOpenGLd
             return __ret;
         }
 
-        public static void StbttFreeShape(global::TestOpenGLd.StbttFontinfo info, global::TestOpenGLd.StbttVertex vertices)
+        public static void StbttFreeShape(global::Cored.StbttFontinfo info, global::Cored.StbttVertex vertices)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             var __arg1 = vertices is null ? __IntPtr.Zero : vertices.__Instance;
@@ -19352,7 +19352,7 @@ namespace TestOpenGLd
             __Internal.StbttFreeBitmap(bitmap, userdata);
         }
 
-        public static byte* StbttGetCodepointBitmap(global::TestOpenGLd.StbttFontinfo info, float scale_x, float scale_y, int codepoint, ref int width, ref int height, ref int xoff, ref int yoff)
+        public static byte* StbttGetCodepointBitmap(global::Cored.StbttFontinfo info, float scale_x, float scale_y, int codepoint, ref int width, ref int height, ref int xoff, ref int yoff)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             fixed (int* __width4 = &width)
@@ -19375,7 +19375,7 @@ namespace TestOpenGLd
             }
         }
 
-        public static byte* StbttGetCodepointBitmapSubpixel(global::TestOpenGLd.StbttFontinfo info, float scale_x, float scale_y, float shift_x, float shift_y, int codepoint, ref int width, ref int height, ref int xoff, ref int yoff)
+        public static byte* StbttGetCodepointBitmapSubpixel(global::Cored.StbttFontinfo info, float scale_x, float scale_y, float shift_x, float shift_y, int codepoint, ref int width, ref int height, ref int xoff, ref int yoff)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             fixed (int* __width6 = &width)
@@ -19398,19 +19398,19 @@ namespace TestOpenGLd
             }
         }
 
-        public static void StbttMakeCodepointBitmap(global::TestOpenGLd.StbttFontinfo info, byte* output, int out_w, int out_h, int out_stride, float scale_x, float scale_y, int codepoint)
+        public static void StbttMakeCodepointBitmap(global::Cored.StbttFontinfo info, byte* output, int out_w, int out_h, int out_stride, float scale_x, float scale_y, int codepoint)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             __Internal.StbttMakeCodepointBitmap(__arg0, output, out_w, out_h, out_stride, scale_x, scale_y, codepoint);
         }
 
-        public static void StbttMakeCodepointBitmapSubpixel(global::TestOpenGLd.StbttFontinfo info, byte* output, int out_w, int out_h, int out_stride, float scale_x, float scale_y, float shift_x, float shift_y, int codepoint)
+        public static void StbttMakeCodepointBitmapSubpixel(global::Cored.StbttFontinfo info, byte* output, int out_w, int out_h, int out_stride, float scale_x, float scale_y, float shift_x, float shift_y, int codepoint)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             __Internal.StbttMakeCodepointBitmapSubpixel(__arg0, output, out_w, out_h, out_stride, scale_x, scale_y, shift_x, shift_y, codepoint);
         }
 
-        public static void StbttMakeCodepointBitmapSubpixelPrefilter(global::TestOpenGLd.StbttFontinfo info, byte* output, int out_w, int out_h, int out_stride, float scale_x, float scale_y, float shift_x, float shift_y, int oversample_x, int oversample_y, ref float sub_x, ref float sub_y, int codepoint)
+        public static void StbttMakeCodepointBitmapSubpixelPrefilter(global::Cored.StbttFontinfo info, byte* output, int out_w, int out_h, int out_stride, float scale_x, float scale_y, float shift_x, float shift_y, int oversample_x, int oversample_y, ref float sub_x, ref float sub_y, int codepoint)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             fixed (float* __sub_x11 = &sub_x)
@@ -19424,7 +19424,7 @@ namespace TestOpenGLd
             }
         }
 
-        public static void StbttGetCodepointBitmapBox(global::TestOpenGLd.StbttFontinfo font, int codepoint, float scale_x, float scale_y, ref int ix0, ref int iy0, ref int ix1, ref int iy1)
+        public static void StbttGetCodepointBitmapBox(global::Cored.StbttFontinfo font, int codepoint, float scale_x, float scale_y, ref int ix0, ref int iy0, ref int ix1, ref int iy1)
         {
             var __arg0 = font is null ? __IntPtr.Zero : font.__Instance;
             fixed (int* __ix04 = &ix0)
@@ -19446,7 +19446,7 @@ namespace TestOpenGLd
             }
         }
 
-        public static void StbttGetCodepointBitmapBoxSubpixel(global::TestOpenGLd.StbttFontinfo font, int codepoint, float scale_x, float scale_y, float shift_x, float shift_y, ref int ix0, ref int iy0, ref int ix1, ref int iy1)
+        public static void StbttGetCodepointBitmapBoxSubpixel(global::Cored.StbttFontinfo font, int codepoint, float scale_x, float scale_y, float shift_x, float shift_y, ref int ix0, ref int iy0, ref int ix1, ref int iy1)
         {
             var __arg0 = font is null ? __IntPtr.Zero : font.__Instance;
             fixed (int* __ix06 = &ix0)
@@ -19468,7 +19468,7 @@ namespace TestOpenGLd
             }
         }
 
-        public static byte* StbttGetGlyphBitmap(global::TestOpenGLd.StbttFontinfo info, float scale_x, float scale_y, int glyph, ref int width, ref int height, ref int xoff, ref int yoff)
+        public static byte* StbttGetGlyphBitmap(global::Cored.StbttFontinfo info, float scale_x, float scale_y, int glyph, ref int width, ref int height, ref int xoff, ref int yoff)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             fixed (int* __width4 = &width)
@@ -19491,7 +19491,7 @@ namespace TestOpenGLd
             }
         }
 
-        public static byte* StbttGetGlyphBitmapSubpixel(global::TestOpenGLd.StbttFontinfo info, float scale_x, float scale_y, float shift_x, float shift_y, int glyph, ref int width, ref int height, ref int xoff, ref int yoff)
+        public static byte* StbttGetGlyphBitmapSubpixel(global::Cored.StbttFontinfo info, float scale_x, float scale_y, float shift_x, float shift_y, int glyph, ref int width, ref int height, ref int xoff, ref int yoff)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             fixed (int* __width6 = &width)
@@ -19514,19 +19514,19 @@ namespace TestOpenGLd
             }
         }
 
-        public static void StbttMakeGlyphBitmap(global::TestOpenGLd.StbttFontinfo info, byte* output, int out_w, int out_h, int out_stride, float scale_x, float scale_y, int glyph)
+        public static void StbttMakeGlyphBitmap(global::Cored.StbttFontinfo info, byte* output, int out_w, int out_h, int out_stride, float scale_x, float scale_y, int glyph)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             __Internal.StbttMakeGlyphBitmap(__arg0, output, out_w, out_h, out_stride, scale_x, scale_y, glyph);
         }
 
-        public static void StbttMakeGlyphBitmapSubpixel(global::TestOpenGLd.StbttFontinfo info, byte* output, int out_w, int out_h, int out_stride, float scale_x, float scale_y, float shift_x, float shift_y, int glyph)
+        public static void StbttMakeGlyphBitmapSubpixel(global::Cored.StbttFontinfo info, byte* output, int out_w, int out_h, int out_stride, float scale_x, float scale_y, float shift_x, float shift_y, int glyph)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             __Internal.StbttMakeGlyphBitmapSubpixel(__arg0, output, out_w, out_h, out_stride, scale_x, scale_y, shift_x, shift_y, glyph);
         }
 
-        public static void StbttMakeGlyphBitmapSubpixelPrefilter(global::TestOpenGLd.StbttFontinfo info, byte* output, int out_w, int out_h, int out_stride, float scale_x, float scale_y, float shift_x, float shift_y, int oversample_x, int oversample_y, ref float sub_x, ref float sub_y, int glyph)
+        public static void StbttMakeGlyphBitmapSubpixelPrefilter(global::Cored.StbttFontinfo info, byte* output, int out_w, int out_h, int out_stride, float scale_x, float scale_y, float shift_x, float shift_y, int oversample_x, int oversample_y, ref float sub_x, ref float sub_y, int glyph)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             fixed (float* __sub_x11 = &sub_x)
@@ -19540,7 +19540,7 @@ namespace TestOpenGLd
             }
         }
 
-        public static void StbttGetGlyphBitmapBox(global::TestOpenGLd.StbttFontinfo font, int glyph, float scale_x, float scale_y, ref int ix0, ref int iy0, ref int ix1, ref int iy1)
+        public static void StbttGetGlyphBitmapBox(global::Cored.StbttFontinfo font, int glyph, float scale_x, float scale_y, ref int ix0, ref int iy0, ref int ix1, ref int iy1)
         {
             var __arg0 = font is null ? __IntPtr.Zero : font.__Instance;
             fixed (int* __ix04 = &ix0)
@@ -19562,7 +19562,7 @@ namespace TestOpenGLd
             }
         }
 
-        public static void StbttGetGlyphBitmapBoxSubpixel(global::TestOpenGLd.StbttFontinfo font, int glyph, float scale_x, float scale_y, float shift_x, float shift_y, ref int ix0, ref int iy0, ref int ix1, ref int iy1)
+        public static void StbttGetGlyphBitmapBoxSubpixel(global::Cored.StbttFontinfo font, int glyph, float scale_x, float scale_y, float shift_x, float shift_y, ref int ix0, ref int iy0, ref int ix1, ref int iy1)
         {
             var __arg0 = font is null ? __IntPtr.Zero : font.__Instance;
             fixed (int* __ix06 = &ix0)
@@ -19584,7 +19584,7 @@ namespace TestOpenGLd
             }
         }
 
-        public static void StbttRasterize(global::TestOpenGLd.StbttBitmap result, float flatness_in_pixels, global::TestOpenGLd.StbttVertex vertices, int num_verts, float scale_x, float scale_y, float shift_x, float shift_y, int x_off, int y_off, int invert, __IntPtr userdata)
+        public static void StbttRasterize(global::Cored.StbttBitmap result, float flatness_in_pixels, global::Cored.StbttVertex vertices, int num_verts, float scale_x, float scale_y, float shift_x, float shift_y, int x_off, int y_off, int invert, __IntPtr userdata)
         {
             var __arg0 = result is null ? __IntPtr.Zero : result.__Instance;
             var __arg2 = vertices is null ? __IntPtr.Zero : vertices.__Instance;
@@ -19597,7 +19597,7 @@ namespace TestOpenGLd
             __Internal.StbttFreeSDF(bitmap, userdata);
         }
 
-        public static byte* StbttGetGlyphSDF(global::TestOpenGLd.StbttFontinfo info, float scale, int glyph, int padding, byte onedge_value, float pixel_dist_scale, ref int width, ref int height, ref int xoff, ref int yoff)
+        public static byte* StbttGetGlyphSDF(global::Cored.StbttFontinfo info, float scale, int glyph, int padding, byte onedge_value, float pixel_dist_scale, ref int width, ref int height, ref int xoff, ref int yoff)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             fixed (int* __width6 = &width)
@@ -19620,7 +19620,7 @@ namespace TestOpenGLd
             }
         }
 
-        public static byte* StbttGetCodepointSDF(global::TestOpenGLd.StbttFontinfo info, float scale, int codepoint, int padding, byte onedge_value, float pixel_dist_scale, ref int width, ref int height, ref int xoff, ref int yoff)
+        public static byte* StbttGetCodepointSDF(global::Cored.StbttFontinfo info, float scale, int codepoint, int padding, byte onedge_value, float pixel_dist_scale, ref int width, ref int height, ref int xoff, ref int yoff)
         {
             var __arg0 = info is null ? __IntPtr.Zero : info.__Instance;
             fixed (int* __width6 = &width)
@@ -19655,7 +19655,7 @@ namespace TestOpenGLd
             return __ret;
         }
 
-        public static string StbttGetFontNameString(global::TestOpenGLd.StbttFontinfo font, ref int length, int platformID, int encodingID, int languageID, int nameID)
+        public static string StbttGetFontNameString(global::Cored.StbttFontinfo font, ref int length, int platformID, int encodingID, int languageID, int nameID)
         {
             var __arg0 = font is null ? __IntPtr.Zero : font.__Instance;
             fixed (int* __length1 = &length)
@@ -19664,127 +19664,6 @@ namespace TestOpenGLd
                 var __ret = __Internal.StbttGetFontNameString(__arg0, __arg1, platformID, encodingID, languageID, nameID);
                 return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, __ret);
             }
-        }
-    }
-
-    public unsafe partial class NetLog : IDisposable
-    {
-        [StructLayout(LayoutKind.Sequential, Size = 1)]
-        public partial struct __Internal
-        {
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "??0NetLog@@QEAA@AEBV0@@Z", CallingConvention = __CallingConvention.Cdecl)]
-            internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
-
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Info@NetLog@@SAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
-            internal static extern void Info([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string info);
-
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Debug@NetLog@@SAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
-            internal static extern void Debug([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string info);
-
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Warning@NetLog@@SAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
-            internal static extern void Warning([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string info);
-
-            [SuppressUnmanagedCodeSecurity, DllImport("TestOpenGLd", EntryPoint = "?Error@NetLog@@SAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
-            internal static extern void Error([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string info);
-        }
-
-        public __IntPtr __Instance { get; protected set; }
-
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.NetLog> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::TestOpenGLd.NetLog>();
-
-        protected bool __ownsNativeInstance;
-
-        internal static NetLog __CreateInstance(__IntPtr native, bool skipVTables = false)
-        {
-            return new NetLog(native.ToPointer(), skipVTables);
-        }
-
-        internal static NetLog __GetOrCreateInstance(__IntPtr native, bool saveInstance = false, bool skipVTables = false)
-        {
-            if (native == __IntPtr.Zero)
-                return null;
-            if (NativeToManagedMap.TryGetValue(native, out var managed))
-                return (NetLog)managed;
-            var result = __CreateInstance(native, skipVTables);
-            if (saveInstance)
-                NativeToManagedMap[native] = result;
-            return result;
-        }
-
-        internal static NetLog __CreateInstance(__Internal native, bool skipVTables = false)
-        {
-            return new NetLog(native, skipVTables);
-        }
-
-        private static void* __CopyValue(__Internal native)
-        {
-            var ret = Marshal.AllocHGlobal(sizeof(__Internal));
-            *(__Internal*) ret = native;
-            return ret.ToPointer();
-        }
-
-        private NetLog(__Internal native, bool skipVTables = false)
-            : this(__CopyValue(native), skipVTables)
-        {
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
-        }
-
-        protected NetLog(void* native, bool skipVTables = false)
-        {
-            if (native == null)
-                return;
-            __Instance = new __IntPtr(native);
-        }
-
-        public NetLog()
-        {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.NetLog.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
-        }
-
-        public NetLog(global::TestOpenGLd.NetLog _0)
-        {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::TestOpenGLd.NetLog.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
-            *((global::TestOpenGLd.NetLog.__Internal*) __Instance) = *((global::TestOpenGLd.NetLog.__Internal*) _0.__Instance);
-        }
-
-        public void Dispose()
-        {
-            Dispose(disposing: true);
-        }
-
-        public virtual void Dispose(bool disposing)
-        {
-            if (__Instance == IntPtr.Zero)
-                return;
-            NativeToManagedMap.TryRemove(__Instance, out _);
-            if (__ownsNativeInstance)
-                Marshal.FreeHGlobal(__Instance);
-            __Instance = IntPtr.Zero;
-        }
-
-        public static void Info(string info)
-        {
-            __Internal.Info(info);
-        }
-
-        public static void Debug(string info)
-        {
-            __Internal.Debug(info);
-        }
-
-        public static void Warning(string info)
-        {
-            __Internal.Warning(info);
-        }
-
-        public static void Error(string info)
-        {
-            __Internal.Error(info);
         }
     }
 
@@ -19800,10 +19679,10 @@ namespace TestOpenGLd
         public unsafe delegate void Action___IntPtr(__IntPtr vp);
 
         [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(__CallingConvention.Cdecl)]
-        public unsafe delegate void Action___IntPtr_TestOpenGLd_ImVec2___Internal(__IntPtr vp, global::TestOpenGLd.ImVec2.__Internal pos);
+        public unsafe delegate void Action___IntPtr_Cored_ImVec2___Internal(__IntPtr vp, global::Cored.ImVec2.__Internal pos);
 
         [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(__CallingConvention.Cdecl)]
-        public unsafe delegate global::TestOpenGLd.ImVec2.__Internal Func_TestOpenGLd_ImVec2___Internal___IntPtr(__IntPtr vp);
+        public unsafe delegate global::Cored.ImVec2.__Internal Func_Cored_ImVec2___Internal___IntPtr(__IntPtr vp);
 
         [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(__CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
@@ -19829,14 +19708,14 @@ namespace TestOpenGLd
         public unsafe delegate float Func_float___IntPtr_int(__IntPtr data, int idx);
     }
 }
-namespace TestOpenGLd.__Symbols
+namespace Cored.__Symbols
 {
-    internal class TestOpenGLd
+    internal class Cored
     {
         public static IntPtr _EmptyString_ImGuiTextBuffer__2PADA { get; }
-        static TestOpenGLd()
+        static Cored()
         {
-            var path = "TestOpenGLd";
+            var path = "Cored";
             var image = CppSharp.SymbolResolver.LoadImage(ref path);
             if (image == IntPtr.Zero) throw new System.DllNotFoundException(path);
             _EmptyString_ImGuiTextBuffer__2PADA = CppSharp.SymbolResolver.ResolveSymbol(image, "?EmptyString@ImGuiTextBuffer@@2PADA");

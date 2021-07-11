@@ -2,9 +2,9 @@
 #include "OpenGL.h"
 #include "Layer/Layer.h"
 
-#include "TestOpenGL_API.h"
+#include "Core_API.h"
 
-class TestOpenGL_API WindowLayer : public Layer
+class Core_API WindowLayer : public Layer
 {
 public:
 	WindowLayer() = default;

@@ -1,9 +1,8 @@
 #pragma once
 #include "Layer/Layer.h"
+#include "Core_API.h"
 
-#include "TestOpenGL_API.h"
-
-class TestOpenGL_API ImguiLayer : public Layer
+class Core_API ImguiLayer : public Layer
 {
 public:
 	ImguiLayer() = default;

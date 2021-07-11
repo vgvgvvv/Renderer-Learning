@@ -1,9 +1,8 @@
 #pragma once
 #include "RenderPipeline.h"
 
-
-class TestRenderPipeline : public RenderPipeline
+class DefaultRenderPipeline : public RenderPipeline
 {
 public:
-	
+
 };

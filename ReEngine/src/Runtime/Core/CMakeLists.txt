@@ -1,6 +1,3 @@
-message(STATUS "include TestOpenGL")
-
-set(targetName TestOpenGL)
 
 set(linkLibs 
 	ReOpenGL 
@@ -9,12 +6,13 @@ set(linkLibs
 	DotNetLib
 	EditorGUI)
 
-
+set(targetName Core)
 ReMake_AddTarget(
 	TARGET_NAME ${targetName}
 	MODE SHARED
 	LIB ${linkLibs}
 )
+
 
 UseImGUIWithDock(${targetName} Glfw)
 UseIniFile(${targetName})

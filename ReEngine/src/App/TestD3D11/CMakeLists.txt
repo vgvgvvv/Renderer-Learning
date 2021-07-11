@@ -15,4 +15,4 @@ ReMake_AddTarget(
         LIB ${d3d_libs}
 )
 
-set_target_properties(${TargetName} PROPERTIES WIN32_EXECUTABLE TRUE)
+set_target_properties(${targetName} PROPERTIES WIN32_EXECUTABLE TRUE)

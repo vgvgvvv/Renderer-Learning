@@ -1,5 +1,5 @@
-﻿using TestOpenGLd;
-using TestOpenGLd.ImGui;
+﻿using Cored;
+using Cored.ImGui;
 
 namespace DotNetDriver.Editor
 {

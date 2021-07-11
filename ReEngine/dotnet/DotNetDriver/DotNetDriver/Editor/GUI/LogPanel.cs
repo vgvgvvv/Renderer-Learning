@@ -1,9 +1,9 @@
 ﻿
 using System.Collections.Generic;
 using Common;
+using Cored;
+using Cored.ImGui;
 using MathLib;
-using TestOpenGLd;
-using TestOpenGLd.ImGui;
 
 namespace DotNetDriver.Editor
 {

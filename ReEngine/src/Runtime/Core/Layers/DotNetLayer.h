@@ -1,9 +1,9 @@
 #pragma once
 #include "Layer/Layer.h"
 #include "DotNetLibManager.h"
-#include "TestOpenGL_API.h"
+#include "Core_API.h"
 
-class TestOpenGL_API DotNetLayer : public Layer
+class Core_API DotNetLayer : public Layer
 {
 public:
 

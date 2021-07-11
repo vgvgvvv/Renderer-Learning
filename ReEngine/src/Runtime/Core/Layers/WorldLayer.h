@@ -2,9 +2,9 @@
 #include "World.h"
 #include "Layer/Layer.h"
 
-#include "TestOpenGL_API.h"
+#include "Core_API.h"
 
-class TestOpenGL_API WorldLayer : public Layer
+class Core_API WorldLayer : public Layer
 {
 public:
 	void OnInit() override;
