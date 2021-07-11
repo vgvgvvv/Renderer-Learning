@@ -6,6 +6,18 @@
 #include "Layers/ImguiLayer.h"
 #include "Layers/WindowLayer.h"
 
+Application* Application::Instance = nullptr;
+Application& Application::Get()
+{
+	return *Instance;
+}
+
+Application::Application()
+{
+	RE_ASSERT(Instance == nullptr)
+	Instance = this;
+}
+
 
 bool Application::ShouldQuit()
 {
@@ -30,6 +42,8 @@ void Application::Uninit()
 {
 	RE_LOG_INFO("Application", "Application::Uninit");
 }
+
+
 
 int Application::Run()
 {

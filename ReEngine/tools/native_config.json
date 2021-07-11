@@ -11,7 +11,8 @@
                     ],
                     "HeaderFiles" : [
                         "DotNetAPI_API.h",
-                        "NetLog.h"
+                        "NetLog.h",
+                        "ApplicationAPI.h"
                     ]
                 }
             ]

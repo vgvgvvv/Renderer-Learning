@@ -132,4 +132,113 @@ namespace DotNetAPId
             __Internal.Error(info);
         }
     }
+
+    public unsafe partial class ApplicationAPI : IDisposable
+    {
+        [StructLayout(LayoutKind.Sequential, Size = 1)]
+        public partial struct __Internal
+        {
+            [SuppressUnmanagedCodeSecurity, DllImport("DotNetAPId", EntryPoint = "??0ApplicationAPI@@QEAA@AEBV0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("DotNetAPId", EntryPoint = "?GetProjectRoot@ApplicationAPI@@SAPEBDXZ", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern __IntPtr GetProjectRoot();
+
+            [SuppressUnmanagedCodeSecurity, DllImport("DotNetAPId", EntryPoint = "?SetProjectRoot@ApplicationAPI@@SAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern void SetProjectRoot([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string Root);
+        }
+
+        public __IntPtr __Instance { get; protected set; }
+
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::DotNetAPId.ApplicationAPI> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::DotNetAPId.ApplicationAPI>();
+
+        protected bool __ownsNativeInstance;
+
+        internal static ApplicationAPI __CreateInstance(__IntPtr native, bool skipVTables = false)
+        {
+            return new ApplicationAPI(native.ToPointer(), skipVTables);
+        }
+
+        internal static ApplicationAPI __GetOrCreateInstance(__IntPtr native, bool saveInstance = false, bool skipVTables = false)
+        {
+            if (native == __IntPtr.Zero)
+                return null;
+            if (NativeToManagedMap.TryGetValue(native, out var managed))
+                return (ApplicationAPI)managed;
+            var result = __CreateInstance(native, skipVTables);
+            if (saveInstance)
+                NativeToManagedMap[native] = result;
+            return result;
+        }
+
+        internal static ApplicationAPI __CreateInstance(__Internal native, bool skipVTables = false)
+        {
+            return new ApplicationAPI(native, skipVTables);
+        }
+
+        private static void* __CopyValue(__Internal native)
+        {
+            var ret = Marshal.AllocHGlobal(sizeof(__Internal));
+            *(__Internal*) ret = native;
+            return ret.ToPointer();
+        }
+
+        private ApplicationAPI(__Internal native, bool skipVTables = false)
+            : this(__CopyValue(native), skipVTables)
+        {
+            __ownsNativeInstance = true;
+            NativeToManagedMap[__Instance] = this;
+        }
+
+        protected ApplicationAPI(void* native, bool skipVTables = false)
+        {
+            if (native == null)
+                return;
+            __Instance = new __IntPtr(native);
+        }
+
+        public ApplicationAPI()
+        {
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DotNetAPId.ApplicationAPI.__Internal));
+            __ownsNativeInstance = true;
+            NativeToManagedMap[__Instance] = this;
+        }
+
+        public ApplicationAPI(global::DotNetAPId.ApplicationAPI _0)
+        {
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DotNetAPId.ApplicationAPI.__Internal));
+            __ownsNativeInstance = true;
+            NativeToManagedMap[__Instance] = this;
+            *((global::DotNetAPId.ApplicationAPI.__Internal*) __Instance) = *((global::DotNetAPId.ApplicationAPI.__Internal*) _0.__Instance);
+        }
+
+        public void Dispose()
+        {
+            Dispose(disposing: true);
+        }
+
+        public virtual void Dispose(bool disposing)
+        {
+            if (__Instance == IntPtr.Zero)
+                return;
+            NativeToManagedMap.TryRemove(__Instance, out _);
+            if (__ownsNativeInstance)
+                Marshal.FreeHGlobal(__Instance);
+            __Instance = IntPtr.Zero;
+        }
+
+        public static string ProjectRoot
+        {
+            get
+            {
+                var __ret = __Internal.GetProjectRoot();
+                return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, __ret);
+            }
+
+            set
+            {
+                __Internal.SetProjectRoot(value);
+            }
+        }
+    }
 }

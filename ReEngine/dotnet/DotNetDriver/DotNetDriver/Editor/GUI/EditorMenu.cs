@@ -1,11 +1,20 @@
-﻿using Common;
+﻿using System.Collections.Generic;
+using Common;
 using Cored.ImGui;
+using CppSharp.Types.Std;
 using DotNetDriver.Common;
 
 namespace DotNetDriver.Editor
 {
     public class EditorMenu
     {
+        private List<IEditorPanel> editorPanels;
+
+        public void Init(List<IEditorPanel> editorPanels)
+        {
+            this.editorPanels = editorPanels;
+        }
+
         public void OnGUI()
         {
             if (imgui.BeginMenuBar())
@@ -37,8 +46,21 @@ namespace DotNetDriver.Editor
                 {
                    LayoutSetting.SaveCurrentLayout();
                 }
+
+                imgui.Separator();
+
+                foreach (var editorPanel in editorPanels)
+                {
+                    if (imgui.MenuItem("Open " + editorPanel.Title, "", false, true))
+                    {
+                        editorPanel.IsShow = true;
+                    }
+                }
+
                 imgui.EndMenu();
+
             }
+
 
         }
 
