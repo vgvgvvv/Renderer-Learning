@@ -1,7 +1,8 @@
 #pragma once
 
-#include "GameObject.h"
 #include "World_API.h"
+
+class GameObject;
 
 class World_API Component
 {
@@ -15,5 +16,5 @@ public:
 	GameObject* GetOwner() const { return owner; }
 	
 private:
-	GameObject* owner;
+	GameObject* owner = nullptr;
 };

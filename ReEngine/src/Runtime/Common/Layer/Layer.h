@@ -1,4 +1,5 @@
 #pragma once
+#include <vcruntime_typeinfo.h>
 #include <vector>
 #include "CommonLib_API.h"
 
@@ -33,8 +34,24 @@ public:
 	void AfterRender(float deltaTime);
 	
 	void ShutDown();
+
+	template<typename T>
+	T* GetLayer();
 	
 private:
 	std::vector<Layer*> Layers;
 
 };
+
+template <typename T>
+T* LayerManager::GetLayer()
+{
+	for (auto value : Layers)
+	{
+		if(typeid(value).name() == typeid(T*).name())
+		{
+			return value;
+		}
+	}
+	return nullptr;
+}

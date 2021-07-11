@@ -2,5 +2,5 @@
 REMAKE_ADDTARGET(
 	TARGET_NAME RenderPipeline
 	MODE SHARED
-	LIB ReOpenGL World
+	LIB ReOpenGL World 3d-math
 )

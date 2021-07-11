@@ -2,8 +2,8 @@
 
 #include <list>
 
-#include "Component.h"
 #include "Behavior.h"
+#include "Color.h"
 #include "Singleton.h"
 #include "RenderPipeline_API.h"
 
@@ -11,11 +11,15 @@ class RenderPipeline_API Camera : public Behavior
 {
 public:
 
+	Camera();
+	
 	void Awake() override;
 
 	void BeginDestroy() override;
 	
 	void Render();
+
+	Color ClearColor;
 
 };
 

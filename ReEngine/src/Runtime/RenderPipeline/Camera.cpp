@@ -1,5 +1,9 @@
 #include "Camera.h"
 
+Camera::Camera() : ClearColor(Color::black)
+{
+}
+
 void Camera::Awake()
 {
 	CameraManager::Get().Add(this);

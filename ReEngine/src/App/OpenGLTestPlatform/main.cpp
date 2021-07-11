@@ -1,5 +1,8 @@
 
+#include "OpenGLApp.h"
+
 int main()
 {
-	return 0;
+	OpenGLApp app;
+	return app.Run();
 }

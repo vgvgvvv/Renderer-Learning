@@ -16,7 +16,4 @@ public:
 	void OnRender(float deltaTime) override;
 	void OnAfterRender(float deltaTime) override;
 	void OnShutDown() override;
-
-private:
-	World world;
 };
