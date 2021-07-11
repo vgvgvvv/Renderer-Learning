@@ -2,7 +2,7 @@
   "profiles": {
     "DotNetDriver": {
       "commandName": "Executable",
-      "executablePath": "../../../../../../binary/bin/TestAppd.exe"
+      "executablePath": "../../../../../../binary/bin/Rengined.exe"
     }
   }
 }

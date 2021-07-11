@@ -13,6 +13,8 @@ namespace DotNetDriver.Editor
 
         public void OnInit()
         {
+            LayoutSetting.LoadLastLayout();
+
             BuildInEditorPanel.AddRange(new List<IEditorPanel>()
             {
                 new PropertyPanel(),
