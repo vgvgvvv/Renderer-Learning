@@ -1,8 +1,11 @@
 #include "RenderLayer.h"
 #include "OpenGL.h"
+#include "Render/TestRenderPipeline.h"
 
 void RenderLayer::OnInit()
 {
+	pipeline = std::make_shared<TestRenderPipeline>();
+	renderContext = std::make_shared<RenderContext>();
 }
 
 void RenderLayer::OnBeforeRender(float deltaTime)
@@ -13,6 +16,8 @@ void RenderLayer::OnBeforeRender(float deltaTime)
 
 void RenderLayer::OnRender(float deltaTime)
 {
+	const auto cameras = CameraManager::Get().GetCameraList();
+	pipeline->Render(*renderContext, cameras);
 }
 
 void RenderLayer::OnAfterRender(float deltaTime)

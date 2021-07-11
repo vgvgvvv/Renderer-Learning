@@ -7,10 +7,12 @@ class TestOpenGL_API Application
 public:
 	int Run();
 protected:
-	void Init();
-	void Uninit();
-	bool ShouldQuit();
+	virtual void Init();
+	virtual void Uninit();
+	virtual bool ShouldQuit();
 
-private:
+protected:
 	LayerManager LayerManager;
 };
+
+

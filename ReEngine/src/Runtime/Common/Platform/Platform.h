@@ -47,9 +47,9 @@ typedef FPlatformTypes::UPTRINT UPTRINT;
 /// A signed integer the same size as a pointer
 typedef FPlatformTypes::PTRINT PTRINT;
 /// An unsigned integer the same size as a pointer, the same as UPTRINT
-typedef FPlatformTypes::SIZE_T SIZE_T;
+typedef FPlatformTypes::SIZE_T SIZET;
 /// An integer the same size as a pointer, the same as PTRINT
-typedef FPlatformTypes::SSIZE_T SSIZE_T;
+typedef FPlatformTypes::SSIZE_T SSIZET;
 
 /// The type of the NULL constant.
 typedef FPlatformTypes::TYPE_OF_NULL	TYPE_OF_NULL;

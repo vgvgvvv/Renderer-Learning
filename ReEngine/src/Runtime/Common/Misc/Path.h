@@ -1,8 +1,9 @@
 #pragma once
 
 #include <string>
+#include "CommonLib_API.h"
 
-class Path
+class CommonLib_API Path
 {
 public:
 	static std::string GetCurrentExeFilePath();

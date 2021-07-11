@@ -1,6 +1,8 @@
 #pragma once
 
-class RenderContext
+#include "RenderPipeline_API.h"
+
+class RenderPipeline_API RenderContext
 {
 public:
 

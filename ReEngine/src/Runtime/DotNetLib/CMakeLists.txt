@@ -2,7 +2,7 @@
 set(targetName DotNetLib)
 ReMake_AddTarget(
 	TARGET_NAME ${targetName}
-	MODE STATIC
+	MODE SHARED
 	DEFINE_PRIVATE WINDOWS
 	LIB CommonLib
 	LIB_PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/ThirdPart/win-x64/nethost.lib"

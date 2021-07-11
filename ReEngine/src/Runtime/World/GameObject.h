@@ -1,9 +1,9 @@
 #pragma once
 #include <vector>
 
-#include "Component.h"
+#include "World_API.h"
 
-class GameObject
+class World_API GameObject
 {
 public:
 
@@ -11,5 +11,5 @@ public:
 
 private:
 	GameObject* owner = nullptr;
-	std::vector<Component*> components;
+	std::vector<class Component*> components;
 };

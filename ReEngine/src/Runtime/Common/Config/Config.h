@@ -2,8 +2,9 @@
 #include <string>
 
 #include "inifile.h"
+#include "CommonLib_API.h"
 
-class Config
+class CommonLib_API Config
 {
 public:
 	static bool LoadConfig(const std::string& config, inifile::IniFile* iniFile);

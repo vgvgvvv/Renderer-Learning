@@ -3,7 +3,7 @@
 
 #include "GameObject.h"
 
-class World
+class World_API World
 {
 public:
 	

@@ -1,7 +1,13 @@
 #pragma once
+#include <memory>
+
+#include "RenderPipeline.h"
 #include "Layer/Layer.h"
 
-class RenderLayer : public Layer
+#include "TestOpenGL_API.h"
+
+
+class TestOpenGL_API RenderLayer : public Layer
 {
 public:
 	void OnInit() override;
@@ -9,4 +15,8 @@ public:
 	void OnRender(float deltaTime) override;
 	void OnAfterRender(float deltaTime) override;
 	void OnShutDown() override;
+
+private:
+	std::shared_ptr<RenderPipeline> pipeline;
+	std::shared_ptr<RenderContext> renderContext;
 };

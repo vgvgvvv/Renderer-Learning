@@ -2,10 +2,9 @@
 #include <string>
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
+#include "CommonLib_API.h"
 
-
-
-class LogContext
+class CommonLib_API LogContext
 {
 public:
 	template<typename... Args>

@@ -3,10 +3,11 @@
 #include "coreclr_delegates.h"
 #include "hostfxr.h"
 #include "Common.h"
+#include "DotNetLib_API.h"
 
 class DotNetAssembly;
 
-class DotNetLibManager
+class DotNetLib_API DotNetLibManager
 {
 public:
 	void Init();
@@ -29,7 +30,7 @@ private:
 
 };
 
-class DotNetAssembly
+class DotNetLib_API DotNetAssembly
 {
 	friend DotNetLibManager;
 public:

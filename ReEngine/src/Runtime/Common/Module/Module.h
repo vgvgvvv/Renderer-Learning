@@ -1,10 +1,11 @@
 #pragma once
 
 #include "Common.h"
+#include "CommonLib_API.h"
 
 namespace CommonLib
 {
     // Forward declarations
-    void* LoadModuleLibrary(const T_CHAR*);
-    void* GetModuleExport(void*, const char*);
+    CommonLib_API void* LoadModuleLibrary(const T_CHAR*);
+    CommonLib_API void* GetModuleExport(void*, const char*);
 }

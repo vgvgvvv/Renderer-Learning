@@ -1,7 +1,9 @@
 #pragma once
 #include "Component.h"
 
-class Behavior : public Component
+#include "World_API.h"
+
+class World_API Behavior : public Component
 {
 public:
 	virtual void Awake();

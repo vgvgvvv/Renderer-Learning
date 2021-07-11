@@ -1,8 +1,8 @@
 #pragma once
 #include <vector>
+#include "CommonLib_API.h"
 
-
-class Layer
+class CommonLib_API Layer
 {
 public:
 	Layer() = default;
@@ -18,7 +18,7 @@ public:
 	virtual void OnShutDown() = 0;
 };
 
-class LayerManager
+class CommonLib_API LayerManager
 {
 public:
 

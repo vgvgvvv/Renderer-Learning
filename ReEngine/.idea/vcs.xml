@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/external/lua" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/external/mathlib" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/external/thirdpart" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/out/build/x64-Debug (默认值)/_deps/re-cmake-src" vcs="Git" />
+  </component>
+</project>

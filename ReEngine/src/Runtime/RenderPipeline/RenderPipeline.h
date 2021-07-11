@@ -4,9 +4,10 @@
 
 #include "Camera.h"
 #include "RenderContext.h"
+#include "RenderPipeline_API.h"
 
-class RenderPipeline
+class RenderPipeline_API RenderPipeline
 {
 public:
-	virtual void Render(const RenderContext& context, std::list<Camera> cameras);
+	virtual void Render(const RenderContext& context, std::list<Camera*> cameras);
 };
