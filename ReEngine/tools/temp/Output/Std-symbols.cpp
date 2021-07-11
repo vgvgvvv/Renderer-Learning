@@ -9,3 +9,4 @@ template __declspec(dllexport) std::basic_string<char, std::char_traits<char>, s
 template __declspec(dllexport) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::~basic_string() noexcept;
 template __declspec(dllexport) std::basic_string<char, std::char_traits<char>, std::allocator<char>>& std::basic_string<char, std::char_traits<char>, std::allocator<char>>::assign(const char* const);
 template __declspec(dllexport) const char* std::basic_string<char, std::char_traits<char>, std::allocator<char>>::data() const noexcept;
+template __declspec(dllexport) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::basic_string(const char* const);

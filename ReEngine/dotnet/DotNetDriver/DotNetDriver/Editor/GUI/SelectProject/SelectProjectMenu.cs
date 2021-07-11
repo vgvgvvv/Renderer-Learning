@@ -1,4 +1,6 @@
-﻿using Cored.ImGui;
+﻿using System;
+using Cored;
+using Cored.ImGui;
 
 namespace DotNetDriver.Editor
 {
@@ -17,12 +19,7 @@ namespace DotNetDriver.Editor
         {
             if (imgui.BeginMenu("Project", true))
             {
-
-                if (imgui.MenuItem("Open Project", "", false, true))
-                {
-                }
-
-                imgui.EndMenu();
+                
             }
         }
     }

@@ -2,6 +2,7 @@
 #include <imstb_rectpack.h>
 #include <imstb_textedit.h>
 #include <imstb_truetype.h>
+#include <ImGuiFileDialog.h>
 #include <new>
 
 extern "C" __declspec(dllexport) void ImVec2_ImVec2(void* __instance) { ::new (__instance) ImVec2(); }
@@ -185,3 +186,13 @@ stbtt_pack_context& (stbtt_pack_context::*_121)(stbtt_pack_context&&) = &stbtt_p
 stbtt_fontinfo& (stbtt_fontinfo::*_122)(stbtt_fontinfo&&) = &stbtt_fontinfo::operator=;
 stbtt_vertex& (stbtt_vertex::*_123)(stbtt_vertex&&) = &stbtt_vertex::operator=;
 stbtt__bitmap& (stbtt__bitmap::*_124)(stbtt__bitmap&&) = &stbtt__bitmap::operator=;
+IGFD_Selection_Pair& (IGFD_Selection_Pair::*_125)(IGFD_Selection_Pair&&) = &IGFD_Selection_Pair::operator=;
+IGFD_Selection& (IGFD_Selection::*_126)(IGFD_Selection&&) = &IGFD_Selection::operator=;
+extern "C" __declspec(dllexport) void c__N_IGFD_S_FileExtentionInfosStruct_FileExtentionInfosStruct(void* __instance) { ::new (__instance) IGFD::FileExtentionInfosStruct(); }
+extern "C" __declspec(dllexport) void c__N_IGFD_S_FileExtentionInfosStruct_FileExtentionInfosStruct___1__S_ImVec4___1__N_std_S_basic_string__C___N_std_S_char_traits__C___N_std_S_allocator__C(void* __instance, const ImVec4& vColor, const std::basic_string<char, std::char_traits<char>, std::allocator<char>>& vIcon) { ::new (__instance) IGFD::FileExtentionInfosStruct(vColor, vIcon); }
+extern "C" __declspec(dllexport) void c__N_IGFD_S_FileExtentionInfosStruct_FileExtentionInfosStruct___1__N_IGFD_S_FileExtentionInfosStruct(void* __instance, const IGFD::FileExtentionInfosStruct& _0) { ::new (__instance) IGFD::FileExtentionInfosStruct(_0); }
+IGFD::FileExtentionInfosStruct& (IGFD::FileExtentionInfosStruct::*_127)(IGFD::FileExtentionInfosStruct&&) = &IGFD::FileExtentionInfosStruct::operator=;
+extern "C" __declspec(dllexport) void c__N_IGFD_S_FileExtentionInfosStruct__FileExtentionInfosStruct(IGFD::FileExtentionInfosStruct*__instance) { __instance->~FileExtentionInfosStruct(); }
+IGFD::FileDialog* (*_128)() = &IGFD::FileDialog::Instance;
+extern "C" __declspec(dllexport) void c__N_IGFD_S_FileDialog_FileDialog___1__N_IGFD_S_FileDialog(void* __instance, const IGFD::FileDialog& _0) { ::new (__instance) IGFD::FileDialog(_0); }
+IGFD::FileDialog& (IGFD::FileDialog::*_129)(const IGFD::FileDialog&) = &IGFD::FileDialog::operator=;
