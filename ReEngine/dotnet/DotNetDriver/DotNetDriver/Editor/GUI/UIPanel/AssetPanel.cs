@@ -11,5 +11,10 @@
         public void OnGUI()
         {
         }
+
+        public void ShutDown()
+        {
+            
+        }
     }
 }

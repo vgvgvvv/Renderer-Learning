@@ -1,6 +1,4 @@
 ﻿
-using Cored;
-using Cored.ImGui;
 using DotNetAPId;
 
 namespace DotNetDriver.Editor
@@ -27,6 +25,12 @@ namespace DotNetDriver.Editor
             {
                 SelectProject.OnGUI();
             }
+        }
+
+        public void ShutDown()
+        {
+            GUI.ShutDown();
+            SelectProject.ShutDown();
         }
     }
 }

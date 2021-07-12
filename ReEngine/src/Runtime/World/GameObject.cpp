@@ -1,5 +1,6 @@
 #include "GameObject.h"
 
+#include "Transform.h"
 #include "World.h"
 
 GameObject* GameObject::CreateGameObject()
@@ -14,6 +15,7 @@ void GameObject::Destroy(GameObject* gameObject)
 
 void GameObject::OnAwake()
 {
+	transform = AddComponent<Transform>();
 }
 
 void GameObject::OnDestory()
@@ -23,5 +25,6 @@ void GameObject::OnDestory()
 		component->BeginDestroy();
 	}
 	components.clear();
+	transform.reset();
 	
 }

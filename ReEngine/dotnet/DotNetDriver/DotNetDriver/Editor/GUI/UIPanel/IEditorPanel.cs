@@ -9,5 +9,7 @@
 
         void OnGUI();
 
+        void ShutDown();
+
     }
 }

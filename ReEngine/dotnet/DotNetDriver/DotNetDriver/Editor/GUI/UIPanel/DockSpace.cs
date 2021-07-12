@@ -1,5 +1,5 @@
-﻿using Cored;
-using Cored.ImGui;
+﻿using ImGUILibd;
+using ImGUILibd.ImGui;
 
 namespace DotNetDriver.Editor
 {

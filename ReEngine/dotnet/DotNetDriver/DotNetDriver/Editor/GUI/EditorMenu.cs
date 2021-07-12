@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using Common;
-using Cored.ImGui;
-using CppSharp.Types.Std;
 using DotNetAPId;
-using DotNetDriver.Common;
+using ImGUILibd.ImGui;
 
 namespace DotNetDriver.Editor
 {
@@ -36,6 +34,12 @@ namespace DotNetDriver.Editor
                 {
                     // TODO Open Scene
                     Log.Info("On Open Scene");
+                }
+
+                if (imgui.MenuItem("Save Scene", "", false, true))
+                {
+                    // TODO Open Scene
+                    Log.Info("On Save Scene");
                 }
 
                 if (imgui.MenuItem("Open Project", "", false, true))

@@ -1,8 +1,8 @@
 ﻿
 using System.Collections.Generic;
 using Common;
-using Cored;
-using Cored.ImGui;
+using ImGUILibd;
+using ImGUILibd.ImGui;
 using MathLib;
 
 namespace DotNetDriver.Editor
@@ -98,6 +98,11 @@ namespace DotNetDriver.Editor
                         break;
                 }
             }
+        }
+
+        public void ShutDown()
+        {
+
         }
 
         private void Clear()

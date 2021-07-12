@@ -10,6 +10,20 @@ using System.Runtime.InteropServices;
 using System.Security;
 using __CallingConvention = global::System.Runtime.InteropServices.CallingConvention;
 using __IntPtr = global::System.IntPtr;
-[assembly:InternalsVisibleTo("DotNetAPId")]
-[assembly:InternalsVisibleTo("Cored")]
 
+[assembly:InternalsVisibleTo("DotNetAPId")]
+[assembly:InternalsVisibleTo("ImGUILibd")]
+[assembly:InternalsVisibleTo("EditorGUId")]
+
+namespace Std
+{
+    namespace SharedPtr
+    {
+        [StructLayout(LayoutKind.Sequential, Size = 16, Pack = 8)]
+        public unsafe partial struct __Internal
+        {
+            internal __IntPtr _Ptr;
+            internal __IntPtr _Rep;
+        }
+    }
+}

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using Cored;
-using Cored.ImGui;
-using CppSharp.Types.Std;
-using DotNetAPId;
+﻿using System.Collections.Generic;
+using ImGUILibd.ImGui;
 
 namespace DotNetDriver.Editor
 {
@@ -40,13 +35,6 @@ namespace DotNetDriver.Editor
         {
             DockSpace.BeginDockSpace();
 
-            OnEditorGUI();
-
-            DockSpace.EndDockSpace();
-        }
-
-        private void OnEditorGUI()
-        {
             Menu.OnGUI();
 
             bool open = true;
@@ -63,7 +51,16 @@ namespace DotNetDriver.Editor
                     editorPanel.IsShow = isOpen;
                 }
             }
+
+            DockSpace.EndDockSpace();
         }
 
+        public void ShutDown()
+        {
+            foreach (var editorPanel in BuildInEditorPanel)
+            {
+                editorPanel.ShutDown();
+            }
+        }
     }
 }

@@ -4,5 +4,5 @@ message(STATUS "include Rengine")
 ReMake_AddTarget(
 	TARGET_NAME Rengine
 	MODE EXE
-	LIB Core DotNetAPI
+	LIB Core Editor DotNetAPI
 )

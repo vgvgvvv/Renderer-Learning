@@ -1,17 +1,21 @@
 #pragma once
 
-#include "Camera.h"
+#include <memory>
+
 #include "EditorGUI_API.h"
+
+class Camera;
 
 class EditorGUI_API SceneView
 {
 public:
+	void OnInit();
 
-	void OnGUI()
-	{
-	}
+	void OnGUI();
+
+	void ShutDown();
 
 private:
 
-	Camera camera;
+	std::shared_ptr<Camera> camera;
 };

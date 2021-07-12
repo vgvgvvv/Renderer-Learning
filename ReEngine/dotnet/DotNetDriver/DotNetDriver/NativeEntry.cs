@@ -144,7 +144,7 @@ namespace DotNetDriver
         {
             try
             {
-
+                Editor.ShutDown();
             }
             catch (Exception e)
             {

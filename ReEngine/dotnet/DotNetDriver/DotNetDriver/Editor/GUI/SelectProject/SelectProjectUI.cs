@@ -1,5 +1,4 @@
-﻿using Cored.ImGui;
-
+﻿
 namespace DotNetDriver.Editor
 {
     public class SelectProjectUI
@@ -21,6 +20,11 @@ namespace DotNetDriver.Editor
             Panel.OnGUI();
 
             DockSpace.EndDockSpace();
+        }
+
+        public void ShutDown()
+        {
+
         }
     }
 }

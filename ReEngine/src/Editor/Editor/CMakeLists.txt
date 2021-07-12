@@ -1,8 +1,8 @@
 
 
-set(targetName EditorGUI)
+set(targetName Editor)
 ReMake_AddTarget(
 	TARGET_NAME ${targetName}
 	MODE SHARED
-	LIB RenderPipeline ImGUILib
+	LIB CommonLib EditorGUI
 )

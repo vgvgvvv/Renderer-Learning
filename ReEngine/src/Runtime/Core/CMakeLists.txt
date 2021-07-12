@@ -4,7 +4,8 @@ set(linkLibs
 	CommonLib 
 	RenderPipeline 
 	DotNetLib
-	EditorGUI)
+	EditorGUI
+	ImGUILib)
 
 set(targetName Core)
 ReMake_AddTarget(
@@ -14,5 +15,4 @@ ReMake_AddTarget(
 )
 
 
-UseImGUIWithDock(${targetName} Glfw)
 UseIniFile(${targetName})
