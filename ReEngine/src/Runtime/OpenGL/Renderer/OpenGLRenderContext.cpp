@@ -30,9 +30,9 @@ void OpenGLRenderContext::Draw(const VertexArrayObject& vao, const IndexBuffer& 
 	GLCall(glDrawElements(GL_TRIANGLES, ib.GetCount(), GL_UNSIGNED_INT, nullptr));
 }
 
-void OpenGLRenderContext::Clear() const
+void OpenGLRenderContext::Clear(const Color& color) const
 {
-	GLCall(glClearColor(0.2f, 0.3f, 0.3f, 1.0f));
+	GLCall(glClearColor(color.r, color.g, color.b, color.a));
 	GLCall(glClear(GL_COLOR_BUFFER_BIT));
 }
 

@@ -1,6 +1,8 @@
 ﻿#pragma once
 
 #include <cstdint>
+
+#include "Color.h"
 #include "Common.h"
 #include "GL/glew.h"
 #include "ReOpenGL_API.h"
@@ -28,7 +30,7 @@ class ReOpenGL_API OpenGLRenderContext
 {
 public:
 
-	void Clear() const;
+	void Clear(const Color& color) const;
 	void Draw(const VertexArrayObject& vao, const IndexBuffer& ib, const Shader& shader) const;
 	void SetAlpha(uint32_t from, uint32_t to);
 };
