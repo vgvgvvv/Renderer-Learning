@@ -13,3 +13,12 @@ void RenderContext::Clear(const Color& color)
 }
 
 
+void RenderContext::SetupCameraProperties(const Camera& camera)
+{
+	// TODO
+}
+
+void RenderContext::DrawSkyBox(const Camera& camera)
+{
+	// TODO
+}
