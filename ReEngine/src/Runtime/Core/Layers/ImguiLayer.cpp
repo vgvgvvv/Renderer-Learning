@@ -1,7 +1,9 @@
 #include "ImguiLayer.h"
 #include "imgui.h"
+#include "Config/Config.h"
 #include "ImguiLayer/imgui_impl_glfw.h"
 #include "ImguiLayer/imgui_impl_opengl3.h"
+#include "Misc/Path.h"
 #include "WindowLayer//GlfwContext.h"
 #include "ThirdPart/OpenGLContext.h"
 
@@ -44,8 +46,20 @@ void ImguiLayer::OnInit()
     //io.Fonts->AddFontFromFileTTF("../../misc/fonts/Cousine-Regular.ttf", 15.0f);
     //io.Fonts->AddFontFromFileTTF("../../misc/fonts/DroidSans.ttf", 16.0f);
     //io.Fonts->AddFontFromFileTTF("../../misc/fonts/ProggyTiny.ttf", 10.0f);
-    //ImFont* font = io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\ArialUni.ttf", 18.0f, NULL, io.Fonts->GetGlyphRangesJapanese());
-    //IM_ASSERT(font != NULL);
+
+    inifile::IniFile iniFile;
+    if(Config::LoadConfigByName("BaseSetting", &iniFile))
+    {
+        std::string fontName;
+        if(iniFile.GetStringValue("Window", "Font", &fontName) == RET_OK)
+        {
+            auto path = Path::Combine(Path::GetResourcesPath(), fontName);
+            ImFont* font = io.Fonts->AddFontFromFileTTF(path.c_str(), 18.0f, NULL, io.Fonts->GetGlyphRangesChineseFull());
+            io.FontDefault = font;
+        }
+    }
+
+	//IM_ASSERT(font != NULL);
 }
 
 

@@ -18,5 +18,6 @@ public:
 	static std::string GetDotnetSourcePath();
 	static std::string GetSourcePath();
 	static std::string GetConfigPath();
+	static std::string GetResourcesPath();
 	static std::string GetDotNetBinaryPath();
 };

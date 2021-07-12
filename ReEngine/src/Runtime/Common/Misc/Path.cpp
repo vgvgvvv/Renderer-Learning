@@ -82,6 +82,11 @@ std::string Path::GetConfigPath()
     return Combine(GetEngineRootPath(), "config");
 }
 
+std::string Path::GetResourcesPath()
+{
+    return Combine(GetEngineRootPath(), "resources");
+}
+
 std::string Path::GetDotNetBinaryPath()
 {
     return Path::Combine(GetBinaryPath(), "dotnet");
