@@ -2,10 +2,10 @@
 #include <cassert>
 #include <vector>
 #include "Common.h"
-#include "OpenGL.h"
+#include "OpenGLRenderContext.h"
+#include "ReOpenGL_API.h"
 
-
-struct VertexBufferElement
+struct ReOpenGL_API VertexBufferElement
 {
 	uint32_t type;
 	uint32_t count;
@@ -26,7 +26,7 @@ struct VertexBufferElement
 	}
 };
 
-class VertexBufferLayout
+class ReOpenGL_API VertexBufferLayout
 {
 private:
 	std::vector<VertexBufferElement> elements_;

@@ -1,7 +1,5 @@
 ﻿#include "OpenGLRenderContext.h"
 #include <iostream>
-
-
 #include "IndexBuffer.h"
 #include "Shader.h"
 #include "VertexArrayObject.h"

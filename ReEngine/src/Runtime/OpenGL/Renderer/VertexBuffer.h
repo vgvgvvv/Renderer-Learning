@@ -1,7 +1,9 @@
 ﻿#pragma once
 #include <cstdint>
 
-class VertexBuffer
+#include "ReOpenGL_API.h"
+
+class ReOpenGL_API VertexBuffer
 {
 private:
 	uint32_t render_id_;

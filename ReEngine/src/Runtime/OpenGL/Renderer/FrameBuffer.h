@@ -1,7 +1,8 @@
 #pragma once
 #include <cstdint>
+#include "ReOpenGL_API.h"
 
-class FrameBuffer
+class ReOpenGL_API FrameBuffer
 {
 public:
 	FrameBuffer();

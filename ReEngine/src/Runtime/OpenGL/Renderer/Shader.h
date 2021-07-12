@@ -1,14 +1,15 @@
 ﻿#pragma once
 #include <unordered_map>
 #include <string>
+#include "ReOpenGL_API.h"
 
-struct ShaderProgramSource
+struct ReOpenGL_API ShaderProgramSource
 {
 	std::string VertexSource;
 	std::string FragmentSource;
 };
 
-class Shader
+class ReOpenGL_API Shader
 {
 private:
 	uint32_t render_id_;

@@ -2,7 +2,9 @@
 
 #include <cstdint>
 #include "Common.h"
-#include "OpenGL.h"
+#include "GL/glew.h"
+#include "ReOpenGL_API.h"
+
 
 #if _DEBUG
 #define GLCall(x) GLClearError();\
@@ -21,7 +23,8 @@ class Shader;
 class IndexBuffer;
 class VertexArrayObject;
 
-class OpenGLRenderContext
+
+class ReOpenGL_API OpenGLRenderContext
 {
 public:
 

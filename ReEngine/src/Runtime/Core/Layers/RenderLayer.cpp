@@ -1,5 +1,5 @@
 #include "RenderLayer.h"
-#include "OpenGL.h"
+#include "Renderer/OpenGLRenderContext.h"
 #include "BuildIn/DefaultRenderPipeline.h"
 
 void RenderLayer::OnInit()

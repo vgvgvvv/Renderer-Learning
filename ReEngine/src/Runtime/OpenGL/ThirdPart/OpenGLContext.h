@@ -2,8 +2,9 @@
 #include <string>
 
 #include "Singleton.h"
+#include "ReOpenGL_API.h"
 
-class OpenGLContext
+class ReOpenGL_API OpenGLContext
 {
 public:
 	static const char* Version;

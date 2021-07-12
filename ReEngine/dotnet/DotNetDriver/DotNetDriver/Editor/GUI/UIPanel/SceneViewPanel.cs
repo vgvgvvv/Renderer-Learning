@@ -19,7 +19,6 @@ namespace DotNetDriver.Editor
 
         public void OnGUI()
         {
-            imgui.Text("hasd");
             nativeSceneView.OnGUI();
         }
 

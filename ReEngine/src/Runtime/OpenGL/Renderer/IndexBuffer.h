@@ -1,7 +1,8 @@
 ﻿#pragma once
 #include <cstdint>
+#include "ReOpenGL_API.h"
 
-class IndexBuffer
+class ReOpenGL_API IndexBuffer
 {
 private:
 	uint32_t render_id_;

@@ -5,10 +5,9 @@ set(targetName ReOpenGL)
 
 ReMake_AddTarget(
 	TARGET_NAME ${targetName}
-	MODE STATIC
+	MODE SHARED
 	LIB opengl32 CommonLib
 )
 
-USEGLAD(${targetName})
-USEGLFW(${targetName})
+UseGlew(${targetName})
 USESTBIMAGE(${targetName})

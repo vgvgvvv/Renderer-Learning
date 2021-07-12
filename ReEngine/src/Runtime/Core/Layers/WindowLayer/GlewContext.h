@@ -1,9 +1,10 @@
 #pragma once
+
 #include "Singleton.h"
 
-class GladContext
+class GlewContext
 {
-	DEFINE_SINGLETON(GladContext);
+	DEFINE_SINGLETON(GlewContext);
 public:
 	bool Init() const;
 };

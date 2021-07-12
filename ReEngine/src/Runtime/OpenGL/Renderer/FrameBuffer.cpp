@@ -1,5 +1,4 @@
 #include "FrameBuffer.h"
-#include "OpenGL.h"
 #include "OpenGLRenderContext.h"
 
 FrameBuffer::FrameBuffer()

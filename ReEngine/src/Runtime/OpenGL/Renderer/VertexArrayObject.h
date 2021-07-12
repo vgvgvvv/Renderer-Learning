@@ -2,11 +2,12 @@
 
 #include "VertexBuffer.h"
 #include "VertexBufferLayout.h"
+#include "ReOpenGL_API.h"
 
 /**
  * VAO对象
  */
-class VertexArrayObject
+class ReOpenGL_API VertexArrayObject
 {
 private:
 	uint32_t render_id_;

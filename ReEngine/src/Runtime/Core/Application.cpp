@@ -1,4 +1,3 @@
-#include "OpenGL.h"
 #include "Application.h"
 #include "Common.h"
 #include "Layers/DotNetLayer.h"
