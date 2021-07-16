@@ -8,3 +8,6 @@
 [submodule "ReEngine/external/thirdpart"]
 	path = ReEngine/external/thirdpart
 	url = git@github.com:vgvgvvv/re-third-part.git
+[submodule "ReEngine/external/Re-reflection"]
+	path = ReEngine/external/Re-reflection
+	url = git@github.com:vgvgvvv/re-reflection.git
