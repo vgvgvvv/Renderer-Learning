@@ -40,7 +40,6 @@ public:
 	
 private:
 	std::vector<Layer*> Layers;
-
 };
 
 template <typename T>

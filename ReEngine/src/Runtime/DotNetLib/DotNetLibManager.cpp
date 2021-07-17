@@ -37,6 +37,13 @@
 // Public Methods
 //------------------------------------------------
 
+DotNetLibManager::~DotNetLibManager()
+{
+    init_fptr = nullptr;
+    get_delegate_fptr = nullptr;
+    close_fptr = nullptr;
+}
+
 void DotNetLibManager::Init()
 {
     RE_ASSERT_MSG(LoadHostfxr(), "Cannot Load Hostfxr lib");
@@ -78,6 +85,14 @@ bool DotNetAssembly::GetFunctionPointer(const std::wstring& DotNetLibPath, const
 // Private Methods
 //------------------------------------------------
 
+
+void OnNetHostError(const char_t* message)
+{
+    std::wstring source(message);
+    std::string dotNetMessage = CommonLib::WStringToString(source);
+	RE_LOG_ERROR("DotNet", "On Net Error : {}", dotNetMessage.c_str())
+}
+
 load_assembly_and_get_function_pointer_fn DotNetLibManager::GetDotNetLoadAssemblyFunc(const char_t* config_path)
 {
     // Load .NET Core
@@ -101,6 +116,8 @@ load_assembly_and_get_function_pointer_fn DotNetLibManager::GetDotNetLoadAssembl
         RE_LOG_ERROR("DotNet", "Get delegate failed:{0:#x}", rc);
     }
 
+    set_error_writer_fptr(OnNetHostError);
+
     close_fptr(cxt);
     return (load_assembly_and_get_function_pointer_fn)load_assembly_and_get_function_pointer;
 }
@@ -122,8 +139,10 @@ bool DotNetLibManager::LoadHostfxr()
 		CommonLib::GetModuleExport(lib, "hostfxr_get_runtime_delegate");
     close_fptr = (hostfxr_close_fn)
 		CommonLib::GetModuleExport(lib, "hostfxr_close");
-
-    return (init_fptr && get_delegate_fptr && close_fptr);
+    set_error_writer_fptr = (hostfxr_set_error_writer_fn)
+		CommonLib::GetModuleExport(lib, "hostfxr_set_error_writer");
+	
+    return (init_fptr && get_delegate_fptr && close_fptr && set_error_writer_fptr);
 }
 
 

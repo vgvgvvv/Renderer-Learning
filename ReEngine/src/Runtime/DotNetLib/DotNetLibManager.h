@@ -10,6 +10,7 @@ class DotNetAssembly;
 class DotNetLib_API DotNetLibManager
 {
 public:
+	~DotNetLibManager();
 	void Init();
 	void Uninit();
 
@@ -27,7 +28,7 @@ private:
 	hostfxr_initialize_for_runtime_config_fn init_fptr = nullptr;
 	hostfxr_get_runtime_delegate_fn get_delegate_fptr = nullptr;
 	hostfxr_close_fn close_fptr = nullptr;
-
+	hostfxr_set_error_writer_fn set_error_writer_fptr = nullptr;
 };
 
 class DotNetLib_API DotNetAssembly

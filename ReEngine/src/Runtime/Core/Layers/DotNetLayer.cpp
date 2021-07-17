@@ -9,6 +9,19 @@ struct lib_args
 	int number;
 };
 
+DotNetLayer::~DotNetLayer()
+{
+	OnInitFuncPtr = nullptr;
+	OnPreUpdateFuncPtr = nullptr;
+	OnUpdateFuncPtr = nullptr;
+	OnLateUpdateFuncPtr = nullptr;
+	OnBeforeRenderFuncPtr = nullptr;
+	OnGUIFuncPtr = nullptr;
+	OnRenderFuncPtr = nullptr;
+	OnAfterRenderFuncPtr = nullptr;
+	OnShutDownFuncPtr = nullptr;
+}
+
 void DotNetLayer::OnInit()
 {
 

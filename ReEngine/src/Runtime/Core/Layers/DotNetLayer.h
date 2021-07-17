@@ -6,7 +6,7 @@
 class Core_API DotNetLayer : public Layer
 {
 public:
-
+	~DotNetLayer() override;
 	void OnInit() override;
 	void OnPreUpdate(float deltaTime) override;
 	void OnUpdate(float deltaTime) override;

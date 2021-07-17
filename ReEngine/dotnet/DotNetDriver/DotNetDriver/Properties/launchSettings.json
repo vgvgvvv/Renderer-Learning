@@ -2,7 +2,8 @@
   "profiles": {
     "DotNetDriver": {
       "commandName": "Executable",
-      "executablePath": "../../../../../../binary/bin/Rengined.exe"
+      "executablePath": "../../../../../../binary/bin/Rengined.exe",
+      "nativeDebugging": true
     }
   }
 }
