@@ -8,6 +8,7 @@ namespace DotNetDriver.Editor
     {
         public static readonly string LayoutSettingSavePath = Path.Combine(PathHelper.GetConfigPath(), "Layout.ini");
 
+        [MenuItem("Window/Save Current Layout")]
         public static void SaveCurrentLayout()
         {
             imgui.SaveIniSettingsToDisk(LayoutSettingSavePath);

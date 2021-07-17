@@ -1,10 +1,27 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using Common;
 using DotNetAPId;
 using ImGUILibd.ImGui;
 
 namespace DotNetDriver.Editor
 {
+
+    [AttributeUsage(AttributeTargets.Method)]
+    public class MenuItemAttribute : Attribute
+    {
+        public string ItemName { get; }
+
+        public MenuItemAttribute(string itemName)
+        {
+            ItemName = itemName;
+        }
+
+    }
+
     public class EditorMenu
     {
         private List<IEditorPanel> editorPanels;
@@ -12,100 +29,159 @@ namespace DotNetDriver.Editor
         public void Init(List<IEditorPanel> editorPanels)
         {
             this.editorPanels = editorPanels;
+            InitDynamicMenuItemTable();
         }
+
+        
+        private Dictionary<string, object> menuHashtable = new Dictionary<string, object>();
 
         public void OnGUI()
         {
             if (imgui.BeginMenuBar())
             {
-                OnFiles();
-                OnGameObject();
-                OnWindow();
-                OnHelp();
+                OnDynamicMenuItem();
             }
             imgui.EndMenuBar();
         }
 
-        private void OnFiles()
+        #region Files
+
+        [MenuItem("Files/Open Scene")]
+        public static void OpenScenes()
         {
-            if (imgui.BeginMenu("Files", true))
-            {
-                if (imgui.MenuItem("Open Scene", "", false, true))
-                {
-                    // TODO Open Scene
-                    Log.Info("On Open Scene");
-                }
-
-                if (imgui.MenuItem("Save Scene", "", false, true))
-                {
-                    // TODO Open Scene
-                    Log.Info("On Save Scene");
-                }
-
-                if (imgui.MenuItem("Open Project", "", false, true))
-                {
-                    ApplicationAPI.SelectProjectRoot();
-                }
-                imgui.EndMenu();
-            }
+            Log.Info("On Open Scene");
         }
 
-        private void OnGameObject()
+        [MenuItem("Files/Save Scene")]
+        public static void OnSaveScene()
         {
-            if (imgui.BeginMenu("GameObject", true))
-            {
-                if (imgui.MenuItem("Create Empty", "", false, true))
-                {
-                    // TODO Create Empty
-                    Log.Info("On Create Camera");
-                }
-
-                if (imgui.MenuItem("Create Camera","", false, true))
-                {
-                    // TODO Create Camera
-                    Log.Info("On Create Camera");
-                }
-                imgui.EndMenu();
-            }
+            Log.Info("On Save Scene");
         }
 
-        private void OnWindow()
+        [MenuItem("Files/Open Project")]
+        public static void OpenProject()
         {
-            if (imgui.BeginMenu("Window", true))
+            ApplicationAPI.SelectProjectRoot();
+        }
+
+        #endregion
+
+        #region GameObject
+
+        [MenuItem("GameObject/Create Empty")]
+        public static void CreateEmpty()
+        {
+            Log.Info("On Create Empty");
+        }
+
+        [MenuItem("GameObject/Create Camera")]
+        public static void CreateCamera()
+        {
+            Log.Info("On Create Camera");
+        }
+
+        #endregion
+
+        #region Help
+
+        [MenuItem("Help/About")]
+        public static void Help()
+        {
+            Log.Info("On About");
+        }
+
+        #endregion
+
+
+        private void InitDynamicMenuItemTable()
+        {
+            Dictionary<string, MethodInfo> methodDict = new Dictionary<string, MethodInfo>();
+            var types = Assembly.GetExecutingAssembly().GetTypes();
+            foreach (var type in types)
             {
-                if (imgui.MenuItem("Save Current Layout", "", false, true))
+                var methods = type.GetMethods();
+                foreach (var methodInfo in methods)
                 {
-                   LayoutSetting.SaveCurrentLayout();
-                }
-
-                imgui.Separator();
-
-                foreach (var editorPanel in editorPanels)
-                {
-                    if (imgui.MenuItem("Open " + editorPanel.Title, "", false, true))
+                    if (methodInfo.HasAttribute(typeof(MenuItemAttribute)))
                     {
-                        editorPanel.IsShow = true;
+                        Log.Info(methodInfo.Name);
+                        methodDict.Add(methodInfo.GetCustomAttribute<MenuItemAttribute>().ItemName, methodInfo);
                     }
                 }
-
-                imgui.EndMenu();
-
             }
 
 
+            foreach (var (key, value) in methodDict)
+            {
+                var items = key.Split('/');
+                var currentHashtable = menuHashtable;
+                for (int i = 0; i < items.Length; i++)
+                {
+                    
+                    if (i == items.Length - 1)
+                    {
+                        if (!currentHashtable.ContainsKey(items[i]))
+                        {
+                            currentHashtable.Add(items[i], value);
+                        }
+                        else
+                        {
+                            Log.Error("Already added menu item ", key);
+                        }
+                    }
+                    else
+                    {
+                        if (currentHashtable.ContainsKey(items[i]))
+                        {
+                            currentHashtable = currentHashtable[items[i]] as Dictionary<string, object>;
+                        }
+                        else
+                        {
+                            var newHashTable = new Dictionary<string, object>();
+                            currentHashtable.Add(items[i], newHashTable);
+                            currentHashtable = newHashTable;
+                        }
+                       
+                    }
+                }
+            }
         }
 
-        private void OnHelp()
+        private void OnDynamicMenuItem()
         {
-            if (imgui.BeginMenu("Help", true))
+            foreach (var (key, value) in menuHashtable)
             {
-                if (imgui.MenuItem("About", "", false, true))
+                if (imgui.BeginMenu(key, true))
                 {
-                    Log.Info("On About");
+                    if (value is Dictionary<string, object> itemTable)
+                    {
+                        DrawMenuItems(itemTable);
+                    }
+                    imgui.EndMenu();
                 }
-                imgui.EndMenu();
             }
+        }
 
+        private void DrawMenuItems(Dictionary<string, object> itemMenuTable)
+        {
+            foreach (var (key, value) in itemMenuTable)
+            {
+                if (value is MethodInfo methodInfo)
+                {
+                    if (imgui.MenuItem(key, "", false, true))
+                    {
+                        methodInfo.Invoke(null, Array.Empty<object>());
+                    }
+                }
+                else if(value is Dictionary<string, object> itemTable)
+                {
+                    if (imgui.BeginMenu(key, true))
+                    {
+                        DrawMenuItems(itemTable);
+                    }
+                    imgui.EndMenu();
+                }
+            }
         }
     }
 }

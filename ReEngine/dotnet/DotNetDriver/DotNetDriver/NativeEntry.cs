@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using Common;
 using DotNetAPId;
@@ -34,12 +35,11 @@ namespace DotNetDriver
 
         public static int OnInit(IntPtr arg, int argLength)
         {
-            InitLog();
-
             try
             {
+                InitLog();
                 NetLog.Info("Init DotNet");
-                Modules.Initialize();
+                // Modules.Initialize();
                 Editor.OnInit();
             }
             catch (Exception e)

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Common;
 using ImGUILibd.ImGui;
 
 namespace DotNetDriver.Editor
@@ -10,24 +12,32 @@ namespace DotNetDriver.Editor
 
         public void OnInit()
         {
-            LayoutSetting.LoadLastLayout();
-
-            BuildInEditorPanel.AddRange(new List<IEditorPanel>()
+            try
             {
-                new PropertyPanel(),
-                new WorldOutlinePanel(),
-                new GamePanel(),
-                new SceneViewPanel(),
-                new LogPanel(),
-                new AssetPanel()
-            });
+                LayoutSetting.LoadLastLayout();
 
-            Menu.Init(BuildInEditorPanel);
+                BuildInEditorPanel.AddRange(new List<IEditorPanel>()
+                {
+                    new PropertyPanel(),
+                    new WorldOutlinePanel(),
+                    new GamePanel(),
+                    new SceneViewPanel(),
+                    new LogPanel(),
+                    new AssetPanel()
+                });
 
-            foreach (var editorPanel in BuildInEditorPanel)
-            {
-                editorPanel.OnInit();
+                Menu.Init(BuildInEditorPanel);
+
+                foreach (var editorPanel in BuildInEditorPanel)
+                {
+                    editorPanel.OnInit();
+                }
             }
+            catch (Exception e)
+            {
+                Log.Exception(e);
+            }
+           
         }
 
 
