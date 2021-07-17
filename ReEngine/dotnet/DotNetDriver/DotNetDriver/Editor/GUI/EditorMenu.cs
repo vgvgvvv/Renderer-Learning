@@ -6,6 +6,7 @@ using System.Reflection;
 using Common;
 using DotNetAPId;
 using ImGUILibd.ImGui;
+using Worldd;
 
 namespace DotNetDriver.Editor
 {
@@ -71,7 +72,7 @@ namespace DotNetDriver.Editor
         [MenuItem("GameObject/Create Empty")]
         public static void CreateEmpty()
         {
-            Log.Info("On Create Empty");
+            World.Get().CreateGameObject();
         }
 
         [MenuItem("GameObject/Create Camera")]

@@ -42,7 +42,37 @@
                     ],
                     "HeaderFiles" : [
                         "SceneView.h",
+                        "WorldOutlineView.h",
+                        "PropertyView.h",
                         "EditorGUI_API.h"
+                    ]
+                }
+            ]
+        },
+        {
+            "LibraryName" : "Worldd",
+            "HeaderGroups" : [
+                {
+                    "IncludePaths" : [
+                        "src/Runtime/World",
+                        "src/Runtime/Template"
+                    ],
+                    "HeaderFiles" : [
+                        "Component.h",
+                        "Behavior.h",
+                        "DotNetBehavior.h",
+                        "GameObject.h",
+                        "World.h",
+                        "World_API.h",
+                        "Singleton.h"
+                    ],
+                    "LibPaths" : [
+                        "binary/lib",
+                        "binary/bin"
+                    ],
+                    "LibFiles" : [
+                        "Worldd.dll",
+                        "Worldd.lib"
                     ]
                 }
             ]

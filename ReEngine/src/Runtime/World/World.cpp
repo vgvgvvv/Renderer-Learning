@@ -3,6 +3,11 @@
 #include "CommonAssert.h"
 
 
+void World::Init()
+{
+	RE_LOG_INFO("World", "Init World")
+}
+
 GameObject* World::CreateGameObject()
 {
 	auto obj = new GameObject();

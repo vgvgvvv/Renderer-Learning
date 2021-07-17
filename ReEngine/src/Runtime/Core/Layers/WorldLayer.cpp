@@ -3,6 +3,7 @@
 
 void WorldLayer::OnInit()
 {
+	World::Get().Init();
 }
 
 void WorldLayer::OnPreUpdate(float deltaTime)

@@ -1,5 +1,7 @@
 #pragma once
+#include <list>
 #include <memory>
+#include <string>
 #include <vector>
 
 #include "Component.h"
@@ -17,11 +19,22 @@ public:
 
 	static void Destroy(GameObject* gameObject);
 
+
+	GameObject();
+
+	void SetName(const std::string& name) { this->name = name; }
+	const std::string& GetName() const { return this->name; }
+
 	template<typename T>
 	std::shared_ptr<T> AddComponent();
 
 	std::shared_ptr<Transform> GetTransform() const { return transform; }
 
+	void SetParent(GameObject* parent);
+	const GameObject* GetParent() const { return owner; }
+
+	std::list<GameObject*>& GetChildren() { return children; }
+	
 protected:
 
 	void OnAwake();
@@ -29,10 +42,13 @@ protected:
 
 private:
 
+	std::string name;
+	
 	std::shared_ptr<class Transform> transform;
 	
 	GameObject* owner = nullptr;
 	std::vector<std::shared_ptr<class Component>> components;
+	std::list<GameObject*> children;
 };
 
 template <typename T>
