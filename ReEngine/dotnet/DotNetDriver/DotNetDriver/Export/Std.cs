@@ -143,16 +143,16 @@ namespace Std
             if (__Instance == IntPtr.Zero)
                 return;
             NativeToManagedMap.TryRemove(__Instance, out _);
-            if (disposing)
-            {
-                var ___Ty = typeof(_Ty);
-                if (___Ty.IsAssignableFrom(typeof(sbyte)))
-                {
-                    global::Std.Allocator.__Internal.dtorc__N_std_S_allocator__C(__Instance);
-                    return;
-                }
-                throw new ArgumentOutOfRangeException("_Ty", string.Join(", ", new[] { typeof(_Ty).FullName }), "global::Std.Allocator<_Ty> maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <sbyte>.");
-            }
+            // if (disposing)
+            // {
+            //     var ___Ty = typeof(_Ty);
+            //     if (___Ty.IsAssignableFrom(typeof(sbyte)))
+            //     {
+            //         global::Std.Allocator.__Internal.dtorc__N_std_S_allocator__C(__Instance);
+            //         return;
+            //     }
+            //     throw new ArgumentOutOfRangeException("_Ty", string.Join(", ", new[] { typeof(_Ty).FullName }), "global::Std.Allocator<_Ty> maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <sbyte>.");
+            // }
             if (__ownsNativeInstance)
                 Marshal.FreeHGlobal(__Instance);
             __Instance = IntPtr.Zero;
