@@ -1,5 +1,9 @@
 #pragma once
 
+#include <list>
+#include <string>
+#include <vector>
+
 #include "EditorGUI_API.h"
 
 class GameObject;
@@ -7,6 +11,9 @@ class GameObject;
 class EditorGUI_API WorldOutlineView
 {
 public:
+
+	WorldOutlineView();
+	
 	void OnInit();
 
 	void OnGUI();
@@ -16,4 +23,8 @@ public:
 private:
 
 	void DrawGameObjectNode(GameObject* gameObject);
+
+	void OnGameObjectNodeClick(GameObject* gameObject, bool isLeaf);
+	
+	void DrawGameObjectRightClickMenu(GameObject* gameObject, bool isLeaf);
 };

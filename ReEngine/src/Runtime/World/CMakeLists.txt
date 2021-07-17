@@ -7,3 +7,5 @@ ReMake_AddTarget(
 	MODE SHARED
 	LIB CommonLib 3d-math
 )
+
+UseUUID(${targetName})

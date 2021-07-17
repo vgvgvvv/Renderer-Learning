@@ -1042,11 +1042,12 @@ namespace Worldd
         }
     }
 
-    public unsafe partial class GameObject : IDisposable
+    public unsafe partial class GameObject : global::Worldd.BaseObject, IDisposable
     {
-        [StructLayout(LayoutKind.Sequential, Size = 96)]
-        public partial struct __Internal
+        [StructLayout(LayoutKind.Sequential, Size = 128)]
+        public new partial struct __Internal
         {
+            internal global::Std.BasicString.__Internalc__N_std_S_basic_string__C___N_std_S_char_traits__C___N_std_S_allocator__C guid;
             internal global::Std.BasicString.__Internalc__N_std_S_basic_string__C___N_std_S_char_traits__C___N_std_S_allocator__C name;
             internal global::Std.SharedPtr.__Internal transform;
             internal __IntPtr owner;
@@ -1087,18 +1088,12 @@ namespace Worldd
             internal static extern void SetParent(__IntPtr __instance, __IntPtr parent);
         }
 
-        public __IntPtr __Instance { get; protected set; }
-
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Worldd.GameObject> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Worldd.GameObject>();
-
-        protected bool __ownsNativeInstance;
-
-        internal static GameObject __CreateInstance(__IntPtr native, bool skipVTables = false)
+        internal static new GameObject __CreateInstance(__IntPtr native, bool skipVTables = false)
         {
             return new GameObject(native.ToPointer(), skipVTables);
         }
 
-        internal static GameObject __GetOrCreateInstance(__IntPtr native, bool saveInstance = false, bool skipVTables = false)
+        internal static new GameObject __GetOrCreateInstance(__IntPtr native, bool saveInstance = false, bool skipVTables = false)
         {
             if (native == __IntPtr.Zero)
                 return null;
@@ -1130,13 +1125,12 @@ namespace Worldd
         }
 
         protected GameObject(void* native, bool skipVTables = false)
+            : base((void*) native)
         {
-            if (native == null)
-                return;
-            __Instance = new __IntPtr(native);
         }
 
         public GameObject()
+            : this((void*) null)
         {
             __Instance = Marshal.AllocHGlobal(sizeof(global::Worldd.GameObject.__Internal));
             __ownsNativeInstance = true;
@@ -1145,6 +1139,7 @@ namespace Worldd
         }
 
         public GameObject(global::Worldd.GameObject _0)
+            : this((void*) null)
         {
             __Instance = Marshal.AllocHGlobal(sizeof(global::Worldd.GameObject.__Internal));
             __ownsNativeInstance = true;
@@ -1155,12 +1150,7 @@ namespace Worldd
             __Internal.cctor(__Instance, __arg0);
         }
 
-        public void Dispose()
-        {
-            Dispose(disposing: true);
-        }
-
-        public virtual void Dispose(bool disposing)
+        public override void Dispose(bool disposing)
         {
             if (__Instance == IntPtr.Zero)
                 return;
@@ -1227,6 +1217,136 @@ namespace Worldd
             {
                 var __arg0 = value is null ? __IntPtr.Zero : value.__Instance;
                 __Internal.SetParent(__Instance, __arg0);
+            }
+        }
+    }
+
+    public unsafe partial class BaseObject : IDisposable
+    {
+        [StructLayout(LayoutKind.Sequential, Size = 32)]
+        public partial struct __Internal
+        {
+            internal global::Std.BasicString.__Internalc__N_std_S_basic_string__C___N_std_S_char_traits__C___N_std_S_allocator__C guid;
+
+            [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "??0BaseObject@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern __IntPtr ctor(__IntPtr __instance);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "??0BaseObject@@QEAA@AEBV0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "??1BaseObject@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern void dtor(__IntPtr __instance);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "?GetGuid@BaseObject@@QEBAPEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern __IntPtr GetGuid(__IntPtr __instance);
+        }
+
+        public __IntPtr __Instance { get; protected set; }
+
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Worldd.BaseObject> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::Worldd.BaseObject>();
+
+        protected bool __ownsNativeInstance;
+
+        internal static BaseObject __CreateInstance(__IntPtr native, bool skipVTables = false)
+        {
+            return new BaseObject(native.ToPointer(), skipVTables);
+        }
+
+        internal static BaseObject __GetOrCreateInstance(__IntPtr native, bool saveInstance = false, bool skipVTables = false)
+        {
+            if (native == __IntPtr.Zero)
+                return null;
+            if (NativeToManagedMap.TryGetValue(native, out var managed))
+                return (BaseObject)managed;
+            var result = __CreateInstance(native, skipVTables);
+            if (saveInstance)
+                NativeToManagedMap[native] = result;
+            return result;
+        }
+
+        internal static BaseObject __CreateInstance(__Internal native, bool skipVTables = false)
+        {
+            return new BaseObject(native, skipVTables);
+        }
+
+        private static void* __CopyValue(__Internal native)
+        {
+            var ret = Marshal.AllocHGlobal(sizeof(__Internal));
+            global::Worldd.BaseObject.__Internal.cctor(ret, new __IntPtr(&native));
+            return ret.ToPointer();
+        }
+
+        private BaseObject(__Internal native, bool skipVTables = false)
+            : this(__CopyValue(native), skipVTables)
+        {
+            __ownsNativeInstance = true;
+            NativeToManagedMap[__Instance] = this;
+        }
+
+        protected BaseObject(void* native, bool skipVTables = false)
+        {
+            if (native == null)
+                return;
+            __Instance = new __IntPtr(native);
+        }
+
+        public BaseObject()
+        {
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Worldd.BaseObject.__Internal));
+            __ownsNativeInstance = true;
+            NativeToManagedMap[__Instance] = this;
+            __Internal.ctor(__Instance);
+        }
+
+        public BaseObject(global::Worldd.BaseObject _0)
+        {
+            __Instance = Marshal.AllocHGlobal(sizeof(global::Worldd.BaseObject.__Internal));
+            __ownsNativeInstance = true;
+            NativeToManagedMap[__Instance] = this;
+            if (ReferenceEquals(_0, null))
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+            var __arg0 = _0.__Instance;
+            __Internal.cctor(__Instance, __arg0);
+        }
+
+        public void Dispose()
+        {
+            Dispose(disposing: true);
+        }
+
+        public virtual void Dispose(bool disposing)
+        {
+            if (__Instance == IntPtr.Zero)
+                return;
+            NativeToManagedMap.TryRemove(__Instance, out _);
+            if (disposing)
+                __Internal.dtor(__Instance);
+            if (__ownsNativeInstance)
+                Marshal.FreeHGlobal(__Instance);
+            __Instance = IntPtr.Zero;
+        }
+
+        protected string guid
+        {
+            get
+            {
+                var __basicStringRet0 = global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>.__CreateInstance(new __IntPtr(&((__Internal*)__Instance)->guid));
+                return global::Std.BasicStringExtensions.Data(__basicStringRet0);
+            }
+
+            set
+            {
+                global::Std.BasicStringExtensions.__Internal.Assign(new __IntPtr(&((__Internal*)__Instance)->guid), value);
+            }
+        }
+
+        public string Guid
+        {
+            get
+            {
+                var __ret = __Internal.GetGuid(__Instance);
+                var __basicStringRet0 = global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>.__CreateInstance(__ret);
+                return global::Std.BasicStringExtensions.Data(__basicStringRet0);
             }
         }
     }

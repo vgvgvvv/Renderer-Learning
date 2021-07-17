@@ -19,7 +19,26 @@ GameObject* World::CreateGameObject()
 void World::DestroyGameObject(GameObject* gameObject)
 {
 	RE_ASSERT(gameObject != nullptr)
-	gameObjects.remove(gameObject);
+
+	gameObject->isDestroyed = true;
 	gameObject->OnDestory();
-	delete gameObject;
+	
 }
+
+void World::RemoveAllDestroyedGameObjects()
+{
+	std::list<GameObject*>::iterator i = gameObjects.begin();
+	while (i != gameObjects.end())
+	{
+		bool destroyed = (*i)->IsDestroyed();
+		if (destroyed)
+		{
+			i = gameObjects.erase(i);
+		}
+		else
+		{
+			++i;
+		}
+	}
+}
+

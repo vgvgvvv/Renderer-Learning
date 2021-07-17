@@ -257,6 +257,9 @@ namespace EditorGUId
         [StructLayout(LayoutKind.Sequential, Size = 1)]
         public partial struct __Internal
         {
+            [SuppressUnmanagedCodeSecurity, DllImport("EditorGUId", EntryPoint = "??0WorldOutlineView@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern __IntPtr ctor(__IntPtr __instance);
+
             [SuppressUnmanagedCodeSecurity, DllImport("EditorGUId", EntryPoint = "??0WorldOutlineView@@QEAA@AEBV0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
@@ -324,6 +327,7 @@ namespace EditorGUId
             __Instance = Marshal.AllocHGlobal(sizeof(global::EditorGUId.WorldOutlineView.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
+            __Internal.ctor(__Instance);
         }
 
         public WorldOutlineView(global::EditorGUId.WorldOutlineView _0)

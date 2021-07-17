@@ -15,6 +15,7 @@ void GameObject::Destroy(GameObject* gameObject)
 
 GameObject::GameObject()
 	: name("Game Object")
+	, isDestroyed(false)
 {
 }
 
@@ -48,5 +49,9 @@ void GameObject::OnDestory()
 	}
 	components.clear();
 	transform.reset();
-	
+	for (auto child : children)
+	{
+		World::Get().DestroyGameObject(child);
+	}
+	children.clear();
 }

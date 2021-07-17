@@ -4,13 +4,14 @@
 #include <string>
 #include <vector>
 
+#include "BaseObject.h"
 #include "Component.h"
 #include "World_API.h"
 
 class Transform;
 class World;
 
-class World_API GameObject
+class World_API GameObject : public BaseObject
 {
 	friend World;
 public:
@@ -34,6 +35,8 @@ public:
 	const GameObject* GetParent() const { return owner; }
 
 	std::list<GameObject*>& GetChildren() { return children; }
+
+	bool IsDestroyed() const { return isDestroyed; }
 	
 protected:
 
@@ -49,6 +52,9 @@ private:
 	GameObject* owner = nullptr;
 	std::vector<std::shared_ptr<class Component>> components;
 	std::list<GameObject*> children;
+
+	bool isDestroyed;
+
 };
 
 template <typename T>

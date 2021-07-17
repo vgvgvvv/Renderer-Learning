@@ -62,6 +62,7 @@
                         "Behavior.h",
                         "DotNetBehavior.h",
                         "GameObject.h",
+                        "BaseObject.h",
                         "World.h",
                         "World_API.h",
                         "Singleton.h"

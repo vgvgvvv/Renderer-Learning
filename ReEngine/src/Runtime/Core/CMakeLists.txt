@@ -5,7 +5,8 @@ set(linkLibs
 	RenderPipeline 
 	DotNetLib
 	EditorGUI
-	ImGUILib)
+	ImGUILib
+	World)
 
 set(targetName Core)
 ReMake_AddTarget(

@@ -2,6 +2,7 @@
 #include <Behavior.h>
 #include <DotNetBehavior.h>
 #include <GameObject.h>
+#include <BaseObject.h>
 #include <World.h>
 #include <World_API.h>
 #include <Singleton.h>
@@ -25,5 +26,8 @@ const GameObject* (GameObject::*_7)() const = &GameObject::GetParent;
 extern "C" __declspec(dllexport) void GameObject_GameObject___1__S_GameObject(void* __instance, const GameObject& _0) { ::new (__instance) GameObject(_0); }
 GameObject& (GameObject::*_8)(GameObject&&) = &GameObject::operator=;
 extern "C" __declspec(dllexport) void GameObject__GameObject(GameObject*__instance) { __instance->~GameObject(); }
-World& (*_9)() = &World::Get;
+const std::basic_string<char, std::char_traits<char>, std::allocator<char>>* (BaseObject::*_9)() const = &BaseObject::GetGuid;
+extern "C" __declspec(dllexport) void BaseObject_BaseObject___1__S_BaseObject(void* __instance, const BaseObject& _0) { ::new (__instance) BaseObject(_0); }
+BaseObject& (BaseObject::*_10)(const BaseObject&) = &BaseObject::operator=;
+World& (*_11)() = &World::Get;
 extern "C" __declspec(dllexport) void World__World(World*__instance) { __instance->~World(); }

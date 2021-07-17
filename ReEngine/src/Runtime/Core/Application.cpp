@@ -4,6 +4,7 @@
 #include "Layers/RenderLayer.h"
 #include "Layers/ImguiLayer.h"
 #include "Layers/WindowLayer.h"
+#include "Layers/WorldLayer.h"
 
 Application* Application::Instance = nullptr;
 Application& Application::Get()
@@ -32,6 +33,7 @@ void Application::Init()
 {
 	RE_LOG_INFO("Application", "Application::Init");
 	LayerManager.PushLayer(new WindowLayer());
+	LayerManager.PushLayer(new WorldLayer());
 	LayerManager.PushLayer(new RenderLayer());
 	LayerManager.PushLayer(new ImguiLayer());
 	LayerManager.PushLayer(new DotNetLayer());

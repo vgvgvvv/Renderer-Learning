@@ -8,6 +8,7 @@ void WorldLayer::OnInit()
 
 void WorldLayer::OnPreUpdate(float deltaTime)
 {
+	World::Get().RemoveAllDestroyedGameObjects();
 	BehaviorManager::Get().PreUpdate(deltaTime);
 }
 
