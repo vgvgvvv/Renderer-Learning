@@ -91,6 +91,14 @@ void WorldOutlineView::OnGameObjectNodeClick(GameObject* gameObject, bool isLeaf
 {
 	if (ImGui::IsItemClicked())
 	{
+		if(!ImGui::GetIO().KeyCtrl)
+		{
+			selectedObjects.remove_if([gameObject](GameObject* obj)
+				{
+					return obj != gameObject;
+				});
+		}
+		
 		if (std::find(selectedObjects.begin(),
 			selectedObjects.end(),
 			gameObject) != selectedObjects.end())
