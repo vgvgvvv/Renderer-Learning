@@ -1,6 +1,9 @@
 #include "Camera.h"
 
-Camera::Camera() : ClearColor(Color::black)
+Camera::Camera()
+	: ClearColor(Color::black)
+	, fov(60)
+	, aspect(16.0f / 9.0)
 {
 }
 

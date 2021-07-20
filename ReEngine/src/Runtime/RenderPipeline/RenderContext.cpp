@@ -1,6 +1,7 @@
 #include "RenderContext.h"
 
 #include "Renderer/OpenGLRenderContext.h"
+#include "RendererComponents/BaseRenderer.h"
 
 RenderContext::RenderContext()
 {
@@ -22,3 +23,20 @@ void RenderContext::DrawSkyBox(const Camera& camera)
 {
 	// TODO
 }
+
+void RenderContext::DrawRenderers(const DrawingSetting& drawingSetting, const FilterSetting& filterSetting)
+{
+	auto& renderers = RendererManager::Get().GetRenderers();
+
+	for (auto renderer : renderers)
+	{
+		DrawSingleRenderer(renderer, drawingSetting, filterSetting);
+	}
+}
+
+void RenderContext::DrawSingleRenderer(BaseRenderer* renderer, const DrawingSetting& drawingSetting,
+	const FilterSetting& filterSetting)
+{
+	
+}
+

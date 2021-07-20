@@ -6,7 +6,19 @@
 #include "Color.h"
 #include "RenderPipeline_API.h"
 
+class BaseRenderer;
 class OpenGLRenderContext;
+
+struct RenderPipeline_API DrawingSetting
+{
+	
+};
+
+struct RenderPipeline_API FilterSetting
+{
+	
+};
+
 
 class RenderPipeline_API RenderContext
 {
@@ -20,6 +32,11 @@ public:
 
 	void DrawSkyBox(const Camera& camera);
 
+	void DrawRenderers(const DrawingSetting& drawingSetting, const FilterSetting& filterSetting);
+
+private:
+
+	void DrawSingleRenderer(BaseRenderer* renderer, const DrawingSetting& drawingSetting, const FilterSetting& filterSetting);
 
 private:
 	std::shared_ptr<OpenGLRenderContext> context;

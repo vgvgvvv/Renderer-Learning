@@ -21,6 +21,23 @@ public:
 
 	Color ClearColor;
 
+	void SetFov(float fov) { this->fov = fov; }
+	float GetFov() const { return this->fov; }
+
+	void SetAspect(float aspect) { this->aspect = aspect; }
+	float GetAspect() const { return aspect; }
+
+	void SetNearZ(float nearZ) { this->nearZ = nearZ; }
+	float GetNearZ() const { return nearZ; }
+
+	void SetFarZ(float farZ) { this->farZ = farZ; }
+	float GetFarZ() const { return farZ; }
+	
+private:
+	float fov;
+	float aspect;
+	float nearZ;
+	float farZ;
 };
 
 class RenderPipeline_API CameraManager

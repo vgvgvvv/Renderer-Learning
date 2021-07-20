@@ -1,6 +1,6 @@
 #include "DefaultRenderPipeline.h"
 
-void DefaultRenderPipeline::Render(const RenderContext& context, std::list<Camera*> cameras)
+void DefaultRenderPipeline::Render(RenderContext& context, std::list<Camera*> cameras)
 {
 	for (auto camera : cameras)
 	{
@@ -8,8 +8,13 @@ void DefaultRenderPipeline::Render(const RenderContext& context, std::list<Camer
 	}
 }
 
-void DefaultRenderPipeline::RenderSingleCamera(const RenderContext& context, Camera* cameras)
+void DefaultRenderPipeline::RenderSingleCamera(RenderContext& context, Camera* camera)
 {
-	
+	context.SetupCameraProperties(*camera);
+
+
+	DrawingSetting drawSetting;
+	FilterSetting filterSetting;
+	context.DrawRenderers(drawSetting, filterSetting);
 }
 
