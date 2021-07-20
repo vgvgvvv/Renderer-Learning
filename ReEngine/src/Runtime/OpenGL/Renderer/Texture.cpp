@@ -4,8 +4,28 @@
 #include "stb_image.h"
 #include "VertexArrayObject.h"
 
+
+Texture::Texture(int32_t width, int32_t height, uint32_t slot)
+	: slot(slot)
+	, local_buffer_(nullptr)
+	, width_(width)
+	, height_(height)
+	, bpp_(0)
+{
+	GLCall(glGenTextures(1, &render_id_));
+	GLCall(glBindTexture(GL_TEXTURE_2D, render_id_));
+
+	GLCall(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR));
+	GLCall(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR));
+	GLCall(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE));
+	GLCall(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE));
+
+	GLCall(glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width_, height_, 0, GL_RGBA, GL_UNSIGNED_BYTE, local_buffer_));
+	GLCall(glBindTexture(GL_TEXTURE_2D, 0));
+}
+
 Texture::Texture(const std::string& filepath, uint32_t slot)
-	: slot(0)
+	: slot(slot)
 	, file_path_(filepath)
 	, local_buffer_(nullptr)
 	, width_(0)

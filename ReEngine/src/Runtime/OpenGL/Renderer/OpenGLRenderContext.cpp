@@ -4,6 +4,8 @@
 #include "Shader.h"
 #include "VertexArrayObject.h"
 #include "Common.h"
+#include "FrameBuffer.h"
+#include "Texture.h"
 
 
 void GLClearError()
@@ -42,3 +44,32 @@ void OpenGLRenderContext::SetAlpha(uint32_t from, uint32_t to)
 	GLCall(glBlendFunc(from, to));
 }
 
+std::shared_ptr<IFrameBuffer> OpenGLRenderContext::CreateFrameBuffer()
+{
+	return std::make_shared<FrameBuffer>();
+}
+
+std::shared_ptr<ITexture> OpenGLRenderContext::CreateTexture(uint32_t width, uint32_t height)
+{
+	return std::make_shared<Texture>(width, height);
+}
+
+std::shared_ptr<IIndexBuffer> OpenGLRenderContext::CreateIndexBuffer(const uint32_t* data, uint32_t count)
+{
+	return std::make_shared<IndexBuffer>(data, count);
+}
+
+std::shared_ptr<IVertexBuffer> OpenGLRenderContext::CreateVertexBuffer(const void* data, uint32_t size)
+{
+	return std::make_shared<VertexBuffer>(data, size);
+}
+
+std::shared_ptr<IVertexArrayObject> OpenGLRenderContext::CreateVertexArrayObject()
+{
+	return std::make_shared<VertexArrayObject>();
+}
+
+std::shared_ptr<IShader> OpenGLRenderContext::CreateShader(const std::string& fileName)
+{
+	return std::make_shared<Shader>(fileName);
+}

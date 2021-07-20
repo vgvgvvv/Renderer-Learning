@@ -1,4 +1,6 @@
 #include "FrameBuffer.h"
+
+#include "ITexture.h"
 #include "OpenGLRenderContext.h"
 
 FrameBuffer::FrameBuffer()
@@ -19,4 +21,9 @@ void FrameBuffer::Bind() const
 void FrameBuffer::Unbind() const
 {
 	GLCall(glBindFramebuffer(GL_FRAMEBUFFER, 0));
+}
+
+void FrameBuffer::SetFrameBufferTexture(const ITexture& texture)
+{
+	GLCall(glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, texture.GetRenderId(), 0));
 }

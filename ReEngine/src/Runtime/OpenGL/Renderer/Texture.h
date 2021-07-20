@@ -8,6 +8,7 @@
 class ReOpenGL_API Texture : public ITexture
 {
 public:
+	Texture(int32_t width, int32_t height, uint32_t slot = 0);
 	Texture(const std::string& filepath, uint32_t slot = 0);
 	~Texture();
 	
