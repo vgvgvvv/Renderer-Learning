@@ -1,6 +1,7 @@
 #pragma once
+#include "RHI_API.h"
 
-class IRenderContext
+class RHI_API IRenderContext
 {
 	
 };
