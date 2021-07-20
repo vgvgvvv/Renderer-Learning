@@ -1,16 +1,16 @@
 #pragma once
 #include <cstdint>
+
+#include "IFrameBuffer.h"
 #include "ReOpenGL_API.h"
 
-class ReOpenGL_API FrameBuffer
+class ReOpenGL_API FrameBuffer : public IFrameBuffer
 {
 public:
 	FrameBuffer();
-	~FrameBuffer();
+	~FrameBuffer() override;
 
-	void Bind();
-	void Unbind();
+	void Bind() const override;
+	void Unbind() const override;
 
-private:
-	uint32_t render_id_;
 };

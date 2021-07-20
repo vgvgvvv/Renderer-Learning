@@ -21,7 +21,7 @@ bool GLLogCall(const char* function, const char* file, int line)
 	return true;
 }
 
-void OpenGLRenderContext::Draw(const VertexArrayObject& vao, const IndexBuffer& ib, const Shader& shader) const
+void OpenGLRenderContext::Draw(const IVertexArrayObject& vao, const IIndexBuffer& ib, const IShader& shader) const
 {
 	shader.Bind();
 	vao.Bind();

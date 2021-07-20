@@ -2,7 +2,12 @@
 
 #include "RHI_API.h"
 
-class RHI_API IVertexBufferLayout
+struct IVertexBufferElement
+{
+
+};
+
+class IVertexBufferLayout
 {
 	
 };

@@ -1,8 +1,9 @@
 #pragma once
 
+#include "IRHIResources.h"
 #include "RHI_API.h"
 
-class RHI_API IVertexBuffer
+class IVertexBuffer : public IRHIResources
 {
 	
 };

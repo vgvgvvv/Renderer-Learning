@@ -1,7 +1,8 @@
 #pragma once
+#include "IRHIResources.h"
 #include "RHI_API.h"
 
-class RHI_API IShader
+class IShader : public IRHIResources
 {
 	
 };

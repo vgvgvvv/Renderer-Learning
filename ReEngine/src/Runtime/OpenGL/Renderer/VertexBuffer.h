@@ -1,16 +1,16 @@
 ﻿#pragma once
 #include <cstdint>
 
+#include "IVertexBuffer.h"
 #include "ReOpenGL_API.h"
 
-class ReOpenGL_API VertexBuffer
+class ReOpenGL_API VertexBuffer : IVertexBuffer
 {
-private:
-	uint32_t render_id_;
+
 public:
 
 	VertexBuffer(const void* data, uint32_t size);
-	~VertexBuffer();
-	void Bind() const;
-	void Unbind() const;
+	~VertexBuffer() override;
+	void Bind() const override;
+	void Unbind() const override;
 };

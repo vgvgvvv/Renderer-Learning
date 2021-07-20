@@ -1,24 +1,25 @@
 ﻿#pragma once
 #include <cstdint>
 #include <string>
+
+#include "ITexture.h"
 #include "ReOpenGL_API.h"
 
-class ReOpenGL_API Texture
+class ReOpenGL_API Texture : public ITexture
 {
 public:
-	Texture(const std::string& filepath);
+	Texture(const std::string& filepath, uint32_t slot = 0);
 	~Texture();
-
-	uint32_t GetRenderId() { return render_id_; }
 	
-	void Bind(uint32_t slot = 0) const;
-	void Unbind() const;
+	void Bind() const override;
+	void Unbind() const override;
 
 	inline int32_t GetWidth() const { return width_; }
 	inline int32_t GetHeight() const { return height_; }
 
 private:
-	uint32_t render_id_;
+	uint32_t slot;
+	
 	std::string file_path_;
 	uint8_t* local_buffer_;
 	int32_t width_, height_, bpp_;

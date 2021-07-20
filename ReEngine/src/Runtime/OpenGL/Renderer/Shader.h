@@ -1,6 +1,8 @@
 ﻿#pragma once
 #include <unordered_map>
 #include <string>
+
+#include "IShader.h"
 #include "ReOpenGL_API.h"
 
 struct ReOpenGL_API ShaderProgramSource
@@ -9,18 +11,17 @@ struct ReOpenGL_API ShaderProgramSource
 	std::string FragmentSource;
 };
 
-class ReOpenGL_API Shader
+class ReOpenGL_API Shader : public IShader
 {
 private:
-	uint32_t render_id_;
 	std::string file_path_;
 	// caching for uniform
 	std::unordered_map<std::string, int32_t> location_cache_;
 public:
 	Shader(const std::string& fileName);
 	~Shader();
-	void Bind() const;
-	void Unbind() const;
+	void Bind() const override;
+	void Unbind() const override;
 
 	//Set Uniforms
 	void SetUniform1i(const std::string& name, uint32_t i);

@@ -4,8 +4,13 @@
 #include "stb_image.h"
 #include "VertexArrayObject.h"
 
-Texture::Texture(const std::string& filepath)
-	: render_id_(0), file_path_(filepath), local_buffer_(nullptr), width_(0), height_(0), bpp_(0)
+Texture::Texture(const std::string& filepath, uint32_t slot)
+	: slot(0)
+	, file_path_(filepath)
+	, local_buffer_(nullptr)
+	, width_(0)
+	, height_(0)
+	, bpp_(0)
 {
 	stbi_set_flip_vertically_on_load(1);
 
@@ -33,7 +38,7 @@ Texture::~Texture()
 	GLCall(glDeleteTextures(1, &render_id_));
 }
 
-void Texture::Bind(uint32_t slot) const
+void Texture::Bind() const
 {
 	//绑定贴图的位置，以供shader使用
 	GLCall(glActiveTexture(GL_TEXTURE0 + slot));

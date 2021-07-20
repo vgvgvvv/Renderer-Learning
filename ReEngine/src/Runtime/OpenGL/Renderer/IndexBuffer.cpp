@@ -3,7 +3,7 @@
 #include "OpenGLRenderContext.h"
 
 IndexBuffer::IndexBuffer(const uint32_t* data, uint32_t count)
-	: render_id_(0), count_(count)
+	: count_(count)
 {
 	GLCall(glGenBuffers(1, &render_id_));
 	GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, render_id_));

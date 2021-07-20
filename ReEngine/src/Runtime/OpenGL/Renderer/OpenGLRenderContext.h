@@ -17,6 +17,9 @@
 	#define GLCall(x) x;
 #endif
 
+class IShader;
+class IIndexBuffer;
+class IVertexArrayObject;
 void GLClearError();
 
 bool GLLogCall(const char* function, const char* file, int line);
@@ -31,7 +34,7 @@ class ReOpenGL_API OpenGLRenderContext : public IRenderContext
 {
 public:
 
-	void Clear(const Color& color) const;
-	void Draw(const VertexArrayObject& vao, const IndexBuffer& ib, const Shader& shader) const;
-	void SetAlpha(uint32_t from, uint32_t to);
+	void Clear(const Color& color) const override;
+	void Draw(const IVertexArrayObject& vao, const IIndexBuffer& ib, const IShader& shader) const override;
+	void SetAlpha(uint32_t from, uint32_t to) override;
 };

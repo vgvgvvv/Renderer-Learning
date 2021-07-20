@@ -6,6 +6,7 @@
 #include "Color.h"
 #include "RenderPipeline_API.h"
 
+class IRenderContext;
 class BaseRenderer;
 class OpenGLRenderContext;
 
@@ -39,5 +40,5 @@ private:
 	void DrawSingleRenderer(BaseRenderer* renderer, const DrawingSetting& drawingSetting, const FilterSetting& filterSetting);
 
 private:
-	std::shared_ptr<OpenGLRenderContext> context;
+	std::shared_ptr<IRenderContext> context;
 };

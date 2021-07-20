@@ -1,7 +1,10 @@
 #pragma once 
+#include <utility>
+
+#include "IRHIResources.h"
 #include "RHI_API.h"
 
-class RHI_API IFrameBuffer
+class IFrameBuffer : public IRHIResources
 {
-	
+
 };

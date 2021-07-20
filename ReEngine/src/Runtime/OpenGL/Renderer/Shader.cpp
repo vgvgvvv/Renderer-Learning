@@ -8,7 +8,7 @@
 #include "Common.h"
 
 Shader::Shader(const std::string& fileName)
-	: render_id_(0), file_path_(fileName)
+	: file_path_(fileName)
 {
 	auto source = ParseShader(fileName);
 	render_id_ = CreateShader(source.VertexSource, source.FragmentSource);
