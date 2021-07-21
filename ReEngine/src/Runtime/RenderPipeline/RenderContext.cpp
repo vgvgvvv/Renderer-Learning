@@ -1,27 +1,24 @@
 #include "RenderContext.h"
 
-#include "Renderer/OpenGLRenderContext.h"
 #include "RendererComponents/BaseRenderer.h"
 #include "GameObject.h"
 #include "Transform.h"
 #include "Camera.h"
+#include "IRenderDevice.h"
 #include "IVertexArrayObject.h"
+#include "Misc/Path.h"
 
-RenderContext::RenderContext()
-{
-	context = std::make_shared<OpenGLRenderContext>();
-}
 
 void RenderContext::Clear(const Color& color)
 {
-	context->Clear(color);
+	device->Clear(color);
 }
 
 
 void RenderContext::SetupCameraProperties(const Camera& camera)
 {
-	context->GlobalMatrix4.insert(std::pair<std::string, Matrix4x4>("ReEngine_ViewMat", camera.GetViewMatrix()));
-	context->GlobalMatrix4.insert(std::pair<std::string, Matrix4x4>("ReEngine_ProjMat", camera.GetPerspectiveProjectionMatrix()));
+	device->GlobalMatrix4.insert(std::pair<std::string, Matrix4x4>("ReEngine_ViewMat", camera.GetViewMatrix()));
+	device->GlobalMatrix4.insert(std::pair<std::string, Matrix4x4>("ReEngine_ProjMat", camera.GetPerspectiveProjectionMatrix()));
 }
 
 void RenderContext::DrawSkyBox(const Camera& camera)
@@ -41,7 +38,7 @@ void RenderContext::DrawRenderers(const DrawingSetting& drawingSetting, const Fi
 
 void RenderContext::TestDraw()
 {
-	auto vao = context->CreateVertexArrayObject();
+	auto vao = device->CreateVertexArrayObject();
 
 	float vertexesArray[9] = {
 		-0.5f, -0.5f, 0.0f, // left  
@@ -55,14 +52,14 @@ void RenderContext::TestDraw()
 		 0.0f,  0.0f, 1.0f  // top   
 	};
 
-	auto vertexBuffer = context->CreateVertexBuffer(vertexesArray, sizeof(vertexesArray));
-	auto colorBuffer = context->CreateVertexBuffer(colorsArray, sizeof(colorsArray));
+	auto vertexBuffer = device->CreateVertexBuffer(vertexesArray, sizeof(vertexesArray));
+	auto colorBuffer = device->CreateVertexBuffer(colorsArray, sizeof(colorsArray));
 	
-	auto vertexLayout = context->CreateVertexBufferLayout();
+	auto vertexLayout = device->CreateVertexBufferLayout();
 	vertexLayout->PushVector3();
 	vao->AddBuffer(*vertexBuffer, *vertexLayout);
 
-	auto colorLayout = context->CreateVertexBufferLayout();
+	auto colorLayout = device->CreateVertexBufferLayout();
 	colorLayout->PushColor();
 	vao->AddBuffer(*colorBuffer, *colorLayout);
 
@@ -71,15 +68,15 @@ void RenderContext::TestDraw()
 		0, 1, 2
 	};
 
-	auto ib = context->CreateIndexBuffer(indice, ARRAYSIZE(indice));
+	auto ib = device->CreateIndexBuffer(indice, 3);
 
 	auto vertFileName = Path::Combine(Path::GetShaderSourcePath(), "Default/Unlit.vert.glsl");
 	auto fragFileName = Path::Combine(Path::GetShaderSourcePath(), "Default/Unlit.frag.glsl");
-	auto shader = context->CreateShader(vertFileName, fragFileName);
+	auto shader = device->CreateShader(vertFileName, fragFileName);
 
 	// context->InitGlobalUniform(shader);
 
-	context->DrawArray(*vao, *shader, 3);
+	device->DrawArray(*vao, *shader, 3);
 	
 }
 
@@ -91,7 +88,7 @@ void RenderContext::DrawSingleRenderer(BaseRenderer* renderer, const DrawingSett
 	auto ModelMat = Matrix4x4::Translate(transform.position)
 		* Matrix4x4::Scale(transform.scale)
 		* Matrix4x4::Rotate(transform.rotation);
-	context->GlobalMatrix4.insert(std::pair<std::string, Matrix4x4>("ReEngine_ModelMat", ModelMat));
+	device->GlobalMatrix4.insert(std::pair<std::string, Matrix4x4>("ReEngine_ModelMat", ModelMat));
 
 
 

@@ -1,5 +1,5 @@
 ﻿#include "VertexBuffer.h"
-#include "OpenGLRenderContext.h"
+#include "OpenGLDevice.h"
 
 VertexBuffer::VertexBuffer(const void* data, uint32_t size)
 {

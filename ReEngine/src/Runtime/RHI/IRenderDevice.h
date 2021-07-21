@@ -10,9 +10,6 @@
 #include "Matrix3x3.h"
 #include "Matrix4x4.h"
 #include "RHI_API.h"
-#include "Vector2.h"
-#include "Vector3.h"
-#include "Vector4.h"
 
 class IVertexBuffer;
 class ITexture;
@@ -22,7 +19,7 @@ class IVertexArrayObject;
 class IIndexBuffer;
 class IShader;
 
-class RHI_API IRenderContext
+class RHI_API IRenderDevice
 {
 public:
 	virtual void Clear(const Color& color) const = 0;

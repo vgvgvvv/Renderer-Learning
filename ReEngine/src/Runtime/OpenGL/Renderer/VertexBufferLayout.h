@@ -3,7 +3,7 @@
 #include <vector>
 #include "Common.h"
 #include "IVertexBufferLayout.h"
-#include "OpenGLRenderContext.h"
+#include "OpenGLDevice.h"
 #include "ReOpenGL_API.h"
 
 

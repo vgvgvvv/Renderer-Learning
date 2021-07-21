@@ -1,4 +1,4 @@
-﻿#include "OpenGLRenderContext.h"
+﻿#include "OpenGLDevice.h"
 #include <iostream>
 #include "IndexBuffer.h"
 #include "Shader.h"
@@ -23,7 +23,7 @@ bool GLLogCall(const char* function, const char* file, int line)
 	return true;
 }
 
-void OpenGLRenderContext::Draw(const IVertexArrayObject& vao, const IIndexBuffer& ib, const IShader& shader) const
+void OpenGLDevice::Draw(const IVertexArrayObject& vao, const IIndexBuffer& ib, const IShader& shader) const
 {
 	shader.Bind();
 	vao.Bind();
@@ -32,68 +32,68 @@ void OpenGLRenderContext::Draw(const IVertexArrayObject& vao, const IIndexBuffer
 	GLCall(glDrawElements(GL_TRIANGLES, ib.GetCount(), GL_UNSIGNED_INT, nullptr));
 }
 
-void OpenGLRenderContext::DrawArray(const IVertexArrayObject& vao, const IShader& shader, int count) const
+void OpenGLDevice::DrawArray(const IVertexArrayObject& vao, const IShader& shader, int count) const
 {
 	vao.Bind();
 	shader.Bind();
 	GLCall(glDrawArrays(GL_TRIANGLES, 0, count));
 }
 
-void OpenGLRenderContext::Clear(const Color& color) const
+void OpenGLDevice::Clear(const Color& color) const
 {
 	GLCall(glClearColor(color.r, color.g, color.b, color.a));
 	GLCall(glClear(GL_COLOR_BUFFER_BIT));
 }
 
-void OpenGLRenderContext::SetAlpha(uint32_t from, uint32_t to)
+void OpenGLDevice::SetAlpha(uint32_t from, uint32_t to)
 {
 	GLCall(glEnable(GL_ALPHA))
 	GLCall(glBlendFunc(from, to));
 }
 
-std::shared_ptr<IFrameBuffer> OpenGLRenderContext::CreateFrameBuffer() const
+std::shared_ptr<IFrameBuffer> OpenGLDevice::CreateFrameBuffer() const
 {
 	return std::make_shared<FrameBuffer>();
 }
 
-std::shared_ptr<ITexture> OpenGLRenderContext::CreateTexture(uint32_t width, uint32_t height) const
+std::shared_ptr<ITexture> OpenGLDevice::CreateTexture(uint32_t width, uint32_t height) const
 {
 	return std::make_shared<Texture>(width, height);
 }
 
-std::shared_ptr<IIndexBuffer> OpenGLRenderContext::CreateIndexBuffer(const uint32_t* data, uint32_t count) const
+std::shared_ptr<IIndexBuffer> OpenGLDevice::CreateIndexBuffer(const uint32_t* data, uint32_t count) const
 {
 	return std::make_shared<IndexBuffer>(data, count);
 }
 
-std::shared_ptr<IVertexBuffer> OpenGLRenderContext::CreateVertexBuffer(const void* data, uint32_t size) const
+std::shared_ptr<IVertexBuffer> OpenGLDevice::CreateVertexBuffer(const void* data, uint32_t size) const
 {
 	return std::make_shared<VertexBuffer>(data, size);
 }
 
-std::shared_ptr<IVertexBufferLayout> OpenGLRenderContext::CreateVertexBufferLayout()
+std::shared_ptr<IVertexBufferLayout> OpenGLDevice::CreateVertexBufferLayout()
 {
 	return std::make_shared<VertexBufferLayout>();
 }
 
-std::shared_ptr<IVertexArrayObject> OpenGLRenderContext::CreateVertexArrayObject() const
+std::shared_ptr<IVertexArrayObject> OpenGLDevice::CreateVertexArrayObject() const
 {
 	return std::make_shared<VertexArrayObject>();
 }
 
-std::shared_ptr<IShader> OpenGLRenderContext::CreateShader(const std::string& fileName) const
+std::shared_ptr<IShader> OpenGLDevice::CreateShader(const std::string& fileName) const
 {
 	return std::make_shared<Shader>(fileName);
 }
 
-std::shared_ptr<IShader> OpenGLRenderContext::CreateShader(const std::string& vertFileName,
+std::shared_ptr<IShader> OpenGLDevice::CreateShader(const std::string& vertFileName,
 	const std::string& fragFileName) const
 {
 	return std::make_shared<Shader>(vertFileName, fragFileName);
 }
 
 
-void OpenGLRenderContext::InitGlobalUniform(IShader& shader) const
+void OpenGLDevice::InitGlobalUniform(IShader& shader) const
 {
 	//
 	for (std::pair<std::string, float> pair : GlobalUniform1F)

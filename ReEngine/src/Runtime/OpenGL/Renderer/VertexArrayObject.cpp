@@ -1,6 +1,6 @@
 ﻿#include "VertexArrayObject.h"
 
-#include "OpenGLRenderContext.h"
+#include "OpenGLDevice.h"
 
 VertexArrayObject::VertexArrayObject()
 {

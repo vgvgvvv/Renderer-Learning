@@ -4,6 +4,7 @@
 
 #include "EditorGUI_API.h"
 
+class RenderTexture;
 class Texture;
 class Camera;
 
@@ -19,5 +20,5 @@ public:
 private:
 
 	std::shared_ptr<Camera> camera;
-	std::shared_ptr<Texture> showTexture;
+	std::shared_ptr<RenderTexture> showTexture;
 };

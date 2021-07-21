@@ -13,13 +13,11 @@ void TestPipeline::Render(RenderContext& context, std::list<Camera*> cameras)
 
 void TestPipeline::RenderSingleCamera(RenderContext& context, Camera* camera)
 {
-	context.Clear(Color::blue);
-	// context.SetupCameraProperties(*camera);
-	//
-	// DrawingSetting drawSetting;
-	// FilterSetting filterSetting;
-	// context.DrawRenderers(drawSetting, filterSetting);
+	context.Clear(Color::gray);
+	context.SetupCameraProperties(*camera);
 	
-	context.TestDraw();
+	DrawingSetting drawSetting;
+	FilterSetting filterSetting;
+	context.DrawRenderers(drawSetting, filterSetting);
 	
 }

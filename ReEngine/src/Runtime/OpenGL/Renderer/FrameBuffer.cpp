@@ -1,7 +1,7 @@
 #include "FrameBuffer.h"
 
 #include "ITexture.h"
-#include "OpenGLRenderContext.h"
+#include "OpenGLDevice.h"
 
 FrameBuffer::FrameBuffer()
 {

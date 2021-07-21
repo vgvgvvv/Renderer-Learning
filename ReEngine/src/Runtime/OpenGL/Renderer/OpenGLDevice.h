@@ -5,7 +5,7 @@
 #include "Color.h"
 #include "Common.h"
 #include "GL/glew.h"
-#include "IRenderContext.h"
+#include "IRenderDevice.h"
 #include "ReOpenGL_API.h"
 
 
@@ -30,7 +30,7 @@ class IndexBuffer;
 class VertexArrayObject;
 
 
-class ReOpenGL_API OpenGLRenderContext : public IRenderContext
+class ReOpenGL_API OpenGLDevice : public IRenderDevice
 {
 public:
 

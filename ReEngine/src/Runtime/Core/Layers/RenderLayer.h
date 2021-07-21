@@ -19,5 +19,4 @@ public:
 
 private:
 	std::shared_ptr<RenderPipeline> pipeline;
-	std::shared_ptr<RenderContext> renderContext;
 };

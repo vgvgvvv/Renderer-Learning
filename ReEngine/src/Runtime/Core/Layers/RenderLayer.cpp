@@ -1,5 +1,5 @@
 #include "RenderLayer.h"
-#include "Renderer/OpenGLRenderContext.h"
+#include "Renderer/OpenGLDevice.h"
 #include "BuildIn/DefaultRenderPipeline.h"
 
 RenderLayer::RenderLayer(std::shared_ptr<RenderPipeline> pipeline)
@@ -13,19 +13,18 @@ void RenderLayer::OnInit()
 	{
 		pipeline = std::make_shared<DefaultRenderPipeline>();
 	}
-	renderContext = std::make_shared<RenderContext>();
+	RenderContext::Get().SetDevice(std::make_shared<OpenGLDevice>());
 }
 
 void RenderLayer::OnBeforeRender(float deltaTime)
 {
-	// glClearColor(clear_color.x * clear_color.w, clear_color.y * clear_color.w, clear_color.z * clear_color.w, clear_color.w);
 	glClear(GL_COLOR_BUFFER_BIT);
 }
 
 void RenderLayer::OnRender(float deltaTime)
 {
 	const auto cameras = CameraManager::Get().GetCameraList();
-	pipeline->Render(*renderContext, cameras);
+	pipeline->Render(RenderContext::Get(), cameras);
 }
 
 void RenderLayer::OnAfterRender(float deltaTime)

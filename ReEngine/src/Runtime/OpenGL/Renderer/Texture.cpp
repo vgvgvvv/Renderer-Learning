@@ -1,6 +1,6 @@
 ﻿#include "Texture.h"
 
-#include "OpenGLRenderContext.h"
+#include "OpenGLDevice.h"
 #include "stb_image.h"
 #include "VertexArrayObject.h"
 

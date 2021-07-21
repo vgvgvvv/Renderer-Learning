@@ -4,7 +4,7 @@
 #include <fstream>
 #include <sstream>
 
-#include "OpenGLRenderContext.h"
+#include "OpenGLDevice.h"
 #include "Common.h"
 
 Shader::Shader(const std::string& fileName)

@@ -6,12 +6,12 @@
 #include "IFrameBuffer.h"
 #include "RHI_API.h"
 
-class IRenderContext;
+class IRenderDevice;
 
 class RHI_API RenderTexture
 {
 public:
-	RenderTexture(IRenderContext& context, int width, int height);
+	RenderTexture(int width, int height);
 
 	ITexture& GetTexture() const { return *texture; }
 	IFrameBuffer& GetFrameBuffer() const { return *frameBuffer; }

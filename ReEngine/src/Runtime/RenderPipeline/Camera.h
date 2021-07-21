@@ -8,6 +8,8 @@
 #include "Singleton.h"
 #include "RenderPipeline_API.h"
 
+class RenderTexture;
+
 class RenderPipeline_API Camera : public Behavior
 {
 public:
@@ -36,12 +38,16 @@ public:
 
 	Matrix4x4 GetViewMatrix() const;
 	Matrix4x4 GetPerspectiveProjectionMatrix() const;
+
+	std::shared_ptr<RenderTexture> GetRenderTexture() const { return renderTexture; }
+	void SetRenderTexture(const std::shared_ptr<RenderTexture>& renderTexture) { this->renderTexture = renderTexture; }
 	
 private:
 	float fov;
 	float aspect;
 	float nearZ;
 	float farZ;
+	std::shared_ptr<RenderTexture> renderTexture;
 };
 
 class RenderPipeline_API CameraManager
