@@ -14,8 +14,12 @@ public:
 	VertexArrayObject();
 	~VertexArrayObject() override;
 	
-	void AddBuffer(const VertexBuffer& vb, const VertexBufferLayout& layout);
+	void AddBuffer(const IVertexBuffer& vb, const IVertexBufferLayout& layout) override;
+	void RemoveAllBuffer() override;
 
 	void Bind() const override;
 	void Unbind() const override;
+
+private:
+	int32 currentAttributeCount = 0;
 };

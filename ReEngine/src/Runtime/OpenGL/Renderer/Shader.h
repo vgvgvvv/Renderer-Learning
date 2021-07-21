@@ -17,11 +17,11 @@ struct ReOpenGL_API ShaderProgramSource
 class ReOpenGL_API Shader : public IShader
 {
 private:
-	std::string file_path_;
 	// caching for uniform
 	std::unordered_map<std::string, int32_t> location_cache_;
 public:
 	Shader(const std::string& fileName);
+	Shader(const std::string& vertFileName, const std::string& fragFileName);
 	~Shader();
 	void Bind() const override;
 	void Unbind() const override;

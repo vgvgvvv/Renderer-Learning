@@ -5,6 +5,7 @@
 #include "GameObject.h"
 #include "Transform.h"
 #include "Camera.h"
+#include "IVertexArrayObject.h"
 
 RenderContext::RenderContext()
 {
@@ -49,6 +50,35 @@ void RenderContext::DrawSingleRenderer(BaseRenderer* renderer, const DrawingSett
 	context->GlobalMatrix4.insert(std::pair<std::string, Matrix4x4>("ReEngine_ModelMat", ModelMat));
 
 
+
+	auto vao = context->CreateVertexArrayObject();
+
+	float vertexesBuffer[9] = {
+		-0.5f, -0.5f, 0.0f, // left  
+		 0.5f, -0.5f, 0.0f, // right 
+		 0.0f,  0.5f, 0.0f  // top   
+	};
+	
+	auto vb = context->CreateVertexBuffer(vertexesBuffer, ARRAYSIZE(vertexesBuffer));
+	auto layout = context->CreateVertexBufferLayout();
+	layout->PushVector3();
+	
+	vao->AddBuffer(*vb, *layout);
+	
+	uint32_t indice[3]
+	{
+		1, 2, 3
+	};
+
+	auto ib = context->CreateIndexBuffer(indice, ARRAYSIZE(indice));
+
+	auto vertFileName = Path::Combine(Path::GetShaderSourcePath(), "Default/Unlit.vert.glsl");
+	auto fragFileName = Path::Combine(Path::GetShaderSourcePath(), "Default/Unlit.frag.glsl");
+	auto shader = context->CreateShader(vertFileName, fragFileName);
+	
+	// context->InitGlobalUniform(shader);
+	
+	context->Draw(*vao, *ib, *shader);
 	//TODO
 }
 

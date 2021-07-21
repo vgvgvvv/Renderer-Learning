@@ -6,3 +6,4 @@
 #include "Platform/Platform.h"
 #include "Misc/StringEx.h"
 #include "Misc/Path.h"
+#include "Misc/File.h"

@@ -2,10 +2,12 @@
 #include <cassert>
 #include <vector>
 #include "Common.h"
+#include "IVertexBufferLayout.h"
 #include "OpenGLRenderContext.h"
 #include "ReOpenGL_API.h"
 
-struct ReOpenGL_API VertexBufferElement
+
+struct VertexBufferElement
 {
 	uint32_t type;
 	uint32_t count;
@@ -16,17 +18,17 @@ struct ReOpenGL_API VertexBufferElement
 		switch (type)
 		{
 		case GL_FLOAT: return sizeof(float);
-		case GL_INT: return sizeof(GLint);
-		case GL_UNSIGNED_INT: return sizeof(GLuint);
-		case GL_BYTE: return sizeof(GLbyte);
-		case GL_UNSIGNED_BYTE: return sizeof(GLubyte);
+		case GL_INT: return sizeof(int32);
+		case GL_UNSIGNED_INT: return sizeof(uint32);
+		case GL_BYTE: return sizeof(int8);
+		case GL_UNSIGNED_BYTE: return sizeof(uint8);
 		}
 		RE_ASSERT_MSG(false, "type is unkonwn");
 		return 0;
 	}
 };
 
-class ReOpenGL_API VertexBufferLayout
+class ReOpenGL_API VertexBufferLayout : public IVertexBufferLayout
 {
 private:
 	std::vector<VertexBufferElement> elements_;
@@ -64,6 +66,11 @@ public:
 
 	// todo more types..
 
-	inline auto GetElements() const { return elements_; }
-	inline auto GetStride() const { return stride_; }
+
+	void PushVector3() override;
+	void PushUV() override;
+	void PushColor() override;
+	
+	std::vector<VertexBufferElement> GetElements() const { return elements_; }
+	uint32_t GetStride() const { return stride_; }
 };

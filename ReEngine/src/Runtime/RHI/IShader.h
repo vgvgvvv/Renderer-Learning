@@ -1,4 +1,6 @@
 #pragma once
+#include <string>
+
 #include "IRHIResources.h"
 #include "RHI_API.h"
 

@@ -46,6 +46,7 @@ void GameObject::OnDestory()
 	for (auto component : components)
 	{
 		component->BeginDestroy();
+		component->owner = nullptr;
 	}
 	components.clear();
 	transform.reset();

@@ -6,6 +6,7 @@ class GameObject;
 
 class World_API Component
 {
+	friend GameObject;
 public:
 	virtual ~Component() = default;
 

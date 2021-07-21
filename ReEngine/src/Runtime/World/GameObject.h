@@ -14,6 +14,7 @@ class World;
 class World_API GameObject : public BaseObject
 {
 	friend World;
+	friend Component;
 public:
 
 	static GameObject* CreateGameObject(const std::string& name = "Game Object");
@@ -62,6 +63,7 @@ std::shared_ptr<T> GameObject::AddComponent()
 {
 	std::shared_ptr<T> newComp = std::make_shared<T>();
 	newComp->Awake();
+	newComp->owner = this;
 	components.push_back(newComp);
 	return newComp;
 }

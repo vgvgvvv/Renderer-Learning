@@ -64,6 +64,11 @@ std::shared_ptr<IVertexBuffer> OpenGLRenderContext::CreateVertexBuffer(const voi
 	return std::make_shared<VertexBuffer>(data, size);
 }
 
+std::shared_ptr<IVertexBufferLayout> OpenGLRenderContext::CreateVertexBufferLayout()
+{
+	return std::make_shared<VertexBufferLayout>();
+}
+
 std::shared_ptr<IVertexArrayObject> OpenGLRenderContext::CreateVertexArrayObject() const
 {
 	return std::make_shared<VertexArrayObject>();
@@ -73,6 +78,13 @@ std::shared_ptr<IShader> OpenGLRenderContext::CreateShader(const std::string& fi
 {
 	return std::make_shared<Shader>(fileName);
 }
+
+std::shared_ptr<IShader> OpenGLRenderContext::CreateShader(const std::string& vertFileName,
+	const std::string& fragFileName) const
+{
+	return std::make_shared<Shader>(vertFileName, fragFileName);
+}
+
 
 void OpenGLRenderContext::InitGlobalUniform(IShader& shader) const
 {

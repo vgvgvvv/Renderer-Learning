@@ -6,5 +6,5 @@
 class RenderPipeline_API CubeRenderer : public MeshRenderer
 {
 public:
-	
+	CubeRenderer();
 };

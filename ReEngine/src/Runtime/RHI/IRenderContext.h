@@ -5,6 +5,8 @@
 #include <string>
 
 
+
+#include "IVertexBufferLayout.h"
 #include "Matrix3x3.h"
 #include "Matrix4x4.h"
 #include "RHI_API.h"
@@ -33,8 +35,10 @@ public:
 	virtual std::shared_ptr<ITexture> CreateTexture(uint32_t width, uint32_t height) const = 0;
 	virtual std::shared_ptr<IIndexBuffer> CreateIndexBuffer(const uint32_t* data, uint32_t count) const = 0;
 	virtual std::shared_ptr<IVertexBuffer> CreateVertexBuffer(const void* data, uint32_t size) const = 0;
+	virtual std::shared_ptr<IVertexBufferLayout> CreateVertexBufferLayout() = 0;
 	virtual std::shared_ptr<IVertexArrayObject> CreateVertexArrayObject() const = 0;
 	virtual std::shared_ptr<IShader> CreateShader(const std::string& fileName) const = 0;
+	virtual std::shared_ptr<IShader> CreateShader(const std::string& vertFileName, const std::string& fragFileName) const = 0;
 
 public:
 
