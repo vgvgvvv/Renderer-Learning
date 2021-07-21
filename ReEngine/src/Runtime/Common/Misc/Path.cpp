@@ -91,3 +91,8 @@ std::string Path::GetDotNetBinaryPath()
 {
     return Path::Combine(GetBinaryPath(), "dotnet");
 }
+
+std::string Path::GetShaderSourcePath()
+{
+    return Path::Combine(GetSourcePath(), "Shader");
+}

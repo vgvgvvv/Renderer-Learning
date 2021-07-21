@@ -13,7 +13,7 @@ public:
 
 	virtual void BeginDestroy() { }
 
-	GameObject* GetOwner() const { return owner; }
+	GameObject& GetOwner() const { return *owner; }
 	
 private:
 	GameObject* owner = nullptr;

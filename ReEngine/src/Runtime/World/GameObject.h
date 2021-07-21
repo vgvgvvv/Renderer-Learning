@@ -16,12 +16,12 @@ class World_API GameObject : public BaseObject
 	friend World;
 public:
 
-	static GameObject* CreateGameObject();
+	static GameObject* CreateGameObject(const std::string& name = "Game Object");
 
 	static void Destroy(GameObject* gameObject);
 
 
-	GameObject();
+	GameObject(const std::string& name = "Game Object");
 
 	void SetName(const std::string& name) { this->name = name; }
 	const std::string& GetName() const { return this->name; }
@@ -29,7 +29,7 @@ public:
 	template<typename T>
 	std::shared_ptr<T> AddComponent();
 
-	std::shared_ptr<Transform> GetTransform() const { return transform; }
+	Transform& GetTransform() const { return *transform; }
 
 	void SetParent(GameObject* parent);
 	const GameObject* GetParent() const { return owner; }

@@ -4,6 +4,7 @@
 
 #include "Behavior.h"
 #include "Color.h"
+#include "Matrix4x4.h"
 #include "Singleton.h"
 #include "RenderPipeline_API.h"
 
@@ -32,6 +33,9 @@ public:
 
 	void SetFarZ(float farZ) { this->farZ = farZ; }
 	float GetFarZ() const { return farZ; }
+
+	Matrix4x4 GetViewMatrix() const;
+	Matrix4x4 GetPerspectiveProjectionMatrix() const;
 	
 private:
 	float fov;

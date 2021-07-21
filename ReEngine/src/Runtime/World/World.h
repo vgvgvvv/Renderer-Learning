@@ -12,7 +12,7 @@ class World_API World
 	
 public:
 	void Init();
-	GameObject* CreateGameObject();
+	GameObject* CreateGameObject(const std::string& name = "Game Object");
 	void DestroyGameObject(GameObject* gameObject);
 
 	void RemoveAllDestroyedGameObjects();

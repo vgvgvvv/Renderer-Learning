@@ -29,14 +29,7 @@ void Shader::Unbind() const
 	GLCall(glUseProgram(0))
 }
 
-void Shader::SetUniform1i(const std::string& name, uint32_t i)
-{
-	int32_t location = GetUniformLocation(name);
-	if (location != -1)
-	{
-		GLCall(glUniform1i(location, i));
-	}
-}
+
 
 void Shader::SetUniform1f(const std::string& name, float v0)
 {
@@ -47,12 +40,86 @@ void Shader::SetUniform1f(const std::string& name, float v0)
 	}
 }
 
+
+void Shader::SetUniform2f(const std::string& name, float v0, float v1)
+{
+	int32_t location = GetUniformLocation(name);
+	if (location != -1)
+	{
+		GLCall(glUniform2f(location, v0, v1));
+	}
+}
+
+void Shader::SetUniform3f(const std::string& name, float v0, float v1, float v2)
+{
+	int32_t location = GetUniformLocation(name);
+	if (location != -1)
+	{
+		GLCall(glUniform3f(location, v0, v1, v2));
+	}
+}
+
 void Shader::SetUniform4f(const std::string& name, float v0, float v1, float v2, float v3)
 {
 	int32_t location = GetUniformLocation(name);
 	if(location != -1)
 	{
 		GLCall(glUniform4f(location, v0, v1, v2, v3));
+	}
+}
+
+void Shader::SetUniform1i(const std::string& name, uint32_t v0)
+{
+	int32_t location = GetUniformLocation(name);
+	if (location != -1)
+	{
+		GLCall(glUniform1i(location, v0));
+	}
+}
+
+void Shader::SetUniform2i(const std::string& name, uint32_t v0, uint32_t v1)
+{
+	int32_t location = GetUniformLocation(name);
+	if (location != -1)
+	{
+		GLCall(glUniform2i(location, v0, v1));
+	}
+}
+
+void Shader::SetUniform3i(const std::string& name, uint32_t v0, uint32_t v1, uint32_t v2)
+{
+	int32_t location = GetUniformLocation(name);
+	if (location != -1)
+	{
+		GLCall(glUniform3i(location, v0, v1, v2));
+	}
+}
+
+void Shader::SetUniform4i(const std::string& name, uint32_t v0, uint32_t v1, uint32_t v2, uint32_t v3)
+{
+	int32_t location = GetUniformLocation(name);
+	if (location != -1)
+	{
+		GLCall(glUniform4i(location, v0, v1, v2, v3));
+	}
+}
+
+void Shader::SetUniformMatrix3(const std::string& name, Matrix3x3& mat)
+{
+	int32_t location = GetUniformLocation(name);
+	if (location != -1)
+	{
+		GLCall(glUniformMatrix3fv(location, 1, GL_FALSE, mat.ToArray()));
+	}
+}
+
+
+void Shader::SetUniformMatrix4(const std::string& name, Matrix4x4& mat)
+{
+	int32_t location = GetUniformLocation(name);
+	if (location != -1)
+	{
+		GLCall(glUniformMatrix4fv(location, 1, GL_FALSE, mat.ToArray()));
 	}
 }
 

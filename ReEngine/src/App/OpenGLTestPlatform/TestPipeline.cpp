@@ -1,6 +1,7 @@
 #include "TestPipeline.h"
+#include "RenderContext.h"
 
-void TestPipeline::Render(const RenderContext& context, std::list<Camera*> cameras)
+void TestPipeline::Render(RenderContext& context, std::list<Camera*> cameras)
 {
 	for (auto camera : cameras)
 	{
@@ -8,7 +9,12 @@ void TestPipeline::Render(const RenderContext& context, std::list<Camera*> camer
 	}	
 }
 
-void TestPipeline::RenderSingleCamera(const RenderContext& context, Camera* camera)
+void TestPipeline::RenderSingleCamera(RenderContext& context, Camera* camera)
 {
-	
+	context.Clear(Color::blue);
+	context.SetupCameraProperties(*camera);
+
+	DrawingSetting drawSetting;
+	FilterSetting filterSetting;
+	context.DrawRenderers(drawSetting, filterSetting);
 }

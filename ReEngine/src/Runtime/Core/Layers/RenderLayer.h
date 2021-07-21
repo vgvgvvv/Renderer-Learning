@@ -10,6 +10,7 @@
 class Core_API RenderLayer : public Layer
 {
 public:
+	RenderLayer(std::shared_ptr<RenderPipeline> pipeline = nullptr);
 	void OnInit() override;
 	void OnBeforeRender(float deltaTime) override;
 	void OnRender(float deltaTime) override;

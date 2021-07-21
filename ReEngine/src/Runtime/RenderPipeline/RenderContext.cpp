@@ -2,6 +2,9 @@
 
 #include "Renderer/OpenGLRenderContext.h"
 #include "RendererComponents/BaseRenderer.h"
+#include "GameObject.h"
+#include "Transform.h"
+#include "Camera.h"
 
 RenderContext::RenderContext()
 {
@@ -16,7 +19,8 @@ void RenderContext::Clear(const Color& color)
 
 void RenderContext::SetupCameraProperties(const Camera& camera)
 {
-	// TODO
+	context->GlobalMatrix4.insert(std::pair<std::string, Matrix4x4>("ReEngine_ViewMat", camera.GetViewMatrix()));
+	context->GlobalMatrix4.insert(std::pair<std::string, Matrix4x4>("ReEngine_ProjMat", camera.GetPerspectiveProjectionMatrix()));
 }
 
 void RenderContext::DrawSkyBox(const Camera& camera)
@@ -37,6 +41,14 @@ void RenderContext::DrawRenderers(const DrawingSetting& drawingSetting, const Fi
 void RenderContext::DrawSingleRenderer(BaseRenderer* renderer, const DrawingSetting& drawingSetting,
 	const FilterSetting& filterSetting)
 {
-	
+	auto& transform = renderer->GetOwner().GetTransform();
+
+	auto ModelMat = Matrix4x4::Translate(transform.position)
+		* Matrix4x4::Scale(transform.scale)
+		* Matrix4x4::Rotate(transform.rotation);
+	context->GlobalMatrix4.insert(std::pair<std::string, Matrix4x4>("ReEngine_ModelMat", ModelMat));
+
+
+	//TODO
 }
 

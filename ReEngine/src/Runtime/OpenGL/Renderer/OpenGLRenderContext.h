@@ -35,13 +35,15 @@ class ReOpenGL_API OpenGLRenderContext : public IRenderContext
 public:
 
 	void Clear(const Color& color) const override;
+	void InitGlobalUniform(IShader& shader) const override;
 	void Draw(const IVertexArrayObject& vao, const IIndexBuffer& ib, const IShader& shader) const override;
 	void SetAlpha(uint32_t from, uint32_t to) override;
 
-	std::shared_ptr<IFrameBuffer> CreateFrameBuffer() override;
-	std::shared_ptr<ITexture> CreateTexture(uint32_t width, uint32_t height) override;
-	std::shared_ptr<IIndexBuffer> CreateIndexBuffer(const uint32_t* data, uint32_t count) override;
-	std::shared_ptr<IVertexBuffer> CreateVertexBuffer(const void* data, uint32_t size) override;
-	std::shared_ptr<IVertexArrayObject> CreateVertexArrayObject() override;
-	std::shared_ptr<IShader> CreateShader(const std::string& fileName) override;
+	std::shared_ptr<IFrameBuffer> CreateFrameBuffer() const override;
+	std::shared_ptr<ITexture> CreateTexture(uint32_t width, uint32_t height) const override;
+	std::shared_ptr<IIndexBuffer> CreateIndexBuffer(const uint32_t* data, uint32_t count) const override;
+	std::shared_ptr<IVertexBuffer> CreateVertexBuffer(const void* data, uint32_t size) const override;
+	std::shared_ptr<IVertexArrayObject> CreateVertexArrayObject() const override;
+	std::shared_ptr<IShader> CreateShader(const std::string& fileName) const override;
+	
 };

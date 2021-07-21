@@ -5,6 +5,9 @@
 #include "IShader.h"
 #include "ReOpenGL_API.h"
 
+class Matrix3x3;
+class Matrix4x4;
+
 struct ReOpenGL_API ShaderProgramSource
 {
 	std::string VertexSource;
@@ -24,9 +27,19 @@ public:
 	void Unbind() const override;
 
 	//Set Uniforms
-	void SetUniform1i(const std::string& name, uint32_t i);
-	void SetUniform1f(const std::string& name, float v0);
-	void SetUniform4f(const std::string& name, float v0, float v1, float v2, float v3);
+	void SetUniform1f(const std::string& name, float v0) override;
+	void SetUniform2f(const std::string& name, float v0, float v1) override;
+	void SetUniform3f(const std::string& name, float v0, float v1, float v2) override;
+	void SetUniform4f(const std::string& name, float v0, float v1, float v2, float v3) override;
+
+	void SetUniform1i(const std::string& name, uint32_t v0) override;
+	void SetUniform2i(const std::string& name, uint32_t v0, uint32_t v1) override;
+	void SetUniform3i(const std::string& name, uint32_t v0, uint32_t v1, uint32_t v2) override;
+	void SetUniform4i(const std::string& name, uint32_t v0, uint32_t v1, uint32_t v2, uint32_t v3) override;
+
+	void SetUniformMatrix3(const std::string& name, Matrix3x3& mat) override;
+	void SetUniformMatrix4(const std::string& name, Matrix4x4& mat) override;
+	
 	// todo more types...
 private:
 	ShaderProgramSource ParseShader(const std::string& filepath);

@@ -44,32 +44,101 @@ void OpenGLRenderContext::SetAlpha(uint32_t from, uint32_t to)
 	GLCall(glBlendFunc(from, to));
 }
 
-std::shared_ptr<IFrameBuffer> OpenGLRenderContext::CreateFrameBuffer()
+std::shared_ptr<IFrameBuffer> OpenGLRenderContext::CreateFrameBuffer() const
 {
 	return std::make_shared<FrameBuffer>();
 }
 
-std::shared_ptr<ITexture> OpenGLRenderContext::CreateTexture(uint32_t width, uint32_t height)
+std::shared_ptr<ITexture> OpenGLRenderContext::CreateTexture(uint32_t width, uint32_t height) const
 {
 	return std::make_shared<Texture>(width, height);
 }
 
-std::shared_ptr<IIndexBuffer> OpenGLRenderContext::CreateIndexBuffer(const uint32_t* data, uint32_t count)
+std::shared_ptr<IIndexBuffer> OpenGLRenderContext::CreateIndexBuffer(const uint32_t* data, uint32_t count) const
 {
 	return std::make_shared<IndexBuffer>(data, count);
 }
 
-std::shared_ptr<IVertexBuffer> OpenGLRenderContext::CreateVertexBuffer(const void* data, uint32_t size)
+std::shared_ptr<IVertexBuffer> OpenGLRenderContext::CreateVertexBuffer(const void* data, uint32_t size) const
 {
 	return std::make_shared<VertexBuffer>(data, size);
 }
 
-std::shared_ptr<IVertexArrayObject> OpenGLRenderContext::CreateVertexArrayObject()
+std::shared_ptr<IVertexArrayObject> OpenGLRenderContext::CreateVertexArrayObject() const
 {
 	return std::make_shared<VertexArrayObject>();
 }
 
-std::shared_ptr<IShader> OpenGLRenderContext::CreateShader(const std::string& fileName)
+std::shared_ptr<IShader> OpenGLRenderContext::CreateShader(const std::string& fileName) const
 {
 	return std::make_shared<Shader>(fileName);
+}
+
+void OpenGLRenderContext::InitGlobalUniform(IShader& shader) const
+{
+	//
+	for (std::pair<std::string, float> pair : GlobalUniform1F)
+	{
+		shader.SetUniform1f(pair.first, pair.second);
+	}
+	for (std::pair<std::string, std::tuple<float, float>> pair : GlobalUniform2F)
+	{
+		shader.SetUniform2f(pair.first, 
+			std::get<0>(pair.second), 
+			std::get<1>(pair.second));
+	}
+	for (std::pair<std::string, std::tuple<float, float, float>> pair : GlobalUniform3F)
+	{
+		shader.SetUniform3f(pair.first, 
+			std::get<0>(pair.second), 
+			std::get<1>(pair.second), 
+			std::get<2>(pair.second));
+	}
+	for (std::pair<std::string, std::tuple<float, float, float, float>> pair : GlobalUniform4F)
+	{
+		shader.SetUniform4f(pair.first,
+			std::get<0>(pair.second),
+			std::get<1>(pair.second),
+			std::get<2>(pair.second),
+			std::get<3>(pair.second));
+	}
+
+	//
+	for (std::pair<std::string, int> pair : GlobalUniform1I)
+	{
+		shader.SetUniform1i(pair.first, pair.second);
+	}
+	for (std::pair<std::string, std::tuple<int, int>> pair : GlobalUniform2I)
+	{
+		shader.SetUniform2i(pair.first,
+			std::get<0>(pair.second),
+			std::get<1>(pair.second));
+	}
+	for (std::pair<std::string, std::tuple<int, int, int>> pair : GlobalUniform3I)
+	{
+		shader.SetUniform3i(pair.first,
+			std::get<0>(pair.second),
+			std::get<1>(pair.second),
+			std::get<2>(pair.second));
+	}
+	for (std::pair<std::string, std::tuple<int, int, int, int>> pair : GlobalUniform4I)
+	{
+		shader.SetUniform4i(pair.first,
+			std::get<0>(pair.second),
+			std::get<1>(pair.second),
+			std::get<2>(pair.second),
+			std::get<3>(pair.second));
+	}
+
+	//
+	for (std::pair<std::string, Matrix3x3> pair : GlobalMatrix3)
+	{
+		shader.SetUniformMatrix3(pair.first, pair.second);
+	}
+
+	//
+	for (std::pair<std::string, Matrix4x4> pair : GlobalMatrix4)
+	{
+		shader.SetUniformMatrix4(pair.first, pair.second);
+	}
 }

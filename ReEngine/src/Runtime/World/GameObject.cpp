@@ -3,9 +3,9 @@
 #include "Transform.h"
 #include "World.h"
 
-GameObject* GameObject::CreateGameObject()
+GameObject* GameObject::CreateGameObject(const std::string& name)
 {
-	return World::Get().CreateGameObject();
+	return World::Get().CreateGameObject(name);
 }
 
 void GameObject::Destroy(GameObject* gameObject)
@@ -13,8 +13,8 @@ void GameObject::Destroy(GameObject* gameObject)
 	return World::Get().DestroyGameObject(gameObject);
 }
 
-GameObject::GameObject()
-	: name("Game Object")
+GameObject::GameObject(const std::string& name)
+	: name(name)
 	, isDestroyed(false)
 {
 }

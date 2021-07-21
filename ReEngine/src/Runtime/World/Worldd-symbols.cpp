@@ -7,7 +7,6 @@
 #include <Singleton.h>
 #include <new>
 
-GameObject* (Component::*_0)() const = &Component::GetOwner;
 Component& (Component::*_1)(const Component&) = &Component::operator=;
 extern "C" __declspec(dllexport) void Component_Component(void* __instance) { ::new (__instance) Component(); }
 extern "C" __declspec(dllexport) void Component_Component___1__S_Component(void* __instance, const Component& _0) { ::new (__instance) Component(_0); }

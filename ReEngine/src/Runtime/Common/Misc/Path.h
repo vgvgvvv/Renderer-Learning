@@ -20,4 +20,5 @@ public:
 	static std::string GetConfigPath();
 	static std::string GetResourcesPath();
 	static std::string GetDotNetBinaryPath();
+	static std::string GetShaderSourcePath();
 };

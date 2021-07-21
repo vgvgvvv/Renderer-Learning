@@ -2,9 +2,17 @@
 #include "Renderer/OpenGLRenderContext.h"
 #include "BuildIn/DefaultRenderPipeline.h"
 
+RenderLayer::RenderLayer(std::shared_ptr<RenderPipeline> pipeline)
+{
+	this->pipeline = pipeline;
+}
+
 void RenderLayer::OnInit()
 {
-	pipeline = std::make_shared<DefaultRenderPipeline>();
+	if(!pipeline)
+	{
+		pipeline = std::make_shared<DefaultRenderPipeline>();
+	}
 	renderContext = std::make_shared<RenderContext>();
 }
 

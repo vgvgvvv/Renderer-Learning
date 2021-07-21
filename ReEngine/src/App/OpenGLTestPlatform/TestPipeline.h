@@ -4,8 +4,8 @@
 class TestPipeline : public RenderPipeline
 {
 public:
-	void Render(const RenderContext& context, std::list<Camera*> cameras) override;
+	void Render(RenderContext& context, std::list<Camera*> cameras) override;
 
 private:
-	void RenderSingleCamera(const RenderContext& context, Camera* camera);
+	void RenderSingleCamera(RenderContext& context, Camera* camera);
 };
