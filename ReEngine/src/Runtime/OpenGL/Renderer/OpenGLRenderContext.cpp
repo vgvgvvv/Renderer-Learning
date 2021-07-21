@@ -32,6 +32,13 @@ void OpenGLRenderContext::Draw(const IVertexArrayObject& vao, const IIndexBuffer
 	GLCall(glDrawElements(GL_TRIANGLES, ib.GetCount(), GL_UNSIGNED_INT, nullptr));
 }
 
+void OpenGLRenderContext::DrawArray(const IVertexArrayObject& vao, const IShader& shader, int count) const
+{
+	vao.Bind();
+	shader.Bind();
+	GLCall(glDrawArrays(GL_TRIANGLES, 0, count));
+}
+
 void OpenGLRenderContext::Clear(const Color& color) const
 {
 	GLCall(glClearColor(color.r, color.g, color.b, color.a));

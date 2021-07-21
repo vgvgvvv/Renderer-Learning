@@ -28,6 +28,7 @@ public:
 	virtual void Clear(const Color& color) const = 0;
 	virtual void InitGlobalUniform(IShader& shader) const = 0;
 	virtual void Draw(const IVertexArrayObject& vao, const IIndexBuffer& ib, const IShader& shader) const = 0;
+	virtual void DrawArray(const IVertexArrayObject& vao, const IShader& shader, int count) const = 0;
 	virtual void SetAlpha(uint32_t from, uint32_t to) = 0;
 
 

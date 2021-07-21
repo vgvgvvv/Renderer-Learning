@@ -39,8 +39,41 @@ void RenderContext::DrawRenderers(const DrawingSetting& drawingSetting, const Fi
 	}
 }
 
+void RenderContext::TestDraw()
+{
+	auto vao = context->CreateVertexArrayObject();
+
+	float vertexesBuffer[9] = {
+		-0.5f, -0.5f, 0.0f, // left  
+		 0.5f, -0.5f, 0.0f, // right 
+		 0.0f,  0.5f, 0.0f  // top   
+	};
+
+	auto vb = context->CreateVertexBuffer(vertexesBuffer, ARRAYSIZE(vertexesBuffer));
+	auto layout = context->CreateVertexBufferLayout();
+	layout->PushVector3();
+
+	vao->AddBuffer(*vb, *layout);
+
+	uint32_t indice[3]
+	{
+		0, 1, 2
+	};
+
+	auto ib = context->CreateIndexBuffer(indice, ARRAYSIZE(indice));
+
+	auto vertFileName = Path::Combine(Path::GetShaderSourcePath(), "Default/Unlit.vert.glsl");
+	auto fragFileName = Path::Combine(Path::GetShaderSourcePath(), "Default/Unlit.frag.glsl");
+	auto shader = context->CreateShader(vertFileName, fragFileName);
+
+	// context->InitGlobalUniform(shader);
+
+	context->DrawArray(*vao, *shader, 3);
+	
+}
+
 void RenderContext::DrawSingleRenderer(BaseRenderer* renderer, const DrawingSetting& drawingSetting,
-	const FilterSetting& filterSetting)
+                                       const FilterSetting& filterSetting)
 {
 	auto& transform = renderer->GetOwner().GetTransform();
 
@@ -51,34 +84,7 @@ void RenderContext::DrawSingleRenderer(BaseRenderer* renderer, const DrawingSett
 
 
 
-	auto vao = context->CreateVertexArrayObject();
-
-	float vertexesBuffer[9] = {
-		-0.5f, -0.5f, 0.0f, // left  
-		 0.5f, -0.5f, 0.0f, // right 
-		 0.0f,  0.5f, 0.0f  // top   
-	};
 	
-	auto vb = context->CreateVertexBuffer(vertexesBuffer, ARRAYSIZE(vertexesBuffer));
-	auto layout = context->CreateVertexBufferLayout();
-	layout->PushVector3();
-	
-	vao->AddBuffer(*vb, *layout);
-	
-	uint32_t indice[3]
-	{
-		1, 2, 3
-	};
-
-	auto ib = context->CreateIndexBuffer(indice, ARRAYSIZE(indice));
-
-	auto vertFileName = Path::Combine(Path::GetShaderSourcePath(), "Default/Unlit.vert.glsl");
-	auto fragFileName = Path::Combine(Path::GetShaderSourcePath(), "Default/Unlit.frag.glsl");
-	auto shader = context->CreateShader(vertFileName, fragFileName);
-	
-	// context->InitGlobalUniform(shader);
-	
-	context->Draw(*vao, *ib, *shader);
 	//TODO
 }
 

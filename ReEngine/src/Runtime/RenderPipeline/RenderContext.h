@@ -35,6 +35,8 @@ public:
 
 	void DrawRenderers(const DrawingSetting& drawingSetting, const FilterSetting& filterSetting);
 
+	void TestDraw();
+	
 private:
 
 	void DrawSingleRenderer(BaseRenderer* renderer, const DrawingSetting& drawingSetting, const FilterSetting& filterSetting);

@@ -37,6 +37,7 @@ public:
 	void Clear(const Color& color) const override;
 	void InitGlobalUniform(IShader& shader) const override;
 	void Draw(const IVertexArrayObject& vao, const IIndexBuffer& ib, const IShader& shader) const override;
+	void DrawArray(const IVertexArrayObject& vao, const IShader& shader, int count) const override;
 	void SetAlpha(uint32_t from, uint32_t to) override;
 
 	std::shared_ptr<IFrameBuffer> CreateFrameBuffer() const override;
