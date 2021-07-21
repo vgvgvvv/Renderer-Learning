@@ -198,6 +198,18 @@ uint32_t Shader::CreateShader(const std::string& vertexShader, const std::string
 	GLCall(glAttachShader(program, fs));
 
 	GLCall(glLinkProgram(program));
+	
+	int success;
+	GLCall(glGetProgramiv(program, GL_LINK_STATUS, &success));
+	if (success == GL_FALSE) {
+		int length;
+		GLCall(glGetShaderiv(program, GL_INFO_LOG_LENGTH, &length));
+		char* message = (char*)alloca(length * sizeof(char));
+		GLCall(glGetProgramInfoLog(program, 512, NULL, message));
+		
+		RE_LOG_ERROR("OpenGL", "Shader Link Failed : Error Info : {0}", message);
+	}
+	
 	GLCall(glValidateProgram(program));
 
 	GLCall(glDeleteShader(vs));

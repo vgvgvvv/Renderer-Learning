@@ -43,17 +43,28 @@ void RenderContext::TestDraw()
 {
 	auto vao = context->CreateVertexArrayObject();
 
-	float vertexesBuffer[9] = {
+	float vertexesArray[9] = {
 		-0.5f, -0.5f, 0.0f, // left  
 		 0.5f, -0.5f, 0.0f, // right 
 		 0.0f,  0.5f, 0.0f  // top   
 	};
 
-	auto vb = context->CreateVertexBuffer(vertexesBuffer, ARRAYSIZE(vertexesBuffer));
-	auto layout = context->CreateVertexBufferLayout();
-	layout->PushVector3();
+	float colorsArray[9] = {
+		1.0f, 0.0f, 0.0f, // left  
+		 0.0f, 1.0f, 0.0f, // right 
+		 0.0f,  0.0f, 1.0f  // top   
+	};
 
-	vao->AddBuffer(*vb, *layout);
+	auto vertexBuffer = context->CreateVertexBuffer(vertexesArray, sizeof(vertexesArray));
+	auto colorBuffer = context->CreateVertexBuffer(colorsArray, sizeof(colorsArray));
+	
+	auto vertexLayout = context->CreateVertexBufferLayout();
+	vertexLayout->PushVector3();
+	vao->AddBuffer(*vertexBuffer, *vertexLayout);
+
+	auto colorLayout = context->CreateVertexBufferLayout();
+	colorLayout->PushColor();
+	vao->AddBuffer(*colorBuffer, *colorLayout);
 
 	uint32_t indice[3]
 	{
