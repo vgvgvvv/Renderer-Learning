@@ -9,7 +9,6 @@ int main()
 	std::cout << clazz->Name() << std::endl;
 
 	auto fields = clazz->Fields();
-	
 
 	for(auto& field : fields)
 	{
