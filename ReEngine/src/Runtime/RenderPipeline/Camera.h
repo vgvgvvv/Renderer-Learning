@@ -10,6 +10,14 @@
 
 class RenderTexture;
 
+struct CameraViewport
+{
+	float x = 0;
+	float y = 0;
+	float width = 0;
+	float height = 0;
+};
+
 class RenderPipeline_API Camera : public Behavior
 {
 public:
@@ -36,6 +44,15 @@ public:
 	void SetFarZ(float farZ) { this->farZ = farZ; }
 	float GetFarZ() const { return farZ; }
 
+	void SetEditorRect(float x, float y, float width, float height)
+	{
+		editorRect.x = x;
+		editorRect.y = y;
+		editorRect.width = width;
+		editorRect.height = height;
+	};
+	const CameraViewport& GetEditorRect() const { return editorRect; }
+	
 	Matrix4x4 GetViewMatrix() const;
 	Matrix4x4 GetPerspectiveProjectionMatrix() const;
 
@@ -48,6 +65,8 @@ private:
 	float nearZ;
 	float farZ;
 	std::shared_ptr<RenderTexture> renderTexture;
+	
+	CameraViewport editorRect;
 };
 
 class RenderPipeline_API CameraManager

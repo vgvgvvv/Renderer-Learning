@@ -11,3 +11,10 @@ RenderTexture::RenderTexture(int width, int height)
 
 	frameBuffer->SetFrameBufferTexture(*texture);
 }
+
+void RenderTexture::ReSize(int width, int height)
+{
+	auto& device = RenderContext::Get().GetDevice();
+	texture = device.CreateTexture(width, height);
+	frameBuffer->SetFrameBufferTexture(*texture);
+}

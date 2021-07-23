@@ -51,6 +51,11 @@ void OpenGLDevice::SetAlpha(uint32_t from, uint32_t to)
 	GLCall(glBlendFunc(from, to));
 }
 
+void OpenGLDevice::SetViewPort(float x, float y, float width, float height)
+{
+	GLCall(glViewport(x, y, width, height));
+}
+
 std::shared_ptr<IFrameBuffer> OpenGLDevice::CreateFrameBuffer() const
 {
 	return std::make_shared<FrameBuffer>();

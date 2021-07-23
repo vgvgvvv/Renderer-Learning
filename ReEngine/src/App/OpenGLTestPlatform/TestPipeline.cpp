@@ -15,6 +15,8 @@ void TestPipeline::RenderSingleCamera(RenderContext& context, Camera* camera)
 {
 	context.Clear(Color::gray);
 	context.SetupCameraProperties(*camera);
+
+	context.TestDraw();
 	
 	DrawingSetting drawSetting;
 	FilterSetting filterSetting;

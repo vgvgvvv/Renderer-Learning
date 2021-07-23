@@ -16,6 +16,8 @@ public:
 	ITexture& GetTexture() const { return *texture; }
 	IFrameBuffer& GetFrameBuffer() const { return *frameBuffer; }
 
+	void ReSize(int width, int height);
+
 private:
 	std::shared_ptr<IFrameBuffer> frameBuffer;
 	std::shared_ptr<ITexture> texture;

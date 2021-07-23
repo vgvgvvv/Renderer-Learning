@@ -5,5 +5,5 @@
 
 class ITexture : public IRHIResources
 {
-	
+
 };

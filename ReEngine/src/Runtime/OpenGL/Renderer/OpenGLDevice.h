@@ -39,6 +39,7 @@ public:
 	void Draw(const IVertexArrayObject& vao, const IIndexBuffer& ib, const IShader& shader) const override;
 	void DrawArray(const IVertexArrayObject& vao, const IShader& shader, int count) const override;
 	void SetAlpha(uint32_t from, uint32_t to) override;
+	void SetViewPort(float x, float y, float width, float height) override;
 
 	std::shared_ptr<IFrameBuffer> CreateFrameBuffer() const override;
 	std::shared_ptr<ITexture> CreateTexture(uint32_t width, uint32_t height) const override;

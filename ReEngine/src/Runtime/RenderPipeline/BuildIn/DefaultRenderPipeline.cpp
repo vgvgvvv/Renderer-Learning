@@ -12,12 +12,13 @@ void DefaultRenderPipeline::Render(RenderContext& context, std::list<Camera*> ca
 
 void DefaultRenderPipeline::RenderSingleCamera(RenderContext& context, Camera* camera)
 {
-	context.SetupCameraProperties(*camera);
 
 	if(camera->GetRenderTexture())
 	{
 		camera->GetRenderTexture()->GetFrameBuffer().Bind();
 	}
+	
+	context.SetupCameraProperties(*camera);
 
 	context.Clear(Color::gray);
 	context.TestDraw();

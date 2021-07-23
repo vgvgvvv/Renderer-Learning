@@ -25,8 +25,24 @@ void SceneView::OnGUI()
 	vMin.y += ImGui::GetWindowPos().y;
 	vMax.x += ImGui::GetWindowPos().x;
 	vMax.y += ImGui::GetWindowPos().y;
+
+	auto sceneViewWidth = vMax.x - vMin.x;
+	auto sceneViewHeight = vMax.y - vMin.y;
+
+	if(lastWidth != sceneViewWidth || lastHeight != sceneViewHeight)
+	{
+		camera->SetAspect(sceneViewWidth / sceneViewHeight);
+		camera->SetEditorRect(vMin.x, vMin.y, sceneViewWidth, sceneViewHeight);
+		showTexture->ReSize(sceneViewWidth, sceneViewHeight);
+		lastWidth = sceneViewWidth;
+		lastHeight = sceneViewHeight;
+	}
+	
 	
 	ImGui::GetWindowDrawList()->AddImage((ImTextureID)showTexture->GetTexture().GetRenderId(), vMin, vMax);
+
+	
+	
 }
 		
 	

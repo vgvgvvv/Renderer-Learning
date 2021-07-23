@@ -17,6 +17,12 @@ void RenderContext::Clear(const Color& color)
 
 void RenderContext::SetupCameraProperties(const Camera& camera)
 {
+	auto& rect = camera.GetEditorRect();
+	if (rect.width != 0 && rect.height != 0)
+	{
+		device->SetViewPort(rect.x, rect.y, rect.width, rect.height);
+	}
+	
 	device->GlobalMatrix4.insert(std::pair<std::string, Matrix4x4>("ReEngine_ViewMat", camera.GetViewMatrix()));
 	device->GlobalMatrix4.insert(std::pair<std::string, Matrix4x4>("ReEngine_ProjMat", camera.GetPerspectiveProjectionMatrix()));
 }

@@ -23,4 +23,7 @@ private:
 	GameObject* cameraObj;
 	std::shared_ptr<Camera> camera;
 	std::shared_ptr<RenderTexture> showTexture;
+
+	float lastWidth;
+	float lastHeight;
 };

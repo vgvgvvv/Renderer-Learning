@@ -15,6 +15,7 @@ public:
 	void Bind() const override;
 	void Unbind() const override;
 
+public:
 	inline int32_t GetWidth() const { return width_; }
 	inline int32_t GetHeight() const { return height_; }
 
