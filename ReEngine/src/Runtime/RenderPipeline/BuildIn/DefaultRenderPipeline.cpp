@@ -12,12 +12,6 @@ void DefaultRenderPipeline::Render(RenderContext& context, std::list<Camera*> ca
 
 void DefaultRenderPipeline::RenderSingleCamera(RenderContext& context, Camera* camera)
 {
-
-	if(camera->GetRenderTexture())
-	{
-		camera->GetRenderTexture()->GetFrameBuffer().Bind();
-	}
-	
 	context.SetupCameraProperties(*camera);
 
 	context.Clear(Color::gray);
@@ -26,9 +20,6 @@ void DefaultRenderPipeline::RenderSingleCamera(RenderContext& context, Camera* c
 	FilterSetting filterSetting;
 	context.DrawRenderers(drawSetting, filterSetting);
 
-	if (camera->GetRenderTexture())
-	{
-		camera->GetRenderTexture()->GetFrameBuffer().Unbind();
-	}
+	context.ResetState();
 }
 

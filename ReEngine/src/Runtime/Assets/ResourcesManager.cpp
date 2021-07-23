@@ -12,6 +12,10 @@ void ResourcesManager::CheckImport(const std::string& root)
 
 	for (const auto& entry : fs::directory_iterator(targetPath))
 	{
+		if(entry.path().extension() == "meta")
+		{
+			continue;
+		}
 		if(entry.is_directory())
 		{
 			CheckImport(entry.path().string());
@@ -47,5 +51,5 @@ bool ResourcesManager::CheckIfAssetNeedImport(const fs::directory_entry& entry)
 
 void ResourcesManager::ImportAsset(const fs::directory_entry& entry)
 {
-	// TODO
+	
 }

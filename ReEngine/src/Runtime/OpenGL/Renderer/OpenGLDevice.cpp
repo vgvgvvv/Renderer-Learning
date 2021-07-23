@@ -74,6 +74,11 @@ void OpenGLDevice::DrawPolygon(const std::vector<Vector2>& points)
 	GLCall(glEnd());
 }
 
+void OpenGLDevice::ClearFrameBuffer() const
+{
+	GLCall(GLCall(glBindFramebuffer(GL_FRAMEBUFFER, 0)));
+}
+
 std::shared_ptr<IFrameBuffer> OpenGLDevice::CreateFrameBuffer() const
 {
 	return std::make_shared<FrameBuffer>();

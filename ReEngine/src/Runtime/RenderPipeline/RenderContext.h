@@ -39,6 +39,8 @@ public:
 
 	IRenderDevice& GetDevice() const { return *device; }
 	void SetDevice(const std::shared_ptr<IRenderDevice>& device) { this->device = device; }
+
+	void ResetState();
 	
 private:
 

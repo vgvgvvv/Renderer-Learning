@@ -31,7 +31,8 @@ public:
 	virtual void DrawLine(const Vector2& start, const Vector2& end) = 0;
 	virtual void DrawPolygon(const std::vector<Vector2>& min) = 0;
 
-
+	virtual void ClearFrameBuffer() const = 0;
+public:
 	virtual std::shared_ptr<IFrameBuffer> CreateFrameBuffer() const = 0;
 	virtual std::shared_ptr<ITexture> CreateTexture(uint32_t width, uint32_t height) const = 0;
 	virtual std::shared_ptr<IIndexBuffer> CreateIndexBuffer(const uint32_t* data, uint32_t count) const = 0;

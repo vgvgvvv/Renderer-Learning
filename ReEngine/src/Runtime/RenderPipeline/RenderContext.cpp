@@ -6,6 +6,7 @@
 #include "Camera.h"
 #include "IRenderDevice.h"
 #include "IVertexArrayObject.h"
+#include "RenderTexture.h"
 #include "Misc/Path.h"
 
 
@@ -17,6 +18,13 @@ void RenderContext::Clear(const Color& color)
 
 void RenderContext::SetupCameraProperties(const Camera& camera)
 {
+	device->ClearFrameBuffer();
+
+	if (camera.GetRenderTexture())
+	{
+		camera.GetRenderTexture()->GetFrameBuffer().Bind();
+	}
+	
 	auto& rect = camera.GetEditorRect();
 	if (rect.width != 0 && rect.height != 0)
 	{
@@ -90,6 +98,11 @@ void RenderContext::TestDraw()
 	// device->DrawLine(Vector2(-1.0, 0), Vector2(1.0, 0));
 	// device->DrawLine(Vector2(0, -1.0), Vector2(0, 1.0));
 	
+}
+
+void RenderContext::ResetState()
+{
+	device->ClearFrameBuffer();
 }
 
 void RenderContext::DrawSingleRenderer(BaseRenderer* renderer, const DrawingSetting& drawingSetting,
