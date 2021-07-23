@@ -11,18 +11,26 @@
 class Transform;
 class World;
 
+enum class GameObjectFlag
+{
+	None = 0,
+	HideAndNotSave = 1 >> 0
+};
+
+
 class World_API GameObject : public BaseObject
 {
+	
 	friend World;
 	friend Component;
 public:
 
-	static GameObject* CreateGameObject(const std::string& name = "Game Object");
+	static GameObject* CreateGameObject(const std::string& name = "Game Object", GameObjectFlag flag = GameObjectFlag::None);
 
 	static void Destroy(GameObject* gameObject);
 
 
-	GameObject(const std::string& name = "Game Object");
+	GameObject(const std::string& name = "Game Object", GameObjectFlag flag = GameObjectFlag::None);
 
 	void SetName(const std::string& name) { this->name = name; }
 	const std::string& GetName() const { return this->name; }
@@ -38,6 +46,8 @@ public:
 	std::list<GameObject*>& GetChildren() { return children; }
 
 	bool IsDestroyed() const { return isDestroyed; }
+
+	GameObjectFlag flag;
 	
 protected:
 

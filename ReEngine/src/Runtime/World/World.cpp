@@ -8,9 +8,9 @@ void World::Init()
 	RE_LOG_INFO("World", "Init World")
 }
 
-GameObject* World::CreateGameObject(const std::string& name)
+GameObject* World::CreateGameObject(const std::string& name, GameObjectFlag flag)
 {
-	auto obj = new GameObject(name);
+	auto obj = new GameObject(name, flag);
 	obj->OnAwake();
 	gameObjects.push_back(obj);
 	return obj;

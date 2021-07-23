@@ -4,11 +4,11 @@
 
 
 #include "IFrameBuffer.h"
-#include "RHI_API.h"
+#include "RenderPipeline_API.h"
 
 class IRenderDevice;
 
-class RHI_API RenderTexture
+class RenderPipeline_API RenderTexture
 {
 public:
 	RenderTexture(int width, int height);

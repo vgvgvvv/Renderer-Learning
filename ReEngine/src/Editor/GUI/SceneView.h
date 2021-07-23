@@ -4,6 +4,7 @@
 
 #include "EditorGUI_API.h"
 
+class GameObject;
 class RenderTexture;
 class Texture;
 class Camera;
@@ -19,6 +20,7 @@ public:
 
 private:
 
+	GameObject* cameraObj;
 	std::shared_ptr<Camera> camera;
 	std::shared_ptr<RenderTexture> showTexture;
 };

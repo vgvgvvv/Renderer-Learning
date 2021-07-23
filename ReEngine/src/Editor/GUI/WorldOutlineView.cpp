@@ -42,6 +42,12 @@ static ImGuiTreeNodeFlags base_flags = ImGuiTreeNodeFlags_OpenOnArrow |
 
 void WorldOutlineView::DrawGameObjectNode(GameObject* gameObject)
 {
+	if(gameObject->flag == GameObjectFlag::HideAndNotSave)
+	{
+		// 隐藏对象不绘制
+		return;
+	}
+	
 	ImGuiTreeNodeFlags node_flags = base_flags;
 
 	if (std::find(selectedObjects.begin(), 

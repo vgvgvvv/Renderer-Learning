@@ -1,5 +1,7 @@
 #include "DefaultRenderPipeline.h"
 
+#include "RenderTexture.h"
+
 void DefaultRenderPipeline::Render(RenderContext& context, std::list<Camera*> cameras)
 {
 	for (auto camera : cameras)
@@ -12,9 +14,20 @@ void DefaultRenderPipeline::RenderSingleCamera(RenderContext& context, Camera* c
 {
 	context.SetupCameraProperties(*camera);
 
+	if(camera->GetRenderTexture())
+	{
+		camera->GetRenderTexture()->GetFrameBuffer().Bind();
+	}
 
+	context.Clear(Color::gray);
+	context.TestDraw();
 	DrawingSetting drawSetting;
 	FilterSetting filterSetting;
 	context.DrawRenderers(drawSetting, filterSetting);
+
+	if (camera->GetRenderTexture())
+	{
+		camera->GetRenderTexture()->GetFrameBuffer().Unbind();
+	}
 }
 

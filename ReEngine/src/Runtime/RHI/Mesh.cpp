@@ -13,7 +13,7 @@ std::shared_ptr<Mesh> MeshLoader::LoadMesh(const std::string& fileName)
 	if(!scene)
 	{
 		RE_LOG_ERROR("RHI", "Failed To Load {}", fileName.c_str());
-		return;
+		return nullptr;
 	}
 
 
@@ -32,4 +32,5 @@ std::shared_ptr<Mesh> MeshLoader::LoadMesh(const std::string& fileName)
 		}
 	}
 	
+	return result;
 }
