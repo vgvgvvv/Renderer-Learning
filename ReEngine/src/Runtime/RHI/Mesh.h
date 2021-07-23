@@ -1,25 +1,38 @@
 #pragma once
 
+#include <memory>
+#include <string>
 #include <vector>
 
+
+#include "Color.h"
 #include "RHI_API.h"
-#include "Vector4.h"
 #include "Vector3.h"
 #include "Vector2.h"
 
 static const int MaxUVNum = 4;
 
-class MeshVertex
+struct MeshVertex
 {
-public:
-	Vector3 Position;
-	Vector2 UVs[MaxUVNum];
+	Vector3 position;
+	Color color;
+	Vector3 normal;
+	Vector2 uvs[MaxUVNum];
 };
 
-class Mesh
+struct MeshSurface
+{
+	std::vector<uint32_t> Indices;
+};
+
+struct Mesh
+{
+	MeshSurface surface;
+	std::vector<MeshVertex> vertexes;
+};
+
+class RHI_API MeshLoader
 {
 public:
-
-	std::vector<uint32_t> Indices;
-	std::vector<MeshVertex> Vertexes;
+	std::shared_ptr<Mesh> LoadMesh(const std::string& fileName);
 };
