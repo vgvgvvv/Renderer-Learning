@@ -19,22 +19,33 @@ void ResourcesManager::CheckImport(const std::string& root)
 		}
 		else
 		{
-			if(CheckIfAssetNeedImport(entry.path()))
+			if(CheckIfAssetNeedImport(entry))
 			{
-				ImportAsset(entry.path());
+				ImportAsset(entry);
 			}
 		}
 	}
 	
 }
 
-bool ResourcesManager::CheckIfAssetNeedImport(const fs::path& path)
+bool ResourcesManager::CheckIfAssetNeedImport(const fs::directory_entry& entry)
 {
-	// TODO
-	return true;
+	auto metaFileEntry = fs::directory_entry(entry.path().string() + ".meta");
+	
+	if(!fs::exists(metaFileEntry))
+	{
+		return true;
+	}
+
+	if(entry.last_write_time() > metaFileEntry.last_write_time())
+	{
+		return true;
+	}
+	
+	return false;
 }
 
-void ResourcesManager::ImportAsset(const fs::path& path)
+void ResourcesManager::ImportAsset(const fs::directory_entry& entry)
 {
 	// TODO
 }

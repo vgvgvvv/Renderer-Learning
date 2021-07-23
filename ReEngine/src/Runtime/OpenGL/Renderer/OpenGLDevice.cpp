@@ -6,6 +6,7 @@
 #include "Common.h"
 #include "FrameBuffer.h"
 #include "Texture.h"
+#include "Vector2.h"
 
 
 void GLClearError()
@@ -54,6 +55,23 @@ void OpenGLDevice::SetAlpha(uint32_t from, uint32_t to)
 void OpenGLDevice::SetViewPort(float x, float y, float width, float height)
 {
 	GLCall(glViewport(x, y, width, height));
+}
+
+void OpenGLDevice::DrawLine(const Vector2& start, const Vector2& end)
+{
+	GLCall(glBegin(GL_LINES));
+	GLCall(glVertex2f(start.x, start.y));
+	GLCall(glVertex2f(end.x, end.y));
+	GLCall(glEnd());
+}
+
+void OpenGLDevice::DrawPolygon(const std::vector<Vector2>& points)
+{
+	GLCall(glBegin(GL_POLYGON));
+	for (auto& point : points) {
+		GLCall(glVertex2f(point.x, point.y));
+	}
+	GLCall(glEnd());
 }
 
 std::shared_ptr<IFrameBuffer> OpenGLDevice::CreateFrameBuffer() const

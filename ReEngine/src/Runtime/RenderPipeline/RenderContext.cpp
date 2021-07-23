@@ -46,16 +46,18 @@ void RenderContext::TestDraw()
 {
 	auto vao = device->CreateVertexArrayObject();
 
-	float vertexesArray[9] = {
+	float vertexesArray[12] = {
 		-0.5f, -0.5f, 0.0f, // left  
-		 0.5f, -0.5f, 0.0f, // right 
-		 0.0f,  0.5f, 0.0f  // top   
+		 0.5f, -0.5f, 0.0f, // right
+		 0.5f,  0.5f, 0.0f,  // top right
+		 -0.5f,  0.5f, 0.0f  // top left  
 	};
 
-	float colorsArray[9] = {
+	float colorsArray[12] = {
 		1.0f, 0.0f, 0.0f, // left  
-		 0.0f, 1.0f, 0.0f, // right 
-		 0.0f,  0.0f, 1.0f  // top   
+		 1.0f, 0.0f, 0.0f, // right 
+		 1.0f,  0.0f, 0.0f,  // top
+		 1.0f,  0.0f, 0.0f
 	};
 
 	auto vertexBuffer = device->CreateVertexBuffer(vertexesArray, sizeof(vertexesArray));
@@ -69,12 +71,13 @@ void RenderContext::TestDraw()
 	colorLayout->PushColor();
 	vao->AddBuffer(*colorBuffer, *colorLayout);
 
-	uint32_t indice[3]
+	uint32_t indice[6]
 	{
-		0, 1, 2
+		0, 1, 2,
+		0, 2, 3,
 	};
 
-	auto ib = device->CreateIndexBuffer(indice, 3);
+	auto ib = device->CreateIndexBuffer(indice, 6);
 
 	auto vertFileName = Path::Combine(Path::GetShaderSourcePath(), "Default/Unlit.vert.glsl");
 	auto fragFileName = Path::Combine(Path::GetShaderSourcePath(), "Default/Unlit.frag.glsl");
@@ -83,6 +86,9 @@ void RenderContext::TestDraw()
 	// context->InitGlobalUniform(shader);
 
 	device->DrawArray(*vao, *shader, 3);
+
+	// device->DrawLine(Vector2(-1.0, 0), Vector2(1.0, 0));
+	// device->DrawLine(Vector2(0, -1.0), Vector2(0, 1.0));
 	
 }
 

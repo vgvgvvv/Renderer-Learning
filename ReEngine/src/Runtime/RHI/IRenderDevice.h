@@ -3,7 +3,7 @@
 #include <map>
 #include <memory>
 #include <string>
-
+#include <vector>
 
 
 #include "IVertexBufferLayout.h"
@@ -28,6 +28,8 @@ public:
 	virtual void DrawArray(const IVertexArrayObject& vao, const IShader& shader, int count) const = 0;
 	virtual void SetAlpha(uint32_t from, uint32_t to) = 0;
 	virtual void SetViewPort(float x, float y, float width, float height) = 0;
+	virtual void DrawLine(const Vector2& start, const Vector2& end) = 0;
+	virtual void DrawPolygon(const std::vector<Vector2>& min) = 0;
 
 
 	virtual std::shared_ptr<IFrameBuffer> CreateFrameBuffer() const = 0;

@@ -2,7 +2,6 @@
 #include "Camera.h"
 #include "GameObject.h"
 #include "imgui.h"
-#include "RenderContext.h"
 #include "RenderTexture.h"
 #include "Renderer/Texture.h"
 
@@ -20,11 +19,6 @@ void SceneView::OnGUI()
 {
 	ImVec2 vMin = ImGui::GetWindowContentRegionMin();
 	ImVec2 vMax = ImGui::GetWindowContentRegionMax();
-	
-	vMin.x += ImGui::GetWindowPos().x;
-	vMin.y += ImGui::GetWindowPos().y;
-	vMax.x += ImGui::GetWindowPos().x;
-	vMax.y += ImGui::GetWindowPos().y;
 
 	auto sceneViewWidth = vMax.x - vMin.x;
 	auto sceneViewHeight = vMax.y - vMin.y;
@@ -38,8 +32,14 @@ void SceneView::OnGUI()
 		lastHeight = sceneViewHeight;
 	}
 	
+	ImVec2 vDrawMin = vMin;
+	vDrawMin.x += ImGui::GetWindowPos().x;
+	vDrawMin.y += ImGui::GetWindowPos().y;
+	ImVec2 vDrawMax = vMax;
+	vDrawMax.x += ImGui::GetWindowPos().x;
+	vDrawMax.y += ImGui::GetWindowPos().y;
 	
-	ImGui::GetWindowDrawList()->AddImage((ImTextureID)showTexture->GetTexture().GetRenderId(), vMin, vMax);
+	ImGui::GetWindowDrawList()->AddImage((ImTextureID)showTexture->GetTexture().GetRenderId(), vDrawMin, vDrawMax);
 
 	
 	

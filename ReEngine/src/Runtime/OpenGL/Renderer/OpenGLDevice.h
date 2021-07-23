@@ -40,7 +40,9 @@ public:
 	void DrawArray(const IVertexArrayObject& vao, const IShader& shader, int count) const override;
 	void SetAlpha(uint32_t from, uint32_t to) override;
 	void SetViewPort(float x, float y, float width, float height) override;
-
+	void DrawLine(const Vector2& start, const Vector2& end) override;
+	void DrawPolygon(const std::vector<Vector2>& points) override;
+	
 	std::shared_ptr<IFrameBuffer> CreateFrameBuffer() const override;
 	std::shared_ptr<ITexture> CreateTexture(uint32_t width, uint32_t height) const override;
 	std::shared_ptr<IIndexBuffer> CreateIndexBuffer(const uint32_t* data, uint32_t count) const override;

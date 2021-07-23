@@ -16,8 +16,8 @@ public:
 
 private:
 	void CheckImport(const std::string& root = "");
-	bool CheckIfAssetNeedImport(const fs::path& path);
-	void ImportAsset(const fs::path& path);
+	bool CheckIfAssetNeedImport(const fs::directory_entry& entry);
+	void ImportAsset(const fs::directory_entry& entry);
 };
 
 
