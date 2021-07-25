@@ -8,7 +8,7 @@
 #include <Singleton.h>
 #include <new>
 
-GameObject* (Component::*_0)() const = &Component::GetOwner;
+GameObject& (Component::*_0)() const = &Component::GetOwner;
 Component& (Component::*_1)(const Component&) = &Component::operator=;
 extern "C" __declspec(dllexport) void Component_Component(void* __instance) { ::new (__instance) Component(); }
 extern "C" __declspec(dllexport) void Component_Component___1__S_Component(void* __instance, const Component& _0) { ::new (__instance) Component(_0); }
@@ -23,11 +23,12 @@ extern "C" __declspec(dllexport) void DotNetBehavior_DotNetBehavior___1__S_DotNe
 void (GameObject::*_5)(const std::basic_string<char, std::char_traits<char>, std::allocator<char>>&) = &GameObject::SetName;
 const std::basic_string<char, std::char_traits<char>, std::allocator<char>>& (GameObject::*_6)() const = &GameObject::GetName;
 const GameObject* (GameObject::*_7)() const = &GameObject::GetParent;
+bool (GameObject::*_8)() const = &GameObject::IsDestroyed;
 extern "C" __declspec(dllexport) void GameObject_GameObject___1__S_GameObject(void* __instance, const GameObject& _0) { ::new (__instance) GameObject(_0); }
-GameObject& (GameObject::*_8)(GameObject&&) = &GameObject::operator=;
+GameObject& (GameObject::*_9)(GameObject&&) = &GameObject::operator=;
 extern "C" __declspec(dllexport) void GameObject__GameObject(GameObject*__instance) { __instance->~GameObject(); }
-const std::basic_string<char, std::char_traits<char>, std::allocator<char>>* (BaseObject::*_9)() const = &BaseObject::GetGuid;
+const std::basic_string<char, std::char_traits<char>, std::allocator<char>>* (BaseObject::*_10)() const = &BaseObject::GetGuid;
 extern "C" __declspec(dllexport) void BaseObject_BaseObject___1__S_BaseObject(void* __instance, const BaseObject& _0) { ::new (__instance) BaseObject(_0); }
-BaseObject& (BaseObject::*_10)(const BaseObject&) = &BaseObject::operator=;
-World& (*_11)() = &World::Get;
+BaseObject& (BaseObject::*_11)(const BaseObject&) = &BaseObject::operator=;
+World& (*_12)() = &World::Get;
 extern "C" __declspec(dllexport) void World__World(World*__instance) { __instance->~World(); }

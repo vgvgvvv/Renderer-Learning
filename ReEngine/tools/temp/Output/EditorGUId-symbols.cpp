@@ -1,6 +1,7 @@
 #include <SceneView.h>
 #include <WorldOutlineView.h>
 #include <PropertyView.h>
+#include <AssetView.h>
 #include <EditorGUI_API.h>
 #include <new>
 
@@ -10,3 +11,4 @@ extern "C" __declspec(dllexport) void SceneView__SceneView(SceneView*__instance)
 extern "C" __declspec(dllexport) void SceneView_SceneView(void* __instance) { ::new (__instance) SceneView(); }
 WorldOutlineView& (WorldOutlineView::*_1)(WorldOutlineView&&) = &WorldOutlineView::operator=;
 PropertyView& (PropertyView::*_2)(PropertyView&&) = &PropertyView::operator=;
+AssetView& (AssetView::*_3)(AssetView&&) = &AssetView::operator=;

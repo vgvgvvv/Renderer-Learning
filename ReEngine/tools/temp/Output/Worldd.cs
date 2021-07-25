@@ -26,7 +26,7 @@ namespace Worldd
             [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "??0Component@@QEAA@AEBV0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "?GetOwner@Component@@QEBAPEAVGameObject@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "?GetOwner@Component@@QEBAAEAVGameObject@@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr GetOwner(__IntPtr __instance);
         }
 
@@ -986,6 +986,12 @@ namespace Worldd
         #endregion
     }
 
+    public enum GameObjectFlag
+    {
+        None = 0,
+        HideAndNotSave = 1
+    }
+
     public unsafe partial class Transform
     {
         public partial struct __Internal
@@ -1044,18 +1050,20 @@ namespace Worldd
 
     public unsafe partial class GameObject : global::Worldd.BaseObject, IDisposable
     {
-        [StructLayout(LayoutKind.Sequential, Size = 128)]
+        [StructLayout(LayoutKind.Sequential, Size = 144)]
         public new partial struct __Internal
         {
             internal global::Std.BasicString.__Internalc__N_std_S_basic_string__C___N_std_S_char_traits__C___N_std_S_allocator__C guid;
+            internal global::Worldd.GameObjectFlag flag;
             internal global::Std.BasicString.__Internalc__N_std_S_basic_string__C___N_std_S_char_traits__C___N_std_S_allocator__C name;
             internal global::Std.SharedPtr.__Internal transform;
             internal __IntPtr owner;
             internal global::Std.Vector.__Internalc__N_std_S_vector____N_std_S_shared_ptr____S_Component___N_std_S_allocator__S0_ components;
             internal global::Std.List.__Internalc__N_std_S_list_____S_GameObject___N_std_S_allocator__S0_ children;
+            internal byte isDestroyed;
 
-            [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "??0GameObject@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
-            internal static extern __IntPtr ctor(__IntPtr __instance);
+            [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "??0GameObject@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4GameObjectFlag@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern __IntPtr ctor(__IntPtr __instance, __IntPtr name, global::Worldd.GameObjectFlag flag);
 
             [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "??0GameObject@@QEAA@AEBV0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
@@ -1063,8 +1071,8 @@ namespace Worldd
             [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "??1GameObject@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void dtor(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "?CreateGameObject@GameObject@@SAPEAV1@XZ", CallingConvention = __CallingConvention.Cdecl)]
-            internal static extern __IntPtr CreateGameObject();
+            [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "?CreateGameObject@GameObject@@SAPEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4GameObjectFlag@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern __IntPtr CreateGameObject(__IntPtr name, global::Worldd.GameObjectFlag flag);
 
             [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "?Destroy@GameObject@@SAXPEAV1@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Destroy(__IntPtr gameObject);
@@ -1086,6 +1094,10 @@ namespace Worldd
 
             [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "?SetParent@GameObject@@QEAAXPEAV1@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void SetParent(__IntPtr __instance, __IntPtr parent);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "?IsDestroyed@GameObject@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+            [return: MarshalAs(UnmanagedType.I1)]
+            internal static extern bool IsDestroyed(__IntPtr __instance);
         }
 
         internal static new GameObject __CreateInstance(__IntPtr native, bool skipVTables = false)
@@ -1129,13 +1141,17 @@ namespace Worldd
         {
         }
 
-        public GameObject()
+        public GameObject(string name, global::Worldd.GameObjectFlag flag)
             : this((void*) null)
         {
             __Instance = Marshal.AllocHGlobal(sizeof(global::Worldd.GameObject.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            __Internal.ctor(__Instance);
+            var __basicString0 = new global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>();
+            global::Std.BasicStringExtensions.Assign(__basicString0, name);
+            var __arg0 = __basicString0.__Instance;
+            __Internal.ctor(__Instance, __arg0, flag);
+            __basicString0.Dispose();
         }
 
         public GameObject(global::Worldd.GameObject _0)
@@ -1172,9 +1188,13 @@ namespace Worldd
             __Internal.OnDestory(__Instance);
         }
 
-        public static global::Worldd.GameObject CreateGameObject()
+        public static global::Worldd.GameObject CreateGameObject(string name, global::Worldd.GameObjectFlag flag)
         {
-            var __ret = __Internal.CreateGameObject();
+            var __basicString0 = new global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>();
+            global::Std.BasicStringExtensions.Assign(__basicString0, name);
+            var __arg0 = __basicString0.__Instance;
+            var __ret = __Internal.CreateGameObject(__arg0, flag);
+            __basicString0.Dispose();
             var __result0 = global::Worldd.GameObject.__GetOrCreateInstance(__ret, false);
             return __result0;
         }
@@ -1183,6 +1203,19 @@ namespace Worldd
         {
             var __arg0 = gameObject is null ? __IntPtr.Zero : gameObject.__Instance;
             __Internal.Destroy(__arg0);
+        }
+
+        public global::Worldd.GameObjectFlag Flag
+        {
+            get
+            {
+                return ((__Internal*)__Instance)->flag;
+            }
+
+            set
+            {
+                ((__Internal*)__Instance)->flag = value;
+            }
         }
 
         public string Name
@@ -1217,6 +1250,15 @@ namespace Worldd
             {
                 var __arg0 = value is null ? __IntPtr.Zero : value.__Instance;
                 __Internal.SetParent(__Instance, __arg0);
+            }
+        }
+
+        public bool IsDestroyed
+        {
+            get
+            {
+                var __ret = __Internal.IsDestroyed(__Instance);
+                return __ret;
             }
         }
     }
@@ -1367,11 +1409,14 @@ namespace Worldd
             [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "?Init@World@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Init(__IntPtr __instance);
 
-            [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "?CreateGameObject@World@@QEAAPEAVGameObject@@XZ", CallingConvention = __CallingConvention.Cdecl)]
-            internal static extern __IntPtr CreateGameObject(__IntPtr __instance);
+            [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "?CreateGameObject@World@@QEAAPEAVGameObject@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4GameObjectFlag@@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern __IntPtr CreateGameObject(__IntPtr __instance, __IntPtr name, global::Worldd.GameObjectFlag flag);
 
             [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "?DestroyGameObject@World@@QEAAXPEAVGameObject@@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void DestroyGameObject(__IntPtr __instance, __IntPtr gameObject);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "?RemoveAllDestroyedGameObjects@World@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern void RemoveAllDestroyedGameObjects(__IntPtr __instance);
         }
 
         public __IntPtr __Instance { get; protected set; }
@@ -1445,9 +1490,13 @@ namespace Worldd
             __Internal.Init(__Instance);
         }
 
-        public global::Worldd.GameObject CreateGameObject()
+        public global::Worldd.GameObject CreateGameObject(string name, global::Worldd.GameObjectFlag flag)
         {
-            var __ret = __Internal.CreateGameObject(__Instance);
+            var __basicString0 = new global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>();
+            global::Std.BasicStringExtensions.Assign(__basicString0, name);
+            var __arg0 = __basicString0.__Instance;
+            var __ret = __Internal.CreateGameObject(__Instance, __arg0, flag);
+            __basicString0.Dispose();
             var __result0 = global::Worldd.GameObject.__GetOrCreateInstance(__ret, false);
             return __result0;
         }
@@ -1456,6 +1505,11 @@ namespace Worldd
         {
             var __arg0 = gameObject is null ? __IntPtr.Zero : gameObject.__Instance;
             __Internal.DestroyGameObject(__Instance, __arg0);
+        }
+
+        public void RemoveAllDestroyedGameObjects()
+        {
+            __Internal.RemoveAllDestroyedGameObjects(__Instance);
         }
 
         public static global::Worldd.World Get()

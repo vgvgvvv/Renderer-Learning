@@ -4,5 +4,8 @@ set(targetName Assets)
 ReMake_AddTarget(
 	TARGET_NAME ${targetName}
 	MODE SHARED
-	Lib CommonLib
+	Lib RHI CommonLib
 )
+
+UseSpdlog(${targetName})
+UseUuid(${targetName})

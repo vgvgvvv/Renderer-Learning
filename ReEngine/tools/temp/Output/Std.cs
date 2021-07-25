@@ -412,6 +412,9 @@ namespace Std
 
             [SuppressUnmanagedCodeSecurity, DllImport("Std-symbols", EntryPoint = "?data@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBAPEBDXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr Data(__IntPtr __instance);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("Std-symbols", EntryPoint = "??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@QEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern __IntPtr BasicString(__IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string _Ptr);
         }
 
         public static global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>> Assign(this global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>> @this, string _Ptr)
@@ -427,6 +430,14 @@ namespace Std
             var __arg0 = @this is null ? __IntPtr.Zero : @this.__Instance;
             var __ret = __Internal.Data(__arg0);
             return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, __ret);
+        }
+
+        public static global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>> BasicString(string _Ptr)
+        {
+            var __ret = Marshal.AllocHGlobal(32);
+            __Internal.BasicString(__ret, _Ptr);
+            var __result0 = global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>.__GetOrCreateInstance(__ret, false);
+            return __result0;
         }
     }
 }

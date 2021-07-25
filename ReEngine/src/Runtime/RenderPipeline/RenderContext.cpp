@@ -91,13 +91,9 @@ void RenderContext::TestDraw()
 	auto fragFileName = Path::Combine(Path::GetShaderSourcePath(), "Default/Unlit.frag.glsl");
 	auto shader = device->CreateShader(vertFileName, fragFileName);
 
-	// context->InitGlobalUniform(shader);
 
-	device->DrawArray(*vao, *shader, 3);
+	device->Draw(*vao, *ib, *shader);
 
-	// device->DrawLine(Vector2(-1.0, 0), Vector2(1.0, 0));
-	// device->DrawLine(Vector2(0, -1.0), Vector2(0, 1.0));
-	
 }
 
 void RenderContext::ResetState()

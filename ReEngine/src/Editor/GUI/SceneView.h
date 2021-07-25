@@ -4,11 +4,6 @@
 
 #include "EditorGUI_API.h"
 
-class GameObject;
-class RenderTexture;
-class Texture;
-class Camera;
-
 class EditorGUI_API SceneView
 {
 public:
@@ -20,9 +15,9 @@ public:
 
 private:
 
-	GameObject* cameraObj;
-	std::shared_ptr<Camera> camera;
-	std::shared_ptr<RenderTexture> showTexture;
+	class GameObject* cameraObj;
+	std::shared_ptr <class Camera > camera;
+	std::shared_ptr<class RenderTexture> showTexture;
 
 	float lastWidth;
 	float lastHeight;

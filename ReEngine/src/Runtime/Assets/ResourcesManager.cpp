@@ -1,13 +1,16 @@
-#include "Misc/Path.h"
 #include "ResourceManager.h"
+#include "AssetLoader.h"
+#include "Logging/Log.h"
 
 
 void ResourcesManager::CheckImport(const std::string& root)
 {
-	auto targetPath = root;
-	if(targetPath == "")
+	std::string targetPath = root;
+
+	if(!fs::exists(root))
 	{
-		targetPath = Path::GetResourcesPath();
+		RE_LOG_WARN("Resources", "Cannot find directory : {0}", root.c_str());
+		return;
 	}
 
 	for (const auto& entry : fs::directory_iterator(targetPath))
@@ -19,12 +22,12 @@ void ResourcesManager::CheckImport(const std::string& root)
 		if(entry.is_directory())
 		{
 			CheckImport(entry.path().string());
-			continue;
 		}
 		else
 		{
 			if(CheckIfAssetNeedImport(entry))
 			{
+				RE_LOG_INFO("Resources", "Import Asset : {0}", entry.path().string().c_str());
 				ImportAsset(entry);
 			}
 		}
@@ -51,5 +54,6 @@ bool ResourcesManager::CheckIfAssetNeedImport(const fs::directory_entry& entry)
 
 void ResourcesManager::ImportAsset(const fs::directory_entry& entry)
 {
-	
+	auto assetLoader = AssetLoaderFactory::Create(entry);
+	assetLoader->CreateAssetMetaFile();
 }

@@ -6,7 +6,6 @@
 #include "IFrameBuffer.h"
 #include "RenderPipeline_API.h"
 
-class IRenderDevice;
 
 class RenderPipeline_API RenderTexture
 {

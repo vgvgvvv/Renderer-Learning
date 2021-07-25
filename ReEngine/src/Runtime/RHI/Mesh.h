@@ -30,9 +30,3 @@ struct Mesh
 	MeshSurface surface;
 	std::vector<MeshVertex> vertexes;
 };
-
-class RHI_API MeshLoader
-{
-public:
-	std::shared_ptr<Mesh> LoadMesh(const std::string& fileName);
-};

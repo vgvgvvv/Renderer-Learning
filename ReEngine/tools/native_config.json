@@ -44,6 +44,7 @@
                         "SceneView.h",
                         "WorldOutlineView.h",
                         "PropertyView.h",
+                        "AssetView.h",
                         "EditorGUI_API.h"
                     ]
                 }
