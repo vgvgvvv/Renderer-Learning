@@ -55,5 +55,5 @@ bool ResourcesManager::CheckIfAssetNeedImport(const fs::directory_entry& entry)
 void ResourcesManager::ImportAsset(const fs::directory_entry& entry)
 {
 	auto assetLoader = AssetLoaderFactory::Create(entry);
-	assetLoader->CreateAssetMetaFile();
+	// assetLoader->CreateAssetMetaFile();
 }
