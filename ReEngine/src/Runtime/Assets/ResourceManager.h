@@ -5,10 +5,8 @@
 #include <filesystem>
 #include <map>
 
+#include "uuid.h"
 
-namespace uuids {
-	class uuid;
-}
 
 namespace fs = std::filesystem;
 
