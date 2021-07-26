@@ -56,6 +56,10 @@ Texture::Texture(const std::string& filepath, uint32_t slot)
 Texture::~Texture()
 {
 	GLCall(glDeleteTextures(1, &render_id_));
+	if (local_buffer_)
+	{
+		stbi_image_free(local_buffer_);
+	}
 }
 
 void Texture::Bind() const
