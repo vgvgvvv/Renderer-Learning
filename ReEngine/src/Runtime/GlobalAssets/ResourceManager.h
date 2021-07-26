@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include "Singleton.h"
-#include "Assets_API.h"
+#include "GlobalAssets_API.h"
 #include <filesystem>
 #include <map>
 #include "inifile.h"
@@ -11,7 +11,7 @@
 
 namespace fs = std::filesystem;
 
-class Assets_API ResourcesManager
+class GlobalAssets_API ResourcesManager
 {
 	DEFINE_SINGLETON(ResourcesManager);
 public:

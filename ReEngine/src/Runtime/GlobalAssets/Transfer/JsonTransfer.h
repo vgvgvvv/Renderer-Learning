@@ -6,9 +6,9 @@
 #include "uuid.h"
 #include "rapidjson/rapidjson.h"
 #include "TransferFlag.h"
-#include "Assets_API.h"
+#include "GlobalAssets_API.h"
 
-class Assets_API JsonRead
+class GlobalAssets_API JsonRead
 {
 public:
 
@@ -28,7 +28,7 @@ private:
 	rapidjson::Document doc;
 };
 
-class Assets_API JsonWrite
+class GlobalAssets_API JsonWrite
 {
 public:
 

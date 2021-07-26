@@ -1,21 +1,19 @@
 #pragma once
 #include "BaseAssetObject.h"
-#include "GameObject.h"
+#include "Mesh.h"
 #include "re_reflect.hxx"
+#include "GlobalAssets_API.h"
 
-class CLASS() PrefabObject : public BaseAssetObject<GameObject>
+class GlobalAssets_API MeshObject : public BaseAssetObject<Mesh>
 {
-	META_OBJECT
 public:
-
 	static std::vector<std::string> ext;
 
 	template<class TranslateFunction>
 	void Transfer(TranslateFunction & transfer)
 	{
-		BaseAssetObject<GameObject>::Transfer(transfer);
+		BaseAssetObject<Mesh>::Transfer(transfer);
 	}
 
 	void Load(const std::string& filePath);
-
 };

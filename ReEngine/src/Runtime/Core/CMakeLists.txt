@@ -7,7 +7,7 @@ set(linkLibs
 	EditorGUI
 	ImGUILib
 	World
-	Assets)
+	GlobalAssets)
 
 set(targetName Core)
 ReMake_AddTarget(

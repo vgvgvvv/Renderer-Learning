@@ -4,9 +4,9 @@
 #include "TransferFlag.h"
 #include "yaml-cpp/node/convert.h"
 #include "uuid.h"
-#include "Assets_API.h"
+#include "GlobalAssets_API.h"
 
-class Assets_API YAMLRead
+class GlobalAssets_API YAMLRead
 {
 public:
 
@@ -24,7 +24,7 @@ private:
 
 
 
-class Assets_API YAMLWrite
+class GlobalAssets_API YAMLWrite
 {
 public:
 

@@ -1,16 +1,16 @@
 #pragma once
 #include "BaseAssetObject.h"
 #include "re_reflect.hxx"
+#include "GlobalAssets_API.h"
 
-class UnknownAssetsFile
+class GlobalAssets_API UnknownAssetsFile
 {
 public:
 	static std::shared_ptr<UnknownAssetsFile> Load(const std::string& filePath);
 };
 
-class CLASS() DefaultAssetObject : public BaseAssetObject<UnknownAssetsFile>
+class GlobalAssets_API DefaultAssetObject : public BaseAssetObject<UnknownAssetsFile>
 {
-	META_OBJECT
 public:
 
 	template<class TranslateFunction>

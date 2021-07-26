@@ -6,11 +6,12 @@
 #include "uuid.h"
 #include "re_reflect.hxx"
 #include "Transfer/JsonTransfer.h"
+#include "GlobalAssets_API.h"
 
 template<class T>
-class CLASS() BaseAssetObject
+class GlobalAssets_API BaseAssetObject
 {
-	META_OBJECT
+	
 public:
 
 	typedef T ObjType;
@@ -41,7 +42,7 @@ protected:
 };
 
 template <class T>
-void BaseAssetObject<T>::Load(const std::string& filePath)
+void GlobalAssets_API BaseAssetObject<T>::Load(const std::string& filePath)
 {
 	std::string metaFilePath(filePath + ".meta");
 	JsonRead read(metaFilePath);

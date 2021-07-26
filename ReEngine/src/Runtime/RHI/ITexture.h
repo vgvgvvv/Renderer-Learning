@@ -8,5 +8,10 @@
 class RHI_API ITexture : public IRHIResources
 {
 public:
-	static std::shared_ptr<ITexture> Load(const std::string& filePath);
+	static std::shared_ptr<ITexture> Load(const std::string& filePath)
+	{
+		// TODO
+		return nullptr;
+	}
+
 };

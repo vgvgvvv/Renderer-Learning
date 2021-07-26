@@ -5,12 +5,12 @@
 #include "BaseAssetObject.h"
 #include "ITexture.h"
 #include "re_reflect.hxx"
+#include "GlobalAssets_API.h"
 
 class TextureLoader;
 
-class CLASS() TextureObject : public BaseAssetObject<ITexture>
+class GlobalAssets_API TextureObject : public BaseAssetObject<ITexture>
 {
-	META_OBJECT
 public:
 	friend TextureLoader;
 	

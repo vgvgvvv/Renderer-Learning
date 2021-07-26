@@ -1,10 +1,10 @@
 
 
-set(targetName Assets)
+set(targetName GlobalAssets)
 ReMake_AddTarget(
 	TARGET_NAME ${targetName}
 	MODE SHARED
-	Lib RHI CommonLib re-reflection World
+	Lib RHI re-reflection World
 )
 
 UseSpdlog(${targetName})

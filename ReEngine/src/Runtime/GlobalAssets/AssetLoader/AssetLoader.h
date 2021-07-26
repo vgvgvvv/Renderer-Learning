@@ -3,13 +3,13 @@
 #include <memory>
 #include <string>
 #include <filesystem>
-#include "Assets_API.h"
+#include "GlobalAssets_API.h"
 #include "Logging/Log.h"
 #include "Transfer/JsonTransfer.h"
 
 namespace fs = std::filesystem;
 
-class Assets_API BaseAssetLoader
+class GlobalAssets_API BaseAssetLoader
 {
 public:
 	virtual ~BaseAssetLoader() = default;
@@ -24,7 +24,7 @@ protected:
 };
 
 template<class T>
-class Assets_API AssetLoader : public BaseAssetLoader
+class GlobalAssets_API AssetLoader : public BaseAssetLoader
 {
 public:
 	AssetLoader(const std::string& path) : BaseAssetLoader(path) {};
@@ -58,7 +58,7 @@ protected:
 	std::shared_ptr<T> assetPtr;
 };
 
-class Assets_API AssetLoaderFactory
+class GlobalAssets_API AssetLoaderFactory
 {
 public:
 	static std::shared_ptr<BaseAssetLoader> CreateLoader(const fs::directory_entry& entry);
