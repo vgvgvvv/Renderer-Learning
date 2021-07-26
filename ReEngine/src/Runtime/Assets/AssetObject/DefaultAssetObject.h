@@ -5,7 +5,7 @@
 class UnknownAssetsFile
 {
 public:
-	
+	static std::shared_ptr<UnknownAssetsFile> Load(const std::string& filePath);
 };
 
 class CLASS() DefaultAssetObject : public BaseAssetObject<UnknownAssetsFile>
@@ -19,4 +19,5 @@ public:
 		BaseAssetObject<UnknownAssetsFile>::Transfer(transfer);
 	}
 
+	void Load(const std::string& filePath);
 };

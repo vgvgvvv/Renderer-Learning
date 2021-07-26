@@ -15,4 +15,5 @@ public:
 		BaseAssetObject<Mesh>::Transfer(transfer);
 	}
 
+	void Load(const std::string& filePath);
 };

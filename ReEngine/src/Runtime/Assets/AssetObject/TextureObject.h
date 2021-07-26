@@ -21,4 +21,6 @@ public:
 	{
 		BaseAssetObject<ITexture>::Transfer(transfer);
 	}
+
+	void Load(const std::string& filePath);
 };

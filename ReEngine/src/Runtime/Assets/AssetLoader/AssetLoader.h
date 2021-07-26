@@ -32,7 +32,11 @@ public:
 
 	void Load() override
 	{
-		
+		if (!assetPtr)
+		{
+			assetPtr = std::make_shared<T>();
+		}
+		assetPtr->Load(filePath);
 	}
 	
 	void CreateAssetMetaFile() override
@@ -42,12 +46,13 @@ public:
 		std::string metaFilePath(filePath + ".meta");
 		JsonWrite writer(metaFilePath);
 
-		std::shared_ptr<T> asset = std::make_shared<T>();
-		asset->Transfer(writer);
+		if(!assetPtr)
+		{
+			assetPtr = std::make_shared<T>();
+		}
+		assetPtr->Transfer(writer);
 		writer.Save();
-
 	}
-	
 
 protected:
 	std::shared_ptr<T> assetPtr;

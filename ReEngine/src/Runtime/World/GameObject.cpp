@@ -37,6 +37,12 @@ void GameObject::SetParent(GameObject* parent)
 	}
 }
 
+std::shared_ptr<GameObject> GameObject::Load(const std::string& filePath)
+{
+	// TODO
+	return nullptr;
+}
+
 void GameObject::OnAwake()
 {
 	transform = AddComponent<Transform>();

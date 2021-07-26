@@ -16,4 +16,6 @@ public:
 		BaseAssetObject<GameObject>::Transfer(transfer);
 	}
 
+	void Load(const std::string& filePath);
+
 };
