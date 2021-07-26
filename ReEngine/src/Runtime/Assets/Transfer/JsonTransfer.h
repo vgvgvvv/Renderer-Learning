@@ -14,13 +14,14 @@ public:
 
 	JsonRead(const std::string& filePath);
 
-	void transfer(bool& data, const std::string& name, TransferFlag flag = TransferFlag::None);
-	void transfer(int& data, const std::string& name, TransferFlag flag = TransferFlag::None);
-	void transfer(float& data, const std::string& name, TransferFlag flag = TransferFlag::None);
-	void transfer(double& data, const std::string& name, TransferFlag flag = TransferFlag::None);
-	void transfer(std::string& data, const std::string& name, TransferFlag flag = TransferFlag::None);
+	void transfer(bool* data, const char* name, TransferFlag flag = TransferFlag::None);
+	void transfer(int* data, const char* name, TransferFlag flag = TransferFlag::None);
+	void transfer(float* data, const char* name, TransferFlag flag = TransferFlag::None);
+	void transfer(double* data, const char* name, TransferFlag flag = TransferFlag::None);
+	void transfer(const char** data, const char* name, TransferFlag flag = TransferFlag::None);
+	void transfer(std::string* data, const char* name, TransferFlag flag = TransferFlag::None);
 
-	void transfer(uuids::uuid& data, const std::string& name, TransferFlag flag = TransferFlag::None);
+	void transfer(uuids::uuid* data, const char* name, TransferFlag flag = TransferFlag::None);
 	
 private:
 	std::string filePath;
@@ -33,13 +34,14 @@ public:
 
 	JsonWrite(const std::string& filePath);
 
-	void transfer(bool& data, const std::string& name, TransferFlag flag = TransferFlag::None);
-	void transfer(int& data, const std::string& name, TransferFlag flag = TransferFlag::None);
-	void transfer(float& data, const std::string& name, TransferFlag flag = TransferFlag::None);
-	void transfer(double& data, const std::string& name, TransferFlag flag = TransferFlag::None);
-	void transfer(std::string& data, const std::string& name, TransferFlag flag = TransferFlag::None);
+	void transfer(bool* data, const char* name, TransferFlag flag = TransferFlag::None);
+	void transfer(int* data, const char* name, TransferFlag flag = TransferFlag::None);
+	void transfer(float* data, const char* name, TransferFlag flag = TransferFlag::None);
+	void transfer(double* data, const char* name, TransferFlag flag = TransferFlag::None);
+	void transfer(const char** data, const char* name, TransferFlag flag = TransferFlag::None);
+	void transfer(std::string* data, const char* name, TransferFlag flag = TransferFlag::None);
 
-	void transfer(uuids::uuid& data, const std::string& name, TransferFlag flag = TransferFlag::None);
+	void transfer(uuids::uuid* data, const char* name, TransferFlag flag = TransferFlag::None);
 
 	void Save();
 	

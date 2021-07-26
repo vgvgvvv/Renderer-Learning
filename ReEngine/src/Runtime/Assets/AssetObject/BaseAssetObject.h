@@ -26,7 +26,7 @@ public:
 	template<class TranslateFunction>
 	void Transfer(TranslateFunction& transfer)
 	{
-		transfer.transfer(uuid, "uuid");
+		transfer.transfer(&uuid, "uuid");
 	}
 	
 protected:

@@ -5,10 +5,11 @@
 #include "rapidjson/ostreamwrapper.h"
 #include "rapidjson/writer.h"
 
+using namespace rapidjson;
+
 
 JsonRead::JsonRead(const std::string& filePath) : filePath(filePath)
 {
-	using namespace rapidjson;
 	std::ifstream inputFile(filePath);
 	IStreamWrapper isw(inputFile);
 	doc.ParseStream(isw);
@@ -16,89 +17,107 @@ JsonRead::JsonRead(const std::string& filePath) : filePath(filePath)
 }
 
 
-void JsonRead::transfer(bool& data, const std::string& name, TransferFlag flag)
+void JsonRead::transfer(bool* data, const char* name, TransferFlag flag)
 {
-	rapidjson::Value key;
-	key.SetString(name.c_str(), name.size());
+	Value key;
+	key.SetString(StringRef(name));
 	
 	if(doc.HasMember(key))
 	{
-		data = doc[key].GetBool();
+		*data = doc[key].GetBool();
 	}
 	else
 	{
-		data = true;
+		*data = true;
 	}
 }
 
-void JsonRead::transfer(int& data, const std::string& name, TransferFlag flag)
+void JsonRead::transfer(int* data, const char* name, TransferFlag flag)
 {
 	rapidjson::Value key;
 	key.SetString(rapidjson::StringRef(name));
 
 	if (doc.HasMember(key))
 	{
-		data = doc[key].GetInt();
+		*data = doc[key].GetInt();
 	}
 	else
 	{
-		data = 0;
+		*data = 0;
 	}
 }
 
-void JsonRead::transfer(float& data, const std::string& name, TransferFlag flag)
+void JsonRead::transfer(float* data, const char* name, TransferFlag flag)
 {
 	rapidjson::Value key;
 	key.SetString(rapidjson::StringRef(name));
 
 	if (doc.HasMember(key))
 	{
-		data = doc[key].GetFloat();
+		*data = doc[key].GetFloat();
 	}
 	else
 	{
-		data = 0.0f;
+		*data = 0.0f;
 	}
 }
 
-void JsonRead::transfer(double& data, const std::string& name, TransferFlag flag)
+void JsonRead::transfer(double* data, const char* name, TransferFlag flag)
 {
 	rapidjson::Value key;
 	key.SetString(rapidjson::StringRef(name));
 
 	if (doc.HasMember(key))
 	{
-		data = doc[key].GetDouble();
+		*data = doc[key].GetDouble();
 	}
 	else
 	{
-		data = 0.0;
+		*data = 0.0;
 	}
 }
 
-void JsonRead::transfer(std::string& data, const std::string& name, TransferFlag flag)
+
+void JsonRead::transfer(const char** data, const char* name, TransferFlag flag)
 {
 	rapidjson::Value key;
 	key.SetString(rapidjson::StringRef(name));
 
 	if (doc.HasMember(key))
 	{
-		data = doc[key].GetString();
+		*data = doc[key].GetString();
 	}
 	else
 	{
-		data = "";
+		*data = "";
 	}
 }
 
 
-void JsonRead::transfer(uuids::uuid& data, const std::string& name, TransferFlag flag)
+
+void JsonRead::transfer(std::string* data, const char* name, TransferFlag flag)
+{
+	rapidjson::Value key;
+	key.SetString(rapidjson::StringRef(name));
+
+	if (doc.HasMember(key))
+	{
+		*data = doc[key].GetString();
+	}
+	else
+	{
+		*data = "";
+	}
+}
+
+
+void JsonRead::transfer(uuids::uuid* data, const char* name, TransferFlag flag)
 {
 	rapidjson::Value key;
 	key.SetString(rapidjson::StringRef(name));
 	
 	const auto str = doc[key].GetString();
-	data.from_string(str);
+	data->from_string(str);
 }
 
 
@@ -108,14 +127,14 @@ JsonWrite::JsonWrite(const std::string& filePath) : filePath(filePath)
 }
 
 
-void JsonWrite::transfer(bool& data, const std::string& name, TransferFlag flag)
+void JsonWrite::transfer(bool* data, const char* name, TransferFlag flag)
 {
 	rapidjson::Value key;
 	
 	key.SetString(rapidjson::StringRef(name));
 
 	rapidjson::Value value;
-	value.SetBool(data);
+	value.SetBool(*data);
 
 	if (doc.HasMember(key))
 	{
@@ -125,13 +144,13 @@ void JsonWrite::transfer(bool& data, const std::string& name, TransferFlag flag)
 	doc.AddMember(key, value, doc.GetAllocator());
 }
 
-void JsonWrite::transfer(int& data, const std::string& name, TransferFlag flag)
+void JsonWrite::transfer(int* data, const char* name, TransferFlag flag)
 {
 	rapidjson::Value key;
 	key.SetString(rapidjson::StringRef(name));
 
 	rapidjson::Value value;
-	value.SetInt(data);
+	value.SetInt(*data);
 
 	if (doc.HasMember(key))
 	{
@@ -141,13 +160,13 @@ void JsonWrite::transfer(int& data, const std::string& name, TransferFlag flag)
 	doc.AddMember(key, value, doc.GetAllocator());
 }
 
-void JsonWrite::transfer(float& data, const std::string& name, TransferFlag flag)
+void JsonWrite::transfer(float* data, const char* name, TransferFlag flag)
 {
 	rapidjson::Value key;
 	key.SetString(rapidjson::StringRef(name));
 
 	rapidjson::Value value;
-	value.SetFloat(data);
+	value.SetFloat(*data);
 
 	if (doc.HasMember(key))
 	{
@@ -157,13 +176,13 @@ void JsonWrite::transfer(float& data, const std::string& name, TransferFlag flag
 	doc.AddMember(key, value, doc.GetAllocator());
 }
 
-void JsonWrite::transfer(double& data, const std::string& name, TransferFlag flag)
+void JsonWrite::transfer(double* data, const char* name, TransferFlag flag)
 {
 	rapidjson::Value key;
 	key.SetString(rapidjson::StringRef(name));
 
 	rapidjson::Value value;
-	value.SetDouble(data);
+	value.SetDouble(*data);
 
 	if (doc.HasMember(key))
 	{
@@ -173,27 +192,56 @@ void JsonWrite::transfer(double& data, const std::string& name, TransferFlag fla
 	doc.AddMember(key, value, doc.GetAllocator());
 }
 
-void JsonWrite::transfer(std::string& data, const std::string& name, TransferFlag flag)
+void JsonWrite::transfer(const char** data, const char* name, TransferFlag flag)
 {
-
 	rapidjson::Value key;
 	key.SetString(rapidjson::StringRef(name));
 
 	rapidjson::Value value;
-	value.SetString(rapidjson::StringRef(data));
+	value.SetString(rapidjson::StringRef(*data));
 
-	if(doc.HasMember(key))
+	if (doc.HasMember(key))
 	{
 		doc.EraseMember(key);
 	}
-	
+
 	doc.AddMember(key, value, doc.GetAllocator());
 }
 
-void JsonWrite::transfer(uuids::uuid& data, const std::string& name, TransferFlag flag)
+void JsonWrite::transfer(std::string* data, const char* name, TransferFlag flag)
 {
-	std::string str = to_string(data);
-	transfer(str, name, flag);
+	
+	Value key;
+	key.SetString(StringRef(name));
+
+	Value value;
+
+	if (doc.HasMember(key))
+	{
+		doc.EraseMember(key);
+	}
+
+	doc.AddMember(key, 
+		value.CopyFrom(Value(StringRef(*data)), doc.GetAllocator(), true), 
+		doc.GetAllocator());
+}
+
+void JsonWrite::transfer(uuids::uuid* data, const char* name, TransferFlag flag)
+{
+	Value key;
+	key.SetString(StringRef(name));
+
+	Value value;
+
+	if (doc.HasMember(key))
+	{
+		doc.EraseMember(key);
+	}
+
+	doc.AddMember(key, 
+		value.CopyFrom(Value(StringRef(to_string(*data))), doc.GetAllocator(), true), 
+		doc.GetAllocator());
+	
 }
 
 void JsonWrite::Save()
