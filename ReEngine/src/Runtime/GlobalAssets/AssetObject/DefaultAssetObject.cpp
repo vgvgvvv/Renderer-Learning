@@ -4,13 +4,3 @@ std::shared_ptr<UnknownAssetsFile> UnknownAssetsFile::Load(const std::string& fi
 {
 	return nullptr;
 }
-
-void DefaultAssetObject::Load(const std::string& filePath)
-{
-	std::string metaFilePath(filePath + ".meta");
-	JsonRead read(metaFilePath);
-
-	Transfer(read);
-
-	assetPtr = UnknownAssetsFile::Load(filePath);
-}

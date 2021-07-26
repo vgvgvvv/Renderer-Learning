@@ -19,5 +19,4 @@ public:
 		BaseAssetObject<UnknownAssetsFile>::Transfer(transfer);
 	}
 
-	void Load(const std::string& filePath);
 };
