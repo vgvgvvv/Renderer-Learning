@@ -6,7 +6,8 @@ set(linkLibs
 	DotNetLib
 	EditorGUI
 	ImGUILib
-	World)
+	World
+	Assets)
 
 set(targetName Core)
 ReMake_AddTarget(

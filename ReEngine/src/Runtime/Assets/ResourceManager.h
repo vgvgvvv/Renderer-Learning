@@ -4,6 +4,7 @@
 #include "Assets_API.h"
 #include <filesystem>
 #include <map>
+#include "inifile.h"
 
 #include "uuid.h"
 
@@ -29,8 +30,4 @@ private:
 };
 
 
-template <class T>
-T& ResourcesManager::Load(const std::string& fileName)
-{
-	
-}
+

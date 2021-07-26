@@ -1,6 +1,5 @@
 #include "BaseObject.h"
 
-#define UUID_SYSTEM_GENERATOR
 #include "uuid.h"
 
 BaseObject::BaseObject()

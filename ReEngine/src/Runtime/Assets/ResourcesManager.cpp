@@ -1,7 +1,14 @@
 #include "ResourceManager.h"
-#include "AssetLoader.h"
+#include "AssetLoader/AssetLoader.h"
+#include "Config/Config.h"
 #include "Logging/Log.h"
 
+template <class T>
+T& ResourcesManager::Load(const std::string& fileName)
+{
+	auto assetLoader = AssetLoaderFactory::Create(fileName);
+	assetLoader->Load();
+}
 
 void ResourcesManager::CheckImport(const std::string& root)
 {
@@ -54,6 +61,6 @@ bool ResourcesManager::CheckIfAssetNeedImport(const fs::directory_entry& entry)
 
 void ResourcesManager::ImportAsset(const fs::directory_entry& entry)
 {
-	auto assetLoader = AssetLoaderFactory::Create(entry);
-	// assetLoader->CreateAssetMetaFile();
+	auto assetLoader = AssetLoaderFactory::CreateLoader(entry);
+	assetLoader->CreateAssetMetaFile();
 }
