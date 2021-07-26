@@ -25,16 +25,10 @@ struct MeshSurface
 	std::vector<uint32_t> Indices;
 };
 
-struct RHI_API Mesh
+struct Mesh
 {
 	MeshSurface surface;
 	std::vector<MeshVertex> vertexes;
-
-	static std::shared_ptr<Mesh> Load(const std::string& filePath)
-	{
-		// TODO
-		return nullptr;
-	}
 
 };
 

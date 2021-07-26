@@ -16,5 +16,5 @@ public:
 		BaseAssetObject<GameObject>::Transfer(transfer);
 	}
 
-
+	std::shared_ptr<GameObject> Load(const std::string& filePath);
 };

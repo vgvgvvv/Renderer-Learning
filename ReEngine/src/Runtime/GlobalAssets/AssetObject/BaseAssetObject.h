@@ -49,5 +49,4 @@ void GlobalAssets_API BaseAssetObject<T>::Load(const std::string& filePath)
 
 	Transfer(read);
 	
-	assetPtr = T::Load(filePath);
 }

@@ -22,4 +22,5 @@ public:
 		BaseAssetObject<ITexture>::Transfer(transfer);
 	}
 
+	std::shared_ptr<ITexture> Load(const std::string& filePath);
 };

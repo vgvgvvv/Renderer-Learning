@@ -48,13 +48,6 @@ public:
 	bool IsDestroyed() const { return isDestroyed; }
 
 	GameObjectFlag flag;
-
-	static std::shared_ptr<GameObject> Load(const std::string& filePath)
-	{
-		// TODO
-		return nullptr;
-	}
-
 	
 protected:
 
