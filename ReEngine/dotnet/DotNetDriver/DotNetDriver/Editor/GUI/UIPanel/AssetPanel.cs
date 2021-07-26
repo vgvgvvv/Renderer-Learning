@@ -4,6 +4,20 @@ namespace DotNetDriver.Editor
 {
     public class AssetPanel : IEditorPanel
     {
+
+        public static AssetPanel Current { get; private set; }
+
+        [MenuItem("Window/Open AssetPanel")]
+        public static void Open()
+        {
+            Current.IsShow = true;
+        }
+
+        public AssetPanel()
+        {
+            Current = this;
+        }
+
         public bool IsShow { get; set; } = true;
         public string Title => "Asset";
 

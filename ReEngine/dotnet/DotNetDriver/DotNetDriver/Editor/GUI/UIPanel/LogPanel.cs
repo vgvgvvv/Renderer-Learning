@@ -29,6 +29,20 @@ namespace DotNetDriver.Editor
 
     public class LogPanel : IEditorPanel
     {
+
+        public static LogPanel Current { get; private set; }
+
+        [MenuItem("Window/Open LogPanel")]
+        public static void Open()
+        {
+            Current.IsShow = true;
+        }
+
+        public LogPanel()
+        {
+            Current = this;
+        }
+
         public bool IsShow { get; set; } = true;
         public string Title => "Log";
 

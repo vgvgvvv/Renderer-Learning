@@ -6,6 +6,20 @@ namespace DotNetDriver.Editor
 {
     public class SceneViewPanel : IEditorPanel
     {
+
+        public static SceneViewPanel Current { get; private set; }
+
+        [MenuItem("Window/Open SceneViewPanel")]
+        public static void Open()
+        {
+            Current.IsShow = true;
+        }
+
+        public SceneViewPanel()
+        {
+            Current = this;
+        }
+
         public bool IsShow { get; set; } = true;
         public string Title => "Scene";
 

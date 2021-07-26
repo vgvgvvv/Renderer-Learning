@@ -4,6 +4,20 @@ namespace DotNetDriver.Editor
 {
     public class PropertyPanel : IEditorPanel
     {
+
+        public static PropertyPanel Current { get; private set; }
+
+        [MenuItem("Window/Open PropertyPanel")]
+        public static void Open()
+        {
+            Current.IsShow = true;
+        }
+
+        public PropertyPanel()
+        {
+            Current = this;
+        }
+
         public bool IsShow { get; set; } = true;
         public string Title => "Property";
 
