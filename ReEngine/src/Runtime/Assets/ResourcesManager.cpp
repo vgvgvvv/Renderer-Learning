@@ -22,7 +22,7 @@ void ResourcesManager::CheckImport(const std::string& root)
 
 	for (const auto& entry : fs::directory_iterator(targetPath))
 	{
-		if(entry.path().extension() == "meta")
+		if(entry.path().extension() == ".meta")
 		{
 			continue;
 		}
