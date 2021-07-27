@@ -11,4 +11,7 @@ public:
 
 	void ShutDown();
 
+private:
+
+	void DrawSelectedGameObject();
 };

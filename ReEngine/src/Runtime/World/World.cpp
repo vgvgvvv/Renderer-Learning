@@ -8,6 +8,11 @@ void World::Init()
 	RE_LOG_INFO("World", "Init World")
 }
 
+GameObject* World::CreateEmpty()
+{
+	return CreateGameObject();
+}
+
 GameObject* World::CreateGameObject(const std::string& name, GameObjectFlag flag)
 {
 	auto obj = new GameObject(name, flag);

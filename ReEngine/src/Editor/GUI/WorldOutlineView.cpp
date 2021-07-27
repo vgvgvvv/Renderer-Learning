@@ -1,12 +1,12 @@
 #include "WorldOutlineView.h"
 
 #include "Application.h"
+#include "EditorContext.h"
 #include "Layers/WorldLayer.h"
 #include "imgui.h"
 #include "Logging/Log.h"
 
 
-static std::list<GameObject*> selectedObjects;
 
 WorldOutlineView::WorldOutlineView()
 {
@@ -50,8 +50,10 @@ void WorldOutlineView::DrawGameObjectNode(GameObject* gameObject)
 	
 	ImGuiTreeNodeFlags node_flags = base_flags;
 
-	if (std::find(selectedObjects.begin(), 
-		selectedObjects.end(), 
+	auto& selectedObjects = EditorContext::Get().SelectedGameObjects;
+	
+	if (std::find(selectedObjects.begin(),
+		selectedObjects.end(),
 		gameObject) != selectedObjects.end())
 	{
 		node_flags |= ImGuiTreeNodeFlags_Selected;
@@ -95,6 +97,8 @@ void WorldOutlineView::DrawGameObjectNode(GameObject* gameObject)
 
 void WorldOutlineView::OnGameObjectNodeClick(GameObject* gameObject, bool isLeaf)
 {
+	auto& selectedObjects = EditorContext::Get().SelectedGameObjects;
+	
 	if (ImGui::IsItemClicked())
 	{
 		if(!ImGui::GetIO().KeyCtrl)

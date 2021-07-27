@@ -4,6 +4,7 @@ set(linkLibs
 	CommonLib 
 	RenderPipeline 
 	DotNetLib
+	Editor
 	EditorGUI
 	ImGUILib
 	World

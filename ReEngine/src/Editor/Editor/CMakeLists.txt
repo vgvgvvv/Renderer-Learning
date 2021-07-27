@@ -1,8 +1,13 @@
 
+set(libs 
+	CommonLib
+	ReTemplate
+	World)
+
 
 set(targetName Editor)
 ReMake_AddTarget(
 	TARGET_NAME ${targetName}
 	MODE SHARED
-	LIB CommonLib EditorGUI
+	LIB ${libs}
 )

@@ -12,6 +12,7 @@ class World_API World
 	
 public:
 	void Init();
+	GameObject* CreateEmpty();
 	GameObject* CreateGameObject(const std::string& name = "Game Object", GameObjectFlag flag = GameObjectFlag::None);
 	void DestroyGameObject(GameObject* gameObject);
 
