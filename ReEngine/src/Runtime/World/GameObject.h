@@ -54,7 +54,7 @@ public:
 	template<class TranslateFunction>
 	void Transfer(TranslateFunction& transfer)
 	{
-		// TODO
+		
 	}
 	
 protected:

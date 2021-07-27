@@ -16,6 +16,8 @@ public:
 	template<class TranslateFunction>
 	void Transfer(TranslateFunction& transfer)
 	{
-		// TODO
+		transfer.transfer(&position, "position");
+		transfer.transfer(&rotation, "rotation");
+		transfer.transfer(&scale, "scale");
 	}
 };

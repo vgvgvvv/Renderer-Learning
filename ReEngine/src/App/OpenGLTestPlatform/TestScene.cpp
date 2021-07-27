@@ -7,7 +7,7 @@
 #include "RendererComponents/CubeRenderer.h"
 #include "ResourceManager.h"
 #include "World.h"
-#include "Transform.h"
+#include "Components/Transform.h"
 
 void TestScene::OnInit()
 {

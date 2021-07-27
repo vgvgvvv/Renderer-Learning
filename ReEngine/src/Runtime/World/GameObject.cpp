@@ -1,6 +1,6 @@
 #include "GameObject.h"
 
-#include "Transform.h"
+#include "Components/Transform.h"
 #include "World.h"
 
 GameObject* GameObject::CreateGameObject(const std::string& name, GameObjectFlag flag)

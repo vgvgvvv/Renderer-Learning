@@ -4,6 +4,8 @@
 #include "GameObject.h"
 #include "Singleton.h"
 
+class Scene;
+
 class World_API World
 {
 	friend GameObject;
@@ -19,6 +21,9 @@ public:
 	void RemoveAllDestroyedGameObjects();
 
 	std::list<GameObject*>& GetAllGameObjects() { return gameObjects; }
+
+	void OpenScene(const Scene& scene);
+	bool SaveScene(Scene* scene);
 
 private:
 	std::list<GameObject*> gameObjects;

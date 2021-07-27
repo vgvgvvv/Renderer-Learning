@@ -25,6 +25,11 @@ void World::DestroyGameObject(GameObject* gameObject)
 {
 	RE_ASSERT(gameObject != nullptr)
 
+	if(gameObject->isDestroyed)
+	{
+		return;
+	}
+	
 	gameObject->isDestroyed = true;
 	gameObject->OnDestory();
 	
@@ -47,3 +52,17 @@ void World::RemoveAllDestroyedGameObjects()
 	}
 }
 
+void World::OpenScene(const Scene& scene)
+{
+	for (auto gameObject : gameObjects)
+	{
+		DestroyGameObject(gameObject);
+	}
+	RemoveAllDestroyedGameObjects();
+
+}
+
+bool World::SaveScene(Scene* scene)
+{
+	
+}

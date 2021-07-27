@@ -13,7 +13,7 @@ public:
 	template<class TranslateFunction>
 	void Transfer(TranslateFunction& transfer)
 	{
-		// TODO
+		transfer.transfer(&gameObjects, "gameObjects");
 	}
 	
 private:
