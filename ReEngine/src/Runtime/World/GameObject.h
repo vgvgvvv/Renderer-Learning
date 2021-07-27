@@ -45,9 +45,17 @@ public:
 
 	std::list<GameObject*>& GetChildren() { return children; }
 
+	std::vector<std::shared_ptr<class Component>>& GetComponents() { return components; }
+
 	bool IsDestroyed() const { return isDestroyed; }
 
 	GameObjectFlag flag;
+
+	template<class TranslateFunction>
+	void Transfer(TranslateFunction& transfer)
+	{
+		// TODO
+	}
 	
 protected:
 

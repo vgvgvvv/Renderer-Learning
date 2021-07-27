@@ -4,13 +4,16 @@
 
 std::vector<std::string> TextureObject::ext{ ".jpg", ".png" };
 
-std::shared_ptr<ITexture> TextureObject::Load(const std::string& filePath)
+std::shared_ptr<ITexture> TextureObject::Load(bool onlyMetaInfo)
 {
 	std::string metaFilePath(filePath + ".meta");
 	JsonRead read(metaFilePath);
 
 	Transfer(read);
-	
-	assetPtr = RenderContext::Get().GetDevice().CreateTexture(filePath);
-	return assetPtr;
+	if(!onlyMetaInfo)
+	{
+		assetPtr = RenderContext::Get().GetDevice().CreateTexture(filePath);
+		return assetPtr;
+	}
+	return nullptr;
 }

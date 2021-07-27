@@ -1409,6 +1409,9 @@ namespace Worldd
             [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "?Init@World@@QEAAXXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern void Init(__IntPtr __instance);
 
+            [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "?CreateEmpty@World@@QEAAPEAVGameObject@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern __IntPtr CreateEmpty(__IntPtr __instance);
+
             [SuppressUnmanagedCodeSecurity, DllImport("Worldd", EntryPoint = "?CreateGameObject@World@@QEAAPEAVGameObject@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4GameObjectFlag@@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr CreateGameObject(__IntPtr __instance, __IntPtr name, global::Worldd.GameObjectFlag flag);
 
@@ -1488,6 +1491,13 @@ namespace Worldd
         public void Init()
         {
             __Internal.Init(__Instance);
+        }
+
+        public global::Worldd.GameObject CreateEmpty()
+        {
+            var __ret = __Internal.CreateEmpty(__Instance);
+            var __result0 = global::Worldd.GameObject.__GetOrCreateInstance(__ret, false);
+            return __result0;
         }
 
         public global::Worldd.GameObject CreateGameObject(string name, global::Worldd.GameObjectFlag flag)

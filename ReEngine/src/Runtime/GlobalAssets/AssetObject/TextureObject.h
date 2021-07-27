@@ -19,8 +19,8 @@ public:
 	template<class TranslateFunction>
 	void Transfer(TranslateFunction & transfer)
 	{
-		BaseAssetObject<ITexture>::Transfer(transfer);
+		transfer.transfer(&uuid, "uuid");
 	}
 
-	std::shared_ptr<ITexture> Load(const std::string& filePath);
+	std::shared_ptr<ITexture> Load(bool onlyMetaInfo = false);
 };

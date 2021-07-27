@@ -13,8 +13,8 @@ public:
 	template<class TranslateFunction>
 	void Transfer(TranslateFunction & transfer)
 	{
-		BaseAssetObject<GameObject>::Transfer(transfer);
+		transfer.transfer(&uuid, "uuid");
 	}
 
-	std::shared_ptr<GameObject> Load(const std::string& filePath);
+	std::shared_ptr<GameObject> Load(bool onlyMetaInfo = false);
 };

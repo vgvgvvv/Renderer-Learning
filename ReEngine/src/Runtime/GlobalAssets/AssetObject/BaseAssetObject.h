@@ -18,7 +18,7 @@ public:
 
 	friend AssetLoader<BaseAssetObject<T>>;
 
-	BaseAssetObject()
+	BaseAssetObject(const std::string& filePath) : filePath(filePath)
 	{
 		uuid = uuids::uuid_system_generator{}();
 	}
@@ -26,7 +26,7 @@ public:
 	T& Get() { return *assetPtr; }
 	uuids::uuid& Uuid() { return uuid; }
 
-	void Load(const std::string& filePath);
+	void Load(bool onlyMetaInfo = false);
 	
 	bool IsLoaded() { return assetPtr != nullptr; }
 
@@ -39,10 +39,11 @@ public:
 protected:
 	std::shared_ptr<T> assetPtr;
 	uuids::uuid uuid;
+	std::string filePath;
 };
 
 template <class T>
-void GlobalAssets_API BaseAssetObject<T>::Load(const std::string& filePath)
+void GlobalAssets_API BaseAssetObject<T>::Load(bool onlyMetaInfo)
 {
 	std::string metaFilePath(filePath + ".meta");
 	JsonRead read(metaFilePath);

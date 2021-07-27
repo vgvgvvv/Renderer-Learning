@@ -3,10 +3,10 @@
 #include <string>
 
 
-#include "BaseTransfer.h"
 #include "uuid.h"
-#include "TransferFlag.h"
 #include "GlobalAssets_API.h"
+#include "Transfer/BaseTransfer.h"
+#include "Transfer/TransferFlag.h"
 #include "nlohmann/json.hpp"
 
 class GlobalAssets_API JsonRead : public IBaseTransfer

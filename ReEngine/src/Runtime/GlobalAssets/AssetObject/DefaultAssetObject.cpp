@@ -1,6 +1,6 @@
 #include "DefaultAssetObject.h"
 
-std::shared_ptr<UnknownAssetsFile> UnknownAssetsFile::Load(const std::string& filePath)
+std::shared_ptr<UnknownAssetsFile> DefaultAssetObject::Load(bool onlyMetaInfo)
 {
 	return nullptr;
 }

@@ -34,9 +34,9 @@ public:
 	{
 		if (!assetPtr)
 		{
-			assetPtr = std::make_shared<T>();
+			assetPtr = std::make_shared<T>(filePath);
 		}
-		assetPtr->Load(filePath);
+		assetPtr->Load();
 	}
 	
 	void CreateAssetMetaFile() override
@@ -54,7 +54,7 @@ public:
 		writer.Save();
 	}
 
-	std::shared_ptr<T> Get();
+	std::shared_ptr<T> Get() { return assetPtr; };
 
 protected:
 	std::shared_ptr<T> assetPtr;

@@ -12,9 +12,9 @@ public:
 	template<class TranslateFunction>
 	void Transfer(TranslateFunction & transfer)
 	{
-		
+		transfer.transfer(&uuid, "uuid");
 	}
 
-	std::shared_ptr<MeshGroup> Load(const std::string& filePath);
+	std::shared_ptr<MeshGroup> Load(bool onlyMetaInfo = false);
 
 };

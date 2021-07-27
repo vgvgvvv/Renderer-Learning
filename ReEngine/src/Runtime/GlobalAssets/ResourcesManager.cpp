@@ -10,8 +10,11 @@ T& ResourcesManager::Load(const std::string& fileName)
 	assetLoader->Load();
 	std::shared_ptr<T> assetObj = assetLoader->Get();
 
-	// 注册资源到全局资源表
-	resourcesMap.insert(std::pair<uuids::uuid, std::shared_ptr<T>>(assetObj->Uuid(), assetObj));
+	if(assetObj)
+	{
+		// 注册资源到全局资源表
+		resourcesMap.insert(std::pair<uuids::uuid, std::shared_ptr<T>>(assetObj->Uuid(), assetObj));
+	}
 
 	return *assetObj;
 }

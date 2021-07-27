@@ -72,7 +72,7 @@ namespace DotNetDriver.Editor
         [MenuItem("GameObject/Create Empty")]
         public static void CreateEmpty()
         {
-            World.Get().CreateGameObject("Game Object", GameObjectFlag.None);
+            World.Get().CreateEmpty();
         }
 
         [MenuItem("GameObject/Create Camera")]

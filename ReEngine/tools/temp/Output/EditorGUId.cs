@@ -143,6 +143,118 @@ namespace EditorGUId
         }
     }
 
+    public unsafe partial class Camera
+    {
+        public partial struct __Internal
+        {
+        }
+
+        public __IntPtr __Instance { get; protected set; }
+
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::EditorGUId.Camera> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::EditorGUId.Camera>();
+
+        protected bool __ownsNativeInstance;
+
+        internal static Camera __CreateInstance(__IntPtr native, bool skipVTables = false)
+        {
+            return new Camera(native.ToPointer(), skipVTables);
+        }
+
+        internal static Camera __GetOrCreateInstance(__IntPtr native, bool saveInstance = false, bool skipVTables = false)
+        {
+            if (native == __IntPtr.Zero)
+                return null;
+            if (NativeToManagedMap.TryGetValue(native, out var managed))
+                return (Camera)managed;
+            var result = __CreateInstance(native, skipVTables);
+            if (saveInstance)
+                NativeToManagedMap[native] = result;
+            return result;
+        }
+
+        internal static Camera __CreateInstance(__Internal native, bool skipVTables = false)
+        {
+            return new Camera(native, skipVTables);
+        }
+
+        private static void* __CopyValue(__Internal native)
+        {
+            var ret = Marshal.AllocHGlobal(sizeof(__Internal));
+            *(__Internal*) ret = native;
+            return ret.ToPointer();
+        }
+
+        private Camera(__Internal native, bool skipVTables = false)
+            : this(__CopyValue(native), skipVTables)
+        {
+            __ownsNativeInstance = true;
+            NativeToManagedMap[__Instance] = this;
+        }
+
+        protected Camera(void* native, bool skipVTables = false)
+        {
+            if (native == null)
+                return;
+            __Instance = new __IntPtr(native);
+        }
+    }
+
+    public unsafe partial class RenderTexture
+    {
+        public partial struct __Internal
+        {
+        }
+
+        public __IntPtr __Instance { get; protected set; }
+
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::EditorGUId.RenderTexture> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::EditorGUId.RenderTexture>();
+
+        protected bool __ownsNativeInstance;
+
+        internal static RenderTexture __CreateInstance(__IntPtr native, bool skipVTables = false)
+        {
+            return new RenderTexture(native.ToPointer(), skipVTables);
+        }
+
+        internal static RenderTexture __GetOrCreateInstance(__IntPtr native, bool saveInstance = false, bool skipVTables = false)
+        {
+            if (native == __IntPtr.Zero)
+                return null;
+            if (NativeToManagedMap.TryGetValue(native, out var managed))
+                return (RenderTexture)managed;
+            var result = __CreateInstance(native, skipVTables);
+            if (saveInstance)
+                NativeToManagedMap[native] = result;
+            return result;
+        }
+
+        internal static RenderTexture __CreateInstance(__Internal native, bool skipVTables = false)
+        {
+            return new RenderTexture(native, skipVTables);
+        }
+
+        private static void* __CopyValue(__Internal native)
+        {
+            var ret = Marshal.AllocHGlobal(sizeof(__Internal));
+            *(__Internal*) ret = native;
+            return ret.ToPointer();
+        }
+
+        private RenderTexture(__Internal native, bool skipVTables = false)
+            : this(__CopyValue(native), skipVTables)
+        {
+            __ownsNativeInstance = true;
+            NativeToManagedMap[__Instance] = this;
+        }
+
+        protected RenderTexture(void* native, bool skipVTables = false)
+        {
+            if (native == null)
+                return;
+            __Instance = new __IntPtr(native);
+        }
+    }
+
     public unsafe partial class WorldOutlineView : IDisposable
     {
         [StructLayout(LayoutKind.Sequential, Size = 1)]
@@ -378,6 +490,11 @@ namespace EditorGUId
         [StructLayout(LayoutKind.Sequential, Size = 1)]
         public partial struct __Internal
         {
+            internal byte lastIsFocused;
+
+            [SuppressUnmanagedCodeSecurity, DllImport("EditorGUId", EntryPoint = "??0AssetView@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern __IntPtr ctor(__IntPtr __instance);
+
             [SuppressUnmanagedCodeSecurity, DllImport("EditorGUId", EntryPoint = "??0AssetView@@QEAA@AEBV0@@Z", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
 
@@ -445,6 +562,7 @@ namespace EditorGUId
             __Instance = Marshal.AllocHGlobal(sizeof(global::EditorGUId.AssetView.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
+            __Internal.ctor(__Instance);
         }
 
         public AssetView(global::EditorGUId.AssetView _0)

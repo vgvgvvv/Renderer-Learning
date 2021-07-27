@@ -11,4 +11,5 @@ extern "C" __declspec(dllexport) void SceneView__SceneView(SceneView*__instance)
 extern "C" __declspec(dllexport) void SceneView_SceneView(void* __instance) { ::new (__instance) SceneView(); }
 WorldOutlineView& (WorldOutlineView::*_1)(WorldOutlineView&&) = &WorldOutlineView::operator=;
 PropertyView& (PropertyView::*_2)(PropertyView&&) = &PropertyView::operator=;
+extern "C" __declspec(dllexport) void AssetView_AssetView(void* __instance) { ::new (__instance) AssetView(); }
 AssetView& (AssetView::*_3)(AssetView&&) = &AssetView::operator=;

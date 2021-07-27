@@ -2,11 +2,13 @@
 #include <string>
 
 
-#include "BaseTransfer.h"
-#include "TransferFlag.h"
 #include "yaml-cpp/node/convert.h"
 #include "uuid.h"
 #include "GlobalAssets_API.h"
+#include "Transfer/BaseTransfer.h"
+#include "Transfer/TransferFlag.h"
+
+class Vector3;
 
 class GlobalAssets_API YAMLRead : public IBaseTransfer
 {

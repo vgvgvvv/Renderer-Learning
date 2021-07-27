@@ -12,4 +12,10 @@ public:
 	Vector3 position;
 	Quaternion rotation;
 	Vector3 scale;
+
+	template<class TranslateFunction>
+	void Transfer(TranslateFunction& transfer)
+	{
+		// TODO
+	}
 };

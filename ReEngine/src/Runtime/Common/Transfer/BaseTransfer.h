@@ -7,4 +7,5 @@ public:
 	virtual ~IBaseTransfer() = default;
 	virtual bool IsReading() { return false; }
 	virtual bool IsWriting() { return false; }
+	virtual bool IsImGui() { return false; }
 };

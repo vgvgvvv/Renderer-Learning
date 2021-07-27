@@ -25,7 +25,12 @@ void PropertyView::DrawSelectedGameObject()
 		return;
 	}
 
-	auto& showObject = *selectedObject.begin();
+	const auto showObject = *selectedObject.begin();
 	
 	ImGui::Text(showObject->GetName().c_str());
+
+	for (auto component : showObject->GetComponents())
+	{
+		
+	}
 }
