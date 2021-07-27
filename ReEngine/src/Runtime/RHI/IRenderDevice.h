@@ -34,6 +34,7 @@ public:
 	virtual void ClearFrameBuffer() const = 0;
 public:
 	virtual std::shared_ptr<IFrameBuffer> CreateFrameBuffer() const = 0;
+	virtual std::shared_ptr<ITexture> CreateTexture(const std::string& fileName) const = 0;
 	virtual std::shared_ptr<ITexture> CreateTexture(uint32_t width, uint32_t height) const = 0;
 	virtual std::shared_ptr<IIndexBuffer> CreateIndexBuffer(const uint32_t* data, uint32_t count) const = 0;
 	virtual std::shared_ptr<IVertexBuffer> CreateVertexBuffer(const void* data, uint32_t size) const = 0;

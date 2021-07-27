@@ -2,11 +2,10 @@
 #include <fstream>
 #include <string>
 
-#include "rapidjson/document.h"
 #include "uuid.h"
-#include "rapidjson/rapidjson.h"
 #include "TransferFlag.h"
 #include "GlobalAssets_API.h"
+#include "nlohmann/json.hpp"
 
 class GlobalAssets_API JsonRead
 {
@@ -18,14 +17,13 @@ public:
 	void transfer(int* data, const char* name, TransferFlag flag = TransferFlag::None);
 	void transfer(float* data, const char* name, TransferFlag flag = TransferFlag::None);
 	void transfer(double* data, const char* name, TransferFlag flag = TransferFlag::None);
-	void transfer(const char** data, const char* name, TransferFlag flag = TransferFlag::None);
 	void transfer(std::string* data, const char* name, TransferFlag flag = TransferFlag::None);
 
 	void transfer(uuids::uuid* data, const char* name, TransferFlag flag = TransferFlag::None);
 	
 private:
 	std::string filePath;
-	rapidjson::Document doc;
+	nlohmann::json doc;
 };
 
 class GlobalAssets_API JsonWrite
@@ -38,7 +36,6 @@ public:
 	void transfer(int* data, const char* name, TransferFlag flag = TransferFlag::None);
 	void transfer(float* data, const char* name, TransferFlag flag = TransferFlag::None);
 	void transfer(double* data, const char* name, TransferFlag flag = TransferFlag::None);
-	void transfer(const char** data, const char* name, TransferFlag flag = TransferFlag::None);
 	void transfer(std::string* data, const char* name, TransferFlag flag = TransferFlag::None);
 
 	void transfer(uuids::uuid* data, const char* name, TransferFlag flag = TransferFlag::None);
@@ -47,5 +44,5 @@ public:
 	
 private:
 	std::string filePath;
-	rapidjson::Document doc;
+	nlohmann::json doc;
 };

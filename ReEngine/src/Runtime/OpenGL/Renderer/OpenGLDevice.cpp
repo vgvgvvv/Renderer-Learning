@@ -84,6 +84,11 @@ std::shared_ptr<IFrameBuffer> OpenGLDevice::CreateFrameBuffer() const
 	return std::make_shared<FrameBuffer>();
 }
 
+std::shared_ptr<ITexture> OpenGLDevice::CreateTexture(const std::string& fileName) const
+{
+	return std::make_shared<Texture>(fileName);
+}
+
 std::shared_ptr<ITexture> OpenGLDevice::CreateTexture(uint32_t width, uint32_t height) const
 {
 	return std::make_shared<Texture>(width, height);

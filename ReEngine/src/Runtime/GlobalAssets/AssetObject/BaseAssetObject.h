@@ -48,5 +48,4 @@ void GlobalAssets_API BaseAssetObject<T>::Load(const std::string& filePath)
 	JsonRead read(metaFilePath);
 
 	Transfer(read);
-	
 }
