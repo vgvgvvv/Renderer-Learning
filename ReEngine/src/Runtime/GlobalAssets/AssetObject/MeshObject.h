@@ -15,14 +15,6 @@ public:
 		
 	}
 
-
 	std::shared_ptr<MeshGroup> Load(const std::string& filePath);
 
-private:
-
-	bool InitMesh(const std::string& filePath, MeshGroup& meshGroup);
-
-	void ProcessNode(class aiNode* node, const class aiScene* scene);
-
-	Mesh ProcessMesh(class aiMesh* mesh, const class aiScene* scene);
 };

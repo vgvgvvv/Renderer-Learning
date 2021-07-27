@@ -26,9 +26,13 @@ struct Mesh
 	std::vector<MeshVertex> vertexes;
 };
 
-struct MeshGroup
+struct RHI_API MeshGroup
 {
 	std::vector<Mesh> meshes;
+	bool InitFromFile(const std::string& filePath);
+private:
+	void ProcessNode(class aiNode* node, const class aiScene* scene);
+	Mesh ProcessMesh(class aiMesh* mesh, const aiScene* scene);
 };
 
 
