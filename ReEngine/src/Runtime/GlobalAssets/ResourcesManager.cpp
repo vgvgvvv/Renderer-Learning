@@ -7,6 +7,13 @@ template <class T>
 T& ResourcesManager::Load(const std::string& fileName)
 {
 	auto assetLoader = AssetLoaderFactory::Create(fileName);
+
+	if(!assetLoader)
+	{
+		RE_LOG_ERROR("Assets", "Cannot find suitable Loader by file {0}", fileName.c_str());
+		return std::make_shared<T>();
+	}
+	
 	assetLoader->Load();
 	std::shared_ptr<T> assetObj = assetLoader->Get();
 

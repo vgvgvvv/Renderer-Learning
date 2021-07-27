@@ -48,7 +48,7 @@ public:
 
 		if(!assetPtr)
 		{
-			assetPtr = std::make_shared<T>();
+			assetPtr = std::make_shared<T>(filePath);
 		}
 		assetPtr->Transfer(writer);
 		writer.Save();
