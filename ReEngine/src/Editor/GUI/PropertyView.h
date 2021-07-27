@@ -2,6 +2,8 @@
 
 #include "EditorGUI_API.h"
 
+const static int MAX_NAME_LENGTH = 50;
+
 class EditorGUI_API PropertyView
 {
 public:
@@ -14,4 +16,7 @@ public:
 private:
 
 	void DrawSelectedGameObject();
+
+private:
+	bool ChangeGameObjectName = false;
 };

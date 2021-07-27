@@ -2,6 +2,8 @@
 
 #include "EditorContext.h"
 #include "imgui.h"
+#include "imgui_stdlib.h"
+#include "ImGuiTransfer.h"
 
 
 void PropertyView::OnInit()
@@ -25,9 +27,11 @@ void PropertyView::DrawSelectedGameObject()
 		return;
 	}
 
-	const auto showObject = *selectedObject.begin();
+	auto showObject = *selectedObject.begin();
 	
-	ImGui::Text(showObject->GetName().c_str());
+	std::string name = showObject->GetName();
+	ImGui::InputText("Name", &name);
+	showObject->SetName(name);
 
 	for (auto component : showObject->GetComponents())
 	{
