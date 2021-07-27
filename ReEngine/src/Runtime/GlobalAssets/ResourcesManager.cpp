@@ -8,6 +8,9 @@ T& ResourcesManager::Load(const std::string& fileName)
 {
 	auto assetLoader = AssetLoaderFactory::Create(fileName);
 	assetLoader->Load();
+	std::shared_ptr<T> assetObj = assetLoader->Get();
+	resourcesMap.insert(std::pair<uuids::uuid, std::shared_ptr<T>>(assetObj->Uuid(), assetObj));
+	return *assetObj;
 }
 
 void ResourcesManager::CheckImport(const std::string& root)

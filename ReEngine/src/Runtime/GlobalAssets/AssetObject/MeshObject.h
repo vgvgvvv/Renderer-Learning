@@ -17,4 +17,8 @@ public:
 
 
 	std::shared_ptr<Mesh> Load(const std::string& filePath);
+
+private:
+
+	bool InitMesh(const std::string& filePath, Mesh& mesh);
 };

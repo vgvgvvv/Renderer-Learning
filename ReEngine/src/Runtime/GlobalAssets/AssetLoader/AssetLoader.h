@@ -54,6 +54,8 @@ public:
 		writer.Save();
 	}
 
+	std::shared_ptr<T> Get();
+
 protected:
 	std::shared_ptr<T> assetPtr;
 };
