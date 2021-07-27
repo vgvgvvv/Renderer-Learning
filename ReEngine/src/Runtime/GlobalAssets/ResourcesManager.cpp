@@ -2,11 +2,14 @@
 #include "AssetLoader/AssetLoader.h"
 #include "Config/Config.h"
 #include "Logging/Log.h"
+#include "Misc/Path.h"
 
 template <class T>
 T& ResourcesManager::Load(const std::string& fileName)
 {
-	auto assetLoader = AssetLoaderFactory::Create(fileName);
+	auto fullPath = Path::Combine(Path::GetResourcesPath(), fileName);
+
+	auto assetLoader = AssetLoaderFactory::Create(fullPath);
 
 	if(!assetLoader)
 	{
