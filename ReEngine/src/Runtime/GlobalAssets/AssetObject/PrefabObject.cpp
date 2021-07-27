@@ -8,7 +8,7 @@ std::shared_ptr<GameObject> PrefabObject::Load(const std::string& filePath)
 	std::string metaFilePath(filePath + ".meta");
 	JsonRead read(metaFilePath);
 
-	BaseAssetObject<GameObject>::Transfer(read);
+	Transfer(read);
 	
 	assetPtr = std::make_shared<GameObject>();
 	// TODO

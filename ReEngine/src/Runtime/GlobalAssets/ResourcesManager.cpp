@@ -9,7 +9,10 @@ T& ResourcesManager::Load(const std::string& fileName)
 	auto assetLoader = AssetLoaderFactory::Create(fileName);
 	assetLoader->Load();
 	std::shared_ptr<T> assetObj = assetLoader->Get();
+
+	// 注册资源到全局资源表
 	resourcesMap.insert(std::pair<uuids::uuid, std::shared_ptr<T>>(assetObj->Uuid(), assetObj));
+
 	return *assetObj;
 }
 
@@ -67,3 +70,4 @@ void ResourcesManager::ImportAsset(const fs::directory_entry& entry)
 	auto assetLoader = AssetLoaderFactory::CreateLoader(entry);
 	assetLoader->CreateAssetMetaFile();
 }
+

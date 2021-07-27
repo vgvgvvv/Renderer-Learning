@@ -17,19 +17,18 @@ struct MeshVertex
 	Vector3 position;
 	Color color;
 	Vector3 normal;
-	Vector2 uvs[MaxUVNum];
-};
-
-struct MeshSurface
-{
-	std::vector<uint32_t> Indices;
+	Vector2 uv0;
 };
 
 struct Mesh
 {
-	MeshSurface surface;
+	std::vector<uint32_t> Indices;
 	std::vector<MeshVertex> vertexes;
+};
 
+struct MeshGroup
+{
+	std::vector<Mesh> meshes;
 };
 
 

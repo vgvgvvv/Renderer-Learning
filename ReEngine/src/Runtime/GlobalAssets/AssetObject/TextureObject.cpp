@@ -9,7 +9,7 @@ std::shared_ptr<ITexture> TextureObject::Load(const std::string& filePath)
 	std::string metaFilePath(filePath + ".meta");
 	JsonRead read(metaFilePath);
 
-	BaseAssetObject<ITexture>::Transfer(read);
+	Transfer(read);
 	
 	assetPtr = RenderContext::Get().GetDevice().CreateTexture(filePath);
 	return assetPtr;

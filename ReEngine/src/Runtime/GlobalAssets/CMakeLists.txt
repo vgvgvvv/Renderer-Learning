@@ -5,7 +5,6 @@ ReMake_AddTarget(
 	TARGET_NAME ${targetName}
 	MODE SHARED
 	LIB RHI re-reflection World RenderPipeline
-	DEFINE ASSIMP_DLL
 )
 
 UseSpdlog(${targetName})
