@@ -30,37 +30,45 @@ public:
 	template<class T>
 	void transfer(std::list<T>* data, const char* name, TransferFlag flag = TransferFlag::None)
 	{
-		auto arr = json::array();
-
-		for(T& item : data)
+		data->clear();
+		auto arr = doc[name];
+		if(arr.is_array())
 		{
-			arr.push_back(item);
-		}
-		doc[name] = arr;
+			auto size = arr.size();
+			for(int i = 0; i < size; i ++)
+			{
+				data->push_back(arr[i].get<T>());
+			}
+		};
 	}
 
 	template<class T>
 	void transfer(std::vector<T>* data, const char* name, TransferFlag flag = TransferFlag::None)
 	{
-		auto arr = json::array();
-
-		for (T& item : data)
+		data->clear();
+		auto arr = doc[name];
+		if (arr.is_array())
 		{
-			arr.push_back(item);
-		}
-		doc[name] = arr;
+			auto size = arr.size();
+			for (int i = 0; i < size; i++)
+			{
+				data->push_back(arr[i].get<T>());
+			}
+		};
 	}
 
-	template<class TK, class TV>
-	void transfer(std::map<TK, TV>* data, const char* name, TransferFlag flag = TransferFlag::None)
+	template<class TV>
+	void transfer(std::map<std::string, TV>* data, const char* name, TransferFlag flag = TransferFlag::None)
 	{
-		auto obj = json::object();
-
-		for (std::pair<TK, TV>& item : data)
+		data->clear();
+		auto obj = doc[name];
+		if (obj.is_object())
 		{
-			obj[item.first] = item.second;
-		}
-		doc[name] = obj;
+			for(auto& el : obj.items())
+			{
+				data->insert(std::pair<std::string, TV>(el.key(), el.value().get<TV>()));
+			}
+		};
 	}
 	
 	void transfer(uuids::uuid* data, const char* name, TransferFlag flag = TransferFlag::None);
