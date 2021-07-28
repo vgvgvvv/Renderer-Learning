@@ -49,6 +49,8 @@ public:
 		out = std::static_pointer_cast<T>(assetPtr).get();
 		return true;
 	}
+
+	const std::string& LoadFrom() { return filePath; };
 	
 	bool Valid() const
 	{

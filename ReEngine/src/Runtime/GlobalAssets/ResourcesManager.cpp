@@ -18,6 +18,18 @@ AssetPtr ResourcesManager::Load(const std::string& fileName)
 
 	AssetLoader& assetLoader = AssetLoaderFactory::GetLoader(entry);
 
+	// ≥¢ ‘¥”ª∫¥Ê÷–’“µΩ
+	for (auto& resoucePair : resourcesMap)
+	{
+		auto& assetPtr = resoucePair.second;
+		if(!assetPtr.Valid())
+			continue;
+		if(assetPtr.LoadFrom() == fullPath)
+		{
+			return assetPtr;
+		}
+	}
+
 	auto assetPtr = assetLoader.Load(fullPath);
 
 	if (assetPtr.Valid())
