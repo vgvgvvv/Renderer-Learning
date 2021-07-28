@@ -4,29 +4,29 @@
 #include "Logging/Log.h"
 #include "Misc/Path.h"
 
-template <class T>
-T& ResourcesManager::Load(const std::string& fileName)
+
+/// <summary>
+/// 加载文件
+/// </summary>
+/// <param name="fileName">相对文件路径</param>
+/// <returns></returns>
+AssetPtr ResourcesManager::Load(const std::string& fileName)
 {
 	auto fullPath = Path::Combine(Path::GetResourcesPath(), fileName);
 
-	auto assetLoader = AssetLoaderFactory::Create(fullPath);
+	fs::directory_entry entry(fullPath);
 
-	if(!assetLoader)
-	{
-		RE_LOG_ERROR("Assets", "Cannot find suitable Loader by file {0}", fileName.c_str());
-		return std::make_shared<T>();
-	}
-	
-	assetLoader->Load();
-	std::shared_ptr<T> assetObj = assetLoader->Get();
+	AssetLoader& assetLoader = AssetLoaderFactory::GetLoader(entry);
 
-	if(assetObj)
+	auto assetPtr = assetLoader.Load(fullPath);
+
+	if (assetPtr.Valid())
 	{
 		// 注册资源到全局资源表
-		resourcesMap.insert(std::pair<uuids::uuid, std::shared_ptr<T>>(assetObj->Uuid(), assetObj));
+		resourcesMap.insert(std::pair<uuids::uuid, AssetPtr>(assetPtr.Uuid(), assetPtr));
 	}
 
-	return *assetObj;
+	return assetPtr;
 }
 
 void ResourcesManager::CheckImport(const std::string& root)
@@ -78,9 +78,10 @@ bool ResourcesManager::CheckIfAssetNeedImport(const fs::directory_entry& entry)
 	return false;
 }
 
+// entry为完整路径
 void ResourcesManager::ImportAsset(const fs::directory_entry& entry)
 {
-	auto assetLoader = AssetLoaderFactory::CreateLoader(entry);
-	assetLoader->CreateAssetMetaFile();
+	auto assetLoader = AssetLoaderFactory::GetLoader(entry);
+	assetLoader.Import(entry.path().string());
 }
 

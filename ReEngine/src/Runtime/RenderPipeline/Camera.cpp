@@ -1,6 +1,6 @@
 #include "Camera.h"
 #include "GameObject.h"
-#include "Transform.h"
+#include "Components/Transform.h"
 #include "Vector3.h"
 
 Camera::Camera()

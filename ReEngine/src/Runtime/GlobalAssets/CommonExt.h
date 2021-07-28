@@ -1,9 +1,25 @@
 #pragma once
 #include <string>
+#include <vector>
 
 namespace Assets
 {
-	const std::string PrefabExt = ".prefab";
-	const std::string MaterialExt = ".mat";
-	const std::string SceneExt = ".scene";
+	const std::vector<std::string> PrefabExt { ".prefab" };
+	const std::vector<std::string> MaterialExt { ".mat" };
+	const std::vector<std::string> SceneExt { ".scene" };
+
+	const std::vector<std::string> MeshGroupExt { ".fbx", ".obj" };
+	const std::vector<std::string> TextureExt{ ".jpg", ".png" };
+
+	inline bool FindExt(const std::vector<std::string>& targetExts, const std::string& ext)
+	{
+		for (auto& targetExt : targetExts)
+		{
+			if(targetExt == ext)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
 }

@@ -2,9 +2,11 @@
 #include "Component.h"
 #include "Vector3.h"
 #include "Quaternion.h"
+#include "ClassInfo.h"
 
 class Transform : public Component
 {
+	DEFINE_CLASS(Transform, Component);
 public:
 
 	Transform();

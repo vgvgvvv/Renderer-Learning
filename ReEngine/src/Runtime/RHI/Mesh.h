@@ -5,6 +5,8 @@
 #include <vector>
 
 
+
+#include "ClassInfo.h"
 #include "Color.h"
 #include "RHI_API.h"
 #include "Vector3.h"
@@ -28,6 +30,8 @@ struct Mesh
 
 struct RHI_API MeshGroup
 {
+	DEFINE_CLASS(MeshGroup, void)
+	
 	std::vector<std::shared_ptr<Mesh>> meshes;
 	bool InitFromFile(const std::string& filePath);
 private:

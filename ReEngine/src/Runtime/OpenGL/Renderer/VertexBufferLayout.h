@@ -38,36 +38,56 @@ public:
 		: stride_(0) {}
 
 	template<typename T>
-	void Push(uint32_t count)
+	void Push(uint32_t count, int customOffset = -1)
 	{
 		RE_ASSERT_MSG(false, "push type is unkonwn");
 	}
 
 	template<>
-	void Push<float>(uint32_t count)
+	void Push<float>(uint32_t count, int customOffset)
 	{
 		elements_.push_back({GL_FLOAT, count, GL_FALSE});
-		stride_ += VertexBufferElement::GetSizeOfType(GL_FLOAT) * count;
+		if(customOffset > 0)
+			stride_ += customOffset;
+		else
+			stride_ += VertexBufferElement::GetSizeOfType(GL_FLOAT) * count;
 	}
 
 	template<>
-	void Push<uint32_t>(uint32_t count)
+	void Push<int32_t>(uint32_t count, int customOffset)
+	{
+		elements_.push_back({ GL_INT, count, GL_FALSE });
+		if (customOffset > 0)
+			stride_ += customOffset;
+		else
+			stride_ += VertexBufferElement::GetSizeOfType(GL_INT) * count;
+	}
+
+	template<>
+	void Push<uint32_t>(uint32_t count, int customOffset)
 	{
 		elements_.push_back({ GL_UNSIGNED_INT, count, GL_FALSE });
-		stride_ += VertexBufferElement::GetSizeOfType(GL_UNSIGNED_INT) * count;
+		if (customOffset > 0)
+			stride_ += customOffset;
+		else
+			stride_ += VertexBufferElement::GetSizeOfType(GL_UNSIGNED_INT) * count;
 	}
 
 	template<>
-	void Push<uint8_t>(uint32_t count)
+	void Push<uint8_t>(uint32_t count, int customOffset)
 	{
 		elements_.push_back({ GL_UNSIGNED_BYTE, count, GL_TRUE });
-		stride_ += VertexBufferElement::GetSizeOfType(GL_UNSIGNED_BYTE) * count;
+		if (customOffset > 0)
+			stride_ += customOffset;
+		else
+			stride_ += VertexBufferElement::GetSizeOfType(GL_UNSIGNED_BYTE) * count;
 	}
 
 	// todo more types..
 
-
+	void PushVector2() override;
 	void PushVector3() override;
+	void PushVector4() override;
 	void PushUV() override;
 	void PushColor() override;
 	

@@ -111,8 +111,26 @@ void RenderContext::DrawSingleRenderer(BaseRenderer* renderer, const DrawingSett
 		* Matrix4x4::Rotate(transform.rotation);
 	device->GlobalMatrix4.insert(std::pair<std::string, Matrix4x4>("ReEngine_ModelMat", ModelMat));
 
+	auto& mesh = renderer->GatherMesh();
 
+	auto vao = device->CreateVertexArrayObject();
 
-	//TODO
+	auto vertexBuffer = device->CreateVertexBuffer(
+		mesh.vertexes.data(), mesh.vertexes.size() * sizeof(MeshVertex));
+
+	auto vertexLayout = device->CreateVertexBufferLayout();
+	vertexLayout->PushVector3();
+	vertexLayout->PushColor();
+	vertexLayout->PushVector3();
+	vertexLayout->PushVector2();
+	vao->AddBuffer(*vertexBuffer, *vertexLayout);
+
+	auto ib = device->CreateIndexBuffer(mesh.Indices.data(), mesh.Indices.size());
+
+	auto verterxPath = Path::Combine(Path::GetShaderSourcePath(), "Default/Unlit.vert.glsl");
+	auto fragmentPath = Path::Combine(Path::GetShaderSourcePath(), "Default/Unlit.frag.glsl");
+	auto shader = device->CreateShader(verterxPath, fragmentPath);
+	
+	device->Draw(*vao, *ib, *shader);
 }
 

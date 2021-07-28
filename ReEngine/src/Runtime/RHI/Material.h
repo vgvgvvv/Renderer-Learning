@@ -4,10 +4,13 @@
 
 #include "IShader.h"
 #include "IRenderDevice.h"
+#include "RenderContext.h"
+#include "ClassInfo.h"
 #include "RenderPipeline_API.h"
 
 class RenderPipeline_API Material
 {
+	DEFINE_CLASS(Material, void)
 public:
 
 	IShader& GetShader() const { return *shader; }

@@ -64,5 +64,5 @@ void World::OpenScene(const Scene& scene)
 
 bool World::SaveScene(Scene* scene)
 {
-	
+	return false;
 }

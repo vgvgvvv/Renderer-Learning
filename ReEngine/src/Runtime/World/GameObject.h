@@ -6,6 +6,7 @@
 
 #include "BaseObject.h"
 #include "Component.h"
+#include "ClassInfo.h"
 #include "World_API.h"
 
 class Transform;
@@ -20,6 +21,7 @@ enum class GameObjectFlag
 
 class World_API GameObject : public BaseObject
 {
+	DEFINE_CLASS(GameObject, BaseObject);
 	
 	friend World;
 	friend Component;
