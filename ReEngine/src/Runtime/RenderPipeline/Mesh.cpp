@@ -2,7 +2,7 @@
 #include "assimp/Importer.hpp"
 #include "assimp/scene.h"
 #include "assimp/postprocess.h"
-#include "Logging/Log.h"
+#include "Common.h"
 
 bool MeshGroup::InitFromFile(const std::string& filePath)
 {

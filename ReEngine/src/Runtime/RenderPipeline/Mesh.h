@@ -31,7 +31,7 @@ struct RenderPipeline_API MeshGroup
 {
 	DEFINE_CLASS(MeshGroup, void);
 	DEFINE_IMPORT_ASSET_CLASS(MeshGroup)
-	
+public:
 	std::vector<std::shared_ptr<Mesh>> meshes;
 	bool InitFromFile(const std::string& filePath);
 private:
