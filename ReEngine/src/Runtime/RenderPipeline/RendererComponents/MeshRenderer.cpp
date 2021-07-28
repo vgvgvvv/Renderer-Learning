@@ -1,6 +1,6 @@
 #include "MeshRenderer.h"
 
-Mesh& MeshRenderer::GatherMesh() const
+std::shared_ptr<Mesh> MeshRenderer::GatherMesh() const
 {
-	return *mesh;
+	return mesh;
 }

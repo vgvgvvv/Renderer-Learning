@@ -16,7 +16,7 @@ class RenderPipeline_API Material
 	DEFINE_NORMAL_ASSET_CLASS(Material);
 public:
 	
-	IShader& GetShader() const { return *shader; }
+	std::shared_ptr<IShader> GetShader() const { return shader; }
 
 private:
 	std::shared_ptr<IShader> shader;

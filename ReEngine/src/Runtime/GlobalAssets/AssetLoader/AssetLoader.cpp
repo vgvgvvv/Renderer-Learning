@@ -28,10 +28,12 @@ AssetLoader& AssetLoader::DefaultLoader()
 	return defaultLoader;
 }
 
-#define IMPORT_LOADER_REGISTER(TypeName, exts) {TypeName::StaticClassName(), ImportAssetLoader<TypeName>(exts)},
-#define NORMAL_LOADER_REGISTER(TypeName, exts) {TypeName::StaticClassName(), NormalAssetLoader<TypeName>(exts)},
+#define IMPORT_LOADER_REGISTER(TypeName, exts) \
+	{TypeName::StaticClassName(), std::make_shared<ImportAssetLoader<TypeName>>(exts)},
+#define NORMAL_LOADER_REGISTER(TypeName, exts) \
+	{TypeName::StaticClassName(), std::make_shared<NormalAssetLoader<TypeName>>(exts)},
 
-static std::unordered_map<std::string, AssetLoader> StaticLoaders{
+static std::unordered_map<std::string, std::shared_ptr<AssetLoader>> StaticLoaders{
 		IMPORT_LOADER_REGISTER(MeshGroup, Assets::MeshGroupExt)
 		IMPORT_LOADER_REGISTER(Image, Assets::ImageExt)
 
@@ -49,9 +51,9 @@ AssetLoader& AssetLoaderFactory::GetLoader(const fs::directory_entry& entry)
 	
 	for (auto& loader : StaticLoaders)
 	{
-		if(loader.second.HasExt(ext))
+		if(loader.second->HasExt(ext))
 		{
-			return loader.second;
+			return *loader.second;
 		}
 	}
 
@@ -61,5 +63,5 @@ AssetLoader& AssetLoaderFactory::GetLoader(const fs::directory_entry& entry)
 
 AssetLoader& AssetLoaderFactory::GetLoaderWithType(const std::string& className)
 {
-	return StaticLoaders.at(className);
+	return *StaticLoaders.at(className);
 }

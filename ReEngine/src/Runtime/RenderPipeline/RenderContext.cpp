@@ -111,12 +111,16 @@ void RenderContext::DrawSingleRenderer(BaseRenderer* renderer, const DrawingSett
 		* Matrix4x4::Rotate(transform.rotation);
 	device->GlobalMatrix4.insert(std::pair<std::string, Matrix4x4>("ReEngine_ModelMat", ModelMat));
 
-	auto& mesh = renderer->GatherMesh();
+	auto mesh = renderer->GatherMesh();
+	if(mesh == nullptr)
+	{
+		return;
+	}
 
 	auto vao = device->CreateVertexArrayObject();
 
 	auto vertexBuffer = device->CreateVertexBuffer(
-		mesh.vertexes.data(), mesh.vertexes.size() * sizeof(MeshVertex));
+		mesh->vertexes.data(), mesh->vertexes.size() * sizeof(MeshVertex));
 
 	auto vertexLayout = device->CreateVertexBufferLayout();
 	vertexLayout->PushVector3();
@@ -125,11 +129,16 @@ void RenderContext::DrawSingleRenderer(BaseRenderer* renderer, const DrawingSett
 	vertexLayout->PushVector2();
 	vao->AddBuffer(*vertexBuffer, *vertexLayout);
 
-	auto ib = device->CreateIndexBuffer(mesh.Indices.data(), mesh.Indices.size());
+	auto ib = device->CreateIndexBuffer(mesh->Indices.data(), mesh->Indices.size());
 
-	auto verterxPath = Path::Combine(Path::GetShaderSourcePath(), "Default/Unlit.vert.glsl");
-	auto fragmentPath = Path::Combine(Path::GetShaderSourcePath(), "Default/Unlit.frag.glsl");
-	auto shader = device->CreateShader(verterxPath, fragmentPath);
+	auto material = renderer->GetMaterial(0);
+	if(material == nullptr)
+	{
+		return;
+	}
+	
+	auto shader = material->GetShader();
+	
 	
 	device->Draw(*vao, *ib, *shader);
 }

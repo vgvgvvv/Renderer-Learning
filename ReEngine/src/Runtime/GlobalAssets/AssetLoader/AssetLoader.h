@@ -38,6 +38,9 @@ public:
 	T& Get() const { return *std::static_pointer_cast<T>(assetPtr); }
 
 	template<class T>
+	std::shared_ptr<T> GetPtr() const { return std::static_pointer_cast<T>(assetPtr); }
+
+	template<class T>
 	bool TryGet(T* out){
 		if(!Valid())
 		{
@@ -91,7 +94,7 @@ public:
 		std::shared_ptr<T> asset = T::CreateDefault(filePath);
 
 		// 仅储存 uuid
-		JsonRead metaRead(filePath + ".mata");
+		JsonRead metaRead(filePath + ".meta");
 		metaRead.transfer(&asset->uuid, "uuid");
 
 		// 读取数据
@@ -104,7 +107,7 @@ public:
 	void Import(const std::string& filePath) override
 	{
 		// 仅储存 uuid
-		JsonWrite metaWrite(filePath + ".mata");
+		JsonWrite metaWrite(filePath + ".meta");
 		auto uuid = uuids::uuid_system_generator{}();
 		metaWrite.transfer(&uuid, "uuid");
 		metaWrite.Save();
@@ -138,7 +141,8 @@ public:
 		std::shared_ptr<T> result = T::Load(filePath);
 
 		// 加载导入选项
-		JsonRead metaRead(filePath + ".mata");
+		JsonRead metaRead(filePath + ".meta");
+		metaRead.transfer(&result->uuid, "uuid");
 		result->TransferImportSetting(metaRead);
 
 		return AssetPtr::Create(filePath, result);
@@ -150,7 +154,9 @@ public:
 		std::shared_ptr<T> asset = T::CreateDefault(filePath);
 
 		// 写入导入选项
-		JsonWrite metaWrite(filePath + ".mata");
+		JsonWrite metaWrite(filePath + ".meta");
+		asset->uuid = uuids::uuid_system_generator{}();
+		metaWrite.transfer(&asset->uuid, "uuid");
 		asset->TransferImportSetting(metaWrite);
 		
 		metaWrite.Save();
@@ -161,7 +167,8 @@ public:
 		auto assetT = std::static_pointer_cast<T>(asset);
 
 		// 写入导入选项
-		JsonWrite metaWrite(filePath + ".mata");
+		JsonWrite metaWrite(filePath + ".meta");
+		metaWrite.transfer(&assetT->uuid, "uuid");
 		assetT->TransferImportSetting(metaWrite);
 
 		metaWrite.Save();

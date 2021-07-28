@@ -13,7 +13,7 @@ public:
 	void Awake() override;
 	void BeginDestroy() override;
 
-	virtual Mesh& GatherMesh() const = 0;
+	virtual std::shared_ptr<Mesh> GatherMesh() const = 0;
 
 	std::shared_ptr<Material> GetMaterial(int index)
 	{

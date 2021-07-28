@@ -1,7 +1,7 @@
 #include "Mesh.h"
-#include "assimp/Importer.hpp"
 #include "assimp/scene.h"
 #include "assimp/postprocess.h"
+#include "assimp/Importer.hpp"
 #include "Common.h"
 
 bool MeshGroup::InitFromFile(const std::string& filePath)
@@ -33,6 +33,10 @@ void MeshGroup::ProcessNode(aiNode* node, const aiScene* scene)
 		aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
 		meshes.push_back(ProcessMesh(mesh, scene));
 	}
+	for(int i = 0; i < node->mNumChildren; i ++)
+	{
+		ProcessNode(node->mChildren[i], scene);
+	}
 }
 
 std::shared_ptr<Mesh> MeshGroup::ProcessMesh(aiMesh* mesh, const aiScene* scene)
@@ -40,18 +44,32 @@ std::shared_ptr<Mesh> MeshGroup::ProcessMesh(aiMesh* mesh, const aiScene* scene)
 	std::vector<uint32_t> Indices;
 	std::vector<MeshVertex> vertexes;
 
+	Vector3 finalPosition;
+	Color finalColor = Color::gray;
+	Vector3 finalNormal;
+	Vector2 finalUV0 = Vector2::zeroVector;
+	
 	for (int i = 0; i < mesh->mNumVertices; i++)
 	{
 		auto& position = mesh->mVertices[i];
-		auto& color = mesh->mColors[0][i];
+		finalPosition = Vector3(position.x, position.y, position.z);
+		
+		auto color = mesh->mColors[0];
+		if(color != nullptr)
+			finalColor = Color(color->r, color->g, color->b, color->a);
+		
 		auto& normal = mesh->mNormals[i];
-		auto& uv0 = mesh->mTextureCoords[0][i];
+		finalNormal = Vector3(normal.x, normal.y, normal.z);
+		
+		auto uv0 = mesh->mTextureCoords[0];
+		if(uv0 != nullptr)
+			finalUV0 = Vector2(uv0->x, uv0->y);
 	
 		MeshVertex vertex{
-			Vector3(position.x, position.y, position.z),
-			Color(color.r, color.g, color.b, color.a),
-			Vector3(normal.x, normal.y, normal.z),
-			Vector2(uv0.x, uv0.y)
+			finalPosition,
+			finalColor,
+			finalNormal,
+			finalUV0
 		};
 	
 		vertexes.emplace_back(vertex);

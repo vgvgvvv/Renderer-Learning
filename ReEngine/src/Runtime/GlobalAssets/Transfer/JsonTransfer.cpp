@@ -1,4 +1,7 @@
 #include "JsonTransfer.h"
+
+#include <iostream>
+
 #include "Misc/File.h"
 
 
@@ -12,7 +15,7 @@ JsonRead::JsonRead(const std::string& filePath) : filePath(filePath)
 void JsonRead::transfer(uuids::uuid* data, const char* name, TransferFlag flag)
 {
 	const auto str = doc[name].get<std::string>();
-	data->from_string(str);
+	*data = data->from_string(str).value();
 }
 
 JsonWrite::JsonWrite(const std::string& filePath) : filePath(filePath)
