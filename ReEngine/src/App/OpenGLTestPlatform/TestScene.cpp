@@ -2,6 +2,7 @@
 
 
 
+#include "AssetObject/DefaultAssetObject.h"
 #include "AssetObject/MeshObject.h"
 #include "Camera.h"
 #include "RendererComponents/CubeRenderer.h"
@@ -16,10 +17,13 @@ void TestScene::OnInit()
 	camera->GetTransform().position = Vector3(0, 0, -1);
 
 	auto cube = World::Get().CreateGameObject("Cube");
-	cube->AddComponent<MeshRenderer>();
+	auto renderer = cube->AddComponent<MeshRenderer>();
 	cube->GetTransform().position = Vector3(0, 0, 1);
-
+	
 	auto& cubeAsset = ResourcesManager::Get().Load<MeshObject>("models/cube.fbx");
+	renderer->SetMesh(cubeAsset.Get().meshes[0]);
+	auto& materialAsset = ResourcesManager::Get().Load<DefaultAssetObject<Material>>("mats/test.mat");
+
 }
 
 void TestScene::OnShutDown()

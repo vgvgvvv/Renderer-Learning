@@ -18,7 +18,7 @@ public:
 	JsonRead(const std::string& filePath);
 
 
-	bool IsReading() override { return true; }
+	bool IsLoading() override { return true; }
 	bool IsWriting() override { return false; }
 
 	template<class T>
@@ -84,7 +84,7 @@ public:
 
 	JsonWrite(const std::string& filePath);
 
-	bool IsReading() override { return false; }
+	bool IsLoading() override { return false; }
 	bool IsWriting() override { return true; }
 
 	template<class T>

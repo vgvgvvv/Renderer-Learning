@@ -35,7 +35,7 @@ void MeshGroup::ProcessNode(aiNode* node, const aiScene* scene)
 	}
 }
 
-Mesh MeshGroup::ProcessMesh(aiMesh* mesh, const aiScene* scene)
+std::shared_ptr<Mesh> MeshGroup::ProcessMesh(aiMesh* mesh, const aiScene* scene)
 {
 	std::vector<uint32_t> Indices;
 	std::vector<MeshVertex> vertexes;
@@ -66,5 +66,5 @@ Mesh MeshGroup::ProcessMesh(aiMesh* mesh, const aiScene* scene)
 		}
 	}
 
-	return Mesh{ Indices, vertexes };
+	return std::make_shared<Mesh>(Indices, vertexes);
 }

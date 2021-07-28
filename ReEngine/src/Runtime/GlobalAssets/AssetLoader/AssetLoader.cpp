@@ -4,8 +4,11 @@
 
 #include "AssetObject/DefaultAssetObject.h"
 #include "AssetObject/MeshObject.h"
-#include "AssetObject/PrefabObject.h"
 #include "AssetObject/TextureObject.h"
+#include "Material.h"
+#include "CommonExt.h"
+#include "GameObject.h"
+
 
 template<class T>
 bool FindExt(const std::string& ext)
@@ -26,10 +29,14 @@ std::shared_ptr<BaseAssetLoader> AssetLoaderFactory::CreateLoader(const fs::dire
 	{
 		return Create<MeshObject>(entry);
 	}
-	else if(FindExt<PrefabObject>(ext))
+	else if(ext == Assets::PrefabExt)
 	{
-		return Create<PrefabObject>(entry);
+		return Create<DefaultAssetObject<GameObject>>(entry);
 	}
-	return Create<DefaultAssetObject>(entry);
+	else if(ext == Assets::MaterialExt)
+	{
+		return Create<DefaultAssetObject<Material>>(entry);
+	}
+	return nullptr;
 }
 

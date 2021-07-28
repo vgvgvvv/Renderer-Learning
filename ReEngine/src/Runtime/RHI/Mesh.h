@@ -28,11 +28,11 @@ struct Mesh
 
 struct RHI_API MeshGroup
 {
-	std::vector<Mesh> meshes;
+	std::vector<std::shared_ptr<Mesh>> meshes;
 	bool InitFromFile(const std::string& filePath);
 private:
 	void ProcessNode(class aiNode* node, const class aiScene* scene);
-	Mesh ProcessMesh(class aiMesh* mesh, const aiScene* scene);
+	std::shared_ptr<Mesh> ProcessMesh(class aiMesh* mesh, const aiScene* scene);
 };
 
 

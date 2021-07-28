@@ -2,8 +2,8 @@
 
 #include "RendererComponents/BaseRenderer.h"
 #include "GameObject.h"
-#include "Transform.h"
 #include "Camera.h"
+#include "Components/Transform.h"
 #include "IRenderDevice.h"
 #include "IVertexArrayObject.h"
 #include "RenderTexture.h"
@@ -113,7 +113,6 @@ void RenderContext::DrawSingleRenderer(BaseRenderer* renderer, const DrawingSett
 
 
 
-	
 	//TODO
 }
 

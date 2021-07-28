@@ -15,9 +15,9 @@ public:
 
 	virtual Mesh& GatherMesh() const = 0;
 
-	Material* GetMaterial(int index)
+	std::shared_ptr<Material> GetMaterial(int index)
 	{
-		if(materials.size() == 0)
+		if(materials.empty())
 		{
 			return nullptr;
 		}
@@ -29,9 +29,14 @@ public:
 			return nullptr;
 		}
 	};
+
+	void AddMaterial(std::shared_ptr<Material> mat)
+	{
+		
+	}
 	
 protected:
-	std::vector<Material*> materials;
+	std::vector<std::shared_ptr<Material>> materials;
 };
 
 class RenderPipeline_API RendererManager
