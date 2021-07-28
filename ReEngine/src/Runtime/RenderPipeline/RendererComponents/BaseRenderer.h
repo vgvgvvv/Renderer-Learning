@@ -32,7 +32,7 @@ public:
 
 	void AddMaterial(std::shared_ptr<Material> mat)
 	{
-		
+		materials.push_back(mat);
 	}
 	
 protected:

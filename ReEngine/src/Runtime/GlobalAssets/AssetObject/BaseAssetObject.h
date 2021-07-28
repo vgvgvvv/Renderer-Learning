@@ -24,6 +24,7 @@ public:
 	}
 	
 	T& Get() { return *assetPtr; }
+	std::shared_ptr<T> GetPtr() { return assetPtr; }
 	uuids::uuid& Uuid() { return uuid; }
 
 	void Load(bool onlyMetaInfo = false);

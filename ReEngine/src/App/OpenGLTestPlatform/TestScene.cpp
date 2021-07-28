@@ -23,7 +23,7 @@ void TestScene::OnInit()
 	auto& cubeAsset = ResourcesManager::Get().Load<MeshObject>("models/cube.fbx");
 	renderer->SetMesh(cubeAsset.Get().meshes[0]);
 	auto& materialAsset = ResourcesManager::Get().Load<DefaultAssetObject<Material>>("mats/test.mat");
-
+	renderer->AddMaterial(materialAsset.GetPtr());
 }
 
 void TestScene::OnShutDown()

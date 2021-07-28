@@ -25,7 +25,6 @@ public:
 		}
 	}
 
-	static std::shared_ptr<Material> GetDefaultMat();
 	
 private:
 	std::shared_ptr<IShader> shader;
