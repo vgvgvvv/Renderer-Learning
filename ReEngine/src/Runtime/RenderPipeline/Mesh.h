@@ -7,7 +7,7 @@
 #include "ClassInfo.h"
 #include "AssetsClassDefine.h"
 #include "Color.h"
-#include "RHI_API.h"
+#include "RenderPipeline_API.h"
 #include "Vector3.h"
 #include "Vector2.h"
 
@@ -27,7 +27,7 @@ struct Mesh
 	std::vector<MeshVertex> vertexes;
 };
 
-struct RHI_API MeshGroup
+struct RenderPipeline_API MeshGroup
 {
 	DEFINE_CLASS(MeshGroup, void);
 	DEFINE_IMPORT_ASSET_CLASS(MeshGroup)

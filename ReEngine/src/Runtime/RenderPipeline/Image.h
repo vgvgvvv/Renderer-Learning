@@ -1,8 +1,9 @@
 #pragma once
 #include "ClassInfo.h"
 #include "AssetsClassDefine.h"
+#include "RenderPipeline_API.h"
 
-class Image
+class RenderPipeline_API Image
 {
 	DEFINE_CLASS(Image, void);
 	DEFINE_IMPORT_ASSET_CLASS(Image);

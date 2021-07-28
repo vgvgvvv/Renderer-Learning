@@ -1,6 +1,9 @@
 
+set(targetName RenderPipeline)
 REMAKE_ADDTARGET(
-	TARGET_NAME RenderPipeline
+	TARGET_NAME ${targetName}
 	MODE SHARED
 	LIB ReOpenGL World 3d-math RHI
 )
+
+UseAssimp(${targetName})
