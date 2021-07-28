@@ -73,20 +73,23 @@ void ResourcesManager::UpdateMetaPathInfo(const std::string& root)
 	
 	for (const auto& entry : fs::directory_iterator(targetPath))
 	{
-		if (entry.path().extension() != ".meta")
+		if (entry.path().extension() == ".meta")
 		{
-			continue;
+			JsonRead read(entry.path().string());
+			uuids::uuid uuid;
+			read.transfer(&uuid, "uuid");
+
+			auto metaFilePath = entry.path().string();
+			auto filePath = metaFilePath.substr(0, metaFilePath.size() - strlen(".meta"));
+			uuidToFilePathMap.insert_or_assign(uuid, filePath);
+			
 		}
-
-		JsonRead read(entry.path().string());
-		uuids::uuid uuid;
-		read.transfer(&uuid, "uuid");
-		
-		uuidToFilePathMap.insert_or_assign(uuid, entry.path().string());
-
-		if (entry.is_directory())
+		else
 		{
-			UpdateMetaPathInfo(entry.path().string());
+			if (entry.is_directory())
+			{
+				UpdateMetaPathInfo(entry.path().string());
+			}
 		}
 	}
 }
