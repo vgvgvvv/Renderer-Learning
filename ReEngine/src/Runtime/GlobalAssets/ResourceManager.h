@@ -25,12 +25,14 @@ public:
 	void SaveToFile(const std::string& filePath, std::shared_ptr<void> asset);
 
 	void CheckImport(const std::string& root);
+	void UpdateMetaPathInfo(const std::string& root);
 
 private:
 	bool CheckIfAssetNeedImport(const fs::directory_entry& entry);
 	void ImportAsset(const fs::directory_entry& entry);
 
 private:
+	std::map<uuids::uuid, std::string> uuidToFilePathMap;
 	std::map<uuids::uuid, AssetPtr> resourcesMap;
 };
 

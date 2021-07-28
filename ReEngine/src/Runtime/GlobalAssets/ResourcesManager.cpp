@@ -61,6 +61,37 @@ void ResourcesManager::CheckImport(const std::string& root)
 	
 }
 
+void ResourcesManager::UpdateMetaPathInfo(const std::string& root)
+{
+	std::string targetPath = root;
+
+	if (!fs::exists(root))
+	{
+		RE_LOG_WARN("Resources", "Cannot find directory : {0}", root.c_str());
+		return;
+	}
+	
+	for (const auto& entry : fs::directory_iterator(targetPath))
+	{
+		if (entry.path().extension() != ".meta")
+		{
+			continue;
+		}
+
+		JsonRead read(entry.path().string());
+		uuids::uuid uuid;
+		read.transfer(&uuid, "uuid");
+		
+		uuidToFilePathMap.insert_or_assign(uuid, entry.path().string());
+
+		if (entry.is_directory())
+		{
+			UpdateMetaPathInfo(entry.path().string());
+		}
+	}
+}
+
+
 bool ResourcesManager::CheckIfAssetNeedImport(const fs::directory_entry& entry)
 {
 	auto metaFileEntry = fs::directory_entry(entry.path().string() + ".meta");

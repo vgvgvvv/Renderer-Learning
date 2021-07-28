@@ -17,6 +17,7 @@ void AssetView::OnGUI()
 		if(lastIsFocused)
 		{
 			ResourcesManager::Get().CheckImport(Path::GetResourcesPath());
+			ResourcesManager::Get().UpdateMetaPathInfo(Path::GetResourcesPath());
 		}
 	}
 }
