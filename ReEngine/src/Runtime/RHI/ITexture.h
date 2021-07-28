@@ -1,11 +1,12 @@
 #pragma once
 
+#include "AssetsClassDefine.h"
 #include "IRHIResources.h"
 #include "RHI_API.h"
 #include "ClassInfo.h"
 
-class ITexture : public IRHIResources
+class RHI_API ITexture : public IRHIResources
 {
 public:
-	DEFINE_CLASS(ITexture, IRHIResources);
 };
+

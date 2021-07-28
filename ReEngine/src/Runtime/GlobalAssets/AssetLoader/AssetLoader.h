@@ -1,4 +1,5 @@
 #pragma once
+#include <any>
 #include <map>
 #include <memory>
 #include <string>
@@ -66,6 +67,8 @@ public:
 
 	virtual void Import(const std::string& filePath);
 
+	virtual void Save(const std::string& filePath, std::shared_ptr<void> asset);
+
 	static AssetLoader& DefaultLoader();
 
 	bool HasExt(const std::string& ext)
@@ -84,19 +87,44 @@ public:
 	NormalAssetLoader(const std::vector<std::string>& exts) : AssetLoader(exts) {}
 	AssetPtr Load(const std::string& filePath) override
 	{
-		std::shared_ptr<T> result = T::Load(filePath);
+		// 创建默认数据
+		std::shared_ptr<T> asset = T::CreateDefault(filePath);
 
-		return AssetPtr::Create(filePath, result);
+		// 仅储存 uuid
+		JsonRead metaRead(filePath + ".mata");
+		metaRead.transfer(&asset->uuid, "uuid");
+
+		// 读取数据
+		JsonRead assetRead(filePath);
+		asset->TransferAsset(assetRead);
+		
+		return AssetPtr::Create(filePath, asset);
 	}
 	
 	void Import(const std::string& filePath) override
 	{
-		JsonWrite write(filePath + ".mata");
-		T::TransferDefault(write);
-		write.Save();
+		// 仅储存 uuid
+		JsonWrite metaWrite(filePath + ".mata");
+		auto uuid = uuids::uuid_system_generator{}();
+		metaWrite.transfer(&uuid, "uuid");
+		metaWrite.Save();
+
+		std::shared_ptr<T> asset = T::CreateDefault(filePath);
+		JsonWrite assetWrite(filePath);
+		asset->TransferAsset(assetWrite);
+		assetWrite.Save();
 	}
 
+	void Save(const std::string& filePath, std::shared_ptr<void> asset) override
+	{
+		auto assetT = std::static_pointer_cast<T>(asset);
 
+		// 写入资源
+		JsonWrite write(filePath);
+		assetT->TransferAsset(write);
+
+		write.Save();
+	}
 };
 
 template<class T>
@@ -106,21 +134,44 @@ public:
 	ImportAssetLoader(const std::vector<std::string>& exts) : AssetLoader(exts) {}
 	AssetPtr Load(const std::string& filePath) override
 	{
+		// 加载二进制数据
 		std::shared_ptr<T> result = T::Load(filePath);
+
+		// 加载导入选项
+		JsonRead metaRead(filePath + ".mata");
+		result->TransferImportSetting(metaRead);
+
 		return AssetPtr::Create(filePath, result);
 	}
 	
 	void Import(const std::string& filePath) override
 	{
-		JsonWrite write(filePath + ".mata");
-		T::TransferDefault(write);
-		write.Save();
+		// 创建默认数据
+		std::shared_ptr<T> asset = T::CreateDefault(filePath);
+
+		// 写入导入选项
+		JsonWrite metaWrite(filePath + ".mata");
+		asset->TransferImportSetting(metaWrite);
+		
+		metaWrite.Save();
 	}
 
+	void Save(const std::string& filePath, std::shared_ptr<void> asset) override
+	{
+		auto assetT = std::static_pointer_cast<T>(asset);
+
+		// 写入导入选项
+		JsonWrite metaWrite(filePath + ".mata");
+		assetT->TransferImportSetting(metaWrite);
+
+		metaWrite.Save();
+	}
 };
 
 class GlobalAssets_API AssetLoaderFactory
 {
 public:
 	static AssetLoader& GetLoader(const fs::directory_entry& entry);
+	
+	static AssetLoader& GetLoaderWithType(const std::string& className);
 };

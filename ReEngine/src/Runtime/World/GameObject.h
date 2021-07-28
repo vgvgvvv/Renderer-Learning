@@ -24,8 +24,7 @@ enum class GameObjectFlag
 class World_API GameObject : public BaseObject
 {
 	DEFINE_CLASS(GameObject, BaseObject);
-	DEFINE_NORMAL_ASSET_CLASS()
-
+	DEFINE_NORMAL_ASSET_CLASS(GameObject);
 	
 	friend World;
 	friend Component;
@@ -57,12 +56,7 @@ public:
 
 	GameObjectFlag flag;
 
-	template<class TranslateFunction>
-	void Transfer(TranslateFunction& transfer)
-	{
-		
-	}
-	
+
 protected:
 
 	void OnAwake();
@@ -90,4 +84,10 @@ std::shared_ptr<T> GameObject::AddComponent()
 	newComp->owner = this;
 	components.push_back(newComp);
 	return newComp;
+}
+
+template <class TransferFunction>
+void GameObject::TransferAsset(TransferFunction& transferFunc)
+{
+	transferFunc.transfer(&name, "name");
 }

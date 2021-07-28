@@ -4,7 +4,7 @@
 
 #include "CommonAssert.h"
 #include "GameObject.h"
-#include "ITexture.h"
+#include "Image.h"
 #include "Mesh.h"
 #include "Material.h"
 
@@ -19,6 +19,10 @@ void AssetLoader::Import(const std::string& filePath)
 {
 }
 
+void AssetLoader::Save(const std::string& filePath, std::shared_ptr<void> asset)
+{
+}
+
 AssetLoader& AssetLoader::DefaultLoader()
 {
 	return defaultLoader;
@@ -27,19 +31,22 @@ AssetLoader& AssetLoader::DefaultLoader()
 #define IMPORT_LOADER_REGISTER(TypeName, exts) {TypeName::StaticClassName(), ImportAssetLoader<TypeName>(exts)},
 #define NORMAL_LOADER_REGISTER(TypeName, exts) {TypeName::StaticClassName(), NormalAssetLoader<TypeName>(exts)},
 
+static std::unordered_map<std::string, AssetLoader> StaticLoaders{
+		IMPORT_LOADER_REGISTER(MeshGroup, Assets::MeshGroupExt)
+		IMPORT_LOADER_REGISTER(Image, Assets::ImageExt)
+
+		NORMAL_LOADER_REGISTER(Material, Assets::MaterialExt)
+		NORMAL_LOADER_REGISTER(GameObject, Assets::PrefabExt)
+};
+
+#undef IMPORT_LOADER_REGISTER
+#undef NORMAL_LOADER_REGISTER
+
 AssetLoader& AssetLoaderFactory::GetLoader(const fs::directory_entry& entry)
 {
 	const auto ext = entry.path().extension().string();
 	const auto filePath = entry.path().string();
 	
-	static std::unordered_map<std::string, AssetLoader> StaticLoaders{
-		IMPORT_LOADER_REGISTER(MeshGroup, Assets::MeshGroupExt)
-		IMPORT_LOADER_REGISTER(ITexture, Assets::TextureExt)
-		
-		NORMAL_LOADER_REGISTER(Material, Assets::MaterialExt)
-		NORMAL_LOADER_REGISTER(GameObject, Assets::PrefabExt)
-	};
-
 	for (auto& loader : StaticLoaders)
 	{
 		if(loader.second.HasExt(ext))
@@ -50,4 +57,9 @@ AssetLoader& AssetLoaderFactory::GetLoader(const fs::directory_entry& entry)
 
 	RE_LOG_ERROR("Assets", "Cannot find loader for {0}", filePath.c_str());
 	return defaultLoader;
+}
+
+AssetLoader& AssetLoaderFactory::GetLoaderWithType(const std::string& className)
+{
+	return StaticLoaders.at(className);
 }

@@ -58,3 +58,8 @@ void GameObject::OnDestory()
 	}
 	children.clear();
 }
+
+std::shared_ptr<GameObject> GameObject::CreateDefault(const std::string& filePath)
+{
+	return std::make_shared<GameObject>();
+}

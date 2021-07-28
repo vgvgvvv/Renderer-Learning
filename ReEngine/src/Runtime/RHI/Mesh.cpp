@@ -1,7 +1,7 @@
 #include "Mesh.h"
+#include "assimp/Importer.hpp"
 #include "assimp/scene.h"
 #include "assimp/postprocess.h"
-#include "assimp/Importer.hpp"
 #include "Logging/Log.h"
 
 bool MeshGroup::InitFromFile(const std::string& filePath)
@@ -68,3 +68,17 @@ std::shared_ptr<Mesh> MeshGroup::ProcessMesh(aiMesh* mesh, const aiScene* scene)
 
 	return std::make_shared<Mesh>(Indices, vertexes);
 }
+
+
+std::shared_ptr<MeshGroup> MeshGroup::CreateDefault(const std::string& filePath)
+{
+	return std::make_shared<MeshGroup>();
+}
+
+std::shared_ptr<MeshGroup> MeshGroup::Load(const std::string& filePath)
+{
+	auto meshGroup = std::make_shared<MeshGroup>();
+	meshGroup->InitFromFile(filePath);
+	return meshGroup;
+}
+

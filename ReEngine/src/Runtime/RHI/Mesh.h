@@ -4,9 +4,8 @@
 #include <string>
 #include <vector>
 
-
-
 #include "ClassInfo.h"
+#include "AssetsClassDefine.h"
 #include "Color.h"
 #include "RHI_API.h"
 #include "Vector3.h"
@@ -30,7 +29,8 @@ struct Mesh
 
 struct RHI_API MeshGroup
 {
-	DEFINE_CLASS(MeshGroup, void)
+	DEFINE_CLASS(MeshGroup, void);
+	DEFINE_IMPORT_ASSET_CLASS(MeshGroup)
 	
 	std::vector<std::shared_ptr<Mesh>> meshes;
 	bool InitFromFile(const std::string& filePath);
@@ -39,4 +39,8 @@ private:
 	std::shared_ptr<Mesh> ProcessMesh(class aiMesh* mesh, const aiScene* scene);
 };
 
+template <class TransferFunction>
+void MeshGroup::TransferImportSetting(TransferFunction& transferFunc)
+{
+}
 

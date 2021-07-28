@@ -22,7 +22,7 @@ public:
 	AssetPtr Load(const std::string& fileName);
 
 	template<class T>
-	void SaveToFile(const std::string& filePath, const T& asset);
+	void SaveToFile(const std::string& filePath, std::shared_ptr<void> asset);
 
 	void CheckImport(const std::string& root);
 
@@ -35,9 +35,10 @@ private:
 };
 
 template <class T>
-void ResourcesManager::SaveToFile(const std::string& filePath, const T& asset)
+void ResourcesManager::SaveToFile(const std::string& filePath, std::shared_ptr<void> asset)
 {
-	//TODO
+	AssetLoader& assetLoader = AssetLoaderFactory::GetLoaderWithType(T::StaticClassName());
+	assetLoader.Save(filePath, asset);
 }
 
 

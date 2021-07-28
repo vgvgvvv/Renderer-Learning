@@ -7,6 +7,8 @@
 
 class World_API Scene
 {
+	DEFINE_CLASS(Scene, void)
+	
 public:
 
 
