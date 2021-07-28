@@ -7,3 +7,4 @@ ReMake_AddTarget(
 )
 
 UseAssimp(${targetName})
+UseUuid(${targetName})

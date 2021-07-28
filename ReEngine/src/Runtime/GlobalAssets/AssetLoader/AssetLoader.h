@@ -4,7 +4,7 @@
 #include <string>
 #include <filesystem>
 
-
+#include "uuid.h"
 #include "CommonExt.h"
 #include "GlobalAssets_API.h"
 #include "Logging/Log.h"
@@ -21,6 +21,16 @@ class GlobalAssets_API AssetPtr
 {
 public:
 
+	template<class T>
+	static AssetPtr Create(const std::string& filePath, std::shared_ptr<T> asset)
+	{
+		AssetPtr ptr;
+		ptr.filePath = filePath;
+		ptr.uuid = asset->Uuid();
+		ptr.assetPtr = std::static_pointer_cast<T>(asset);
+		return ptr;
+	}
+	
 	const uuids::uuid& Uuid() const { return uuid; }
 	
 	template<class T>
@@ -42,6 +52,7 @@ public:
 	}
 private:
 	uuids::uuid uuid;
+	std::string filePath;
 	std::shared_ptr<void> assetPtr = nullptr;
 };
 
@@ -73,22 +84,19 @@ public:
 	NormalAssetLoader(const std::vector<std::string>& exts) : AssetLoader(exts) {}
 	AssetPtr Load(const std::string& filePath) override
 	{
-		JsonRead read(filePath + ".mata");
-		
 		std::shared_ptr<T> result = T::Load(filePath);
+
+		return AssetPtr::Create(filePath, result);
 	}
 	
 	void Import(const std::string& filePath) override
 	{
 		JsonWrite write(filePath + ".mata");
-		
+		T::TransferDefault(write);
+		write.Save();
 	}
 
-	template<class TransferFunction>
-	void TransferMetaFile(const TransferFunction& transfer)
-	{
-		
-	}
+
 };
 
 template<class T>
@@ -98,20 +106,17 @@ public:
 	ImportAssetLoader(const std::vector<std::string>& exts) : AssetLoader(exts) {}
 	AssetPtr Load(const std::string& filePath) override
 	{
-		return AssetPtr();
+		std::shared_ptr<T> result = T::Load(filePath);
+		return AssetPtr::Create(filePath, result);
 	}
 	
 	void Import(const std::string& filePath) override
 	{
 		JsonWrite write(filePath + ".mata");
-		
+		T::TransferDefault(write);
+		write.Save();
 	}
 
-	template<class TransferFunction>
-	void TransferMetaFile(const TransferFunction& transfer)
-	{
-		
-	}
 };
 
 class GlobalAssets_API AssetLoaderFactory

@@ -21,6 +21,9 @@ public:
 
 	AssetPtr Load(const std::string& fileName);
 
+	template<class T>
+	void SaveToFile(const std::string& filePath, const T& asset);
+
 	void CheckImport(const std::string& root);
 
 private:
@@ -30,5 +33,11 @@ private:
 private:
 	std::map<uuids::uuid, AssetPtr> resourcesMap;
 };
+
+template <class T>
+void ResourcesManager::SaveToFile(const std::string& filePath, const T& asset)
+{
+	//TODO
+}
 
 
