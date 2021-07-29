@@ -1,15 +1,12 @@
 
-
-set(targetName GlobalAssets)
+set(targetName Serialization)
 ReMake_AddTarget(
 	TARGET_NAME ${targetName}
 	MODE SHARED
-	LIB RHI re-reflection World RenderPipeline Serialization
+	LIB ImGUILib
 )
 
 UseSpdlog(${targetName})
 UseUuid(${targetName})
-UseIniFile(${targetName})
 UseYaml(${targetName})
 UseJson(${targetName})
-UseAssimp(${targetName})

@@ -9,11 +9,12 @@
 #include "Transfer/TransferFlag.h"
 #include "nlohmann/json.hpp"
 #include <filesystem>
+#include "Serialization_API.h"
 
 using namespace nlohmann;
 namespace fs = std::filesystem;
 
-class GlobalAssets_API JsonRead : public IBaseTransfer
+class Serialization_API JsonRead : public IBaseTransfer
 {
 public:
 
@@ -81,7 +82,7 @@ private:
 	nlohmann::json doc;
 };
 
-class GlobalAssets_API JsonWrite : public IBaseTransfer
+class Serialization_API JsonWrite : public IBaseTransfer
 {
 public:
 

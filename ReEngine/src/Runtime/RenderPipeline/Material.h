@@ -12,7 +12,7 @@
 
 class RenderPipeline_API Material
 {
-	DEFINE_CLASS(Material, void);
+	DEFINE_CLASS(Material);
 	DEFINE_NORMAL_ASSET_CLASS(Material);
 public:
 	

@@ -23,7 +23,7 @@ enum class GameObjectFlag
 
 class World_API GameObject : public BaseObject
 {
-	DEFINE_CLASS(GameObject, BaseObject);
+	DEFINE_DRIVEN_CLASS(GameObject, BaseObject);
 	DEFINE_NORMAL_ASSET_CLASS(GameObject);
 	
 	friend World;

@@ -7,10 +7,11 @@
 #include "GlobalAssets_API.h"
 #include "Transfer/BaseTransfer.h"
 #include "Transfer/TransferFlag.h"
+#include "Serialization_API.h"
 
 class Vector3;
 
-class GlobalAssets_API YAMLRead : public IBaseTransfer
+class Serialization_API YAMLRead : public IBaseTransfer
 {
 public:
 
@@ -32,7 +33,7 @@ private:
 
 
 
-class GlobalAssets_API YAMLWrite : public IBaseTransfer
+class Serialization_API YAMLWrite : public IBaseTransfer
 {
 public:
 

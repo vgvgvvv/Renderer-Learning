@@ -29,7 +29,7 @@ struct Mesh
 
 struct RenderPipeline_API MeshGroup
 {
-	DEFINE_CLASS(MeshGroup, void);
+	DEFINE_CLASS(MeshGroup);
 	DEFINE_IMPORT_ASSET_CLASS(MeshGroup)
 public:
 	std::vector<std::shared_ptr<Mesh>> meshes;

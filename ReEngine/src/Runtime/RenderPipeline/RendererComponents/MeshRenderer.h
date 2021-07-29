@@ -6,7 +6,7 @@
 
 class RenderPipeline_API MeshRenderer : public BaseRenderer
 {
-	DEFINE_CLASS(MeshRenderer, BaseRenderer);
+	DEFINE_DRIVEN_CLASS(MeshRenderer, BaseRenderer);
 	DEFINE_COMPONENT(MeshRenderer);
 public:
 

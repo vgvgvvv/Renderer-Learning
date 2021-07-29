@@ -5,7 +5,7 @@
 
 class RenderPipeline_API CubeRenderer : public MeshRenderer
 {
-	DEFINE_CLASS(CubeRenderer, MeshRenderer);
+	DEFINE_DRIVEN_CLASS(CubeRenderer, MeshRenderer);
 	DEFINE_COMPONENT(CubeRenderer)
 public:
 	CubeRenderer();

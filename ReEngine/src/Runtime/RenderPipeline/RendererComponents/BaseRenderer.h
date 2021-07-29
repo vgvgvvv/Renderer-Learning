@@ -9,7 +9,7 @@
 
 class RenderPipeline_API BaseRenderer : public Component
 {
-	DEFINE_CLASS(BaseRenderer, Component);
+	DEFINE_DRIVEN_CLASS(BaseRenderer, Component);
 	DEFINE_COMPONENT(BaseRenderer)
 public:
 	void Awake() override;

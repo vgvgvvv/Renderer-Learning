@@ -2,13 +2,13 @@
 
 #include <string>
 
-#include "ImGUILib_API.h"
 #include "Transfer/BaseTransfer.h"
 #include "Transfer/TransferFlag.h"
+#include "Serialization_API.h"
 
 class Vector3;
 
-class ImGUILib_API ImGuiTransfer : public IBaseTransfer
+class Serialization_API ImGuiTransfer : public IBaseTransfer
 {
 public:
 

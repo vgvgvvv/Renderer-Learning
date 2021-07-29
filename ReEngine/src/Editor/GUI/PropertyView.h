@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 #include "EditorGUI_API.h"
 
 const static int MAX_NAME_LENGTH = 50;
@@ -16,6 +18,7 @@ public:
 private:
 
 	void DrawSelectedGameObject();
+	void DrawComponent(std::shared_ptr<class Component> component);
 
 private:
 	bool ChangeGameObjectName = false;

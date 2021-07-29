@@ -3,7 +3,7 @@
 #include "EditorContext.h"
 #include "imgui.h"
 #include "imgui_stdlib.h"
-#include "ImGuiTransfer.h"
+#include "Transfer/ImGuiTransfer.h"
 
 
 void PropertyView::OnInit()
@@ -33,8 +33,22 @@ void PropertyView::DrawSelectedGameObject()
 	ImGui::InputText("Name", &name);
 	showObject->SetName(name);
 
-	for (auto component : showObject->GetComponents())
+	for (auto& component : showObject->GetComponents())
 	{
-		
+		if (ImGui::CollapsingHeader(component->ClassName().c_str(), ImGuiTreeNodeFlags_None))
+		{
+			DrawComponent(component);
+		}
 	}
 }
+
+void PropertyView::DrawComponent(std::shared_ptr<Component> component)
+{
+	ImGui::Text("Draw %s", component->ClassName().c_str());
+	
+	ImGuiTransfer transfer;
+	component->TransferImGui(transfer);
+	
+}
+
+

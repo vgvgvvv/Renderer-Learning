@@ -4,8 +4,13 @@
 
 class World_API DotNetBehavior : public Behavior
 {
-	DEFINE_CLASS(DotNetBehavior, Behavior);
+	DEFINE_DRIVEN_CLASS(DotNetBehavior, Behavior);
 	DEFINE_COMPONENT(Transform);
 public:
 	
 };
+
+template <class TransferFunction>
+void DotNetBehavior::TransferComponent(TransferFunction& transferFunc)
+{
+}

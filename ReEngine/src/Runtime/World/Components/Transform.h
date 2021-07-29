@@ -7,7 +7,7 @@
 
 class Transform : public Component
 {
-	DEFINE_CLASS(Transform, Component);
+	DEFINE_DRIVEN_CLASS(Transform, Component);
 	DEFINE_COMPONENT(Transform);
 public:
 
@@ -22,7 +22,8 @@ public:
 template <class TransferFunction>
 void Transform::TransferComponent(TransferFunction& transferFunc)
 {
-	transferFunc.transfer(&position, "position");
-	transferFunc.transfer(&rotation, "rotation");
-	transferFunc.transfer(&scale, "scale");
+	// transferFunc.transfer(&position, "position");
+	// transferFunc.transfer(&rotation, "rotation");
+	// transferFunc.transfer(&scale, "scale");
 }
+

@@ -5,7 +5,7 @@
 
 class RenderPipeline_API Image
 {
-	DEFINE_CLASS(Image, void);
+	DEFINE_CLASS(Image);
 	DEFINE_IMPORT_ASSET_CLASS(Image);
 public:
 	~Image();

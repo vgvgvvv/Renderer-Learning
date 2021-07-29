@@ -5,18 +5,13 @@
 #include "GameObject.h"
 #include "World_API.h"
 
-class World_API Scene
+class World_API Scene : public BaseObject
 {
-	DEFINE_CLASS(Scene, void)
+	DEFINE_DRIVEN_CLASS(Scene, BaseObject)
 	
 public:
 
 
-	template<class TranslateFunction>
-	void Transfer(TranslateFunction& transfer)
-	{
-		transfer.transfer(&gameObjects, "gameObjects");
-	}
 	
 private:
 	std::list<GameObject> gameObjects;
