@@ -2,6 +2,8 @@
 #include <string>
 #include "World_API.h"
 #include "ClassInfo.h"
+#include "Transfer/ImGuiTransfer.h"
+#include "Transfer/JsonTransfer.h"
 
 class World_API BaseObject
 {
@@ -13,7 +15,6 @@ public:
 	
 	const std::string* GetGuid() const { return &guid; }
 
-	
 
 protected:
 	std::string guid;
@@ -23,4 +24,5 @@ protected:
 template <class TransferFunction>
 void BaseObject::TransferClass(TransferFunction& transferFunc)
 {
+	transferFunc.transfer(&guid, "guid");
 }
