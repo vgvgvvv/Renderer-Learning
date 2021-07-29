@@ -12,8 +12,8 @@
 	\
 	template<class TransferFunction>\
 	void TransferClass(TransferFunction& transferFunc) { TransferComponent(transferFunc); }\
-	virtual void TransferJsonWrite(const JsonWrite& transfer) { TransferComponent(transfer); }\
-	virtual void TransferJsonRead(const JsonRead& transfer) { TransferComponent(transfer); }\
-	virtual void TransferImGui(const ImGuiTransfer& transfer) { TransferComponent(transfer); }
+	virtual void TransferJsonWrite(JsonWrite& transfer) { TransferComponent(transfer); }\
+	virtual void TransferJsonRead(JsonRead& transfer) { TransferComponent(transfer); }\
+	virtual void TransferImGui(ImGuiTransfer& transfer) { TransferComponent(transfer); }
 
 	

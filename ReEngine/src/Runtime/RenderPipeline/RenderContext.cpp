@@ -106,9 +106,9 @@ void RenderContext::DrawSingleRenderer(BaseRenderer* renderer, const DrawingSett
 {
 	auto& transform = renderer->GetOwner().GetTransform();
 
-	auto ModelMat = Matrix4x4::Translate(transform.position)
-		* Matrix4x4::Scale(transform.scale)
-		* Matrix4x4::Rotate(transform.rotation);
+	auto ModelMat = Matrix4x4::Translate(transform.get_position())
+		* Matrix4x4::Scale(transform.get_scale())
+		* Matrix4x4::Rotate(transform.get_rotation());
 	device->GlobalMatrix4.insert(std::pair<std::string, Matrix4x4>("ReEngine_ModelMat", ModelMat));
 
 	auto mesh = renderer->GatherMesh();

@@ -12,7 +12,15 @@ class Transform : public Component
 public:
 
 	Transform();
-	
+
+	DEFINE_GETTER_SETTER(Vector3, position);
+	DEFINE_GETTER_SETTER(Quaternion, rotation);
+	DEFINE_GETTER_SETTER(Vector3, scale);
+
+	Vector3 GetEulerAngle() const { return rotation.GetEulerAngle(); }
+	void SetEulerAngle(const Vector3& euler) { rotation = Quaternion::Euler(euler); }
+
+private:
 	Vector3 position;
 	Quaternion rotation;
 	Vector3 scale;
@@ -22,8 +30,10 @@ public:
 template <class TransferFunction>
 void Transform::TransferComponent(TransferFunction& transferFunc)
 {
-	// transferFunc.transfer(&position, "position");
-	// transferFunc.transfer(&rotation, "rotation");
-	// transferFunc.transfer(&scale, "scale");
+	transferFunc.transfer(&position, "position");
+	auto euler = GetEulerAngle();
+	transferFunc.transfer(&euler, "rotation");
+	SetEulerAngle(euler);
+	transferFunc.transfer(&scale, "scale");
 }
 

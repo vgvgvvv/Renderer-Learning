@@ -7,6 +7,8 @@ Camera::Camera()
 	: ClearColor(Color::black)
 	, fov(60)
 	, aspect(16.0f / 9.0)
+	, nearZ(0.1)
+	, farZ(100)
 {
 }
 
@@ -29,7 +31,7 @@ void Camera::Render()
 Matrix4x4 Camera::GetViewMatrix() const
 {
 	auto& tran = GetOwner().GetTransform();
-	auto& pos = tran.position;
+	auto& pos = tran.get_position();
 	Matrix4x4 t(
 		1, 0, 0, -pos.x,
 		0, 1, 0, -pos.y,
@@ -37,7 +39,7 @@ Matrix4x4 Camera::GetViewMatrix() const
 		0, 0, 0, 1
 	);
 
-	Matrix4x4 r = Matrix4x4::Rotate(tran.rotation);
+	Matrix4x4 r = Matrix4x4::Rotate(tran.get_rotation());
 
 	return t * r;
 }

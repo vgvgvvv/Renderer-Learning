@@ -14,17 +14,17 @@ void BaseObject::TransferClass(TransferFunction& transferFunc)
 {
 }
 
-void BaseObject::TransferJsonWrite(const JsonWrite& transfer)
+void BaseObject::TransferJsonWrite(JsonWrite& transfer)
 {
 	RE_ASSERT_MSG(false, "{0} has no implement of TransferJsonWrite", ClassName().c_str());
 }
 
-void BaseObject::TransferJsonRead(const JsonRead& transfer)
+void BaseObject::TransferJsonRead(JsonRead& transfer)
 {
 	RE_ASSERT_MSG(false, "{0} has no implement of TransferJsonRead", ClassName().c_str());
 }
 
-void BaseObject::TransferImGui(const ImGuiTransfer& transfer)
+void BaseObject::TransferImGui(ImGuiTransfer& transfer)
 {
 	RE_ASSERT_MSG(false, "{0} has no implement of TransferImGui", ClassName().c_str());
 }

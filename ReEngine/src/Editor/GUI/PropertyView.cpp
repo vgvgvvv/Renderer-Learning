@@ -35,7 +35,7 @@ void PropertyView::DrawSelectedGameObject()
 
 	for (auto& component : showObject->GetComponents())
 	{
-		if (ImGui::CollapsingHeader(component->ClassName().c_str(), ImGuiTreeNodeFlags_None))
+		if (ImGui::CollapsingHeader(component->ClassName().c_str(), ImGuiTreeNodeFlags_DefaultOpen))
 		{
 			DrawComponent(component);
 		}

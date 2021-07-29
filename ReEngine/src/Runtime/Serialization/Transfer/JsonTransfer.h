@@ -4,20 +4,34 @@
 
 
 #include "uuid.h"
-#include "GlobalAssets_API.h"
 #include "Transfer/BaseTransfer.h"
 #include "Transfer/TransferFlag.h"
 #include "nlohmann/json.hpp"
 #include <filesystem>
 #include "Serialization_API.h"
 
+class JsonRead;
+class JsonWrite;
+
 using namespace nlohmann;
 namespace fs = std::filesystem;
+
+namespace TransferDetail
+{
+	template<class T>
+	void transfer(JsonRead* read, T* data, const char* name, TransferFlag flag = TransferFlag::None);
+
+	template<class T>
+	void transfer(JsonWrite* writer, T* data, const char* name, TransferFlag flag = TransferFlag::None);
+}
 
 class Serialization_API JsonRead : public IBaseTransfer
 {
 public:
-
+	
+	template<class T>
+	friend void TransferDetail::transfer(JsonRead* read, T* data, const char* name, TransferFlag flag);
+	
 	JsonRead(const std::string& filePath);
 
 
@@ -28,7 +42,7 @@ public:
 	template<class T>
 	void transfer(T* data, const char* name, TransferFlag flag = TransferFlag::None)
 	{
-		*data = doc[name].get<T>();
+		TransferDetail::transfer<T>(this, data, name, flag);
 	}
 
 	template<class T>
@@ -82,10 +96,15 @@ private:
 	nlohmann::json doc;
 };
 
+
+
 class Serialization_API JsonWrite : public IBaseTransfer
 {
 public:
 
+	template<class T>
+	friend void TransferDetail::transfer(JsonWrite* writer, T* data, const char* name, TransferFlag flag);
+	
 	JsonWrite(const std::string& filePath);
 
 	bool IsLoading() const override { return false; }
@@ -95,7 +114,7 @@ public:
 	template<class T>
 	void transfer(T* data, const char* name, TransferFlag flag = TransferFlag::None)
 	{
-		doc[name] = *data;
+		TransferDetail::transfer(this, data, name, flag);
 	}
 
 	template<class T>
@@ -143,3 +162,21 @@ private:
 	std::string filePath;
 	nlohmann::json doc;
 };
+
+namespace TransferDetail
+{
+	template<class T>
+	void transfer(JsonRead* read, T* data, const char* name, TransferFlag flag)
+	{
+		*data = read->doc[name].get<T>();
+	}
+
+
+	template <class T>
+	void transfer(JsonWrite* writer, T* data, const char* name, TransferFlag flag)
+	{
+		writer->doc[name] = *data;
+	}
+}
+
+#include "JsonTransfer/MathTransfer.h"

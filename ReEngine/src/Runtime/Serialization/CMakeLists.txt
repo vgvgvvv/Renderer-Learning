@@ -3,7 +3,7 @@ set(targetName Serialization)
 ReMake_AddTarget(
 	TARGET_NAME ${targetName}
 	MODE SHARED
-	LIB ImGUILib
+	LIB ImGUILib 3d-math
 )
 
 UseSpdlog(${targetName})
