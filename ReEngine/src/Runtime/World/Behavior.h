@@ -7,6 +7,7 @@
 
 class World_API Behavior : public Component
 {
+	DEFINE_CLASS(Behavior, Component);
 public:
 	void Awake() override;
 	virtual void PreUpdate(float deltaTime);

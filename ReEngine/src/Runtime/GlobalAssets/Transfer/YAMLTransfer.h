@@ -17,8 +17,8 @@ public:
 	YAMLRead(const std::string& filePath) : Root(YAML::Node()), filePath(filePath) {}
 
 
-	bool IsLoading() override { return true; }
-	bool IsWriting() override { return false; }
+	bool IsLoading() const override { return true; }
+	bool IsWriting() const override { return false; }
 	
 	template<class T>
 	void transfer(T& data, const std::string& name, TransferFlag flag = TransferFlag::None);
@@ -38,8 +38,8 @@ public:
 
 	YAMLWrite(const std::string& filePath) : Root(YAML::Node()), filePath(filePath) {}
 
-	bool IsLoading() override { return false; }
-	bool IsWriting() override { return true; }
+	bool IsLoading() const override { return false; }
+	bool IsWriting() const override { return true; }
 	
 	template<class T>
 	void transfer(T& data, const std::string& name, TransferFlag flag = TransferFlag::None);

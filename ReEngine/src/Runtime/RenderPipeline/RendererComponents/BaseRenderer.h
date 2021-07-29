@@ -9,6 +9,8 @@
 
 class RenderPipeline_API BaseRenderer : public Component
 {
+	DEFINE_CLASS(BaseRenderer, Component);
+	DEFINE_COMPONENT(BaseRenderer)
 public:
 	void Awake() override;
 	void BeginDestroy() override;
@@ -38,6 +40,13 @@ public:
 protected:
 	std::vector<std::shared_ptr<Material>> materials;
 };
+
+
+template <class TransferFunction>
+void BaseRenderer::TransferComponent(TransferFunction& transferFunc)
+{
+	
+}
 
 class RenderPipeline_API RendererManager
 {

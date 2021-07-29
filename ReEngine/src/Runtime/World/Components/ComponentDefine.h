@@ -1,6 +1,6 @@
 #pragma once
 
 
-#define DEFINE_COMPONENT(comType, comBase) \
-	public: \
-		typedef comBase Super
+#define DEFINE_COMPONENT(className)\
+	template<class TransferFunction>\
+	void TransferComponent(TransferFunction& transferFunc);

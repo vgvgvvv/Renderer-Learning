@@ -7,6 +7,10 @@
 
 JsonRead::JsonRead(const std::string& filePath) : filePath(filePath)
 {
+	if(!fs::exists(filePath))
+	{
+		return;
+	}
 	std::ifstream inputFile(filePath);
 	doc << inputFile;
 	inputFile.close();

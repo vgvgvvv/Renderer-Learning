@@ -8,8 +8,10 @@
 #include "Transfer/BaseTransfer.h"
 #include "Transfer/TransferFlag.h"
 #include "nlohmann/json.hpp"
+#include <filesystem>
 
 using namespace nlohmann;
+namespace fs = std::filesystem;
 
 class GlobalAssets_API JsonRead : public IBaseTransfer
 {
@@ -18,9 +20,10 @@ public:
 	JsonRead(const std::string& filePath);
 
 
-	bool IsLoading() override { return true; }
-	bool IsWriting() override { return false; }
-
+	bool IsLoading() const override { return true; }
+	bool IsWriting() const override { return false; }
+	bool IsValid() const { return fs::exists(filePath); }
+	
 	template<class T>
 	void transfer(T* data, const char* name, TransferFlag flag = TransferFlag::None)
 	{
@@ -84,9 +87,10 @@ public:
 
 	JsonWrite(const std::string& filePath);
 
-	bool IsLoading() override { return false; }
-	bool IsWriting() override { return true; }
-
+	bool IsLoading() const override { return false; }
+	bool IsWriting() const override { return true; }
+	bool IsValid() const { return fs::exists(filePath); }
+	
 	template<class T>
 	void transfer(T* data, const char* name, TransferFlag flag = TransferFlag::None)
 	{

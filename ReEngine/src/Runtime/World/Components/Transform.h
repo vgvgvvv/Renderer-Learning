@@ -3,10 +3,12 @@
 #include "Vector3.h"
 #include "Quaternion.h"
 #include "ClassInfo.h"
+#include "ComponentDefine.h"
 
 class Transform : public Component
 {
 	DEFINE_CLASS(Transform, Component);
+	DEFINE_COMPONENT(Transform);
 public:
 
 	Transform();
@@ -15,11 +17,12 @@ public:
 	Quaternion rotation;
 	Vector3 scale;
 
-	template<class TranslateFunction>
-	void Transfer(TranslateFunction& transfer)
-	{
-		transfer.transfer(&position, "position");
-		transfer.transfer(&rotation, "rotation");
-		transfer.transfer(&scale, "scale");
-	}
 };
+
+template <class TransferFunction>
+void Transform::TransferComponent(TransferFunction& transferFunc)
+{
+	transferFunc.transfer(&position, "position");
+	transferFunc.transfer(&rotation, "rotation");
+	transferFunc.transfer(&scale, "scale");
+}

@@ -6,6 +6,8 @@
 
 class RenderPipeline_API MeshRenderer : public BaseRenderer
 {
+	DEFINE_CLASS(MeshRenderer, BaseRenderer);
+	DEFINE_COMPONENT(MeshRenderer);
 public:
 
 	std::shared_ptr<Mesh> GatherMesh() const override;
@@ -16,3 +18,9 @@ public:
 private:
 	std::shared_ptr<Mesh> mesh;
 };
+
+template <class TransferFunction>
+void MeshRenderer::TransferComponent(TransferFunction& transferFunc)
+{
+	Super::TransferComponent(transferFunc);
+}

@@ -12,7 +12,7 @@ class ImGUILib_API ImGuiTransfer : public IBaseTransfer
 {
 public:
 
-	bool IsImGui() override { return true; }
+	bool IsImGui() const override { return true; }
 
 	void transfer(bool* data, const char* name, TransferFlag flag = TransferFlag::None);
 	void transfer(int* data, const char* name, TransferFlag flag = TransferFlag::None);
