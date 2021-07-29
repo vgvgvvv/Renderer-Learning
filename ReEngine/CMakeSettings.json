@@ -7,10 +7,8 @@
       "inheritEnvironments": [ "msvc_x64_x64" ],
       "buildRoot": "${projectDir}\\out\\build\\${name}",
       "installRoot": "${projectDir}\\out\\install\\${name}",
-      "cmakeCommandArgs": "-DRE_TARGET_PLATFORM=Windows",
-      "buildCommandArgs": "",
-      "ctestCommandArgs": "",
-      "variables": []
+      "cmakeCommandArgs": "-DRE_TARGET_PLATFORM=Windows -DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+      "ctestCommandArgs": ""
     },
     {
       "name": "x64-Release",
@@ -18,11 +16,9 @@
       "configurationType": "RelWithDebInfo",
       "buildRoot": "${projectDir}\\out\\build\\${name}",
       "installRoot": "${projectDir}\\out\\install\\${name}",
-      "cmakeCommandArgs": "-DRE_TARGET_PLATFORM=Windows",
-      "buildCommandArgs": "",
+      "cmakeCommandArgs": "-DRE_TARGET_PLATFORM=Windows -DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
       "ctestCommandArgs": "",
-      "inheritEnvironments": [ "msvc_x64_x64" ],
-      "variables": []
+      "inheritEnvironments": [ "msvc_x64_x64" ]
     }
   ]
 }
