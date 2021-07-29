@@ -19,3 +19,8 @@ protected:
 	std::string guid;
 
 };
+
+template <class TransferFunction>
+void BaseObject::TransferClass(TransferFunction& transferFunc)
+{
+}

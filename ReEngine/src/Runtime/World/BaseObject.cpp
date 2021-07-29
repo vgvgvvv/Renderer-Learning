@@ -9,11 +9,7 @@ BaseObject::BaseObject()
 	guid = uuids::to_string(uuids::uuid_system_generator{}());
 }
 
-template <class TransferFunction>
-void BaseObject::TransferClass(TransferFunction& transferFunc)
-{
-	transferFunc.transfer(&guid, "instanceId");
-}
+
 
 void BaseObject::TransferJsonWrite(JsonWrite& transfer)
 {
