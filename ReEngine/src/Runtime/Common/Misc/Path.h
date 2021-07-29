@@ -21,4 +21,11 @@ public:
 	static std::string GetResourcesPath();
 	static std::string GetDotNetBinaryPath();
 	static std::string GetShaderSourcePath();
+
+	static std::string GetProjectPath();
+	static void SetProjectPath(const std::string& path);
+	static std::string GetProjectAssetsPath();
+
+private:
+	static std::string projectPath;
 };

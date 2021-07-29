@@ -25,6 +25,14 @@ std::string Path::GetCurrentExeDirectory()
 
 std::string Path::Combine(const std::string& p1, const std::string& p2)
 {
+	if(p1.empty())
+	{
+        return p2;
+	}
+	if(p2.empty())
+	{
+        return p1;
+	}
     char sep = '/';
     std::string tmp = p1;
 
@@ -96,3 +104,22 @@ std::string Path::GetShaderSourcePath()
 {
     return Path::Combine(GetSourcePath(), "Shader");
 }
+
+std::string Path::GetProjectPath()
+{
+    return projectPath;
+}
+
+
+std::string Path::projectPath;
+
+void Path::SetProjectPath(const std::string& path)
+{
+    projectPath = path;
+}
+
+std::string Path::GetProjectAssetsPath()
+{
+    return Combine(GetProjectPath(), "Assets");
+}
+
