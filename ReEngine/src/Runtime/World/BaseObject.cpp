@@ -12,6 +12,7 @@ BaseObject::BaseObject()
 template <class TransferFunction>
 void BaseObject::TransferClass(TransferFunction& transferFunc)
 {
+	transferFunc.transfer(&guid, "instanceId");
 }
 
 void BaseObject::TransferJsonWrite(JsonWrite& transfer)

@@ -12,6 +12,12 @@ public:\
 	static std::shared_ptr<className> CreateDefault(const std::string& filePath);\
 	template<class TransferFunction>\
 	void TransferAsset(TransferFunction& transferFunc);\
+	\
+	template<class TransferFunction>\
+	void TransferClass(TransferFunction& transferFunc) { TransferAsset(transferFunc); }\
+	virtual void TransferJsonWrite(JsonWrite& transfer) { TransferAsset(transfer); }\
+	virtual void TransferJsonRead(JsonRead& transfer) { TransferAsset(transfer); }\
+	virtual void TransferImGui(ImGuiTransfer& transfer) { TransferAsset(transfer); }\
 private:\
 	uuids::uuid uuid;
 
@@ -25,6 +31,12 @@ public:\
 	static std::shared_ptr<className> Load(const std::string& filePath);\
 	template<class TransferFunction>\
 	void TransferImportSetting(TransferFunction& transferFunc);\
+	\
+	template<class TransferFunction>\
+	void TransferClass(TransferFunction& transferFunc) { TransferImportSetting(transferFunc); }\
+	virtual void TransferJsonWrite(JsonWrite& transfer) { TransferImportSetting(transfer); }\
+	virtual void TransferJsonRead(JsonRead& transfer) { TransferImportSetting(transfer); }\
+	virtual void TransferImGui(ImGuiTransfer& transfer) { TransferImportSetting(transfer); }\
 private:\
 	uuids::uuid uuid;
 

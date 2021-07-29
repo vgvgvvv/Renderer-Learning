@@ -1,11 +1,12 @@
 #pragma once
 #include "ClassInfo.h"
 #include "AssetsClassDefine.h"
+#include "BaseObject.h"
 #include "RenderPipeline_API.h"
 
-class RenderPipeline_API Image
+class RenderPipeline_API Image : public BaseObject
 {
-	DEFINE_CLASS(Image);
+	DEFINE_DRIVEN_CLASS(Image, BaseObject);
 	DEFINE_IMPORT_ASSET_CLASS(Image);
 public:
 	~Image();
@@ -22,4 +23,5 @@ private:
 template <class TransferFunction>
 void Image::TransferImportSetting(TransferFunction& transferFunc)
 {
+	Super::TransferClass(transferFunc);
 }

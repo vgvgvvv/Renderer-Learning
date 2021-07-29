@@ -6,6 +6,7 @@
 
 #include "ClassInfo.h"
 #include "AssetsClassDefine.h"
+#include "BaseObject.h"
 #include "Color.h"
 #include "RenderPipeline_API.h"
 #include "Vector3.h"
@@ -27,9 +28,9 @@ struct Mesh
 	std::vector<MeshVertex> vertexes;
 };
 
-struct RenderPipeline_API MeshGroup
+struct RenderPipeline_API MeshGroup : public BaseObject
 {
-	DEFINE_CLASS(MeshGroup);
+	DEFINE_DRIVEN_CLASS(MeshGroup, BaseObject);
 	DEFINE_IMPORT_ASSET_CLASS(MeshGroup)
 public:
 	std::vector<std::shared_ptr<Mesh>> meshes;
@@ -42,5 +43,6 @@ private:
 template <class TransferFunction>
 void MeshGroup::TransferImportSetting(TransferFunction& transferFunc)
 {
+	Super::TransferClass(transferFunc);
 }
 

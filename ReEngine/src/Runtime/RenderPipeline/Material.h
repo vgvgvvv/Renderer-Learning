@@ -10,9 +10,9 @@
 #include "IRenderDevice.h"
 
 
-class RenderPipeline_API Material
+class RenderPipeline_API Material : public BaseObject
 {
-	DEFINE_CLASS(Material);
+	DEFINE_DRIVEN_CLASS(Material, BaseObject);
 	DEFINE_NORMAL_ASSET_CLASS(Material);
 public:
 	
@@ -28,6 +28,7 @@ private:
 template <class TransferFunction>
 void Material::TransferAsset(TransferFunction& transferFunc)
 {
+	Super::TransferClass(transferFunc);
 	transferFunc.transfer(&vertexShaderPath, "vertexShaderPath");
 	transferFunc.transfer(&fragmentShaderPath, "fragmentShaderPath");
 	if (transferFunc.IsLoading())
