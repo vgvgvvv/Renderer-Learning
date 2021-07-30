@@ -9,5 +9,7 @@ ReMake_AddTarget(
 	LIB opengl32 CommonLib RHI 3d-math
 )
 
+ReMake_StartUse()
 UseGlew(${targetName})
 USESTBIMAGE(${targetName})
+ReMake_EndUse()

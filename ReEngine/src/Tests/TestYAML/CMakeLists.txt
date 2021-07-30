@@ -6,4 +6,6 @@ ReMake_AddTarget(
 	MODE EXE
 )
 
+ReMake_StartUse()
 UseYaml(${targetName})
+ReMake_EndUse()

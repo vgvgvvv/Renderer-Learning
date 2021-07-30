@@ -8,4 +8,6 @@ ReMake_AddTarget(
 	LIB CommonLib 3d-math Serialization
 )
 
+ReMake_StartUse()
 UseUUID(${targetName})
+ReMake_EndUse()

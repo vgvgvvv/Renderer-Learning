@@ -6,4 +6,6 @@ ReMake_AddTarget(
 	LIB CommonLib RHI
 )
 
+ReMake_StartUse()
 UseAssimp(${targetName})
+ReMake_EndUse()

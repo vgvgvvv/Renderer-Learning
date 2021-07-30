@@ -8,8 +8,10 @@ ReMake_AddTarget(
 	LIB_INTERFACE ReTemplate
 )
 
+ReMake_StartUse()
 UseFmt(${TargetName})
 UseSpdlog(${TargetName})
 UseTinyDir(${TargetName})
 UseIniFile(${TargetName})
 UseFileDialog(${TargetName})
+ReMake_EndUse()

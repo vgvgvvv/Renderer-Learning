@@ -6,4 +6,6 @@ ReMake_AddTArget(
 	LIB CommonLib
 )
 
+ReMake_StartUse()
 UseImGUIWithDock(${targetName} Glfw)
+ReMake_EndUse()

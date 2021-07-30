@@ -6,4 +6,6 @@ ReMake_AddTarget(
 	LIB CommonLib Core
 )
 
+ReMake_StartUse()
 UseFileDialog(${targetName})
+ReMake_EndUse()

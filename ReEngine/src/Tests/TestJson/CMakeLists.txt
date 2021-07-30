@@ -5,5 +5,7 @@ ReMake_AddTarget(
 	MODE EXE
 )
 
+ReMake_StartUse()
 UseRapidJson(${targetName})
 UseUuid(${targetName})
+ReMake_EndUse()

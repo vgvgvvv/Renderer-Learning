@@ -6,5 +6,7 @@ ReMake_AddTarget(
 	LIB CommonLib 3d-math
 )
 
+ReMake_StartUse()
 UseUuid(${targetName})
 UseStbImage(${targetName})
+ReMake_EndUse()

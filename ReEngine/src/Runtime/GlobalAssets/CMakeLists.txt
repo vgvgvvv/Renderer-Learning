@@ -7,9 +7,11 @@ ReMake_AddTarget(
 	LIB RHI re-reflection World RenderPipeline Serialization
 )
 
+ReMake_StartUse()
 UseSpdlog(${targetName})
 UseUuid(${targetName})
 UseIniFile(${targetName})
 UseYaml(${targetName})
 UseJson(${targetName})
 UseAssimp(${targetName})
+ReMake_EndUse()

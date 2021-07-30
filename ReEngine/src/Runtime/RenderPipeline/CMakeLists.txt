@@ -6,5 +6,7 @@ REMAKE_ADDTARGET(
 	LIB ReOpenGL World 3d-math RHI CommonLib Serialization
 )
 
+ReMake_StartUse()
 UseAssimp(${targetName})
 UseStbImage(${targetName})
+ReMake_EndUse()

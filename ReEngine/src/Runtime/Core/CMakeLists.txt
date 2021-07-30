@@ -17,6 +17,8 @@ ReMake_AddTarget(
 	LIB ${linkLibs}
 )
 
+ReMake_StartUse()
 UseGlew(${targetName})
 USEGLFW(${targetName})
 UseIniFile(${targetName})
+ReMake_EndUse()
