@@ -6,6 +6,7 @@ ReMake_AddTarget(
 	TARGET_NAME ${targetName}
 	MODE SHARED
 	LIB CommonLib 3d-math Serialization
+	ADD_OPTIONS EXPORT_CSAPI
 )
 
 ReMake_StartUse()

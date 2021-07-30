@@ -4,6 +4,7 @@ ReMake_AddTarget(
 	TARGET_NAME ${targetName}
 	MODE SHARED
 	LIB CommonLib Core
+	ADD_OPTIONS EXPORT_CSAPI
 )
 
 ReMake_StartUse()
