@@ -12,11 +12,11 @@ void TestScene::OnInit()
 {
 	auto camera = World::Get().CreateGameObject("Camera");
 	camera->AddComponent<Camera>();
-	camera->GetTransform().position = Vector3(0, 0, -1);
+	camera->GetTransform().set_position(Vector3(0, 0, -1));
 
 	auto cube = World::Get().CreateGameObject("Cube");
 	auto renderer = cube->AddComponent<MeshRenderer>();
-	cube->GetTransform().position = Vector3(0, 0, 1);
+	cube->GetTransform().set_position(Vector3(0, 0, 1));
 	
 	auto cubeAsset = ResourcesManager::Get().Load("models/cube.fbx").GetPtr<MeshGroup>();
 	renderer->SetMesh(cubeAsset->meshes[0]);
