@@ -8,20 +8,14 @@
 
 
 
-WorldOutlineView::WorldOutlineView() = default;
-
-static std::string title = "WorldOutline";
-const std::string& WorldOutlineView::GetTitle() const
-{
-	return title;
-}
+DEFINE_VIEW_IMP(WorldOutlineView, WorldOutline)
 
 void WorldOutlineView::OnInit()
 {
 }
 
 static int index = 0;
-void WorldOutlineView::OnGUI()
+void WorldOutlineView::OnGUI(float deltaTime)
 {
 	auto& allGameObjects = World::Get().GetAllGameObjects();
 	for (auto gameObject : allGameObjects)

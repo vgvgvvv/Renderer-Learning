@@ -6,6 +6,9 @@
 class Editor_API EditorLayer : public Layer
 {
 public:
+	EditorLayer() : UI(std::make_shared<EditorUI>())
+	{
+	}
 
 	void OnInit() override;
 	void OnPreUpdate(float deltaTime) override;
@@ -18,5 +21,5 @@ public:
 	void OnShutDown() override;
 
 private:
-	EditorUI UI;
+	std::shared_ptr<EditorUI> UI;
 };

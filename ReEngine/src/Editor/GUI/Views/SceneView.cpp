@@ -5,11 +5,7 @@
 #include "RenderTexture.h"
 #include "Renderer/Texture.h"
 
-static std::string title = "Scene";
-const std::string& SceneView::GetTitle() const
-{
-	return title;
-}
+DEFINE_VIEW_IMP(SceneView, Scene)
 
 void SceneView::OnInit()
 {
@@ -21,7 +17,7 @@ void SceneView::OnInit()
 	camera->SetRenderTexture(showTexture);
 }
 
-void SceneView::OnGUI()
+void SceneView::OnGUI(float deltaTime)
 {
 	ImVec2 vMin = ImGui::GetWindowContentRegionMin();
 	ImVec2 vMax = ImGui::GetWindowContentRegionMax();

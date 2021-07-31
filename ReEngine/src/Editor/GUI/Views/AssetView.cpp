@@ -9,18 +9,14 @@
 
 namespace fs = std::filesystem;
 
-static std::string title = "Assets";
-const std::string& AssetView::GetTitle() const
-{
-	return title;
-}
+DEFINE_VIEW_IMP(AssetView, Assets)
 
 void AssetView::OnInit()
 {
 	currentPath = Path::GetResourcesPath();
 }
 
-void AssetView::OnGUI()
+void AssetView::OnGUI(float deltaTime)
 {
 	if(ImGui::IsWindowFocused() != lastIsFocused)
 	{

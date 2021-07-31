@@ -5,7 +5,7 @@
 #include <filesystem>
 
 #include "Views/AssetView.h"
-#include "Views/DockSpaceHelper.h"
+#include "Helpers/DockSpaceHelper.h"
 #include "Views/GameView.h"
 #include "Views/LogView.h"
 #include "Views/PropertyView.h"
@@ -25,7 +25,7 @@ void EditorUI::OnInit()
 	views.push_back(std::make_shared<SceneView>());
 	views.push_back(std::make_shared<AssetView>());
 
-	menu.OnInit();
+	EditorMenu::Get().OnInit();
 
 	for (auto view : views)
 	{
@@ -37,7 +37,7 @@ void EditorUI::OnGUI(float deltaTime)
 {
 	DockSpaceHelper::BeginDockerSapce();
 
-	menu.OnGUI();
+	EditorMenu::Get().OnGUI();
 	bool open = true;
 	ImGui::ShowDemoWindow(&open);
 
@@ -47,7 +47,7 @@ void EditorUI::OnGUI(float deltaTime)
 		if(isOpen)
 		{
 			ImGui::Begin(view->GetTitle().c_str(), &isOpen, 0);
-			view->OnGUI();
+			view->OnGUI(deltaTime);
 			ImGui::End();
 			view->isShow = isOpen;
 		}
@@ -58,6 +58,8 @@ void EditorUI::OnGUI(float deltaTime)
 
 void EditorUI::ShutDown()
 {
+	SaveCurrentLayout();
+	EditorMenu::Get().ShutDown();
 	for (auto view : views)
 	{
 		view->ShutDown();

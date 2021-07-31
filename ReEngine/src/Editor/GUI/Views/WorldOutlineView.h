@@ -6,22 +6,13 @@
 
 #include "EditorGUI_API.h"
 #include "IView.h"
+#include "DefineView.h"
 
 class GameObject;
 
 class EditorGUI_API WorldOutlineView : public IView
 {
-public:
-
-	WorldOutlineView();
-
-	const std::string& GetTitle() const override;
-	
-	void OnInit() override;
-
-	void OnGUI() override;
-
-	void ShutDown() override;
+	DEFINE_VIEW(WorldOutlineView, WorldOutline)
 
 private:
 

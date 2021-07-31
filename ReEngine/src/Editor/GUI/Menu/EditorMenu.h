@@ -2,9 +2,11 @@
 
 #include "imgui.h"
 #include "IView.h"
+#include "Singleton.h"
 
-class Menu 
+class EditorMenu 
 {
+	DEFINE_SINGLETON(EditorMenu);
 public:
 
 	void OnInit();
@@ -12,4 +14,8 @@ public:
 	void OnGUI();
 
 	void ShutDown();
+
+public:
+
+	
 };

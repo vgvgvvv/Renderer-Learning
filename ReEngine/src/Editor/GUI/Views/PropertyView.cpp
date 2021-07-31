@@ -7,17 +7,13 @@
 #include "imgui_stdlib.h"
 #include "Transfer/ImGuiTransfer.h"
 
-static std::string title = "Property";
-const std::string& PropertyView::GetTitle() const
-{
-	return title;
-}
+DEFINE_VIEW_IMP(PropertyView, Property)
 
 void PropertyView::OnInit()
 {
 }
 
-void PropertyView::OnGUI()
+void PropertyView::OnGUI(float deltaTime)
 {
 	DrawSelectedGameObject();
 }

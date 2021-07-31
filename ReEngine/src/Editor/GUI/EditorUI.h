@@ -4,7 +4,7 @@
 #include <string>
 
 #include "EditorGUI_API.h"
-#include "EditorMenu.h"
+#include "Menu/EditorMenu.h"
 
 class IView;
 
@@ -23,7 +23,5 @@ private:
 
 private:
 	std::list<std::shared_ptr<IView>> views;
-
-	Menu menu;
 
 };

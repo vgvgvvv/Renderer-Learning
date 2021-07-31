@@ -1,16 +1,12 @@
 #include "LogView.h"
 
-static std::string title = "Log";
-const std::string& LogView::GetTitle() const
-{
-	return title;
-}
+DEFINE_VIEW_IMP(LogView, Log)
 
 void LogView::OnInit()
 {
 }
 
-void LogView::OnGUI()
+void LogView::OnGUI(float deltaTime)
 {
 }
 

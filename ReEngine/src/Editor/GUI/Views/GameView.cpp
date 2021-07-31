@@ -1,16 +1,12 @@
 #include "GameView.h"
 
-static std::string title = "Game";
-const std::string& GameView::GetTitle() const
-{
-	return title;
-}
+DEFINE_VIEW_IMP(GameView, Game)
 
 void GameView::OnInit()
 {
 }
 
-void GameView::OnGUI()
+void GameView::OnGUI(float deltaTime)
 {
 }
 

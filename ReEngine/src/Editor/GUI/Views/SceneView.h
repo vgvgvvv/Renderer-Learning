@@ -4,17 +4,11 @@
 
 #include "EditorGUI_API.h"
 #include "IView.h"
+#include "DefineView.h"
 
 class EditorGUI_API SceneView : public IView
 {
-public:
-	const std::string& GetTitle() const override;
-	
-	void OnInit() override;
-
-	void OnGUI() override;
-
-	void ShutDown() override;
+	DEFINE_VIEW(SceneView, Scene)
 
 private:
 

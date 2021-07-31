@@ -1,10 +1,10 @@
 #include "EditorMenu.h"
 
-void Menu::OnInit()
+void EditorMenu::OnInit()
 {
 }
 
-void Menu::OnGUI()
+void EditorMenu::OnGUI()
 {
 	if (ImGui::BeginMenuBar())
 	{
@@ -12,6 +12,6 @@ void Menu::OnGUI()
 	ImGui::EndMenuBar();
 }
 
-void Menu::ShutDown()
+void EditorMenu::ShutDown()
 {
 }
