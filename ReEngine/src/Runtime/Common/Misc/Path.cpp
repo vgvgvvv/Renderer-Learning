@@ -38,7 +38,7 @@ std::string Path::Combine(const std::string& p1, const std::string& p2)
 
 #ifdef PLATFORM_WINDOWS
     sep = '\\';
-    CommonLib::ReplaceAll(tmp, "/", "\\");
+    StringEx::ReplaceAll(tmp, "/", "\\");
 #endif
 	
 

@@ -37,17 +37,17 @@ void DotNetLayer::OnInit()
 
 	std::string runtimeConfigPath = Path::Combine(Path::GetDotNetBinaryPath(), LibName + ".runtimeconfig.json");
 	DotNetAssembly assembly;
-	Manager.LoadAssembly(CommonLib::StringToWString(runtimeConfigPath), &assembly);
+	Manager.LoadAssembly(StringEx::StringToWString(runtimeConfigPath), &assembly);
 
-	const auto dllPath = CommonLib::StringToWString(
+	const auto dllPath = StringEx::StringToWString(
 		Path::Combine(Path::GetDotNetBinaryPath(), LibName + ".dll"));
-	const auto entryClassName = CommonLib::StringToWString(
+	const auto entryClassName = StringEx::StringToWString(
 		EntryClassName + ", " + LibName);
 	
 	assembly.GetFunctionPointer(
 		dllPath,
 		entryClassName,
-		CommonLib::StringToWString("OnInit"),
+		StringEx::StringToWString("OnInit"),
 		&OnInitFuncPtr);
 
 	RE_ASSERT(OnInitFuncPtr != nullptr);
@@ -55,7 +55,7 @@ void DotNetLayer::OnInit()
 	assembly.GetFunctionPointer(
 		dllPath,
 		entryClassName,
-		CommonLib::StringToWString("OnPreUpdate"),
+		StringEx::StringToWString("OnPreUpdate"),
 		&OnPreUpdateFuncPtr);
 
 	RE_ASSERT(OnPreUpdateFuncPtr != nullptr);
@@ -63,7 +63,7 @@ void DotNetLayer::OnInit()
 	assembly.GetFunctionPointer(
 		dllPath,
 		entryClassName,
-		CommonLib::StringToWString("OnUpdate"),
+		StringEx::StringToWString("OnUpdate"),
 		&OnUpdateFuncPtr);
 
 	RE_ASSERT(OnUpdateFuncPtr != nullptr);
@@ -71,7 +71,7 @@ void DotNetLayer::OnInit()
 	assembly.GetFunctionPointer(
 		dllPath,
 		entryClassName,
-		CommonLib::StringToWString("OnLateUpdate"),
+		StringEx::StringToWString("OnLateUpdate"),
 		&OnLateUpdateFuncPtr);
 
 	RE_ASSERT(OnLateUpdateFuncPtr != nullptr);
@@ -79,7 +79,7 @@ void DotNetLayer::OnInit()
 	assembly.GetFunctionPointer(
 		dllPath,
 		entryClassName,
-		CommonLib::StringToWString("OnBeforeRender"),
+		StringEx::StringToWString("OnBeforeRender"),
 		&OnBeforeRenderFuncPtr);
 
 	RE_ASSERT(OnBeforeRenderFuncPtr != nullptr);
@@ -87,7 +87,7 @@ void DotNetLayer::OnInit()
 	assembly.GetFunctionPointer(
 		dllPath,
 		entryClassName,
-		CommonLib::StringToWString("OnGUI"),
+		StringEx::StringToWString("OnGUI"),
 		&OnGUIFuncPtr);
 
 	RE_ASSERT(OnBeforeRenderFuncPtr != nullptr);
@@ -95,7 +95,7 @@ void DotNetLayer::OnInit()
 	assembly.GetFunctionPointer(
 		dllPath,
 		entryClassName,
-		CommonLib::StringToWString("OnRender"),
+		StringEx::StringToWString("OnRender"),
 		&OnRenderFuncPtr);
 
 	RE_ASSERT(OnRenderFuncPtr != nullptr);
@@ -103,7 +103,7 @@ void DotNetLayer::OnInit()
 	assembly.GetFunctionPointer(
 		dllPath,
 		entryClassName,
-		CommonLib::StringToWString("OnAfterRender"),
+		StringEx::StringToWString("OnAfterRender"),
 		&OnAfterRenderFuncPtr);
 
 	RE_ASSERT(OnAfterRenderFuncPtr != nullptr);
@@ -111,7 +111,7 @@ void DotNetLayer::OnInit()
 	assembly.GetFunctionPointer(
 		dllPath,
 		entryClassName,
-		CommonLib::StringToWString("OnShutDown"),
+		StringEx::StringToWString("OnShutDown"),
 		&OnShutDownFuncPtr);
 
 	RE_ASSERT(OnShutDownFuncPtr != nullptr);

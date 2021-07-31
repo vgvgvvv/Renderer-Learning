@@ -89,7 +89,7 @@ bool DotNetAssembly::GetFunctionPointer(const std::wstring& DotNetLibPath, const
 void OnNetHostError(const char_t* message)
 {
     std::wstring source(message);
-    std::string dotNetMessage = CommonLib::WStringToString(source);
+    std::string dotNetMessage = StringEx::WStringToString(source);
 	RE_LOG_ERROR("DotNet", "On Net Error : {}", dotNetMessage.c_str())
 }
 

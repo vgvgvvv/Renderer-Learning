@@ -1,11 +1,15 @@
 #pragma once
 
 #include <functional>
-#include <list>
 #include <map>
+#include <memory>
+#include <vector>
+#include <string>
 
-#include "imgui.h"
 #include "Singleton.h"
+
+
+typedef std::function<void()> MenuFunc;
 
 class MenuNode
 {
@@ -21,7 +25,7 @@ class MenuTree : public MenuNode
 public:
 	bool IsLeaf() const override { return false; }
 
-	std::vector<std::string, std::shared_ptr<MenuNode>> subNodes;
+	std::map<std::string, MenuFunc> subNodes;
 };
 
 class MenuLeaf : public MenuNode
@@ -29,12 +33,12 @@ class MenuLeaf : public MenuNode
 public:
 	bool IsLeaf() const override { return true; }
 
-	std::function<void()> func;
+	MenuFunc func;
 };
 
 class EditorMenu 
 {
-	DEFINE_SINGLETON(EditorMenu);
+	DEFINE_SINGLETON(EditorMenu)
 public:
 
 	void OnInit();
@@ -43,12 +47,11 @@ public:
 
 	void ShutDown();
 
-	void AddMenuItem(const std::string& name, std::function<void()> func);
+	void AddMenuItem(const std::string& name, MenuFunc func);
 
 private:
 
 	void BuildMenuTree();
-	std::map<std::string, std::function<void()>> menuFuncs;
 
 	std::shared_ptr<MenuTree> Root;
 };
