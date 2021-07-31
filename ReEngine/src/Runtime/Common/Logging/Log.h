@@ -4,8 +4,18 @@
 #include "spdlog/sinks/stdout_color_sinks.h"
 #include "CommonLib_API.h"
 
+class ILogHandler
+{
+public:
+	virtual void Info(const std::string& logInfo) = 0;
+	virtual void Debug(const std::string& logInfo) = 0;
+	virtual void Warn(const std::string& logInfo) = 0;
+	virtual void Error(const std::string& logInfo) = 0;
+};
+
 class CommonLib_API LogContext
 {
+
 public:
 	template<typename... Args>
 	static void Info(const std::string& tag, const std::string& formatString, const Args &...args);
@@ -15,7 +25,10 @@ public:
 	static void Warn(const std::string& tag, const std::string& formatString, const Args &...args);
 	template<typename... Args>
 	static void Error(const std::string& tag, const std::string& formatString, const Args &...args);
-
+private:
+	static std::list<std::shared_ptr<ILogHandler>> handlers;
+public:
+	static void RegisterHandler(std::shared_ptr<ILogHandler> handler);
 };
 
 
@@ -28,6 +41,11 @@ void ::LogContext::Info(const std::string& tag, const std::string& formatString,
 		logger = spdlog::stdout_color_mt(tag);
 	}
 	logger->info(formatString, args...);
+	
+	for (auto& handler : handlers)
+	{
+		handler->Info(fmt::format(formatString, args...));
+	}
 }
 
 
@@ -40,6 +58,11 @@ void ::LogContext::Debug(const std::string& tag, const std::string& formatString
 		logger = spdlog::stdout_color_mt(tag);
 	}
 	logger->debug(formatString, args...);
+
+	for (auto& handler : handlers)
+	{
+		handler->Debug(fmt::format(formatString, args...));
+	}
 }
 
 template <typename... Args>
@@ -51,6 +74,11 @@ void ::LogContext::Warn(const std::string& tag, const std::string& formatString,
 		logger = spdlog::stdout_color_mt(tag);
 	}
 	logger->warn(formatString, args...);
+
+	for (auto& handler : handlers)
+	{
+		handler->Warn(fmt::format(formatString, args...));
+	}
 }
 
 template <typename... Args>
@@ -63,6 +91,11 @@ void ::LogContext::Error(const std::string& tag, const std::string& formatString
 	}
 	logger->error(formatString, args...);
 	logger->dump_backtrace();
+
+	for (auto& handler : handlers)
+	{
+		handler->Error(fmt::format(formatString, args...));
+	}
 }
 
 #define RE_LOG_INFO(Tag, formatString, ...)	\

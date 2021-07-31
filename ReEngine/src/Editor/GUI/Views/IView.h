@@ -20,3 +20,4 @@ public:
 	virtual void OnGUI(float deltaTime){}
 	virtual void ShutDown(){}
 };
+
