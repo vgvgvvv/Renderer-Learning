@@ -19,7 +19,11 @@ private:
 
 	void DrawGameObjectNode(GameObject* gameObject);
 
+	// µã»÷GameObject
 	void OnGameObjectNodeClick(GameObject* gameObject, bool isLeaf);
-	
+	// ÓÒ¼üµã»÷GameObject
 	void DrawGameObjectRightClickMenu(GameObject* gameObject, bool isLeaf);
+
+	// ÓÒ¼üPanel²Ëµ¥
+	void DrawPanelRightClickMenu();
 };

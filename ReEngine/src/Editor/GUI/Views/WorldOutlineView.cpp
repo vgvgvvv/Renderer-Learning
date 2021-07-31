@@ -20,6 +20,9 @@ void WorldOutlineView::OnGUI(float deltaTime)
 {
 	Super::OnGUI(deltaTime);
 	auto& allGameObjects = World::Get().GetAllGameObjects();
+
+	DrawPanelRightClickMenu();
+	
 	for (auto gameObject : allGameObjects)
 	{
 		if(gameObject->GetParent() == nullptr)
@@ -27,6 +30,7 @@ void WorldOutlineView::OnGUI(float deltaTime)
 			DrawGameObjectNode(gameObject);
 		}
 	}
+	
 }
 
 
@@ -143,4 +147,22 @@ void WorldOutlineView::DrawGameObjectRightClickMenu(GameObject* gameObject, bool
 		ImGui::EndPopup();
 	}
 	ImGui::OpenPopupOnItemClick(popupName.c_str(), ImGuiPopupFlags_MouseButtonRight);
+}
+
+void WorldOutlineView::DrawPanelRightClickMenu()
+{
+	std::string popupName("worldoutline panel popup");
+
+	if (ImGui::Button("Edit"))
+	{
+		ImGui::OpenPopup(popupName.c_str());
+	}
+	if (ImGui::BeginPopup(popupName.c_str()))
+	{
+		if (ImGui::Selectable("Create Object"))
+		{
+			World::Get().CreateGameObject();
+		}
+		ImGui::EndPopup();
+	}
 }
