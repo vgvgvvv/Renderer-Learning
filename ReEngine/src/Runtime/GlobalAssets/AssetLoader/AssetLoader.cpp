@@ -65,3 +65,11 @@ AssetLoader& AssetLoaderFactory::GetLoaderWithType(const std::string& className)
 {
 	return *StaticLoaders.at(className);
 }
+
+void AssetLoaderFactory::GetAllAssetsClassName(std::vector<std::string>* out)
+{
+	for (auto& pair : StaticLoaders)
+	{
+		out->push_back(pair.first);
+	}
+}

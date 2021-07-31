@@ -26,6 +26,8 @@ public:
 	static void SetProjectPath(const std::string& path);
 	static std::string GetProjectAssetsPath();
 
+	static std::string GetUniquePath(const std::string& path);
+
 private:
 	static std::string projectPath;
 };

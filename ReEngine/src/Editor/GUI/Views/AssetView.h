@@ -15,6 +15,10 @@ private:
 
 	std::string currentPath;
 
+	void InitAssetMenu();
+	
 	void DrawAssets(const std::string& path);
 	void DrawPanelRightClickMenu();
+
+	void DrawCreateAssetsPopup();
 };

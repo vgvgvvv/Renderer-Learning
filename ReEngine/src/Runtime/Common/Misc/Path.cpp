@@ -123,3 +123,8 @@ std::string Path::GetProjectAssetsPath()
     return Combine(GetProjectPath(), "Assets");
 }
 
+std::string Path::GetUniquePath(const std::string& path)
+{
+    return path;
+}
+

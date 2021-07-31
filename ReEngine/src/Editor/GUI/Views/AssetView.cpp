@@ -14,6 +14,7 @@ DEFINE_VIEW_IMP(AssetView, Assets)
 void AssetView::OnInit()
 {
 	Super::OnInit();
+	InitAssetMenu();
 	currentPath = Path::GetResourcesPath();
 }
 
@@ -30,12 +31,27 @@ void AssetView::OnGUI(float deltaTime)
 		}
 	}
 	DrawPanelRightClickMenu();
+	DrawCreateAssetsPopup();
 	DrawAssets(currentPath);
 }
 
 void AssetView::ShutDown()
 {
 	Super::ShutDown();
+}
+
+void AssetView::InitAssetMenu()
+{
+	std::vector<std::string> assetClassNames;
+	AssetLoaderFactory::GetAllAssetsClassName(&assetClassNames);
+
+	for (auto& assetClassName : assetClassNames)
+	{
+		EditorMenu::Get().AddMenuItem("Assets/Create " + assetClassName, []()
+			{
+
+			});
+	}
 }
 
 void AssetView::DrawAssets(const std::string& path)
@@ -76,10 +92,21 @@ void AssetView::DrawPanelRightClickMenu()
 	}
 	if (ImGui::BeginPopup(popupName.c_str()))
 	{
-		if (ImGui::Selectable("Create Material"))
+		std::vector<std::string> assetClassNames;
+		AssetLoaderFactory::GetAllAssetsClassName(&assetClassNames);
+
+		for (auto& assetClassName : assetClassNames)
 		{
-			
+			if (ImGui::Selectable(("Create " + assetClassName).c_str()))
+			{
+				// TODO
+			}
 		}
+		
 		ImGui::EndPopup();
 	}
+}
+
+void AssetView::DrawCreateAssetsPopup()
+{
 }

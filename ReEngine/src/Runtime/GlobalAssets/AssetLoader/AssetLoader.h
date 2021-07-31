@@ -183,4 +183,6 @@ public:
 	static AssetLoader& GetLoader(const fs::directory_entry& entry);
 	
 	static AssetLoader& GetLoaderWithType(const std::string& className);
+
+	static void GetAllAssetsClassName(std::vector<std::string>* out);
 };
