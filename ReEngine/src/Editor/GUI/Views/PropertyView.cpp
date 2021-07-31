@@ -1,10 +1,17 @@
 #include "PropertyView.h"
 
+#include "Component.h"
 #include "EditorContext.h"
+#include "GameObject.h"
 #include "imgui.h"
 #include "imgui_stdlib.h"
 #include "Transfer/ImGuiTransfer.h"
 
+static std::string title = "Property";
+const std::string& PropertyView::GetTitle() const
+{
+	return title;
+}
 
 void PropertyView::OnInit()
 {

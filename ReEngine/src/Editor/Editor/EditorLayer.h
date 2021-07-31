@@ -1,4 +1,5 @@
 #pragma once
+#include "EditorUI.h"
 #include "Layer/Layer.h"
 #include "Editor_API.h"
 
@@ -15,4 +16,7 @@ public:
 	void OnRender(float deltaTime) override;
 	void OnAfterRender(float deltaTime) override;
 	void OnShutDown() override;
+
+private:
+	EditorUI UI;
 };

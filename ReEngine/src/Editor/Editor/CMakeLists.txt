@@ -2,7 +2,9 @@
 set(libs 
 	CommonLib
 	ReTemplate
-	World)
+	World
+	EditorContext
+	EditorGUI)
 
 
 set(targetName Editor)

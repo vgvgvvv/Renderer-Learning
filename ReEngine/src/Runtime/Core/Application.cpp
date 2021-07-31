@@ -37,7 +37,7 @@ void Application::Init()
 	LayerManager.PushLayer(new WorldLayer());
 	LayerManager.PushLayer(new RenderLayer());
 	LayerManager.PushLayer(new ImguiLayer());
-	LayerManager.PushLayer(new DotNetLayer());
+	// LayerManager.PushLayer(new DotNetLayer());
 	LayerManager.PushLayer(new EditorLayer());
 }
 

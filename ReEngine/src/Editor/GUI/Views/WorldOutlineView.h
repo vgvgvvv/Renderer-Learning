@@ -5,20 +5,23 @@
 #include <vector>
 
 #include "EditorGUI_API.h"
+#include "IView.h"
 
 class GameObject;
 
-class EditorGUI_API WorldOutlineView
+class EditorGUI_API WorldOutlineView : public IView
 {
 public:
 
 	WorldOutlineView();
+
+	const std::string& GetTitle() const override;
 	
-	void OnInit();
+	void OnInit() override;
 
-	void OnGUI();
+	void OnGUI() override;
 
-	void ShutDown();
+	void ShutDown() override;
 
 private:
 

@@ -3,17 +3,20 @@
 #include <memory>
 
 #include "EditorGUI_API.h"
+#include "IView.h"
 
 const static int MAX_NAME_LENGTH = 50;
 
-class EditorGUI_API PropertyView
+class EditorGUI_API PropertyView : public IView
 {
 public:
-	void OnInit();
+	const std::string& GetTitle() const override;
+	
+	void OnInit() override;
 
-	void OnGUI();
+	void OnGUI() override;
 
-	void ShutDown();
+	void ShutDown() override;
 
 private:
 

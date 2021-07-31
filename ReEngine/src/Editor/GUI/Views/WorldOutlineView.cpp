@@ -8,8 +8,12 @@
 
 
 
-WorldOutlineView::WorldOutlineView()
+WorldOutlineView::WorldOutlineView() = default;
+
+static std::string title = "WorldOutline";
+const std::string& WorldOutlineView::GetTitle() const
 {
+	return title;
 }
 
 void WorldOutlineView::OnInit()

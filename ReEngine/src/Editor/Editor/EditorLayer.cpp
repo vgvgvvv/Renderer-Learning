@@ -1,9 +1,11 @@
 #include "EditorLayer.h"
 
 #include "EditorContext.h"
+#include "GameObject.h"
 
 void EditorLayer::OnInit()
 {
+	UI.OnInit();
 }
 
 void EditorLayer::OnPreUpdate(float deltaTime)
@@ -24,6 +26,7 @@ void EditorLayer::OnBeforeRender(float deltaTime)
 
 void EditorLayer::OnGUI(float deltaTime)
 {
+	UI.OnGUI(deltaTime);
 }
 
 void EditorLayer::OnRender(float deltaTime)
@@ -41,4 +44,5 @@ void EditorLayer::OnAfterRender(float deltaTime)
 
 void EditorLayer::OnShutDown()
 {
+	UI.ShutDown();
 }

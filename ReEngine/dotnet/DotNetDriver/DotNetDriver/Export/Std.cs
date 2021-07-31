@@ -14,7 +14,6 @@ using __IntPtr = global::System.IntPtr;
 [assembly:InternalsVisibleTo("DotNetAPId")]
 [assembly:InternalsVisibleTo("ImGUILibd")]
 [assembly:InternalsVisibleTo("EditorGUId")]
-[assembly:InternalsVisibleTo("Worldd")]
 
 namespace Std
 {
@@ -33,28 +32,10 @@ namespace Std
 {
     namespace CompressedPair
     {
-        [StructLayout(LayoutKind.Sequential, Size = 16, Pack = 8)]
-        public unsafe partial struct __Internalc__N_std_S__Compressed_pair____N_std_S_allocator____N_std_S__List_node_____S_Behavior__v___N_std_S__List_val____N_std_S__List_simple_types__S2__Vb1
-        {
-            internal global::Std.ListVal.__Internal _Myval2;
-        }
-
         [StructLayout(LayoutKind.Sequential, Size = 32, Pack = 8)]
         public unsafe partial struct __Internalc__N_std_S__Compressed_pair____N_std_S_allocator__C___N_std_S__String_val____N_std_S__Simple_types__C_Vb1
         {
             internal global::Std.StringVal.__Internalc__N_std_S__String_val____N_std_S__Simple_types__C _Myval2;
-        }
-
-        [StructLayout(LayoutKind.Sequential, Size = 24, Pack = 8)]
-        public unsafe partial struct __Internalc__N_std_S__Compressed_pair____N_std_S_allocator____N_std_S_shared_ptr____S_Component___N_std_S__Vector_val____N_std_S__Simple_types__S1__Vb1
-        {
-            internal global::Std.VectorVal.__Internal _Myval2;
-        }
-
-        [StructLayout(LayoutKind.Sequential, Size = 16, Pack = 8)]
-        public unsafe partial struct __Internalc__N_std_S__Compressed_pair____N_std_S_allocator____N_std_S__List_node_____S_GameObject__v___N_std_S__List_val____N_std_S__List_simple_types__S2__Vb1
-        {
-            internal global::Std.ListVal.__Internal _Myval2;
         }
     }
 
@@ -148,7 +129,6 @@ namespace Std
                 var ___Ty = typeof(_Ty);
                 if (___Ty.IsAssignableFrom(typeof(sbyte)))
                 {
-                    // global::Std.Allocator.__Internal.dtorc__N_std_S_allocator__C(__Instance);
                     return;
                 }
                 throw new ArgumentOutOfRangeException("_Ty", string.Join(", ", new[] { typeof(_Ty).FullName }), "global::Std.Allocator<_Ty> maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <sbyte>.");
@@ -156,34 +136,6 @@ namespace Std
             if (__ownsNativeInstance)
                 Marshal.FreeHGlobal(__Instance);
             __Instance = IntPtr.Zero;
-        }
-    }
-}
-
-namespace Std
-{
-    namespace List
-    {
-        [StructLayout(LayoutKind.Sequential, Size = 16, Pack = 8)]
-        public unsafe partial struct __Internalc__N_std_S_list_____S_Behavior___N_std_S_allocator__S0_
-        {
-            internal global::Std.CompressedPair.__Internalc__N_std_S__Compressed_pair____N_std_S_allocator____N_std_S__List_node_____S_Behavior__v___N_std_S__List_val____N_std_S__List_simple_types__S2__Vb1 _Mypair;
-        }
-
-        [StructLayout(LayoutKind.Sequential, Size = 16, Pack = 8)]
-        public unsafe partial struct __Internalc__N_std_S_list_____S_GameObject___N_std_S_allocator__S0_
-        {
-            internal global::Std.CompressedPair.__Internalc__N_std_S__Compressed_pair____N_std_S_allocator____N_std_S__List_node_____S_GameObject__v___N_std_S__List_val____N_std_S__List_simple_types__S2__Vb1 _Mypair;
-        }
-    }
-
-    namespace ListVal
-    {
-        [StructLayout(LayoutKind.Sequential, Size = 16, Pack = 8)]
-        public unsafe partial struct __Internal
-        {
-            internal __IntPtr _Myhead;
-            internal ulong _Mysize;
         }
     }
 }
@@ -412,9 +364,6 @@ namespace Std
 
             [SuppressUnmanagedCodeSecurity, DllImport("Std-symbols", EntryPoint = "?data@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBAPEBDXZ", CallingConvention = __CallingConvention.Cdecl)]
             internal static extern __IntPtr Data(__IntPtr __instance);
-
-            [SuppressUnmanagedCodeSecurity, DllImport("Std-symbols", EntryPoint = "??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@QEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
-            internal static extern __IntPtr BasicString(__IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string _Ptr);
         }
 
         public static global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>> Assign(this global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>> @this, string _Ptr)
@@ -430,37 +379,6 @@ namespace Std
             var __arg0 = @this is null ? __IntPtr.Zero : @this.__Instance;
             var __ret = __Internal.Data(__arg0);
             return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, __ret);
-        }
-
-        public static global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>> BasicString(string _Ptr)
-        {
-            var __ret = Marshal.AllocHGlobal(32);
-            __Internal.BasicString(__ret, _Ptr);
-            var __result0 = global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>.__GetOrCreateInstance(__ret, false);
-            return __result0;
-        }
-    }
-}
-
-namespace Std
-{
-    namespace Vector
-    {
-        [StructLayout(LayoutKind.Sequential, Size = 24, Pack = 8)]
-        public unsafe partial struct __Internalc__N_std_S_vector____N_std_S_shared_ptr____S_Component___N_std_S_allocator__S0_
-        {
-            internal global::Std.CompressedPair.__Internalc__N_std_S__Compressed_pair____N_std_S_allocator____N_std_S_shared_ptr____S_Component___N_std_S__Vector_val____N_std_S__Simple_types__S1__Vb1 _Mypair;
-        }
-    }
-
-    namespace VectorVal
-    {
-        [StructLayout(LayoutKind.Sequential, Size = 24, Pack = 8)]
-        public unsafe partial struct __Internal
-        {
-            internal __IntPtr _Myfirst;
-            internal __IntPtr _Mylast;
-            internal __IntPtr _Myend;
         }
     }
 }

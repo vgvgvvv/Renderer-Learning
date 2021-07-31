@@ -3,15 +3,18 @@
 #include <memory>
 
 #include "EditorGUI_API.h"
+#include "IView.h"
 
-class EditorGUI_API SceneView
+class EditorGUI_API SceneView : public IView
 {
 public:
-	void OnInit();
+	const std::string& GetTitle() const override;
+	
+	void OnInit() override;
 
-	void OnGUI();
+	void OnGUI() override;
 
-	void ShutDown();
+	void ShutDown() override;
 
 private:
 
