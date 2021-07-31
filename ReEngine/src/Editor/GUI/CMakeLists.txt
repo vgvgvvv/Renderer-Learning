@@ -5,7 +5,8 @@ set(libs
 	ReOpenGL 
 	RenderPipeline 
 	GlobalAssets
-	EditorContext)
+	EditorContext
+	CommonLib)
 
 set(targetName EditorGUI)
 ReMake_AddTarget(
