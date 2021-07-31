@@ -12,6 +12,7 @@ class GameObject;
 
 class EditorGUI_API WorldOutlineView : public IView
 {
+	DEFINE_DRIVEN_CLASS(WorldOutlineView, IView)
 	DEFINE_VIEW(WorldOutlineView, WorldOutline)
 
 private:

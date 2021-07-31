@@ -8,6 +8,7 @@
 
 class EditorGUI_API SceneView : public IView
 {
+	DEFINE_DRIVEN_CLASS(SceneView, IView)
 	DEFINE_VIEW(SceneView, Scene)
 
 private:

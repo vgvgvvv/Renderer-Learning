@@ -11,15 +11,18 @@ DEFINE_VIEW_IMP(PropertyView, Property)
 
 void PropertyView::OnInit()
 {
+	Super::OnInit();
 }
 
 void PropertyView::OnGUI(float deltaTime)
 {
+	Super::OnGUI(deltaTime);
 	DrawSelectedGameObject();
 }
 
 void PropertyView::ShutDown()
 {
+	Super::ShutDown();
 }
 
 void PropertyView::DrawSelectedGameObject()

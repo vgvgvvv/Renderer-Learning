@@ -13,11 +13,13 @@ DEFINE_VIEW_IMP(AssetView, Assets)
 
 void AssetView::OnInit()
 {
+	Super::OnInit();
 	currentPath = Path::GetResourcesPath();
 }
 
 void AssetView::OnGUI(float deltaTime)
 {
+	Super::OnGUI(deltaTime);
 	if(ImGui::IsWindowFocused() != lastIsFocused)
 	{
 		lastIsFocused = ImGui::IsWindowFocused();
@@ -32,6 +34,7 @@ void AssetView::OnGUI(float deltaTime)
 
 void AssetView::ShutDown()
 {
+	Super::ShutDown();
 }
 
 void AssetView::DrawAssets(const std::string& path)

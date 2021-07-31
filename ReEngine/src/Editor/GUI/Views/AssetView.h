@@ -7,6 +7,7 @@
 
 class EditorGUI_API AssetView : public IView
 {
+	DEFINE_DRIVEN_CLASS(AssetView, IView)
 	DEFINE_VIEW(AssetView, Assets)
 
 private:

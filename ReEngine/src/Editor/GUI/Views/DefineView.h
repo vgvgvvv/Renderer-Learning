@@ -1,4 +1,5 @@
 #pragma once
+#include "ClassInfo.h"
 #include <string>
 
 #define DEFINE_VIEW(className, viewName) \

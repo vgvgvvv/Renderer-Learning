@@ -15,6 +15,7 @@ public:
 	static void Warn(const std::string& tag, const std::string& formatString, const Args &...args);
 	template<typename... Args>
 	static void Error(const std::string& tag, const std::string& formatString, const Args &...args);
+
 };
 
 
@@ -61,6 +62,7 @@ void ::LogContext::Error(const std::string& tag, const std::string& formatString
 		logger = spdlog::stdout_color_mt(tag);
 	}
 	logger->error(formatString, args...);
+	logger->dump_backtrace();
 }
 
 #define RE_LOG_INFO(Tag, formatString, ...)	\

@@ -12,11 +12,13 @@ DEFINE_VIEW_IMP(WorldOutlineView, WorldOutline)
 
 void WorldOutlineView::OnInit()
 {
+	Super::OnInit();
 }
 
 static int index = 0;
 void WorldOutlineView::OnGUI(float deltaTime)
 {
+	Super::OnGUI(deltaTime);
 	auto& allGameObjects = World::Get().GetAllGameObjects();
 	for (auto gameObject : allGameObjects)
 	{
@@ -30,6 +32,7 @@ void WorldOutlineView::OnGUI(float deltaTime)
 
 void WorldOutlineView::ShutDown()
 {
+	Super::ShutDown();
 }
 
 static ImGuiTreeNodeFlags base_flags = ImGuiTreeNodeFlags_OpenOnArrow |	
