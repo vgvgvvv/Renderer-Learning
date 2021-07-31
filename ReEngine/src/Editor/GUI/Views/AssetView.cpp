@@ -29,6 +29,7 @@ void AssetView::OnGUI(float deltaTime)
 			ResourcesManager::Get().UpdateMetaPathInfo(Path::GetResourcesPath());
 		}
 	}
+	DrawPanelRightClickMenu();
 	DrawAssets(currentPath);
 }
 
@@ -53,12 +54,32 @@ void AssetView::DrawAssets(const std::string& path)
 		}
 		if (entry.is_directory())
 		{
-			
+			auto dirName = entry.path().filename().string();
+			ImGui::Selectable(("> " + dirName).c_str());
 		}
 		else
 		{
-			
+			auto fileName = entry.path().filename().string();
+			ImGui::Selectable(("* " + fileName).c_str());
 		}
 	}
 	
+}
+
+void AssetView::DrawPanelRightClickMenu()
+{
+	std::string popupName("worldoutline panel popup");
+
+	if (ImGui::Button("Edit"))
+	{
+		ImGui::OpenPopup(popupName.c_str());
+	}
+	if (ImGui::BeginPopup(popupName.c_str()))
+	{
+		if (ImGui::Selectable("Create Material"))
+		{
+			
+		}
+		ImGui::EndPopup();
+	}
 }
