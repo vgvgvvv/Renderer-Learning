@@ -131,6 +131,21 @@ public:
         ClassContext::Get().RegisterMap(name, this);
     }
 
+	template<class Lambda>
+    Class(
+        int size,
+        const Class* baseClass,
+        char const* name,
+        ClassFlag flag, 
+        Lambda&& ctor) noexcept
+        : Type(size, name)
+        , m_baseClass(baseClass)
+        , classFlag(flag)
+    {
+        ctor(this);
+        ClassContext::Get().RegisterMap(name, this);
+    }
+
     /* --------------------------------------------------------------------- */
     /* Identifier                                                            */
     /* --------------------------------------------------------------------- */
@@ -165,9 +180,15 @@ public:
         return (int)classFlag & (int)flag;
     }
 
+    std::shared_ptr<void> Create() const
+    {
+        return ctor();
+    }
+
 public:
     const Class* m_baseClass;
     ClassFlag classFlag;
+    std::function<std::shared_ptr<void>()> ctor;
 };
 
 
@@ -190,6 +211,25 @@ public:
             baseClass,
             name,
             flag)
+        , m_templateArgs(templateArgs)
+        , m_templateArgsEnd(templateArgsEnd)
+    {}
+
+    template<class Lambda>
+    ClassTemplate(
+        int size,
+        const Class* baseClass,
+        char const* name,
+        ClassFlag flag,
+        Lambda&& ctor,
+        TemplateArgument* templateArgs,
+        TemplateArgument* templateArgsEnd) noexcept
+        : Class(
+            size,
+            baseClass,
+            name,
+            flag,
+            ctor)
         , m_templateArgs(templateArgs)
         , m_templateArgsEnd(templateArgsEnd)
     {}

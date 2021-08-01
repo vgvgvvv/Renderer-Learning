@@ -13,10 +13,23 @@ private:\
 	static Class selfClass;
 
 #define DEFINE_CLASS_IMP(className) \
-	Class className::selfClass(sizeof(className), nullptr, #className);
+	Class className::selfClass(sizeof(className), \
+		nullptr, \
+		#className, \
+		ClassFlag::None);
 
 #define DEFINE_CLASS_IMP_WITH_FLAG(className, flag) \
-	Class className::selfClass(sizeof(className), nullptr, #className, flag);
+	Class className::selfClass(sizeof(className), \
+		nullptr, \
+		#className, \
+		flag);
+
+#define DEFINE_CLASS_IMP_WITH_CTOR(className, flag, ctor) \
+	Class className::selfClass(sizeof(className), \
+		nullptr, \
+		#className, \
+		flag, \
+		ctor);
 
 #define DEFINE_DRIVEN_CLASS(className, baseClassName) \
 public:\
@@ -28,11 +41,23 @@ private:\
 	static Class selfClass;
 
 #define DEFINE_DRIVEN_CLASS_IMP(className, baseClassName) \
-	Class className::selfClass(sizeof(className), baseClassName::StaticClass(), #className);
+	Class className::selfClass(sizeof(className), \
+		baseClassName::StaticClass(), \
+		#className, \
+		ClassFlag::None);
 
 #define DEFINE_DRIVEN_CLASS_IMP_WITH_FLAG(className, baseClassName, flag) \
-	Class className::selfClass(sizeof(className), baseClassName::StaticClass(), #className, flag);
+	Class className::selfClass(sizeof(className), \
+		baseClassName::StaticClass(), \
+		#className, \
+		flag);
 
+#define DEFINE_DRIVEN_CLASS_IMP_WITH_CTOR(className, baseClassName, flag, ctor) \
+	Class className::selfClass(sizeof(className), \
+		baseClassName::StaticClass(), \
+		#className, \
+		flag, \
+		ctor);
 
 // 定义序列化
 #define DEFINE_TRANSFER(className) \

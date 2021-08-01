@@ -28,3 +28,4 @@ void ClassContext::GetClassOf(const Class* type, std::vector<Class*>* out)
 		}
 	}
 }
+

@@ -1,4 +1,5 @@
 #pragma once
+#include <functional>
 #include <memory>
 #include <unordered_map>
 
@@ -17,7 +18,7 @@ public:
 	Class* GetClass(const std::string& name);
 
 	void GetClassOf(const Class* type, std::vector<Class*>* out);
-	
+
 private:
 	std::unordered_map<std::string, Class*> typeMap;
 };
