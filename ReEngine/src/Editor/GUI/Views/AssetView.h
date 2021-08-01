@@ -12,10 +12,12 @@ class EditorGUI_API AssetView : public IView
 
 private:
 	bool lastIsFocused = false;
-
+	std::string rootPath;
 	std::string currentPath;
 
 	void InitAssetMenu();
+
+	void DrawButtons();
 	
 	void DrawAssets(const std::string& path);
 	void DrawPanelRightClickMenu();

@@ -6,6 +6,7 @@
 
 #include "Views/AssetView.h"
 #include "Helpers/DockSpaceHelper.h"
+#include "Views/CommonView.h"
 #include "Views/GameView.h"
 #include "Views/LogView.h"
 #include "Views/PropertyView.h"
@@ -26,6 +27,7 @@ void EditorUI::OnInit()
 	views.push_back(std::make_shared<AssetView>());
 
 	EditorMenu::Get().OnInit();
+	CommonView::Get().OnInit();
 
 	for (auto view : views)
 	{
@@ -53,6 +55,8 @@ void EditorUI::OnGUI(float deltaTime)
 		}
 	}
 
+	CommonView::Get().OnGUI(deltaTime);
+	
 	DockSpaceHelper::EndDockSpace();
 }
 
@@ -60,6 +64,7 @@ void EditorUI::ShutDown()
 {
 	SaveCurrentLayout();
 	EditorMenu::Get().ShutDown();
+	CommonView::Get().ShutDown();
 	for (auto view : views)
 	{
 		view->ShutDown();

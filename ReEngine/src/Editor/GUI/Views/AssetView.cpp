@@ -7,14 +7,19 @@
 
 #include <filesystem>
 
+#include "CommonView.h"
+
 namespace fs = std::filesystem;
 
 DEFINE_VIEW_IMP(AssetView, Assets)
+
+static std::string assetPanelPopupName("asset panel popup");
 
 void AssetView::OnInit()
 {
 	Super::OnInit();
 	InitAssetMenu();
+	rootPath = Path::GetResourcesPath();
 	currentPath = Path::GetResourcesPath();
 }
 
@@ -30,6 +35,7 @@ void AssetView::OnGUI(float deltaTime)
 			ResourcesManager::Get().UpdateMetaPathInfo(Path::GetResourcesPath());
 		}
 	}
+	DrawButtons();
 	DrawPanelRightClickMenu();
 	DrawCreateAssetsPopup();
 	DrawAssets(currentPath);
@@ -47,10 +53,31 @@ void AssetView::InitAssetMenu()
 
 	for (auto& assetClassName : assetClassNames)
 	{
-		EditorMenu::Get().AddMenuItem("Assets/Create " + assetClassName, []()
+		EditorMenu::Get().AddMenuItem("Assets/Create " + assetClassName, [assetClassName]()
 			{
-
+				CommonView::Get().InputText("Set Name", 
+					[assetClassName](const std::string& name)
+					{
+						RE_LOG_INFO("Editor", "Create Asset {0}, Name Is {1}",				assetClassName.c_str(), name.c_str())
+					});
 			});
+	}
+}
+
+void AssetView::DrawButtons()
+{
+	if(currentPath != rootPath)
+	{
+		if (ImGui::Button("Back"))
+		{
+			currentPath = fs::directory_entry(currentPath)
+				.path().parent_path().string();
+		}
+	}
+	ImGui::SameLine();
+	if (ImGui::Button("Edit"))
+	{
+		ImGui::OpenPopup(assetPanelPopupName.c_str());
 	}
 }
 
@@ -72,6 +99,10 @@ void AssetView::DrawAssets(const std::string& path)
 		{
 			auto dirName = entry.path().filename().string();
 			ImGui::Selectable(("> " + dirName).c_str());
+			if (ImGui::IsItemHovered() && ImGui::IsMouseDoubleClicked(0))
+			{
+				currentPath = entry.path().string();
+			}
 		}
 		else
 		{
@@ -84,17 +115,18 @@ void AssetView::DrawAssets(const std::string& path)
 
 void AssetView::DrawPanelRightClickMenu()
 {
-	std::string popupName("worldoutline panel popup");
 
-	if (ImGui::Button("Edit"))
-	{
-		ImGui::OpenPopup(popupName.c_str());
-	}
-	if (ImGui::BeginPopup(popupName.c_str()))
+	
+	if (ImGui::BeginPopup(assetPanelPopupName.c_str()))
 	{
 		std::vector<std::string> assetClassNames;
 		AssetLoaderFactory::GetAllAssetsClassName(&assetClassNames);
 
+		if (ImGui::Selectable("Create Folder"))
+		{
+			// TODO
+		}
+		
 		for (auto& assetClassName : assetClassNames)
 		{
 			if (ImGui::Selectable(("Create " + assetClassName).c_str()))
