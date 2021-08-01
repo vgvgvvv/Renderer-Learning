@@ -19,6 +19,8 @@ public:
 
 	void GetClassOf(const Class* type, std::vector<Class*>* out);
 
+	std::shared_ptr<void> Create(const std::string& name);
+
 private:
 	std::unordered_map<std::string, Class*> typeMap;
 };

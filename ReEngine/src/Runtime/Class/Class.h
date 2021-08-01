@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdint>
 #include "ClassContext.h"
+#include "CommonAssert.h"
 
 template<class T>
 struct TypeTag
@@ -109,7 +110,7 @@ public:
     }
 
 
-public:
+protected:
     uint64_t m_size;
     uint64_t m_hash;
     char const* m_name;
@@ -129,6 +130,7 @@ public:
 		, classFlag(flag)
     {
         ClassContext::Get().RegisterMap(name, this);
+        defined = true;
     }
 
 	template<class Lambda>
@@ -144,6 +146,7 @@ public:
     {
         ctor(this);
         ClassContext::Get().RegisterMap(name, this);
+        defined = true;
     }
 
     /* --------------------------------------------------------------------- */
@@ -186,9 +189,19 @@ public:
     }
 
 public:
+
+	void SetCtor(std::function<std::shared_ptr<void>()>&& newCtor)
+	{
+		RE_ASSERT(!defined)
+        ctor = newCtor;
+	}
+
+protected:
     const Class* m_baseClass;
     ClassFlag classFlag;
     std::function<std::shared_ptr<void>()> ctor;
+    // 已经定义完毕 不允许再次修改
+	bool defined;
 };
 
 

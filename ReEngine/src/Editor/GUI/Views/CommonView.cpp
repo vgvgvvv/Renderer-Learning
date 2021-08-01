@@ -2,7 +2,9 @@
 #include "imgui.h"
 #include "imgui_stdlib.h"
 
-DEFINE_DRIVEN_CLASS_IMP(CommonView, IView)
+DEFINE_DRIVEN_CLASS_IMP_BEGIN(CommonView, IView, ClassFlag::Abstruct)
+DEFINE_DRIVEN_CLASS_IMP_END();
+
 DEFINE_VIEW_IMP(CommonView, Common)
 
 static std::string InputTextID = "Common InputText";

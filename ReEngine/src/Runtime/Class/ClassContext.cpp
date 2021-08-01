@@ -29,3 +29,13 @@ void ClassContext::GetClassOf(const Class* type, std::vector<Class*>* out)
 	}
 }
 
+std::shared_ptr<void> ClassContext::Create(const std::string& name)
+{
+	auto type = GetClass(name);
+	if(type)
+	{
+		return type->Create();
+	}
+	return  nullptr;
+}
+

@@ -15,7 +15,6 @@ public:
 	
 	const std::string* GetGuid() const { return &guid; }
 
-
 protected:
 	std::string guid;
 
