@@ -1,6 +1,6 @@
 #include "BaseRenderer.h"
 
-DEFINE_DRIVEN_CLASS_IMP(BaseRenderer, Component)
+DEFINE_DRIVEN_CLASS_IMP_WITH_FLAG(BaseRenderer, Component, ClassFlag::Abstruct)
 
 void BaseRenderer::Awake()
 {

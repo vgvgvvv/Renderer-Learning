@@ -22,4 +22,5 @@ private:
 
 private:
 	bool ChangeGameObjectName = false;
+	bool DrawCreateComponentPopup = false;
 };

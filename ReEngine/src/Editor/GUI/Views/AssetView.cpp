@@ -122,8 +122,6 @@ void AssetView::DrawAssets(const std::string& path)
 
 void AssetView::DrawPanelRightClickMenu()
 {
-
-	
 	if (ImGui::BeginPopup(assetPanelPopupName.c_str()))
 	{
 		std::vector<std::string> assetClassNames;

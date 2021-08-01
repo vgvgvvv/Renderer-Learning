@@ -1,6 +1,30 @@
 #include "ClassContext.h"
 
-void ClassContext::RegisterMap(const std::string& name, Type* type)
+#include "Logging/Log.h"
+#include "ClassMsic.h"
+
+void ClassContext::RegisterMap(const std::string& name, Class* type)
 {
+	RE_LOG_INFO("Class", "Register reflected class {0}", name.c_str());
 	typeMap.insert(std::make_pair(name, type));
+}
+
+Class* ClassContext::GetClass(const std::string& name)
+{
+	if(typeMap.contains(name))
+	{
+		return typeMap.at(name);
+	}
+	return nullptr;
+}
+
+void ClassContext::GetClassOf(const Class* type, std::vector<Class*>* out)
+{
+	for (auto& pair : typeMap)
+	{
+		if(ClassLib::IsA(pair.second, type))
+		{
+			out->push_back(pair.second);
+		}
+	}
 }

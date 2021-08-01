@@ -47,6 +47,11 @@ struct TemplateArgument
     };
 };
 
+enum class ClassFlag
+{
+	None = 0,
+	Abstruct = 1 << 2
+};
 
 class Type
 {
@@ -59,7 +64,7 @@ public:
         , m_hash(ClassDetail::Hash(name))
         , m_name(name)
     {
-        ClassContext::Get().RegisterMap(name, this);
+        
     }
 
     /* --------------------------------------------------------------------- */
@@ -116,11 +121,14 @@ class Class : public Type
 public:
     Class(
         int size,
-        Class* baseClass,
-        char const* name) noexcept
+        const Class* baseClass,
+        char const* name, 
+        ClassFlag flag = ClassFlag::None) noexcept
         : Type(size, name)
         , m_baseClass(baseClass)
+		, classFlag(flag)
     {
+        ClassContext::Get().RegisterMap(name, this);
     }
 
     /* --------------------------------------------------------------------- */
@@ -138,8 +146,28 @@ public:
         return m_baseClass;
     }
 
+	bool IsA(const Class* targetClass) const
+    {
+        const auto baseClass = BaseClass();
+        if (baseClass == targetClass)
+        {
+            return true;
+        }
+        if (baseClass == nullptr)
+        {
+            return false;
+        }
+        return baseClass->IsA(targetClass);
+    }
+
+	bool HasFlag(ClassFlag flag) const
+    {
+        return (int)classFlag & (int)flag;
+    }
+
 public:
-    Class* m_baseClass;
+    const Class* m_baseClass;
+    ClassFlag classFlag;
 };
 
 
@@ -152,14 +180,16 @@ class ClassTemplate : public Class
 public:
     ClassTemplate(
         int size,
-        Class* baseClass,
+        const Class* baseClass,
         char const* name,
+        ClassFlag flag,
         TemplateArgument* templateArgs,
         TemplateArgument* templateArgsEnd) noexcept
         : Class(
             size,
             baseClass,
-            name)
+            name,
+            flag)
         , m_templateArgs(templateArgs)
         , m_templateArgsEnd(templateArgsEnd)
     {}

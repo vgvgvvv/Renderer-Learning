@@ -6,14 +6,19 @@
 #include "Singleton.h"
 
 class Type;
+class Class;
 
 class ClassLib_API ClassContext
 {
 	DEFINE_SINGLETON(ClassContext)
 public:
-	void RegisterMap(const std::string& name, Type* type);
+	void RegisterMap(const std::string& name, Class* type);
 
+	Class* GetClass(const std::string& name);
+
+	void GetClassOf(const Class* type, std::vector<Class*>* out);
+	
 private:
-	std::unordered_map<std::string, Type*> typeMap;
+	std::unordered_map<std::string, Class*> typeMap;
 };
 

@@ -49,6 +49,12 @@ void PropertyView::DrawSelectedGameObject()
 			DrawComponent(component);
 		}
 	}
+
+	if (ImGui::Button("Create"))
+	{
+		ImGui::OpenPopup(CreateComponentPopupID.c_str());
+	}
+	DrawCreateComponent();
 }
 
 void PropertyView::DrawComponent(std::shared_ptr<Component> component)
@@ -58,10 +64,6 @@ void PropertyView::DrawComponent(std::shared_ptr<Component> component)
 	ImGuiTransfer transfer;
 	component->TransferImGui(transfer);
 
-	if(ImGui::Button("Create"))
-	{
-		ImGui::OpenPopup(CreateComponentPopupID.c_str());
-	}
 	
 }
 
@@ -69,6 +71,22 @@ void PropertyView::DrawCreateComponent()
 {
 	if (ImGui::BeginPopup(CreateComponentPopupID.c_str()))
 	{
+		std::vector<Class*> ComponentClasses;
+		ClassContext::Get().GetClassOf(Component::StaticClass(), &ComponentClasses);
+
+		for (auto& componentClass : ComponentClasses)
+		{
+			if(componentClass->HasFlag(ClassFlag::Abstruct))
+			{
+				continue;
+			}
+			auto itemName = "Create " + std::string(componentClass->Name());
+			if (ImGui::Selectable(itemName.c_str()))
+			{
+				RE_LOG_INFO("Editor", "Create Component {0}", componentClass->Name());
+			}
+		}
+		
 		ImGui::EndPopup();
 	}
 }

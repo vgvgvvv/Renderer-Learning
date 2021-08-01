@@ -1,6 +1,6 @@
 #include "Behavior.h"
 
-DEFINE_DRIVEN_CLASS_IMP(Behavior, Component)
+DEFINE_DRIVEN_CLASS_IMP_WITH_FLAG(Behavior, Component, ClassFlag::Abstruct)
 
 void ::Behavior::Awake()
 {

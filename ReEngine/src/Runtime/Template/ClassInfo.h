@@ -1,12 +1,13 @@
 #pragma once
 #include <string>
 #include "Class.h"
+#include "MacroMisc.h"
 
 #define DEFINE_CLASS(className) \
 public:\
 	typedef void Super; \
 	static std::string StaticClassName() { return #className;}\
-	static Class& StaticClass() { return selfClass; }\
+	static const Class* StaticClass() { return &selfClass; }\
 	virtual std::string ClassName() { return #className; }\
 private:\
 	static Class selfClass;
@@ -14,18 +15,26 @@ private:\
 #define DEFINE_CLASS_IMP(className) \
 	Class className::selfClass(sizeof(className), nullptr, #className);
 
+#define DEFINE_CLASS_IMP_WITH_FLAG(className, flag) \
+	Class className::selfClass(sizeof(className), nullptr, #className, flag);
+
 #define DEFINE_DRIVEN_CLASS(className, baseClassName) \
 public:\
 	typedef baseClassName Super; \
 	static std::string StaticClassName() { return #className;}\
-	static Class& StaticClass() { return selfClass; }\
+	static const Class* StaticClass() { return &selfClass; }\
 	virtual std::string ClassName() override { return #className; }\
 private:\
 	static Class selfClass;
 
 #define DEFINE_DRIVEN_CLASS_IMP(className, baseClassName) \
-	Class className::selfClass(sizeof(className), &baseClassName::StaticClass(), #className);
+	Class className::selfClass(sizeof(className), baseClassName::StaticClass(), #className);
 
+#define DEFINE_DRIVEN_CLASS_IMP_WITH_FLAG(className, baseClassName, flag) \
+	Class className::selfClass(sizeof(className), baseClassName::StaticClass(), #className, flag);
+
+
+// 定义序列化
 #define DEFINE_TRANSFER(className) \
 public:\
 	template<class TransferFunction>\
