@@ -11,6 +11,7 @@
 
 namespace fs = std::filesystem;
 
+DEFINE_DRIVEN_CLASS_IMP(AssetView, IView)
 DEFINE_VIEW_IMP(AssetView, Assets)
 
 static std::string assetPanelPopupName("asset panel popup");

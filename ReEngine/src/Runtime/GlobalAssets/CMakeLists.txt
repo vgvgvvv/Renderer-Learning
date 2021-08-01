@@ -4,7 +4,7 @@ set(targetName GlobalAssets)
 ReMake_AddTarget(
 	TARGET_NAME ${targetName}
 	MODE SHARED
-	LIB RHI re-reflection World RenderPipeline Serialization
+	LIB RHI re-reflection World RenderPipeline Serialization ClassLib
 )
 
 ReMake_StartUse()

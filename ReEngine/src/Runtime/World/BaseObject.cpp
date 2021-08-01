@@ -4,12 +4,12 @@
 #include "CommonAssert.h"
 #include "uuid.h"
 
+DEFINE_CLASS_IMP(BaseObject);
+
 BaseObject::BaseObject()
 {
 	guid = uuids::to_string(uuids::uuid_system_generator{}());
 }
-
-
 
 void BaseObject::TransferJsonWrite(JsonWrite& transfer)
 {

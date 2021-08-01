@@ -1,5 +1,7 @@
 #include "BaseRenderer.h"
 
+DEFINE_DRIVEN_CLASS_IMP(BaseRenderer, Component)
+
 void BaseRenderer::Awake()
 {
 	RendererManager::Get().AddRenderer(this);

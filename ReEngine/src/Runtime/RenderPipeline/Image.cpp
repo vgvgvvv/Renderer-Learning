@@ -1,6 +1,8 @@
 #include "Image.h"
 #include "stb_image.h"
 
+DEFINE_DRIVEN_CLASS_IMP(Image, BaseObject)
+
 std::shared_ptr<Image> Image::CreateDefault(const std::string& filePath)
 {
 	return std::make_shared<Image>();

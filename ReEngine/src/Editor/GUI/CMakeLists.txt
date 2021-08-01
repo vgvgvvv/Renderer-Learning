@@ -6,7 +6,8 @@ set(libs
 	RenderPipeline 
 	GlobalAssets
 	EditorContext
-	CommonLib)
+	CommonLib
+	ClassLib)
 
 set(targetName EditorGUI)
 ReMake_AddTarget(

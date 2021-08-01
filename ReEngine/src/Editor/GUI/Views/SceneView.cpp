@@ -5,6 +5,7 @@
 #include "RenderTexture.h"
 #include "Renderer/Texture.h"
 
+DEFINE_DRIVEN_CLASS_IMP(SceneView, IView)
 DEFINE_VIEW_IMP(SceneView, Scene)
 
 void SceneView::OnInit()

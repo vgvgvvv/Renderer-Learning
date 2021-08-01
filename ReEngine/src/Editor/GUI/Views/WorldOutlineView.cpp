@@ -7,7 +7,7 @@
 #include "Logging/Log.h"
 
 
-
+DEFINE_DRIVEN_CLASS_IMP(WorldOutlineView, IView)
 DEFINE_VIEW_IMP(WorldOutlineView, WorldOutline)
 
 void WorldOutlineView::OnInit()

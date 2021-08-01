@@ -3,6 +3,8 @@
 #include "Components/Transform.h"
 #include "World.h"
 
+DEFINE_DRIVEN_CLASS_IMP(GameObject, BaseObject)
+
 GameObject* GameObject::CreateGameObject(const std::string& name, GameObjectFlag flag)
 {
 	return World::Get().CreateGameObject(name, flag);

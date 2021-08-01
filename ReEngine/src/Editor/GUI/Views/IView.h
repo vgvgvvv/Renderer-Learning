@@ -1,9 +1,9 @@
 #pragma once
 #include "ClassInfo.h"
 #include "Menu/EditorMenu.h"
+#include "EditorGUI_API.h"
 
-
-class IView
+class EditorGUI_API IView
 {
 	DEFINE_CLASS(IView)
 public:

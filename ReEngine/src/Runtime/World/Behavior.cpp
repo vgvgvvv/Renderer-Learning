@@ -1,5 +1,7 @@
 #include "Behavior.h"
 
+DEFINE_DRIVEN_CLASS_IMP(Behavior, Component)
+
 void ::Behavior::Awake()
 {
 	BehaviorManager::Get().Add(this);

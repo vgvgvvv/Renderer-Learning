@@ -18,6 +18,8 @@ private:
 	void DrawSelectedGameObject();
 	void DrawComponent(std::shared_ptr<class Component> component);
 
+	void DrawCreateComponent();
+
 private:
 	bool ChangeGameObjectName = false;
 };

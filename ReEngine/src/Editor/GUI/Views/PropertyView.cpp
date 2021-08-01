@@ -7,7 +7,10 @@
 #include "imgui_stdlib.h"
 #include "Transfer/ImGuiTransfer.h"
 
+DEFINE_DRIVEN_CLASS_IMP(PropertyView, IView)
 DEFINE_VIEW_IMP(PropertyView, Property)
+
+static std::string CreateComponentPopupID = "PropertyView Create Component";
 
 void PropertyView::OnInit()
 {
@@ -54,7 +57,20 @@ void PropertyView::DrawComponent(std::shared_ptr<Component> component)
 	
 	ImGuiTransfer transfer;
 	component->TransferImGui(transfer);
+
+	if(ImGui::Button("Create"))
+	{
+		ImGui::OpenPopup(CreateComponentPopupID.c_str());
+	}
 	
+}
+
+void PropertyView::DrawCreateComponent()
+{
+	if (ImGui::BeginPopup(CreateComponentPopupID.c_str()))
+	{
+		ImGui::EndPopup();
+	}
 }
 
 

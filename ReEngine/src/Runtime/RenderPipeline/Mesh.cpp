@@ -4,6 +4,8 @@
 #include "assimp/Importer.hpp"
 #include "Common.h"
 
+DEFINE_DRIVEN_CLASS_IMP(MeshGroup, BaseObject)
+
 bool MeshGroup::InitFromFile(const std::string& filePath)
 {
 

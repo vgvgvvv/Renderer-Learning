@@ -1,19 +1,33 @@
 #pragma once
 #include <string>
+#include "Class.h"
 
 #define DEFINE_CLASS(className) \
 public:\
 	typedef void Super; \
 	static std::string StaticClassName() { return #className;}\
-	virtual std::string ClassName() { return #className; }
+	static Class& StaticClass() { return selfClass; }\
+	virtual std::string ClassName() { return #className; }\
+private:\
+	static Class selfClass;
+
+#define DEFINE_CLASS_IMP(className) \
+	Class className::selfClass(sizeof(className), nullptr, #className);
 
 #define DEFINE_DRIVEN_CLASS(className, baseClassName) \
 public:\
 	typedef baseClassName Super; \
 	static std::string StaticClassName() { return #className;}\
-	virtual std::string ClassName() override { return #className; } 
+	static Class& StaticClass() { return selfClass; }\
+	virtual std::string ClassName() override { return #className; }\
+private:\
+	static Class selfClass;
+
+#define DEFINE_DRIVEN_CLASS_IMP(className, baseClassName) \
+	Class className::selfClass(sizeof(className), &baseClassName::StaticClass(), #className);
 
 #define DEFINE_TRANSFER(className) \
+public:\
 	template<class TransferFunction>\
 	void TransferClass(TransferFunction& transferFunc);\
 	virtual void TransferJsonWrite(class JsonWrite& transfer);\

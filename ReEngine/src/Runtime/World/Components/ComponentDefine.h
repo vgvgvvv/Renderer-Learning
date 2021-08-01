@@ -7,6 +7,7 @@
 
 // 定义Component必要成员
 #define DEFINE_COMPONENT(className)\
+public:\
 	template<class TransferFunction>\
 	void TransferComponent(TransferFunction& transferFunc);\
 	\

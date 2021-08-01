@@ -1,5 +1,6 @@
 #include "LogView.h"
 
+DEFINE_DRIVEN_CLASS_IMP(LogView, IView)
 DEFINE_VIEW_IMP(LogView, Log)
 
 
