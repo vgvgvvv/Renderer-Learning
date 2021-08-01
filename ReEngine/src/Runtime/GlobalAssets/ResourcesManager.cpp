@@ -127,7 +127,7 @@ bool ResourcesManager::CheckIfAssetNeedImport(const fs::directory_entry& entry)
 // entry为完整路径
 void ResourcesManager::ImportAsset(const fs::directory_entry& entry)
 {
-	auto assetLoader = AssetLoaderFactory::GetLoader(entry);
+	auto& assetLoader = AssetLoaderFactory::GetLoader(entry);
 	assetLoader.Import(entry.path().string());
 }
 

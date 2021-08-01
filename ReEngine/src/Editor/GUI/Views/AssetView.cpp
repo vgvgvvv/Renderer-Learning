@@ -53,12 +53,18 @@ void AssetView::InitAssetMenu()
 
 	for (auto& assetClassName : assetClassNames)
 	{
-		EditorMenu::Get().AddMenuItem("Assets/Create " + assetClassName, [assetClassName]()
+		auto& loader = AssetLoaderFactory::GetLoaderWithType(assetClassName);
+		if(loader.NeedImportAssetFile())
+		{
+			continue;
+		}
+		EditorMenu::Get().AddMenuItem("Assets/Create " + assetClassName, [this, &loader]()
 			{
 				CommonView::Get().InputText("Set Name", 
-					[assetClassName](const std::string& name)
+					[this, &loader](const std::string& name)
 					{
-						RE_LOG_INFO("Editor", "Create Asset {0}, Name Is {1}",				assetClassName.c_str(), name.c_str())
+						if (name.empty()) { return; }
+						loader.Import(Path::Combine(currentPath, name));
 					});
 			});
 	}
@@ -124,14 +130,29 @@ void AssetView::DrawPanelRightClickMenu()
 
 		if (ImGui::Selectable("Create Folder"))
 		{
-			// TODO
+			CommonView::Get().InputText("Set Name",
+				[this](const std::string& name)
+				{
+					if (name.empty()) { return; }
+					fs::create_directory(Path::Combine(currentPath, name));
+				});
 		}
 		
 		for (auto& assetClassName : assetClassNames)
 		{
+			auto& loader = AssetLoaderFactory::GetLoaderWithType(assetClassName);
+			if(loader.NeedImportAssetFile())
+			{
+				continue;
+			}
 			if (ImGui::Selectable(("Create " + assetClassName).c_str()))
 			{
-				// TODO
+				CommonView::Get().InputText("Set Name",
+					[this, &loader](const std::string& name)
+					{
+						if (name.empty()) { return; }
+						loader.Import(Path::Combine(currentPath, name));
+					});
 			}
 		}
 		

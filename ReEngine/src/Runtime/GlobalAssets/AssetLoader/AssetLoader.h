@@ -70,6 +70,8 @@ public:
 
 	virtual AssetPtr Load(const std::string& filePath);
 
+	virtual bool NeedImportAssetFile() const { return false; }
+	
 	virtual void Import(const std::string& filePath);
 
 	virtual void Save(const std::string& filePath, std::shared_ptr<void> asset);
@@ -105,17 +107,26 @@ public:
 		
 		return AssetPtr::Create(filePath, asset);
 	}
-	
+
+	bool NeedImportAssetFile() const override { return false; }
+
 	void Import(const std::string& filePath) override
 	{
+		auto& ext = exts[0];
+		auto fullPath = filePath;
+		if (!fullPath.ends_with(ext))
+		{
+			fullPath = fullPath + ext;
+		}
+		
 		// ½ö´¢´æ uuid
-		JsonWrite metaWrite(filePath + ".meta");
+		JsonWrite metaWrite(fullPath + ".meta");
 		auto uuid = uuids::uuid_system_generator{}();
 		metaWrite.transfer(&uuid, "uuid");
 		metaWrite.Save();
 
-		std::shared_ptr<T> asset = T::CreateDefault(filePath);
-		JsonWrite assetWrite(filePath);
+		std::shared_ptr<T> asset = T::CreateDefault(fullPath);
+		JsonWrite assetWrite(fullPath);
 		asset->TransferAsset(assetWrite);
 		assetWrite.Save();
 	}
@@ -149,6 +160,8 @@ public:
 
 		return AssetPtr::Create(filePath, result);
 	}
+
+	bool NeedImportAssetFile() const override { return true; }
 	
 	void Import(const std::string& filePath) override
 	{
