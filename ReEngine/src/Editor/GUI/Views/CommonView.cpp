@@ -50,6 +50,12 @@ void CommonView::DrawInputText()
 			IsInputTextOpened = false;
 			ImGui::CloseCurrentPopup();
 		}
+		ImGui::SameLine();
+		if (ImGui::Button("Close"))
+		{
+			IsInputTextOpened = false;
+			ImGui::CloseCurrentPopup();
+		}
 		ImGui::EndPopup();
 	}
 }
