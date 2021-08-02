@@ -10,6 +10,10 @@
 #include "Misc/Path.h"
 
 
+void RenderContext::InitSingleton()
+{
+}
+
 void RenderContext::Clear(const Color& color)
 {
 	device->Clear(color);

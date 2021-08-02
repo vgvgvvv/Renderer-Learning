@@ -24,6 +24,11 @@ void Behavior::BeginDestroy()
 	BehaviorManager::Get().Remove(this);
 }
 
+
+void BehaviorManager::InitSingleton()
+{
+}
+
 void BehaviorManager::Add(Behavior* behavior)
 {
 	behaviors.push_back(behavior);

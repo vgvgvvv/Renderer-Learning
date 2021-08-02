@@ -66,10 +66,13 @@ private:
 };
 
 
+void EditorMenu::InitSingleton()
+{
+	Root = std::make_shared<MenuTree>("Root");
+}
 
 void EditorMenu::OnInit()
 {
-	Root = std::make_shared<MenuTree>("Root");
 }
 
 void EditorMenu::OnGUI()

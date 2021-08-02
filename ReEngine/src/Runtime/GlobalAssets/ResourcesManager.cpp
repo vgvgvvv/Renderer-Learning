@@ -5,6 +5,10 @@
 #include "Misc/Path.h"
 #include "Class.h"
 
+void ResourcesManager::InitSingleton()
+{
+}
+
 
 /// <summary>
 /// ╪стьнд╪Ч

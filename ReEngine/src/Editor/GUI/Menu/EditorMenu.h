@@ -13,8 +13,6 @@ class MenuTree;
 
 typedef std::function<void()> MenuFunc;
 
-
-
 class EditorMenu 
 {
 	DEFINE_SINGLETON(EditorMenu)
@@ -33,4 +31,13 @@ public:
 private:
 
 	std::shared_ptr<MenuTree> Root;
+};
+
+class EditorMenuItem
+{
+public:
+	EditorMenuItem(const std::string& name, MenuFunc func)
+	{
+		EditorMenu::Get().AddMenuItem(name, func);
+	}
 };

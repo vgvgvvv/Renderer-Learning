@@ -5,12 +5,13 @@
 
 #define DEFINE_SINGLETON(TypeName)                                      \
 	public:                                                             \
-		static TypeName& Get()                                  \
+		static TypeName& Get()                                          \
 		{                                                               \
 			static TypeName instance; return instance;                  \
 		}                                                               \
     private:                                                            \
         TypeName() {}                                                   \
+        void InitSingleton();                                           \
     public:                                                             \
         TypeName(TypeName const&) = delete;                             \
         void operator=(TypeName const&) = delete;                       

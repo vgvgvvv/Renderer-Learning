@@ -13,6 +13,11 @@ std::string CommonView::InputTextTitle;
 std::function<void(const std::string&)> CommonView::InputTextCallback;
 bool CommonView::IsInputTextOpened = false;
 
+
+void CommonView::InitSingleton()
+{
+}
+
 void CommonView::OnInit()
 {
 }

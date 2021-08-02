@@ -50,6 +50,11 @@ Matrix4x4 Camera::GetPerspectiveProjectionMatrix() const
 	return Matrix4x4::Perspective(fov, aspect, nearZ, farZ);
 }
 
+
+void CameraManager::InitSingleton()
+{
+}
+
 void CameraManager::Add(Camera* camera)
 {
 	cameraList.push_back(camera);

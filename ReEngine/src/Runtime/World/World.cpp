@@ -3,6 +3,10 @@
 #include "CommonAssert.h"
 
 
+void World::InitSingleton()
+{
+}
+
 void World::Init()
 {
 	RE_LOG_INFO("World", "Init World")

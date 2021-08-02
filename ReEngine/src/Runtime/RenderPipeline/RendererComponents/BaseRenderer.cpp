@@ -13,6 +13,11 @@ void BaseRenderer::BeginDestroy()
 	RendererManager::Get().RemoveRenderer(this);
 }
 
+
+void ::RendererManager::InitSingleton()
+{
+}
+
 void RendererManager::AddRenderer(BaseRenderer* renderer)
 {
 	renderers.push_back(renderer);

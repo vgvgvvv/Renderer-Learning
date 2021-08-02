@@ -6,6 +6,11 @@
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 static void glfw_error_callback(int error, const char* description);
 
+
+void GlfwContext::InitSingleton()
+{
+}
+
 GlfwInitDesc::GlfwInitDesc()
 {
     Width = 640;

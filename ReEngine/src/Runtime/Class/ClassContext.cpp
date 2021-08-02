@@ -3,6 +3,11 @@
 #include "Logging/Log.h"
 #include "ClassMsic.h"
 
+
+void ClassContext::InitSingleton()
+{
+}
+
 void ClassContext::RegisterMap(const std::string& name, Class* type)
 {
 	RE_LOG_INFO("Class", "Register reflected class {0}", name.c_str());

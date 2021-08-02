@@ -4,6 +4,11 @@
 #include "OpenGL.h"
 #include "CommonAssert.h"
 
+
+void GlewContext::InitSingleton()
+{
+}
+
 bool GlewContext::Init() const
 {
     GLenum err = glewInit();

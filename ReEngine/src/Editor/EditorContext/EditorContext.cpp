@@ -1,5 +1,10 @@
 #include "EditorContext.h"
 
+
+void EditorContext::InitSingleton()
+{
+}
+
 void EditorContext::SelectObject(GameObject* go)
 {
 	ClearSelectedAssets();
