@@ -188,6 +188,12 @@ public:
         return ctor();
     }
 
+	template<class T>
+    std::shared_ptr<T> Create() const
+    {
+        return std::static_pointer_cast<T>(ctor());
+    }
+
 public:
 
 	void SetCtor(std::function<std::shared_ptr<void>()>&& newCtor)

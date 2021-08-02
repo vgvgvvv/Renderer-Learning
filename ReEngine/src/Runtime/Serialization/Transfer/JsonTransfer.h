@@ -31,7 +31,8 @@ public:
 	
 	template<class T>
 	friend void TransferDetail::transfer(JsonRead* read, T* data, const char* name, TransferFlag flag);
-	
+
+	JsonRead(json doc) : doc(doc){};
 	JsonRead(const std::string& filePath);
 
 
@@ -46,7 +47,7 @@ public:
 	}
 
 	template<class T>
-	void transfer(std::list<T>* data, const char* name, TransferFlag flag = TransferFlag::None)
+	void transfer(std::list<std::shared_ptr<T>>* data, const char* name, TransferFlag flag = TransferFlag::None)
 	{
 		data->clear();
 		auto arr = doc[name];
@@ -55,13 +56,16 @@ public:
 			auto size = arr.size();
 			for(int i = 0; i < size; i ++)
 			{
-				data->push_back(arr[i].get<T>());
+				std::shared_ptr<T> item = std::static_pointer_cast<T>(T::StaticClass()->Create());
+				JsonRead read(arr[i]);
+				item->TransferJsonRead(read);
+				data->push_back(item);
 			}
 		};
 	}
 
 	template<class T>
-	void transfer(std::vector<T>* data, const char* name, TransferFlag flag = TransferFlag::None)
+	void transfer(std::vector<std::shared_ptr<T>>* data, const char* name, TransferFlag flag = TransferFlag::None)
 	{
 		data->clear();
 		auto arr = doc[name];
@@ -70,13 +74,16 @@ public:
 			auto size = arr.size();
 			for (int i = 0; i < size; i++)
 			{
-				data->push_back(arr[i].get<T>());
+				std::shared_ptr<T> item = std::static_pointer_cast<T>(T::StaticClass()->Create());
+				JsonRead read(arr[i]);
+				item->TransferJsonRead(read);
+				data->push_back(item);
 			}
 		};
 	}
 
 	template<class TV>
-	void transfer(std::map<std::string, TV>* data, const char* name, TransferFlag flag = TransferFlag::None)
+	void transfer(std::map<std::string, std::shared_ptr<TV>>* data, const char* name, TransferFlag flag = TransferFlag::None)
 	{
 		data->clear();
 		auto obj = doc[name];
@@ -84,7 +91,10 @@ public:
 		{
 			for(auto& el : obj.items())
 			{
-				data->insert(std::pair<std::string, TV>(el.key(), el.value().get<TV>()));
+				std::shared_ptr<TV> item = std::static_pointer_cast<TV>(TV::StaticClass()->Create());
+				JsonRead read(el.value());
+				item->TransferJsonRead(read);
+				data->insert(std::pair<std::string, TV>(el.key(), item));
 			}
 		};
 	}
@@ -104,7 +114,8 @@ public:
 
 	template<class T>
 	friend void TransferDetail::transfer(JsonWrite* writer, T* data, const char* name, TransferFlag flag);
-	
+
+	JsonWrite();
 	JsonWrite(const std::string& filePath);
 
 	bool IsLoading() const override { return false; }
@@ -118,37 +129,43 @@ public:
 	}
 
 	template<class T>
-	void transfer(std::list<T>* data, const char* name, TransferFlag flag = TransferFlag::None)
+	void transfer(std::list<std::shared_ptr<T>>* data, const char* name, TransferFlag flag = TransferFlag::None)
 	{
 		auto arr = json::array();
 
-		for (T& item : data)
+		for (std::shared_ptr<T>& item : *data)
 		{
-			arr.push_back(item);
+			JsonWrite write;
+			item->TransferJsonWrite(write);
+			arr.push_back(write.doc);
 		}
 		doc[name] = arr;
 	}
 
 	template<class T>
-	void transfer(std::vector<T>* data, const char* name, TransferFlag flag = TransferFlag::None)
+	void transfer(std::vector<std::shared_ptr<T>>* data, const char* name, TransferFlag flag = TransferFlag::None)
 	{
 		auto arr = json::array();
 
-		for (T& item : data)
+		for (std::shared_ptr<T>& item : *data)
 		{
-			arr.push_back(item);
+			JsonWrite write;
+			item->TransferJsonWrite(write);
+			arr.push_back(write.doc);
 		}
 		doc[name] = arr;
 	}
 
-	template<class TK, class TV>
-	void transfer(std::map<TK, TV>* data, const char* name, TransferFlag flag = TransferFlag::None)
+	template<class TV>
+	void transfer(std::map<std::string, std::shared_ptr<TV>>* data, const char* name, TransferFlag flag = TransferFlag::None)
 	{
 		auto obj = json::object();
 
-		for (std::pair<TK, TV>& item : data)
+		for (std::pair<std::string, std::shared_ptr<TV>>& item : *data)
 		{
-			obj[item.first] = item.second;
+			JsonWrite write;
+			item.second->TransferJsonWrite(write);
+			obj[item.first] = write.doc;
 		}
 		doc[name] = obj;
 	}

@@ -43,6 +43,5 @@ private:
 template <class TransferFunction>
 void MeshGroup::TransferImportSetting(TransferFunction& transferFunc)
 {
-	Super::TransferClass(transferFunc);
 }
 

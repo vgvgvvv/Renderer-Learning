@@ -13,14 +13,15 @@ public:
 	BaseObject();
 	virtual ~BaseObject() = default;
 	
-	const std::string* GetGuid() const { return &guid; }
+	const std::string* GetGuid() const { return &instanceId; }
 
 protected:
-	std::string guid;
+	std::string instanceId;
 
 };
 
 template <class TransferFunction>
 void BaseObject::TransferClass(TransferFunction& transferFunc)
 {
+	transferFunc.transfer(&instanceId, "instanceId");
 }

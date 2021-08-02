@@ -23,5 +23,4 @@ private:
 template <class TransferFunction>
 void Image::TransferImportSetting(TransferFunction& transferFunc)
 {
-	Super::TransferClass(transferFunc);
 }

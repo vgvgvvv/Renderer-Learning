@@ -28,7 +28,6 @@ private:
 template <class TransferFunction>
 void Material::TransferAsset(TransferFunction& transferFunc)
 {
-	Super::TransferClass(transferFunc);
 	transferFunc.transfer(&vertexShaderPath, "vertexShaderPath");
 	transferFunc.transfer(&fragmentShaderPath, "fragmentShaderPath");
 	if (transferFunc.IsLoading())

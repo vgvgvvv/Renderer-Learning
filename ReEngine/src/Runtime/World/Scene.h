@@ -8,21 +8,16 @@
 class World_API Scene : public BaseObject
 {
 	DEFINE_DRIVEN_CLASS(Scene, BaseObject)
-	DEFINE_TRANSFER(Scene)
-	
+	DEFINE_NORMAL_ASSET_CLASS(Scene);
 public:
 
 	
 private:
-	std::list<GameObject> gameObjects;
+	std::list<std::shared_ptr<GameObject>> gameObjects;
 };
 
 template <class TransferFunction>
-void Scene::TransferClass(TransferFunction& transferFunc)
+void Scene::TransferAsset(TransferFunction& transferFunc)
 {
-	Super::TransferClass(transferFunc);
-	for (auto& gameObject : gameObjects)
-	{
-		// TODO
-	}
+	transferFunc.transfer(&gameObjects, "gameObjects");
 }

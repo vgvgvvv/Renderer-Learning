@@ -22,6 +22,12 @@ void JsonRead::transfer(uuids::uuid* data, const char* name, TransferFlag flag)
 	*data = data->from_string(str).value();
 }
 
+
+JsonWrite::JsonWrite() : JsonWrite("")
+{
+	doc = {};
+}
+
 JsonWrite::JsonWrite(const std::string& filePath) : filePath(filePath)
 {
 	doc = {};
@@ -34,6 +40,10 @@ void JsonWrite::transfer(uuids::uuid* data, const char* name, TransferFlag flag)
 
 void JsonWrite::Save()
 {
+	if(filePath.empty())
+	{
+		return;
+	}
 	std::ofstream outputFile(filePath);
 	outputFile << doc;
 	outputFile.close();

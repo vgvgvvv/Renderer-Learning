@@ -9,7 +9,7 @@ DEFINE_CLASS_IMP(BaseObject);
 
 BaseObject::BaseObject()
 {
-	guid = uuids::to_string(uuids::uuid_system_generator{}());
+	instanceId = uuids::to_string(uuids::uuid_system_generator{}());
 }
 
 
