@@ -87,9 +87,7 @@ void RenderContext::TestDraw()
 
 	auto ib = device->CreateIndexBuffer(indice, 6);
 
-	auto vertFileName = Path::Combine(Path::GetShaderSourcePath(), "Default/Unlit.vert.glsl");
-	auto fragFileName = Path::Combine(Path::GetShaderSourcePath(), "Default/Unlit.frag.glsl");
-	auto shader = device->CreateShader(vertFileName, fragFileName);
+	auto shader = device->CreateShader("Default/Unlit.vert.glsl", "Default/Unlit.frag.glsl");
 
 
 	device->Draw(*vao, *ib, *shader);

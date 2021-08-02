@@ -122,7 +122,9 @@ std::shared_ptr<IShader> OpenGLDevice::CreateShader(const std::string& fileName)
 std::shared_ptr<IShader> OpenGLDevice::CreateShader(const std::string& vertFileName,
 	const std::string& fragFileName) const
 {
-	return std::make_shared<Shader>(vertFileName, fragFileName);
+	return std::make_shared<Shader>(
+		Path::Combine(Path::GetShaderSourcePath(), vertFileName), 
+		Path::Combine(Path::GetShaderSourcePath(), fragFileName));
 }
 
 

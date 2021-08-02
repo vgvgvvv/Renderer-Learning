@@ -111,6 +111,11 @@ void PropertyView::DrawSelectedAsset()
 	}
 	auto& showAsset = *selectedAssetPaths.begin();
 
+	if(fs::is_directory(showAsset))
+	{
+		return;
+	}
+	
 	if(lastAssetPath != showAsset)
 	{
 		auto asset = ResourcesManager::Get().Load(showAsset);

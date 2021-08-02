@@ -23,5 +23,4 @@ protected:
 template <class TransferFunction>
 void BaseObject::TransferClass(TransferFunction& transferFunc)
 {
-	transferFunc.transfer(&guid, "guid");
 }

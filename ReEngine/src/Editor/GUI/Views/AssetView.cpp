@@ -103,7 +103,7 @@ void AssetView::DrawAssets(const std::string& path)
 			continue;
 		}
 
-		auto assetPath = fs::relative(entry.path(), path).string();
+		auto assetPath = fs::relative(entry.path(), rootPath).string();
 		bool selected = EditorContext::Get().IsSelectedAsset(assetPath);
 		
 		if (entry.is_directory())
