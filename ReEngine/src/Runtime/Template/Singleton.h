@@ -10,8 +10,8 @@
 			static TypeName instance; return instance;                  \
 		}                                                               \
     private:                                                            \
-        TypeName() {}                                                   \
-        void InitSingleton();                                           \
+		void InitSingleton();                                           \
+        TypeName() { InitSingleton(); }                                 \
     public:                                                             \
         TypeName(TypeName const&) = delete;                             \
         void operator=(TypeName const&) = delete;                       

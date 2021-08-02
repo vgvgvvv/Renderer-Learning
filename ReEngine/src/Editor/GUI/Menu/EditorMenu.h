@@ -4,6 +4,8 @@
 #include <memory>
 #include <string>
 
+
+#include "Logging/Log.h"
 #include "Singleton.h"
 
 
@@ -33,11 +35,12 @@ private:
 	std::shared_ptr<MenuTree> Root;
 };
 
-class EditorMenuItem
+class StaticMenuItemDefine
 {
 public:
-	EditorMenuItem(const std::string& name, MenuFunc func)
+	StaticMenuItemDefine(const std::string& name, MenuFunc func)
 	{
+		RE_LOG_INFO("Editor", "Add Dynamic Menu Item {0}", name.c_str())
 		EditorMenu::Get().AddMenuItem(name, func);
 	}
 };
