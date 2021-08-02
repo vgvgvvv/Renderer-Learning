@@ -43,6 +43,10 @@ public:
 	template<typename T>
 	std::shared_ptr<T> AddComponent();
 
+	std::shared_ptr<Component> AddComponent(const std::string& className);
+
+	std::shared_ptr<Component> AddComponent(const Class* type);
+
 	Transform& GetTransform() const { return *transform; }
 
 	void SetParent(GameObject* parent);

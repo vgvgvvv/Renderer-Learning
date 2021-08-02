@@ -22,6 +22,41 @@ GameObject::GameObject(const std::string& name, GameObjectFlag flag)
 {
 }
 
+std::shared_ptr<Component> GameObject::AddComponent(const std::string& className)
+{
+	auto type = ClassContext::Get().GetClass(className);
+	if(type == nullptr)
+	{
+		return nullptr;
+	}
+	if(!type->IsA(Component::StaticClass()))
+	{
+		return nullptr;
+	}
+	auto newComp = std::static_pointer_cast<Component>(type->Create());
+	newComp->Awake();
+	newComp->owner = this;
+	components.push_back(newComp);
+	return newComp;
+}
+
+std::shared_ptr<Component> GameObject::AddComponent(const Class* type)
+{
+	if (type == nullptr)
+	{
+		return nullptr;
+	}
+	if (!type->IsA(Component::StaticClass()))
+	{
+		return nullptr;
+	}
+	auto newComp = std::static_pointer_cast<Component>(type->Create());
+	newComp->Awake();
+	newComp->owner = this;
+	components.push_back(newComp);
+	return newComp;
+}
+
 void GameObject::SetParent(GameObject* parent)
 {
 	if(owner == parent)

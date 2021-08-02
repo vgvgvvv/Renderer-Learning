@@ -5,6 +5,7 @@
 #include "EditorGUI_API.h"
 #include "IView.h"
 #include "DefineView.h"
+#include "GameObject.h"
 
 const static int MAX_NAME_LENGTH = 50;
 
@@ -18,7 +19,7 @@ private:
 	void DrawSelectedGameObject();
 	void DrawComponent(std::shared_ptr<class Component> component);
 
-	void DrawCreateComponent();
+	void DrawCreateComponent(GameObject* currentGameObject);
 
 private:
 	bool ChangeGameObjectName = false;

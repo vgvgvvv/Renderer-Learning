@@ -54,7 +54,7 @@ void PropertyView::DrawSelectedGameObject()
 	{
 		ImGui::OpenPopup(CreateComponentPopupID.c_str());
 	}
-	DrawCreateComponent();
+	DrawCreateComponent(showObject);
 }
 
 void PropertyView::DrawComponent(std::shared_ptr<Component> component)
@@ -67,7 +67,7 @@ void PropertyView::DrawComponent(std::shared_ptr<Component> component)
 	
 }
 
-void PropertyView::DrawCreateComponent()
+void PropertyView::DrawCreateComponent(GameObject* currentGameObject)
 {
 	if (ImGui::BeginPopup(CreateComponentPopupID.c_str()))
 	{
@@ -84,6 +84,7 @@ void PropertyView::DrawCreateComponent()
 			if (ImGui::Selectable(itemName.c_str()))
 			{
 				RE_LOG_INFO("Editor", "Create Component {0}", componentClass->Name());
+				currentGameObject->AddComponent(componentClass);
 			}
 		}
 		
