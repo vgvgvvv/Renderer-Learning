@@ -1,10 +1,13 @@
 #include "PropertyView.h"
 
+
+#include "AssetLoader/AssetLoader.h"
 #include "Component.h"
 #include "EditorContext.h"
 #include "GameObject.h"
 #include "imgui.h"
 #include "imgui_stdlib.h"
+#include "ResourceManager.h"
 #include "Transfer/ImGuiTransfer.h"
 
 DEFINE_DRIVEN_CLASS_IMP(PropertyView, IView)
@@ -21,6 +24,7 @@ void PropertyView::OnGUI(float deltaTime)
 {
 	Super::OnGUI(deltaTime);
 	DrawSelectedGameObject();
+	DrawSelectedAsset();
 }
 
 void PropertyView::ShutDown()
@@ -28,9 +32,13 @@ void PropertyView::ShutDown()
 	Super::ShutDown();
 }
 
+//-------------------------------------------------------
+// ªÊ÷∆GameObject
+//-------------------------------------------------------
+
 void PropertyView::DrawSelectedGameObject()
 {
-	auto& selectedObject = EditorContext::Get().SelectedGameObjects;
+	auto& selectedObject = EditorContext::Get().GetAllSelectGameObjects();
 	if(selectedObject.size() != 1)
 	{
 		return;
@@ -63,8 +71,6 @@ void PropertyView::DrawComponent(std::shared_ptr<Component> component)
 	
 	ImGuiTransfer transfer;
 	component->TransferImGui(transfer);
-
-	
 }
 
 void PropertyView::DrawCreateComponent(GameObject* currentGameObject)
@@ -90,6 +96,34 @@ void PropertyView::DrawCreateComponent(GameObject* currentGameObject)
 		
 		ImGui::EndPopup();
 	}
+}
+
+//-------------------------------------------------------
+// ªÊ÷∆Asset
+//-------------------------------------------------------
+
+void PropertyView::DrawSelectedAsset()
+{
+	auto& selectedAssetPaths = EditorContext::Get().GetAllSelectAssets();
+	if (selectedAssetPaths.size() != 1)
+	{
+		return;
+	}
+	auto& showAsset = *selectedAssetPaths.begin();
+
+	if(lastAssetPath != showAsset)
+	{
+		auto asset = ResourcesManager::Get().Load(showAsset);
+		selectedAsset = asset.GetPtr<BaseObject>();
+		lastAssetPath = showAsset;
+	}
+
+	if (selectedAsset)
+	{
+		ImGuiTransfer transfer;
+		selectedAsset->TransferImGui(transfer);
+	}
+	
 }
 
 

@@ -36,7 +36,7 @@ void EditorLayer::OnRender(float deltaTime)
 void EditorLayer::OnAfterRender(float deltaTime)
 {
 	// 移除所有被销毁的Object
-	EditorContext::Get().SelectedGameObjects.remove_if([](GameObject* obj)
+	EditorContext::Get().GetAllSelectGameObjects().remove_if([](GameObject* obj)
 		{
 			return obj->IsDestroyed();
 		});

@@ -11,7 +11,7 @@ class World_API BaseObject
 	DEFINE_TRANSFER(BaseObject);
 public:
 	BaseObject();
-	~BaseObject() = default;
+	virtual ~BaseObject() = default;
 	
 	const std::string* GetGuid() const { return &guid; }
 

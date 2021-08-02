@@ -20,7 +20,8 @@ private:
 	void DrawButtons();
 	
 	void DrawAssets(const std::string& path);
-	void DrawPanelRightClickMenu();
+	void DrawAssetsClicked(const std::string& path);
 
-	void DrawCreateAssetsPopup();
+	void DrawPanelEditorPopup();
+
 };

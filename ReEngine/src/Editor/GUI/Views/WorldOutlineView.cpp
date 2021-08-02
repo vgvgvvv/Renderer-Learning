@@ -55,11 +55,8 @@ void WorldOutlineView::DrawGameObjectNode(GameObject* gameObject)
 	
 	ImGuiTreeNodeFlags node_flags = base_flags;
 
-	auto& selectedObjects = EditorContext::Get().SelectedGameObjects;
-	
-	if (std::find(selectedObjects.begin(),
-		selectedObjects.end(),
-		gameObject) != selectedObjects.end())
+	bool selected = EditorContext::Get().IsSelectedObject(gameObject);
+	if (selected)
 	{
 		node_flags |= ImGuiTreeNodeFlags_Selected;
 	}
@@ -102,28 +99,17 @@ void WorldOutlineView::DrawGameObjectNode(GameObject* gameObject)
 
 void WorldOutlineView::OnGameObjectNodeClick(GameObject* gameObject, bool isLeaf)
 {
-	auto& selectedObjects = EditorContext::Get().SelectedGameObjects;
 	
 	if (ImGui::IsItemClicked())
 	{
 		if(!ImGui::GetIO().KeyCtrl)
 		{
-			selectedObjects.remove_if([gameObject](GameObject* obj)
-				{
-					return obj != gameObject;
-				});
+			EditorContext::Get().SelectObject(gameObject);
+		}else
+		{
+			EditorContext::Get().AddSelectObject(gameObject);
 		}
 		
-		if (std::find(selectedObjects.begin(),
-			selectedObjects.end(),
-			gameObject) != selectedObjects.end())
-		{
-			selectedObjects.remove(gameObject);
-		}
-		else
-		{
-			selectedObjects.push_back(gameObject);
-		}
 	}
 }
 

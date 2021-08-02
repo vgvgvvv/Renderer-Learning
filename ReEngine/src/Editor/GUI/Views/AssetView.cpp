@@ -8,6 +8,7 @@
 #include <filesystem>
 
 #include "CommonView.h"
+#include "EditorContext.h"
 
 namespace fs = std::filesystem;
 
@@ -37,8 +38,7 @@ void AssetView::OnGUI(float deltaTime)
 		}
 	}
 	DrawButtons();
-	DrawPanelRightClickMenu();
-	DrawCreateAssetsPopup();
+	DrawPanelEditorPopup();
 	DrawAssets(currentPath);
 }
 
@@ -95,17 +95,21 @@ void AssetView::DrawAssets(const std::string& path)
 		RE_LOG_WARN("Resources", "Cannot find directory : {0}", path.c_str());
 		return;
 	}
-	
+
 	for (const auto& entry : fs::directory_iterator(path))
 	{
 		if (entry.path().extension() == ".meta")
 		{
 			continue;
 		}
+
+		auto assetPath = fs::relative(entry.path(), path).string();
+		bool selected = EditorContext::Get().IsSelectedAsset(assetPath);
+		
 		if (entry.is_directory())
 		{
 			auto dirName = entry.path().filename().string();
-			ImGui::Selectable(("> " + dirName).c_str());
+			ImGui::Selectable(("> " + dirName).c_str(), selected);
 			if (ImGui::IsItemHovered() && ImGui::IsMouseDoubleClicked(0))
 			{
 				currentPath = entry.path().string();
@@ -114,13 +118,30 @@ void AssetView::DrawAssets(const std::string& path)
 		else
 		{
 			auto fileName = entry.path().filename().string();
-			ImGui::Selectable(("* " + fileName).c_str());
+			ImGui::Selectable(("* " + fileName).c_str(), selected);
 		}
+		DrawAssetsClicked(assetPath);
+
 	}
-	
+
 }
 
-void AssetView::DrawPanelRightClickMenu()
+void AssetView::DrawAssetsClicked(const std::string& path)
+{
+	
+	if (ImGui::IsItemClicked())
+	{
+		if (!ImGui::GetIO().KeyCtrl)
+		{
+			EditorContext::Get().SelectAsset(path);
+		}else
+		{
+			EditorContext::Get().AddSelectAsset(path);
+		}
+	}
+}
+
+void AssetView::DrawPanelEditorPopup()
 {
 	if (ImGui::BeginPopup(assetPanelPopupName.c_str()))
 	{
@@ -159,6 +180,3 @@ void AssetView::DrawPanelRightClickMenu()
 	}
 }
 
-void AssetView::DrawCreateAssetsPopup()
-{
-}
