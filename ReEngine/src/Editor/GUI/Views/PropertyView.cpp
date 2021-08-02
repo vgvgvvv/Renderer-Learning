@@ -107,28 +107,36 @@ void PropertyView::DrawSelectedAsset()
 	auto& selectedAssetPaths = EditorContext::Get().GetAllSelectAssets();
 	if (selectedAssetPaths.size() != 1)
 	{
+		SaveSelectedAsset();
 		return;
 	}
 	auto& showAsset = *selectedAssetPaths.begin();
 
-	if(fs::is_directory(showAsset))
-	{
-		return;
-	}
-	
 	if(lastAssetPath != showAsset)
 	{
-		auto asset = ResourcesManager::Get().Load(showAsset);
-		selectedAsset = asset.GetPtr<BaseObject>();
+		SaveSelectedAsset();
+		selectedAsset = &ResourcesManager::Get().Load(showAsset);
 		lastAssetPath = showAsset;
 	}
 
-	if (selectedAsset)
+	if(selectedAsset != nullptr && selectedAsset->Valid())
 	{
+		auto asset = selectedAsset->GetPtr<BaseObject>();
 		ImGuiTransfer transfer;
-		selectedAsset->TransferImGui(transfer);
+		asset->TransferImGui(transfer);
 	}
 	
+	
+}
+
+void PropertyView::SaveSelectedAsset()
+{
+	if (selectedAsset != nullptr && selectedAsset->Valid())
+	{
+		ResourcesManager::Get().Save(*selectedAsset);
+	}
+	selectedAsset = nullptr;
+	lastAssetPath = "";
 }
 
 

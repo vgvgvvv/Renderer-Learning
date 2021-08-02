@@ -19,8 +19,9 @@ class GlobalAssets_API ResourcesManager
 	DEFINE_SINGLETON(ResourcesManager);
 public:
 
-	AssetPtr Load(const std::string& fileName);
-
+	AssetPtr& Load(const std::string& fileName);
+	void Save(const AssetPtr& assetPtr);
+	
 	template<class T>
 	void SaveToFile(const std::string& filePath, std::shared_ptr<void> asset);
 

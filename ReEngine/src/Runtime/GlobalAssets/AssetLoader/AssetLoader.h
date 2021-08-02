@@ -20,6 +20,8 @@ namespace fs = std::filesystem;
 
 class GlobalAssets_API AssetPtr
 {
+	friend class ResourcesManager;
+
 public:
 
 	template<class T>
@@ -29,9 +31,10 @@ public:
 		ptr.filePath = filePath;
 		ptr.uuid = asset->Uuid();
 		ptr.assetPtr = std::static_pointer_cast<T>(asset);
+		ptr.type = T::StaticClass();
 		return ptr;
 	}
-	
+
 	const uuids::uuid& Uuid() const { return uuid; }
 	
 	template<class T>
@@ -56,10 +59,14 @@ public:
 	{
 		return assetPtr != nullptr;
 	}
+
+	const class Class* GetType() const { return type; }
+	
 private:
 	uuids::uuid uuid;
 	std::string filePath;
 	std::shared_ptr<void> assetPtr = nullptr;
+	const class Class* type;
 };
 
 class GlobalAssets_API AssetLoader

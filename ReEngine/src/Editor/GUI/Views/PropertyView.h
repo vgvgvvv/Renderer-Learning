@@ -2,10 +2,13 @@
 
 #include <memory>
 
+
+#include "AssetLoader/AssetLoader.h"
 #include "EditorGUI_API.h"
-#include "IView.h"
 #include "DefineView.h"
 #include "GameObject.h"
+#include "IView.h"
+
 
 const static int MAX_NAME_LENGTH = 50;
 
@@ -29,8 +32,9 @@ private:
 private:
 
 	void DrawSelectedAsset();
+	void SaveSelectedAsset();
 
 	std::string lastAssetPath;
-	std::shared_ptr<BaseObject> selectedAsset;
+	AssetPtr* selectedAsset = nullptr;
 
 };

@@ -3,6 +3,7 @@
 #include "Config/Config.h"
 #include "Logging/Log.h"
 #include "Misc/Path.h"
+#include "Class.h"
 
 
 /// <summary>
@@ -10,7 +11,7 @@
 /// </summary>
 /// <param name="fileName">相对文件路径</param>
 /// <returns></returns>
-AssetPtr ResourcesManager::Load(const std::string& fileName)
+AssetPtr& ResourcesManager::Load(const std::string& fileName)
 {
 	auto fullPath = Path::Combine(Path::GetResourcesPath(), fileName);
 
@@ -38,7 +39,13 @@ AssetPtr ResourcesManager::Load(const std::string& fileName)
 		resourcesMap.insert(std::pair<uuids::uuid, AssetPtr>(assetPtr.Uuid(), assetPtr));
 	}
 
-	return assetPtr;
+	return resourcesMap[assetPtr.Uuid()];
+}
+
+void ResourcesManager::Save(const AssetPtr& assetPtr)
+{
+	AssetLoader& assetLoader = AssetLoaderFactory::GetLoaderWithType(assetPtr.GetType()->Name());
+	assetLoader.Save(assetPtr.filePath, assetPtr.GetPtr<void>());
 }
 
 void ResourcesManager::CheckImport(const std::string& root)
@@ -116,11 +123,6 @@ bool ResourcesManager::CheckIfAssetNeedImport(const fs::directory_entry& entry)
 		return true;
 	}
 
-	if(entry.last_write_time() > metaFileEntry.last_write_time())
-	{
-		return true;
-	}
-	
 	return false;
 }
 
