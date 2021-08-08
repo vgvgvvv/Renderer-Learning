@@ -37,8 +37,8 @@ public:
 	void SetUniform3i(const std::string& name, uint32_t v0, uint32_t v1, uint32_t v2) override;
 	void SetUniform4i(const std::string& name, uint32_t v0, uint32_t v1, uint32_t v2, uint32_t v3) override;
 
-	void SetUniformMatrix3(const std::string& name, Matrix3x3& mat) override;
-	void SetUniformMatrix4(const std::string& name, Matrix4x4& mat) override;
+	void SetUniformMatrix3(const std::string& name, std::vector<float>& mat) override;
+	void SetUniformMatrix4(const std::string& name, std::vector<float>& mat) override;
 	
 	// todo more types...
 private:

@@ -113,22 +113,22 @@ void Shader::SetUniform4i(const std::string& name, uint32_t v0, uint32_t v1, uin
 	}
 }
 
-void Shader::SetUniformMatrix3(const std::string& name, Matrix3x3& mat)
+void Shader::SetUniformMatrix3(const std::string& name, std::vector<float>& mat)
 {
 	int32_t location = GetUniformLocation(name);
 	if (location != -1)
 	{
-		GLCall(glUniformMatrix3fv(location, 1, GL_FALSE, mat.ToArray()));
+		GLCall(glUniformMatrix3fv(location, 1, GL_FALSE, mat.data()));
 	}
 }
 
 
-void Shader::SetUniformMatrix4(const std::string& name, Matrix4x4& mat)
+void Shader::SetUniformMatrix4(const std::string& name, std::vector<float>& mat)
 {
 	int32_t location = GetUniformLocation(name);
 	if (location != -1)
 	{
-		GLCall(glUniformMatrix4fv(location, 1, GL_FALSE, mat.ToArray()));
+		GLCall(glUniformMatrix4fv(location, 1, GL_FALSE, mat.data()));
 	}
 }
 

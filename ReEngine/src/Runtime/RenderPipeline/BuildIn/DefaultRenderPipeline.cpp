@@ -18,7 +18,7 @@ void DefaultRenderPipeline::RenderSingleCamera(RenderContext& context, Camera* c
 	
 	DrawingSetting drawSetting;
 	FilterSetting filterSetting;
-	context.DrawRenderers(drawSetting, filterSetting);
+	context.DrawRenderers(camera, drawSetting, filterSetting);
 
 	context.ResetState();
 }

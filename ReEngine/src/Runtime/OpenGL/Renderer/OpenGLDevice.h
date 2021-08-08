@@ -10,7 +10,7 @@
 
 
 #if _DEBUG
-#define GLCall(x) GLClearError();\
+#define GLCall(x) \
 	x;\
 	RE_ASSERT(GLLogCall(#x, __FILE__, __LINE__))
 #else
@@ -36,8 +36,8 @@ public:
 
 	void Clear(const Color& color) const override;
 	void InitGlobalUniform(IShader& shader) const override;
-	void Draw(const IVertexArrayObject& vao, const IIndexBuffer& ib, const IShader& shader) const override;
-	void DrawArray(const IVertexArrayObject& vao, const IShader& shader, int count) const override;
+	void Draw(const IVertexArrayObject& vao, const IIndexBuffer& ib, IShader& shader) const override;
+	void DrawArray(const IVertexArrayObject& vao, IShader& shader, int count) const override;
 	void SetAlpha(uint32_t from, uint32_t to) override;
 	void SetViewPort(float x, float y, float width, float height) override;
 	void DrawLine(const Vector2& start, const Vector2& end) override;

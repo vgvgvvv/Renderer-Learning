@@ -9,11 +9,19 @@ uniform mat4 ReEngine_ModelMat;
 uniform mat4 ReEngine_ViewMat;
 uniform mat4 ReEngine_ProjMat;
 
+
+mat4 m = mat4(
+   1, 0.0, 0.0, 0.0, // first column (not row!)
+   0.0, 1, 0.0, 0.0, // second column
+   0.0, 0.0, 1, -3,  // third column
+   0.0, 0.0, 0, 1.0
+);
+
 out vec4 vertexColor;
 
 void main(){
 
-    gl_Position = ReEngine_ModelMat * ReEngine_ViewMat * ReEngine_ProjMat * vec4(aPos.x, aPos.y, aPos.z, 1.0f);
+    gl_Position = ReEngine_ProjMat * ReEngine_ViewMat * ReEngine_ModelMat * vec4(aPos.x, aPos.y, aPos.z, 1.0f);
     vertexColor = vec4(color, 1.0f);
 }
 

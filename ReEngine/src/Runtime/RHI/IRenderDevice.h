@@ -24,8 +24,8 @@ class RHI_API IRenderDevice
 public:
 	virtual void Clear(const Color& color) const = 0;
 	virtual void InitGlobalUniform(IShader& shader) const = 0;
-	virtual void Draw(const IVertexArrayObject& vao, const IIndexBuffer& ib, const IShader& shader) const = 0;
-	virtual void DrawArray(const IVertexArrayObject& vao, const IShader& shader, int count) const = 0;
+	virtual void Draw(const IVertexArrayObject& vao, const IIndexBuffer& ib, IShader& shader) const = 0;
+	virtual void DrawArray(const IVertexArrayObject& vao, IShader& shader, int count) const = 0;
 	virtual void SetAlpha(uint32_t from, uint32_t to) = 0;
 	virtual void SetViewPort(float x, float y, float width, float height) = 0;
 	virtual void DrawLine(const Vector2& start, const Vector2& end) = 0;
@@ -43,7 +43,7 @@ public:
 	virtual std::shared_ptr<IShader> CreateShader(const std::string& fileName) const = 0;
 	virtual std::shared_ptr<IShader> CreateShader(const std::string& vertFileName, const std::string& fragFileName) const = 0;
 
-public:
+protected:
 
 	std::map<std::string, float> GlobalUniform1F;
 	std::map<std::string, std::tuple<float, float>> GlobalUniform2F;
@@ -55,6 +55,21 @@ public:
 	std::map<std::string, std::tuple<int, int, int>> GlobalUniform3I;
 	std::map<std::string, std::tuple<int, int, int, int>> GlobalUniform4I;
 
-	std::map<std::string, Matrix3x3> GlobalMatrix3;
-	std::map<std::string, Matrix4x4> GlobalMatrix4;
+	std::map<std::string, std::vector<float>> GlobalMatrix3;
+	std::map<std::string, std::vector<float>> GlobalMatrix4;
+
+public:
+
+	void AddGlobalUniform1F(const std::string& name, float v1);
+	void AddGlobalUniform2F(const std::string& name, float v1, float v2);
+	void AddGlobalUniform3F(const std::string& name, float v1, float v2, float v3);
+	void AddGlobalUniform4F(const std::string& name, float v1, float v2, float v3, float v4);
+
+	void AddGlobalUniform1I(const std::string& name, int v1);
+	void AddGlobalUniform2I(const std::string& name, int v1, int v2);
+	void AddGlobalUniform3I(const std::string& name, int v1, int v2, int v3);
+	void AddGlobalUniform4I(const std::string& name, int v1, int v2, int v3, int v4);
+
+	void AddGlobalUniformMatrix3(const std::string& name, const Matrix3x3& v);
+	void AddGlobalUniformMatrix4(const std::string& name, const Matrix4x4& v);
 };

@@ -35,8 +35,8 @@ void RenderContext::SetupCameraProperties(const Camera& camera)
 		device->SetViewPort(rect.x, rect.y, rect.width, rect.height);
 	}
 	
-	device->GlobalMatrix4.insert(std::pair<std::string, Matrix4x4>("ReEngine_ViewMat", camera.GetViewMatrix()));
-	device->GlobalMatrix4.insert(std::pair<std::string, Matrix4x4>("ReEngine_ProjMat", camera.GetPerspectiveProjectionMatrix()));
+	device->AddGlobalUniformMatrix4("ReEngine_ViewMat", camera.GetViewMatrix());
+	device->AddGlobalUniformMatrix4("ReEngine_ProjMat", camera.GetPerspectiveProjectionMatrix());
 }
 
 void RenderContext::DrawSkyBox(const Camera& camera)
@@ -44,17 +44,17 @@ void RenderContext::DrawSkyBox(const Camera& camera)
 	// TODO
 }
 
-void RenderContext::DrawRenderers(const DrawingSetting& drawingSetting, const FilterSetting& filterSetting)
+void RenderContext::DrawRenderers(Camera* camera, const DrawingSetting& drawingSetting, const FilterSetting& filterSetting)
 {
 	auto& renderers = RendererManager::Get().GetRenderers();
 
 	for (auto renderer : renderers)
 	{
-		DrawSingleRenderer(renderer, drawingSetting, filterSetting);
+		DrawSingleRenderer(camera, renderer, drawingSetting, filterSetting);
 	}
 }
 
-void RenderContext::TestDraw()
+void RenderContext::TestDraw(const Camera& camera)
 {
 	auto vao = device->CreateVertexArrayObject();
 
@@ -65,23 +65,17 @@ void RenderContext::TestDraw()
 		 -0.5f,  0.5f, 0.0f  // top left  
 	};
 
-	float colorsArray[12] = {
-		1.0f, 0.0f, 0.0f, // left  
-		 1.0f, 0.0f, 0.0f, // right 
-		 1.0f,  0.0f, 0.0f,  // top
-		 1.0f,  0.0f, 0.0f
-	};
+	std::vector<float> vertexVec(vertexesArray, vertexesArray+12);
 
-	auto vertexBuffer = device->CreateVertexBuffer(vertexesArray, sizeof(vertexesArray));
-	auto colorBuffer = device->CreateVertexBuffer(colorsArray, sizeof(colorsArray));
+	auto vertexData = vertexVec.data();
+	auto vertexSize = sizeof(float) * vertexVec.size();
+	
+	auto vertexBuffer = device->CreateVertexBuffer(vertexData, vertexSize);
 	
 	auto vertexLayout = device->CreateVertexBufferLayout();
 	vertexLayout->PushVector3();
 	vao->AddBuffer(*vertexBuffer, *vertexLayout);
 
-	auto colorLayout = device->CreateVertexBufferLayout();
-	colorLayout->PushColor();
-	vao->AddBuffer(*colorBuffer, *colorLayout);
 
 	uint32_t indice[6]
 	{
@@ -89,9 +83,14 @@ void RenderContext::TestDraw()
 		0, 2, 3,
 	};
 
-	auto ib = device->CreateIndexBuffer(indice, 6);
+	std::vector<uint32_t> indiceVec(indice, indice + 6);
 
-	auto shader = device->CreateShader("Default/Unlit.vert.glsl", "Default/Unlit.frag.glsl");
+	auto indiceData = indiceVec.data();
+	auto indiceSize = indiceVec.size();
+
+	auto ib = device->CreateIndexBuffer(indiceData, indiceSize);
+
+	auto shader = device->CreateShader("Default/TestDraw.vert.glsl", "Default/TestDraw.frag.glsl");
 
 
 	device->Draw(*vao, *ib, *shader);
@@ -103,7 +102,7 @@ void RenderContext::ResetState()
 	device->ClearFrameBuffer();
 }
 
-void RenderContext::DrawSingleRenderer(BaseRenderer* renderer, const DrawingSetting& drawingSetting,
+void RenderContext::DrawSingleRenderer(Camera* camera, BaseRenderer* renderer, const DrawingSetting& drawingSetting,
                                        const FilterSetting& filterSetting)
 {
 	auto& transform = renderer->GetOwner().GetTransform();
@@ -111,7 +110,9 @@ void RenderContext::DrawSingleRenderer(BaseRenderer* renderer, const DrawingSett
 	auto ModelMat = Matrix4x4::Translate(transform.get_position())
 		* Matrix4x4::Scale(transform.get_scale())
 		* Matrix4x4::Rotate(transform.get_rotation());
-	device->GlobalMatrix4.insert(std::pair<std::string, Matrix4x4>("ReEngine_ModelMat", ModelMat));
+	device->AddGlobalUniformMatrix4("ReEngine_ModelMat", ModelMat);
+
+	auto finalMat = camera->GetPerspectiveProjectionMatrix()* camera->GetViewMatrix()* ModelMat;
 
 	auto mesh = renderer->GatherMesh();
 	if(mesh == nullptr)
@@ -119,19 +120,36 @@ void RenderContext::DrawSingleRenderer(BaseRenderer* renderer, const DrawingSett
 		return;
 	}
 
+	std::vector<float> positionsVertexBuffer;
+	for (auto& vertex : mesh->vertexes)
+	{
+		positionsVertexBuffer.push_back(vertex.position.x * 0.5f);
+		positionsVertexBuffer.push_back(vertex.position.y * 0.5f);
+		positionsVertexBuffer.push_back(vertex.position.z * 0.5f);
+	}
+
 	auto vao = device->CreateVertexArrayObject();
 
-	auto vertexBuffer = device->CreateVertexBuffer(
-		mesh->vertexes.data(), mesh->vertexes.size() * sizeof(MeshVertex));
-
+	auto vectexBufferData = positionsVertexBuffer.data();
+	auto vertexBufferDataSize = positionsVertexBuffer.size() * sizeof(float);
+	auto vertexBuffer = device->CreateVertexBuffer(vectexBufferData, vertexBufferDataSize);
 	auto vertexLayout = device->CreateVertexBufferLayout();
 	vertexLayout->PushVector3();
-	vertexLayout->PushColor();
-	vertexLayout->PushVector3();
-	vertexLayout->PushVector2();
 	vao->AddBuffer(*vertexBuffer, *vertexLayout);
+	
+	// auto vertexBuffer = device->CreateVertexBuffer(
+	// 	mesh->vertexes.data(), mesh->vertexes.size() * sizeof(MeshVertex));
+	//
+	// auto vertexLayout = device->CreateVertexBufferLayout();
+	// vertexLayout->PushVector3();
+	// vertexLayout->PushColor();
+	// vertexLayout->PushVector3();
+	// vertexLayout->PushVector2();
+	// vao->AddBuffer(*vertexBuffer, *vertexLayout);
 
-	auto ib = device->CreateIndexBuffer(mesh->Indices.data(), mesh->Indices.size());
+	auto indicesData = mesh->Indices.data();
+	auto indicesSize = mesh->Indices.size();
+	auto ib = device->CreateIndexBuffer(indicesData, indicesSize);
 
 	auto material = renderer->GetMaterial(0);
 	if(material == nullptr)
@@ -140,8 +158,7 @@ void RenderContext::DrawSingleRenderer(BaseRenderer* renderer, const DrawingSett
 	}
 	
 	auto shader = material->GetShader();
-	
-	
+
 	device->Draw(*vao, *ib, *shader);
 }
 

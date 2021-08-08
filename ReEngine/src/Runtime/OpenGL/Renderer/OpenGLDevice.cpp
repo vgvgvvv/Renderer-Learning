@@ -11,7 +11,8 @@
 
 void GLClearError()
 {
-	while (glGetError() != GL_NO_ERROR);
+	GLenum error = glGetError();
+	while (error != GL_NO_ERROR);
 }
 
 bool GLLogCall(const char* function, const char* file, int line)
@@ -24,19 +25,24 @@ bool GLLogCall(const char* function, const char* file, int line)
 	return true;
 }
 
-void OpenGLDevice::Draw(const IVertexArrayObject& vao, const IIndexBuffer& ib, const IShader& shader) const
+void OpenGLDevice::Draw(const IVertexArrayObject& vao, const IIndexBuffer& ib, IShader& shader) const
 {
 	shader.Bind();
 	vao.Bind();
 	ib.Bind();
 
+	InitGlobalUniform(shader);
+
 	GLCall(glDrawElements(GL_TRIANGLES, ib.GetCount(), GL_UNSIGNED_INT, nullptr));
 }
 
-void OpenGLDevice::DrawArray(const IVertexArrayObject& vao, const IShader& shader, int count) const
+void OpenGLDevice::DrawArray(const IVertexArrayObject& vao, IShader& shader, int count) const
 {
 	vao.Bind();
 	shader.Bind();
+
+	InitGlobalUniform(shader);
+	
 	GLCall(glDrawArrays(GL_TRIANGLES, 0, count));
 }
 
@@ -185,13 +191,13 @@ void OpenGLDevice::InitGlobalUniform(IShader& shader) const
 	}
 
 	//
-	for (std::pair<std::string, Matrix3x3> pair : GlobalMatrix3)
+	for (std::pair<std::string, std::vector<float>> pair : GlobalMatrix3)
 	{
 		shader.SetUniformMatrix3(pair.first, pair.second);
 	}
 
 	//
-	for (std::pair<std::string, Matrix4x4> pair : GlobalMatrix4)
+	for (std::pair<std::string, std::vector<float>> pair : GlobalMatrix4)
 	{
 		shader.SetUniformMatrix4(pair.first, pair.second);
 	}

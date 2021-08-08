@@ -33,9 +33,9 @@ public:
 
 	void DrawSkyBox(const Camera& camera);
 
-	void DrawRenderers(const DrawingSetting& drawingSetting, const FilterSetting& filterSetting);
+	void DrawRenderers(Camera* camera, const DrawingSetting& drawingSetting, const FilterSetting& filterSetting);
 
-	void TestDraw();
+	void TestDraw(const Camera& camera);
 
 	IRenderDevice& GetDevice() const { return *device; }
 	void SetDevice(const std::shared_ptr<IRenderDevice>& device) { this->device = device; }
@@ -44,7 +44,7 @@ public:
 	
 private:
 
-	void DrawSingleRenderer(BaseRenderer* renderer, const DrawingSetting& drawingSetting, const FilterSetting& filterSetting);
+	void DrawSingleRenderer(Camera* camera, BaseRenderer* renderer, const DrawingSetting& drawingSetting, const FilterSetting& filterSetting);
 
 private:
 	std::shared_ptr<IRenderDevice> device;
