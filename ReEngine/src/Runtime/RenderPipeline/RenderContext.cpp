@@ -110,9 +110,8 @@ void RenderContext::DrawSingleRenderer(Camera* camera, BaseRenderer* renderer, c
 	auto ModelMat = Matrix4x4::Translate(transform.get_position())
 		* Matrix4x4::Scale(transform.get_scale())
 		* Matrix4x4::Rotate(transform.get_rotation());
-	device->AddGlobalUniformMatrix4("ReEngine_ModelMat", ModelMat);
 
-	auto finalMat = camera->GetPerspectiveProjectionMatrix()* camera->GetViewMatrix()* ModelMat;
+	device->AddGlobalUniformMatrix4("ReEngine_ModelMat", ModelMat);
 
 	auto mesh = renderer->GatherMesh();
 	if(mesh == nullptr)
@@ -120,35 +119,18 @@ void RenderContext::DrawSingleRenderer(Camera* camera, BaseRenderer* renderer, c
 		return;
 	}
 
-	std::vector<float> positionsVertexBuffer;
-	for (auto& vertex : mesh->vertexes)
-	{
-		positionsVertexBuffer.push_back(vertex.position.x * 0.5f);
-		positionsVertexBuffer.push_back(vertex.position.y * 0.5f);
-		positionsVertexBuffer.push_back(vertex.position.z * 0.5f);
-	}
-
 	auto vao = device->CreateVertexArrayObject();
-
-	auto vectexBufferData = positionsVertexBuffer.data();
-	auto vertexBufferDataSize = positionsVertexBuffer.size() * sizeof(float);
-	auto vertexBuffer = device->CreateVertexBuffer(vectexBufferData, vertexBufferDataSize);
+	
+	auto vertexBuffer = device->CreateVertexBuffer(
+		mesh->vertexes.data(), mesh->vertexes.size() * sizeof(Vector3));
 	auto vertexLayout = device->CreateVertexBufferLayout();
 	vertexLayout->PushVector3();
 	vao->AddBuffer(*vertexBuffer, *vertexLayout);
 	
-	// auto vertexBuffer = device->CreateVertexBuffer(
-	// 	mesh->vertexes.data(), mesh->vertexes.size() * sizeof(MeshVertex));
-	//
-	// auto vertexLayout = device->CreateVertexBufferLayout();
-	// vertexLayout->PushVector3();
-	// vertexLayout->PushColor();
-	// vertexLayout->PushVector3();
-	// vertexLayout->PushVector2();
-	// vao->AddBuffer(*vertexBuffer, *vertexLayout);
 
-	auto indicesData = mesh->Indices.data();
-	auto indicesSize = mesh->Indices.size();
+
+	auto indicesData = mesh->indices.data();
+	auto indicesSize = mesh->indices.size();
 	auto ib = device->CreateIndexBuffer(indicesData, indicesSize);
 
 	auto material = renderer->GetMaterial(0);

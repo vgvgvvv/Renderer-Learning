@@ -43,8 +43,8 @@ void MeshGroup::ProcessNode(aiNode* node, const aiScene* scene)
 
 std::shared_ptr<Mesh> MeshGroup::ProcessMesh(aiMesh* mesh, const aiScene* scene)
 {
-	std::vector<uint32_t> Indices;
-	std::vector<MeshVertex> vertexes;
+	auto meshResult = std::make_shared<Mesh>();
+	
 
 	Vector3 finalPosition;
 	Color finalColor = Color::gray;
@@ -55,26 +55,26 @@ std::shared_ptr<Mesh> MeshGroup::ProcessMesh(aiMesh* mesh, const aiScene* scene)
 	{
 		auto& position = mesh->mVertices[i];
 		finalPosition = Vector3(position.x, position.y, position.z);
+		meshResult->vertexes.push_back(finalPosition);
 		
 		auto color = mesh->mColors[0];
 		if(color != nullptr)
+		{
 			finalColor = Color(color->r, color->g, color->b, color->a);
+			meshResult->colors.push_back(finalColor);
+		}
 		
 		auto& normal = mesh->mNormals[i];
 		finalNormal = Vector3(normal.x, normal.y, normal.z);
+		meshResult->normals.push_back(finalNormal);
 		
 		auto uv0 = mesh->mTextureCoords[0];
 		if(uv0 != nullptr)
+		{
 			finalUV0 = Vector2(uv0->x, uv0->y);
+			meshResult->uv0.push_back(finalUV0);
+		}
 	
-		MeshVertex vertex{
-			finalPosition,
-			finalColor,
-			finalNormal,
-			finalUV0
-		};
-	
-		vertexes.emplace_back(vertex);
 	}
 	
 	for (int i = 0; i < mesh->mNumFaces; i++)
@@ -82,11 +82,11 @@ std::shared_ptr<Mesh> MeshGroup::ProcessMesh(aiMesh* mesh, const aiScene* scene)
 		auto& face = mesh->mFaces[i];
 		for (int i2 = 0; i2 < face.mNumIndices; i2++)
 		{
-			Indices.push_back(face.mIndices[i2]);
+			meshResult->indices.push_back(face.mIndices[i2]);
 		}
 	}
 
-	return std::make_shared<Mesh>(Indices, vertexes);
+	return meshResult;
 }
 
 

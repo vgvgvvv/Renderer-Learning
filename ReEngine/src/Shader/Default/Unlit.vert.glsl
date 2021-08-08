@@ -11,10 +11,10 @@ uniform mat4 ReEngine_ProjMat;
 
 
 mat4 m = mat4(
-   1, 0.0, 0.0, 0.0, // first column (not row!)
-   0.0, 1, 0.0, 0.0, // second column
-   0.0, 0.0, 1, -3,  // third column
-   0.0, 0.0, 0, 1.0
+   1, 0.0, 0.0, 0.0, 
+   0.0, 1, 0.0, 0.0, 
+   0.0, 0.0, 1, 0.0,  
+   0.0, 0.0, -3, 1.0
 );
 
 out vec4 vertexColor;

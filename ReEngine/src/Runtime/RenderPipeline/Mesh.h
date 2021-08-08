@@ -14,18 +14,13 @@
 
 static const int MaxUVNum = 4;
 
-struct MeshVertex
-{
-	Vector3 position;
-	Color color;
-	Vector3 normal;
-	Vector2 uv0;
-};
-
 struct Mesh
 {
-	std::vector<uint32_t> Indices;
-	std::vector<MeshVertex> vertexes;
+	std::vector<uint32_t> indices;
+	std::vector<Vector3> vertexes;
+	std::vector<Color> colors;
+	std::vector<Vector3> normals;
+	std::vector<Vector2> uv0;
 };
 
 struct RenderPipeline_API MeshGroup : public BaseObject
