@@ -1,20 +1,25 @@
 #include "WindowLayer.h"
 
-#include "Common.h"
-#include "Config/Config.h"
-#include "GlfwInput.h"
+
+#include "ClassContext.h"
 #include "InputSystem.h"
 #include "Misc/GlobalContext.h"
+#include "GenericWindow.h"
 
 void WindowLayer::OnInit()
 {
-	auto& WindowClassName = GlobalContext::Get().GetStringValue("WindowClassName", "GlfwWindow");
+	auto WindowClassName = GlobalContext::Get().GetStringValue("WindowClassName", "GlfwWindow");
 	window = ClassContext::Get().CreateT<IGenericWindow>(WindowClassName);
 
 	if(window)
 	{
 		window->Init();
 	}
+}
+
+void WindowLayer::OnPreUpdate(float deltaTime)
+{
+	InputSystem::Get().Update(deltaTime);
 }
 
 

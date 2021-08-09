@@ -4,12 +4,12 @@ void GlobalContext::InitSingleton()
 {
 }
 
-void GlobalContext::SetStringValue(const std::string& name, const std::string& value)
+void GlobalContext::SetStringValue(const std::string& name, std::string value)
 {
 	stringMap.insert_or_assign(name, value);
 }
 
-const std::string& GlobalContext::GetStringValue(const std::string& name, const std::string& defaultValue)
+std::string GlobalContext::GetStringValue(const std::string& name, std::string defaultValue)
 {
 	if(stringMap.contains(name))
 	{

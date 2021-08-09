@@ -15,9 +15,9 @@ void RenderLayer::OnInit()
 		pipeline = std::make_shared<DefaultRenderPipeline>();
 	}
 
-	auto& RenderDeviceName = GlobalContext::Get().GetStringValue("RenderDeviceClassName", "OpenGLDevice");
-	RenderContext::Get().SetDevice(
-		ClassContext::Get().CreateT<IRenderDevice>(RenderDeviceName));
+	auto RenderDeviceName = GlobalContext::Get().GetStringValue("RenderDeviceClassName", "OpenGLDevice");
+	auto device = ClassContext::Get().CreateT<IRenderDevice>(RenderDeviceName);
+	RenderContext::Get().SetDevice(device);
 }
 
 void RenderLayer::OnBeforeRender(float deltaTime)

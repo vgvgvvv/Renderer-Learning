@@ -8,8 +8,8 @@
 #include "D3DApp.h"
 #include "Misc/GlobalContext.h"
 
-StaticGlobalContextValue WindowClassName("WindowClassName", "Win32Window");
-StaticGlobalContextValue RendererClassName("RenderDeviceClassName", "D3DDevice");
+static StaticGlobalContextValue WindowClassName("WindowClassName", "Win32Window");
+static StaticGlobalContextValue RendererClassName("RenderDeviceClassName", "D3DDevice");
 
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
