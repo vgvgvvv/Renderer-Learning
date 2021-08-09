@@ -12,7 +12,7 @@ set(targetName TestD3D11)
 ReMake_AddTarget(
         TARGET_NAME ${targetName}
         MODE EXE
-        LIB ${d3d_libs}
+        LIB ${d3d_libs} Core 3d-math GlobalAssets CommonLib
 )
 
 set_target_properties(${targetName} PROPERTIES WIN32_EXECUTABLE TRUE)
