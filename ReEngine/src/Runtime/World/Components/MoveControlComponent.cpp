@@ -10,6 +10,7 @@ void MoveControlComponent::Update(float deltaTime)
 {
 	auto& transform = GetOwner().GetTransform();
 
+
 	if(InputSystem::Get().Keyboard().GetKeyPress(KeyBoardType::KEY_W))
 	{
 		auto newPos = transform.get_position() + transform.Forward() * speed * deltaTime;
@@ -41,5 +42,5 @@ void MoveControlComponent::Update(float deltaTime)
 		transform.set_position(newPos);
 	}
 
-	RE_LOG_INFO("MoveControl", "Current Position is x:{0} y:{1} z:{2}", transform.get_position().x, transform.get_position().y, transform.get_position().z);
+	RE_LOG_INFO("MoveControl", "Current Forward is x:{0} y:{1} z:{2}", transform.Forward().x, transform.Forward().y, transform.Forward().z);
 }

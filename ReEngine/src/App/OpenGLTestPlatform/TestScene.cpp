@@ -18,17 +18,28 @@ void TestScene::OnInit()
 	camera->GetTransform().set_position(Vector3(0, 0, 0));
 	camera->AddComponent<MoveControlComponent>();
 
-	auto cube = World::Get().CreateGameObject("Cube");
-	auto renderer = cube->AddComponent<MeshRenderer>();
-	cube->GetTransform().set_position(Vector3(0, 0, -3));
-	
 	auto cubeAsset = ResourcesManager::Get().Load("models/cube.fbx").GetPtr<MeshGroup>();
-	renderer->SetMesh(cubeAsset->meshes[0]);
-
 	auto materialAsset = ResourcesManager::Get().Load("materials/DefaultMat.mat").GetPtr<Material>();
-	renderer->AddMaterial(materialAsset);
-
+	
+	auto cube = World::Get().CreateGameObject("Cube");
 	cube->AddComponent<RotationComponent>();
+	auto renderer = cube->AddComponent<MeshRenderer>();
+	renderer->SetMesh(cubeAsset->meshes[0]);
+	renderer->AddMaterial(materialAsset);
+	cube->GetTransform().set_position(Vector3(1, 0, -3));
+	cube->GetTransform().set_scale(Vector3(1, 1, 1));
+
+	auto cube2 = World::Get().CreateGameObject("Cube2");
+	cube2->AddComponent<RotationComponent>();
+	auto renderer2 = cube2->AddComponent<MeshRenderer>();
+	renderer2->SetMesh(cubeAsset->meshes[0]);
+	renderer2->AddMaterial(materialAsset);
+	cube2->GetTransform().set_position(Vector3(-1, 0, -3));
+	cube2->GetTransform().set_scale(Vector3(0.5, 0.5, 0.5));
+	
+	
+
+	
 	
 }
 
