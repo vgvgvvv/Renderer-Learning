@@ -1,7 +1,0 @@
-/Binary/
-/Temp/
-*.pdb
-/cmake-build-debug/
-/.vs/
-/_ReSharper.Caches/
-/out/
