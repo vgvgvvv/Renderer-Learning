@@ -34,6 +34,10 @@ public:
 	bool GetKeyDown(KeyBoardType type) const;
 	bool GetKeyUp(KeyBoardType type) const;
 	bool GetKeyPress(KeyBoardType type) const;
+
+	bool WithControl() const;
+	bool WithShift() const;
+	bool WithAlt() const;
 	
 private:
 	std::shared_ptr<IInput> device;

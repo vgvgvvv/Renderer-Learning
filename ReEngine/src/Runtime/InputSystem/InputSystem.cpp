@@ -119,6 +119,28 @@ bool KeyboardInfo::GetKeyPress(KeyBoardType type) const
 	return false;
 }
 
+
+bool KeyboardInfo::WithControl() const
+{
+	const ButtonState& leftState = device->GetKeyState(KeyBoardType::KEY_LEFT_CONTROL);
+	const ButtonState& rightState = device->GetKeyState(KeyBoardType::KEY_RIGHT_CONTROL);
+	return leftState.isDown || rightState.isDown;
+}
+
+bool KeyboardInfo::WithShift() const
+{
+	const ButtonState& leftState = device->GetKeyState(KeyBoardType::KEY_LEFT_SHIFT);
+	const ButtonState& rightState = device->GetKeyState(KeyBoardType::KEY_RIGHT_SHIFT);
+	return leftState.isDown || rightState.isDown;
+}
+
+bool KeyboardInfo::WithAlt() const
+{
+	const ButtonState& leftState = device->GetKeyState(KeyBoardType::KEY_LEFT_ALT);
+	const ButtonState& rightState = device->GetKeyState(KeyBoardType::KEY_RIGHT_ALT);
+	return leftState.isDown || rightState.isDown;
+}
+
 void InputSystem::Update(float deltaTime)
 {
 	if(device != nullptr)
