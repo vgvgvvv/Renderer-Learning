@@ -31,3 +31,13 @@ void WindowLayer::OnShutDown()
 		window->Shutdown();
 	}
 }
+
+
+bool WindowLayer::ShouldQuit()
+{
+	if(window)
+	{
+		return window->ShouldQuit();
+	}
+	return false;
+}

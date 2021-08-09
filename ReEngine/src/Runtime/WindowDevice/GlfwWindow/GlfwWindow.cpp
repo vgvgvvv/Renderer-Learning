@@ -40,3 +40,12 @@ void GlfwWindow::Shutdown()
 {
 	GlfwContext::Get().ShutDown();
 }
+
+bool GlfwWindow::ShouldQuit()
+{
+	if (GlfwContext::Get().ShouldQuit())
+	{
+		return true;
+	}
+	return false;
+}

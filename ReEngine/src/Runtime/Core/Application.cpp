@@ -22,11 +22,10 @@ Application::Application()
 
 bool Application::ShouldQuit()
 {
-	if(GlfwContext::Get().ShouldQuit())
+	if(LayerManager.ShouldQuit())
 	{
 		return true;
 	}
-
 	return false;
 }
 

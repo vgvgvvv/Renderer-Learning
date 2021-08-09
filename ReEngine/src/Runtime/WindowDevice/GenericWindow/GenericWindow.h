@@ -10,5 +10,6 @@ public:
 	virtual void Init() = 0;
 	virtual void Swap() = 0;
 	virtual void Shutdown() = 0;
+	virtual bool ShouldQuit() = 0;
 };
 

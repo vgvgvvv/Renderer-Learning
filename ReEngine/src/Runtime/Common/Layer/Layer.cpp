@@ -93,6 +93,23 @@ void LayerManager::AfterRender(float deltaTime)
 	}
 }
 
+
+bool LayerManager::ShouldQuit()
+{
+	for (auto& layer : Layers)
+	{
+		if (!layer)
+		{
+			continue;
+		}
+		if(layer->ShouldQuit())
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
 void LayerManager::ShutDown()
 {
 	for (int i = Layers.size() - 1; i >= 0; i--)

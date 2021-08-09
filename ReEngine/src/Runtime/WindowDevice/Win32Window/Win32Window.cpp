@@ -13,3 +13,8 @@ void Win32Window::Swap()
 void Win32Window::Shutdown()
 {
 }
+
+bool Win32Window::ShouldQuit()
+{
+	return false;
+}

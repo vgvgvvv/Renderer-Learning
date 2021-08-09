@@ -16,6 +16,7 @@ public:
 	virtual void OnGUI(float deltaTime) {}
 	virtual void OnRender(float deltaTime){};
 	virtual void OnAfterRender(float deltaTime){};
+	virtual bool ShouldQuit() { return false; }
 	virtual void OnShutDown() = 0;
 };
 
@@ -32,6 +33,8 @@ public:
 	void OnGUI(float deltaTime);
 	void Render(float deltaTime);
 	void AfterRender(float deltaTime);
+
+	bool ShouldQuit();
 	
 	void ShutDown();
 

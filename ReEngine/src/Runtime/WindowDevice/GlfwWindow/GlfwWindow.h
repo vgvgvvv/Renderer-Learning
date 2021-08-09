@@ -9,4 +9,5 @@ public:
 	void Init() override;
 	void Swap() override;
 	void Shutdown() override;
+	bool ShouldQuit() override;
 };
