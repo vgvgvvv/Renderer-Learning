@@ -1,5 +1,6 @@
 #pragma once
 #include "Behavior.h"
+#include "Vector2.h"
 #include "World_API.h"
 
 class World_API MoveControlComponent : public Behavior
@@ -11,11 +12,14 @@ public:
 
 	void Update(float deltaTime) override;
 
-	DEFINE_GETTER_SETTER(float, speed);
+	DEFINE_GETTER_SETTER(float, moveSpeed);
 	
 private:
 
-	float speed = 10;
+	float moveSpeed = 10;
+	float rotateSpeed = 10;
+	Vector2 mouseLastPressPos = Vector2::zeroVector;
+	bool isPressLastFrame = false;
 };
 
 template <class TransferFunction>
