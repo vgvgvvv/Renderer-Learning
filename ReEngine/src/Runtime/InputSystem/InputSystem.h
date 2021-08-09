@@ -33,6 +33,7 @@ class InputSystem_API MouseInfo
 {
 	friend InputSystem;
 public:
+	MouseInfo() : mouseScroll(0.0f), mousePosition(Vector2(0,0)) {}
 	Vector2 GetMousePosition() const;
 	float GetMouseScroll() const;
 	

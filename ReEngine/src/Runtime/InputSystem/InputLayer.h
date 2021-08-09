@@ -1,7 +1,8 @@
 #pragma once
 #include "Layer/Layer.h"
+#include "InputSystem_API.h"
 
-class InputLayer : public Layer
+class InputSystem_API InputLayer : public Layer
 {
 public:
 	void OnInit() override;
