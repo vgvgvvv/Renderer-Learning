@@ -8,7 +8,8 @@ set(linkLibs
 	EditorGUI
 	ImGUILib
 	World
-	GlobalAssets)
+	GlobalAssets
+	InputSystem)
 
 set(targetName Core)
 ReMake_AddTarget(
