@@ -1,4 +1,5 @@
 #pragma once
+#include "OpenGL.h"
 #include "GenericWindow.h"
 #include "GlfwWindow_API.h"
 

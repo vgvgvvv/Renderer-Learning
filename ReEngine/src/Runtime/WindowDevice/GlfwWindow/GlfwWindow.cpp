@@ -1,7 +1,5 @@
 #include "GlfwWindow.h"
 
-
-
 #include "CommonAssert.h"
 #include "Config/Config.h"
 #include "GlewContext.h"

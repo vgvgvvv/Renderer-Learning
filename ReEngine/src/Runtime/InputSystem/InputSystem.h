@@ -23,29 +23,22 @@ enum class MouseButtonType
 	Max = Right
 };
 
-class ButtonState
-{
-	bool isDown;
-	bool isDownPrevious;
-};
+
 
 class InputSystem_API MouseInfo
 {
 	friend InputSystem;
 public:
-	MouseInfo() : mouseScroll(0.0f), mousePosition(Vector2(0,0)) {}
 	Vector2 GetMousePosition() const;
-	float GetMouseScroll() const;
+	float GetMouseScrollX() const;
+	float GetMouseScrollY() const;
 	
 	bool GetMouseDown(MouseButtonType type) const;
 	bool GetMouseUp(MouseButtonType type) const;
 	bool GetMousePress(MouseButtonType type) const;
 
 private:
-	std::map<MouseButtonType, ButtonState> mouseDownMap;
-	float mouseScroll;
-	Vector2 mousePosition;
-	
+	std::shared_ptr<IInput> device;
 };
 
 class InputSystem_API KeyboardInfo
@@ -58,11 +51,14 @@ public:
 	bool GetKeyPress(KeyBoardType type) const;
 	
 private:
-	std::map<KeyBoardType, ButtonState> mouseDownMap;
+	std::shared_ptr<IInput> device;
 };
 
 class InputSystem_API InputSystem
 {
+	friend MouseInfo;
+	friend KeyboardInfo;
+	
 	DEFINE_SINGLETON(InputSystem)
 public:
 
@@ -77,11 +73,12 @@ public:
 		std::shared_ptr<T> newDevice = std::make_shared<T>();
 		newDevice->Init();
 		device = std::static_pointer_cast<IInput>(newDevice);
+		mouse.device = device;
+		keyboard.device = device;
 	}
 
 private:
 	std::shared_ptr<IInput> device;
-	std::map<MouseButtonType, ButtonState> mouseDownMap;
 	
 	MouseInfo mouse;
 	KeyboardInfo keyboard;

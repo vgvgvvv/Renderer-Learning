@@ -5,3 +5,7 @@ ReMake_AddTarget(
 	MODE SHARED
 	LIB CommonLib 3d-math
 )
+
+ReMake_StartUse()
+UseSpdLog(${targetName})
+ReMake_EndUse()

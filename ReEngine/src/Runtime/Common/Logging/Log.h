@@ -102,7 +102,7 @@ void ::LogContext::Error(const std::string& tag, const std::string& formatString
 	LogContext::Info(Tag, formatString, __VA_ARGS__);
 
 #define RE_LOG_DEBUG(Tag, formatString, ...) \
-	LogContext::Debug(Tag, __VA_ARGS__);
+	LogContext::Debug(Tag, formatString, __VA_ARGS__);
 
 #define RE_LOG_WARN(Tag, formatString, ...)	\
 	LogContext::Warn(Tag, formatString, __VA_ARGS__);
