@@ -2,34 +2,32 @@
 
 #include "Common.h"
 #include "Config/Config.h"
+#include "GlfwInput.h"
+#include "InputSystem.h"
 
 void WindowLayer::OnInit()
 {
-	
-	GlfwInitDesc glfwDesc;
-	
-	inifile::IniFile baseSettingIni;
-	RE_ASSERT(Config::LoadConfigByName("BaseSetting", &baseSettingIni));
-	baseSettingIni.GetIntValue("Window", "Height", &glfwDesc.Height);
-	baseSettingIni.GetIntValue("Window", "Width", &glfwDesc.Width);
-	baseSettingIni.GetStringValue("Window", "Title", &glfwDesc.Title);
+	window = ClassContext::Get().CreateT<IGenericWindow>("GlfwWindow");
 
-
-	GlfwContext::Get().Init(glfwDesc);
-
-	GlewContext::Get().Init();
-
+	if(window)
+	{
+		window->Init();
+	}
 }
 
 
 void WindowLayer::OnAfterRender(float deltaTime)
 {
-	static auto& glfw = GlfwContext::Get();
-	glfw.SwapBuffer();
-	glfw.PollEvents();
+	if (window)
+	{
+		window->Swap();
+	}
 }
 
 void WindowLayer::OnShutDown()
 {
-	GlfwContext::Get().ShutDown();
+	if (window)
+	{
+		window->Shutdown();
+	}
 }

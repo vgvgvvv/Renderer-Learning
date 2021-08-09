@@ -1,7 +1,6 @@
 #include "Application.h"
 #include "Common.h"
 #include "EditorLayer.h"
-#include "Layers/InputLayer.h"
 #include "Layers/DotNetLayer.h"
 #include "Layers/RenderLayer.h"
 #include "Layers/ImguiLayer.h"
@@ -35,7 +34,6 @@ void Application::Init()
 {
 	RE_LOG_INFO("Application", "Application::Init");
 	LayerManager.PushLayer(new WindowLayer());
-	LayerManager.PushLayer(new InputLayer());
 	LayerManager.PushLayer(new WorldLayer());
 	LayerManager.PushLayer(new RenderLayer());
 	LayerManager.PushLayer(new ImguiLayer());

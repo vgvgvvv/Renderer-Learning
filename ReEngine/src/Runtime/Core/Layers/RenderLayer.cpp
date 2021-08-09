@@ -13,12 +13,14 @@ void RenderLayer::OnInit()
 	{
 		pipeline = std::make_shared<DefaultRenderPipeline>();
 	}
-	RenderContext::Get().SetDevice(std::make_shared<OpenGLDevice>());
+
+	RenderContext::Get().SetDevice(
+		ClassContext::Get().CreateT<IRenderDevice>("OpenGLDevice"));
 }
 
 void RenderLayer::OnBeforeRender(float deltaTime)
 {
-	glClear(GL_COLOR_BUFFER_BIT);
+	RenderContext::Get().Clear(Color::white);
 }
 
 void RenderLayer::OnRender(float deltaTime)

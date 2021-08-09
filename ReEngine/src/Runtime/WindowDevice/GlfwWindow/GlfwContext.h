@@ -3,8 +3,9 @@
 
 #include "OpenGL.h"
 #include "Singleton.h"
+#include "GlfwWindow_API.h"
 
-class GlfwInitDesc
+class GlfwWindow_API GlfwInitDesc
 {
 public:
 	int Width;
@@ -14,7 +15,7 @@ public:
 	GlfwInitDesc();
 };
 
-class GlfwContext
+class GlfwWindow_API GlfwContext
 {
 	
 	DEFINE_SINGLETON(GlfwContext)

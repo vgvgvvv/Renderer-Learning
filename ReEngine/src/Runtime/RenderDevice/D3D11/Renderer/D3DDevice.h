@@ -1,39 +1,10 @@
-﻿#pragma once
-
-#include <cstdint>
-
-#include "Color.h"
-#include "Common.h"
-#include "GL/glew.h"
+#pragma once
 #include "IRenderDevice.h"
 #include "ClassInfo.h"
-#include "ReOpenGL_API.h"
 
-
-#if _DEBUG
-#define GLCall(x) \
-	x;\
-	RE_ASSERT(GLLogCall(#x, __FILE__, __LINE__))
-#else
-	#define GLCall(x) x;
-#endif
-
-class IShader;
-class IIndexBuffer;
-class IVertexArrayObject;
-void GLClearError();
-
-bool GLLogCall(const char* function, const char* file, int line);
-
-
-class Shader;
-class IndexBuffer;
-class VertexArrayObject;
-
-
-class ReOpenGL_API OpenGLDevice : public IRenderDevice
+class D3DDevice : public IRenderDevice
 {
-	DEFINE_DRIVEN_CLASS(OpenGLDevice, IRenderDevice)
+	DEFINE_DRIVEN_CLASS(D3DDevice, IRenderDevice)
 public:
 
 	void Clear(const Color& color) const override;
@@ -43,10 +14,8 @@ public:
 	void SetAlpha(uint32_t from, uint32_t to) override;
 	void SetViewPort(float x, float y, float width, float height) override;
 	void DrawLine(const Vector2& start, const Vector2& end) override;
-	void DrawPolygon(const std::vector<Vector2>& points) override;
-
+	void DrawPolygon(const std::vector<Vector2>& min) override;
 	void ClearFrameBuffer() const override;
-public:
 	std::shared_ptr<IFrameBuffer> CreateFrameBuffer() const override;
 	std::shared_ptr<ITexture> CreateTexture(const std::string& fileName) const override;
 	std::shared_ptr<ITexture> CreateTexture(uint32_t width, uint32_t height) const override;
@@ -55,5 +24,6 @@ public:
 	std::shared_ptr<IVertexBufferLayout> CreateVertexBufferLayout() override;
 	std::shared_ptr<IVertexArrayObject> CreateVertexArrayObject() const override;
 	std::shared_ptr<IShader> CreateShader(const std::string& fileName) const override;
-	std::shared_ptr<IShader> CreateShader(const std::string& vertFileName, const std::string& fragFileName) const override;
+	std::shared_ptr<IShader> CreateShader(const std::string& vertFileName, const std::string& fragFileName) const
+	override;
 };

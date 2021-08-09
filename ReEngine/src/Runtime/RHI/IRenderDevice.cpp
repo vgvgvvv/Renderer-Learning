@@ -1,5 +1,8 @@
 #include "IRenderDevice.h"
 
+DEFINE_CLASS_IMP_BEGIN(IRenderDevice, ClassFlag::None)
+DEFINE_CLASS_IMP_END()
+
 void IRenderDevice::AddGlobalUniform1F(const std::string& name, float v1)
 {
 	GlobalUniform1F.insert_or_assign(name, v1);

@@ -1,8 +1,9 @@
 #pragma once
 
 #include "Singleton.h"
+#include "GlfwWindow_API.h"
 
-class GlewContext
+class GlfwWindow_API GlewContext
 {
 	DEFINE_SINGLETON(GlewContext);
 public:

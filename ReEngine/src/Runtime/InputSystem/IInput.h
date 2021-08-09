@@ -9,6 +9,7 @@ class IInput
 {
 public:
 	virtual ~IInput() = default;
+	virtual void Init() = 0;
 	virtual Vector2 GetMousePosition() = 0;
 	virtual float GetMouseScroll() = 0;
 

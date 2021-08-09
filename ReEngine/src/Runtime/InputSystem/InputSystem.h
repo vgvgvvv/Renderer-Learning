@@ -74,7 +74,9 @@ public:
 	template<class T>
 	void SetDevice()
 	{
-		device = std::static_pointer_cast<IInput>(std::make_shared<T>());
+		std::shared_ptr<T> newDevice = std::make_shared<T>();
+		newDevice->Init();
+		device = std::static_pointer_cast<IInput>(newDevice);
 	}
 
 private:

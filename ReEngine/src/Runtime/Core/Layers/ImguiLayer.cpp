@@ -4,7 +4,7 @@
 #include "ImguiLayer/imgui_impl_glfw.h"
 #include "ImguiLayer/imgui_impl_opengl3.h"
 #include "Misc/Path.h"
-#include "WindowLayer//GlfwContext.h"
+#include "GlfwContext.h"
 #include "ThirdPart/OpenGLContext.h"
 
 void ImguiLayer::OnInit()

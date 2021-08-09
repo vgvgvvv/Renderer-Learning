@@ -1,5 +1,9 @@
 #include "GlfwInput.h"
 
+void GlfwInput::Init()
+{
+}
+
 Vector2 GlfwInput::GetMousePosition()
 {
 	return Vector2::zeroVector;

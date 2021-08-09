@@ -21,6 +21,13 @@ public:
 
 	std::shared_ptr<void> Create(const std::string& name);
 
+	template<class T>
+	std::shared_ptr<T> CreateT(const std::string& name)
+	{
+		std::shared_ptr<void> result = Create(name);
+		return std::static_pointer_cast<T>(result);
+	}
+	
 private:
 	std::unordered_map<std::string, Class*> typeMap;
 };

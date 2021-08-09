@@ -1,10 +1,12 @@
 #pragma once
 #include "IInput.h"
-#include "GlfwInput_API.h"
+#include "GlfwWindow_API.h"
 
-class GlfwInput_API GlfwInput : public IInput
+class GlfwWindow_API GlfwInput : public IInput
 {
 public:
+
+	void Init() override;
 	Vector2 GetMousePosition() override;
 	float GetMouseScroll() override;
 	bool GetMouseDown(MouseButtonType type) override;

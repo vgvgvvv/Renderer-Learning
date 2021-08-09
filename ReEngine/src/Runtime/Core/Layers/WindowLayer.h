@@ -1,8 +1,11 @@
 #pragma once
-#include "WindowLayer/OpenGL.h"
+#include <memory>
+
+#include "OpenGL.h"
 #include "Layer/Layer.h"
 
 #include "Core_API.h"
+#include "GenericWindow.h"
 
 class Core_API WindowLayer : public Layer
 {
@@ -12,4 +15,6 @@ public:
 	void OnInit() override;
 	void OnAfterRender(float deltaTime) override;
 	void OnShutDown() override;
+private:
+	std::shared_ptr<IGenericWindow> window;
 };

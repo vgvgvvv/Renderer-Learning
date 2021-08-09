@@ -9,6 +9,8 @@
 #include "Vector2.h"
 
 
+DEFINE_DRIVEN_CLASS_IMP(OpenGLDevice, IRenderDevice)
+
 void GLClearError()
 {
 	GLenum error = glGetError();

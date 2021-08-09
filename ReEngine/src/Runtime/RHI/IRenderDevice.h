@@ -9,6 +9,7 @@
 #include "IVertexBufferLayout.h"
 #include "Matrix3x3.h"
 #include "Matrix4x4.h"
+#include "ClassInfo.h"
 #include "RHI_API.h"
 
 class IVertexBuffer;
@@ -21,6 +22,7 @@ class IShader;
 
 class RHI_API IRenderDevice
 {
+	DEFINE_CLASS(IRenderDevice)
 public:
 	virtual void Clear(const Color& color) const = 0;
 	virtual void InitGlobalUniform(IShader& shader) const = 0;

@@ -1,6 +1,5 @@
 
 set(linkLibs 
-	ReOpenGL 
 	CommonLib 
 	RenderPipeline 
 	DotNetLib
@@ -10,7 +9,8 @@ set(linkLibs
 	World
 	GlobalAssets
 	InputSystem
-	GlfwInput)
+	GlfwWindow
+	ClassLib)
 
 set(targetName Core)
 ReMake_AddTarget(
