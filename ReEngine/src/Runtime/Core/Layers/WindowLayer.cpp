@@ -4,10 +4,12 @@
 #include "Config/Config.h"
 #include "GlfwInput.h"
 #include "InputSystem.h"
+#include "Misc/GlobalContext.h"
 
 void WindowLayer::OnInit()
 {
-	window = ClassContext::Get().CreateT<IGenericWindow>("GlfwWindow");
+	auto& WindowClassName = GlobalContext::Get().GetStringValue("WindowClassName", "GlfwWindow");
+	window = ClassContext::Get().CreateT<IGenericWindow>(WindowClassName);
 
 	if(window)
 	{

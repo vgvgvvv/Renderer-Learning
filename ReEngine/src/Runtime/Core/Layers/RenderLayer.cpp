@@ -1,6 +1,7 @@
 #include "RenderLayer.h"
 #include "Renderer/OpenGLDevice.h"
 #include "BuildIn/DefaultRenderPipeline.h"
+#include "Misc/GlobalContext.h"
 
 RenderLayer::RenderLayer(std::shared_ptr<RenderPipeline> pipeline)
 {
@@ -14,8 +15,9 @@ void RenderLayer::OnInit()
 		pipeline = std::make_shared<DefaultRenderPipeline>();
 	}
 
+	auto& RenderDeviceName = GlobalContext::Get().GetStringValue("RenderDeviceClassName", "OpenGLDevice");
 	RenderContext::Get().SetDevice(
-		ClassContext::Get().CreateT<IRenderDevice>("OpenGLDevice"));
+		ClassContext::Get().CreateT<IRenderDevice>(RenderDeviceName));
 }
 
 void RenderLayer::OnBeforeRender(float deltaTime)
