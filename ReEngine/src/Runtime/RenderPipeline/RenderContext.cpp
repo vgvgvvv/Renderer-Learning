@@ -120,14 +120,30 @@ void RenderContext::DrawSingleRenderer(Camera* camera, BaseRenderer* renderer, c
 	}
 
 	auto vao = device->CreateVertexArrayObject();
-	
+
 	auto vertexBuffer = device->CreateVertexBuffer(
 		mesh->vertexes.data(), mesh->vertexes.size() * sizeof(Vector3));
 	auto vertexLayout = device->CreateVertexBufferLayout();
 	vertexLayout->PushVector3();
 	vao->AddBuffer(*vertexBuffer, *vertexLayout);
-	
 
+	auto colorBuffer = device->CreateVertexBuffer(
+		mesh->colors.data(), mesh->colors.size() * sizeof(Color));
+	auto colorLayout = device->CreateVertexBufferLayout();
+	colorLayout->PushColor();
+	vao->AddBuffer(*colorBuffer, *colorLayout);
+
+	auto normalBuffer = device->CreateVertexBuffer(
+		mesh->normals.data(), mesh->normals.size() * sizeof(Vector3));
+	auto normalLayout = device->CreateVertexBufferLayout();
+	vertexLayout->PushVector3();
+	vao->AddBuffer(*normalBuffer, *normalLayout);
+
+	auto uvBuffer = device->CreateVertexBuffer(
+		mesh->uv0.data(), mesh->uv0.size() * sizeof(Vector2));
+	auto uvLayout = device->CreateVertexBufferLayout();
+	vertexLayout->PushVector2();
+	vao->AddBuffer(*uvBuffer, *uvLayout);
 
 	auto indicesData = mesh->indices.data();
 	auto indicesSize = mesh->indices.size();

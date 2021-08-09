@@ -58,10 +58,13 @@ std::shared_ptr<Mesh> MeshGroup::ProcessMesh(aiMesh* mesh, const aiScene* scene)
 		meshResult->vertexes.push_back(finalPosition);
 		
 		auto color = mesh->mColors[0];
-		if(color != nullptr)
+		if (color != nullptr)
 		{
 			finalColor = Color(color->r, color->g, color->b, color->a);
 			meshResult->colors.push_back(finalColor);
+		}else
+		{
+			meshResult->colors.push_back(Color::white);
 		}
 		
 		auto& normal = mesh->mNormals[i];
@@ -73,6 +76,9 @@ std::shared_ptr<Mesh> MeshGroup::ProcessMesh(aiMesh* mesh, const aiScene* scene)
 		{
 			finalUV0 = Vector2(uv0->x, uv0->y);
 			meshResult->uv0.push_back(finalUV0);
+		}else
+		{
+			meshResult->uv0.push_back(Vector2::zeroVector);
 		}
 	
 	}
