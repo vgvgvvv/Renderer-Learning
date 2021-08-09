@@ -2,6 +2,7 @@
 
 void GlobalContext::InitSingleton()
 {
+	
 }
 
 void GlobalContext::SetStringValue(const std::string& name, std::string value)

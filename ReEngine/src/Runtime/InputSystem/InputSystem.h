@@ -10,21 +10,6 @@
 
 class InputSystem;
 
-enum class KeyBoardType
-{
-	
-};
-
-enum class MouseButtonType
-{
-	Left,
-	Mid,
-	Right,
-	Max = Right
-};
-
-
-
 class InputSystem_API MouseInfo
 {
 	friend InputSystem;

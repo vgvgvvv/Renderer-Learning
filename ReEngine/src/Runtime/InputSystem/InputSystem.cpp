@@ -125,7 +125,4 @@ void InputSystem::Update(float deltaTime)
 	{
 		device->Update(deltaTime);
 	}
-
-	Vector2 position = Mouse().GetMousePosition();
-	RE_LOG_INFO("Input", "Current Mouse Position Is X:{0} Y:{1}", position.x, position.y);
 }
