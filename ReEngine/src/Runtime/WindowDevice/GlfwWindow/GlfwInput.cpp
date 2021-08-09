@@ -36,7 +36,7 @@ static void mouse_button_callback(GLFWwindow* window, int button, int action, in
 	
 	auto type = GLFWMouseIDToMouseButtonType(button);
 	auto& state = mouseButtonState.at(type);
-	if(action == GLFW_PRESS)
+	if(action == GLFW_PRESS || action == GLFW_REPEAT)
 	{
 		if(state.isDown)
 		{
@@ -45,10 +45,7 @@ static void mouse_button_callback(GLFWwindow* window, int button, int action, in
 		state.isDown = true;
 	}else
 	{
-		if(!state.isDown && state.isDownPrevious)
-		{
-			state.isDownPrevious = false;
-		}
+		state.isDownPrevious = false;
 		state.isDown = false;
 	}
 	
@@ -194,7 +191,7 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 	auto type = GLFWKeyBoardIDToKeyBoardType(key);
 	auto& state = keyBoardButtonState.at(type);
 
-	if (action == GLFW_PRESS)
+	if (action == GLFW_PRESS || action == GLFW_REPEAT)
 	{
 		if (state.isDown)
 		{
@@ -204,10 +201,7 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 	}
 	else
 	{
-		if (!state.isDown && state.isDownPrevious)
-		{
-			state.isDownPrevious = false;
-		}
+		state.isDownPrevious = false;
 		state.isDown = false;
 	}
 	

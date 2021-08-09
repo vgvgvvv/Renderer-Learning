@@ -9,7 +9,7 @@
 void OpenGLApp::Init()
 {
 	LayerManager.PushLayer(new WindowLayer());
-	LayerManager.PushLayer(new RenderLayer(std::make_shared<TestPipeline>()));
+	LayerManager.PushLayer(new RenderLayer());
 	LayerManager.PushLayer(new WorldLayer());
 	LayerManager.PushLayer(new TestScene());
 }

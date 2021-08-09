@@ -3,6 +3,7 @@
 
 
 #include "Camera.h"
+#include "Components/MoveControlComponent.h"
 #include "RendererComponents/CubeRenderer.h"
 #include "ResourceManager.h"
 #include "RotationComponent.h"
@@ -15,6 +16,7 @@ void TestScene::OnInit()
 	auto camera = World::Get().CreateGameObject("Camera");
 	camera->AddComponent<Camera>();
 	camera->GetTransform().set_position(Vector3(0, 0, 0));
+	camera->AddComponent<MoveControlComponent>();
 
 	auto cube = World::Get().CreateGameObject("Cube");
 	auto renderer = cube->AddComponent<MeshRenderer>();
