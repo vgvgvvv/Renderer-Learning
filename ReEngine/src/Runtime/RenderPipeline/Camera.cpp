@@ -32,6 +32,14 @@ Matrix4x4 Camera::GetViewMatrix() const
 {
 	auto& tran = GetOwner().GetTransform();
 	auto& pos = tran.get_position();
+
+	static Matrix4x4 flip(
+		1, 0, 0, 0,
+		0, 1, 0, 0,
+		0, 0, -1, 0,
+		0, 0, 0, 1
+	);
+	
 	Matrix4x4 t(
 		1, 0, 0, -pos.x,
 		0, 1, 0, -pos.y,
@@ -39,9 +47,10 @@ Matrix4x4 Camera::GetViewMatrix() const
 		0, 0, 0, 1
 	);
 
+
 	Matrix4x4 r = Matrix4x4::Rotate(tran.get_rotation());
 
-	return t * r;
+	return flip * t * r;
 }
 
 

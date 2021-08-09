@@ -26,7 +26,7 @@ void TestScene::OnInit()
 	auto renderer = cube->AddComponent<MeshRenderer>();
 	renderer->SetMesh(cubeAsset->meshes[0]);
 	renderer->AddMaterial(materialAsset);
-	cube->GetTransform().set_position(Vector3(1, 0, -3));
+	cube->GetTransform().set_position(Vector3(1, 0, 3));
 	cube->GetTransform().set_scale(Vector3(1, 1, 1));
 
 	auto cube2 = World::Get().CreateGameObject("Cube2");
@@ -34,7 +34,7 @@ void TestScene::OnInit()
 	auto renderer2 = cube2->AddComponent<MeshRenderer>();
 	renderer2->SetMesh(cubeAsset->meshes[0]);
 	renderer2->AddMaterial(materialAsset);
-	cube2->GetTransform().set_position(Vector3(-1, 0, -3));
+	cube2->GetTransform().set_position(Vector3(-1, 0, 3));
 	cube2->GetTransform().set_scale(Vector3(0.5, 0.5, 0.5));
 	
 	
