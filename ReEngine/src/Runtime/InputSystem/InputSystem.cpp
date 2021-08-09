@@ -48,4 +48,8 @@ bool KeyboardInfo::GetKeyPress(KeyBoardType type) const
 
 void InputSystem::Update(float deltaTime)
 {
+	if(device != nullptr)
+	{
+		device->Update(deltaTime);
+	}
 }

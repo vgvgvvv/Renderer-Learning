@@ -9,7 +9,8 @@ set(linkLibs
 	ImGUILib
 	World
 	GlobalAssets
-	InputSystem)
+	InputSystem
+	GlfwInput)
 
 set(targetName Core)
 ReMake_AddTarget(

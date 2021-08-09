@@ -71,6 +71,12 @@ public:
 
 	void Update(float deltaTime);
 
+	template<class T>
+	void SetDevice()
+	{
+		device = std::static_pointer_cast<IInput>(std::make_shared<T>());
+	}
+
 private:
 	std::shared_ptr<IInput> device;
 	std::map<MouseButtonType, ButtonState> mouseDownMap;
