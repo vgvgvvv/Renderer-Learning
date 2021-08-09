@@ -23,5 +23,5 @@ void VertexBufferLayout::PushUV()
 
 void VertexBufferLayout::PushColor()
 {
-	Push<float>(3);
+	Push<float>(4);
 }

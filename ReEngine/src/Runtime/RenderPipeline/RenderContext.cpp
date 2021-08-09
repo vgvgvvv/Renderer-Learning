@@ -136,13 +136,13 @@ void RenderContext::DrawSingleRenderer(Camera* camera, BaseRenderer* renderer, c
 	auto normalBuffer = device->CreateVertexBuffer(
 		mesh->normals.data(), mesh->normals.size() * sizeof(Vector3));
 	auto normalLayout = device->CreateVertexBufferLayout();
-	vertexLayout->PushVector3();
+	normalLayout->PushVector3();
 	vao->AddBuffer(*normalBuffer, *normalLayout);
 
 	auto uvBuffer = device->CreateVertexBuffer(
 		mesh->uv0.data(), mesh->uv0.size() * sizeof(Vector2));
 	auto uvLayout = device->CreateVertexBufferLayout();
-	vertexLayout->PushVector2();
+	uvLayout->PushVector2();
 	vao->AddBuffer(*uvBuffer, *uvLayout);
 
 	auto indicesData = mesh->indices.data();

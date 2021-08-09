@@ -60,7 +60,7 @@ std::shared_ptr<Mesh> MeshGroup::ProcessMesh(aiMesh* mesh, const aiScene* scene)
 		auto color = mesh->mColors[0];
 		if (color != nullptr)
 		{
-			finalColor = Color(color->r, color->g, color->b, color->a);
+			finalColor = Color(color[i].r, color[i].g, color[i].b, color[i].a);
 			meshResult->colors.push_back(finalColor);
 		}else
 		{
@@ -74,7 +74,7 @@ std::shared_ptr<Mesh> MeshGroup::ProcessMesh(aiMesh* mesh, const aiScene* scene)
 		auto uv0 = mesh->mTextureCoords[0];
 		if(uv0 != nullptr)
 		{
-			finalUV0 = Vector2(uv0->x, uv0->y);
+			finalUV0 = Vector2(uv0[i].x, uv0[i].y);
 			meshResult->uv0.push_back(finalUV0);
 		}else
 		{
