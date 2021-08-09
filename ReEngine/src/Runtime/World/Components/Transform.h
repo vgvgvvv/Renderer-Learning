@@ -20,6 +20,13 @@ public:
 	Vector3 GetEulerAngle() const { return rotation.GetEulerAngle(); }
 	void SetEulerAngle(const Vector3& euler) { rotation = Quaternion::Euler(euler); }
 
+	Vector3 Forward() const { return rotation * Vector3::forwardVector; }
+	Vector3 Right() const { return rotation * Vector3::rightVector; }
+	Vector3 Left() const { return rotation * Vector3::leftVector; }
+	Vector3 Back() const { return rotation * Vector3::backVector; }
+	Vector3 Up() const { return rotation * Vector3::upVector; }
+	Vector3 Down() const { return rotation * Vector3::downVector; }
+
 private:
 	Vector3 position;
 	Quaternion rotation;

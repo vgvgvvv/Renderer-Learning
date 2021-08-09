@@ -69,7 +69,7 @@ bool MouseInfo::GetMousePress(MouseButtonType type) const
 		return false;
 	}
 	const ButtonState& state = device->GetMouseState(type);
-	if (state.isDown && state.isDownPrevious)
+	if (state.isDown)
 	{
 		return true;
 	}
@@ -112,7 +112,7 @@ bool KeyboardInfo::GetKeyPress(KeyBoardType type) const
 		return false;
 	}
 	const ButtonState& state = device->GetKeyState(type);
-	if (state.isDown && state.isDownPrevious)
+	if (state.isDown)
 	{
 		return true;
 	}

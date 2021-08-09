@@ -10,6 +10,12 @@ class World_API MoveControlComponent : public Behavior
 public:
 
 	void Update(float deltaTime) override;
+
+	DEFINE_GETTER_SETTER(float, speed);
+	
+private:
+
+	float speed = 10;
 };
 
 template <class TransferFunction>

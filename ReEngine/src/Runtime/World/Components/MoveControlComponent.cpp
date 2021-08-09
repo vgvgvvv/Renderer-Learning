@@ -8,30 +8,38 @@ DEFINE_DRIVEN_CLASS_IMP(MoveControlComponent, Behavior)
 
 void MoveControlComponent::Update(float deltaTime)
 {
-	auto transform = GetOwner().GetTransform();
+	auto& transform = GetOwner().GetTransform();
 
 	if(InputSystem::Get().Keyboard().GetKeyPress(KeyBoardType::KEY_W))
 	{
-		RE_LOG_INFO("Component", "Press W")
+		auto newPos = transform.get_position() + transform.Forward() * speed * deltaTime;
+		transform.set_position(newPos);
 	}
 	if(InputSystem::Get().Keyboard().GetKeyPress(KeyBoardType::KEY_A))
 	{
-		RE_LOG_INFO("Component", "Press A")
+		auto newPos = transform.get_position() + transform.Left() * speed * deltaTime;
+		transform.set_position(newPos);
 	}
 	if (InputSystem::Get().Keyboard().GetKeyPress(KeyBoardType::KEY_S))
 	{
-		RE_LOG_INFO("Component", "Press S")
+		auto newPos = transform.get_position() + transform.Back() * speed * deltaTime;
+		transform.set_position(newPos);
 	}
 	if (InputSystem::Get().Keyboard().GetKeyPress(KeyBoardType::KEY_D))
 	{
-		RE_LOG_INFO("Component", "Press D")
+		auto newPos = transform.get_position() + transform.Right() * speed * deltaTime;
+		transform.set_position(newPos);
 	}
 	if (InputSystem::Get().Keyboard().GetKeyPress(KeyBoardType::KEY_Q))
 	{
-		RE_LOG_INFO("Component", "Press Q")
+		auto newPos = transform.get_position() + transform.Up() * speed * deltaTime;
+		transform.set_position(newPos);
 	}
 	if (InputSystem::Get().Keyboard().GetKeyPress(KeyBoardType::KEY_E))
 	{
-		RE_LOG_INFO("Component", "Press E")
+		auto newPos = transform.get_position() + transform.Down() * speed * deltaTime;
+		transform.set_position(newPos);
 	}
+
+	RE_LOG_INFO("MoveControl", "Current Position is x:{0} y:{1} z:{2}", transform.get_position().x, transform.get_position().y, transform.get_position().z);
 }
