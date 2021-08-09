@@ -60,6 +60,24 @@ void OpenGLDevice::SetAlpha(uint32_t from, uint32_t to)
 	GLCall(glBlendFunc(from, to));
 }
 
+
+void OpenGLDevice::SetFaceCull(FaceCullType cullType)
+{
+	GLCall(glEnable(GL_CULL_FACE));
+	switch (cullType)
+	{
+	case FaceCullType::Back:
+		GLCall(glCullFace(GL_BACK));
+		break;
+	case FaceCullType::Front:
+		GLCall(glCullFace(GL_FRONT));
+		break;
+	case FaceCullType::FrontAndBack:
+		GLCall(glCullFace(GL_FRONT_AND_BACK));
+		break;
+	}
+}
+
 void OpenGLDevice::SetViewPort(float x, float y, float width, float height)
 {
 	GLCall(glViewport(x, y, width, height));

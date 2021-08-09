@@ -113,6 +113,8 @@ void RenderContext::DrawSingleRenderer(Camera* camera, BaseRenderer* renderer, c
 
 	device->AddGlobalUniformMatrix4("ReEngine_ModelMat", ModelMat);
 
+	device->SetFaceCull(FaceCullType::Front);
+	
 	auto mesh = renderer->GatherMesh();
 	if(mesh == nullptr)
 	{

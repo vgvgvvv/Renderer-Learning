@@ -41,6 +41,7 @@ public:
 	void Draw(const IVertexArrayObject& vao, const IIndexBuffer& ib, IShader& shader) const override;
 	void DrawArray(const IVertexArrayObject& vao, IShader& shader, int count) const override;
 	void SetAlpha(uint32_t from, uint32_t to) override;
+	void SetFaceCull(FaceCullType cullType) override;
 	void SetViewPort(float x, float y, float width, float height) override;
 	void DrawLine(const Vector2& start, const Vector2& end) override;
 	void DrawPolygon(const std::vector<Vector2>& points) override;
