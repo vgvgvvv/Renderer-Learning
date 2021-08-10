@@ -2,20 +2,11 @@
 #include <string>
 #include <vector>
 
+
+#include "Properties.h"
 #include "ShaderLab_API.h"
+#include "SubShader.h"
 
-enum class ShaderType
-{
-	Vertex,
-	Fragment
-};
-
-class ShaderLab_API SubShader
-{
-public:
-	ShaderType type;
-	std::string source;
-};
 
 class ShaderLab_API ShaderLab
 {
@@ -25,8 +16,13 @@ public:
 	}
 
 	void Compile();
+private:
+	void ProcessShader();
+	void ProcessProperties();
+	void ProcessSubShader();
 
 private:
+	PropertyGroup propertyGroup;
 	std::vector<SubShader> subShaders;
 	std::string filePath;
 };
