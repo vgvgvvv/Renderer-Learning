@@ -1,6 +1,12 @@
+/* C语言声明部分 */
 %{
     extern int yylval;
     #define LEX_TEST 1
+
+    #if !LEX_TEST
+    #include "y.tab.h"
+    #endif
+
     #if LEX_TEST
         #define LEX_PRINTF(value) printf(" "); printf(#value);
     #else
@@ -8,6 +14,8 @@
     #endif
 %}
 
+
+/* Token声明部分 */
 %%
 "Shader"            { LEX_PRINTF (SHADER_ROOT); }
 "Properties"        { LEX_PRINTF (PROPERTIES_ROOT); }
@@ -28,6 +36,10 @@
 "GLSLINCLUDE"       { LEX_PRINTF (GLSLINCLUDE);  }
 "GLSLPROGRAM"       { LEX_PRINTF (GLSLPROGRAM);  }
 "ENDGLSL"           { LEX_PRINTF (ENDGLSL);  }
+
+"HLSLINCLUDE"       { LEX_PRINTF (HLSLINCLUDE);  }
+"HLSLPROGRAM"       { LEX_PRINTF (HLSLPROGRAM);  }
+"ENDHLSL"           { LEX_PRINTF (ENDHLSL);  }
 
 "On|Off"            { LEX_PRINTF (STATE);  }
 
@@ -77,6 +89,9 @@
                     }
 .                   { LEX_PRINTF (ILLEGAL); }
 %%
+
+
+/* C语言逻辑部分 */
 
 #ifndef yywrap
 yywrap() { return 1; }
