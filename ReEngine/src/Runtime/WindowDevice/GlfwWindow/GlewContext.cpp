@@ -18,5 +18,6 @@ bool GlewContext::Init() const
         RE_ASSERT_MSG(false, "Failed to initialize GLAD");
         return false;
     }
+    RE_LOG_INFO("Window", "Init Glew Context");
     return true;
 }

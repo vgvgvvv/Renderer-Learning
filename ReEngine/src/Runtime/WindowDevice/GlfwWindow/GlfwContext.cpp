@@ -48,7 +48,7 @@ bool GlfwContext::Init(const GlfwInitDesc& desc)
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-
+    RE_LOG_INFO("Window", "Init Glfw Window");
     return true;
 }
 

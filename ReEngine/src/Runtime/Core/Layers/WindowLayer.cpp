@@ -22,6 +22,14 @@ void WindowLayer::OnPreUpdate(float deltaTime)
 	InputSystem::Get().Update(deltaTime);
 }
 
+void WindowLayer::OnBeforeRender(float deltaTime)
+{
+	if (window)
+	{
+		window->NewFrame();
+	}
+}
+
 
 void WindowLayer::OnAfterRender(float deltaTime)
 {

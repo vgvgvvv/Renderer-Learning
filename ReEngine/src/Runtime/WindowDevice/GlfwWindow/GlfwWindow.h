@@ -8,6 +8,7 @@ class GlfwWindow_API GlfwWindow : public IGenericWindow
 	DEFINE_DRIVEN_CLASS(GlfwWindow, IGenericWindow)
 public:
 	void Init() override;
+	void NewFrame() override;
 	void Swap() override;
 	void Shutdown() override;
 	bool ShouldQuit() override;

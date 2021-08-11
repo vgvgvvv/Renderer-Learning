@@ -5,6 +5,8 @@
 #include "GlewContext.h"
 #include "GlfwContext.h"
 #include "GlfwInput.h"
+#include "ImguiLayer/imgui_impl_glfw.h"
+#include "ImguiLayer/imgui_impl_opengl3.h"
 #include "InputSystem.h"
 
 DEFINE_DRIVEN_CLASS_IMP(GlfwWindow, IGenericWindow)
@@ -26,6 +28,13 @@ void GlfwWindow::Init()
 
 	InputSystem::Get().SetDevice<GlfwInput>();
 }
+
+void GlfwWindow::NewFrame()
+{
+	ImGui_ImplOpenGL3_NewFrame();
+	ImGui_ImplGlfw_NewFrame();
+}
+
 
 void GlfwWindow::Swap()
 {

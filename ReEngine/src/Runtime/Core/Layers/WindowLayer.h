@@ -12,6 +12,7 @@ public:
 	~WindowLayer() override = default;
 	void OnInit() override;
 	void OnPreUpdate(float deltaTime) override;
+	void OnBeforeRender(float deltaTime) override;
 	void OnAfterRender(float deltaTime) override;
 	void OnShutDown() override;
 	bool ShouldQuit() override;
