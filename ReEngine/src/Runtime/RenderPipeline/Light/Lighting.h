@@ -13,7 +13,7 @@ class RenderPipeline_API Light : public Component
 	DEFINE_GETTER_SETTER(Color, color);
 	
 protected:
-	float intensity;
+	float intensity = 0;
 	Color color;
 };
 
