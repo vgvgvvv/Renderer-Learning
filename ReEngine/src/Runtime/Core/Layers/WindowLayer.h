@@ -16,6 +16,9 @@ public:
 	void OnAfterRender(float deltaTime) override;
 	void OnShutDown() override;
 	bool ShouldQuit() override;
+
+	class IGenericWindow& GetWindow() const { return *window; }
+	
 private:
 	std::shared_ptr<class IGenericWindow> window;
 };
