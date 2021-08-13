@@ -2,9 +2,11 @@
 #include "EditorUI.h"
 #include "Layer/Layer.h"
 #include "Editor_API.h"
+#include "ClassInfo.h"
 
 class Editor_API EditorLayer : public Layer
 {
+	DEFINE_DRIVEN_CLASS(EditorLayer, Layer)
 public:
 	EditorLayer() : UI(std::make_shared<EditorUI>())
 	{

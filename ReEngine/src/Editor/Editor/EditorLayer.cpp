@@ -3,6 +3,8 @@
 #include "EditorContext.h"
 #include "GameObject.h"
 
+DEFINE_DRIVEN_CLASS_IMP(EditorLayer, Layer)
+
 void EditorLayer::OnInit()
 {
 	UI->OnInit();

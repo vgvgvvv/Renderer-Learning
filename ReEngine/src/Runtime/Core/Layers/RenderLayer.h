@@ -9,6 +9,7 @@
 
 class Core_API RenderLayer : public Layer
 {
+	DEFINE_DRIVEN_CLASS(RenderLayer, Layer)
 public:
 	RenderLayer(std::shared_ptr<RenderPipeline> pipeline = nullptr);
 	void OnInit() override;

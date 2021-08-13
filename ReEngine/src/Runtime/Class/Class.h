@@ -1,7 +1,6 @@
 #pragma once
 #include <cstdint>
 #include "ClassContext.h"
-#include "CommonAssert.h"
 
 template<class T>
 struct TypeTag
@@ -198,7 +197,6 @@ public:
 
 	void SetCtor(std::function<std::shared_ptr<void>()>&& newCtor)
 	{
-		RE_ASSERT(!defined)
         ctor = newCtor;
 	}
 

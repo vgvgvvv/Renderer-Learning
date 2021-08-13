@@ -3,6 +3,8 @@
 #include "inifile.h"
 #include "Config/Config.h"
 
+DEFINE_DRIVEN_CLASS_IMP(DotNetLayer, Layer)
+
 struct lib_args
 {
 	const char_t* message;

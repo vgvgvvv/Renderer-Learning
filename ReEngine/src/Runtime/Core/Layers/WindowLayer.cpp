@@ -6,6 +6,8 @@
 #include "Misc/GlobalContext.h"
 #include "GenericWindow.h"
 
+DEFINE_DRIVEN_CLASS_IMP(WindowLayer, Layer)
+
 void WindowLayer::OnInit()
 {
 	auto WindowClassName = GlobalContext::Get().GetStringValue("WindowClassName", "GlfwWindow");

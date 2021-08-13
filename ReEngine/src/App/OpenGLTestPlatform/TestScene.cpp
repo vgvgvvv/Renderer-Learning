@@ -1,7 +1,5 @@
 #include "TestScene.h"
 
-
-
 #include "Camera.h"
 #include "Components/MoveControlComponent.h"
 #include "RendererComponents/CubeRenderer.h"
@@ -10,6 +8,7 @@
 #include "World.h"
 #include "Components/Transform.h"
 
+DEFINE_DRIVEN_CLASS_IMP(TestScene, Layer)
 
 void TestScene::OnInit()
 {

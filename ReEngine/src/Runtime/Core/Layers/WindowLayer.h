@@ -7,6 +7,7 @@
 
 class Core_API WindowLayer : public Layer
 {
+	DEFINE_DRIVEN_CLASS(WindowLayer, Layer)
 public:
 	WindowLayer() = default;
 	~WindowLayer() override = default;

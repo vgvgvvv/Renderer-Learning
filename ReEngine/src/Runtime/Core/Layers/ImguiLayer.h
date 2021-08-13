@@ -4,6 +4,7 @@
 
 class Core_API ImguiLayer : public Layer
 {
+	DEFINE_DRIVEN_CLASS(ImguiLayer, Layer)
 public:
 	ImguiLayer() = default;
 	~ImguiLayer() = default;

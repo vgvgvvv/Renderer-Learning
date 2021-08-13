@@ -1,6 +1,8 @@
 #include "WorldLayer.h"
 #include "Behavior.h"
 
+DEFINE_DRIVEN_CLASS_IMP(WorldLayer, Layer)
+
 void WorldLayer::OnInit()
 {
 	World::Get().Init();

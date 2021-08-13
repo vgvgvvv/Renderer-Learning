@@ -1,6 +1,7 @@
 #include "ImguiLayer.h"
 
 #include "Application.h"
+#include "CommonAssert.h"
 #include "GenericWindow.h"
 #include "imgui.h"
 #include "Config/Config.h"
@@ -10,6 +11,8 @@
 #include "GlfwContext.h"
 #include "WindowLayer.h"
 #include "ThirdPart/OpenGLContext.h"
+
+DEFINE_DRIVEN_CLASS_IMP(ImguiLayer, Layer)
 
 void ImguiLayer::OnInit()
 {

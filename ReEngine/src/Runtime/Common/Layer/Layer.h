@@ -2,9 +2,11 @@
 #include <vcruntime_typeinfo.h>
 #include <vector>
 #include "CommonLib_API.h"
+#include "ClassInfo.h"
 
 class CommonLib_API Layer
 {
+	DEFINE_CLASS(Layer)
 public:
 	Layer() = default;
 	virtual ~Layer() = default;
@@ -50,7 +52,8 @@ T* LayerManager::GetLayer()
 {
 	for (auto value : Layers)
 	{
-		if(typeid(value).name() == typeid(T*).name())
+		
+		if(value->ClassName() == T::StaticClassName())
 		{
 			return static_cast<T*>(value);
 		}

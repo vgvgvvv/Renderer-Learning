@@ -1,6 +1,8 @@
 #include "Layer.h"
 #include "Logging/Log.h"
 
+DEFINE_CLASS_IMP_BEGIN(Layer, ClassFlag::Abstruct)
+DEFINE_CLASS_IMP_END()
 
 void LayerManager::PushLayer(Layer* layer)
 {

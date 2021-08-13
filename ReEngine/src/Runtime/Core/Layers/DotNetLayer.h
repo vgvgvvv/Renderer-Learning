@@ -5,6 +5,7 @@
 
 class Core_API DotNetLayer : public Layer
 {
+	DEFINE_DRIVEN_CLASS(DotNetLayer, Layer)
 public:
 	~DotNetLayer() override;
 	void OnInit() override;

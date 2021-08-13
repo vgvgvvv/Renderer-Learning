@@ -3,6 +3,8 @@
 #include "BuildIn/DefaultRenderPipeline.h"
 #include "Misc/GlobalContext.h"
 
+DEFINE_DRIVEN_CLASS_IMP(RenderLayer, Layer)
+
 RenderLayer::RenderLayer(std::shared_ptr<RenderPipeline> pipeline)
 {
 	this->pipeline = pipeline;

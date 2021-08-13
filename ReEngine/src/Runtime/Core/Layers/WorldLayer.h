@@ -6,6 +6,7 @@
 
 class Core_API WorldLayer : public Layer
 {
+	DEFINE_DRIVEN_CLASS(WorldLayer, Layer)
 public:
 	void OnInit() override;
 	void OnPreUpdate(float deltaTime) override;

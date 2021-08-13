@@ -5,6 +5,7 @@ set(TargetName CommonLib)
 ReMake_AddTarget(
 	TARGET_NAME ${TargetName}
 	MODE SHARED
+	LIB ClassLib
 	LIB_INTERFACE ReTemplate
 )
 
