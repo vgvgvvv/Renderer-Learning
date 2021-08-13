@@ -45,7 +45,7 @@ Matrix4x4 Camera::GetViewMatrix() const
 
 Matrix4x4 Camera::GetPerspectiveProjectionMatrix() const
 {
-	return Matrix4x4::Perspective(fov, aspect, nearZ, farZ).transpose();
+	return Matrix4x4::Perspective(fov, aspect, nearZ, farZ);
 }
 
 
