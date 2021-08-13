@@ -3,9 +3,9 @@ set(targetName TestSomething)
 ReMake_AddTarget(
 	TARGET_NAME ${targetName}
 	MODE EXE
-	LIB CommonLib RHI
+	LIB CommonLib RHI 3d-math
 )
 
 ReMake_StartUse()
-UseAssimp(${targetName})
+UseGml(${targetName})
 ReMake_EndUse()

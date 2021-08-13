@@ -92,6 +92,9 @@ void RenderContext::TestDraw(const Camera& camera)
 
 	auto shader = device->CreateShader("Default/TestDraw.vert.glsl", "Default/TestDraw.frag.glsl");
 
+	device->SetFaceCull(FaceCullType::Back);
+	device->SetDepthFunction(DepthFunctionType::Less);
+
 
 	device->Draw(*vao, *ib, *shader);
 
