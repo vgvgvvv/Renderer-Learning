@@ -31,10 +31,14 @@ void GlfwWindow::Init()
 
 void GlfwWindow::NewFrame()
 {
+}
+
+
+void GlfwWindow::ImGuiNewFrame()
+{
 	ImGui_ImplOpenGL3_NewFrame();
 	ImGui_ImplGlfw_NewFrame();
 }
-
 
 void GlfwWindow::Swap()
 {

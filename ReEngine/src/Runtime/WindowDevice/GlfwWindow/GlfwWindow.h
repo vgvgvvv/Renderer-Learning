@@ -9,6 +9,7 @@ class GlfwWindow_API GlfwWindow : public IGenericWindow
 public:
 	void Init() override;
 	void NewFrame() override;
+	void ImGuiNewFrame() override;
 	void Swap() override;
 	void Shutdown() override;
 	bool ShouldQuit() override;

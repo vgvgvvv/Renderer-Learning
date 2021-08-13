@@ -61,6 +61,46 @@ void OpenGLDevice::SetAlpha(uint32_t from, uint32_t to)
 }
 
 
+void OpenGLDevice::SetDepthTest(bool enable)
+{
+	GLCall(glEnable(GL_DEPTH_TEST))
+	GLCall(glDepthMask(enable ? GL_TRUE : GL_FALSE))
+}
+
+
+void OpenGLDevice::SetDepthFunction(DepthFunctionType type)
+{
+	GLCall(glEnable(GL_DEPTH_TEST))
+	switch (type)
+	{
+	case DepthFunctionType::Always: 
+		GLCall(glDepthFunc(GL_ALWAYS))
+		break;
+	case DepthFunctionType::Never:
+		GLCall(glDepthFunc(GL_NEVER))
+		break;
+	case DepthFunctionType::Less:
+		GLCall(glDepthFunc(GL_LESS))
+		break;
+	case DepthFunctionType::Equal:
+		GLCall(glDepthFunc(GL_EQUAL))
+		break;
+	case DepthFunctionType::LEqual:
+		GLCall(glDepthFunc(GL_LEQUAL))
+		break;
+	case DepthFunctionType::Greater:
+		GLCall(glDepthFunc(GL_GREATER))
+		break;
+	case DepthFunctionType::NotEqual:
+		GLCall(glDepthFunc(GL_NOTEQUAL))
+		break;
+	case DepthFunctionType::GEqual:
+		GLCall(glDepthFunc(GL_GEQUAL))
+		break;
+	default: ;
+	}
+}
+
 void OpenGLDevice::SetFaceCull(FaceCullType cullType)
 {
 	GLCall(glEnable(GL_CULL_FACE));

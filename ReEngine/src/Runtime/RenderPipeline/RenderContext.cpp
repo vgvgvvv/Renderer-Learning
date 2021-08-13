@@ -159,6 +159,9 @@ void RenderContext::DrawSingleRenderer(Camera* camera, BaseRenderer* renderer, c
 	
 	auto shader = material->GetShader();
 
+	device->SetDepthTest(true);
+	device->SetDepthFunction(DepthFunctionType::Always);
+	
 	device->Draw(*vao, *ib, *shader);
 }
 

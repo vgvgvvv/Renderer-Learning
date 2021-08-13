@@ -27,6 +27,18 @@ enum class FaceCullType
 	FrontAndBack
 };
 
+enum class DepthFunctionType
+{
+	Always,
+	Never,
+	Less,
+	Equal,
+	LEqual,
+	Greater,
+	NotEqual,
+	GEqual
+};
+
 class RHI_API IRenderDevice
 {
 	DEFINE_CLASS(IRenderDevice)
@@ -36,6 +48,8 @@ public:
 	virtual void Draw(const IVertexArrayObject& vao, const IIndexBuffer& ib, IShader& shader) const = 0;
 	virtual void DrawArray(const IVertexArrayObject& vao, IShader& shader, int count) const = 0;
 	virtual void SetAlpha(uint32_t from, uint32_t to) = 0;
+	virtual void SetDepthTest(bool enable) = 0;
+	virtual void SetDepthFunction(DepthFunctionType type) = 0;
 	virtual void SetFaceCull(FaceCullType cullType) = 0;
 	virtual void SetViewPort(float x, float y, float width, float height) = 0;
 	virtual void DrawLine(const Vector2& start, const Vector2& end) = 0;

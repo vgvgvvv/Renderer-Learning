@@ -1,10 +1,14 @@
 #include "ImguiLayer.h"
+
+#include "Application.h"
+#include "GenericWindow.h"
 #include "imgui.h"
 #include "Config/Config.h"
 #include "ImguiLayer/imgui_impl_glfw.h"
 #include "ImguiLayer/imgui_impl_opengl3.h"
 #include "Misc/Path.h"
 #include "GlfwContext.h"
+#include "WindowLayer.h"
 #include "ThirdPart/OpenGLContext.h"
 
 void ImguiLayer::OnInit()
@@ -60,16 +64,25 @@ void ImguiLayer::OnInit()
     }
 
 	//IM_ASSERT(font != NULL);
+
+
 }
 
 
 void ImguiLayer::OnBeforeRender(float deltaTime)
 {
     // Start the Dear ImGui frame
-   
+    static WindowLayer* windowLayer = Application::Get()
+		.GetLayerManager().GetLayer<WindowLayer>();
+
+    RE_ASSERT(windowLayer != nullptr);
+
+	if(windowLayer)
+	{
+        windowLayer->GetWindow().ImGuiNewFrame();
+	}
+	
     ImGui::NewFrame();
-
-
 }
 
 void ImguiLayer::OnRender(float deltaTime)

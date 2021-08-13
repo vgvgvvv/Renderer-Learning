@@ -52,7 +52,7 @@ T* LayerManager::GetLayer()
 	{
 		if(typeid(value).name() == typeid(T*).name())
 		{
-			return value;
+			return static_cast<T*>(value);
 		}
 	}
 	return nullptr;
