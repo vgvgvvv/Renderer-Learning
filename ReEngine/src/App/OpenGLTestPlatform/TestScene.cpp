@@ -37,7 +37,13 @@ void TestScene::OnInit()
 	cube2->GetTransform().set_scale(Vector3(0.5, 0.5, 0.5));
 	
 	
-
+	auto cube3 = World::Get().CreateGameObject("Cube3");
+	cube3->AddComponent<RotationComponent>();
+	auto renderer3 = cube2->AddComponent<MeshRenderer>();
+	renderer3->SetMesh(cubeAsset->meshes[0]);
+	renderer3->AddMaterial(materialAsset);
+	cube3->GetTransform().set_position(Vector3(3, 0, 3));
+	cube3->GetTransform().set_scale(Vector3(0.5, 0.5, 0.5));
 	
 	
 }

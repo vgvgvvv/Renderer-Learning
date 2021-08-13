@@ -33,8 +33,12 @@ Matrix4x4 Camera::GetViewMatrix() const
 	auto& tran = GetOwner().GetTransform();
 	auto& pos = tran.get_position();
 
-	auto mat = Matrix4x4::LookAt(pos, pos + tran.Forward(), tran.Up());
+	auto mat = Matrix4x4::Scale(Vector3(1.0f, 1.0f, -1.0f));
 
+	auto rotate = Matrix4x4::Rotate(tran.get_rotation().Conjugate());
+	auto translate = Matrix4x4::Translate(Vector3(-pos.x, -pos.y, -pos.z));
+
+	mat = translate * rotate * mat;
 	return mat;
 }
 

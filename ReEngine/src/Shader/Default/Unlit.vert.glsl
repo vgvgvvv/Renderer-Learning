@@ -16,6 +16,6 @@ void main(){
 
     gl_Position = ReEngine_ProjMat * ReEngine_ViewMat * ReEngine_ModelMat * vec4(aPos.x, aPos.y, aPos.z, 1.0f);
     //vertexColor = vec4(color, 1.0f);
-    vertexColor = vec4(uv0.x, uv0.y , 0.0f, 1.0f);
+    vertexColor = vec4(normal.x, normal.y , normal.z, 1.0f);
 }
 

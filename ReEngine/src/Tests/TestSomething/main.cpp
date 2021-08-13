@@ -7,6 +7,12 @@
 
 int main()
 {
+	glm::mat4 model(1.0f);
+	glm::vec3 pos(0, 0, 3);
+
+	model = glm::translate(model, pos);
+	
+	
 	auto prev = glm::perspective(60.0f, 800.0f / 600.0f, 10.0f, 1000.0f);
 
 	for(int r = 0; r < 4; r ++)
