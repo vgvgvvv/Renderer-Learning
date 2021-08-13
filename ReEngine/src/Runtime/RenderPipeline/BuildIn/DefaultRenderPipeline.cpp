@@ -15,7 +15,7 @@ void DefaultRenderPipeline::RenderSingleCamera(RenderContext& context, Camera* c
 	context.SetupCameraProperties(*camera);
 
 	context.Clear(Color::gray);
-	
+
 	DrawingSetting drawSetting;
 	FilterSetting filterSetting;
 	context.DrawRenderers(camera, drawSetting, filterSetting);

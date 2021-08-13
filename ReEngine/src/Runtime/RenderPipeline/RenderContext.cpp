@@ -48,6 +48,9 @@ void RenderContext::DrawRenderers(Camera* camera, const DrawingSetting& drawingS
 {
 	auto& renderers = RendererManager::Get().GetRenderers();
 
+	device->SetFaceCull(FaceCullType::Back);
+	device->SetDepthFunction(DepthFunctionType::Less);
+	
 	for (auto renderer : renderers)
 	{
 		DrawSingleRenderer(camera, renderer, drawingSetting, filterSetting);
@@ -162,8 +165,7 @@ void RenderContext::DrawSingleRenderer(Camera* camera, BaseRenderer* renderer, c
 	
 	auto shader = material->GetShader();
 
-	device->SetDepthTest(true);
-	device->SetDepthFunction(DepthFunctionType::Always);
+	
 	
 	device->Draw(*vao, *ib, *shader);
 }

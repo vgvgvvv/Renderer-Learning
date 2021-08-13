@@ -51,7 +51,7 @@ void OpenGLDevice::DrawArray(const IVertexArrayObject& vao, IShader& shader, int
 void OpenGLDevice::Clear(const Color& color) const
 {
 	GLCall(glClearColor(color.r, color.g, color.b, color.a));
-	GLCall(glClear(GL_COLOR_BUFFER_BIT));
+	GLCall(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT));
 }
 
 void OpenGLDevice::SetAlpha(uint32_t from, uint32_t to)
