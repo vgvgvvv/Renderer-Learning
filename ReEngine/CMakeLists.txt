@@ -32,5 +32,6 @@ set(RENGINE_EXTERNAL_DIR "${CMAKE_CURRENT_LIST_DIR}/external")
 
 ReMake_AddSubDirsRec(external)
 ReMake_AddSubDirsRec(src)
+ReMake_AddSubDirsRec(tests)
 
 message(STATUS "project Root ${PROJECT_SOURCE_DIR}")
