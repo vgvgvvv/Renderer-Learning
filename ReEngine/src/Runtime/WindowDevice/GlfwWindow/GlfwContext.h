@@ -5,13 +5,20 @@
 #include "Singleton.h"
 #include "GlfwWindow_API.h"
 
+enum class GlfwRHIType
+{
+	OpenGL,
+	Vulkan
+};
+
 class GlfwWindow_API GlfwInitDesc
 {
 public:
 	int Width;
 	int Height;
 	std::string Title;
-
+	GlfwRHIType RHIType;
+	
 	GlfwInitDesc();
 };
 
@@ -36,5 +43,9 @@ public:
 	GLFWwindow* GetWindow() const;
 
 private:
+	bool InitOpenGL(const GlfwInitDesc& desc);
+	bool InitVulkan(const GlfwInitDesc& desc);
+private:
 	GLFWwindow* window = nullptr;
+	GlfwRHIType RHIType;
 };
