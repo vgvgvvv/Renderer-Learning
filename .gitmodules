@@ -11,3 +11,7 @@
 [submodule "ReEngine/external/Re-reflection"]
 	path = ReEngine/external/Re-reflection
 	url = git@github.com:vgvgvvv/re-reflection.git
+[submodule "ReEngine/src/App/VulkanLearning"]
+	path = ReEngine/src/App/VulkanLearning
+	url = git@github.com:vgvgvvv/VulkanLearning.git
+	branch = master
