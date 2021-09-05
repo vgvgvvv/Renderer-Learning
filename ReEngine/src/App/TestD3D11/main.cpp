@@ -8,13 +8,13 @@
 #include "D3DApp.h"
 #include "Misc/GlobalContext.h"
 
-static StaticGlobalContextValue WindowClassName("WindowClassName", "Win32Window");
-static StaticGlobalContextValue RendererClassName("RenderDeviceClassName", "D3DDevice");
-
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
 	PSTR cmdLine, int showCmd)
 {
+	GlobalContext::Get().SetStringValue("WindowClassName", "Win32Window");
+	GlobalContext::Get().SetStringValue("RenderDeviceClassName", "D3DDevice");
+	
 	D3DApp app;
 	return app.Run();
 }

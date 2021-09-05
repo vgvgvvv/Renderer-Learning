@@ -1,5 +1,9 @@
 #include "IRenderDevice.h"
 
+#include "Misc/GlobalContext.h"
+
+static StaticGlobalContextValue RendererClassName("RenderDeviceClassName", "OpenGLDevice");
+
 DEFINE_CLASS_IMP_BEGIN(IRenderDevice, ClassFlag::None)
 DEFINE_CLASS_IMP_END()
 

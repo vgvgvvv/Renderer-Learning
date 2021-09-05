@@ -6,6 +6,7 @@
 class Core_API Application
 {
 public:
+	virtual ~Application() = default;
 	Application();
 
 	int Run();

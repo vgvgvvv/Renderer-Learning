@@ -39,6 +39,7 @@ bool GlfwContext::ShouldQuit() const
 
 bool GlfwContext::ShutDown() const
 {
+    glfwDestroyWindow(window);
     glfwTerminate();
     return true;
 }
@@ -103,7 +104,14 @@ bool GlfwContext::InitOpenGL(const GlfwInitDesc& desc)
 
 bool GlfwContext::InitVulkan(const GlfwInitDesc& desc)
 {
-	//TODO
+    glfwInit();
+
+    glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+    glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+
+    window = glfwCreateWindow(desc.Width, desc.Height, desc.Title.c_str(), nullptr, nullptr);
+	
+	
     return false;
 }
 
