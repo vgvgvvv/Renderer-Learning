@@ -15,3 +15,6 @@
 	path = ReEngine/src/App/VulkanLearning
 	url = git@github.com:vgvgvvv/VulkanLearning.git
 	branch = master
+[submodule "ReEngine/src/App/DX12Learning"]
+	path = ReEngine/src/App/DX12Learning
+	url = https://github.com/vgvgvvv/DX12Learning
