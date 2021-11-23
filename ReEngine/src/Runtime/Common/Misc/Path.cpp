@@ -52,7 +52,7 @@ std::string Path::Combine(const std::string& p1, const std::string& p2)
 
 std::string Path::GetEngineRootPath()
 {
-    return Combine(GetCurrentExeDirectory(), "../..");
+    return Combine(GetCurrentExeDirectory(), "../../../..");
 }
 
 std::string Path::GetBinaryPath()
