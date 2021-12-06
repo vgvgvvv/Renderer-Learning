@@ -15,12 +15,30 @@
 //------------------------------------------------------------------------------
 // 反射类相关宏
 
+#define DEFINE_CLASS_DYNAMIC(className) \
+public:\
+	typedef void Super; \
+	static std::string StaticClassName() { return #className;}\
+	static const Class* StaticClass() { return &GetSelfClass(); }\
+	virtual const Class* GetClass() { return className::StaticClass(); }\
+	virtual std::string ClassName() { return #className; }\
+private:\
+	static Class& GetSelfClass(){\
+		static Class selfClass(sizeof(className), \
+		nullptr, \
+		#className, \
+		ClassFlag::None, \
+		[](Class* self){ \
+		});\
+		return selfClass;\
+	}
 
 #define DEFINE_CLASS(className) \
 public:\
 	typedef void Super; \
 	static std::string StaticClassName() { return #className;}\
 	static const Class* StaticClass() { return &selfClass; }\
+	virtual const Class* GetClass() { return className::StaticClass(); }\
 	virtual std::string ClassName() { return #className; }\
 private:\
 	static Class selfClass;
@@ -50,11 +68,31 @@ private:\
 
 // 定义派生类
 
+#define DEFINE_DRIVEN_CLASS_DYNAMIC(className, baseClassName) \
+public:\
+	typedef baseClassName Super; \
+	static std::string StaticClassName() { return #className;}\
+	static const Class* StaticClass() { return &GetSelfClass(); }\
+	virtual const Class* GetClass() override { return className::StaticClass(); }\
+	virtual std::string ClassName() override { return #className; }\
+private:\
+	static Class& GetSelfClass(){\
+		static Class selfClass(sizeof(className), \
+		baseClassName::GetSelfClass(), \
+		#className, \
+		flag, \
+		[](Class* self){ \
+		});\
+		return selfClass;\
+	}
+
+
 #define DEFINE_DRIVEN_CLASS(className, baseClassName) \
 public:\
 	typedef baseClassName Super; \
 	static std::string StaticClassName() { return #className;}\
 	static const Class* StaticClass() { return &selfClass; }\
+	virtual const Class* GetClass() override { return className::StaticClass(); }\
 	virtual std::string ClassName() override { return #className; }\
 private:\
 	static Class selfClass;
